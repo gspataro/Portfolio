@@ -14,5 +14,8 @@
     "require": {
         "nunomaduro/collision": "^6.2.0",
         "twig/twig": "^3.4.1"
+    },
+    "autoload": {
+        "files": ["source/functions.php"]
     }
 }
