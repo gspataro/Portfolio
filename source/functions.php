@@ -18,3 +18,19 @@ function getData(string $fileName): array
     $rawData = file_get_contents($filePath);
     return json_decode($rawData, true);
 }
+
+/**
+ * Compile a page and put it on the public folder
+ *
+ * @param string $outputPath
+ * @param string $template
+ * @param array $data
+ * @param \Twig\Environment $twig
+ * @return void
+ */
+
+function compilePage(string $outputPath, string $template, array $data, \Twig\Environment $twig): void
+{
+    $compiledTemplate = $twig->render("{$template}.html", $data);
+    file_put_contents(DIR_PUBLIC . "{$outputPath}", $compiledTemplate);
+}
