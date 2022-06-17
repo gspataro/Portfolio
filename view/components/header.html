@@ -1,0 +1,43 @@
+{%set navbarItems = [
+    {
+        "link": "./index.html",
+        "label": "Home",
+        "target": "index"
+    },
+    {
+        "link": "./portfolio.html",
+        "label": "Portfolio",
+        "target": "portfolio"
+    },
+    {
+        "link": "./contacts.html",
+        "label": "Contatti",
+        "target": "contacts"
+    }
+]%}
+<div class="flex items-center my-8">
+    <div class="basis-1/2">
+        <div class="w-fit">
+            <span class="text-3xl uppercase">Giuseppe <b class="font-semibold">Spataro</b></span>
+            <div class="text-lg text-center">Sviluppatore Web &bullet; Pianista</div>
+        </div>
+    </div>
+    <div class="basis-1/2 text-lg text-right">
+        <ul>
+            {%for item in navbarItems%}
+                <li class="inline mr-2 last-of-type:mr-0">
+                    <a href="{{item.link}}" class="
+                        py-2 px-3
+                        font-semibold
+                        {%if item.target == page.label%}
+                            text-violet-300
+                        {%else%}
+                            text-white/60
+                            hover:text-white
+                        {%endif%}
+                    ">{{item.label}}</a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+</div>
