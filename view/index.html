@@ -1,4 +1,25 @@
 {%set page = {
     "label": "index"
 }%}
-{%extends 'layout.html'%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Giuseppe Spataro</title>
+        <link href="./assets/css/ui.css" rel="stylesheet" />
+    </head>
+
+    <body class="bg-stone-900 text-stone-200 m-0 p-0 min-h-screen">
+        <div class="w-2/3 mx-auto flex flex-col justify-center min-h-screen">
+            <div>
+                <div class="min-w-fit text-center">
+                    <div class="text-5xl uppercase">Giuseppe <b class="font-semibold">Spataro</b></div>
+                    <div class="text-3xl">Pianista &bullet; Sviluppatore Web</div>
+                </div>
+            </div>
+            <div class="py-10 text-center text-2xl">
+                {{include("./components/navbar.html")}}
+            </div>
+        </div>
+    </body>
+</html>
