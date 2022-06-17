@@ -7,18 +7,26 @@
         <meta charset="utf-8" />
         <title>Giuseppe Spataro</title>
         <link href="./assets/css/ui.css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/c6d3a53c06.js" crossorigin="anonymous"></script>
     </head>
 
     <body class="bg-stone-900 text-stone-200 m-0 p-0 min-h-screen">
         <div class="w-2/3 mx-auto flex flex-col justify-center min-h-screen">
             <div>
                 <div class="min-w-fit text-center">
-                    <div class="text-5xl uppercase">Giuseppe <b class="font-semibold">Spataro</b></div>
-                    <div class="text-3xl">Pianista &bullet; Sviluppatore Web</div>
+                    <div class="text-6xl uppercase">Giuseppe <b class="font-semibold">Spataro</b></div>
+                    <div class="text-3xl text-white/80">Pianista &bullet; Sviluppatore Web</div>
                 </div>
             </div>
-            <div class="py-10 text-center text-2xl">
-                {{include("./components/navbar.html")}}
+            <div class="py-24 text-2xl">
+                <div class="max-w-fit mx-auto">
+                    {{include("./components/navbar.html")}}
+                </div>
+            </div>
+            <div class="py-10 text-2xl">
+                <div class="max-w-fit mx-auto">
+                    {{include("./components/socials.html")}}
+                </div>
             </div>
         </div>
     </body>
