@@ -1,0 +1,58 @@
+{
+    "about": {
+        "skills": {
+            "music": [
+                {
+                    "name": "Pianoforte",
+                    "rating": 5
+                },
+                {
+                    "name": "Teoria Musicale",
+                    "rating": 5
+                },
+                {
+                    "name": "Accompagnamento",
+                    "rating": 4
+                },
+                {
+                    "name": "Improvvisazione",
+                    "rating": 3
+                },
+                {
+                    "name": "Armonia",
+                    "rating": 3
+                }
+            ],
+            "development": [
+                {
+                    "name": "PHP (5~8.1)",
+                    "rating": 5
+                },
+                {
+                    "name": "MySQL",
+                    "rating": 3
+                },
+                {
+                    "name": "HTML",
+                    "rating": 5
+                },
+                {
+                    "name": "CSS/SASS",
+                    "rating": 5
+                },
+                {
+                    "name": "Javascript",
+                    "rating": 4
+                },
+                {
+                    "name": "Git",
+                    "rating": 3
+                },
+                {
+                    "name": "Linux",
+                    "rating": 4
+                }
+            ]
+        }
+    }
+}

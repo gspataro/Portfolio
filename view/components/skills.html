@@ -1,0 +1,17 @@
+{%for skill in skills%}
+    <div class="flex items-center my-1">
+        <div class="flex-1">
+            {{skill.name}}
+        </div>
+        <div class="flex-1 text-lg text-violet-400">
+            {%for i in 1..skill.rating%}
+                <i class="fa-solid fa-star"></i>
+            {%endfor%}
+            {%if skill.rating < 5%}
+                {%for i in 1..5-skill.rating%}
+                    <i class="fa-solid fa-star text-violet-400/30"></i>
+                {%endfor%}
+            {%endif%}
+        </div>
+    </div>
+{%endfor%}
