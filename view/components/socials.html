@@ -1,0 +1,13 @@
+<ul class="flex items-center">
+    {%for item in layout.socials%}
+    <li class="mr-3 last-of-type:mr-0">
+        <a href="{{item.link}}" class="
+            py-3 px-4
+            text-white/60
+            hover:text-white
+        " target="_blank">
+            <i class="{{item.icon}}"></i>
+        </a>
+    </li>
+    {%endfor%}
+</ul>

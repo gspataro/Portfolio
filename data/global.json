@@ -21,6 +21,18 @@
                 "label": "Contatti",
                 "target": "contacts"
             }
+        ],
+        "socials": [
+            {
+                "link": "https://github.com/gspataro",
+                "icon": "fa-brands fa-github",
+                "label": "Github"
+            },
+            {
+                "link": "https://linked.in/in/gspataro96",
+                "icon": "fa-brands fa-linkedin",
+                "label": "Linkedin"
+            }
         ]
     }
 }
