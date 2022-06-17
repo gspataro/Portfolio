@@ -1,2 +1,26 @@
 {
+    "layout": {
+        "navbar": [
+            {
+                "link": "./index.html",
+                "label": "Home",
+                "target": "index"
+            },
+            {
+                "link": "./portfolio.html",
+                "label": "Portfolio",
+                "target": "portfolio"
+            },
+            {
+                "link": "./about.html",
+                "label": "Chi sono",
+                "target": "about"
+            },
+            {
+                "link": "./contacts.html",
+                "label": "Contatti",
+                "target": "contacts"
+            }
+        ]
+    }
 }
