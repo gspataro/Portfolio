@@ -1,8 +1,8 @@
-<ul>
+<ul class="flex items-center bg-stone-800 rounded-3xl px-10">
     {%for item in layout.navbar%}
-        <li class="inline mr-2 last-of-type:mr-0">
+        <li class="mr-3 last-of-type:mr-0">
             <a href="{{item.link}}" class="
-                py-2 px-3
+                py-3 px-4 inline-block
                 font-semibold
                 {%if item.target == page.label%}
                     text-violet-300
