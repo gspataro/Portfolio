@@ -4,57 +4,33 @@
 }%}
 {%extends "./layout.html"%}
 {%block content%}
-    <div class="bg-stone-900 py-32">
+    <div class="bg-gradient-to-br bg-violet-900 from-violet-600 to-violet-900 pt-32 pb-48">
         <div class="w-2/3 mx-auto text-2xl text-justify">
             Sono un Maestro specializzato in pianoforte con approfondite conoscenze nell'ambito dello sviluppo web. Ho una forte passione per tutto ciò che riguarda la musica e la tecnologia.
             Anche se a primo impatto le due materie non sembrano collegate, ritengo che musica e programmazione abbiano molto in comune e che entrambe siano una forma d'arte e amo utilizzare una disciplina a supporto dell'altra.
         </div>
     </div>
-    <div class="bg-gradient-to-br bg-violet-900 from-violet-600 to-violet-900 py-32">
-        <div class="w-2/3 mx-auto text-2xl text-justify">
-            <div class="flex space-x-10">
-                <div class="basis-1/2 grow-0 bg-stone-800/80 p-20 rounded-3xl">
-                    <h1 class="font-semibold mb-8 text-cyan-400/80">Musica</h1>
-                    <p class="my-4">
-                        Ho iniziato il mio percorso di studi con il pianoforte all'età di 5 anni da privatista. Nel 2016, subito dopo il diploma di liceo classico, ho iniziato gli studi
-                        presso il Conservatorio V. Bellini di Catania (CT) che ho concluso il 05 aprile 2022 conseguendo una laurea specialistica in pianoforte con la votazione di 110/110 cum laude.
+    <div class="bg-stone-800 pb-32">
+        <div class="w-2/3 text-2xl mx-auto">
+            <div class="flex space-x-20">
+                <div class="basis-1/2 grow-0 bg-stone-900 shadow-lg shadow-stone-900 p-20 rounded-2xl -mt-32">
+                    <div class="text-center">
+                        <span class="text-5xl text-cyan-600"><i class="fa-solid fa-music"></i></span>
+                        <h2 class="my-5 font-semibold">Musicista</h2>
+                    </div>
+                    <p class="my-14 text-center">
+                        Mi occupo di concerti come pianista solista e accompagnatore oltre ad avere la capacità di insegnare.
                     </p>
-                    <p class="my-4">
-                        Come esperienza lavorativa ho sostenuto diversi concerti da pianista solista oltre ad aver accompagnato vari strumentisti per esami, concerti e concorsi.
-                    </p>
-                    <p class="my-4">
-                        Il mio repertorio è principalmente romantico con autori come Beethoven, Liszt, Rachmaninov e Chopin. Grazie ai numerosi anni di studio ho comunque acquisito una tecnica
-                        che mi consente di spaziare tra i più vasti repertori e generi.
-                    </p>
-                </div>
-                <div class="basis-1/2 grow-0 bg-stone-800/80 p-20 rounded-3xl">
-                    <h1 class="font-semibold mb-8 text-cyan-400/80">Sviluppo Web</h1>
-                    <p class="my-4">
-                        Ho iniziato il mio percorso come sviluppatore web all'età di 12 anni da autodidatta. Le mie prime esperienze hanno riguardato principalmente la creazione
-                        di temi per la forum board MyBB per poi sperimentare con wordpress prima di iniziare con vanilla PHP.
-                    </p>
-                    <p class="my-4">
-                        Lato backend ho maturato conoscenze principalmente con PHP e la libreria di dipendenze composer
-                        applicando i principi della programmazione ad oggetti e i pattern MVC e Singleton. Per la gestione di database utilizzo MySQL.
-                    </p>
-                    <p class="my-4">
-                        Lato frontend ho sviluppato esperienza in HTML, Javascript e CSS (Sass, TailwindCSS, Bootstrap, UIKit).
-                    </p>
-                    <p class="my-4">
-                        Per il versioning dei miei progetti faccio uso di Git e Github.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-stone-800 py-32">
-        <div class="w-2/3 mx-auto text-2xl text-justify">
-            <h1 class="font-semibold mb-16 text-cyan-400/80 text-center">Abilità e Conoscenze</h1>
-            <div class="flex space-x-10">
-                <div class="basis-1/2 grow-0 bg-stone-900 p-20 rounded-3xl">
                     {{include("./components/skills.html", {"skills": about.skills.music})}}
                 </div>
-                <div class="basis-1/2 grow-0 bg-stone-900 p-20 rounded-3xl">
+                <div class="basis-1/2 grow-0 bg-stone-900 shadow-lg shadow-stone-900 p-20 rounded-2xl -mt-32">
+                    <div class="text-center">
+                        <span class="text-5xl text-cyan-600"><i class="fa-solid fa-code"></i></span>
+                        <h2 class="my-5 font-semibold">Sviluppatore Web</h2>
+                    </div>
+                    <p class="my-14 text-center">
+                        Sviluppo siti internet occupandomi soprattutto dell'aspetto backend e amo portare alla vita nuovi progetti.
+                    </p>
                     {{include("./components/skills.html", {"skills": about.skills.development})}}
                 </div>
             </div>

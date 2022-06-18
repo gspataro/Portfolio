@@ -3,54 +3,64 @@
         "skills": {
             "music": [
                 {
-                    "name": "Pianoforte",
-                    "rating": 5
+                    "name": "Di cosa posso occuparmi:",
+                    "content": "Concerti, Insegnamento"
                 },
                 {
-                    "name": "Teoria Musicale",
-                    "rating": 5
+                    "name": "Di quali generi mi occupo:",
+                    "list": [
+                        "Classico",
+                        "Romantico"
+                    ]
                 },
                 {
-                    "name": "Accompagnamento",
-                    "rating": 4
+                    "name": "Cosa so fare:",
+                    "list": [
+                        "Pianoforte",
+                        "Teoria Musicale",
+                        "Accompagnamento"
+                    ]
                 },
                 {
-                    "name": "Improvvisazione",
-                    "rating": 3
-                },
-                {
-                    "name": "Armonia",
-                    "rating": 3
+                    "name": "Quali autori ho studiato:",
+                    "list": [
+                        "J.S. Bach",
+                        "W.A. Mozart",
+                        "L.V. Beethoven",
+                        "F. Chopin",
+                        "F. Liszt",
+                        "S. Rachmaninov",
+                        "Altri"
+                    ]
                 }
             ],
             "development": [
                 {
-                    "name": "PHP (5~8.1)",
-                    "rating": 5
+                    "name": "Quali linguaggi uso:",
+                    "content": "PHP, MySQL, HTML, CSS, Javascript"
                 },
                 {
-                    "name": "MySQL",
-                    "rating": 3
+                    "name": "Quali librerie uso:",
+                    "list": [
+                        "Composer",
+                        "Twig",
+                        "Sass",
+                        "TailwindCSS",
+                        "Bootstrap",
+                        "UIKit"
+                    ]
                 },
                 {
-                    "name": "HTML",
-                    "rating": 5
-                },
-                {
-                    "name": "CSS/SASS",
-                    "rating": 5
-                },
-                {
-                    "name": "Javascript",
-                    "rating": 4
-                },
-                {
-                    "name": "Git",
-                    "rating": 3
-                },
-                {
-                    "name": "Linux",
-                    "rating": 4
+                    "name": "Quali strumenti uso:",
+                    "list": [
+                        "VS Code",
+                        "Git/Github",
+                        "Postman",
+                        "Beekeeper Studio",
+                        "Terminale",
+                        "Linux",
+                        "Windows"
+                    ]
                 }
             ]
         }

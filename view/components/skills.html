@@ -1,17 +1,17 @@
 {%for skill in skills%}
-    <div class="flex items-center my-1">
-        <div class="flex-1">
-            {{skill.name}}
-        </div>
-        <div class="flex-1 text-right text-lg text-violet-400">
-            {%for i in 1..skill.rating%}
-                <i class="fa-solid fa-star"></i>
+    <p class="mt-10 mb-5 text-center">
+        <b class="font-semibold text-violet-400">{{skill.name}}</b>
+    </p>
+    {%if skill.content%}
+        <p class="my-5 text-center">
+            {{skill.content}}
+        </p>
+    {%endif%}
+    {%if skill.list%}
+        <ul class="my-5 text-center">
+            {%for item in skill.list%}
+                <li>{{item}}</li>
             {%endfor%}
-            {%if skill.rating < 5%}
-                {%for i in 1..5-skill.rating%}
-                    <i class="fa-solid fa-star text-violet-400/30"></i>
-                {%endfor%}
-            {%endif%}
-        </div>
-    </div>
+        </ul>
+    {%endif%}
 {%endfor%}
