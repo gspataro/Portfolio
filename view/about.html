@@ -12,9 +12,9 @@
     </div>
     <div class="py-32">
         <div class="w-2/3 mx-auto text-2xl text-justify">
-            <div class="flex space-x-28">
-                <div class="basis-1/2">
-                    <h1 class="font-semibold mb-4 text-cyan-400/80">Musica</h1>
+            <div class="flex space-x-10">
+                <div class="basis-1/2 grow-0 bg-stone-800 p-20 rounded-3xl">
+                    <h1 class="font-semibold mb-8 text-cyan-400/80">Musica</h1>
                     <p class="my-4">
                         Ho iniziato il mio percorso di studi con il pianoforte all'età di 5 anni da privatista. Nel 2016, subito dopo il diploma di liceo classico, ho iniziato gli studi
                         presso il Conservatorio V. Bellini di Catania (CT) che ho concluso il 05 aprile 2022 conseguendo una laurea specialistica in pianoforte con la votazione di 110/110 cum laude.
@@ -27,8 +27,8 @@
                         che mi consente di spaziare tra i più vasti repertori e generi.
                     </p>
                 </div>
-                <div class="basis-1/2">
-                    <h1 class="font-semibold mb-4 text-cyan-400/80">Sviluppo Web</h1>
+                <div class="basis-1/2 grow-0 bg-stone-800 p-20 rounded-3xl">
+                    <h1 class="font-semibold mb-8 text-cyan-400/80">Sviluppo Web</h1>
                     <p class="my-4">
                         Ho iniziato il mio percorso come sviluppatore web all'età di 12 anni da autodidatta. Le mie prime esperienze hanno riguardato principalmente la creazione
                         di temi per la forum board MyBB per poi sperimentare con wordpress prima di iniziare con vanilla PHP.
@@ -49,12 +49,12 @@
     </div>
     <div class="bg-stone-800 py-32">
         <div class="w-2/3 mx-auto text-2xl text-justify">
-            <h1 class="font-semibold mb-8 text-cyan-400/80 text-center">Abilità e Conoscenze</h1>
-            <div class="flex space-x-28">
-                <div class="basis-1/2">
+            <h1 class="font-semibold mb-16 text-cyan-400/80 text-center">Abilità e Conoscenze</h1>
+            <div class="flex space-x-10">
+                <div class="basis-1/2 grow-0 bg-stone-900 p-20 rounded-3xl">
                     {{include("./components/skills.html", {"skills": about.skills.music})}}
                 </div>
-                <div class="basis-1/2">
+                <div class="basis-1/2 grow-0 bg-stone-900 p-20 rounded-3xl">
                     {{include("./components/skills.html", {"skills": about.skills.development})}}
                 </div>
             </div>
