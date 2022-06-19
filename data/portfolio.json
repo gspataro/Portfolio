@@ -1,0 +1,52 @@
+{
+    "portfolio": {
+        "projects": [
+            {
+                "name": "Portfolio",
+                "category": "website",
+                "links": {
+                    "github": "https://github.com/gspataro/Portfolio",
+                    "website": "#"
+                },
+                "tools": ["PHP", "Tailwind CSS", "HTML", "Javascript"],
+                "description": "Script in PHP utilizzabile via riga di comando per generare la versione statica del mio portfolio partendo da dei template, compilati utilizzando Twig, e dei dati in formato JSON. Per il frontend ho utilizzato Tailwind CSS."
+            },
+            {
+                "name": "PDash-API",
+                "category": "library",
+                "links": {
+                    "github": "https://github.com/gspataro/PDash-API"
+                },
+                "tools": ["PHP", "MySQL"],
+                "description": "CRUD API realizzate utilizzando vanilla PHP e alcuni componenti custom per la gestione di una dashboard personale (todo, note). La libreria è stata creata per essere facilmente estendibile."
+            },
+            {
+                "name": "Routing",
+                "category": "component",
+                "links": {
+                    "github": "https://github.com/gspataro/Routing"
+                },
+                "tools": ["PHP"],
+                "description": "Un componente scritto in PHP per la gestione della richiesta da parte dell'utente e della risposta da parte del server con un sistema di routing facilmente estendibile."
+            },
+            {
+                "name": "FileSystem",
+                "category": "component",
+                "links": {
+                    "github": "https://github.com/gspataro/FileSystem"
+                },
+                "tools": ["PHP"],
+                "description": "Un componente scritto in PHP per la gestione del filesystem con un sistema ad oggetti."
+            },
+            {
+                "name": "Utilities",
+                "category": "component",
+                "links": {
+                    "github": "https://github.com/gspataro/Utilities"
+                },
+                "tools": ["PHP"],
+                "description": "Una raccolta di componenti di piccola dimensione riutilizzabili in diverse occasioni. In questo momento presenta solo il DotNavigator per rendere più leggibile la gestione degli array."
+            }
+        ]
+    }
+}

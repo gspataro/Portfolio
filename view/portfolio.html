@@ -1,0 +1,122 @@
+{%set page = {
+    "label": "portfolio",
+    "title": "Portfolio"
+}%}
+{%extends "./layout.html"%}
+{%set categories = [
+    {
+        "label": "Tutti",
+        "id": "all"
+    },
+    {
+        "label": "Siti Web",
+        "id": "website"
+    },
+    {
+        "label": "Librerie",
+        "id": "library"
+    },
+    {
+        "label": "Componenti",
+        "id": "component"
+    }
+]%}
+{%block content%}
+    <div class="max-w-fit mx-auto mt-10">
+        <ul class="flex bg-stone-800 p-2 rounded-xl space-x-2">
+            {%for category in categories%}
+                <li>
+                    <a onclick="showOnly(this)" data-category="{{category.id}}" class="
+                        cursor-pointer
+                        py-3
+                        px-6
+                        inline-block
+                        rounded-lg
+                        hover:bg-stone-700/50
+                        {%if category.id == 'all'%}
+                            bg-violet-700
+                            hover:bg-violet-700
+                        {%endif%}
+                    ">{{category.label}}</a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+    <div class="w-2/3 mx-auto py-10">
+        <div class="grid grid-cols-3 gap-4">
+            {%for project in portfolio.projects%}
+                <div class="
+                    bg-stone-800
+                    hover:bg-gradient-to-br
+                    hover:bg-violet-900
+                    hover:from-violet-600
+                    hover:to-violet-900
+                    transition-colors
+                    duration-200
+                    p-8
+                    rounded-xl
+                    project
+                " id="{{project.category}}">
+                    <div class="flex flex-col min-h-full">
+                        <div class="flex items-center">
+                            <div class="flex-1">
+                                <h3 class="font-semibold">{{project.name}}</h3>
+                            </div>
+                            <div class="text-2xl text-right">
+                                {%if project.links.github%}
+                                    <a href="{{project.links.github}}" target="_blank" class="hover:text-white/60">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                {%endif%}
+                                {%if project.links.website%}
+                                    <a href="{{project.links.website}}" class="ml-2 hover:text-white/60" target="_blank">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="flex-1 py-6 text-lg text-justify">
+                            {{project.description}}
+                        </div>
+                        <div class="text-md">
+                            {%for tool in project.tools%}
+                                <span class="inline-block bg-stone-900/50 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+    <script type="text/javascript">
+        function showOnly(e) {
+            let id = e.getAttribute("data-category");
+            let currentSelector = document.getElementsByClassName("bg-violet-700")[0];
+            let projects = document.getElementsByClassName("project");
+
+            currentSelector.classList.remove("bg-violet-700");
+            currentSelector.classList.remove("hover:bg-violet-700");
+            e.classList.add("bg-violet-700");
+            e.classList.add("hover:bg-violet-700");
+
+            if (id == "all") {
+                for (i = 0; i < projects.length; i++) {
+                    projects[i].style.display = "";
+                }
+
+                return;
+            } else {
+                let toHide = document.querySelectorAll("div.project:not(#"+id+")");
+                let toShow = document.querySelectorAll("#"+id);
+
+                for (i = 0; i < toHide.length; i++) {
+                    toHide[i].style.display = "none";
+                }
+
+                for (i = 0; i < toShow.length; i++) {
+                    toShow[i].style.display = "";
+                }
+            }
+        }
+    </script>
+{%endblock%}
