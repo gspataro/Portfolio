@@ -57,6 +57,7 @@
                     shadow-lg
                     hover:bg-gradient-to-br
                     hover:shadow-xl
+                    group
                     hover:shadow-stone-900/90
                     hover:bg-violet-900
                     hover:from-violet-600
@@ -90,7 +91,7 @@
                         </div>
                         <div class="text-md">
                             {%for tool in project.tools%}
-                                <span class="inline-block bg-stone-800/80 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
+                                <span class="inline-block text-stone-200 group-hover:text-white bg-stone-800/80 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
                             {%endfor%}
                         </div>
                     </div>
