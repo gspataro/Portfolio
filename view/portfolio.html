@@ -22,8 +22,14 @@
     }
 ]%}
 {%block content%}
-    <div class="max-w-fit mx-auto mt-10">
-        <ul class="flex bg-stone-900 p-2 rounded-xl space-x-2">
+    <div class="bg-gradient-to-br bg-blue-600 from-blue-400 to-blue-600 py-20">
+        <div class="w-2/3 mx-auto text-2xl text-justify">
+            In questa sezione troverai tutti i progetti pubblici ai quali ho lavorato che ho deciso di inserire in questa pagina.
+            Alcuni di questi progetti sono ancora in fase di sviluppo e tra questi alcuni non sono ancora stati pubblicati perché nelle fasi iniziali della loro creazione.
+        </div>
+    </div>
+    <div class="max-w-fit mx-auto -mt-6">
+        <ul class="flex bg-stone-900 shadow-stone-900/70 shadow-lg p-2 rounded-xl space-x-2">
             {%for category in categories%}
                 <li>
                     <a onclick="showOnly(this)" data-category="{{category.id}}" class="
@@ -50,6 +56,8 @@
                     shadow-stone-900/70
                     shadow-lg
                     hover:bg-gradient-to-br
+                    hover:shadow-xl
+                    hover:shadow-stone-900/90
                     hover:bg-violet-900
                     hover:from-violet-600
                     hover:to-violet-900
