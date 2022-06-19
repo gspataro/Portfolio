@@ -23,7 +23,7 @@
 ]%}
 {%block content%}
     <div class="max-w-fit mx-auto mt-10">
-        <ul class="flex bg-stone-800 p-2 rounded-xl space-x-2">
+        <ul class="flex bg-stone-900 p-2 rounded-xl space-x-2">
             {%for category in categories%}
                 <li>
                     <a onclick="showOnly(this)" data-category="{{category.id}}" class="
@@ -46,7 +46,7 @@
         <div class="grid grid-cols-3 gap-4">
             {%for project in portfolio.projects%}
                 <div class="
-                    bg-stone-800
+                    bg-stone-900
                     hover:bg-gradient-to-br
                     hover:bg-violet-900
                     hover:from-violet-600
@@ -80,7 +80,7 @@
                         </div>
                         <div class="text-md">
                             {%for tool in project.tools%}
-                                <span class="inline-block bg-stone-900/50 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
+                                <span class="inline-block bg-stone-800/80 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
                             {%endfor%}
                         </div>
                     </div>
