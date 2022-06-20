@@ -20,23 +20,45 @@
                 </div>
             </div>
             <div class="bg-slate-900 shadow-lg shadow-slate-900 rounded-xl basis-2/3 p-8">
-                <form>
+                <div class="text-center text-xl hidden" id="success">
+                    <div class="mb-6 text-6xl text-green-500">
+                        <i class="fa-regular fa-circle-check"></i>
+                    </div>
+                    <p>
+                        Grazie per avermi contattato.
+                    </p>
+                    <p>
+                        Risponderò alla tua richiesta al più presto!
+                    </p>
+                </div>
+                <form action="https://forms.un-static.com/forms/8ddfb135579bf13ce8270a0afaa8382dbd456e51" id="form" method="post">
                     <div class="flex space-x-6 mb-6">
                         <div class="basis-1/2">
                             <input type="text" name="name" placeholder="Nome e Cognome" class="w-full p-3 rounded-lg text-lg bg-slate-700 placeholder:text-white/50" required />
                         </div>
                         <div class="basis-1/2">
-                            <input type="email" name="email" placeholder="Indirizzo Email" class="w-full p-3 rounded-lg text-lg bg-slate-700 placeholder:text-white/50" required />
+                            <input type="email" name="_replyto" placeholder="Indirizzo Email" class="w-full p-3 rounded-lg text-lg bg-slate-700 placeholder:text-white/50" required />
                         </div>
                     </div>
                     <textarea name="message" placeholder="Messaggio" class="w-full p-3 rounded-lg text-lg bg-slate-700 min-h-[200px] placeholder:text-white/50" required></textarea>
                     <div class="mt-6 text-center">
-                        <button type="submit" name="send" class="bg-violet-700 hover:bg-violet-600 text-white py-3 px-4 rounded-lg">
+                        <button type="submit" class="bg-violet-700 hover:bg-violet-600 text-white py-3 px-4 rounded-lg">
                             Invia Messaggio
                         </button>
+                    </div>
+                    <div class="text-md text-right mt-6">
+                        <a href="https://un-static.com/" target="_blank">Form powered by Un-Static</a>.
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            if(window.location.hash == "#success") {
+                document.getElementById("form").classList.add("hidden");
+                document.getElementById("success").classList.remove("hidden");
+            }
+        });
+    </script>
 {%endblock%}
