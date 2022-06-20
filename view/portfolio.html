@@ -22,82 +22,84 @@
     }
 ]%}
 {%block content%}
-    <div class="bg-gradient-to-br bg-blue-500 py-20">
-        <div class="w-2/3 mx-auto text-2xl text-justify">
-            In questa sezione troverai tutti i progetti pubblici ai quali ho lavorato che ho deciso di inserire in questa pagina.
-            Alcuni di questi progetti sono ancora in fase di sviluppo e tra questi alcuni non sono ancora stati pubblicati perché nelle fasi iniziali della loro creazione.
+    <div class="flex-1">
+        <div class="bg-gradient-to-br bg-blue-500 py-20">
+            <div class="w-2/3 mx-auto text-2xl text-justify">
+                In questa sezione troverai tutti i progetti pubblici ai quali ho lavorato che ho deciso di inserire in questa pagina.
+                Alcuni di questi progetti sono ancora in fase di sviluppo e tra questi alcuni non sono ancora stati pubblicati perché nelle fasi iniziali della loro creazione.
+            </div>
         </div>
-    </div>
-    <div class="max-w-fit mx-auto -mt-6">
-        <ul class="flex bg-slate-900 shadow-stone-900/70 shadow-lg p-2 rounded-xl space-x-2">
-            {%for category in categories%}
-                <li>
-                    <a onclick="showOnly(this)" data-category="{{category.id}}" class="
-                        cursor-pointer
-                        py-3
-                        px-6
-                        inline-block
-                        rounded-lg
-                        {%if category.id == 'all'%}
-                            bg-violet-600
-                            hover:bg-violet-600
-                        {%else%}
-                            hover:bg-slate-700/70
-                        {%endif%}
-                    ">{{category.label}}</a>
-                </li>
-            {%endfor%}
-        </ul>
-    </div>
-    <div class="w-2/3 mx-auto py-10">
-        <div class="grid grid-cols-3 gap-4">
-            {%for project in portfolio.projects%}
-                <div class="
-                    bg-slate-900
-                    shadow-slate-900/70
-                    shadow-lg
-                    hover:bg-gradient-to-br
-                    hover:shadow-xl
-                    group
-                    hover:shadow-slate-900/90
-                    hover:bg-blue-900
-                    hover:from-blue-600
-                    hover:to-blue-900
-                    transition-colors
-                    duration-200
-                    p-8
-                    rounded-xl
-                    project
-                " id="{{project.category}}">
-                    <div class="flex flex-col min-h-full">
-                        <div class="flex items-center">
-                            <div class="flex-1">
-                                <h3 class="font-semibold">{{project.name}}</h3>
+        <div class="max-w-fit mx-auto -mt-6">
+            <ul class="flex bg-slate-900 shadow-stone-900/70 shadow-lg p-2 rounded-xl space-x-2">
+                {%for category in categories%}
+                    <li>
+                        <a onclick="showOnly(this)" data-category="{{category.id}}" class="
+                            cursor-pointer
+                            py-3
+                            px-6
+                            inline-block
+                            rounded-lg
+                            {%if category.id == 'all'%}
+                                bg-violet-600
+                                hover:bg-violet-600
+                            {%else%}
+                                hover:bg-slate-700/70
+                            {%endif%}
+                        ">{{category.label}}</a>
+                    </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="w-2/3 mx-auto py-10">
+            <div class="grid grid-cols-3 gap-4">
+                {%for project in portfolio.projects%}
+                    <div class="
+                        bg-slate-900
+                        shadow-slate-900/70
+                        shadow-lg
+                        hover:bg-gradient-to-br
+                        hover:shadow-xl
+                        group
+                        hover:shadow-slate-900/90
+                        hover:bg-blue-900
+                        hover:from-blue-600
+                        hover:to-blue-900
+                        transition-colors
+                        duration-200
+                        p-8
+                        rounded-xl
+                        project
+                    " id="{{project.category}}">
+                        <div class="flex flex-col min-h-full">
+                            <div class="flex items-center">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">{{project.name}}</h3>
+                                </div>
+                                <div class="text-2xl text-right">
+                                    {%if project.links.github%}
+                                        <a href="{{project.links.github}}" target="_blank" class="hover:text-white/60">
+                                            <i class="fa-brands fa-github"></i>
+                                        </a>
+                                    {%endif%}
+                                    {%if project.links.website%}
+                                        <a href="{{project.links.website}}" class="ml-2 hover:text-white/60" target="_blank">
+                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                        </a>
+                                    {%endif%}
+                                </div>
                             </div>
-                            <div class="text-2xl text-right">
-                                {%if project.links.github%}
-                                    <a href="{{project.links.github}}" target="_blank" class="hover:text-white/60">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                {%endif%}
-                                {%if project.links.website%}
-                                    <a href="{{project.links.website}}" class="ml-2 hover:text-white/60" target="_blank">
-                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                    </a>
-                                {%endif%}
+                            <div class="flex-1 py-6 text-lg text-justify">
+                                {{project.description|u.truncate(225, "...", false)}}
                             </div>
-                        </div>
-                        <div class="flex-1 py-6 text-lg text-justify">
-                            {{project.description|u.truncate(225, "...", false)}}
-                        </div>
-                        <div class="text-md">
-                            {%for tool in project.tools%}
-                                <span class="inline-block text-stone-200 group-hover:text-white bg-black/50 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
-                            {%endfor%}
+                            <div class="text-md">
+                                {%for tool in project.tools%}
+                                    <span class="inline-block text-stone-200 group-hover:text-white bg-black/50 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
+                                {%endfor%}
+                            </div>
                         </div>
                     </div>
-                </div>
-            {%endfor%}
+                {%endfor%}
+            </div>
         </div>
     </div>
     <script type="text/javascript">
