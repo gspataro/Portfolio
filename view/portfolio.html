@@ -38,10 +38,11 @@
                         px-6
                         inline-block
                         rounded-lg
-                        hover:bg-slate-700/70
                         {%if category.id == 'all'%}
                             bg-violet-600
                             hover:bg-violet-600
+                        {%else%}
+                            hover:bg-slate-700/70
                         {%endif%}
                     ">{{category.label}}</a>
                 </li>
@@ -107,8 +108,10 @@
 
             currentSelector.classList.remove("bg-violet-600");
             currentSelector.classList.remove("hover:bg-violet-600");
+            currentSelector.classList.add("hover:bg-slate-700/70");
             e.classList.add("bg-violet-600");
             e.classList.add("hover:bg-violet-600");
+            e.classList.remove("hover:bg-slate-700/70");
 
             if (id == "all") {
                 for (i = 0; i < projects.length; i++) {
