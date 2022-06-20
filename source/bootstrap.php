@@ -16,6 +16,7 @@ require_once DIR_VENDOR . "/autoload.php";
 
 $twigLoader = new \Twig\Loader\FilesystemLoader(DIR_VIEW);
 $twig = new \Twig\Environment($twigLoader);
+$twig->addExtension(new \Twig\Extra\String\StringExtension());
 
 // Generate pages based on pages.php data
 
