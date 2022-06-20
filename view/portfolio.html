@@ -22,14 +22,14 @@
     }
 ]%}
 {%block content%}
-    <div class="bg-gradient-to-br bg-blue-600 from-blue-400 to-blue-600 py-20">
+    <div class="bg-gradient-to-br bg-blue-500 py-20">
         <div class="w-2/3 mx-auto text-2xl text-justify">
             In questa sezione troverai tutti i progetti pubblici ai quali ho lavorato che ho deciso di inserire in questa pagina.
             Alcuni di questi progetti sono ancora in fase di sviluppo e tra questi alcuni non sono ancora stati pubblicati perché nelle fasi iniziali della loro creazione.
         </div>
     </div>
     <div class="max-w-fit mx-auto -mt-6">
-        <ul class="flex bg-stone-900 shadow-stone-900/70 shadow-lg p-2 rounded-xl space-x-2">
+        <ul class="flex bg-slate-900 shadow-stone-900/70 shadow-lg p-2 rounded-xl space-x-2">
             {%for category in categories%}
                 <li>
                     <a onclick="showOnly(this)" data-category="{{category.id}}" class="
@@ -38,10 +38,10 @@
                         px-6
                         inline-block
                         rounded-lg
-                        hover:bg-stone-700/50
+                        hover:bg-slate-700/70
                         {%if category.id == 'all'%}
-                            bg-violet-700
-                            hover:bg-violet-700
+                            bg-violet-600
+                            hover:bg-violet-600
                         {%endif%}
                     ">{{category.label}}</a>
                 </li>
@@ -52,16 +52,16 @@
         <div class="grid grid-cols-3 gap-4">
             {%for project in portfolio.projects%}
                 <div class="
-                    bg-stone-900
-                    shadow-stone-900/70
+                    bg-slate-900
+                    shadow-slate-900/70
                     shadow-lg
                     hover:bg-gradient-to-br
                     hover:shadow-xl
                     group
-                    hover:shadow-stone-900/90
-                    hover:bg-violet-900
-                    hover:from-violet-600
-                    hover:to-violet-900
+                    hover:shadow-slate-900/90
+                    hover:bg-blue-900
+                    hover:from-blue-600
+                    hover:to-blue-900
                     transition-colors
                     duration-200
                     p-8
@@ -91,7 +91,7 @@
                         </div>
                         <div class="text-md">
                             {%for tool in project.tools%}
-                                <span class="inline-block text-stone-200 group-hover:text-white bg-stone-800/80 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
+                                <span class="inline-block text-stone-200 group-hover:text-white bg-black/50 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
                             {%endfor%}
                         </div>
                     </div>
@@ -102,13 +102,13 @@
     <script type="text/javascript">
         function showOnly(e) {
             let id = e.getAttribute("data-category");
-            let currentSelector = document.getElementsByClassName("bg-violet-700")[0];
+            let currentSelector = document.getElementsByClassName("bg-violet-600")[0];
             let projects = document.getElementsByClassName("project");
 
-            currentSelector.classList.remove("bg-violet-700");
-            currentSelector.classList.remove("hover:bg-violet-700");
-            e.classList.add("bg-violet-700");
-            e.classList.add("hover:bg-violet-700");
+            currentSelector.classList.remove("bg-violet-600");
+            currentSelector.classList.remove("hover:bg-violet-600");
+            e.classList.add("bg-violet-600");
+            e.classList.add("hover:bg-violet-600");
 
             if (id == "all") {
                 for (i = 0; i < projects.length; i++) {
