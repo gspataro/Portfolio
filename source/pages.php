@@ -11,5 +11,8 @@ return [
     "./about.html" => [
         "template" => "about",
         "data" => "about"
+    ],
+    "./contacts.html" => [
+        "template" => "contacts"
     ]
 ];
