@@ -33,6 +33,11 @@
                 "link": "https://linked.in/in/gspataro96",
                 "icon": "fa-brands fa-linkedin",
                 "label": "Linkedin"
+            },
+            {
+                "link": "https://twitter.com/gspataro96",
+                "icon": "fa-brands fa-twitter",
+                "label": "Twitter"
             }
         ]
     }
