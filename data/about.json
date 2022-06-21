@@ -3,20 +3,13 @@
         "skills": {
             "music": [
                 {
-                    "name": "Di cosa posso occuparmi:",
+                    "name": "Cosa mi piace fare:",
                     "content": "Concerti, Insegnamento"
                 },
                 {
-                    "name": "Di quali generi mi occupo:",
+                    "name": "Di cosa mi occupo:",
                     "list": [
-                        "Classico",
-                        "Romantico"
-                    ]
-                },
-                {
-                    "name": "Cosa so fare:",
-                    "list": [
-                        "Pianoforte",
+                        "Tecnica",
                         "Teoria Musicale",
                         "Accompagnamento"
                     ]
