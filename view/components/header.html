@@ -1,16 +1,65 @@
 <div class="bg-slate-900">
-    <div class="w-2/3 mx-auto flex items-center py-8">
+    <div class="px-4 xl:px-0 xl:w-2/3 mx-auto flex items-center py-8">
         <div class="basis-1/2">
             <div class="w-fit hover:animate-pulse">
                 <a href="./index.html">
-                    <span class="text-3xl uppercase">Giuseppe <b class="font-semibold">Spataro</b></span>
-                    <div class="text-lg text-center text-white/70">Sviluppatore Web &bullet; Pianista</div>
+                    <div class="hidden xl:block">
+                        <span class="text-3xl uppercase">Giuseppe <b class="font-semibold">Spataro</b></span>
+                        <div class="text-lg text-center text-white/70">Sviluppatore Web &bullet; Pianista</div>
+                    </div>
+                    <div class="xl:hidden">
+                        <span class="text-3xl uppercase border-2 border-slate-200 p-3">G<b class="font-semibold">S</b></span>
+                    </div>
                 </a>
             </div>
         </div>
-        <div class="basis-1/2 text-xl text-right">
-            <div class="max-w-fit ml-auto">
-                {{include("./components/navbar.html")}}
+        <div class="basis-1/2 text-xl">
+            <div class="block lg:hidden text-right text-3xl">
+                <a onclick="uiOpenNavbar()" class="py-3 px-4 inline-block text-white hover:text-white/70 cursor-pointer">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+            <div class="
+                hidden
+                fixed
+                top-0
+                bottom-0
+                right-0
+                w-full
+                md:w-1/2
+                p-8
+                bg-slate-900
+                shadow-slate-900
+                shadow-lg
+                lg:block
+                lg:static
+                lg:w-full
+                lg:p-0
+                lg:bg-transparent
+                lg:shadow-none
+            " id="navbar">
+                <div class="overlay md:fixed top-0 left-0 bottom-0 w-1/2 md:bg-black/30 lg:hidden" onclick="uiCloseNavbar()"></div>
+                <div class="absolute lg:hidden top-2 right-2 text-2xl">
+                    <a onclick="uiCloseNavbar()" class="py-3 px-4 inline-block text-white hover:text-white/70 cursor-pointer">
+                        <i class="fa-solid fa-times"></i>
+                    </a>
+                </div>
+                <ul class="flex flex-col space-y-1 lg:flex-row lg:justify-end lg:space-y-0 lg:space-x-1 -mr-4 whitespace-nowrap">
+                    {%for item in layout.navbar%}
+                        <li>
+                            <a href="{{item.link}}" class="
+                                py-3 px-4 inline-block
+                                font-semibold
+                                {%if item.target == page.label%}
+                                    text-violet-300
+                                {%else%}
+                                    hover:text-white/70
+                                    text-white
+                                {%endif%}
+                            ">{{item.label}}</a>
+                        </li>
+                    {%endfor%}
+                </ul>
             </div>
         </div>
     </div>
