@@ -6,16 +6,40 @@
 {%block content%}
     <div class="flex-1">
         <div class="bg-violet-600 pt-20 pb-36">
-            <div class="w-2/3 mx-auto text-2xl text-justify">
+            <div class="w-full px-4 text-2xl text-justify xl:w-2/3 xl:px-0 xl:mx-auto">
                 Sono un Maestro specializzato in pianoforte con approfondite conoscenze nell'ambito dello sviluppo web. Ho una forte passione per tutto ciò che riguarda la musica e la tecnologia.
                 Anche se a primo impatto le due materie non sembrano collegate, ritengo che musica e programmazione abbiano molto in comune e che entrambe siano una forma d'arte e amo utilizzare una disciplina a supporto dell'altra.
                 Amo la puntualità, l'organizzazione e la precisione.
             </div>
         </div>
         <div class="pb-32">
-            <div class="w-2/3 text-xl mx-auto">
-                <div class="flex space-x-14">
-                    <div class="basis-1/2 grow-0 bg-slate-900 shadow-lg shadow-slate-900 p-14 rounded-2xl -mt-20">
+            <div class="w-full px-4 text-xl xl:w-2/3 xl:px-0 md:mx-auto">
+                <div class="bg-slate-800 rounded-t-xl -mt-20 md:hidden">
+                    <ul class="flex items-stretch">
+                        <li class="flex-1 text-center hidden" id="selector-musician">
+                            <a onclick="toggleProfession()" class="flex w-full py-4 px-8 rounded-t-xl hover:bg-slate-700">
+                                <div>
+                                    <i class="fa-solid fa-angle-left"></i>
+                                </div>
+                                <div class="flex-1">
+                                    Musicista
+                                </div>
+                            </a>
+                        </li>
+                        <li class="flex-1" id="selector-developer">
+                            <a onclick="toggleProfession()" class="flex w-full py-4 px-8 rounded-t-xl hover:bg-slate-700">
+                                <div class="flex-1">
+                                    Sviluppatore Web
+                                </div>
+                                <div>
+                                    <i class="fa solid fa-angle-right"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex md:space-x-4 xl:space-x-14">
+                    <div class="w-full grow-0 bg-slate-900 shadow-lg shadow-slate-900 p-14 rounded-b-xl md:block md:basis-1/2 md:rounded-2xl md:-mt-20" id="musician">
                         <div class="text-center">
                             <span class="text-5xl text-cyan-400"><i class="fa-solid fa-music"></i></span>
                             <h2 class="my-5 font-semibold">Musicista</h2>
@@ -25,7 +49,7 @@
                         </p>
                         {{include("./components/skills.html", {"skills": about.skills.music})}}
                     </div>
-                    <div class="basis-1/2 grow-0 bg-slate-900 shadow-lg shadow-slate-900 p-14 rounded-2xl -mt-20">
+                    <div class="w-full grow-0 bg-slate-900 shadow-lg shadow-slate-900 p-14 rounded-b-xl hidden md:block md:basis-1/2 md:rounded-2xl md:-mt-20" id="developer">
                         <div class="text-center">
                             <span class="text-5xl text-cyan-400"><i class="fa-solid fa-code"></i></span>
                             <h2 class="my-5 font-semibold">Sviluppatore Web</h2>
@@ -39,4 +63,27 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        let cardMusician = document.getElementById("musician");
+        let cardDeveloper = document.getElementById("developer");
+        let selectorMusician = document.getElementById("selector-musician");
+        let selectorDeveloper = document.getElementById("selector-developer");
+
+        function toggleProfession() {
+            /*if (profession == "musician") {
+                cardMusician.classList.remove("hidden");
+                cardDeveloper.classList.add("hidden");
+                selectorMusician.classList.add("hidden");
+                selectorDeveloper.classList.remove("hidden");
+            } else if (profession == "developer") {
+                cardMusician.classList.add("hidden");
+                cardDeveloper.classList.remove("hidden");
+                selectorMusician.classList.ad
+            }*/
+            cardMusician.classList.toggle("hidden");
+            cardDeveloper.classList.toggle("hidden");
+            selectorMusician.classList.toggle("hidden");
+            selectorDeveloper.classList.toggle("hidden");
+        }
+    </script>
 {%endblock%}
