@@ -1,5 +1,21 @@
 {
     "about": {
+        "studies": [
+            {
+                "name": "Laurea Magistrale - Pianoforte",
+                "institute": "Conservatorio V. Bellini",
+                "location": "Catania (CT)",
+                "date": "2019 - 2022",
+                "vote": "110/110 cum laude"
+            },
+            {
+                "name": "Laurea Triennale - Pianoforte",
+                "institute": "Conservatorio V. Bellini",
+                "location": "Catania (CT)",
+                "date": "2016 - 2019",
+                "vote": "110/110 cum laude"
+            }
+        ],
         "skills": {
             "music": [
                 {
