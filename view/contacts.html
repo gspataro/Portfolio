@@ -6,21 +6,21 @@
 {%block content%}
     <div class="flex-1">
         <div class="bg-indigo-500 pt-14 pb-24">
-            <div class="w-2/3 mx-auto">
+            <div class="w-full px-4 xl:w-2/3 xl:p-0 xl:mx-auto">
                 <h1>Contattami</h1>
             </div>
         </div>
         <div class="pb-20 -mt-16">
-            <div class="w-2/3 flex items-start space-x-10 mx-auto">
-                <div class="bg-slate-900 shadow-lg shadow-slate-900 rounded-xl basis-1/3 p-8">
+            <div class="w-full px-4 flex flex-col space-y-10 items-start xl:w-2/3 xl:px-0 xl:mx-auto xl:flex-row xl:space-y-0 xl:space-x-10">
+                <div class="bg-slate-900 shadow-lg shadow-slate-900 rounded-xl w-full xl:w-auto xl:basis-1/3 p-8">
                     <p class="text-lg text-justify">
-                        Usa il form qui di lato per contattarmi. Nel caso in cui il form non dovesse essere disponibile, puoi contattarmi utilizzando le piattaforme social qui di seguito:
+                        Usa il form presente in questa pagina per contattarmi. Poiché il form si appoggia su un servizio esterno, se non dovesse essere disponibile puoi contattarmi utilizzando le piattaforme social qui di seguito:
                     </p>
                     <div class="max-w-fit mx-auto text-2xl mt-10">
                         {{include("./components/socials.html")}}
                     </div>
                 </div>
-                <div class="bg-slate-900 shadow-lg shadow-slate-900 rounded-xl basis-2/3 p-8">
+                <div class="bg-slate-900 shadow-lg shadow-slate-900 rounded-xl w-full xl:w-auto xl:basis-2/3 p-8">
                     <div class="text-center text-xl hidden" id="success">
                         <div class="mb-6 text-6xl text-green-500">
                             <i class="fa-regular fa-circle-check"></i>
@@ -33,7 +33,7 @@
                         </p>
                     </div>
                     <form action="https://forms.un-static.com/forms/8ddfb135579bf13ce8270a0afaa8382dbd456e51" id="form" method="post">
-                        <div class="flex space-x-6 mb-6">
+                        <div class="flex flex-col space-y-6 mb-6 lg:flex-row lg:space-y-0 lg:space-x-6">
                             <div class="basis-1/2">
                                 <input type="text" name="name" placeholder="Nome e Cognome" class="w-full p-3 rounded-lg text-lg bg-slate-700 placeholder:text-white/50" required />
                             </div>
