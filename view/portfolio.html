@@ -24,13 +24,25 @@
 {%block content%}
     <div class="flex-1">
         <div class="bg-gradient-to-br bg-blue-500 py-20">
-            <div class="w-2/3 mx-auto text-2xl text-justify">
+            <div class="w-full px-4 xl:w-2/3 xl:px-0 xl:mx-auto text-2xl text-justify">
                 In questa sezione troverai tutti i progetti pubblici ai quali ho lavorato che ho deciso di inserire in questa pagina.
                 Alcuni di questi progetti sono ancora in fase di sviluppo e tra questi alcuni non sono ancora stati pubblicati perché nelle fasi iniziali della loro creazione.
             </div>
         </div>
-        <div class="max-w-fit mx-auto -mt-6">
-            <ul class="flex bg-slate-900 shadow-stone-900/70 shadow-lg p-2 rounded-xl space-x-2">
+        <div class="w-full sm:max-w-fit sm:mx-auto -mt-6 whitespace-nowrap">
+            <ul class="
+                flex
+                flex-col
+                justify-center
+                bg-slate-900
+                shadow-stone-900/70
+                shadow-lg
+                sm:p-2
+                sm:space-x-2
+                sm:flex-row
+                sm:px-2
+                sm:rounded-xl
+                ">
                 {%for category in categories%}
                     <li>
                         <a onclick="showOnly(this)" data-category="{{category.id}}" class="
@@ -38,7 +50,10 @@
                             py-3
                             px-6
                             inline-block
-                            rounded-lg
+                            w-full
+                            text-center
+                            sm:rounded-lg
+                            sm:w-auto
                             {%if category.id == 'all'%}
                                 bg-violet-600
                                 hover:bg-violet-600
@@ -50,8 +65,8 @@
                 {%endfor%}
             </ul>
         </div>
-        <div class="w-2/3 mx-auto py-10">
-            <div class="grid grid-cols-3 gap-4">
+        <div class="w-full px-4 lg:px-0 lg:w-2/3 lg:mx-auto py-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-4 md:gap-x-4">
                 {%for project in portfolio.projects%}
                     <div class="
                         bg-slate-900
