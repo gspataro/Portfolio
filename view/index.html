@@ -4,44 +4,22 @@
 }%}
 {%extends "./layout.html"%}
 {%block content%}
-    <div class="w-full px-4 xl:px-0 xl:w-2/3 xl:mx-auto flex-1 flex flex-col py-10 space-y-10">
-        <div class="bg-gradient-to-br bg-violet-900 from-violet-600 to-violet-900 p-8 rounded-xl flex-1 flex flex-col justify-center">
-            <div class="text-3xl xl:w-2/4 xl:mx-auto text-center">
-                Ciao, benvenuto nel mio sito web personale, mi chiamo Giuseppe Spataro e sono un pianista e sviluppatore web siciliano.
-            </div>
-        </div>
-        <div class="text-2xl text-center">
-            Cosa troverai su questo sito:
-        </div>
-        <div class="basis-2/3">
-            <div class="flex flex-col space-y-10 lg:flex-row lg:space-y-0 lg:space-x-10">
-                <div class="bg-slate-900 p-8 rounded-xl basis-1/3 text-center">
-                    <h2 class="mb-4 font-semibold">Portfolio</h2>
-                    <p class="mb-8">
-                        I progetti pubblici sui quali ho lavorato o che sto mantenendo.
-                    </p>
-                    <div class="text-center">
-                        <a href="./portfolio.html" class="py-3 px-6 bg-blue-500 hover:bg-blue-500/80 rounded-lg">Esplora i Progetti</a>
-                    </div>
-                </div>
-                <div class="bg-slate-900 p-8 rounded-xl basis-1/3 text-center">
-                    <h2 class="mb-4 font-semibold">Biografia</h2>
-                    <p class="mb-8">
-                        La mia biografia personale con un breve riassunto delle mie skills maturate negli anni.
-                    </p>
-                    <div class="text-center">
-                        <a href="./about.html" class="py-3 px-6 bg-blue-500 hover:bg-blue-500/80 rounded-lg">Visualizza Biografia</a>
-                    </div>
-                </div>
-                <div class="bg-slate-900 p-8 rounded-xl basis-1/3 text-center">
-                    <h2 class="mb-4 font-semibold">Contatti</h2>
-                    <p class="mb-8">
-                        Una pagina con i link alle mie pagine sui social networks e un form per contattarmi.
-                    </p>
-                    <div class="text-center">
-                        <a href="./contacts.html" class="py-3 px-6 bg-blue-500 hover:bg-blue-500/80 rounded-lg">Contattami</a>
-                    </div>
-                </div>
+    <div class="flex-1 flex flex-col justify-center py-10 bg-gradient-to-br bg-violet-900 from-violet-600 to-violet-900">
+        <div class="w-full px-4 xl:w-2/3 xl:px-0 xl:mx-auto">
+            <p class="text-4xl mb-2">
+                Benvenuto,
+            </p>
+            <p class="text-4xl my-2">
+                il mio nome è
+            </p>
+            <h1 class="text-6xl uppercase font-semibold my-2">Giuseppe Spataro,</h1>
+            <h2 class="text-4xl mt-2">
+                sono un pianista e sviluppatore web
+            </h2>
+            <div class="mt-12">
+                <a href="./about.html" class="inline-block py-4 px-10 bg-slate-900/70 rounded-xl text-xl">
+                    Contattami
+                </a>
             </div>
         </div>
     </div>
