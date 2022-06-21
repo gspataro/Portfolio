@@ -38,3 +38,6 @@ foreach ($pages as $outputPath => $page) {
 
     compilePage($outputPath, $page['template'], $data, $twig);
 }
+
+$assets = require_once DIR_SOURCE . "/assets.php";
+copyAssets($assets);

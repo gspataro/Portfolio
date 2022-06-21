@@ -34,3 +34,24 @@ function compilePage(string $outputPath, string $template, array $data, \Twig\En
     $compiledTemplate = $twig->render("{$template}.html", $data);
     file_put_contents(DIR_PUBLIC . "{$outputPath}", $compiledTemplate);
 }
+
+/**
+ * Copy assets to the public dir
+ *
+ * @param array $assets
+ * @return void
+ */
+
+function copyAssets(array $assets): void
+{
+    foreach ($assets as $asset => $output) {
+        $asset = DIR_VIEW . "/assets/{$asset}";
+        $output = DIR_PUBLIC . "/assets/{$output}";
+
+        if (!is_file($asset)) {
+            throw new Exception("Asset not found: '{$asset}'.");
+        }
+
+        copy($asset, $output);
+    }
+}
