@@ -2,6 +2,24 @@
     "portfolio": {
         "projects": [
             {
+                "name": "Dependency Injection",
+                "category": "component",
+                "links": {
+                    "github": "https://github.com/gspataro/DependencyInjection"
+                },
+                "tools": ["PHP"],
+                "description": "Un container per la gestione semplificata del boot di un applicativo tramite l'uso della dependency injection. Il container può registrare componenti interi o singoli servizi."
+            },
+            {
+                "name": "CLI",
+                "category": "component",
+                "links": {
+                    "github": "https://github.com/gspataro/CLI"
+                },
+                "tools": ["PHP"],
+                "description": "Componente per la creazione di script facilmente estendibili ed eseguibili via riga di comando. Include una classe per formattare il testo come output del terminale in maniera semplificata."
+            },
+            {
                 "name": "Portfolio",
                 "category": "website",
                 "links": {
