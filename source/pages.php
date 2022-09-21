@@ -4,15 +4,15 @@ return [
     "/index.html" => [
         "template" => "index",
     ],
-    "./portfolio.html" => [
+    "/portfolio.html" => [
         "template" => "portfolio",
         "data" => "portfolio"
     ],
-    "./about.html" => [
+    "/about.html" => [
         "template" => "about",
         "data" => "about"
     ],
-    "./contacts.html" => [
+    "/contacts.html" => [
         "template" => "contacts"
     ]
 ];
