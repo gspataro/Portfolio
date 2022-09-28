@@ -11,12 +11,16 @@
 
     <body class="bg-slate-800 text-white m-0 p-0 min-h-screen">
         <div class="flex flex-col min-h-screen">
-            {{include("./components/header.html")}}
+            {%if not page.exclude_header%}
+                {{include("./components/header.html")}}
+            {%endif%}
             {%block content%}
                 <div class="flex-1">
                 </div>
             {%endblock%}
-            {{include("./components/footer.html")}}
+            {%if not page.exclude_footer%}
+                {{include("./components/footer.html")}}
+            {%endif%}
         </div>
     </body>
 </html>
