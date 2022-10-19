@@ -2,7 +2,7 @@
 
 return [
     "/index.html" => [
-        "template" => "index",
+        "template" => "onepage",
     ],
     "/portfolio.html" => [
         "template" => "portfolio",
