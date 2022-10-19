@@ -6,6 +6,9 @@ module.exports = {
   content: ["./view/**/*.html"],
   theme: {
     colors: {
+        "transparent": "transparent",
+        "black": "#000000",
+        "white": "#ffffff",
         "thunder": {
             "lightest": "#656465",
             "lighter": "#4f4d4f",
@@ -42,6 +45,31 @@ module.exports = {
             "dark": "#ddd5c0",
             "darker": "#c5beaa",
             "darkest": "#aca695"
+        }
+    },
+    spacing: {
+        DEFAULT: "0",
+        "3xs": "0.25rem",
+        "2xs": "0.5rem",
+        "xs": "1rem",
+        "sm": "1.5rem",
+        "md": "2rem",
+        "lg": "3rem",
+        "xl": "5rem",
+        "2xl": "7rem",
+        "3xl": "9rem"
+    },
+    screens: {
+        "tablet": "768px",
+        "laptop": "1024px",
+        "desktop": "1280px"
+    },
+    container: {
+        center: true,
+        padding: {
+            DEFAULT: "0.5rem",
+            "tablet": "1rem",
+            "desktop": "0"
         }
     },
     extend: {},
