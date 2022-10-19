@@ -3,22 +3,22 @@
     "layout": {
         "navbar": [
             {
-                "link": "./index.html",
+                "link": "/index.html",
                 "label": "Home",
                 "target": "index"
             },
             {
-                "link": "./portfolio.html",
+                "link": "/portfolio.html",
                 "label": "Portfolio",
                 "target": "portfolio"
             },
             {
-                "link": "./about.html",
+                "link": "/about.html",
                 "label": "Chi sono",
                 "target": "about"
             },
             {
-                "link": "./contacts.html",
+                "link": "/contacts.html",
                 "label": "Contatti",
                 "target": "contacts"
             }
