@@ -5,6 +5,45 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: ["./view/**/*.html"],
   theme: {
+    colors: {
+        "thunder": {
+            "lightest": "#656465",
+            "lighter": "#4f4d4f",
+            "light": "#393739",
+            DEFAULT: "#232123",
+            "dark": "#393739",
+            "darker": "#191719",
+            "darkest": "#121112"
+
+        },
+        "fawn": {
+            "lightest": "#ac7e6d",
+            "lighter": "#a16b58",
+            "light": "#955943",
+            DEFAULT: "#89462E",
+            "dark": "#7b3f29",
+            "darker": "#6e3825",
+            "darkest": "#603120"
+        },
+        "brass": {
+            "lightest": "#d9ad8d",
+            "lighter": "#d4a17d",
+            "light": "#ce966c",
+            DEFAULT: "#C98A5C",
+            "dark": "#b57c53",
+            "darker": "#a16e4a",
+            "darkest": "#8d6140"
+        },
+        "ablescent": {
+            "lightest": "#f9f2e2",
+            "lighter": "#f8f1dd",
+            "light": "#f7efd9",
+            DEFAULT: "#F6EDD5",
+            "dark": "#ddd5c0",
+            "darker": "#c5beaa",
+            "darkest": "#aca695"
+        }
+    },
     extend: {},
   },
   plugins: [
