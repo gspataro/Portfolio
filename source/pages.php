@@ -14,5 +14,8 @@ return [
     ],
     "/contacts.html" => [
         "template" => "contacts"
+    ],
+    "/colors.html" => [
+        "template" => "colors"
     ]
 ];
