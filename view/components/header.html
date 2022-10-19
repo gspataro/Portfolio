@@ -1,67 +1,32 @@
-<div class="bg-slate-900">
-    <div class="px-4 xl:px-0 xl:w-2/3 mx-auto flex items-center py-8">
-        <div class="basis-1/2">
-            <div class="w-fit hover:animate-pulse">
-                <a href="./index.html">
-                    <div class="hidden xl:block">
-                        <span class="text-3xl uppercase">Giuseppe <b class="font-semibold">Spataro</b></span>
-                        <div class="text-lg text-center text-white/70">Sviluppatore Web &bullet; Pianista</div>
-                    </div>
-                    <div class="xl:hidden">
-                        <span class="text-3xl uppercase border-2 border-slate-200 p-3">G<b class="font-semibold">S</b></span>
-                    </div>
-                </a>
-            </div>
+<div id="header" class="bg-thunder-darker fixed top left right py-xs">
+    <div class="container flex items-center">
+        <div class="justify-self-start">
+            <a href="/" class="inline-block p-2xs border border-ablescent text-2xl">
+                G<b>S</b>
+            </a>
         </div>
-        <div class="basis-1/2 text-xl">
-            <div class="block lg:hidden text-right text-3xl">
-                <a onclick="uiOpenNavbar()" class="py-3 px-4 inline-block text-white hover:text-white/70 cursor-pointer">
-                    <i class="fa-solid fa-bars"></i>
-                </a>
-            </div>
-            <div class="
-                hidden
-                fixed
-                z-10
-                top-0
-                bottom-0
-                right-0
-                w-full
-                md:w-1/2
-                p-8
-                bg-slate-900
-                shadow-slate-900
-                shadow-lg
-                lg:block
-                lg:static
-                lg:w-full
-                lg:p-0
-                lg:bg-transparent
-                lg:shadow-none
-            " id="navbar">
-                <div class="overlay md:fixed top-0 left-0 bottom-0 w-1/2 md:bg-black/30 lg:hidden" onclick="uiCloseNavbar()"></div>
-                <div class="absolute lg:hidden top-2 right-2 text-2xl">
-                    <a onclick="uiCloseNavbar()" class="py-3 px-4 inline-block text-white hover:text-white/70 cursor-pointer">
-                        <i class="fa-solid fa-times"></i>
-                    </a>
+        <div class="flex-1"></div>
+        <div class="justify-self-end">
+            <a href="javascript:void(0)" id="navbar-toggle" class="inline-block text-2xl p-2xs tablet:hidden">
+                <span class="open">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </span>
+                <span class="close hidden">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </a>
+            <div id="navbar" class="bg-thunder-darkest fixed left right bottom hidden tablet:bg-transparent tablet:static tablet:block">
+                <div class="container py-xs tablet:w-auto tablet:max-w-full tablet:p">
+                    <ul class="grid gap-xs mt-lg text-center text-xl tablet:flex tablet:mt tablet:text-left tablet:text-lg">
+                        {%for item in layout.navbar%}
+                            <li>
+                                <a href="{{item.link}}">{{item.label}}</a>
+                            </li>
+                        {%endfor%}
+                    </ul>
                 </div>
-                <ul class="flex flex-col space-y-1 lg:flex-row lg:justify-end lg:space-y-0 lg:space-x-1 -mr-4 whitespace-nowrap">
-                    {%for item in layout.navbar%}
-                        <li>
-                            <a href="{{item.link}}" class="
-                                py-3 px-4 inline-block
-                                font-semibold
-                                {%if item.target == page.label%}
-                                    text-violet-300
-                                {%else%}
-                                    hover:text-white/70
-                                    text-white
-                                {%endif%}
-                            ">{{item.label}}</a>
-                        </li>
-                    {%endfor%}
-                </ul>
             </div>
         </div>
     </div>
 </div>
+<div id="header-placeholder"></div>
