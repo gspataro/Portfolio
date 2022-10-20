@@ -1,12 +1,19 @@
-<div class="bg-slate-900 ">
-    <div class="w-full px-4 xl:px-0 xl:w-2/3 flex flex-col space-y-4 lg:space-y-0 lg:flex-row mx-auto py-8 text-xl">
-        <div class="basis-1/2 text-center lg:text-left">
+<div class="container">
+    <div class="flex flex-col items-center gap-2xs py-xs border-t-2 border-t-thunder tablet:flex-row desktop:py-sm">
+        <div class="text-center tablet:justify-self-start">
             {{copyright|raw}}
         </div>
-        <div class="basis-1/2">
-            <div class="max-w-fit mx-auto lg:mr-0 lg:ml-auto">
-                {{include("./components/socials.html")}}
-            </div>
+        <div class="hidden tablet:block tablet:flex-1"></div>
+        <div class="tablet:justify-self-end">
+            <ul class="flex gap-xs justify-center items-center">
+                {%for item in layout.socials%}
+                    <li>
+                        <a href="{{item.link}}" class="text-xl" target="_blank">
+                            <i class="{{item.icon}}"></i>
+                        </a>
+                    </li>
+                {%endfor%}
+            </ul>
         </div>
     </div>
 </div>
