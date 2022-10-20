@@ -1,8 +1,14 @@
 <div id="header" class="bg-thunder-darker fixed top left right py-xs">
     <div class="container flex items-center">
         <div class="justify-self-start">
-            <a href="/" class="inline-block p-2xs border border-ablescent text-2xl">
-                G<b>S</b>
+            <a href="/" class="text-2xl">
+                <span class="block p-2xs border border-ablescent-darkest laptop:hidden">
+                    G<b>S</b>
+                </span>
+                <div class="hidden laptop:flex laptop:flex-col text-center">
+                    <span class="uppercase">Giuseppe <b>Spataro</b></span>
+                    <span class="text-ablescent-darker text-sm">Web Developer &bullet; Pianist</span>
+                </div>
             </a>
         </div>
         <div class="flex-1"></div>
@@ -17,10 +23,10 @@
             </a>
             <div id="navbar" class="bg-thunder-darkest fixed left right bottom hidden tablet:bg-transparent tablet:static tablet:block">
                 <div class="container py-xs tablet:w-auto tablet:max-w-full tablet:p">
-                    <ul class="grid gap-xs mt-lg text-center text-xl tablet:flex tablet:mt tablet:text-left tablet:text-lg">
+                    <ul class="grid gap-xs mt-lg text-center text-xl tablet:flex tablet:mt tablet:text-left tablet:text-lg laptop:gap-sm">
                         {%for item in layout.navbar%}
                             <li>
-                                <a href="{{item.link}}">{{item.label}}</a>
+                                <a href="{{item.link}}" {%if page.label == item.target%}class="underline decoration-fawn-dark decoration-2 underline-offset-[10px]"{%endif%}>{{item.label}}</a>
                             </li>
                         {%endfor%}
                     </ul>
