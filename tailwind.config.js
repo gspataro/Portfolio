@@ -69,7 +69,7 @@ module.exports = {
         padding: {
             DEFAULT: "0.5rem",
             "tablet": "1rem",
-            "desktop": "0"
+            "desktop": "0.5rem"
         }
     },
     extend: {},
