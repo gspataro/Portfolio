@@ -1,7 +1,9 @@
 {
-    "portfolio_featured": [
-        "website.portfolio",
-        "component.dependencyinjection",
-        "component.cli"
-    ]
+    "index": {
+        "portfolio_featured": [
+            "website.portfolio",
+            "component.dependencyinjection",
+            "component.cli"
+        ]
+    }
 }

@@ -4,6 +4,6 @@
 
 @layer components {
     .link-highlight {
-        @apply underline decoration-fawn-dark decoration-2 underline-offset-[10px];
+        @apply underline decoration-fawn-light decoration-2 decoration-wavy underline-offset-[10px] hover:decoration-fawn-lighter;
     }
 }

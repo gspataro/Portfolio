@@ -20,19 +20,29 @@
         <!-- Separator -->
         <div class="text-center text-6xl text-fawn">&tilde; &tilde; &tilde;</div>
         <!-- Portfolio -->
-        <div class="py-2xl text-right">
-            <p class="text-4xl mb-3xs">
-                Visita
-            </p>
-            <p class="text-4xl my-3xs">
-                <a href="/portfolio.html" class="link-highlight">il mio portfolio</a>,
-            </p>
-            <p class="text-4xl">ecco alcuni dei miei progetti preferiti:</p>
-        </div>
         <div class="py-2xl">
-            {%for item_key in index.portfolio_featured%}
-                {{include("./components/portfolio_item.html")}}
-            {%endfor%}
+            <div class="text-right">
+                <p class="text-4xl mb-3xs">Visita</p>
+                <p class="text-4xl my-2xs">
+                    <a href="/portfolio.html" class="link-highlight">il mio portfolio</a>,
+                </p>
+                <p class="text-4xl">ecco alcuni dei miei progetti preferiti:</p>
+            </div>
+            <div class="grid gap-sm mt-xl laptop:grid-cols-3">
+                {%for item_key in index.portfolio_featured%}
+                    {{include("./components/portfolio_item.html")}}
+                {%endfor%}
+            </div>
+        </div>
+        <!-- Separator -->
+        <div class="text-center text-6xl text-fawn">&tilde; &tilde; &tilde;</div>
+        <!-- Contacts -->
+        <div class="py-2xl">
+            <p class="text-4xl mb-3xs">Se hai bisogno</p>
+            <p class="text-4xl my-3xs">di ulteriori informazioni</p>
+            <p class="text-4xl mt-3xs">
+                <a href="/contacts.html" class="link-highlight">contattami</a>
+            </p>
         </div>
     </div>
 {%endblock%}
