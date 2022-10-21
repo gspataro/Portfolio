@@ -3,6 +3,7 @@
 return [
     "/index.html" => [
         "template" => "index",
+        "data" => ["index", "portfolio"]
     ],
     "/portfolio.html" => [
         "template" => "portfolio",

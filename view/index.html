@@ -3,25 +3,36 @@
 }%}
 {%extends "./layout.html"%}
 {%block content%}
-    <div class="flex-1 flex flex-col justify-center py-10 bg-gradient-to-br bg-violet-900 from-violet-600 to-violet-900">
-        <div class="w-full px-4 xl:w-2/3 xl:px-0 xl:mx-auto">
-            <p class="text-4xl mb-2">
+    <div class="container flex-1">
+        <!-- Welcome -->
+        <div class="py-2xl">
+            <p class="text-4xl mb-3xs">
                 Benvenuto,
             </p>
-            <p class="text-4xl my-2">
+            <p class="text-4xl my-3xs">
                 il mio nome è
             </p>
-            <h1 class="text-6xl uppercase font-semibold my-2">Giuseppe Spataro,</h1>
-            <h2 class="text-4xl mt-2">
-                sono un <span class="whitespace-nowrap">pianista e</span> sviluppatore web
+            <h1 class="text-6xl uppercase my-3xs"><span class="text-brass">Giuseppe Spataro</span>,</h1>
+            <h2 class="text-4xl mt-3xs">
+                sono un <span class="whitespace-nowrap">pianista e</span> sviluppatore web<span class="animate-pulse">_</span>
             </h2>
-            <div class="mt-12">
-                <a href="./contacts.html" class="inline-block relative py-4 px-10 bg-slate-900/70 hover:bg-slate-900/90 rounded-xl text-xl">
-                    Contattami
-                    <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-blue-600 animate-ping"></span>
-                    <span class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-blue-500"></span>
-                </a>
-            </div>
+        </div>
+        <!-- Separator -->
+        <div class="text-center text-6xl text-fawn">&tilde; &tilde; &tilde;</div>
+        <!-- Portfolio -->
+        <div class="py-2xl text-right">
+            <p class="text-4xl mb-3xs">
+                Visita
+            </p>
+            <p class="text-4xl my-3xs">
+                <a href="/portfolio.html" class="link-highlight">il mio portfolio</a>,
+            </p>
+            <p class="text-4xl">ecco alcuni dei miei progetti preferiti:</p>
+        </div>
+        <div class="py-2xl">
+            {%for item_key in index.portfolio_featured%}
+                {{include("./components/portfolio_item.html")}}
+            {%endfor%}
         </div>
     </div>
 {%endblock%}

@@ -1,0 +1,7 @@
+{
+    "portfolio_featured": [
+        "website.portfolio",
+        "component.dependencyinjection",
+        "component.cli"
+    ]
+}
