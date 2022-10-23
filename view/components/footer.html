@@ -2,10 +2,10 @@
     <!-- Contacts -->
     {%if not page.exclude_contact_footer%}
         <div class="py-2xl">
-            <p class="text-4xl mb-3xs">Se hai bisogno</p>
-            <p class="text-4xl my-3xs">di ulteriori informazioni</p>
+            <p class="text-4xl mb-3xs">{{lang.footer.ifyouneed|default('Se hai bisogno')}}</p>
+            <p class="text-4xl my-3xs">{{lang.footer.info|default('di ulteriori informazioni')}}</p>
             <p class="text-4xl mt-3xs">
-                <a href="/contacts.html" class="link-highlight">contattami</a>
+                <a href="{{lang.urlPrefix}}/contacts.html" class="link-highlight">{{lang.footer.contactme|default('contattami')}}</a>
             </p>
         </div>
     {%endif%}

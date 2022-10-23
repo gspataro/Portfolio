@@ -21,22 +21,32 @@ $twig->addExtension(new \Twig\Extra\String\StringExtension());
 // Generate pages based on pages.php data
 
 $pages = require_once DIR_SOURCE . "/pages.php";
+$langs = getData("locale");
+$defaultLang = "it";
 $globalData = getData("global");
 
-foreach ($pages as $outputPath => $page) {
-    $data = $globalData;
+foreach ($langs as $lang => $dictionary) {
+    $globalData['lang'] = $dictionary + [
+        'current' => $lang,
+        'urlPrefix' => $lang != $defaultLang ? "/{$lang}" : ""
+    ];
 
-    if (isset($page['data']) && !empty($page['data'])) {
-        if (is_array($page['data'])) {
-            foreach ($page['data'] as $dataFileName) {
-                $data += getData($dataFileName);
+    foreach ($pages as $outputPath => $page) {
+        $data = $globalData;
+        $outputPathPrefix = $lang != $defaultLang ? "/{$lang}" : "";
+
+        if (isset($page['data']) && !empty($page['data'])) {
+            if (is_array($page['data'])) {
+                foreach ($page['data'] as $dataFileName) {
+                    $data += getData($dataFileName);
+                }
+            } else {
+                $data += getData($page['data']);
             }
-        } else {
-            $data += getData($page['data']);
         }
-    }
 
-    compilePage($outputPath, $page['template'], $data, $twig);
+        compilePage($outputPathPrefix . $outputPath, $page['template'], $data, $twig);
+    }
 }
 
 $assets = require_once DIR_SOURCE . "/assets.php";

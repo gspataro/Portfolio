@@ -1,7 +1,7 @@
 <div id="header" class="bg-thunder-darker/90 fixed top left right z-20 py-xs laptop:py-sm">
     <div class="container flex items-center">
         <div class="justify-self-start">
-            <a href="/" class="text-2xl">
+            <a href="{{lang.urlPrefix}}/" class="text-2xl">
                 <span class="block p-2xs border border-ablescent-darkest laptop:hidden">
                     G<b>S</b>
                 </span>
@@ -26,9 +26,18 @@
                     <ul class="grid gap-xs mt-lg text-center text-xl tablet:flex tablet:mt tablet:text-left tablet:text-lg laptop:gap-sm">
                         {%for item in layout.navbar%}
                             <li>
-                                <a href="{{item.link}}" {%if page.label == item.target%}class="underline decoration-fawn-dark decoration-2 underline-offset-[10px]"{%endif%}>{{item.label}}</a>
+                                <a href="{{lang.urlPrefix}}{{item.link}}" {%if page.label == item.target%}class="underline decoration-fawn-dark decoration-2 underline-offset-[10px]"{%endif%}>
+                                    {{lang.navbar[item.target]|default(item.label)}}
+                                </a>
                             </li>
                         {%endfor%}
+                        <li>
+                            {%if lang.current == "it"%}
+                                <a href="/en">English</a>
+                            {%elseif lang.current == "en"%}
+                                <a href="/">Italiano</a>
+                            {%endif%}
+                        </li>
                     </ul>
                 </div>
             </div>
