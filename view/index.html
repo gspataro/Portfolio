@@ -3,46 +3,38 @@
 }%}
 {%extends "./layout.html"%}
 {%block content%}
-    <div class="container flex-1">
+    <div class="flex-1">
         <!-- Welcome -->
-        <div class="py-2xl">
-            <p class="text-4xl mb-3xs">
-                Benvenuto,
-            </p>
-            <p class="text-4xl my-3xs">
-                il mio nome è
-            </p>
-            <h1 class="text-6xl uppercase my-3xs"><span class="text-brass">Giuseppe Spataro</span>,</h1>
-            <h2 class="text-4xl mt-3xs">
-                sono un <span class="whitespace-nowrap">pianista e</span> sviluppatore web<span class="animate-pulse">_</span>
-            </h2>
-        </div>
-        <!-- Separator -->
-        <div class="text-center text-6xl text-fawn">&tilde; &tilde; &tilde;</div>
-        <!-- Portfolio -->
-        <div class="py-2xl">
-            <div class="text-right">
-                <p class="text-4xl mb-3xs">Visita</p>
-                <p class="text-4xl my-2xs">
-                    <a href="/portfolio.html" class="link-highlight">il mio portfolio</a>,
+        <div class="py-2xl section-arrow-down after:border-t-thunder-darkest">
+            <div class="container">
+                <p class="text-4xl mb-3xs">
+                    Benvenuto,
                 </p>
-                <p class="text-4xl">ecco alcuni dei miei progetti preferiti:</p>
-            </div>
-            <div class="grid gap-sm mt-xl laptop:grid-cols-3">
-                {%for item_key in index.portfolio_featured%}
-                    {{include("./components/portfolio_item.html")}}
-                {%endfor%}
+                <p class="text-4xl my-3xs">
+                    il mio nome è
+                </p>
+                <h1 class="text-6xl uppercase my-3xs"><span class="text-brass">Giuseppe Spataro</span>,</h1>
+                <h2 class="text-4xl mt-3xs">
+                    sono un <span class="whitespace-nowrap">pianista e</span> sviluppatore web<span class="animate-pulse">_</span>
+                </h2>
             </div>
         </div>
-        <!-- Separator -->
-        <div class="text-center text-6xl text-fawn">&tilde; &tilde; &tilde;</div>
-        <!-- Contacts -->
-        <div class="py-2xl">
-            <p class="text-4xl mb-3xs">Se hai bisogno</p>
-            <p class="text-4xl my-3xs">di ulteriori informazioni</p>
-            <p class="text-4xl mt-3xs">
-                <a href="/contacts.html" class="link-highlight">contattami</a>
-            </p>
+        <!-- Portfolio -->
+        <div class="py-2xl bg-thunder-darker section-arrow-down after:border-t-thunder-darker">
+            <div class="container">
+                <div class="text-right">
+                    <p class="text-4xl mb-3xs">Visita</p>
+                    <p class="text-4xl my-2xs">
+                        <a href="/portfolio.html" class="link-highlight">il mio portfolio</a>,
+                    </p>
+                    <p class="text-4xl">ecco alcuni dei miei progetti preferiti:</p>
+                </div>
+                <div class="grid gap-sm mt-xl laptop:grid-cols-3">
+                    {%for item_key in index.portfolio_featured%}
+                        {{include("./components/portfolio_item.html")}}
+                    {%endfor%}
+                </div>
+            </div>
         </div>
     </div>
 {%endblock%}

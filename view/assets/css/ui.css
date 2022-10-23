@@ -4,6 +4,25 @@
 
 @layer components {
     .link-highlight {
-        @apply underline decoration-fawn-light decoration-2 decoration-wavy underline-offset-[10px] hover:decoration-fawn-lighter;
+        @apply
+            underline
+            decoration-fawn-light
+            decoration-2
+            decoration-wavy
+            underline-offset-[10px]
+            hover:decoration-fawn-lighter;
+    }
+
+    .section-arrow-down {
+        @apply
+            relative
+            after:content-['']
+            after:absolute after:bottom-[-50px]
+            after:left-[50%]
+            after:translate-x-[-50%]
+            after:mt-[25px]
+            after:border-[25px]
+            after:border-transparent
+            after:z-10;
     }
 }
