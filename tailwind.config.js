@@ -72,7 +72,38 @@ module.exports = {
             "desktop": "0.5rem"
         }
     },
-    extend: {},
+    extend: {
+        animation: {
+            nogravity: 'nogravity 25s linear infinite',
+            nogravitynegative: 'nogravitynegative 25s linear infinite'
+        },
+        keyframes: {
+            nogravity: {
+                "0%": {
+                    transform: "translateY(0) translateX(0) rotate(0deg)",
+                    opacity: 1,
+                    "border-radius": 0
+                },
+                "100%": {
+                    transform: "translateY(-1000px) translateX(500px) rotate(720deg)",
+                    opacity: 0,
+                    "border-radius": 5
+                }
+            },
+            nogravitynegative: {
+                "0%": {
+                    transform: "translateY(0) translateX(0) rotate(0deg)",
+                    opacity: 1,
+                    "border-radius": 0
+                },
+                "100%": {
+                    transform: "translateY(-1000px) translateX(-500px) rotate(720deg)",
+                    opacity: 0,
+                    "border-radius": 5
+                }
+            }
+        }
+    },
   },
   plugins: [
     plugin(function({addBase, theme}) {

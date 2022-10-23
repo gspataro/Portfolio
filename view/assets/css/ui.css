@@ -25,4 +25,64 @@
             after:border-transparent
             after:z-10;
     }
+
+    .bg-squares {
+        @apply
+            absolute
+            inset
+            overflow-hidden
+            -z-10;
+    }
+
+    .bg-squares li {
+        @apply
+            bg-thunder-light
+            block
+            absolute
+            w-[20px]
+            h-[20px]
+            -bottom-[150px];
+    }
+
+    .bg-squares li:nth-child(1) {
+        @apply
+            left-[25%]
+            w-[80px]
+            h-[80px]
+            animate-nogravity;
+
+        animation-delay: 3s;
+        animation-duration: 15s;
+    }
+
+    .bg-squares li:nth-child(2) {
+        @apply
+            left-[10%]
+            animate-nogravity;
+
+        animation-delay: 2s;
+        animation-duration: 12s;
+    }
+
+    .bg-squares li:nth-child(3) {
+        @apply
+            left-[50%]
+            w-[40px]
+            h-[40px]
+            animate-nogravitynegative;
+
+        animation-delay: 4s;
+        animation-duration: 13s;
+    }
+
+    .bg-squares li:nth-child(4) {
+        @apply
+            left-[55%]
+            w-[80px]
+            h-[80px]
+            animate-nogravitynegative;
+
+        animation-delay: 6s;
+        animation-duration: 15s;
+    }
 }
