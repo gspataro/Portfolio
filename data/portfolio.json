@@ -1,5 +1,11 @@
 {
     "portfolio": {
+        "categories": {
+            "all": "Tutto",
+            "website": "Siti Web",
+            "library": "Librerie",
+            "component": "Componenti"
+        },
         "projects": {
             "component.dependencyinjection": {
                 "name": "Dependency Injection",

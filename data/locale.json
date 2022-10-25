@@ -20,6 +20,10 @@
             "visit": "Visit",
             "myportfolio": "my portfolio",
             "featured": "here are some of my favourite projects"
+        },
+        "portfolio": {
+            "welcome": "This is my portfolio",
+            "what": "here you can find most of my personal public projects"
         }
     },
     "it": {
@@ -43,6 +47,10 @@
             "visit": "Visita",
             "myportfolio": "il mio portfolio",
             "featured": "ecco alcuni dei miei progetti preferiti"
+        },
+        "portfolio": {
+            "welcome": "Questo è il mio portfolio",
+            "what": "qui troverai molti dei miei progetti personali pubblici"
         }
     }
 }

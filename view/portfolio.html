@@ -1,156 +1,37 @@
 {%set page = {
-    "label": "portfolio",
-    "title": "Portfolio"
+    "label": "portfolio"
 }%}
-{%extends "./layout.html"%}
-{%set categories = [
-    {
-        "label": "Tutti",
-        "id": "all"
-    },
-    {
-        "label": "Siti Web",
-        "id": "website"
-    },
-    {
-        "label": "Librerie",
-        "id": "library"
-    },
-    {
-        "label": "Componenti",
-        "id": "component"
-    }
-]%}
+{%extends "layout.html"%}
 {%block content%}
-    <div class="flex-1">
-        <div class="bg-gradient-to-br bg-blue-500 py-20">
-            <div class="w-full px-4 xl:w-2/3 xl:px-0 xl:mx-auto text-2xl text-justify">
-                <h1 class="mb-8">Portfolio</h1>
-                <p class="mt-8">
-                    In questa sezione troverai tutti i progetti pubblici ai quali ho lavorato che ho deciso di inserire in questa pagina.
-                    Alcuni di questi progetti sono ancora in fase di sviluppo e tra questi alcuni non sono ancora stati pubblicati perché nelle fasi iniziali della loro creazione.
-                </p>
-            </div>
+    <div class="py-2xl">
+        <div class="container">
+            <p class="text-4xl mb-3xs">
+                {{lang.portfolio.welcome|default('Questo è il mio portfolio')}},
+            </p>
+            <p class="text-4xl my-3xs">
+                {{lang.portfolio.what|default('qui troverai molti dei miei progetti personali pubblici')}}
+            </p>
         </div>
-        <div class="w-full sm:max-w-fit sm:mx-auto -mt-6 whitespace-nowrap">
-            <ul class="
-                flex
-                flex-col
-                justify-center
-                bg-slate-900
-                shadow-stone-900/70
-                shadow-lg
-                sm:p-2
-                sm:space-x-2
-                sm:flex-row
-                sm:px-2
-                sm:rounded-xl
-                ">
-                {%for category in categories%}
-                    <li>
-                        <a onclick="showOnly(this)" data-category="{{category.id}}" class="
-                            cursor-pointer
-                            py-3
-                            px-6
-                            inline-block
-                            w-full
-                            text-center
-                            sm:rounded-lg
-                            sm:w-auto
-                            {%if category.id == 'all'%}
-                                bg-violet-600
-                                hover:bg-violet-600
-                            {%else%}
-                                hover:bg-slate-700/70
-                            {%endif%}
-                        ">{{category.label}}</a>
+    </div>
+    <div class="bg-thunder-darker">
+        <div class="flex w-full tablet:w-min tablet:mx-auto sharp-corners overflow-x-hidden">
+            <ul class="flex gap-3xs bg-thunder-darkest overflow-x-auto tablet:overflow-x-hidden">
+                {%for id, category in portfolio.categories%}
+                    <li class="whitespace-nowrap">
+                        <a href="javascript:void(0)" data-show="{{id}}" class="block py-2xs px-xs uppercase tablet:py-xs tablet:px-sm {%if id == 'all'%}active{%endif%}">
+                            {{category}}
+                        </a>
                     </li>
                 {%endfor%}
             </ul>
         </div>
-        <div class="w-full px-4 lg:px-0 lg:w-2/3 lg:mx-auto py-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-4 md:gap-x-4">
-                {%for project in portfolio.projects%}
-                    <div class="
-                        bg-slate-900
-                        shadow-slate-900/70
-                        shadow-lg
-                        hover:bg-gradient-to-br
-                        hover:shadow-xl
-                        group
-                        hover:shadow-slate-900/90
-                        hover:bg-blue-900
-                        hover:from-blue-600
-                        hover:to-blue-900
-                        transition-colors
-                        duration-200
-                        p-8
-                        rounded-xl
-                        project
-                    " id="{{project.category}}">
-                        <div class="flex flex-col min-h-full">
-                            <div class="flex items-center">
-                                <div class="flex-1">
-                                    <h3 class="font-semibold">{{project.name}}</h3>
-                                </div>
-                                <div class="text-2xl text-right">
-                                    {%if project.links.github%}
-                                        <a href="{{project.links.github}}" target="_blank" class="hover:text-white/60">
-                                            <i class="fa-brands fa-github"></i>
-                                        </a>
-                                    {%endif%}
-                                    {%if project.links.website%}
-                                        <a href="{{project.links.website}}" class="ml-2 hover:text-white/60" target="_blank">
-                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                        </a>
-                                    {%endif%}
-                                </div>
-                            </div>
-                            <div class="flex-1 py-6 text-lg text-justify">
-                                {{project.description|u.truncate(225, "...", false)}}
-                            </div>
-                            <div class="text-md">
-                                {%for tool in project.tools%}
-                                    <span class="inline-block text-stone-200 group-hover:text-white bg-black/50 py-1 px-2 mb-1 rounded-xl">{{tool}}</span>
-                                {%endfor%}
-                            </div>
-                        </div>
-                    </div>
-                {%endfor%}
-            </div>
+    </div>
+    <div class="py-2xl bg-thunder-darker">
+        <div class="container grid gap-sm grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3">
+            {%for item_key, project in portfolio.projects%}
+                {{include("./components/portfolio_item.html")}}
+            {%endfor%}
         </div>
     </div>
-    <script type="text/javascript">
-        function showOnly(e) {
-            let id = e.getAttribute("data-category");
-            let currentSelector = document.getElementsByClassName("bg-violet-600")[0];
-            let projects = document.getElementsByClassName("project");
-
-            currentSelector.classList.remove("bg-violet-600");
-            currentSelector.classList.remove("hover:bg-violet-600");
-            currentSelector.classList.add("hover:bg-slate-700/70");
-            e.classList.add("bg-violet-600");
-            e.classList.add("hover:bg-violet-600");
-            e.classList.remove("hover:bg-slate-700/70");
-
-            if (id == "all") {
-                for (i = 0; i < projects.length; i++) {
-                    projects[i].style.display = "";
-                }
-
-                return;
-            } else {
-                let toHide = document.querySelectorAll("div.project:not(#"+id+")");
-                let toShow = document.querySelectorAll("#"+id);
-
-                for (i = 0; i < toHide.length; i++) {
-                    toHide[i].style.display = "none";
-                }
-
-                for (i = 0; i < toShow.length; i++) {
-                    toShow[i].style.display = "";
-                }
-            }
-        }
-    </script>
+    <script src="/assets/js/portfolio.js" type="text/javascript"></script>
 {%endblock%}
