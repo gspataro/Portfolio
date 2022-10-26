@@ -13,12 +13,12 @@
             },
             "about": {
                 "link": "/about.html",
-                "label": "Chi sono",
+                "label": {"it": "Chi Sono", "en": "About Me"},
                 "target": "about"
             },
             "contacts": {
                 "link": "/contacts.html",
-                "label": "Contatti",
+                "label": {"it": "Contatti", "en": "Contacts"},
                 "target": "contacts"
             }
         },
