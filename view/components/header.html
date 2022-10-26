@@ -33,9 +33,9 @@
                         {%endfor%}
                         <li>
                             {%if lang.current == "it"%}
-                                <a href="/en">English</a>
+                                <a href="/en/{{page.path}}">English</a>
                             {%elseif lang.current == "en"%}
-                                <a href="/">Italiano</a>
+                                <a href="/{{page.path}}">Italiano</a>
                             {%endif%}
                         </li>
                     </ul>
