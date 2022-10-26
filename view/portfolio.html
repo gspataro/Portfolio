@@ -20,7 +20,7 @@
             <ul class="flex gap-3xs bg-thunder-darkest overflow-x-auto tablet:overflow-x-hidden">
                 {%for id, category in portfolio.categories%}
                     <li class="whitespace-nowrap">
-                        <a href="javascript:void(0)" data-show="{{id}}" class="block py-2xs px-xs uppercase tablet:py-xs tablet:px-sm {%if id == 'all'%}active{%endif%}">
+                        <a href="javascript:void(0)" data-show="{{id}}" class="block px-xs uppercase tablet:py-xs tablet:px-sm {%if id == 'all'%}active{%endif%}">
                             {{('portfolio.categories.'~id)|localize}}
                         </a>
                     </li>
