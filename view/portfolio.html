@@ -15,22 +15,22 @@
         </div>
     </div>
     <div class="bg-thunder-darker">
-        <div class="flex max-w-full w-full tablet:w-min tablet:mx-auto sharp-corners overflow-x-hidden">
-            <div class="-ml-[20px] tablet:ml-[0] border-[20px] tablet:border-[28px] border-solid border-transparent border-t-thunder-darkest border-r-thunder-darkest z-10"></div>
-            <ul class="flex gap-3xs bg-thunder-darkest overflow-x-auto tablet:overflow-x-hidden">
-                {%for id, category in portfolio.categories%}
-                    <li class="whitespace-nowrap">
-                        <a href="javascript:void(0)" data-show="{{id}}" class="block px-xs uppercase tablet:py-xs tablet:px-sm {%if id == 'all'%}active{%endif%}">
-                            {{('portfolio.categories.'~id)|localize}}
-                        </a>
-                    </li>
-                {%endfor%}
-            </ul>
-            <div class="-mr-[20px] tablet:mr-[0] border-[20px] tablet:border-[28px] border-solid border-transparent border-t-thunder-darkest border-l-thunder-darkest z-10"></div>
+        <div id="categories" class="sticky z-10">
+            <div class="flex max-w-full w-full tablet:w-min tablet:mx-auto sharp-corners overflow-x-hidden">
+                <div class="-ml-[20px] tablet:ml-[0] border-[20px] tablet:border-[28px] border-solid border-transparent border-t-thunder-darkest border-r-thunder-darkest z-10"></div>
+                <ul class="flex gap-3xs bg-thunder-darkest overflow-x-auto tablet:overflow-x-hidden">
+                    {%for id, category in portfolio.categories%}
+                        <li class="whitespace-nowrap">
+                            <a href="javascript:void(0)" data-show="{{id}}" class="block px-xs uppercase tablet:py-xs tablet:px-sm {%if id == 'all'%}active{%endif%}">
+                                {{('portfolio.categories.'~id)|localize}}
+                            </a>
+                        </li>
+                    {%endfor%}
+                </ul>
+                <div class="-mr-[20px] tablet:mr-[0] border-[20px] tablet:border-[28px] border-solid border-transparent border-t-thunder-darkest border-l-thunder-darkest z-10"></div>
+            </div>
         </div>
-    </div>
-    <div class="py-2xl bg-thunder-darker">
-        <div class="container grid gap-sm grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3">
+        <div class="container py-2xl grid gap-sm grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3">
             {%for item_key, project in portfolio.projects%}
                 {{include("./components/portfolio_item.html")}}
             {%endfor%}

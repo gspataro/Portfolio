@@ -1,5 +1,5 @@
 {%set item = portfolio.projects[item_key]%}
-<div class="flex flex-col gap-xs bg-thunder-light p-sm rounded-2xl" data-category="{{item.category}}">
+<div class="flex flex-col gap-xs bg-thunder-light p-sm rounded-2xl laptop:transition-transform laptop:duration-75 laptop:hover:scale-105" data-category="{{item.category}}">
     <div class="flex gap-3xs items-center">
         <h2 class="flex-1">{{('portfolio.projects.' ~ item_key ~ '.name')|localize}}</h2>
         {%if item.links%}

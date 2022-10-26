@@ -1,5 +1,9 @@
+const categoriesElement = document.getElementById("categories");
+
 document.addEventListener("DOMContentLoaded", () => {
     const categories = document.querySelectorAll("[data-show]");
+
+    categoriesElement.style.top = headerHeight;
 
     categories.forEach((anchor) => {
         anchor.addEventListener("click", () => {
@@ -18,4 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
             anchor.classList.add("active");
         });
     });
+});
+
+window.addEventListener("resize", () => {
+    setTimeout(() => {
+        categoriesElement.style.top = headerHeight;
+        console.log("ok");
+    }, 1);
 });
