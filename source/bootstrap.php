@@ -21,12 +21,28 @@ $twig->addExtension(new \Twig\Extra\String\StringExtension());
 // Generate pages based on pages.php data
 
 $pages = require_once DIR_SOURCE . "/pages.php";
-$langs = getData("locale");
+$langs = ["it", "en"];
 $defaultLang = "it";
 $globalData = getData("global");
 
-foreach ($langs as $lang => $dictionary) {
-    $globalData['lang'] = $dictionary + [
+$twig->addFilter(new \Twig\TwigFilter("localize", function ($context, $string) {
+    $keys = explode(".", $string);
+    $lang = $context['lang']['current'];
+    $current = $context;
+
+    foreach ($keys as $key) {
+        $current = $current[$key] ?? null;
+    }
+
+    if (is_null($current)) {
+        return $string;
+    }
+
+    return $current[$lang] ?? $current;
+}, ['needs_context' => true]));
+
+foreach ($langs as $lang) {
+    $globalData['lang'] = [
         'current' => $lang,
         'urlPrefix' => $lang != $defaultLang ? "/{$lang}" : ""
     ];

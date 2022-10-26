@@ -8,16 +8,16 @@
         <div class="py-2xl section-arrow-down after:border-t-thunder-darkest">
             <div class="container">
                 <p class="text-4xl mb-3xs">
-                    {{lang.index.welcome|default('Benvenuto')}},
+                    {{'index.hero.welcome'|localize}},
                 </p>
                 <p class="text-4xl my-3xs">
-                    {{lang.index.mynameis|default('il mio nome è')}}
+                    {{'index.hero.mynameis'|localize}}
                 </p>
                 <h1 class="text-6xl uppercase my-3xs"><span class="text-brass">Giuseppe Spataro</span>,</h1>
                 <h2 class="text-4xl mt-3xs">
-                    {{lang.index.iama|default('sono un')}}
-                    <span class="whitespace-nowrap">{{lang.index.pianist|default('pianista e')}}</span>
-                    <span class="whitespace-nowrap">{{lang.index.developer|default('sviluppatore web')}}<span class="animate-pulse">_</span></span>
+                    {{'index.hero.iama'|localize}}
+                    <span class="whitespace-nowrap">{{'index.hero.pianist'|localize}}</span>
+                    <span class="whitespace-nowrap">{{'index.hero.developer'|localize}}<span class="animate-pulse">_</span></span>
                 </h2>
             </div>
             <ul class="bg-squares">
@@ -31,11 +31,11 @@
         <div class="py-2xl bg-thunder-darker section-arrow-down after:border-t-thunder-darker">
             <div class="container">
                 <div class="text-right">
-                    <p class="text-4xl mb-3xs">{{lang.index.visit|default('Visita')}}</p>
+                    <p class="text-4xl mb-3xs">{{'index.portfolio.visit'|localize}}</p>
                     <p class="text-4xl my-2xs">
-                        <a href="{{lang.urlPrefix}}/portfolio.html" class="link-highlight">{{lang.index.myportfolio|default('il mio portfolio')}}</a>,
+                        <a href="{{lang.urlPrefix}}/portfolio.html" class="link-highlight">{{'index.portfolio.link'|localize}}</a>,
                     </p>
-                    <p class="text-4xl">{{lang.index.featured|default('ecco alcuni dei miei progetti preferiti')}}:</p>
+                    <p class="text-4xl">{{'index.portfolio.featured'|localize}}:</p>
                 </div>
                 <div class="grid gap-sm mt-xl laptop:grid-cols-3">
                     {%for item_key in index.portfolio_featured%}

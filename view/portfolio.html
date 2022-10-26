@@ -6,10 +6,10 @@
     <div class="py-2xl">
         <div class="container">
             <p class="text-4xl mb-3xs">
-                {{lang.portfolio.welcome|default('Questo è il mio portfolio')}},
+                {{'portfolio.hero.welcome'|localize}},
             </p>
             <p class="text-4xl my-3xs">
-                {{lang.portfolio.what|default('qui troverai molti dei miei progetti personali pubblici')}}
+                {{'portfolio.hero.what'|localize}}
             </p>
         </div>
     </div>
@@ -20,7 +20,7 @@
                 {%for id, category in portfolio.categories%}
                     <li class="whitespace-nowrap">
                         <a href="javascript:void(0)" data-show="{{id}}" class="block py-2xs px-xs uppercase tablet:py-xs tablet:px-sm {%if id == 'all'%}active{%endif%}">
-                            {{category}}
+                            {{('portfolio.categories.'~id)|localize}}
                         </a>
                     </li>
                 {%endfor%}

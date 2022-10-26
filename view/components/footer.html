@@ -2,17 +2,17 @@
     <!-- Contacts -->
     {%if not page.exclude_contact_footer%}
         <div class="py-2xl">
-            <p class="text-4xl mb-3xs">{{lang.footer.ifyouneed|default('Se hai bisogno')}}</p>
-            <p class="text-4xl my-3xs">{{lang.footer.info|default('di ulteriori informazioni')}}</p>
+            <p class="text-4xl mb-3xs">{{'layout.footer.contacts.ifyouneed'|localize}}</p>
+            <p class="text-4xl my-3xs">{{'layout.footer.contacts.info'|localize}}</p>
             <p class="text-4xl mt-3xs">
-                <a href="{{lang.urlPrefix}}/contacts.html" class="link-highlight">{{lang.footer.contactme|default('contattami')}}</a>
+                <a href="{{lang.urlPrefix}}/contacts.html" class="link-highlight">{{'layout.footer.contacts.contactme'|localize}}</a>
             </p>
         </div>
     {%endif%}
     <!-- Copyright and Social -->
     <div class="flex flex-col items-center gap-2xs py-xs border-t-2 border-t-thunder tablet:flex-row desktop:py-sm">
         <div class="text-center tablet:justify-self-start">
-            {{copyright|raw}}
+            {{layout.footer.copyright|raw}}
         </div>
         <div class="hidden tablet:block tablet:flex-1"></div>
         <div class="tablet:justify-self-end">

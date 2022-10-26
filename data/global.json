@@ -1,28 +1,35 @@
 {
-    "copyright": "&copy; 2022 Giuseppe Spataro. All rights reserved.",
     "layout": {
-        "navbar": [
-            {
+        "navbar": {
+            "index": {
                 "link": "/index.html",
                 "label": "Home",
                 "target": "index"
             },
-            {
+            "portfolio": {
                 "link": "/portfolio.html",
                 "label": "Portfolio",
                 "target": "portfolio"
             },
-            {
+            "about": {
                 "link": "/about.html",
                 "label": "Chi sono",
                 "target": "about"
             },
-            {
+            "contacts": {
                 "link": "/contacts.html",
                 "label": "Contatti",
                 "target": "contacts"
             }
-        ],
+        },
+        "footer": {
+            "contacts": {
+                "ifyouneed": {"it": "Se hai bisogno", "en": "If you need"},
+                "info": {"it": "di ulteriori informazioni", "en": "more informations"},
+                "contactme": {"it": "contattami", "en": "contact me"}
+            },
+            "copyright": "&copy; 2022 Giuseppe Spataro. All rights reserved."
+        },
         "socials": [
             {
                 "link": "https://github.com/gspataro",

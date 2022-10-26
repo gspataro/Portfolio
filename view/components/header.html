@@ -24,10 +24,10 @@
             <div id="navbar" class="bg-thunder-darkest fixed left right bottom hidden tablet:bg-transparent tablet:static tablet:block">
                 <div class="container py-xs tablet:w-auto tablet:max-w-full tablet:p">
                     <ul class="grid gap-xs mt-lg text-center text-xl tablet:flex tablet:mt tablet:text-left tablet:text-lg laptop:gap-sm">
-                        {%for item in layout.navbar%}
+                        {%for id, item in layout.navbar%}
                             <li>
                                 <a href="{{lang.urlPrefix}}{{item.link}}" {%if page.label == item.target%}class="underline decoration-fawn-dark decoration-2 underline-offset-[10px]"{%endif%}>
-                                    {{lang.navbar[item.target]|default(item.label)}}
+                                    {{('layout.navbar.'~id~'.label')|localize}}
                                 </a>
                             </li>
                         {%endfor%}

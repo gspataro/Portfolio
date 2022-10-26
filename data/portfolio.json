@@ -1,13 +1,17 @@
 {
     "portfolio": {
+        "hero": {
+            "welcome": {"it": "Questo è il mio portfolio", "en": "This is my portfolio"},
+            "what": {"it": "qui troverai molti dei miei progetti personali pubblici", "en": "here you can find most of my personal public projects"}
+        },
         "categories": {
-            "all": "Tutto",
-            "website": "Siti Web",
-            "library": "Librerie",
-            "component": "Componenti"
+            "all": {"it": "Tutto", "en": "All"},
+            "website": {"it": "Siti Web", "en": "Websites"},
+            "library": {"it": "Librerie", "en": "Libraries"},
+            "component": {"it": "Componenti", "en": "Components"}
         },
         "projects": {
-            "component.dependencyinjection": {
+            "component_dependencyinjection": {
                 "name": "Dependency Injection",
                 "category": "component",
                 "links": {
@@ -16,7 +20,7 @@
                 "tools": ["PHP"],
                 "description": "Un container per la gestione semplificata del boot di un applicativo tramite l'uso della dependency injection. Il container può registrare componenti interi o singoli servizi."
             },
-            "component.cli": {
+            "component_cli": {
                 "name": "CLI",
                 "category": "component",
                 "links": {
@@ -25,7 +29,7 @@
                 "tools": ["PHP"],
                 "description": "Componente per la creazione di script facilmente estendibili ed eseguibili via riga di comando. Include una classe per formattare il testo come output del terminale in maniera semplificata."
             },
-            "website.portfolio": {
+            "website_portfolio": {
                 "name": "Portfolio",
                 "category": "website",
                 "links": {
@@ -35,7 +39,7 @@
                 "tools": ["PHP", "Tailwind CSS", "HTML", "Javascript"],
                 "description": "Script in PHP utilizzabile via riga di comando per generare la versione statica del mio portfolio partendo da dei template, compilati utilizzando Twig, e dei dati in formato JSON. Per il frontend ho utilizzato Tailwind CSS."
             },
-            "library.pdash": {
+            "library_pdash": {
                 "name": "PDash-API",
                 "category": "library",
                 "links": {
@@ -44,7 +48,7 @@
                 "tools": ["PHP", "MySQL"],
                 "description": "CRUD API realizzate utilizzando vanilla PHP e alcuni componenti custom per la gestione di una dashboard personale (todo, note). La libreria è stata creata per essere facilmente estendibile."
             },
-            "component.routing": {
+            "component_routing": {
                 "name": "Routing",
                 "category": "component",
                 "links": {
@@ -53,7 +57,7 @@
                 "tools": ["PHP"],
                 "description": "Un componente scritto in PHP per la gestione della richiesta da parte dell'utente e della risposta da parte del server con un sistema di routing facilmente estendibile."
             },
-            "component.filesystem": {
+            "component_filesystem": {
                 "name": "FileSystem",
                 "category": "component",
                 "links": {
@@ -62,7 +66,7 @@
                 "tools": ["PHP"],
                 "description": "Un componente scritto in PHP per la gestione del filesystem con un sistema ad oggetti."
             },
-            "component.utilities": {
+            "component_utilities": {
                 "name": "Utilities",
                 "category": "component",
                 "links": {

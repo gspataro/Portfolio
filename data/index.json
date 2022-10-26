@@ -1,9 +1,21 @@
 {
     "index": {
+        "hero": {
+            "welcome": {"it": "Benvenuto", "en": "Welcome"},
+            "mynameis": {"it": "il mio nome è", "en": "my name is"},
+            "iama": {"it": "sono un", "en": "I'm a"},
+            "pianist": {"it": "pianista e", "en": "pianist and"},
+            "developer": {"it": "sviluppatore web", "en": "web developer"}
+        },
+        "portfolio": {
+            "visit": {"it": "Visita", "en": "Visit"},
+            "link": {"it": "il mio portfolio", "en": "my portfolio"},
+            "featured": {"it": "ecco alcuni dei miei progetti preferiti", "en": "here are some of my favourite projects"}
+        },
         "portfolio_featured": [
-            "website.portfolio",
-            "component.dependencyinjection",
-            "component.cli"
+            "website_portfolio",
+            "component_dependencyinjection",
+            "component_cli"
         ]
     }
 }
