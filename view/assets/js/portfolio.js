@@ -1,28 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     const categories = document.querySelectorAll("[data-show]");
 
-    categories.forEach((e) => {
-        e.addEventListener("click", () => {
+    categories.forEach((anchor) => {
+        anchor.addEventListener("click", () => {
             document.querySelectorAll(".active[data-show]").forEach((e) => {
                 e.classList.remove("active");
             });
 
-            document.querySelectorAll("[data-category]").forEach((e) => {
-                e.style.display = "none";
+            document.querySelectorAll("[data-category]").forEach((item) => {
+                item.style.display =
+                    (anchor.dataset.show == "all" || item.dataset.category == anchor.dataset.show)
+                    ? ""
+                    : "none";
             });
 
-            if (e.dataset.show == 'all') {
-                document.querySelectorAll("[data-category]").forEach((e) => {
-                    e.style.display = "";
-                });
-            } else {
-                console.log(e.dataset.show);
-                document.querySelectorAll("[data-category=" + e.dataset.show + "]").forEach((e) => {
-                    e.style.display = "";
-                });
-            }
 
-            e.classList.add("active");
+            anchor.classList.add("active");
         });
     });
 });
