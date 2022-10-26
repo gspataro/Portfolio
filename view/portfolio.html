@@ -14,7 +14,8 @@
         </div>
     </div>
     <div class="bg-thunder-darker">
-        <div class="flex w-full tablet:w-min tablet:mx-auto sharp-corners overflow-x-hidden">
+        <div class="flex max-w-full w-full tablet:w-min tablet:mx-auto sharp-corners overflow-x-hidden">
+            <div class="-ml-[20px] tablet:ml-[0] border-[20px] tablet:border-[28px] border-solid border-transparent border-t-thunder-darkest border-r-thunder-darkest z-10"></div>
             <ul class="flex gap-3xs bg-thunder-darkest overflow-x-auto tablet:overflow-x-hidden">
                 {%for id, category in portfolio.categories%}
                     <li class="whitespace-nowrap">
@@ -24,6 +25,7 @@
                     </li>
                 {%endfor%}
             </ul>
+            <div class="-mr-[20px] tablet:mr-[0] border-[20px] tablet:border-[28px] border-solid border-transparent border-t-thunder-darkest border-l-thunder-darkest z-10"></div>
         </div>
     </div>
     <div class="py-2xl bg-thunder-darker">

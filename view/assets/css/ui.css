@@ -88,31 +88,6 @@
 }
 
 @layer utilities {
-    .sharp-corners {
-        @apply
-            relative
-            before:content-['']
-            before:-ml-[20px]
-            tablet:before:ml-[0]
-            before:border-[20px]
-            tablet:before:border-[28px]
-            before:border-solid
-            before:border-transparent
-            before:border-t-thunder-darkest
-            before:border-r-thunder-darkest
-            before:z-10
-            after:content-['']
-            after:-mr-[20px]
-            tablet:mr-[0]
-            after:border-[20px]
-            tablet:after:border-[28px]
-            after:border-solid
-            after:border-transparent
-            after:border-t-thunder-darkest
-            after:border-l-thunder-darkest
-            after:z-10;
-    }
-
     .active {
         @apply
             text-brass;
