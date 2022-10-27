@@ -1,112 +1,27 @@
 {%set page = {
     "label": "about",
-    "title": "Chi sono"
+    "title": "Chi sono",
+    "path": "about.html"
 }%}
 {%extends "./layout.html"%}
 {%block content%}
-    <div class="flex-1">
-        <div class="bg-violet-600 pt-20 pb-36">
-            <div class="w-full px-4 text-2xl text-justify xl:w-2/3 xl:px-0 xl:mx-auto">
-                <h1 class="mb-8">Chi sono</h1>
-                <p class="mt-8">
-                    Sono un Maestro specializzato in pianoforte con approfondite conoscenze nell'ambito dello sviluppo web. Ho una forte passione per tutto ciò che riguarda la musica e la tecnologia.
-                    Anche se a primo impatto le due materie non sembrano collegate, ritengo che musica e programmazione abbiano molto in comune, che entrambe siano una forma d'arte e che possano essere utilizzate una a supporto dell'altra.
-                    Amo la puntualità, l'organizzazione e la precisione.
-                </p>
-            </div>
+    <div class="py-2xl">
+        <div class="container">
+            <p class="text-2xl tablet:w-1/2">{{'about.hero'|localize|raw}}</p>
         </div>
-        <div class="pb-20">
-            <div class="w-full px-4 text-xl xl:w-2/3 xl:px-0 md:mx-auto">
-                <div class="bg-slate-800 rounded-t-xl -mt-20 md:hidden">
-                    <ul class="flex items-stretch">
-                        <li class="flex-1 text-center hidden" id="selector-musician">
-                            <a onclick="toggleProfession()" class="flex w-full py-4 px-8 rounded-t-xl hover:bg-slate-700">
-                                <div>
-                                    <i class="fa-solid fa-angle-left"></i>
-                                </div>
-                                <div class="flex-1">
-                                    Pianista
-                                </div>
-                            </a>
-                        </li>
-                        <li class="flex-1" id="selector-developer">
-                            <a onclick="toggleProfession()" class="flex w-full py-4 px-8 rounded-t-xl hover:bg-slate-700">
-                                <div class="flex-1">
-                                    Sviluppatore Web
-                                </div>
-                                <div>
-                                    <i class="fa solid fa-angle-right"></i>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex md:space-x-4 xl:space-x-14">
-                    <div class="w-full grow-0 bg-slate-900 shadow-lg shadow-slate-900 p-14 rounded-b-xl md:block md:basis-1/2 md:rounded-2xl md:-mt-20" id="musician">
-                        <div class="text-center">
-                            <span class="text-5xl text-cyan-400"><i class="fa-solid fa-music"></i></span>
-                            <h2 class="my-5 font-semibold">Pianista</h2>
-                        </div>
-                        <p class="my-10 text-center">
-                            Sostengo concerti come pianista solista e accompagnatore oltre ad insegnare a studenti di qualsiasi età.
-                        </p>
-                        {{include("./components/skills.html", {"skills": about.skills.music})}}
-                    </div>
-                    <div class="w-full grow-0 bg-slate-900 shadow-lg shadow-slate-900 p-14 rounded-b-xl hidden md:block md:basis-1/2 md:rounded-2xl md:-mt-20" id="developer">
-                        <div class="text-center">
-                            <span class="text-5xl text-cyan-400"><i class="fa-solid fa-code"></i></span>
-                            <h2 class="my-5 font-semibold">Sviluppatore Web</h2>
-                        </div>
-                        <p class="my-10 text-center">
-                            Mi piace sviluppare progetti da zero concentrandomi sulla parte backend e impegnandomi a rendere il mio codice facilmente riutilizzabile.
-                        </p>
-                        {{include("./components/skills.html", {"skills": about.skills.development})}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-slate-900/50 py-20">
-            <div class="w-full px-4 xl:w-2/3 xl:px-0 xl:mx-auto">
-                <h1 class="mb-8 text-center">Formazione</h1>
-                <div class="flex flex-col space-y-10 md:flex-row md:space-y-0 md:space-x-10">
-                    {%for study in about.studies%}
-                        <div class="bg-slate-800 rounded-xl p-8 flex-1">
-                            <h2 class="mb-4">{{study.name}}</h2>
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-1 text-lg">
-                                <div>
-                                    <i class="fa-solid fa-calendar-days"></i>
-                                    {{study.date}}
-                                </div>
-                                <div>
-                                    <i class="fa-solid fa-location-pin"></i>
-                                    {{study.location}}
-                                </div>
-                                <div>
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                    {{study.vote}}
-                                </div>
-                                <div>
-                                    <i class="fa-solid fa-building-columns"></i>
-                                    {{study.institute}}
-                                </div>
-                            </div>
-                        </div>
-                    {%endfor%}
-                </div>
+    </div>
+    <div class="py-2xl">
+        <div class="container">
+            <div class="tablet:w-1/2 tablet:ml-xl">
+                <h2 class="text-brass">&lt;{{'about.sections.developer.heading'|localize}}&sol;&gt;</h2>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        let cardMusician = document.getElementById("musician");
-        let cardDeveloper = document.getElementById("developer");
-        let selectorMusician = document.getElementById("selector-musician");
-        let selectorDeveloper = document.getElementById("selector-developer");
-
-        function toggleProfession() {
-            cardMusician.classList.toggle("hidden");
-            cardDeveloper.classList.toggle("hidden");
-            selectorMusician.classList.toggle("hidden");
-            selectorDeveloper.classList.toggle("hidden");
-        }
-    </script>
+    <div class="py-2xl">
+        <div class="container">
+            <div class="tablet:w-1/2">
+                <h2 class="text-brass">&sharp;&flat; {{'about.sections.pianist.heading'|localize}}</h2>
+            </div>
+        </div>
+    </div>
 {%endblock%}
