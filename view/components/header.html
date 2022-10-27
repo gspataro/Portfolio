@@ -26,7 +26,7 @@
                     <ul class="grid gap-xs mt-lg text-center text-xl tablet:flex tablet:mt tablet:text-left tablet:text-lg laptop:gap-sm">
                         {%for id, item in layout.navbar%}
                             <li>
-                                <a href="{{lang.urlPrefix}}{{item.link}}" {%if page.label == item.target%}class="underline decoration-fawn-dark decoration-2 underline-offset-[10px]"{%endif%}>
+                                <a href="{{link(item.link)}}" {%if page.label == item.target%}class="underline decoration-fawn-dark decoration-2 underline-offset-[10px]"{%endif%}>
                                     {{('layout.navbar.'~id~'.label')|localize}}
                                 </a>
                             </li>

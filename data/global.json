@@ -2,22 +2,22 @@
     "layout": {
         "navbar": {
             "index": {
-                "link": "/index.html",
+                "link": "index.html",
                 "label": "Home",
                 "target": "index"
             },
             "portfolio": {
-                "link": "/portfolio.html",
+                "link": "portfolio.html",
                 "label": "Portfolio",
                 "target": "portfolio"
             },
             "about": {
-                "link": "/about.html",
+                "link": "about.html",
                 "label": {"it": "Chi Sono", "en": "About Me"},
                 "target": "about"
             },
             "contacts": {
-                "link": "/contacts.html",
+                "link": "contacts.html",
                 "label": {"it": "Contatti", "en": "Contacts"},
                 "target": "contacts"
             }

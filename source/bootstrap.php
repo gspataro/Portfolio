@@ -41,6 +41,10 @@ $twig->addFilter(new \Twig\TwigFilter("localize", function ($context, $string) {
     return $current[$lang] ?? $current;
 }, ['needs_context' => true]));
 
+$twig->addFunction(new \Twig\TwigFunction("link", function ($context, $path) {
+    return "{$context['lang']['urlPrefix']}/{$path}";
+}, ["needs_context" => true]));
+
 foreach ($langs as $lang) {
     $globalData['lang'] = [
         'current' => $lang,
