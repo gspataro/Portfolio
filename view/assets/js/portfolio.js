@@ -27,6 +27,5 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("resize", () => {
     setTimeout(() => {
         categoriesElement.style.top = headerHeight;
-        console.log("ok");
     }, 1);
 });
