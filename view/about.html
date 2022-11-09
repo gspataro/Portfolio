@@ -7,36 +7,8 @@
 {%block content%}
     <div class="py-2xl">
         <div class="container">
-            <p class="text-2xl tablet:w-2/3 laptop:w-1/2">{{'about.hero'|localize|raw}}</p>
-        </div>
-    </div>
-    <div class="py-2xl">
-        <div class="container">
-            <div class="bg-thunder-dark/30 shadow-black/20 shadow-lg p-sm relative tablet:p-lg laptop:w-2/3 laptop:ml-3xl">
-                <div class="bg-thunder-darker absolute -left-md -top-md bottom-md right-md -z-10"></div>
-                <h2 class="text-brass">&lt;{{'about.sections.developer.heading'|localize}}&sol;&gt;</h2>
-                <p class="text-lg mt-sm">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laborum, quis recusandae tenetur magnam quia modi tempore omnis sapiente aspernatur eos doloribus eaque, quam quisquam minima. Itaque molestias necessitatibus soluta.
-                </p>
-                <ul class="grid grid-cols-3 gap-xs mt-sm">
-                    <li>PHP</li>
-                    <li>MySQL</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Tailwind</li>
-                    <li>Wordpress</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="py-2xl">
-        <div class="container">
-            <div class="bg-thunder-dark/30 shadow-black/20 shadow-lg p-sm relative tablet:p-lg laptop:w-2/3">
-                <div class="bg-thunder-darker absolute -left-md -top-md bottom-md right-md -z-10"></div>
-                <h2 class="text-brass">&sharp;&flat; {{'about.sections.pianist.heading'|localize}}</h2>
-                <p class="text-lg mt-sm">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo laborum, quis recusandae tenetur magnam quia modi tempore omnis sapiente aspernatur eos doloribus eaque, quam quisquam minima. Itaque molestias necessitatibus soluta.
-                </p>
+            <div class="text-2xl tablet:w-2/3 laptop:w-1/2">
+                {{parsedown('about')|raw}}
             </div>
         </div>
     </div>
