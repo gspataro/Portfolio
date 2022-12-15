@@ -4,13 +4,31 @@
             "it": "Sono un pianista e sviluppatore web full stack siciliano.<br />Amo la musica, la tecnologia e le auto.<br />Penso che musica e programmazione siano entrambe forme d'arte, mezzi attraverso i quali dare vita alle proprie idee.",
             "en": "I'm a sicilian pianist and full stack web developer.<br/>I love music, technology and cars.<br />I think that music and programming are both art forms, means by which bring to life our ideas."
         },
-        "sections": {
-            "developer": {
-                "menu": {"it": "Sviluppatore Web", "en": "Web Developer"}
-            },
-            "pianist": {
-                "menu": {"it": "Pianista", "en": "Pianist"}
-            }
+        "developer": {
+            "menu": {"it": "Sviluppatore Web", "en": "Web Developer"},
+            "skills": [
+                "PHP",
+                "MySQL",
+                "Composer",
+                "Twig",
+                "JSON",
+                "HTML",
+                "CSS",
+                "SCSS",
+                "Bootstrap",
+                "Tailwind",
+                "BEM",
+                "Javascript",
+                "JQuery",
+                "Wordpress",
+                "Woocommerce",
+                "Git",
+                "Linux",
+                "npm"
+            ]
+        },
+        "pianist": {
+            "menu": {"it": "Pianista", "en": "Pianist"}
         },
         "studies": [
             {

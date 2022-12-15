@@ -85,6 +85,18 @@
         animation-delay: 6s;
         animation-duration: 15s;
     }
+
+    .typography p {
+        @apply mb-sm;
+    }
+
+    .typography p:first-child {
+        @apply mt;
+    }
+
+    .typography p:last-child {
+        @apply mb;
+    }
 }
 
 @layer utilities {

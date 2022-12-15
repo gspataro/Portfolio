@@ -19,21 +19,21 @@
                 <ul class="flex gap-3xs bg-thunder-darkest overflow-x-auto tablet:overflow-x-hidden">
                     <li class="whitespace-nowrap">
                         <a href="javascript:void(0)" data-show="developer" class="block px-xs uppercase tablet:py-xs tablet:px-sm active">
-                            {{'about.sections.developer.menu'|localize}}
+                            {{'about.developer.menu'|localize}}
                         </a>
                     </li>
                     <li class="whitespace-nowrap">
                         <a href="javascript:void(0)" data-show="pianist" class="block px-xs uppercase tablet:py-xs tablet:px-sm">
-                            {{'about.sections.pianist.menu'|localize}}
+                            {{'about.pianist.menu'|localize}}
                         </a>
                     </li>
                 </ul>
                 <div class="-mr-[20px] tablet:mr-[0] border-[20px] tablet:border-[28px] border-solid border-transparent border-t-thunder-darkest border-l-thunder-darkest z-10"></div>
             </div>
-            <div class="container py-2xl">
-                <div data-category="developer"></div>
-                <div data-category="pianist"></div>
+            <div data-category="developer">
+                {{include("./components/about_developer.html")}}
             </div>
+            <div data-category="pianist"></div>
         </div>
     </div>
     <script src="/assets/js/about.js" type="text/javascript"></script>
