@@ -1,5 +1,6 @@
 {
     "about": {
+        "title": {"it": "Chi Sono", "en": "About Me"},
         "hero": {
             "it": "Sono un pianista e sviluppatore web full stack siciliano.<br />Amo la musica, la tecnologia e le auto.<br />Penso che musica e programmazione siano entrambe forme d'arte, mezzi attraverso i quali dare vita alle proprie idee.",
             "en": "I'm a sicilian pianist and full stack web developer.<br/>I love music, technology and cars.<br />I think that music and programming are both art forms, means by which bring to life our ideas."
