@@ -28,78 +28,22 @@
             ]
         },
         "pianist": {
-            "menu": {"it": "Pianista", "en": "Pianist"}
-        },
-        "studies": [
-            {
-                "name": "Laurea Magistrale - Pianoforte",
-                "institute": "Conservatorio V. Bellini",
-                "location": "Catania (CT)",
-                "date": "2019 - 2022",
-                "vote": "110/110 cum laude"
-            },
-            {
-                "name": "Laurea Triennale - Pianoforte",
-                "institute": "Conservatorio V. Bellini",
-                "location": "Catania (CT)",
-                "date": "2016 - 2019",
-                "vote": "110/110 cum laude"
-            }
-        ],
-        "skills": {
-            "music": [
+            "menu": {"it": "Pianista", "en": "Pianist"},
+            "studies_heading": {"it": "Studi", "en": "Studies"},
+            "studies": [
                 {
-                    "name": "Cosa mi piace fare:",
-                    "content": "Concerti, Insegnamento"
+                    "name": {"it": "Laurea Magistrale - Pianoforte", "en": "Master's Degree - Piano"},
+                    "institute": "Conservatorio V. Bellini",
+                    "location": "Catania (CT)",
+                    "date": "2019 - 2022",
+                    "vote": "110/110 cum laude"
                 },
                 {
-                    "name": "Di cosa mi occupo:",
-                    "list": [
-                        "Tecnica",
-                        "Teoria Musicale",
-                        "Accompagnamento"
-                    ]
-                },
-                {
-                    "name": "Quali autori ho studiato:",
-                    "list": [
-                        "J.S. Bach",
-                        "W.A. Mozart",
-                        "L.V. Beethoven",
-                        "F. Chopin",
-                        "F. Liszt",
-                        "S. Rachmaninov",
-                        "Altri"
-                    ]
-                }
-            ],
-            "development": [
-                {
-                    "name": "Quali linguaggi uso:",
-                    "content": "PHP, MySQL, HTML, CSS, Javascript"
-                },
-                {
-                    "name": "Quali librerie uso:",
-                    "list": [
-                        "Composer",
-                        "Twig",
-                        "Sass",
-                        "TailwindCSS",
-                        "Bootstrap",
-                        "UIKit"
-                    ]
-                },
-                {
-                    "name": "Quali strumenti uso:",
-                    "list": [
-                        "VS Code",
-                        "Git/Github",
-                        "Postman",
-                        "Beekeeper Studio",
-                        "Terminale",
-                        "Linux",
-                        "Windows"
-                    ]
+                    "name": {"it": "Laurea Triennale - Pianoforte", "en": "Bachelor's Degree - Piano"},
+                    "institute": "Conservatorio V. Bellini",
+                    "location": "Catania (CT)",
+                    "date": "2016 - 2019",
+                    "vote": "110/110 cum laude"
                 }
             ]
         }
