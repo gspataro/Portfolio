@@ -14,7 +14,8 @@ return [
         "data" => "about"
     ],
     "/contacts.html" => [
-        "template" => "contacts"
+        "template" => "contacts",
+        "data" => "contacts"
     ],
     "/colors.html" => [
         "template" => "colors"

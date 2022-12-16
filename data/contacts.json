@@ -1,0 +1,23 @@
+{
+    "contacts": {
+        "title": {"it": "Contatti", "en": "Contacts"},
+        "hero": {
+            "it": "Contattami via social o via email.",
+            "en": "Contact me via social or email."
+        },
+        "form": {
+            "fullname": {"it": "Nome e Cognome", "en": "Name and Surname"},
+            "email": {"it": "Indirizzo Email", "en": "Email Address"},
+            "message": {"it": "Messaggio", "en": "Message"},
+            "send": {"it": "Contattami", "en": "Contact Me"},
+            "thankyou": {
+                "it": "Grazie per avermi contattato.",
+                "en": "Thank you for contacting me."
+            },
+            "reply": {
+                "it": "Risponderò alla tua richiesta al più presto!",
+                "en": "I'll answer your request as soon as possible!"
+            }
+        }
+    }
+}

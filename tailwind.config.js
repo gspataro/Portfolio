@@ -9,6 +9,7 @@ module.exports = {
         "transparent": "transparent",
         "black": "#000000",
         "white": "#ffffff",
+        "green": "#49ab38",
         "thunder": {
             "lightest": "#656465",
             "lighter": "#4f4d4f",
