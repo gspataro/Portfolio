@@ -17,6 +17,10 @@ return [
         "template" => "contacts",
         "data" => "contacts"
     ],
+    "/success.html" => [
+        "template" => "success",
+        "data" => "contacts"
+    ],
     "/colors.html" => [
         "template" => "colors"
     ]

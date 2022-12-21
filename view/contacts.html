@@ -6,39 +6,10 @@
 }%}
 {%extends "./layout.html"%}
 {%block content%}
-    <div class="py-2xl bg-thunder-darker section-arrow-down after:border-t-thunder-darker">
-        <div class="container">
-            <div class="flex flex-col gap-xs tablet:items-center tablet:flex-row desktop:w-3/4 desktop:mx-auto">
-                <div class="flex-1">
-                    <h1>{{'contacts.title'|localize}}</h1>
-                    <p class="text-2xl">
-                        {{'contacts.hero'|localize|raw}}
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-xs items-center">
-                    {%for social in layout.socials%}
-                        <a href="{{social.link}}" class="text-3xl">
-                            <i class="{{social.icon}}"></i> {{social.label}}
-                        </a>
-                    {%endfor%}
-                </div>
-            </div>
-        </div>
-    </div>
+    {{include("./components/contacts_heading.html")}}
     <div class="container py-2xl">
         <div class="desktop:w-3/4 desktop:mx-auto">
-            <div class="text-center text-xl hidden" id="success">
-                <div class="mb-sm text-6xl text-green">
-                    <i class="fa-regular fa-circle-check"></i>
-                </div>
-                <p>
-                    {{'contacts.form.thankyou'|localize}}
-                </p>
-                <p>
-                    {{'contacts.form.reply'|localize}}
-                </p>
-            </div>
-            <form action="https://forms.un-static.com/forms/8ddfb135579bf13ce8270a0afaa8382dbd456e51" id="form" method="post">
+            <form action="{{'contacts.form.action'|localize}}" id="form" method="post">
                 <div class="flex flex-col space-y-sm mb-sm tablet:flex-row tablet:space-y tablet:space-x-sm">
                     <div class="basis-1/2">
                         <input type="text" name="name" placeholder="{{'contacts.form.fullname'|localize}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 placeholder:text-white/30" required />
@@ -59,12 +30,4 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            if(window.location.hash == "#success") {
-                document.getElementById("form").classList.add("hidden");
-                document.getElementById("success").classList.remove("hidden");
-            }
-        });
-    </script>
 {%endblock%}

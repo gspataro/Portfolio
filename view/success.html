@@ -1,0 +1,25 @@
+{%set page = {
+    "label": "contacts",
+    "title": "contacts.title"|localize,
+    "path": "success.html",
+    "exclude_contact_footer": true
+}%}
+{%extends "./layout.html"%}
+{%block content%}
+    {{include("./components/contacts_heading.html")}}
+    <div class="container py-2xl">
+        <div class="desktop:w-3/4 desktop:mx-auto">
+            <div class="text-center text-xl" id="success">
+                <div class="mb-sm text-6xl text-green">
+                    <i class="fa-regular fa-circle-check"></i>
+                </div>
+                <p>
+                    {{'contacts.form.thankyou'|localize}}
+                </p>
+                <p>
+                    {{'contacts.form.reply'|localize}}
+                </p>
+            </div>
+        </div>
+    </div>
+{%endblock%}
