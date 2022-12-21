@@ -21,7 +21,7 @@
             </ul>
         {%endif%}
     </div>
-    <p class="flex-1">{{('portfolio.projects.'~item_key~'.description')|localize}}</p>
+    {{parsedown('portfolio/' ~ item_key)|raw}}
     <ul class="flex flex-wrap gap-3xs">
         {%for tool in item.tools%}
             <li class="bg-thunder-darker py-3xs px-2xs rounded-xl">{{tool}}</li>

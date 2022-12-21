@@ -17,8 +17,7 @@
                 "links": {
                     "github": "https://github.com/gspataro/DependencyInjection"
                 },
-                "tools": ["PHP"],
-                "description": "Un container per la gestione semplificata del boot di un applicativo tramite l'uso della dependency injection. Il container può registrare componenti interi o singoli servizi."
+                "tools": ["PHP"]
             },
             "component_cli": {
                 "name": "CLI",
@@ -26,8 +25,7 @@
                 "links": {
                     "github": "https://github.com/gspataro/CLI"
                 },
-                "tools": ["PHP"],
-                "description": "Componente per la creazione di script facilmente estendibili ed eseguibili via riga di comando. Include una classe per formattare il testo come output del terminale in maniera semplificata."
+                "tools": ["PHP"]
             },
             "website_portfolio": {
                 "name": "Portfolio",
@@ -36,8 +34,7 @@
                     "github": "https://github.com/gspataro/Portfolio",
                     "website": "https://gspataro.github.io"
                 },
-                "tools": ["PHP", "Tailwind CSS", "HTML", "Javascript"],
-                "description": "Script in PHP utilizzabile via riga di comando per generare la versione statica del mio portfolio partendo da dei template, compilati utilizzando Twig, e dei dati in formato JSON. Per il frontend ho utilizzato Tailwind CSS."
+                "tools": ["PHP", "Tailwind CSS", "HTML", "Javascript"]
             },
             "library_pdash": {
                 "name": "PDash-API",
@@ -45,8 +42,7 @@
                 "links": {
                     "github": "https://github.com/gspataro/PDash-API"
                 },
-                "tools": ["PHP", "MySQL"],
-                "description": "CRUD API realizzate utilizzando vanilla PHP e alcuni componenti custom per la gestione di una dashboard personale (todo, note). La libreria è stata creata per essere facilmente estendibile."
+                "tools": ["PHP", "MySQL"]
             },
             "component_routing": {
                 "name": "Routing",
@@ -54,8 +50,7 @@
                 "links": {
                     "github": "https://github.com/gspataro/Routing"
                 },
-                "tools": ["PHP"],
-                "description": "Un componente scritto in PHP per la gestione della richiesta da parte dell'utente e della risposta da parte del server con un sistema di routing facilmente estendibile."
+                "tools": ["PHP"]
             },
             "component_filesystem": {
                 "name": "FileSystem",
@@ -63,8 +58,7 @@
                 "links": {
                     "github": "https://github.com/gspataro/FileSystem"
                 },
-                "tools": ["PHP"],
-                "description": "Un componente scritto in PHP per la gestione del filesystem con un sistema ad oggetti."
+                "tools": ["PHP"]
             },
             "component_utilities": {
                 "name": "Utilities",
@@ -72,8 +66,7 @@
                 "links": {
                     "github": "https://github.com/gspataro/Utilities"
                 },
-                "tools": ["PHP"],
-                "description": "Una raccolta di componenti di piccola dimensione riutilizzabili in diverse occasioni. In questo momento presenta solo il DotNavigator per rendere più leggibile la gestione degli array."
+                "tools": ["PHP"]
             }
         }
     }
