@@ -56,7 +56,7 @@ $twig->addFunction(new \Twig\TwigFunction("parsedown", function ($context, $file
 
     if (is_file(DIR_DATA . "/markdown/{$fileName}_{$lang}.md")) {
         $raw = file_get_contents(DIR_DATA . "/markdown/{$fileName}_{$lang}.md");
-    } else if (is_file(DIR_DATA . "/markdown/{$fileName}.md")) {
+    } elseif (is_file(DIR_DATA . "/markdown/{$fileName}.md")) {
         $raw = file_get_contents(DIR_DATA . "/markdown/{$fileName}.md");
     } else {
         return;
