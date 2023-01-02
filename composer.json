@@ -18,6 +18,9 @@
         "erusev/parsedown": "^2.0.0-beta-1"
     },
     "autoload": {
+        "psr-4": {
+            "GSpataro\\": "source/components/"
+        },
         "files": ["source/functions.php"]
     }
 }
