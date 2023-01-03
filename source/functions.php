@@ -61,10 +61,11 @@ function copyAssets(array $assets): void
  *
  * @param string $inputDirectory
  * @param string $outputDirectory
+ * @param array $exclude
  * @return void
  */
 
-function recursiveCopy(string $inputDirectory, string $outputDirectory): void
+function recursiveCopy(string $inputDirectory, string $outputDirectory, $exclude = []): void
 {
     if (!is_dir($inputDirectory)) {
         throw new Exception(
@@ -86,8 +87,12 @@ function recursiveCopy(string $inputDirectory, string $outputDirectory): void
         $inputItemPath = "{$inputDirectory}/{$item}";
         $outputItemPath = "{$outputDirectory}/{$item}";
 
+        if (in_array($inputItemPath, $exclude)) {
+            continue;
+        }
+
         if (is_dir($inputItemPath)) {
-            recursiveCopy($inputItemPath, $outputItemPath);
+            recursiveCopy($inputItemPath, $outputItemPath, $exclude);
         }
 
         if (is_file($inputItemPath)) {
