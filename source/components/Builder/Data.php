@@ -37,7 +37,7 @@ final class Data
         $filePath = "{$this->dataPath}/{$fileName}.json";
 
         if (!is_file($filePath)) {
-            throw new DataFileNotFoundException(
+            throw new Exception\DataFileNotFoundException(
                 "Data file not found: {$filePath}"
             );
         }
