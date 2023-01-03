@@ -1,0 +1,36 @@
+{
+    "languages": ["it", "en"],
+    "default_language": "it",
+    "data": [
+        "global",
+        "index",
+        "portfolio",
+        "about",
+        "contacts"
+    ],
+    "pages": [
+        {
+            "template": "index",
+            "output": "/index.html"
+        },
+        {
+            "template": "portfolio",
+            "output": "/portfolio.html"
+        },
+        {
+            "template": "about",
+            "output": "/about.html"
+        },
+        {
+            "template": "contacts",
+            "output": "/contacts.html"
+        },
+        {
+            "template": "success",
+            "output": "/success.html"
+        }
+    ],
+    "exclude_assets": [
+        "css/ui.css"
+    ]
+}

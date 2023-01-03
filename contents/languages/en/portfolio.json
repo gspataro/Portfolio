@@ -1,0 +1,18 @@
+{
+    "hero": "This is my portfolio|here you can find most of my public projects",
+    "categories": {
+        "all": "All",
+        "website": "Websites",
+        "library": "Libreries",
+        "component": "Components"
+    },
+    "projects": {
+        "component_dependencyinjection": "Dependency Injection",
+        "component_cli": "CLI",
+        "website_portfolio": "Portfolio",
+        "library_pdash": "PDash-API",
+        "component_routing": "Routing",
+        "component_filesystem": "FileSystem",
+        "component_utilities": "Utilities"
+    }
+}

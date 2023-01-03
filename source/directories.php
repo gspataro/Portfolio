@@ -6,3 +6,5 @@ define("DIR_VENDOR", DIR_SOURCE . "/vendor");
 define("DIR_PUBLIC", DIR_ROOT . "/public");
 define("DIR_VIEW", DIR_ROOT . "/view");
 define("DIR_DATA", DIR_ROOT . "/data");
+define("DIR_CONTENTS", DIR_ROOT . "/contents");
+define("DIR_LANGS", DIR_CONTENTS . "/languages");

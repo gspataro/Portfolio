@@ -1,12 +1,13 @@
 {%set page = {
     "label": "contacts",
-    "title": "contacts.title"|localize,
+    "title": lang('title', 'contacts'),
     "path": "success.html",
     "exclude_contact_footer": true
 }%}
 {%extends "./layout.html"%}
 {%block content%}
     {{include("./components/contacts_heading.html")}}
+    {%set successContentSection = lang('form.success', 'contacts')|split("|")%}
     <div class="container py-2xl">
         <div class="desktop:w-3/4 desktop:mx-auto">
             <div class="text-center text-xl" id="success">
@@ -14,10 +15,10 @@
                     <i class="fa-regular fa-circle-check"></i>
                 </div>
                 <p>
-                    {{'contacts.form.thankyou'|localize}}
+                    {{successContentSection[0]}}
                 </p>
                 <p>
-                    {{'contacts.form.reply'|localize}}
+                    {{successContentSection[1]}}
                 </p>
             </div>
         </div>

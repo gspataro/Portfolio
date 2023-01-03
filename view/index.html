@@ -6,19 +6,20 @@
 {%block content%}
     <div class="flex-1">
         <!-- Welcome -->
+        {%set heroContentSection = lang('hero', 'index')|split("|")%}
         <div class="py-2xl section-arrow-down after:border-t-thunder-darkest">
             <div class="container">
                 <p class="text-4xl mb-3xs">
-                    {{'index.hero.welcome'|localize}},
+                    {{heroContentSection[0]}},
                 </p>
                 <p class="text-4xl my-3xs">
-                    {{'index.hero.mynameis'|localize}}
+                    {{heroContentSection[1]}}
                 </p>
                 <h1 class="text-6xl uppercase my-3xs"><span class="text-brass">Giuseppe Spataro</span>,</h1>
                 <h2 class="text-4xl mt-3xs">
-                    {{'index.hero.iama'|localize}}
-                    <span class="whitespace-nowrap">{{'index.hero.pianist'|localize}}</span>
-                    <span class="whitespace-nowrap">{{'index.hero.developer'|localize}}<span class="animate-pulse">_</span></span>
+                    {{heroContentSection[2]}}
+                    <span class="whitespace-nowrap">{{heroContentSection[3]}}</span>
+                    <span class="whitespace-nowrap">{{heroContentSection[4]}}<span class="animate-pulse">_</span></span>
                 </h2>
             </div>
             <ul class="bg-squares">
@@ -29,17 +30,18 @@
             </ul>
         </div>
         <!-- Portfolio -->
+        {%set portfolioContentSection = lang('portfolio', 'index')|split("|")%}
         <div class="py-2xl bg-thunder-darker section-arrow-down after:border-t-thunder-darker">
             <div class="container">
                 <div class="text-right">
-                    <p class="text-4xl mb-3xs">{{'index.portfolio.visit'|localize}}</p>
+                    <p class="text-4xl mb-3xs">{{portfolioContentSection[0]}}</p>
                     <p class="text-4xl my-2xs">
-                        <a href="{{link('portfolio.hml')}}" class="link-highlight">{{'index.portfolio.link'|localize}}</a>,
+                        <a href="{{link('portfolio.hml')}}" class="link-highlight">{{portfolioContentSection[1]}}</a>,
                     </p>
-                    <p class="text-4xl">{{'index.portfolio.featured'|localize}}:</p>
+                    <p class="text-4xl">{{portfolioContentSection[2]}}:</p>
                 </div>
                 <div class="grid gap-sm mt-xl laptop:grid-cols-3">
-                    {%for item_key in index.portfolio_featured%}
+                    {%for item_key in data('index.portfolio_featured')%}
                         {{include("./components/portfolio_item.html")}}
                     {%endfor%}
                 </div>

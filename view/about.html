@@ -1,6 +1,6 @@
 {%set page = {
     "label": "about",
-    "title": 'about.title'|localize,
+    "title": lang('title', 'about'),
     "path": "about.html"
 }%}
 {%extends "./layout.html"%}
@@ -8,7 +8,7 @@
     <div class="py-2xl">
         <div class="container">
             <p class="text-2xl tablet:w-2/3 laptop:w-1/2">
-                {{'about.hero'|localize|raw}}
+                {{lang('hero', 'about')|raw}}
             </p>
         </div>
     </div>
@@ -19,12 +19,12 @@
                 <ul class="flex gap-3xs bg-thunder-darkest overflow-x-auto tablet:overflow-x-hidden">
                     <li class="whitespace-nowrap">
                         <a href="javascript:void(0)" data-show="developer" class="block px-xs uppercase tablet:py-xs tablet:px-sm active">
-                            {{'about.developer.menu'|localize}}
+                            {{lang('menu.developer', 'about')}}
                         </a>
                     </li>
                     <li class="whitespace-nowrap">
                         <a href="javascript:void(0)" data-show="pianist" class="block px-xs uppercase tablet:py-xs tablet:px-sm">
-                            {{'about.pianist.menu'|localize}}
+                            {{lang('menu.pianist', 'about')}}
                         </a>
                     </li>
                 </ul>

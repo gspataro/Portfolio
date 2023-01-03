@@ -7,7 +7,7 @@
         <div class="laptop:flex-1 laptop:py-sm">
             <h3 class="link-highlight mb-lg">Skills</h3>
             <ul class="flex flex-wrap gap-3xs">
-                {%for skill in about.developer.skills%}
+                {%for skill in data('about.developer.skills')%}
                     <li class="bg-thunder-darkest py-3xs px-2xs rounded-lg">
                         {{skill}}
                     </li>

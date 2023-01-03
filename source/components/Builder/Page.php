@@ -32,7 +32,7 @@ final class Page
         $outputDirName = pathinfo($outputPath, PATHINFO_DIRNAME);
 
         if (!is_dir($outputDirName)) {
-            mkdir($outputDirName);
+            mkdir($outputDirName, true);
         }
 
         $compiledTemplate = $this->twig->render("{$templateName}.html", $data);

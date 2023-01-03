@@ -1,52 +1,42 @@
 {
-    "about": {
-        "title": {"it": "Chi Sono", "en": "About Me"},
-        "hero": {
-            "it": "Sono un pianista e sviluppatore web full stack siciliano.<br />Amo la musica, la tecnologia e le auto.<br />Penso che musica e programmazione siano entrambe forme d'arte, mezzi attraverso i quali dare vita alle proprie idee.",
-            "en": "I'm a sicilian pianist and full stack web developer.<br/>I love music, technology and cars.<br />I think that music and programming are both art forms, means by which bring to life our ideas."
-        },
-        "developer": {
-            "menu": {"it": "Sviluppatore Web", "en": "Web Developer"},
-            "skills": [
-                "PHP",
-                "MySQL",
-                "Composer",
-                "Twig",
-                "JSON",
-                "HTML",
-                "CSS",
-                "SCSS",
-                "Bootstrap",
-                "Tailwind",
-                "BEM",
-                "Javascript",
-                "JQuery",
-                "Wordpress",
-                "Woocommerce",
-                "Git",
-                "Linux",
-                "npm"
-            ]
-        },
-        "pianist": {
-            "menu": {"it": "Pianista", "en": "Pianist"},
-            "studies_heading": {"it": "Studi", "en": "Studies"},
-            "studies": [
-                {
-                    "name": {"it": "Laurea Magistrale - Pianoforte", "en": "Master's Degree - Piano"},
-                    "institute": "Conservatorio V. Bellini",
-                    "location": "Catania (CT)",
-                    "date": "2019 - 2022",
-                    "vote": "110/110 cum laude"
-                },
-                {
-                    "name": {"it": "Laurea Triennale - Pianoforte", "en": "Bachelor's Degree - Piano"},
-                    "institute": "Conservatorio V. Bellini",
-                    "location": "Catania (CT)",
-                    "date": "2016 - 2019",
-                    "vote": "110/110 cum laude"
-                }
-            ]
-        }
+    "developer": {
+        "skills": [
+            "PHP",
+            "MySQL",
+            "Composer",
+            "Twig",
+            "JSON",
+            "HTML",
+            "CSS",
+            "SCSS",
+            "Bootstrap",
+            "Tailwind",
+            "BEM",
+            "Javascript",
+            "JQuery",
+            "Wordpress",
+            "Woocommerce",
+            "Git",
+            "Linux",
+            "npm"
+        ]
+    },
+    "pianist": {
+        "studies": [
+            {
+                "type": "master",
+                "institute": "Conservatorio V. Bellini",
+                "location": "Catania (CT)",
+                "date": "2019 - 2022",
+                "vote": "110/110 cum laude"
+            },
+            {
+                "type": "bachelor",
+                "institute": "Conservatorio V. Bellini",
+                "location": "Catania (CT)",
+                "date": "2016 - 2019",
+                "vote": "110/110 cum laude"
+            }
+        ]
     }
 }

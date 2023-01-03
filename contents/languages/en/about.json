@@ -1,0 +1,13 @@
+{
+    "title": "About Me",
+    "hero": "I'm a sicilian pianist and full stack web developer.<br/>I love music, technology and cars.<br />I think that music and programming are both art forms, means by which bring to life our ideas.",
+    "menu": {
+        "developer": "Web Developer",
+        "pianist": "Pianist"
+    },
+    "studies": {
+        "heading": "Studies",
+        "master": "Master's Degree - Piano",
+        "bachelor": "Bachelor's Degree - Piano"
+    }
+}

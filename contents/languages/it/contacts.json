@@ -1,0 +1,11 @@
+{
+    "title": "Contatti",
+    "hero": "Contattami via social o via email.",
+    "form": {
+        "fullname": "Nome e Cognome",
+        "email": "Indirizzo Email",
+        "message": "Messaggio",
+        "send": "Contattami",
+        "success": "Grazie per avermi contattato.|Risponderò alla tua richiesta al più presto!"
+    }
+}

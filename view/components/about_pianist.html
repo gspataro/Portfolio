@@ -5,10 +5,10 @@
         </div>
         <div class="bg-thunder-darkest w-full h-[3px] laptop:w-[3px] laptop:h-[unset]"></div>
         <div class="laptop:flex-1 laptop:py-sm">
-            <h3 class="link-highlight mb-lg">{{'about.pianist.studies_heading'|localize}}</h3>
-            {%for study in about.pianist.studies%}
+            <h3 class="link-highlight mb-lg">{{lang('studies.heading', 'about')}}</h3>
+            {%for study in data('about.pianist.studies')%}
                 <div class="bg-thunder-darkest p-md border-l-4 border-r-4 border-brass-dark rounded-lg mb-sm last:mb">
-                    <h4 class="mb-xs">{{study.name[lang.current]}}</h4>
+                    <h4 class="mb-xs">{{lang('studies.' ~ study.type, 'about')}}</h4>
                     <div class="grid grid-cols-1 gap-3xs tablet:grid-cols-2">
                         <div>
                             <i class="fa-solid fa-location-dot"></i> {{study.location}}

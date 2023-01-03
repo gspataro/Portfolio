@@ -1,73 +1,67 @@
 {
-    "portfolio": {
-        "hero": {
-            "welcome": {"it": "Questo è il mio portfolio", "en": "This is my portfolio"},
-            "what": {"it": "qui troverai molti dei miei progetti personali pubblici", "en": "here you can find most of my personal public projects"}
+    "categories": [
+        "all",
+        "website",
+        "library",
+        "component"
+    ],
+    "projects": {
+        "component_dependencyinjection": {
+            "name": "Dependency Injection",
+            "category": "component",
+            "links": {
+                "github": "https://github.com/gspataro/DependencyInjection"
+            },
+            "tools": ["PHP"]
         },
-        "categories": {
-            "all": {"it": "Tutto", "en": "All"},
-            "website": {"it": "Siti Web", "en": "Websites"},
-            "library": {"it": "Librerie", "en": "Libraries"},
-            "component": {"it": "Componenti", "en": "Components"}
+        "component_cli": {
+            "name": "CLI",
+            "category": "component",
+            "links": {
+                "github": "https://github.com/gspataro/CLI"
+            },
+            "tools": ["PHP"]
         },
-        "projects": {
-            "component_dependencyinjection": {
-                "name": "Dependency Injection",
-                "category": "component",
-                "links": {
-                    "github": "https://github.com/gspataro/DependencyInjection"
-                },
-                "tools": ["PHP"]
+        "website_portfolio": {
+            "name": "Portfolio",
+            "category": "website",
+            "links": {
+                "github": "https://github.com/gspataro/Portfolio",
+                "website": "https://gspataro.github.io"
             },
-            "component_cli": {
-                "name": "CLI",
-                "category": "component",
-                "links": {
-                    "github": "https://github.com/gspataro/CLI"
-                },
-                "tools": ["PHP"]
+            "tools": ["PHP", "Tailwind CSS", "HTML", "Javascript"]
+        },
+        "library_pdash": {
+            "name": "PDash-API",
+            "category": "library",
+            "links": {
+                "github": "https://github.com/gspataro/PDash-API"
             },
-            "website_portfolio": {
-                "name": "Portfolio",
-                "category": "website",
-                "links": {
-                    "github": "https://github.com/gspataro/Portfolio",
-                    "website": "https://gspataro.github.io"
-                },
-                "tools": ["PHP", "Tailwind CSS", "HTML", "Javascript"]
+            "tools": ["PHP", "MySQL"]
+        },
+        "component_routing": {
+            "name": "Routing",
+            "category": "component",
+            "links": {
+                "github": "https://github.com/gspataro/Routing"
             },
-            "library_pdash": {
-                "name": "PDash-API",
-                "category": "library",
-                "links": {
-                    "github": "https://github.com/gspataro/PDash-API"
-                },
-                "tools": ["PHP", "MySQL"]
+            "tools": ["PHP"]
+        },
+        "component_filesystem": {
+            "name": "FileSystem",
+            "category": "component",
+            "links": {
+                "github": "https://github.com/gspataro/FileSystem"
             },
-            "component_routing": {
-                "name": "Routing",
-                "category": "component",
-                "links": {
-                    "github": "https://github.com/gspataro/Routing"
-                },
-                "tools": ["PHP"]
+            "tools": ["PHP"]
+        },
+        "component_utilities": {
+            "name": "Utilities",
+            "category": "component",
+            "links": {
+                "github": "https://github.com/gspataro/Utilities"
             },
-            "component_filesystem": {
-                "name": "FileSystem",
-                "category": "component",
-                "links": {
-                    "github": "https://github.com/gspataro/FileSystem"
-                },
-                "tools": ["PHP"]
-            },
-            "component_utilities": {
-                "name": "Utilities",
-                "category": "component",
-                "links": {
-                    "github": "https://github.com/gspataro/Utilities"
-                },
-                "tools": ["PHP"]
-            }
+            "tools": ["PHP"]
         }
     }
 }

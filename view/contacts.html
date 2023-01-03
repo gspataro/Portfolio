@@ -1,6 +1,6 @@
 {%set page = {
     "label": "contacts",
-    "title": "contacts.title"|localize,
+    "title": lang('title', 'contacts'),
     "path": "contacts.html",
     "exclude_contact_footer": true
 }%}
@@ -9,19 +9,19 @@
     {{include("./components/contacts_heading.html")}}
     <div class="container py-2xl">
         <div class="desktop:w-3/4 desktop:mx-auto">
-            <form action="{{'contacts.form.action'|localize}}" id="form" method="post">
+            <form action="{{data('contacts.form.action.' ~ lang.current)}}" id="form" method="post">
                 <div class="flex flex-col space-y-sm mb-sm tablet:flex-row tablet:space-y tablet:space-x-sm">
                     <div class="basis-1/2">
-                        <input type="text" name="name" placeholder="{{'contacts.form.fullname'|localize}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 placeholder:text-white/30" required />
+                        <input type="text" name="name" placeholder="{{lang('form.fullname', 'contacts')}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 placeholder:text-white/30" required />
                     </div>
                     <div class="basis-1/2">
-                        <input type="email" name="_replyto" placeholder="{{'contacts.form.email'|localize}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 placeholder:text-white/30" required />
+                        <input type="email" name="_replyto" placeholder="{{lang('form.email', 'contacts')}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 placeholder:text-white/30" required />
                     </div>
                 </div>
-                <textarea name="message" placeholder="{{'contacts.form.message'|localize}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 min-h-[200px] placeholder:text-white/30" required></textarea>
+                <textarea name="message" placeholder="{{lang('form.message', 'contacts')}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 min-h-[200px] placeholder:text-white/30" required></textarea>
                 <div class="mt-sm text-center">
                     <button type="submit" class="bg-fawn-darker text-lg text-white py-2xs px-sm rounded-lg uppercase">
-                        {{'contacts.form.send'|localize}}
+                        {{lang('form.send', 'contacts')}}
                     </button>
                 </div>
                 <div class="text-md text-right mt-sm text-white/30">

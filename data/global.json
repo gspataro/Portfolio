@@ -1,51 +1,37 @@
 {
-    "layout": {
-        "navbar": {
-            "index": {
-                "link": "index.html",
-                "label": "Home",
-                "target": "index"
-            },
-            "portfolio": {
-                "link": "portfolio.html",
-                "label": "Portfolio",
-                "target": "portfolio"
-            },
-            "about": {
-                "link": "about.html",
-                "label": {"it": "Chi Sono", "en": "About Me"},
-                "target": "about"
-            },
-            "contacts": {
-                "link": "contacts.html",
-                "label": {"it": "Contatti", "en": "Contacts"},
-                "target": "contacts"
-            }
+    "navbar": {
+        "index": {
+            "link": "index.html",
+            "target": "index"
         },
-        "footer": {
-            "contacts": {
-                "ifyouneed": {"it": "Se hai bisogno", "en": "If you need"},
-                "info": {"it": "di ulteriori informazioni", "en": "more informations"},
-                "contactme": {"it": "contattami", "en": "contact me"}
-            },
-            "copyright": "&copy; 2022 Giuseppe Spataro. All rights reserved."
+        "portfolio": {
+            "link": "portfolio.html",
+            "target": "portfolio"
         },
-        "socials": [
-            {
-                "link": "https://github.com/gspataro",
-                "icon": "fa-brands fa-github",
-                "label": "Github"
-            },
-            {
-                "link": "https://linked.in/in/gspataro96",
-                "icon": "fa-brands fa-linkedin",
-                "label": "Linkedin"
-            },
-            {
-                "link": "https://twitter.com/gspataro96",
-                "icon": "fa-brands fa-twitter",
-                "label": "Twitter"
-            }
-        ]
-    }
+        "about": {
+            "link": "about.html",
+            "target": "about"
+        },
+        "contacts": {
+            "link": "contacts.html",
+            "target": "contacts"
+        }
+    },
+    "socials": [
+        {
+            "link": "https://github.com/gspataro",
+            "icon": "fa-brands fa-github",
+            "label": "Github"
+        },
+        {
+            "link": "https://linked.in/in/gspataro96",
+            "icon": "fa-brands fa-linkedin",
+            "label": "Linkedin"
+        },
+        {
+            "link": "https://twitter.com/gspataro96",
+            "icon": "fa-brands fa-twitter",
+            "label": "Twitter"
+        }
+    ]
 }

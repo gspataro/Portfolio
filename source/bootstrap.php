@@ -1,5 +1,7 @@
 <?php
 
+use GSpataro\Localization;
+use GSpataro\Builder;
 use Erusev\Parsedown\Parsedown;
 
 // Include directories aliases
@@ -24,70 +26,32 @@ $twigLoader = new \Twig\Loader\FilesystemLoader(DIR_VIEW);
 $twig = new \Twig\Environment($twigLoader);
 $twig->addExtension(new \Twig\Extra\String\StringExtension());
 
-// Generate pages based on pages.php data
+// Load data from blueprint.json
 
-$pages = require_once DIR_SOURCE . "/pages.php";
-$langs = ["it", "en"];
-$defaultLang = "it";
-$globalData = getData("global");
+$rawBlueprint = file_get_contents(DIR_ROOT . "/blueprint.json");
+$blueprint = json_decode($rawBlueprint, true);
 
-$twig->addFilter(new \Twig\TwigFilter("localize", function ($context, $string) {
-    $keys = explode(".", $string);
-    $lang = $context['lang']['current'];
-    $current = $context;
+// Initialize localization
 
-    foreach ($keys as $key) {
-        $current = $current[$key] ?? null;
-    }
+$locales = new Localization\Locales();
 
-    if (is_null($current)) {
-        return $string;
-    }
-
-    return $current[$lang] ?? $current;
-}, ['needs_context' => true]));
-
-$twig->addFunction(new \Twig\TwigFunction("link", function ($context, $path) {
-    return "{$context['lang']['urlPrefix']}/{$path}";
-}, ["needs_context" => true]));
-
-$twig->addFunction(new \Twig\TwigFunction("parsedown", function ($context, $fileName) use ($parsedown) {
-    $lang = $context['lang']['current'];
-
-    if (is_file(DIR_DATA . "/markdown/{$fileName}_{$lang}.md")) {
-        $raw = file_get_contents(DIR_DATA . "/markdown/{$fileName}_{$lang}.md");
-    } elseif (is_file(DIR_DATA . "/markdown/{$fileName}.md")) {
-        $raw = file_get_contents(DIR_DATA . "/markdown/{$fileName}.md");
-    } else {
-        return;
-    }
-
-    return $parsedown->toHtml($raw);
-}, ["needs_context" => true]));
-
-foreach ($langs as $lang) {
-    $globalData['lang'] = [
-        'current' => $lang,
-        'urlPrefix' => $lang != $defaultLang ? "/{$lang}" : ""
-    ];
-
-    foreach ($pages as $outputPath => $page) {
-        $data = $globalData;
-        $outputPathPrefix = $lang != $defaultLang ? "/{$lang}" : "";
-
-        if (isset($page['data']) && !empty($page['data'])) {
-            if (is_array($page['data'])) {
-                foreach ($page['data'] as $dataFileName) {
-                    $data += getData($dataFileName);
-                }
-            } else {
-                $data += getData($page['data']);
-            }
-        }
-
-        compilePage($outputPathPrefix . $outputPath, $page['template'], $data, $twig);
-    }
+foreach ($blueprint['languages'] as $langKey) {
+    $locales->addLanguage(new Localization\Language($langKey, DIR_LANGS . "/{$langKey}"));
 }
 
-$assets = require_once DIR_SOURCE . "/assets.php";
-copyAssets($assets);
+// Initialize builder
+
+$dataBuilder = new Builder\Data(DIR_DATA);
+$pageBuilder = new Builder\Page($twig);
+
+foreach ($blueprint['data'] as $dataFile) {
+    $dataBuilder->load($dataFile);
+}
+
+// Include twig extensions
+
+require_once DIR_SOURCE . "/twig_extensions.php";
+
+// Include build process
+
+require_once DIR_SOURCE . "/build_process.php";

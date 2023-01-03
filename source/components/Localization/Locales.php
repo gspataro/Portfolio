@@ -47,4 +47,15 @@ final class Locales
 
         return $this->languages[$key];
     }
+
+    /**
+     * Get all the languages
+     *
+     * @return array
+     */
+
+    public function getAll(): array
+    {
+        return $this->languages;
+    }
 }

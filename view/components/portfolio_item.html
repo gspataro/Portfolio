@@ -1,7 +1,7 @@
-{%set item = portfolio.projects[item_key]%}
+{%set item = data('portfolio.projects.' ~ item_key)%}
 <div class="flex flex-col gap-xs bg-thunder-light p-sm rounded-2xl laptop:transition-transform laptop:duration-75 laptop:hover:scale-105" data-category="{{item.category}}">
     <div class="flex gap-3xs items-center">
-        <h2 class="flex-1">{{('portfolio.projects.' ~ item_key ~ '.name')|localize}}</h2>
+        <h2 class="flex-1">{{lang('projects.' ~ item_key, 'portfolio')}}</h2>
         {%if item.links%}
             <ul class="flex gap-xs text-2xl">
                 {%if item.links.github%}

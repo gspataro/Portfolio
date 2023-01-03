@@ -1,0 +1,11 @@
+{
+    "navbar": {
+        "index": "Home",
+        "portfolio": "Portfolio",
+        "about": "Chi Sono",
+        "contacts": "Contatti"
+    },
+    "footer": {
+        "info": "Se hai bisogno|di ulteriori informazioni|contattami"
+    }
+}
