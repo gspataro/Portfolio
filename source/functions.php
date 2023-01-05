@@ -44,3 +44,26 @@ function recursiveCopy(string $inputDirectory, string $outputDirectory, $exclude
         }
     }
 }
+
+/**
+ * Get string between
+ *
+ * @param string $string
+ * @param string $openTag
+ * @param string $closeTag
+ * @return string|null
+ */
+
+function getStringBetween(string $string, string $openTag, string $closeTag): ?string
+{
+    $start = strpos($string, $openTag);
+
+    if ($start == 0) {
+        return null;
+    }
+
+    $start += strlen($openTag);
+    $end = strpos($string, $closeTag, $start) - $start;
+
+    return substr($string, $start, $end);
+}

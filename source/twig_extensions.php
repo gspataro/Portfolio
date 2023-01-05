@@ -24,7 +24,7 @@ $twig->addFunction(new \Twig\TwigFunction("link", function ($context, $path) use
 }, ["needs_context" => true]));
 
 $twig->addFunction(new \Twig\TwigFunction("parsedown", function ($context, $fileName) use ($parsedown) {
-    $lang = $context['lang']['current'];
+    /*$lang = $context['lang']['current'];
 
     if (is_file(DIR_DATA . "/markdown/{$fileName}_{$lang}.md")) {
         $raw = file_get_contents(DIR_DATA . "/markdown/{$fileName}_{$lang}.md");
@@ -34,5 +34,26 @@ $twig->addFunction(new \Twig\TwigFunction("parsedown", function ($context, $file
         return;
     }
 
-    return $parsedown->toHtml($raw);
+    return $parsedown->toHtml($raw);*/
+
+    $filePath = DIR_DATA . "/markdown/{$fileName}.md";
+
+    if (!is_file($filePath)) {
+        return "markdown:{$fileName}";
+    }
+
+    $rawMarkdown = file_get_contents($filePath);
+
+    if (!str_starts_with($rawMarkdown, "@localize;")) {
+        return $parsedown->toHtml($rawMarkdown);
+    }
+
+    $langKey = $context['lang']['current'];
+    $rawLocalizedMarkdown = getStringBetween($rawMarkdown, "@start:{$langKey};", "@end:{$langKey};");
+
+    if (is_null($rawLocalizedMarkdown)) {
+        return "markdown:{$langKey}:{$fileName}";
+    }
+
+    return $parsedown->toHtml($rawLocalizedMarkdown);
 }, ["needs_context" => true]));

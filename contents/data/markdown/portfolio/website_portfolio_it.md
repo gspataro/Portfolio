@@ -1,1 +1,0 @@
-Script in PHP utilizzabile via riga di comando per generare la versione statica del mio portfolio partendo da dei template, compilati utilizzando Twig, e dei dati in formato JSON e Markdown. Per il frontend ho utilizzato Tailwind CSS.
