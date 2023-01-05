@@ -21,7 +21,9 @@
             </ul>
         {%endif%}
     </div>
-    {{parsedown('portfolio/' ~ item_key)|raw}}
+    <div class="flex-1">
+        {{parsedown('portfolio/' ~ item_key)|raw}}
+    </div>
     <ul class="flex flex-wrap gap-3xs">
         {%for tool in item.tools%}
             <li class="bg-thunder-darker py-3xs px-2xs rounded-xl">{{tool}}</li>
