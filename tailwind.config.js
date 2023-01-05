@@ -3,7 +3,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: ["./view/**/*.html"],
+  content: ["./contents/view/**/*.html"],
   theme: {
     colors: {
         "transparent": "transparent",
