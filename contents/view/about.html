@@ -1,7 +1,10 @@
 {%set page = {
     "label": "about",
     "title": lang('title', 'about'),
-    "path": "about.html"
+    "path": "about.html",
+    "meta": {
+        "description": lang('meta.description', 'about')
+    }
 }%}
 {%extends "./layout.html"%}
 {%block content%}

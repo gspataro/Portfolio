@@ -1,4 +1,7 @@
 {
+    "meta": {
+        "description": "Giuseppe Spataro è un pianista e sviluppatore web full stack siciliano."
+    },
     "title": "Chi Sono",
     "hero": "Sono un pianista e sviluppatore web full stack siciliano.<br />Amo la musica, la tecnologia e le auto.<br />Penso che musica e programmazione siano entrambe forme d'arte, mezzi attraverso i quali dare vita alle proprie idee.",
     "menu": {

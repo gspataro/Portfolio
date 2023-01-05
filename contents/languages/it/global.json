@@ -1,4 +1,7 @@
 {
+    "meta": {
+        "description": "Giuseppe Spataro è un pianista e sviluppatore web italiano."
+    },
     "navbar": {
         "index": "Home",
         "portfolio": "Portfolio",

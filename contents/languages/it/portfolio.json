@@ -1,4 +1,7 @@
 {
+    "meta": {
+        "description": "Portfolio di Giuseppe Spataro, pianista e sviluppatore web italiano."
+    },
     "hero": "Questo è il mio portfolio|qui troverai molti dei miei progetti pubblici",
     "categories": {
         "all": "Tutti",

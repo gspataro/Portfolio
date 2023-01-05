@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{lang.current}}">
     <head>
         <meta charset="utf-8" />
+        <meta name="robots" content="{{page.meta.robots ?? 'index, follow'}}" />
+        <meta name="description" content="{{page.meta.description ?? lang('meta.description', 'global')}}" />
+        <meta name="keywords" content="pianist, web developer" />
+        <meta name="author" content="Giuseppe Spataro" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{page.title ? page.title ~ " - "}} Giuseppe Spataro</title>
+        <title>{{page.title ? page.title ~ " - "}}Giuseppe Spataro</title>
         <link href="/assets/css/ui.css" rel="stylesheet" />
         <script src="/assets/js/ui.js" defer></script>
         <script src="https://kit.fontawesome.com/c6d3a53c06.js" crossorigin="anonymous"></script>

@@ -1,4 +1,7 @@
 {
+    "meta": {
+        "description": "Giuseppe Spataro's portfolio, italian pianist and web developer."
+    },
     "hero": "This is my portfolio|here you can find most of my public projects",
     "categories": {
         "all": "All",
