@@ -9,6 +9,7 @@
         "component_dependencyinjection": {
             "name": "Dependency Injection",
             "category": "component",
+            "placeholder": "GSpataro/DependencyInjection",
             "links": {
                 "github": "https://github.com/gspataro/DependencyInjection"
             },
@@ -17,6 +18,7 @@
         "component_cli": {
             "name": "CLI",
             "category": "component",
+            "placeholder": "GSpataro/CLI",
             "links": {
                 "github": "https://github.com/gspataro/CLI"
             },
@@ -25,6 +27,7 @@
         "website_portfolio": {
             "name": "Portfolio",
             "category": "website",
+            "placeholder": "GSpataro/Portfolio",
             "links": {
                 "github": "https://github.com/gspataro/Portfolio",
                 "website": "https://gspataro.github.io"
@@ -34,6 +37,7 @@
         "library_pdash": {
             "name": "PDash-API",
             "category": "library",
+            "placeholder": "GSpataro/PDash-API",
             "links": {
                 "github": "https://github.com/gspataro/PDash-API"
             },
@@ -42,6 +46,7 @@
         "component_routing": {
             "name": "Routing",
             "category": "component",
+            "placeholder": "GSpataro/Routing",
             "links": {
                 "github": "https://github.com/gspataro/Routing"
             },
@@ -50,6 +55,7 @@
         "component_filesystem": {
             "name": "FileSystem",
             "category": "component",
+            "placeholder": "GSpataro/FileSystem",
             "links": {
                 "github": "https://github.com/gspataro/FileSystem"
             },
@@ -58,6 +64,7 @@
         "component_utilities": {
             "name": "Utilities",
             "category": "component",
+            "placeholder": "GSpataro/Utilities",
             "links": {
                 "github": "https://github.com/gspataro/Utilities"
             },
