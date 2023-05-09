@@ -2,9 +2,9 @@
 <div class="flex flex-col laptop:transition-transform laptop:duration-75 laptop:hover:scale-105" data-category="{{item.category}}">
     {%if item.thumbnail%}
         <a href="javascript:none" class="bg-thunder-darkest w-full h-[230px] rounded-t-2xl">
-                <figure class="w-[inherit] h-full">
-                    <img src="{{item.thumbnail}}" alt="" class="max-w-full max-h-full min-w-full min-h-full rounded-t-2xl object-cover object-center">
-                </figure>
+            <figure class="w-[inherit] h-full">
+                <img src="{{item.thumbnail}}" alt="" class="max-w-full max-h-full min-w-full min-h-full rounded-t-2xl object-cover object-center">
+            </figure>
         </a>
     {%endif%}
     <div class="flex-1 flex flex-col gap-xs p-sm bg-thunder-light {%if item.thumbnail%}rounded-b-2xl{%else%}rounded-2xl{%endif%}">
