@@ -9,28 +9,32 @@
 }%}
 {%extends "./layout.html"%}
 {%block content%}
-    {{include("./components/contacts_heading.html")}}
+    <div class="py-2xl bg-fawn section-arrow-down after:border-t-fawn">
+        <div class="container">
+            <div class="flex flex-col gap-xs tablet:items-center tablet:flex-row desktop:w-3/4 desktop:mx-auto">
+                <div class="flex-1">
+                    <h1>{{lang('title', 'contacts')}}</h1>
+                    <p class="text-2xl">
+                        {{lang('hero', 'contacts')|raw}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container py-2xl">
         <div class="desktop:w-3/4 desktop:mx-auto">
-            <form action="{{data('contacts.form.action.' ~ lang.current)}}" id="form" method="post">
-                <div class="flex flex-col space-y-sm mb-sm tablet:flex-row tablet:space-y tablet:space-x-sm">
-                    <div class="basis-1/2">
-                        <input type="text" name="name" placeholder="{{lang('form.fullname', 'contacts')}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 placeholder:text-white/30" required />
-                    </div>
-                    <div class="basis-1/2">
-                        <input type="email" name="_replyto" placeholder="{{lang('form.email', 'contacts')}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 placeholder:text-white/30" required />
-                    </div>
-                </div>
-                <textarea name="message" placeholder="{{lang('form.message', 'contacts')}}" class="w-full py-xs px-sm rounded-lg text-lg bg-thunder-dark/50 min-h-[200px] placeholder:text-white/30" required></textarea>
-                <div class="mt-sm text-center">
-                    <button type="submit" class="bg-fawn-darker text-lg text-white py-2xs px-sm rounded-lg uppercase">
-                        {{lang('form.send', 'contacts')}}
-                    </button>
-                </div>
-                <div class="text-md text-right mt-sm text-white/30">
-                    <a href="https://un-static.com/" target="_blank">Form powered by Un-Static</a>.
-                </div>
-            </form>
+            <div class="flex flex-wrap gap-sm">
+                <a href="mailto:gspatarodev@gmail.com" target="_blank" class="bg-thunder-darker p-sm text-2xl text-center flex-1 basis-full">
+                    <i class="fa-regular fa-envelope mb-xs text-4xl"></i>
+                    <div>gspatarodev@gmail.com</div>
+                </a>
+                {%for social in data('global.socials')%}
+                    <a href="{{social.link}}" target="_blank" class="bg-thunder-darker flex-1 p-sm text-2xl text-center">
+                        <i class="{{social.icon}} mb-xs text-4xl"></i>
+                        <div>{{social.label}}</div>
+                    </a>
+                {%endfor%}
+            </div>
         </div>
     </div>
 {%endblock%}
