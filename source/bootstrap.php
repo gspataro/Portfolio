@@ -28,14 +28,13 @@ $twig->addExtension(new \Twig\Extra\String\StringExtension());
 
 // Load data from blueprint.json
 
-$rawBlueprint = file_get_contents(DIR_ROOT . "/blueprint.json");
-$blueprint = json_decode($rawBlueprint, true);
+$blueprint = new Builder\Blueprint(DIR_ROOT . '/blueprint.json');
 
 // Initialize localization
 
 $locales = new Localization\Locales();
 
-foreach ($blueprint['languages'] as $langKey) {
+foreach ($blueprint->get('languages') as $langKey) {
     $locales->addLanguage(new Localization\Language($langKey, DIR_LANGS . "/{$langKey}"));
 }
 
@@ -44,7 +43,7 @@ foreach ($blueprint['languages'] as $langKey) {
 $dataBuilder = new Builder\Data(DIR_DATA);
 $pageBuilder = new Builder\Page($twig);
 
-foreach ($blueprint['data'] as $dataFile) {
+foreach ($blueprint->get('data') as $dataFile) {
     $dataBuilder->load($dataFile);
 }
 

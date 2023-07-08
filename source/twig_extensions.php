@@ -16,7 +16,7 @@ $twig->addFunction(new \Twig\TwigFunction(
 ));
 
 $twig->addFunction(new \Twig\TwigFunction("link", function ($context, $path) use ($blueprint) {
-    $urlPrefix = $context['lang']['current'] != $blueprint['default_language'] ?
+    $urlPrefix = $context['lang']['current'] != $blueprint->get('default_language') ?
         "/{$context['lang']['current']}" :
         "";
 
