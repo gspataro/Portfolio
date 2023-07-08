@@ -112,7 +112,8 @@ module.exports = {
             "h2": {fontSize: theme("fontSize.3xl")},
             "h3": {fontSize: theme("fontSize.2xl")},
             "h4": {fontSize: theme("fontSize.xl")},
-            "h5": {fontSize: theme("fontSize.lg")}
+            "h5": {fontSize: theme("fontSize.lg")},
+            "h6": {fontSize: theme("fontSize.md")}
         })
     })
   ],
