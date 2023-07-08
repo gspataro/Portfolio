@@ -2,9 +2,10 @@
 
 namespace GSpataro\Builder;
 
+use GSpataro\Utilities\DotNavigator;
 use GSpataro\Builder\Exception\DataFileNotFoundException;
 
-final class Data
+final class Data extends DotNavigator
 {
     /**
      * Store loaded data
@@ -12,7 +13,7 @@ final class Data
      * @var array
      */
 
-    private array $data = [];
+    protected bool $readOnly = true;
 
     /**
      * Initialize data builder
@@ -37,7 +38,7 @@ final class Data
         $filePath = "{$this->dataPath}/{$fileName}.json";
 
         if (!is_file($filePath)) {
-            throw new Exception\DataFileNotFoundException(
+            throw new DataFileNotFoundException(
                 "Data file not found: {$filePath}"
             );
         }
@@ -60,29 +61,5 @@ final class Data
 
         $rawData = $this->getFile($fileName);
         $this->data[$fileName] = json_decode($rawData, true);
-    }
-
-    /**
-     * Get data
-     *
-     * @param string $query
-     * @return mixed
-     */
-
-    public function get(string $query): mixed
-    {
-        $keys = explode(".", $query);
-        $result = $this->data;
-
-        foreach ($keys as $key) {
-            if (!isset($result[$key])) {
-                $result = $query;
-                break;
-            }
-
-            $result = $result[$key];
-        }
-
-        return $result;
     }
 }
