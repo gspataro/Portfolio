@@ -13,9 +13,9 @@ module.exports = {
         "thunder": {
             "lightest": "#656465",
             "lighter": "#4f4d4f",
-            "light": "#393739",
-            DEFAULT: "#232123",
-            "dark": "#393739",
+            "light": "#434143",
+            DEFAULT: "#393739",
+            "dark": "#232123",
             "darker": "#191719",
             "darkest": "#121112"
 
