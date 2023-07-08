@@ -13,6 +13,3 @@ foreach ($locales->getAll() as $lang) {
         $pageBuilder->compile($page['template'], $outputPathPrefix . $page['output']);
     }
 }
-
-//$assets = require_once DIR_SOURCE . "/assets.php";
-//copyAssets($assets);
