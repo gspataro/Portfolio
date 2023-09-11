@@ -5,6 +5,10 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: ["./contents/view/**/*.html"],
   theme: {
+    fontFamily: {
+        "sans": ['Roboto', 'Sans-Serif', 'Arial'],
+        "roboto-flex": ['Roboto Flex', 'Roboto', 'Sans-Serif', 'Arial']
+    },
     colors: {
         "transparent": "transparent",
         "black": "#000000",
