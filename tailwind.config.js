@@ -19,6 +19,15 @@ module.exports = {
             "darkest": "#121112"
 
         },
+        "stiletto": {
+            "lightest": "#cd625f",
+            "lighter": "#c44441",
+            "light": "#b13735",
+            DEFAULT: "#9a2e2c",
+            "dark": "#882826",
+            "darker": "#7c2523",
+            "darkest": "#6c2220"
+        },
         "fawn": {
             "lightest": "#ac7e6d",
             "lighter": "#a16b58",
