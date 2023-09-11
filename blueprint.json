@@ -13,6 +13,10 @@
         {
             "template": "colors",
             "output": "/colors.html"
+        },
+        {
+            "template": "typography",
+            "output": "/typography.html"
         }
     ],
     "exclude_assets": [
