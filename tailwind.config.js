@@ -144,6 +144,10 @@ module.exports = {
             "h6": {
                 fontSize: "1.5rem",
                 fontWeight: 500
+            },
+            "a": {
+                color: theme('colors.stiletto.DEFAULT'),
+                textDecoration: 'underline'
             }
         })
     })
