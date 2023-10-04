@@ -1,8 +1,8 @@
 <?php
 
-use GSpataro\Localization;
 use GSpataro\Builder;
-use Erusev\Parsedown\Parsedown;
+use GSpataro\Application;
+use GSpataro\DependencyInjection\Container;
 
 // Include directories aliases
 
@@ -16,41 +16,37 @@ require_once DIR_VENDOR . "/autoload.php";
 
 (new \NunoMaduro\Collision\Provider())->register();
 
-// Initialize parsedown
+// Initialize dependency injection container
 
-$parsedown = new Parsedown();
+$app = new Container();
+$app->loadComponents([
+    Application\TwigComponent::class,
+    Application\ParsedownComponent::class,
+    Application\LocalizationComponent::class,
+    Application\BlueprintComponent::class,
+    Application\BuilderComponent::class
+]);
+$app->boot();
 
-// Initialize twig/twig component
+// Build process
 
-$twigLoader = new \Twig\Loader\FilesystemLoader(DIR_VIEW);
-$twig = new \Twig\Environment($twigLoader);
-$twig->addExtension(new \Twig\Extra\String\StringExtension());
-
-// Load data from blueprint.json
-
-$blueprint = new Builder\Blueprint(DIR_ROOT . '/blueprint.json');
-
-// Initialize localization
-
-$locales = new Localization\Locales();
-
-foreach ($blueprint->get('languages') as $langKey) {
-    $locales->addLanguage(new Localization\Language($langKey, DIR_LANGS . "/{$langKey}"));
-}
-
-// Initialize builder
-
-$dataBuilder = new Builder\Data(DIR_DATA);
-$pageBuilder = new Builder\Page($twig);
-
-foreach ($blueprint->get('data') as $dataFile) {
-    $dataBuilder->load($dataFile);
-}
-
-// Include twig extensions
+$blueprint = $app->get('blueprint');
+$locales = $app->get('locales');
+$twig = $app->get('twig');
+$parsedown = $app->get('parsedown');
+$dataBuilder = $app->get('builder.data');
+$pageBuilder = $app->get('builder.page');
 
 require_once DIR_SOURCE . "/twig_extensions.php";
 
-// Include build process
+foreach ($locales->getAll() as $lang) {
+    $twig->addGlobal('lang', [
+        'current' => $lang->key,
+        'urlPrefix' => $lang->key != $blueprint->get('default_language') ? "/{$lang->key}" : ""
+    ]);
 
-require_once DIR_SOURCE . "/build_process.php";
+    foreach ($blueprint->get('pages') as $page) {
+        $outputPathPrefix = $lang->key != $blueprint->get('default_language') ? "/{$lang->key}" : "";
+        $pageBuilder->compile($page['template'], $outputPathPrefix . $page['output']);
+    }
+}
