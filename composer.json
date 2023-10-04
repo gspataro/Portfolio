@@ -14,9 +14,9 @@
     "require": {
         "gspataro/dependencyinjection": "^1.0.0",
         "gspataro/cli": "^2.0.0",
-        "nunomaduro/collision": "^6.2.0",
-        "twig/twig": "^3.4.1",
-        "twig/string-extra": "^3.4.0",
+        "nunomaduro/collision": "^7.9.0",
+        "twig/twig": "^3.7.1",
+        "twig/string-extra": "^3.7.1",
         "erusev/parsedown": "^2.0.0-beta-1"
     },
     "autoload": {
