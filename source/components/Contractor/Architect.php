@@ -33,7 +33,7 @@ final class Architect
      * @return void
      */
 
-    public function setupProject(string $outputDir = DIR_PUBLIC): void
+    public function setupProject(string $outputDir = DIR_OUTPUT): void
     {
         if (!$this->blueprint->has('pages')) {
             return;
