@@ -8,6 +8,14 @@ use GSpataro\Contractor\Interface\BuilderInterface;
 abstract class BaseBuilder implements BuilderInterface
 {
     /**
+     * Store instructions
+     *
+     * @var array
+     */
+
+    protected array $instructions = [];
+
+    /**
      * Initialize page builder
      *
      * @param TwigEnvironment $twig

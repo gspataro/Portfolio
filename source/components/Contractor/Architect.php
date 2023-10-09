@@ -40,15 +40,18 @@ final class Architect
         }
 
         $this->project['outputDir'] = $outputDir;
+        $this->project['builders'] = [];
         $this->project['items'] = [];
 
         foreach ($this->blueprint->get('items') as $item) {
             $item['type'] ??= 'simple';
+            $this->project['builders'][$item['type']] ??= $this->builders->get($item['type']);
+            $this->project['items'][$item['type']] ??= [];
 
-            $this->project['items'][] = [
+            $this->project['items'][$item['type']][] = [
                 'template' => $item['template'],
-                'output' => $item['output'],
-                'builder' => $this->builders->get($item['type'])
+                'output' => $outputDir . $item['output'],
+                'data' => []
             ];
         }
     }
@@ -74,8 +77,13 @@ final class Architect
     {
         $project = $this->getProject();
 
-        foreach ($project['items'] as $item) {
+        /*foreach ($project['items'] as $item) {
             $item['builder']->compile($item['template'], $project['outputDir'] . $item['output']);
+        }*/
+
+        foreach ($project['builders'] as $type => $builder) {
+            $builder->setup($project['items'][$type]);
+            $builder->compile();
         }
     }
 }

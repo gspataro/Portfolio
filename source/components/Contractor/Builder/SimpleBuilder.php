@@ -5,23 +5,34 @@ namespace GSpataro\Contractor\Builder;
 final class SimpleBuilder extends BaseBuilder
 {
     /**
-     * Compile a page
+     * Setup instructions
      *
-     * @param string $templateName
-     * @param string $outputPath
-     * @param array $data
+     * @param array $instructions
      * @return void
      */
 
-    public function compile(string $templateName, string $outputPath, array $data = []): void
+    public function setup(array $instructions): void
     {
-        $outputDirName = pathinfo($outputPath, PATHINFO_DIRNAME);
+        $this->instructions = $instructions;
+    }
 
-        if (!is_dir($outputDirName)) {
-            mkdir($outputDirName, true);
+    /**
+     * Compile a page
+     *
+     * @return void
+     */
+
+    public function compile(): void
+    {
+        foreach ($this->instructions as $item) {
+            $outputDirName = pathinfo($item['output'], PATHINFO_DIRNAME);
+
+            if (!is_dir($outputDirName)) {
+                mkdir($outputDirName, true);
+            }
+
+            $compiledTemplate = $this->twig->render("{$item['template']}.html", $item['data']);
+            file_put_contents($item['output'], $compiledTemplate);
         }
-
-        $compiledTemplate = $this->twig->render("{$templateName}.html", $data);
-        file_put_contents($outputPath, $compiledTemplate);
     }
 }
