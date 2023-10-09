@@ -3,8 +3,9 @@
 namespace GSpataro\Builder;
 
 use Twig\Environment as TwigEnvironment;
+use GSpataro\Builder\Interface\BuilderInterface;
 
-final class PageBuilder
+final class PageBuilder implements BuilderInterface
 {
     /**
      * Initialize page builder

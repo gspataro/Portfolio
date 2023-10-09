@@ -12,11 +12,12 @@ final class BuildCommand extends BaseCommand
         $this->output->print('Running the building process...');
 
         $blueprint = $this->app->get('blueprint');
+        $architect = $this->app->get('builder.architect');
         $locales = $this->app->get('locales');
         $twig = $this->app->get('twig');
         $parsedown = $this->app->get('parsedown');
         $dataBuilder = $this->app->get('builder.data');
-        $pageBuilder = $this->app->get('builder.page');
+        //$pageBuilder = $this->app->get('builder.page');
 
         require_once DIR_SOURCE . "/twig_extensions.php";
 
@@ -25,11 +26,10 @@ final class BuildCommand extends BaseCommand
                 'current' => $lang->key,
                 'urlPrefix' => $lang->key != $blueprint->get('default_language') ? "/{$lang->key}" : ""
             ]);
+            $outputPathPrefix = $lang->key != $blueprint->get('default_language') ? "/{$lang->key}" : "";
 
-            foreach ($blueprint->get('pages') as $page) {
-                $outputPathPrefix = $lang->key != $blueprint->get('default_language') ? "/{$lang->key}" : "";
-                $pageBuilder->compile($page['template'], $outputPathPrefix . $page['output']);
-            }
+            $architect->setupProject(DIR_PUBLIC . $outputPathPrefix);
+            $architect->executeBuild();
         }
 
         $this->output->print('Build completed!');
