@@ -40,11 +40,12 @@ final class Architect
         }
 
         $this->project['outputDir'] = $outputDir;
+        $this->project['items'] = [];
 
         foreach ($this->blueprint->get('pages') as $page) {
             $page['type'] ??= 'simple';
 
-            $this->project['items'] = [
+            $this->project['items'][] = [
                 'template' => $page['template'],
                 'output' => $page['output'],
                 'builder' => $this->builders->get($page['type'])
