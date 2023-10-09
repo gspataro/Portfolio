@@ -4,9 +4,9 @@ namespace GSpataro\Application;
 
 use GSpataro\Contractor\Data;
 use GSpataro\Contractor\Architect;
-use GSpataro\Contractor\PageBuilder;
 use GSpataro\Contractor\BuildersCollection;
 use GSpataro\DependencyInjection\Component;
+use GSpataro\Contractor\Builder\SimpleBuilder;
 
 final class ContractorComponent extends Component
 {
@@ -36,7 +36,7 @@ final class ContractorComponent extends Component
     {
         $buildersCollection = $this->container->get('builder.collection');
 
-        $buildersCollection->add('simple', new PageBuilder(
+        $buildersCollection->add('simple', new SimpleBuilder(
             $this->container->get('twig')
         ));
 
