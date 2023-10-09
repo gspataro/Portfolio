@@ -17,7 +17,6 @@ final class BuildCommand extends BaseCommand
         $twig = $this->app->get('twig');
         $parsedown = $this->app->get('parsedown');
         $dataBuilder = $this->app->get('builder.data');
-        //$pageBuilder = $this->app->get('builder.page');
 
         require_once DIR_SOURCE . "/twig_extensions.php";
 
