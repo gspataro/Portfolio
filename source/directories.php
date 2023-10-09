@@ -19,10 +19,10 @@ define("DIR_SOURCE", DIR_ROOT . "/source");
 define("DIR_VENDOR", DIR_SOURCE . "/vendor");
 
 /**
- * Output dir: /public
+ * Output dir: /output
  */
 
-define("DIR_PUBLIC", DIR_ROOT . "/public");
+define("DIR_OUTPUT", DIR_ROOT . "/output");
 
 /**
  * Contents dir: /contents
