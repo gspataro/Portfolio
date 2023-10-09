@@ -5,18 +5,6 @@ namespace GSpataro\Contractor\Builder;
 final class SimpleBuilder extends BaseBuilder
 {
     /**
-     * Setup instructions
-     *
-     * @param array $instructions
-     * @return void
-     */
-
-    public function setup(array $instructions): void
-    {
-        $this->instructions = $instructions;
-    }
-
-    /**
      * Compile a page
      *
      * @return void
@@ -31,7 +19,7 @@ final class SimpleBuilder extends BaseBuilder
                 mkdir($outputDirName, true);
             }
 
-            $compiledTemplate = $this->twig->render("{$item['template']}.html", $item['data']);
+            $compiledTemplate = $this->twig->render("{$item['template']}.html");
             file_put_contents($item['output'], $compiledTemplate);
         }
     }

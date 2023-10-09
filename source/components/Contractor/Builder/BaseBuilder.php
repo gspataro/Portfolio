@@ -25,4 +25,16 @@ abstract class BaseBuilder implements BuilderInterface
         protected readonly TwigEnvironment $twig
     ) {
     }
+
+    /**
+     * Setup instructions
+     *
+     * @param array $instructions
+     * @return void
+     */
+
+    public function setup(array $instructions): void
+    {
+        $this->instructions = $instructions;
+    }
 }
