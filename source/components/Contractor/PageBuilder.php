@@ -29,7 +29,6 @@ final class PageBuilder implements BuilderInterface
 
     public function compile(string $templateName, string $outputPath, array $data = []): void
     {
-        $outputPath = DIR_OUTPUT . "/{$outputPath}";
         $outputDirName = pathinfo($outputPath, PATHINFO_DIRNAME);
 
         if (!is_dir($outputDirName)) {
