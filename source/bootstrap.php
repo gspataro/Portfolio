@@ -19,11 +19,11 @@ require_once DIR_VENDOR . "/autoload.php";
 
 $app = new Container();
 $app->loadComponents([
-    Application\CLIComponent::class,
+    Application\LocalizationComponent::class,
     Application\TwigComponent::class,
     Application\ParsedownComponent::class,
-    Application\LocalizationComponent::class,
     Application\BlueprintComponent::class,
-    Application\ContractorComponent::class
+    Application\ContractorComponent::class,
+    Application\CLIComponent::class
 ]);
 $app->boot();
