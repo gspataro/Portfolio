@@ -4,7 +4,7 @@ namespace GSpataro\Builder;
 
 use Twig\Environment as TwigEnvironment;
 
-final class Page
+final class PageBuilder
 {
     /**
      * Initialize page builder

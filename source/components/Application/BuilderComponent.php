@@ -3,7 +3,7 @@
 namespace GSpataro\Application;
 
 use GSpataro\Builder\Data;
-use GSpataro\Builder\Page;
+use GSpataro\Builder\PageBuilder;
 use GSpataro\DependencyInjection\Component;
 
 final class BuilderComponent extends Component
@@ -19,7 +19,7 @@ final class BuilderComponent extends Component
         });
 
         $this->container->add('builder.page', function ($container, $args): object {
-            return new Page(
+            return new PageBuilder(
                 $container->get('twig')
             );
         });
