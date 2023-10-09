@@ -2,22 +2,8 @@
 
 namespace GSpataro\Contractor\Builder;
 
-use Twig\Environment as TwigEnvironment;
-use GSpataro\Contractor\Interface\BuilderInterface;
-
-final class SimpleBuilder implements BuilderInterface
+final class SimpleBuilder extends BaseBuilder
 {
-    /**
-     * Initialize page builder
-     *
-     * @param TwigEnvironment $twig
-     */
-
-    public function __construct(
-        private TwigEnvironment $twig
-    ) {
-    }
-
     /**
      * Compile a page
      *
