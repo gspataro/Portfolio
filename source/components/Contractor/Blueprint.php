@@ -1,8 +1,8 @@
 <?php
 
-namespace GSpataro\Builder;
+namespace GSpataro\Contractor;
 
-use GSpataro\Builder\Exception\InvalidBlueprintException;
+use GSpataro\Contractor\Exception\InvalidBlueprintException;
 use GSpataro\Utilities\DotNavigator;
 
 final class Blueprint extends DotNavigator

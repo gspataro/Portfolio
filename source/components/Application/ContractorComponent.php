@@ -2,13 +2,13 @@
 
 namespace GSpataro\Application;
 
-use GSpataro\Builder\Data;
-use GSpataro\Builder\Architect;
-use GSpataro\Builder\PageBuilder;
-use GSpataro\Builder\BuildersCollection;
+use GSpataro\Contractor\Data;
+use GSpataro\Contractor\Architect;
+use GSpataro\Contractor\PageBuilder;
+use GSpataro\Contractor\BuildersCollection;
 use GSpataro\DependencyInjection\Component;
 
-final class BuilderComponent extends Component
+final class ContractorComponent extends Component
 {
     public function register(): void
     {

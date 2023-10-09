@@ -1,9 +1,9 @@
 <?php
 
-namespace GSpataro\Builder;
+namespace GSpataro\Contractor;
 
 use GSpataro\Utilities\DotNavigator;
-use GSpataro\Builder\Exception\DataFileNotFoundException;
+use GSpataro\Contractor\Exception\DataFileNotFoundException;
 
 final class Data extends DotNavigator
 {

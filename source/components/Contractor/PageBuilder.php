@@ -1,9 +1,9 @@
 <?php
 
-namespace GSpataro\Builder;
+namespace GSpataro\Contractor;
 
 use Twig\Environment as TwigEnvironment;
-use GSpataro\Builder\Interface\BuilderInterface;
+use GSpataro\Contractor\Interface\BuilderInterface;
 
 final class PageBuilder implements BuilderInterface
 {

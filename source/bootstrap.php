@@ -1,6 +1,5 @@
 <?php
 
-use GSpataro\Builder;
 use GSpataro\Application;
 use GSpataro\DependencyInjection\Container;
 
@@ -25,6 +24,6 @@ $app->loadComponents([
     Application\ParsedownComponent::class,
     Application\LocalizationComponent::class,
     Application\BlueprintComponent::class,
-    Application\BuilderComponent::class
+    Application\ContractorComponent::class
 ]);
 $app->boot();

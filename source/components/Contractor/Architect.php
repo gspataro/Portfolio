@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Builder;
+namespace GSpataro\Contractor;
 
 final class Architect
 {

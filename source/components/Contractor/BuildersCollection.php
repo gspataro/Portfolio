@@ -1,8 +1,8 @@
 <?php
 
-namespace GSpataro\Builder;
+namespace GSpataro\Contractor;
 
-use GSpataro\Builder\Interface\BuilderInterface;
+use GSpataro\Contractor\Interface\BuilderInterface;
 
 final class BuildersCollection
 {

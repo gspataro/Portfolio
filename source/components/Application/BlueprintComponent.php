@@ -2,7 +2,7 @@
 
 namespace GSpataro\Application;
 
-use GSpataro\Builder\Blueprint;
+use GSpataro\Contractor\Blueprint;
 use GSpataro\DependencyInjection\Component;
 
 final class BlueprintComponent extends Component
