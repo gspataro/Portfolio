@@ -35,20 +35,20 @@ final class Architect
 
     public function setupProject(string $outputDir = DIR_OUTPUT): void
     {
-        if (!$this->blueprint->has('pages')) {
+        if (!$this->blueprint->has('items')) {
             return;
         }
 
         $this->project['outputDir'] = $outputDir;
         $this->project['items'] = [];
 
-        foreach ($this->blueprint->get('pages') as $page) {
-            $page['type'] ??= 'simple';
+        foreach ($this->blueprint->get('items') as $item) {
+            $item['type'] ??= 'simple';
 
             $this->project['items'][] = [
-                'template' => $page['template'],
-                'output' => $page['output'],
-                'builder' => $this->builders->get($page['type'])
+                'template' => $item['template'],
+                'output' => $item['output'],
+                'builder' => $this->builders->get($item['type'])
             ];
         }
     }

@@ -5,7 +5,7 @@
         "index",
         "portfolio"
     ],
-    "pages": [
+    "items": [
         {
             "template": "index",
             "output": "/index.html"
