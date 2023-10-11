@@ -20,7 +20,8 @@ final class Project
 
     public function __construct(
         private readonly Blueprint $blueprint,
-        private string $outputDir = DIR_OUTPUT
+        private string $outputDir = DIR_OUTPUT,
+        private string $dataDir = DIR_DATA
     ) {
         $this->setup();
     }
@@ -59,7 +60,7 @@ final class Project
 
                     $this->items[$i]['data'][] = [
                         'type' => $type,
-                        'path' => $path
+                        'path' => $this->getDataDir() . '/' . $path
                     ];
                 }
             }
@@ -75,6 +76,17 @@ final class Project
     public function getOutputDir(): string
     {
         return $this->outputDir;
+    }
+
+    /**
+     * Get project data dir
+     *
+     * @return string
+     */
+
+    public function getDataDir(): string
+    {
+        return $this->dataDir;
     }
 
     /**
