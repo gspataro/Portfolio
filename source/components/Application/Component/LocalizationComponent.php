@@ -24,7 +24,7 @@ final class LocalizationComponent extends Component
 
     public function boot(): void
     {
-        $blueprint = $this->container->get('blueprint');
+        $blueprint = $this->container->get('app.blueprint');
         $locales = $this->container->get('locales');
 
         foreach ($blueprint->get('languages') as $langKey) {

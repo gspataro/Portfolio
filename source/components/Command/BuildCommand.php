@@ -11,7 +11,7 @@ final class BuildCommand extends BaseCommand
     {
         $this->output->print('Running the building process...');
 
-        $blueprint = $this->app->get('blueprint');
+        $blueprint = $this->app->get('app.blueprint');
         $architect = $this->app->get('builder.architect');
         $locales = $this->app->get('locales');
         $twig = $this->app->get('twig');

@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Contractor\Exception;
+namespace GSpataro\Application\Exception;
 
 use Exception;
 

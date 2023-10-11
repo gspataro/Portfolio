@@ -26,7 +26,7 @@ final class ContractorComponent extends Component
 
         $this->container->add('builder.architect', function ($container, $args): object {
             return new Architect(
-                $container->get('blueprint'),
+                $container->get('app.blueprint'),
                 $container->get('builder.collection')
             );
         });
@@ -40,7 +40,7 @@ final class ContractorComponent extends Component
             $this->container->get('twig')
         ));
 
-        $blueprint = $this->container->get('blueprint');
+        $blueprint = $this->container->get('app.blueprint');
         $dataBuilder = $this->container->get('builder.data');
 
         foreach ($blueprint->get('data') as $dataFile) {

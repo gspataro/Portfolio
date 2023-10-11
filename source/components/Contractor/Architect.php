@@ -2,6 +2,8 @@
 
 namespace GSpataro\Contractor;
 
+use GSpataro\Application\Blueprint;
+
 final class Architect
 {
     /**

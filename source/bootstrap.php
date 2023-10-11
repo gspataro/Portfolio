@@ -22,7 +22,7 @@ $app->loadComponents([
     Component\LocalizationComponent::class,
     Component\TwigComponent::class,
     Component\ParsedownComponent::class,
-    Component\BlueprintComponent::class,
+    Component\ApplicationComponent::class,
     Component\ContractorComponent::class,
     Component\CLIComponent::class
 ]);

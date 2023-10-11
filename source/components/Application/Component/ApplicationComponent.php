@@ -2,16 +2,16 @@
 
 namespace GSpataro\Application\Component;
 
-use GSpataro\Contractor\Blueprint;
+use GSpataro\Application\Blueprint;
 use GSpataro\DependencyInjection\Component;
 
-final class BlueprintComponent extends Component
+final class ApplicationComponent extends Component
 {
     public function register(): void
     {
         $this->container->variable('blueprintPath', DIR_ROOT . '/blueprint.json');
 
-        $this->container->add('blueprint', function ($container, $args): object {
+        $this->container->add('app.blueprint', function ($container, $args): object {
             return new Blueprint(
                 $container->variable('blueprintPath')
             );

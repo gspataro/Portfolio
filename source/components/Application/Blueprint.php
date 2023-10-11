@@ -1,8 +1,7 @@
 <?php
 
-namespace GSpataro\Contractor;
+namespace GSpataro\Application;
 
-use GSpataro\Contractor\Exception\InvalidBlueprintException;
 use GSpataro\Utilities\DotNavigator;
 
 final class Blueprint extends DotNavigator
@@ -18,7 +17,7 @@ final class Blueprint extends DotNavigator
     public function __construct(string $filePath)
     {
         if (!is_file($filePath)) {
-            throw new InvalidBlueprintException(
+            throw new Exception\InvalidBlueprintException(
                 "Blueprint file not found: '{$filePath}'."
             );
         }
@@ -26,7 +25,7 @@ final class Blueprint extends DotNavigator
         $extension = pathinfo($filePath, PATHINFO_EXTENSION);
 
         if ($extension !== 'json') {
-            throw new InvalidBlueprintException(
+            throw new Exception\InvalidBlueprintException(
                 "Invalid blueprint provided. The blueprint file must be a json file."
             );
         }
