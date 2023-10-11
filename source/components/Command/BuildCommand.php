@@ -23,9 +23,6 @@ final class BuildCommand extends BaseCommand
 
 
         $librarian->run();
-
-        //die(var_dump($this->app->get('app.project')->getItems()));
-
         $architect->run();
 
         $this->output->print('Build completed!');
