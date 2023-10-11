@@ -2,6 +2,7 @@
 
 namespace GSpataro\Application\Component;
 
+use GSpataro\Application\Project;
 use GSpataro\Application\Blueprint;
 use GSpataro\DependencyInjection\Component;
 
@@ -14,6 +15,12 @@ final class ApplicationComponent extends Component
         $this->container->add('app.blueprint', function ($container, $args): object {
             return new Blueprint(
                 $container->variable('blueprintPath')
+            );
+        });
+
+        $this->container->add('app.project', function ($container, $args): object {
+            return new Project(
+                $container->get('app.blueprint')
             );
         });
     }
