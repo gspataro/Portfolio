@@ -1,6 +1,6 @@
 <?php
 
-use GSpataro\Application;
+use GSpataro\Application\Component;
 use GSpataro\DependencyInjection\Container;
 
 // Include directories aliases
@@ -19,11 +19,11 @@ require_once DIR_VENDOR . "/autoload.php";
 
 $app = new Container();
 $app->loadComponents([
-    Application\LocalizationComponent::class,
-    Application\TwigComponent::class,
-    Application\ParsedownComponent::class,
-    Application\BlueprintComponent::class,
-    Application\ContractorComponent::class,
-    Application\CLIComponent::class
+    Component\LocalizationComponent::class,
+    Component\TwigComponent::class,
+    Component\ParsedownComponent::class,
+    Component\BlueprintComponent::class,
+    Component\ContractorComponent::class,
+    Component\CLIComponent::class
 ]);
 $app->boot();

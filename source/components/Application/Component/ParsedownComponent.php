@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Application;
+namespace GSpataro\Application\Component;
 
 use Erusev\Parsedown\Parsedown;
 use GSpataro\DependencyInjection\Component;

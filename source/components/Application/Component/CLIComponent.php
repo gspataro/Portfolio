@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Application;
+namespace GSpataro\Application\Component;
 
 use GSpataro\CLI\Handler;
 use GSpataro\CLI\CommandsCollection;

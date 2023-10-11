@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Application;
+namespace GSpataro\Application\Component;
 
 use GSpataro\Localization\Locales;
 use GSpataro\Localization\Language;

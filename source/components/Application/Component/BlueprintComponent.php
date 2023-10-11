@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Application;
+namespace GSpataro\Application\Component;
 
 use GSpataro\Contractor\Blueprint;
 use GSpataro\DependencyInjection\Component;
