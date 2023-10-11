@@ -23,6 +23,7 @@ $app->loadComponents([
     Component\TwigComponent::class,
     Component\ParsedownComponent::class,
     Component\ApplicationComponent::class,
+    Component\LibraryComponent::class,
     Component\ContractorComponent::class,
     Component\CLIComponent::class
 ]);

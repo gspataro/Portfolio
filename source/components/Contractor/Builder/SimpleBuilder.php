@@ -19,7 +19,7 @@ final class SimpleBuilder extends BaseBuilder
             mkdir($outputDirName, true);
         }
 
-        $compiledTemplate = $this->twig->render("{$item['template']}.html");
+        $compiledTemplate = $this->twig->render("{$item['template']}.html", $item['data']);
         file_put_contents($item['output'], $compiledTemplate);
     }
 }

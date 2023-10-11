@@ -99,4 +99,17 @@ final class Project
     {
         return $this->items;
     }
+
+    /**
+     * Update an item
+     *
+     * @param int $id
+     * @param array $item
+     * @return void
+     */
+
+    public function setItem(int $id, array $item): void
+    {
+        $this->items[$id] = $item;
+    }
 }

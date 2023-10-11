@@ -39,12 +39,5 @@ final class ContractorComponent extends Component
         $buildersCollection->add('simple', new SimpleBuilder(
             $this->container->get('twig')
         ));
-
-        $blueprint = $this->container->get('app.blueprint');
-        $dataBuilder = $this->container->get('builder.data');
-
-        foreach ($blueprint->get('data') as $dataFile) {
-            $dataBuilder->load($dataFile);
-        }
     }
 }

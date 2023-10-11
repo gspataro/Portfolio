@@ -8,7 +8,8 @@
     "items": [
         {
             "template": "index",
-            "output": "/index.html"
+            "output": "/index.html",
+            "data": "test.txt"
         },
         {
             "template": "colors",
