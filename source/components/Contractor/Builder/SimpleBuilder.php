@@ -7,20 +7,19 @@ final class SimpleBuilder extends BaseBuilder
     /**
      * Compile a page
      *
+     * @param array $item
      * @return void
      */
 
-    public function compile(): void
+    public function compile(array $item): void
     {
-        foreach ($this->instructions as $item) {
-            $outputDirName = pathinfo($item['output'], PATHINFO_DIRNAME);
+        $outputDirName = pathinfo($item['output'], PATHINFO_DIRNAME);
 
-            if (!is_dir($outputDirName)) {
-                mkdir($outputDirName, true);
-            }
-
-            $compiledTemplate = $this->twig->render("{$item['template']}.html");
-            file_put_contents($item['output'], $compiledTemplate);
+        if (!is_dir($outputDirName)) {
+            mkdir($outputDirName, true);
         }
+
+        $compiledTemplate = $this->twig->render("{$item['template']}.html");
+        file_put_contents($item['output'], $compiledTemplate);
     }
 }

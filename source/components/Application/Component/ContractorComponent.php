@@ -26,7 +26,7 @@ final class ContractorComponent extends Component
 
         $this->container->add('builder.architect', function ($container, $args): object {
             return new Architect(
-                $container->get('app.blueprint'),
+                $container->get('app.project'),
                 $container->get('builder.collection')
             );
         });

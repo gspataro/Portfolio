@@ -27,8 +27,7 @@ final class BuildCommand extends BaseCommand
             ]);
             $outputPathPrefix = $lang->key != $blueprint->get('default_language') ? "/{$lang->key}" : "";
 
-            $architect->setupProject(DIR_OUTPUT . $outputPathPrefix);
-            $architect->executeBuild();
+            $architect->run();
         }
 
         $this->output->print('Build completed!');
