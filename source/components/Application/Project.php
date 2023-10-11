@@ -47,7 +47,21 @@ final class Project
                     continue;
                 }
 
-                $this->items[$i]['data'] = is_array($item['data']) ? $item['data'] : [$item['data']];
+                $data = is_array($item['data']) ? $item['data'] : [$item['data']];
+
+                foreach ($data as $query) {
+                    if (str_contains($query, ':')) {
+                        [$type, $path] = explode(':', $query, 2);
+                    } else {
+                        $type = 'text';
+                        $path = $query;
+                    }
+
+                    $this->items[$i]['data'][] = [
+                        'type' => $type,
+                        'path' => $path
+                    ];
+                }
             }
         }
     }
