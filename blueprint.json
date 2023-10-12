@@ -21,6 +21,6 @@
         }
     ],
     "exclude_assets": [
-        "css/ui.css"
+        "ui.css"
     ]
 }

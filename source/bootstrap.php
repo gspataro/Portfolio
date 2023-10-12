@@ -25,6 +25,7 @@ $app->loadComponents([
     Component\ApplicationComponent::class,
     Component\LibraryComponent::class,
     Component\ContractorComponent::class,
+    Component\AssetsComponent::class,
     Component\CLIComponent::class
 ]);
 $app->boot();

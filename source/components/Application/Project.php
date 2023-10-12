@@ -13,15 +13,27 @@ final class Project
     private array $items = [];
 
     /**
+     * Store excluded assets
+     *
+     * @var array
+     */
+
+    private array $excludedAssets = [];
+
+    /**
      * Initialize Project object
      *
      * @param Blueprint $blueprint
+     * @param string $outputDir
+     * @param string $dataDir
+     * @param string $assetsDir
      */
 
     public function __construct(
         private readonly Blueprint $blueprint,
         private string $outputDir = DIR_OUTPUT,
-        private string $dataDir = DIR_DATA
+        private string $dataDir = DIR_DATA,
+        private string $assetsDir = DIR_ASSETS
     ) {
         $this->setup();
     }
@@ -35,6 +47,8 @@ final class Project
 
     public function setup(): void
     {
+        $this->excludedAssets = $this->blueprint->get('exclude_assets') ?? [];
+
         if ($this->blueprint->has('items')) {
             foreach ($this->blueprint->get('items') as $i => $item) {
                 $this->items[$i] = [
@@ -90,6 +104,17 @@ final class Project
     }
 
     /**
+     * Get assets dir
+     *
+     * @return string
+     */
+
+    public function getAssetsDir(): string
+    {
+        return $this->assetsDir;
+    }
+
+    /**
      * Get project items
      *
      * @return array
@@ -111,5 +136,16 @@ final class Project
     public function setItem(int $id, array $item): void
     {
         $this->items[$id] = $item;
+    }
+
+    /**
+     * Get excluded assets
+     *
+     * @return array
+     */
+
+    public function getExcludedAssets(): array
+    {
+        return $this->excludedAssets;
     }
 }

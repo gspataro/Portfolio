@@ -14,6 +14,7 @@ final class BuildCommand extends BaseCommand
         $blueprint = $this->app->get('app.blueprint');
         $librarian = $this->app->get('library.librarian');
         $architect = $this->app->get('builder.architect');
+        $assets = $this->app->get('assets.handler');
         $locales = $this->app->get('locales');
         $twig = $this->app->get('twig');
         $parsedown = $this->app->get('parsedown');
@@ -24,6 +25,7 @@ final class BuildCommand extends BaseCommand
 
         $librarian->run();
         $architect->run();
+        $assets->run();
 
         $this->output->print('Build completed!');
     }
