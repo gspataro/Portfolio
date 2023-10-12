@@ -30,7 +30,7 @@ final class LibraryComponent extends Component
 
         $readersCollection->add('text', new TextReader());
         $readersCollection->add('markdown', new MarkdownReader(
-            $this->container->get('markdown.commonmark')
+            $this->container->get('markdown.converter')
         ));
     }
 }

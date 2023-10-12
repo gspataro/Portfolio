@@ -4,6 +4,7 @@ namespace GSpataro\Library\Reader;
 
 use League\CommonMark\ConverterInterface;
 use GSpataro\Library\Interface\ReaderInterface;
+use League\CommonMark\Extension\FrontMatter\Output\RenderedContentWithFrontMatter;
 
 final class MarkdownReader implements ReaderInterface
 {
@@ -31,6 +32,14 @@ final class MarkdownReader implements ReaderInterface
             $content = $this->markdown->convert(
                 file_get_contents($path)
             );
+
+            if ($content instanceof RenderedContentWithFrontMatter) {
+                $frontMatter = $content->getFrontMatter();
+
+                return [
+                    pathinfo($path, PATHINFO_FILENAME) => array_merge($frontMatter, ['content' => $content])
+                ];
+            }
 
             return [
                 pathinfo($path, PATHINFO_FILENAME) => $content
