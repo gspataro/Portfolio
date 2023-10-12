@@ -39,6 +39,37 @@ function recursiveCopy(string $from, string $to, array $exclude = []): void
 }
 
 /**
+ * Recursively delete a directory and its content
+ *
+ * @param string $path
+ * @return void
+ */
+
+function recursiveDelete(string $path): void
+{
+    if (!is_dir($path)) {
+        return;
+    }
+
+    $directory = new DirectoryIterator($path);
+
+    foreach ($directory as $item) {
+        if ($item->isDot()) {
+            continue;
+        }
+
+        if ($item->isFile()) {
+            unlink($item->getPathname());
+            continue;
+        }
+
+        recursiveDelete($item->getPathname());
+    }
+
+    rmdir($path);
+}
+
+/**
  * Get string between
  *
  * @param string $string
