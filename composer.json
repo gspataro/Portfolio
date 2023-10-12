@@ -17,7 +17,8 @@
         "nunomaduro/collision": "^7.9.0",
         "twig/twig": "^3.7.1",
         "twig/string-extra": "^3.7.1",
-        "league/commonmark": "^2.4.1"
+        "league/commonmark": "^2.4.1",
+        "symfony/yaml": "^6.3.3"
     },
     "autoload": {
         "psr-4": {
