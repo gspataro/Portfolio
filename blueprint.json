@@ -1,15 +1,10 @@
 {
     "languages": ["it", "en"],
     "default_language": "it",
-    "data": [
-        "index",
-        "portfolio"
-    ],
     "items": [
         {
             "template": "index",
-            "output": "/index.html",
-            "data": "test.txt"
+            "output": "/index.html"
         },
         {
             "template": "colors",
