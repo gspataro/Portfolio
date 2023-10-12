@@ -6,6 +6,7 @@ use GSpataro\Library\Librarian;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Library\Reader\TextReader;
 use GSpataro\DependencyInjection\Component;
+use GSpataro\Library\Reader\MarkdownReader;
 
 final class LibraryComponent extends Component
 {
@@ -28,5 +29,8 @@ final class LibraryComponent extends Component
         $readersCollection = $this->container->get('library.collection');
 
         $readersCollection->add('text', new TextReader());
+        $readersCollection->add('markdown', new MarkdownReader(
+            $this->container->get('markdown.commonmark')
+        ));
     }
 }
