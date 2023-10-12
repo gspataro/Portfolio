@@ -1,47 +1,40 @@
 <?php
 
 /**
- * Recursively copy a directory
+ * Recursively copy a file or directory to another location excluding the items in the $exclude array
  *
- * @param string $inputDirectory
- * @param string $outputDirectory
+ * @param string $from
+ * @param string $top
  * @param array $exclude
  * @return void
  */
 
-function recursiveCopy(string $inputDirectory, string $outputDirectory, $exclude = []): void
+function recursiveCopy(string $from, string $to, array $exclude = []): void
 {
-    if (!is_dir($inputDirectory)) {
-        throw new Exception(
-            "Input directory not found: {$inputDirectory}"
-        );
+    if (!is_dir($to)) {
+        mkdir($to, 0777, true);
     }
 
-    $structure = scandir($inputDirectory);
+    $directory = new DirectoryIterator($from);
 
-    if (!is_dir($outputDirectory)) {
-        mkdir($outputDirectory);
-    }
-
-    foreach ($structure as $item) {
-        if ($item == "." || $item == "..") {
+    foreach ($directory as $item) {
+        if ($item->isDot()) {
             continue;
         }
 
-        $inputItemPath = "{$inputDirectory}/{$item}";
-        $outputItemPath = "{$outputDirectory}/{$item}";
+        $source = $item->getPathname();
+        $destination = $to . '/' . $item->getBasename();
 
-        if (in_array($inputItemPath, $exclude)) {
+        if (in_array($item->getBasename(), $exclude)) {
             continue;
         }
 
-        if (is_dir($inputItemPath)) {
-            recursiveCopy($inputItemPath, $outputItemPath, $exclude);
+        if (is_file($source)) {
+            copy($source, $destination);
+            continue;
         }
 
-        if (is_file($inputItemPath)) {
-            copy($inputItemPath, $outputItemPath);
-        }
+        recursiveCopy($source, $destination, $exclude);
     }
 }
 
