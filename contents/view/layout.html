@@ -11,7 +11,38 @@
         <link href="/assets/css/ui.css" rel="stylesheet" />
     </head>
 
-    <body>
+    <body class="bg-ablescent-lightest">
+        <nav class="container h-[110px] flex items-center">
+            <a href="#" class="d-block w-fit text-thunder-darkest text-2xl uppercase no-underline">
+                <div class="w-max">
+                    Giuseppe <span class="font-medium">Spataro</span>
+                </div>
+                <div class="text-right text-xs">
+                    Web Developer &bullet; Pianist
+                </div>
+            </a>
+            <div class="flex-1"></div>
+            {%include './components/navbar_menu.html' with {
+                'items': [
+                    {
+                        'label': 'Portfolio',
+                        'url': '#'
+                    },
+                    {
+                        'label': 'Chi sono',
+                        'url': '#'
+                    },
+                    {
+                        'label': 'Blog',
+                        'url': '#'
+                    },
+                    {
+                        'label': 'Contatti',
+                        'url': '#'
+                    }
+                ]
+            }%}
+        </nav>
         {%block content%}
         {%endblock%}
     </body>
