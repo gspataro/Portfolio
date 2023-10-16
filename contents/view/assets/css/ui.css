@@ -166,6 +166,14 @@
         font-style: normal;
         font-display: swap;
     }
+
+    /**
+     * Variables
+     */
+
+    :root {
+        --header-height: 80px;
+    }
 }
 
 @layer components {
