@@ -7,6 +7,14 @@ use GSpataro\Application\Project;
 final class Librarian
 {
     /**
+     * Store compiled data
+     *
+     * @var array
+     */
+
+    private array $data = [];
+
+    /**
      * Initialize the Librarian object
      *
      * @param Project $project
@@ -35,8 +43,14 @@ final class Librarian
             $data = [];
 
             foreach ($item['data'] as $raw_data) {
-                $reader = $this->readers->get($raw_data['type']);
-                $data = array_merge($data, $reader->compile($raw_data['path']));
+                $path = $raw_data['path'];
+
+                if (!isset($this->data[$path])) {
+                    $reader = $this->readers->get($raw_data['type']);
+                    $this->data[$path] = $reader->compile($path);
+                }
+
+                $data = array_merge($data, $this->data[$path]);
             }
 
             $item['data'] = $data;
