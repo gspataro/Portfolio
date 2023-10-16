@@ -1,0 +1,33 @@
+<header class="container h-[110px] flex items-center">
+    <a href="#" class="d-block w-fit text-thunder-darkest text-2xl uppercase no-underline">
+        <div class="w-max">
+            Giuseppe <span class="font-medium">Spataro</span>
+        </div>
+        <div class="text-right text-xs">
+            Web Developer &bullet; Pianist
+        </div>
+    </a>
+    <div class="flex-1"></div>
+    <nav>
+        {%include './components/navbar.html' with {
+            'items': {
+                'portfolio': {
+                    'label': 'Portfolio',
+                    'url': '#'
+                },
+                'about': {
+                    'label': 'Chi sono',
+                    'url': '#'
+                },
+                'blog': {
+                    'label': 'Blog',
+                    'url': '#'
+                },
+                'contacts': {
+                    'label': 'Contatti',
+                    'url': '#'
+                }
+            }
+        }%}
+    </nav>
+</header>

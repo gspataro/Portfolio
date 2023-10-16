@@ -1,0 +1,15 @@
+<ul class="flex gap-xs">
+    {%for id, item in items%}
+        <li>
+            {%if page.id and page.id == id%}
+                <a href="{{item.url}}" class="text-thunder-darkest uppercase underline decoration-stiletto decoration-2 underline-offset-[10px]">
+                    {{item.label}}
+                </a>
+            {%else%}
+                <a href="{{item.url}}" class="text-thunder-darkest uppercase no-underline">
+                    {{item.label}}
+                </a>
+            {%endif%}
+        </li>
+    {%endfor%}
+</ul>
