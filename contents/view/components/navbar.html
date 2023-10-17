@@ -1,12 +1,12 @@
-<nav>
-    <label for="open-menu" class="cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M3 4h18v2H3V4Zm6 7h12v2H9v-2Zm-6 7h18v2H3v-2Z"/></svg>
-    </label>
-    <input type="checkbox" id="open-menu" class="hidden peer">
-    <div class="fixed inset top-[--header-height] hidden peer-checked:block">
-        <ul class="flex gap-xs">
+<nav id="navbar" class="group" data-status="closed">
+    <a href="javascript:void(0)" class="text-thunder-darkest toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="group-data-[status=open]:hidden"><path fill="currentColor" d="M3 4h18v2H3V4Zm6 7h12v2H9v-2Zm-6 7h18v2H3v-2Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="group-data-[status=closed]:hidden"><path fill="currentColor" d="m12 10.586l4.95-4.95l1.415 1.415l-4.95 4.95l4.95 4.95l-1.415 1.414l-4.95-4.95l-4.95 4.95l-1.413-1.415l4.95-4.95l-4.95-4.95L7.05 5.638l4.95 4.95Z"/></svg>
+    </a>
+    <div class="bg-ablescent-lightest fixed inset top-[--header-height] flex justify-center group-data-[status=closed]:hidden navbar-content">
+        <ul class="flex flex-col gap-xs pt-lg">
             {%for id, item in items%}
-                <li>
+                <li class="text-center">
                     {%if page.id and page.id == id%}
                         <a href="{{item.url}}" class="text-thunder-darkest uppercase underline decoration-stiletto decoration-2 underline-offset-[10px]">
                             {{item.label}}
