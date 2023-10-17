@@ -1,6 +1,6 @@
-<section class="py-md {{class}}">
-    <div class="container">
+<section class="py-lg {{class}}">
+    {%if not nocontainer%}<div class="container">{%endif%}
         {%block content%}
         {%endblock%}
-    </div>
+    {%if not nocontainer%}</div>{%endif%}
 </section>
