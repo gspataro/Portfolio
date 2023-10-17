@@ -123,27 +123,27 @@ module.exports = {
         addBase({
             "h1": {
                 fontSize: "2.125rem",
-                fontWeight: 500
+                fontWeight: 400
             },
             "h2": {
                 fontSize: "2rem",
-                fontWeight: 500
+                fontWeight: 400
             },
             "h3": {
                 fontSize: "1.875rem",
-                fontWeight: 500
+                fontWeight: 400
             },
             "h4": {
                 fontSize: "1.75rem",
-                fontWeight: 500
+                fontWeight: 400
             },
             "h5": {
                 fontSize: "1.625rem",
-                fontWeight: 500
+                fontWeight: 400
             },
             "h6": {
                 fontSize: "1.5rem",
-                fontWeight: 500
+                fontWeight: 400
             },
             "a": {
                 color: theme('colors.stiletto.DEFAULT'),
