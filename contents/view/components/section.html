@@ -1,4 +1,4 @@
-<section class="py-lg {{class}}">
+<section {%if id%}id="{{id}}"{%endif%} class="py-lg {{class}}">
     {%if not nocontainer%}<div class="container">{%endif%}
         {%block content%}
         {%endblock%}
