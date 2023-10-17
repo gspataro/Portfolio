@@ -80,9 +80,9 @@ module.exports = {
     container: {
         center: true,
         padding: {
-            DEFAULT: "0.5rem",
-            "tablet": "1rem",
-            "desktop": "0.5rem"
+            DEFAULT: "1rem",
+            "tablet": "1.5rem",
+            "desktop": "2rem"
         }
     },
     extend: {
