@@ -173,6 +173,7 @@
 
     :root {
         --header-height: 80px;
+        --header-outer-height: 82px;
     }
 
     /**
