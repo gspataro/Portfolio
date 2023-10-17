@@ -1,3 +1,16 @@
 {%extends "./layout.html"%}
-{%block content%}
+{%block main%}
+    {%embed './components/section.html' with {'class': "text-xl"}%}
+        {%block content%}
+            <div>
+                Benvenuto,<br>
+                il mio nome è
+            </div>
+            <h1 class="my-2xs text-brass">GIUSEPPE SPATARO</h1>
+            <div>
+                sono un pianista e<br>
+                sviluppatore web
+            </div>
+        {%endblock%}
+    {%endembed%}
 {%endblock%}
