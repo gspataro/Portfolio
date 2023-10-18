@@ -17,7 +17,7 @@
                     </div>
                 </h1>
                 <div class="flex-1"></div>
-                <a href="#webdev" class="self-end flex gap-2xs items-center justify-center font-normal">
+                <a href="#blog" class="self-end flex gap-2xs items-center justify-center font-normal">
                     <span class="uppercase">Continua a Leggere</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 5H5v2h7v10.172l-3.95-3.95l-1.414 1.414L13 21l6.364-6.364l-1.414-1.414l-3.95 3.95V5Z"/></svg>
                 </a>
@@ -25,16 +25,16 @@
         {%endblock%}
     {%endembed%}
     {%embed './components/section.html' with {
-        'id': 'webdev',
+        'id': 'blog',
         'viewport': true,
     }%}
         {%block content%}
-            <h2>Sviluppatore</h2>
+            <h2>Ultime dal blog</h2>
         {%endblock%}
     {%endembed%}
-    {%embed './components/section.html' with {'id': 'pianist', 'viewport': true}%}
+    {%embed './components/section.html' with {'id': 'portfolio', 'viewport': true}%}
         {%block content%}
-            <h2>Pianista</h2>
+            <h2>Progetti in evidenza</h2>
         {%endblock%}
     {%endembed%}
 {%endblock%}
