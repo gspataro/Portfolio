@@ -19,4 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
         navbarElement.dataset.status = 'closed';
         document.body.style.overflowY = 'auto';
     });
+
+    navbarElementClose.addEventListener('keydown', function (e) {
+        if (e.code !== 'Escape') {
+            return;
+        }
+
+        navbarElement.dataset.status = 'closed';
+        document.body.style.overflowY = 'auto';
+    });
 });
