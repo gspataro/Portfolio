@@ -122,7 +122,7 @@ module.exports = {
     plugin(function({addBase, theme}) {
         addBase({
             "h1": {
-                fontSize: "2.125rem",
+                fontSize: "2.2rem",
                 fontWeight: 400
             },
             "h2": {
@@ -130,19 +130,19 @@ module.exports = {
                 fontWeight: 400
             },
             "h3": {
-                fontSize: "1.875rem",
+                fontSize: "1.5rem",
                 fontWeight: 400
             },
             "h4": {
-                fontSize: "1.75rem",
+                fontSize: "1.3rem",
                 fontWeight: 400
             },
             "h5": {
-                fontSize: "1.625rem",
+                fontSize: "1.150rem",
                 fontWeight: 400
             },
             "h6": {
-                fontSize: "1.5rem",
+                fontSize: "1rem",
                 fontWeight: 400
             },
             "a": {
