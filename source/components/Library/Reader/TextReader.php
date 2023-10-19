@@ -26,7 +26,6 @@ final class TextReader implements ReaderInterface
                 continue;
             }
 
-            //$data = array_merge($data, $this->compile($file));
             $data[] = $this->compile($file);
         }
 
