@@ -29,11 +29,18 @@ final class MarkdownReader implements ReaderInterface
     public function compile(string $path): mixed
     {
         if (is_file($path)) {
-            $content = $this->markdown->convert(
+            $result = $this->markdown->convert(
                 file_get_contents($path)
             );
 
-            return $content;
+            if ($result instanceof RenderedContentWithFrontMatter) {
+                return [
+                    'meta' => $result->getFrontMatter(),
+                    'content' => $result->getContent()
+                ];
+            }
+
+            return $result;
         }
 
         $data = [];
