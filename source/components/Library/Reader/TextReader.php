@@ -2,33 +2,19 @@
 
 namespace GSpataro\Library\Reader;
 
-use GSpataro\Library\Interface\ReaderInterface;
-
-final class TextReader implements ReaderInterface
+final class TextReader extends BaseReader
 {
     /**
-     * Compile and return the given data
+     * Handle a single file
      *
-     * @param string $path
+     * @param string $source
      * @return mixed
      */
 
-    public function compile(string $path): mixed
+    protected function handleOne(string $source): mixed
     {
-        if (is_file($path)) {
-            return file_get_contents($path);
-        }
+        $result = file_get_contents($this->getPath($source));
 
-        $data = [];
-
-        foreach (glob($path) as $file) {
-            if (!is_file($file)) {
-                continue;
-            }
-
-            $data[] = $this->compile($file);
-        }
-
-        return $data;
+        return $result;
     }
 }

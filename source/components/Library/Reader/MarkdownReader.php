@@ -3,10 +3,9 @@
 namespace GSpataro\Library\Reader;
 
 use League\CommonMark\ConverterInterface;
-use GSpataro\Library\Interface\ReaderInterface;
 use League\CommonMark\Extension\FrontMatter\Output\RenderedContentWithFrontMatter;
 
-final class MarkdownReader implements ReaderInterface
+final class MarkdownReader extends BaseReader
 {
     /**
      * Initialize Markdown reader
@@ -20,39 +19,25 @@ final class MarkdownReader implements ReaderInterface
     }
 
     /**
-     * Compile and return the given data
+     * Handle a single file
      *
-     * @param string $path
+     * @param string $source
      * @return mixed
      */
 
-    public function compile(string $path): mixed
+    protected function handleOne(string $source): mixed
     {
-        if (is_file($path)) {
-            $result = $this->markdown->convert(
-                file_get_contents($path)
-            );
+        $result = $this->markdown->convert(
+            file_get_contents($this->getPath($source))
+        );
 
-            if ($result instanceof RenderedContentWithFrontMatter) {
-                return [
-                    'meta' => $result->getFrontMatter(),
-                    'content' => $result->getContent()
-                ];
-            }
-
-            return $result;
+        if ($result instanceof RenderedContentWithFrontMatter) {
+            return [
+                'meta' => $result->getFrontMatter(),
+                'content' => $result->getContent()
+            ];
         }
 
-        $data = [];
-
-        foreach (glob($path) as $file) {
-            if (!is_file($file)) {
-                continue;
-            }
-
-            $data[] = $this->compile($file);
-        }
-
-        return $data;
+        return $result;
     }
 }
