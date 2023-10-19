@@ -21,8 +21,6 @@ final class BuildCommand extends BaseCommand
     {
         $this->output->print('Running the building process...');
 
-        $items = [];
-
         $this->blueprint = $this->app->get('project.blueprint');
         $this->readers = $this->app->get('library.readers');
         $this->archive = $this->app->get('library.archive');
