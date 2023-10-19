@@ -21,8 +21,8 @@ $app = new Container();
 $app->loadComponents([
     Component\LocalizationComponent::class,
     Component\TwigComponent::class,
-    Component\ApplicationComponent::class,
     Component\MarkdownComponent::class,
+    Component\ProjectComponent::class,
     Component\LibraryComponent::class,
     Component\ContractorComponent::class,
     Component\AssetsComponent::class,

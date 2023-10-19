@@ -12,29 +12,14 @@ final class ContractorComponent extends Component
 {
     public function register(): void
     {
-        $this->container->variable('builder.dataDir', DIR_DATA);
-
-        $this->container->add('builder.data', function ($container, $args): object {
-            return new Data(
-                $container->variable('builder.dataDir')
-            );
-        });
-
-        $this->container->add('builder.collection', function ($container, $args): object {
+        $this->container->add('contractor.builders', function ($container, $args): object {
             return new BuildersCollection();
-        });
-
-        $this->container->add('builder.architect', function ($container, $args): object {
-            return new Architect(
-                $container->get('app.project'),
-                $container->get('builder.collection')
-            );
         });
     }
 
     public function boot(): void
     {
-        $buildersCollection = $this->container->get('builder.collection');
+        $buildersCollection = $this->container->get('contractor.builders');
 
         $buildersCollection->add('simple', new SimpleBuilder(
             $this->container->get('twig')

@@ -10,15 +10,13 @@ final class TextReader implements ReaderInterface
      * Compile and return the given data
      *
      * @param string $path
-     * @return array
+     * @return mixed
      */
 
-    public function compile(string $path): array
+    public function compile(string $path): mixed
     {
         if (is_file($path)) {
-            return [
-                pathinfo($path, PATHINFO_FILENAME) => file_get_contents($path)
-            ];
+            return file_get_contents($path);
         }
 
         $data = [];
@@ -28,7 +26,8 @@ final class TextReader implements ReaderInterface
                 continue;
             }
 
-            $data = array_merge($data, $this->compile($file));
+            //$data = array_merge($data, $this->compile($file));
+            $data[] = $this->compile($file);
         }
 
         return $data;

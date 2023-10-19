@@ -11,7 +11,7 @@ final class AssetsComponent extends Component
     {
         $this->container->add('assets.handler', function ($container, $args): object {
             return new Handler(
-                $container->get('app.project')
+                $container->get('project.blueprint')
             );
         });
     }

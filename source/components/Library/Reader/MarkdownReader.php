@@ -23,27 +23,17 @@ final class MarkdownReader implements ReaderInterface
      * Compile and return the given data
      *
      * @param string $path
-     * @return array
+     * @return mixed
      */
 
-    public function compile(string $path): array
+    public function compile(string $path): mixed
     {
         if (is_file($path)) {
             $content = $this->markdown->convert(
                 file_get_contents($path)
             );
 
-            if ($content instanceof RenderedContentWithFrontMatter) {
-                $frontMatter = $content->getFrontMatter();
-
-                return [
-                    pathinfo($path, PATHINFO_FILENAME) => array_merge($frontMatter, ['content' => $content])
-                ];
-            }
-
-            return [
-                pathinfo($path, PATHINFO_FILENAME) => $content
-            ];
+            return $content;
         }
 
         $data = [];
@@ -53,7 +43,8 @@ final class MarkdownReader implements ReaderInterface
                 continue;
             }
 
-            $data = array_merge($data, $this->compile($file));
+            //$data = array_merge($data, $this->compile($file));
+            $data[] = $this->compile($file);
         }
 
         return $data;

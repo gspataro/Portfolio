@@ -2,18 +2,18 @@
 
 namespace GSpataro\Assets;
 
-use GSpataro\Application\Project;
+use GSpataro\Project\Blueprint;
 
 final class Handler
 {
     /**
      * Initialize Handler object
      *
-     * @param Project $project
+     * @param Blueprint $blueprint
      */
 
     public function __construct(
-        private readonly Project $project
+        private readonly Blueprint $blueprint
     ) {
     }
 
@@ -23,12 +23,12 @@ final class Handler
      * @return void
      */
 
-    public function run(): void
+    public function compile(): void
     {
         recursiveCopy(
-            $this->project->getAssetsDir(),
-            $this->project->getOutputDir() . '/assets',
-            $this->project->getExcludedAssets()
+            DIR_ASSETS,
+            DIR_OUTPUT . '/assets',
+            $this->blueprint->get('exclude_assets') ?? []
         );
     }
 }

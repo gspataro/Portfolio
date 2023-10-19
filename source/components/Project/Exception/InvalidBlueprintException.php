@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Application\Exception;
+namespace GSpataro\Project\Exception;
 
 use Exception;
 

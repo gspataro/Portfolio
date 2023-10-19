@@ -2,7 +2,7 @@
 
 namespace GSpataro\Application\Component;
 
-use GSpataro\Library\Librarian;
+use GSpataro\Library\Archive;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Library\Reader\TextReader;
 use GSpataro\DependencyInjection\Component;
@@ -12,21 +12,18 @@ final class LibraryComponent extends Component
 {
     public function register(): void
     {
-        $this->container->add('library.collection', function ($container, $args): object {
+        $this->container->add('library.readers', function ($container, $args): object {
             return new ReadersCollection();
         });
 
-        $this->container->add('library.librarian', function ($container, $args): object {
-            return new Librarian(
-                $container->get('app.project'),
-                $container->get('library.collection')
-            );
+        $this->container->add('library.archive', function ($container, $args): object {
+            return new Archive();
         });
     }
 
     public function boot(): void
     {
-        $readersCollection = $this->container->get('library.collection');
+        $readersCollection = $this->container->get('library.readers');
 
         $readersCollection->add('text', new TextReader());
         $readersCollection->add('markdown', new MarkdownReader(
