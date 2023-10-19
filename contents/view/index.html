@@ -34,7 +34,12 @@
     {%endembed%}
     {%embed './components/section.html' with {'id': 'portfolio', 'viewport': true}%}
         {%block content%}
-            <h2>Progetti in evidenza</h2>
+            <h2 class="mb-md">Progetti in evidenza</h2>
+            <div class="grid grid-cols-1 gap-sm">
+                {%for project in projects%}
+                    {%include './components/project_card.html' with {'project': project} only%}
+                {%endfor%}
+            </div>
         {%endblock%}
     {%endembed%}
 {%endblock%}

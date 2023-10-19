@@ -4,7 +4,10 @@
     "items": [
         {
             "template": "index",
-            "output": "/index.html"
+            "output": "/index.html",
+            "contents": {
+                "projects": "markdown:projects/cli.md;projects/portfolio.md;projects/dependencyinjection.md"
+            }
         },
         {
             "template": "colors",
