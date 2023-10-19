@@ -45,8 +45,13 @@ final class BuildCommand extends BaseCommand
         $output = [];
 
         foreach ($contents as $tag => $content) {
-            $reader = $this->readers->get($content['reader']);
-            $output[$tag] = $reader->compile(DIR_DATA . '/' . $content['source']);
+            if (!$this->archive->has($content['source'])) {
+                $reader = $this->readers->get($content['reader']);
+                $compiled = $reader->compile(DIR_DATA . '/' . $content['source']);
+                $this->archive->add($content['source'], $compiled);
+            }
+
+            $output[$tag] = $this->archive->get($content['source']);
         }
 
         return $output;
