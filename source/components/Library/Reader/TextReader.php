@@ -11,7 +11,7 @@ final class TextReader extends BaseReader
      * @return mixed
      */
 
-    protected function handleOne(string $source): mixed
+    protected function compiler(string $source): mixed
     {
         $result = file_get_contents($this->getPath($source));
 

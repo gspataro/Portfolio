@@ -3,7 +3,6 @@
 namespace GSpataro\Command;
 
 use GSpataro\Contractor\BuildersCollection;
-use GSpataro\Library\Archive;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Project\Blueprint;
 
@@ -14,7 +13,6 @@ final class BuildCommand extends BaseCommand
 
     private readonly Blueprint $blueprint;
     private readonly ReadersCollection $readers;
-    private readonly Archive $archive;
     private readonly BuildersCollection $builders;
 
     public function main(): void
@@ -23,7 +21,6 @@ final class BuildCommand extends BaseCommand
 
         $this->blueprint = $this->app->get('project.blueprint');
         $this->readers = $this->app->get('library.readers');
-        $this->archive = $this->app->get('library.archive');
         $this->builders = $this->app->get('contractor.builders');
         $assets = $this->app->get('assets.handler');
 
@@ -45,13 +42,8 @@ final class BuildCommand extends BaseCommand
         $output = [];
 
         foreach ($contents as $tag => $content) {
-            if (!$this->archive->has($content['source'])) {
-                $reader = $this->readers->get($content['reader']);
-                $compiled = $reader->compile($content['source']);
-                $this->archive->add($content['source'], $compiled);
-            }
-
-            $output[$tag] = $this->archive->get($content['source']);
+            $reader = $this->readers->get($content['reader']);
+            $output[$tag] = $reader->compile($content['source']);
         }
 
         return $output;

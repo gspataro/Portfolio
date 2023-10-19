@@ -25,8 +25,11 @@ final class LibraryComponent extends Component
     {
         $readersCollection = $this->container->get('library.readers');
 
-        $readersCollection->add('text', new TextReader());
+        $readersCollection->add('text', new TextReader(
+            $this->container->get('library.archive')
+        ));
         $readersCollection->add('markdown', new MarkdownReader(
+            $this->container->get('library.archive'),
             $this->container->get('markdown.converter')
         ));
     }

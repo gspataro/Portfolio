@@ -2,10 +2,22 @@
 
 namespace GSpataro\Library\Reader;
 
+use GSpataro\Library\Archive;
 use GSpataro\Library\Interface\ReaderInterface;
 
 abstract class BaseReader implements ReaderInterface
 {
+    /**
+     * Initialize reader
+     *
+     * @param Archive $archive
+     */
+
+    public function __construct(
+        protected readonly Archive $archive
+    ) {
+    }
+
     /**
      * Get complete path to source
      *
@@ -27,13 +39,32 @@ abstract class BaseReader implements ReaderInterface
     }
 
     /**
+     * Content compiler
+     *
+     * @param string $source
+     * @return mixed
+     */
+
+    abstract protected function compiler(string $source): mixed;
+
+    /**
      * Handle a single file
      *
      * @param string $source
      * @return mixed
      */
 
-    abstract protected function handleOne(string $source): mixed;
+    protected function handleOne(string $source): mixed
+    {
+        if ($this->archive->has($source)) {
+            return $this->archive->get($source);
+        }
+
+        $result = $this->compiler($source);
+        $this->archive->add($source, $result);
+
+        return $result;
+    }
 
     /**
      * Handle multiple files
