@@ -20,9 +20,9 @@ require_once DIR_VENDOR . "/autoload.php";
 $app = new Container();
 $app->loadComponents([
     Component\LocalizationComponent::class,
+    Component\ProjectComponent::class,
     Component\TwigComponent::class,
     Component\MarkdownComponent::class,
-    Component\ProjectComponent::class,
     Component\LibraryComponent::class,
     Component\ContractorComponent::class,
     Component\AssetsComponent::class,
