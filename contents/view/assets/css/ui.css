@@ -186,6 +186,37 @@
 }
 
 @layer components {
+    /**
+     * Retro button style
+     */
+
+    .btn-retro {
+        background-color: theme('colors.ablescent.lightest');
+        padding: theme('spacing.2xs') theme('spacing.xs');
+        border: theme('borderWidth.2') solid theme('colors.thunder.darkest');
+        display: inline-block;
+        position: relative;
+        text-transform: lowercase;
+    }
+
+    .btn-retro:hover {
+        background-color: theme('colors.thunder.darkest');
+        color: theme('colors.ablescent.lightest');
+    }
+
+    .btn-retro::after {
+        content: ' ';
+        background-color: theme('colors.thunder.darkest');
+        border: theme('borderWidth.2') solid theme('colors.thunder.darkest');
+        display: block;
+        position: absolute;
+        inset: 5px -5px -5px 5px;
+        z-index: -10;
+    }
+
+    .btn-retro:hover::after {
+        background-color: theme('colors.ablescent.lightest');
+    }
 }
 
 @layer utilities {

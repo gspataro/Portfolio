@@ -35,10 +35,15 @@
     {%embed './components/section.html' with {'id': 'portfolio', 'viewport': true}%}
         {%block content%}
             <h2 class="mb-md">Progetti in evidenza</h2>
-            <div class="grid grid-cols-1 gap-sm">
+            <div class="grid grid-cols-1 gap-sm mb-sm">
                 {%for project in projects%}
                     {%include './components/project_card.html' with {'project': project} only%}
                 {%endfor%}
+            </div>
+            <div class="flex items-center justify-center">
+                <a href="#" class="btn-retro">
+                    Vedi tutti
+                </a>
             </div>
         {%endblock%}
     {%endembed%}
