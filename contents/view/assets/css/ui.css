@@ -200,7 +200,7 @@
     }
 
     .btn-retro:hover {
-        background-color: theme('colors.thunder.darkest');
+        background-color: theme('colors.stiletto.lighter');
         color: theme('colors.ablescent.lightest');
     }
 
