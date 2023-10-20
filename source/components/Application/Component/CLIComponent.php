@@ -3,9 +3,8 @@
 namespace GSpataro\Application\Component;
 
 use GSpataro\CLI\Handler;
+use GSpataro\Application\Command;
 use GSpataro\CLI\CommandsCollection;
-use GSpataro\Command\BuildCommand;
-use GSpataro\Command\CleanupCommand;
 use GSpataro\DependencyInjection\Component;
 
 final class CLIComponent extends Component
@@ -27,11 +26,11 @@ final class CLIComponent extends Component
         $commands = $this->container->get('cli.commands');
 
         $commands->register(
-            new BuildCommand($this->container)
+            new Command\BuildCommand($this->container)
         );
 
         $commands->register(
-            new CleanupCommand($this->container)
+            new Command\CleanupCommand($this->container)
         );
 
         $cli->deploy();

@@ -1,10 +1,10 @@
 <?php
 
-namespace GSpataro\Command;
+namespace GSpataro\Application\Command;
 
-use GSpataro\Contractor\BuildersCollection;
-use GSpataro\Library\ReadersCollection;
 use GSpataro\Project\Blueprint;
+use GSpataro\Library\ReadersCollection;
+use GSpataro\Contractor\BuildersCollection;
 
 final class BuildCommand extends BaseCommand
 {

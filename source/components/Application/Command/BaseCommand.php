@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Command;
+namespace GSpataro\application\Command;
 
 use GSpataro\CLI\Command;
 use GSpataro\DependencyInjection\Container;

@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Command;
+namespace GSpataro\Application\Command;
 
 use DirectoryIterator;
 
