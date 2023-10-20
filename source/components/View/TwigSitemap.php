@@ -17,7 +17,15 @@ final class TwigSitemap extends AbstractExtension
 
     public function url($tag)
     {
-        return $this->blueprint->get('website.url') . '/' . $this->sitemap->get($tag);
+        $url = $this->blueprint->get('website.url');
+        $path = $this->sitemap->get($tag);
+        $separator = null;
+
+        if (!str_ends_with($url, '/') && !str_starts_with($path, '/')) {
+            $separator = '/';
+        }
+
+        return $url . $separator . $path;
     }
 
     public function getFunctions()
