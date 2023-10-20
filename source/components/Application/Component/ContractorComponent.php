@@ -2,11 +2,10 @@
 
 namespace GSpataro\Application\Component;
 
-use GSpataro\Contractor\Data;
-use GSpataro\Contractor\Architect;
 use GSpataro\Contractor\BuildersCollection;
 use GSpataro\DependencyInjection\Component;
 use GSpataro\Contractor\Builder\SimpleBuilder;
+use GSpataro\Contractor\Builder\ProjectsBuilder;
 
 final class ContractorComponent extends Component
 {
@@ -22,6 +21,11 @@ final class ContractorComponent extends Component
         $buildersCollection = $this->container->get('contractor.builders');
 
         $buildersCollection->add('simple', new SimpleBuilder(
+            $this->container->get('project.sitemap'),
+            $this->container->get('twig')
+        ));
+
+        $buildersCollection->add('projects', new ProjectsBuilder(
             $this->container->get('project.sitemap'),
             $this->container->get('twig')
         ));

@@ -1,5 +1,6 @@
 ---
 name: Portfolio
+slug: portfolio
 description: Il codice sorgente del mio portfolio.
 github: https://github.com/gspataro/Portfolio
 link: https://gspataro.github.io

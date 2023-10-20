@@ -10,6 +10,15 @@
             }
         },
         {
+            "template": "project",
+            "output": "/project",
+            "group": "project",
+            "builder": "projects",
+            "contents": {
+                "projects": "markdown:projects/*.md"
+            }
+        },
+        {
             "template": "colors",
             "output": "/colors.html"
         },
