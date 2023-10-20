@@ -4,6 +4,7 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   content: ["./contents/view/**/*.html"],
+  darkMode: 'class',
   theme: {
     fontFamily: {
         "sans": ['Roboto', 'Sans-Serif', 'Arial'],
