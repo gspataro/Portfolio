@@ -91,3 +91,22 @@ function getStringBetween(string $string, string $openTag, string $closeTag): ?s
 
     return substr($string, $start, $end);
 }
+
+/**
+ * Join two paths together
+ *
+ * @param string $base
+ * @param string $path
+ * @return string
+ */
+
+function pathJoin(string $base, string $path): string
+{
+    $separator = null;
+
+    if (!str_ends_with($base, '/') && !str_starts_with($path, '/')) {
+        $separator = DIRECTORY_SEPARATOR;
+    }
+
+    return $base . $separator . $path;
+}

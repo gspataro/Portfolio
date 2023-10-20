@@ -14,15 +14,15 @@ final class ProjectsBuilder extends BaseBuilder
     public function compile(array $item): void
     {
         foreach ($item['contents']['projects'] as $content) {
-            $outputPath = DIR_OUTPUT . DIRECTORY_SEPARATOR . $this->getOutputPath(
-                $item['output'] . DIRECTORY_SEPARATOR . $content['meta']['slug'] . '.html',
+            $outputPath = $this->getOutputPath(
+                pathJoin($item['output'], $content['meta']['slug'] . '.html'),
                 $item['group'] ?? null
             );
 
             $compiledTemplate = $this->twig->render("{$item['template']}.html", [
                 'project' => $content
             ]);
-            file_put_contents($outputPath, $compiledTemplate);
+            file_put_contents(pathJoin(DIR_OUTPUT, $outputPath), $compiledTemplate);
         }
     }
 }

@@ -35,9 +35,10 @@ abstract class BaseBuilder implements BuilderInterface
     {
         $outputDirName = pathinfo($path, PATHINFO_DIRNAME);
         $outputFileName = pathinfo($path, PATHINFO_FILENAME);
+        $outputDirPath = pathJoin(DIR_OUTPUT, $outputDirName);
 
-        if (!is_dir(DIR_OUTPUT . DIRECTORY_SEPARATOR . $outputDirName)) {
-            mkdir(DIR_OUTPUT . DIRECTORY_SEPARATOR . $outputDirName, 0777, true);
+        if (!is_dir($outputDirPath)) {
+            mkdir($outputDirPath, 0777, true);
         }
 
         $tag = ($groupName ? $groupName . '.' : null) . $outputFileName;
