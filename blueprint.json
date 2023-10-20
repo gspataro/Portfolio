@@ -2,6 +2,8 @@
     "website": {
         "name": "Giuseppe Spataro",
         "description": "Giuseppe Spataro, pianista e sviluppatore web siciliano",
+        "author": "Giuseppe Spataro",
+        "keywords": "pianista, sviluppatore web, sicilia",
         "url": "http://gspataro.test"
     },
     "languages": ["it", "en"],
