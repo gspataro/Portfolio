@@ -3,6 +3,7 @@
 namespace GSpataro\Application\Component;
 
 use Twig\Environment;
+use GSpataro\View\TwigSitemap;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extra\String\StringExtension;
 use GSpataro\DependencyInjection\Component;
@@ -29,6 +30,11 @@ final class TwigComponent extends Component
     public function boot(): void
     {
         $twig = $this->container->get('twig');
+
         $twig->addExtension(new StringExtension());
+        $twig->addExtension(new TwigSitemap(
+            $this->container->get('project.blueprint'),
+            $this->container->get('project.sitemap')
+        ));
     }
 }

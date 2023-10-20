@@ -33,16 +33,15 @@ abstract class BaseBuilder implements BuilderInterface
 
     protected function getOutputPath(string $path, ?string $groupName = null): string
     {
-        $outputPath = DIR_OUTPUT . DIRECTORY_SEPARATOR . $path;
-        $outputDirName = pathinfo($outputPath, PATHINFO_DIRNAME);
-        $outputFileName = pathinfo($outputPath, PATHINFO_FILENAME);
+        $outputDirName = pathinfo($path, PATHINFO_DIRNAME);
+        $outputFileName = pathinfo($path, PATHINFO_FILENAME);
 
-        if (!is_dir($outputDirName)) {
-            mkdir($outputDirName, 0777, true);
+        if (!is_dir(DIR_OUTPUT . DIRECTORY_SEPARATOR . $outputDirName)) {
+            mkdir(DIR_OUTPUT . DIRECTORY_SEPARATOR . $outputDirName, 0777, true);
         }
 
         $tag = ($groupName ? $groupName . '.' : null) . $outputFileName;
 
-        return $this->sitemap->add($tag, $outputPath);
+        return $this->sitemap->add($tag, $path);
     }
 }

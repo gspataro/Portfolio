@@ -14,7 +14,7 @@ final class ProjectsBuilder extends BaseBuilder
     public function compile(array $item): void
     {
         foreach ($item['contents']['projects'] as $content) {
-            $outputPath = $this->getOutputPath(
+            $outputPath = DIR_OUTPUT . DIRECTORY_SEPARATOR . $this->getOutputPath(
                 $item['output'] . DIRECTORY_SEPARATOR . $content['meta']['slug'] . '.html',
                 $item['group'] ?? null
             );

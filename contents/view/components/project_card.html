@@ -1,7 +1,9 @@
 <article class="bg-ablescent p-md">
     <header class="flex gap-3xs items-center mb-xs">
         <h3 class="flex-1">
-            {{project.meta.name}}
+            <a href="{{url('project.' ~ project.meta.slug)}}">
+                {{project.meta.name}}
+            </a>
         </h3>
         {%if project.meta.github or project.meta.link%}
             <ul class="flex gap-3xs items-center">
