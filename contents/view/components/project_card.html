@@ -1,5 +1,5 @@
-<article class="bg-ablescent p-md">
-    <header class="flex gap-3xs items-center mb-xs">
+<article class="border-thunder-darkest border-2 p-md">
+    <header class="flex gap-3xs items-center mb-2xs">
         <h3 class="flex-1">
             <a href="{{url('project.' ~ project.meta.slug)}}">
                 {{project.meta.name}}
@@ -24,5 +24,10 @@
             </ul>
         {%endif%}
     </header>
-    <p>{{project.meta.description}}</p>
+    <p class="mb-sm">
+        {{project.meta.description}}
+    </p>
+    <a href="{{url('project.' ~ project.meta.slug)}}">
+        apri progetto &rarr;
+    </a>
 </article>
