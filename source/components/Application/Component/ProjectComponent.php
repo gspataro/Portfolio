@@ -4,6 +4,7 @@ namespace GSpataro\Application\Component;
 
 use GSpataro\Project\Blueprint;
 use GSpataro\DependencyInjection\Component;
+use GSpataro\Project\Sitemap;
 
 final class ProjectComponent extends Component
 {
@@ -15,6 +16,10 @@ final class ProjectComponent extends Component
             return new Blueprint(
                 $container->variable('blueprintPath')
             );
+        });
+
+        $this->container->add('project.sitemap', function ($container, $args): object {
+            return new Sitemap();
         });
     }
 

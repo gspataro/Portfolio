@@ -25,7 +25,6 @@ final class BuildCommand extends BaseCommand
         $assets = $this->app->get('assets.handler');
 
         foreach ($this->blueprint->get('items') as $item) {
-            $item['output'] = DIR_OUTPUT . '/' . $item['output'];
             $item['contents'] = $this->compileContents($item['contents']);
             $builder = $this->builders->get($item['builder']);
 

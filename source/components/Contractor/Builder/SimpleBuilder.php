@@ -13,13 +13,9 @@ final class SimpleBuilder extends BaseBuilder
 
     public function compile(array $item): void
     {
-        $outputDirName = pathinfo($item['output'], PATHINFO_DIRNAME);
-
-        if (!is_dir($outputDirName)) {
-            mkdir($outputDirName, true);
-        }
+        $outputPath = $this->getOutputPath($item['output'], $item['group'] ?? null);
 
         $compiledTemplate = $this->twig->render("{$item['template']}.html", $item['contents']);
-        file_put_contents($item['output'], $compiledTemplate);
+        file_put_contents($outputPath, $compiledTemplate);
     }
 }
