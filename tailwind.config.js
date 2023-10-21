@@ -74,9 +74,11 @@ module.exports = {
         "3xl": "9rem"
     },
     screens: {
-        "tablet": "768px",
-        "laptop": "1024px",
-        "desktop": "1280px"
+        "tablet-v": "768px",
+        "tablet-h": "992px",
+        "laptop-sm": "1280px",
+        "laptop-lg": "1440px",
+        "desktop": "1920px"
     },
     container: {
         center: true,
