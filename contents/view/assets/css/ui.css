@@ -197,6 +197,10 @@
         display: inline-block;
         position: relative;
         text-transform: lowercase;
+
+        @apply
+            dark:bg-thunder-darkest
+            dark:border-thunder;
     }
 
     .btn-retro:hover {
@@ -212,10 +216,17 @@
         position: absolute;
         inset: 5px -5px -5px 5px;
         z-index: -10;
+
+        @apply
+            dark:bg-thunder
+            dark:border-thunder;
     }
 
     .btn-retro:hover::after {
         background-color: theme('colors.ablescent.lightest');
+
+        @apply
+            dark:bg-thunder-darkest;
     }
 }
 
