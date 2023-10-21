@@ -196,7 +196,9 @@
         border: theme('borderWidth.2') solid theme('colors.thunder.darkest');
         display: inline-block;
         position: relative;
+        font-weight: normal;
         text-transform: lowercase;
+        text-decoration: none;
 
         @apply
             dark:bg-thunder-darkest
