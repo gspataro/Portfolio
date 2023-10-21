@@ -204,7 +204,7 @@
     }
 
     .btn-retro:hover {
-        background-color: theme('colors.stiletto.lighter');
+        background-color: theme('colors.stiletto.DEFAULT');
         color: theme('colors.ablescent.lightest');
     }
 
