@@ -37,7 +37,7 @@
     {%embed './components/section.html' with {'id': 'projects', 'viewport': true}%}
         {%block content%}
             <h2 class="mb-md">Progetti in evidenza</h2>
-            <div class="grid grid-cols-1 gap-sm mb-sm">
+            <div class="grid grid-cols-1 gap-sm mb-lg">
                 {%for project in projects%}
                     {%include './components/project_card.html' with {'project': project} only%}
                 {%endfor%}
