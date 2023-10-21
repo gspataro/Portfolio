@@ -25,13 +25,13 @@ module.exports = {
 
         },
         "stiletto": {
-            "lightest": "#cd625f",
-            "lighter": "#c44441",
-            "light": "#b13735",
-            DEFAULT: "#9a2e2c",
-            "dark": "#882826",
-            "darker": "#7c2523",
-            "darkest": "#6c2220"
+            "lightest": "#e26a6a",
+            "lighter": "#dd5555",
+            "light": "#d93f3f",
+            DEFAULT: "#d52a2a",
+            "dark": "#951d1d",
+            "darker": "#801919",
+            "darkest": "#6a1515"
         },
         "fawn": {
             "lightest": "#ac7e6d",
