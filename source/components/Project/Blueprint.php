@@ -65,16 +65,16 @@ final class Blueprint extends DotNavigator
 
     private function prepareItems(array &$items): void
     {
-        foreach ($items as $i => &$item) {
+        foreach ($items as $tag => &$item) {
             if (!isset($item['template'])) {
                 throw new Exception\InvalidItemException(
-                    "Item number '{$i}' must contain a template index."
+                    "Item '{$tag}' must contain a template index."
                 );
             }
 
             if (!isset($item['output'])) {
                 throw new Exception\InvalidItemException(
-                    "Item number '{$i}' must contain an output index."
+                    "Item '{$tag}' must contain an output index."
                 );
             }
 
@@ -87,7 +87,7 @@ final class Blueprint extends DotNavigator
 
             if (!is_array($item['contents'])) {
                 throw new Exception\InvalidItemException(
-                    "Contents of item number '{$i}' must be an associative array."
+                    "Contents of item '{$tag}' must be an associative array."
                 );
             }
 
