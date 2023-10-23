@@ -1,0 +1,14 @@
+{%set page = {
+    'layout': {
+        'contain': true
+    }
+}%}
+{%extends "./layout.html"%}
+{%block main%}
+    <h1 class="mb-md">Progetti</h1>
+    <div class="grid grid-cols-1 gap-sm">
+        {%for project in projects%}
+            {%include './components/project_card.html' with {'project': project} only%}
+        {%endfor%}
+    </div>
+{%endblock%}

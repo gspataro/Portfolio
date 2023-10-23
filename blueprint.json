@@ -19,6 +19,13 @@
             }
         },
         {
+            "template": "projects",
+            "output": "/projects.html",
+            "contents": {
+                "projects": "markdown:projects/*.md"
+            }
+        },
+        {
             "template": "index",
             "output": "/index.html",
             "contents": {
