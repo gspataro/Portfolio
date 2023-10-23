@@ -8,39 +8,38 @@
     },
     "languages": ["it", "en"],
     "default_language": "it",
-    "items": [
-        {
+    "items": {
+        "project": {
             "template": "project",
             "output": "/project",
-            "group": "project",
             "builder": "projects",
             "contents": {
                 "projects": "markdown:projects/*.md"
             }
         },
-        {
+        "projects": {
             "template": "projects",
             "output": "/projects.html",
             "contents": {
                 "projects": "markdown:projects/*.md"
             }
         },
-        {
+        "index": {
             "template": "index",
             "output": "/index.html",
             "contents": {
                 "projects": "markdown:projects/cli.md;projects/portfolio.md;projects/dependencyinjection.md"
             }
         },
-        {
+        "colors": {
             "template": "colors",
             "output": "/colors.html"
         },
-        {
+        "typography": {
             "template": "typography",
             "output": "/typography.html"
         }
-    ],
+    },
     "exclude_assets": [
         "ui.css"
     ]

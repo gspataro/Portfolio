@@ -23,15 +23,15 @@ abstract class BaseBuilder implements BuilderInterface
 
     /**
      * Get output path
-     * The output path will be transformed into a unique one and registered in the sitemap
+     * The output path will be transformed into a unique one and registered in the sitemap with the appropriate tag
      * If the output base directory doesn't exists, it will be created recursively
      *
+     * @param string $tag
      * @param string $path
-     * @param string|null $groupName
      * @return string
      */
 
-    protected function getOutputPath(string $path, ?string $groupName = null): string
+    protected function getOutputPath(string $tag, string $path): string
     {
         $outputDirName = pathinfo($path, PATHINFO_DIRNAME);
         $outputFileName = pathinfo($path, PATHINFO_FILENAME);
@@ -40,8 +40,6 @@ abstract class BaseBuilder implements BuilderInterface
         if (!is_dir($outputDirPath)) {
             mkdir($outputDirPath, 0777, true);
         }
-
-        $tag = ($groupName ? $groupName . '.' : null) . $outputFileName;
 
         return $this->sitemap->add($tag, $path);
     }

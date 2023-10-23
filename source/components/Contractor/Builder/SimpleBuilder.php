@@ -13,7 +13,7 @@ final class SimpleBuilder extends BaseBuilder
 
     public function compile(array $item): void
     {
-        $outputPath = $this->getOutputPath($item['output'], $item['group'] ?? null);
+        $outputPath = $this->getOutputPath($item['tag'], $item['output']);
 
         $compiledTemplate = $this->twig->render("{$item['template']}.html", $item['contents']);
         file_put_contents(pathJoin(DIR_OUTPUT, $outputPath), $compiledTemplate);

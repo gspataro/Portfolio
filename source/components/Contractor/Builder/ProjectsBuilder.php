@@ -15,8 +15,8 @@ final class ProjectsBuilder extends BaseBuilder
     {
         foreach ($item['contents']['projects'] as $content) {
             $outputPath = $this->getOutputPath(
-                pathJoin($item['output'], $content['meta']['slug'] . '.html'),
-                $item['group'] ?? null
+                $item['tag'] . '.' . $content['meta']['slug'],
+                pathJoin($item['output'], $content['meta']['slug'] . '.html')
             );
 
             $compiledTemplate = $this->twig->render("{$item['template']}.html", [

@@ -66,6 +66,8 @@ final class Blueprint extends DotNavigator
     private function prepareItems(array &$items): void
     {
         foreach ($items as $tag => &$item) {
+            $item['tag'] = $tag;
+
             if (!isset($item['template'])) {
                 throw new Exception\InvalidItemException(
                     "Item '{$tag}' must contain a template index."
