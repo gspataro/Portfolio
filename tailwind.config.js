@@ -43,13 +43,13 @@ module.exports = {
             "darkest": "#603120"
         },
         "brass": {
-            "lightest": "#d9ad8d",
-            "lighter": "#d4a17d",
-            "light": "#ce966c",
-            DEFAULT: "#C98A5C",
-            "dark": "#b57c53",
-            "darker": "#a16e4a",
-            "darkest": "#8d6140"
+            "lightest": "#F9D5B6",
+            "lighter": "#F7C192",
+            "light": "#F4B379",
+            DEFAULT: "#F2A25C",
+            "dark": "#EB8C38",
+            "darker": "#D77219",
+            "darkest": "#B45F14"
         },
         "ablescent": {
             "lightest": "#f9f2e2",

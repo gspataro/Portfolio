@@ -183,6 +183,14 @@
     body {
         font-weight: 300;
     }
+
+    /**
+     * Links
+     */
+
+    a {
+        @apply dark:text-brass;
+    }
 }
 
 @layer components {
@@ -208,6 +216,10 @@
     .btn-retro:hover {
         background-color: theme('colors.stiletto.DEFAULT');
         color: theme('colors.ablescent.lightest');
+
+        @apply
+            dark:bg-brass
+            dark:text-thunder-darkest;
     }
 
     .btn-retro::after {
