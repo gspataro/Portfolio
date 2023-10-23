@@ -5,5 +5,13 @@
 }%}
 {%extends "./layout.html"%}
 {%block main%}
-    {{project.meta.name}}
+    <article>
+        <header>
+            <h1 class="mb-md">{{project.meta.name}}</h1>
+            {%include './components/metabox.html' with {'meta': {
+                "Tecnologia": project.meta.tags|join(', '),
+                "Categoria": project.meta.categories|join(', ')
+            }} only%}
+        </header>
+    </article>
 {%endblock%}
