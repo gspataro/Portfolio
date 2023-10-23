@@ -15,8 +15,14 @@
     <body class="bg-ablescent-lightest dark:bg-thunder-darkest dark:text-ablescent-lightest">
         {%include './components/header.html'%}
         <main>
-            {%block main%}
-            {%endblock%}
+            {%if page.layout.contain%}
+                <div class="container mt-lg">
+            {%endif%}
+                {%block main%}
+                {%endblock%}
+            {%if page.layout.contain%}
+                </div>
+            {%endif%}
         </main>
         {%include './components/footer.html'%}
     </body>
