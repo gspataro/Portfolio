@@ -6,12 +6,16 @@
 {%extends "./layout.html"%}
 {%block main%}
     <article>
-        <header>
-            <h1 class="mb-md">{{project.meta.name}}</h1>
-            {%include './components/metabox.html' with {'meta': {
-                "Tecnologia": project.meta.tags|join(', '),
-                "Categoria": project.meta.categories|join(', ')
+        <header class="mb-lg">
+            <div class="flex items-center mb-md">
+                <h1 class="flex-1">{{project.meta.name}}</h1>
+                {%include './components/project/links.html'%}
+            </div>
+            {%include './components/project/meta.html' with {'meta': {
+                "Categoria": project.meta.categories|join(', '),
+                "Tecnologie": project.meta.tags|join(', ')
             }} only%}
         </header>
+        {{project.content|raw}}
     </article>
 {%endblock%}
