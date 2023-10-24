@@ -73,6 +73,18 @@ module.exports = {
         "2xl": "7rem",
         "3xl": "9rem"
     },
+    fontSize: {
+        DEFAULT: "1rem",
+        "3xl": "2.2rem",
+        "2xl": "2rem",
+        "xl": "1.5rem",
+        "lg": "1.3rem",
+        "md": "1.150rem",
+        "sm": "1rem",
+        "xs": "0.9rem",
+        "2xs": "0.8rem",
+        "3xs": "0.6rem"
+    },
     screens: {
         "tablet-v": "768px",
         "tablet-h": "992px",
@@ -125,27 +137,27 @@ module.exports = {
     plugin(function({addBase, theme}) {
         addBase({
             "h1": {
-                fontSize: "2.2rem",
+                fontSize: theme('fontSize.3xl'),
                 fontWeight: 400
             },
             "h2": {
-                fontSize: "2rem",
+                fontSize: theme('fontSize.2xl'),
                 fontWeight: 400
             },
             "h3": {
-                fontSize: "1.5rem",
+                fontSize: theme('fontSize.xl'),
                 fontWeight: 400
             },
             "h4": {
-                fontSize: "1.3rem",
+                fontSize: theme('fontSize.lg'),
                 fontWeight: 400
             },
             "h5": {
-                fontSize: "1.150rem",
+                fontSize: theme('fontSize.md'),
                 fontWeight: 400
             },
             "h6": {
-                fontSize: "1rem",
+                fontSize: theme('fontSize.sm'),
                 fontWeight: 400
             },
             "a": {
