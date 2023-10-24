@@ -175,22 +175,6 @@
         --header-height: 80px;
         --header-outer-height: 82px;
     }
-
-    /**
-     * Typography
-     */
-
-    body {
-        font-weight: 300;
-    }
-
-    /**
-     * Links
-     */
-
-    a {
-        @apply dark:text-brass;
-    }
 }
 
 @layer components {

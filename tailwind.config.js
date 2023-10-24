@@ -3,7 +3,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: ["./contents/view/**/*.html"],
+  content: ["./contents/view/**/*.html", "./contents/view/**/*.js"],
   darkMode: 'class',
   theme: {
     fontFamily: {
@@ -74,16 +74,16 @@ module.exports = {
         "3xl": "9rem"
     },
     fontSize: {
-        DEFAULT: "1rem",
+        DEFAULT: "1.125rem",
         "3xl": "2.2rem",
         "2xl": "2rem",
-        "xl": "1.5rem",
-        "lg": "1.3rem",
-        "md": "1.150rem",
-        "sm": "1rem",
-        "xs": "0.9rem",
-        "2xs": "0.8rem",
-        "3xs": "0.6rem"
+        "xl": "1.6rem",
+        "lg": "1.4rem",
+        "md": "1.250rem",
+        "sm": "1.125rem",
+        "xs": "1rem",
+        "2xs": "0.9rem",
+        "3xs": "0.8rem"
     },
     screens: {
         "tablet-v": "768px",
@@ -136,33 +136,48 @@ module.exports = {
   plugins: [
     plugin(function({addBase, theme}) {
         addBase({
-            "h1": {
+            body: {
+                backgroundColor: theme('colors.ablescent.lightest'),
+                color: theme('colors.thunder.darkest'),
+                fontSize: theme('fontSize.DEFAULT'),
+                fontWeight: 300
+            },
+            h1: {
                 fontSize: theme('fontSize.3xl'),
                 fontWeight: 400
             },
-            "h2": {
+            h2: {
                 fontSize: theme('fontSize.2xl'),
                 fontWeight: 400
             },
-            "h3": {
+            h3: {
                 fontSize: theme('fontSize.xl'),
                 fontWeight: 400
             },
-            "h4": {
+            h4: {
                 fontSize: theme('fontSize.lg'),
                 fontWeight: 400
             },
-            "h5": {
+            h5: {
                 fontSize: theme('fontSize.md'),
                 fontWeight: 400
             },
-            "h6": {
+            h6: {
                 fontSize: theme('fontSize.sm'),
                 fontWeight: 400
             },
-            "a": {
+            a: {
                 color: theme('colors.stiletto.DEFAULT'),
                 textDecoration: 'underline'
+            },
+            ".dark": {
+                body: {
+                    backgroundColor: theme('colors.thunder.darkest'),
+                    color: theme('colors.ablescent.lightest')
+                },
+                a: {
+                    color: theme('colors.brass.DEFAULT')
+                }
             }
         })
     })
