@@ -1,7 +1,8 @@
 <header class="bg-ablescent-lightest border-b-2 border-thunder-darkest sticky top z-20 dark:bg-thunder-darkest dark:border-thunder">
     <div class="h-[--header-height] container flex items-center">
         <a href="{{url('index')}}" class="d-block w-fit text-thunder-darkest uppercase no-underline logo dark:text-ablescent-lightest">
-            <img src="{{website.url}}/assets/images/logo.svg" alt="" aria-label="Giuseppe Spataro">
+            <img src="{{website.url}}/assets/images/logo.svg" alt="" aria-label="Giuseppe Spataro" class="dark:hidden">
+            <img src="{{website.url}}/assets/images/logo-light.svg" alt="" aria-label="Giuseppe Spataro" class="hidden dark:inline">
         </a>
         <div class="flex-1"></div>
         {%include './components/navbar.html' with {

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="53.024597mm"
+   height="8.3434591mm"
+   viewBox="0 0 53.024597 8.3434591"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="logo1-light.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="6.1524513"
+     inkscape:cx="100.20396"
+     inkscape:cy="15.847342"
+     inkscape:window-width="1920"
+     inkscape:window-height="1015"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g7" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch6"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#swatch6"
+       id="linearGradient6"
+       x1="67.163471"
+       y1="92.402211"
+       x2="120.18807"
+       y2="92.402211"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-67.163469,-90.237584)">
+    <g
+       id="g7">
+      <text
+         xml:space="preserve"
+         style="font-size:5.92667px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;fill:url(#linearGradient6);stroke-width:0.264583"
+         x="66.743858"
+         y="94.508957"
+         id="text1"><tspan
+           id="tspan1"
+           style="font-size:5.92667px;fill:#f6edd5;fill-opacity:1;fill-rule:nonzero;stroke-width:0.264583"
+           x="66.743858"
+           y="94.508957"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:5.92667px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';fill:#f6edd5;fill-opacity:1;fill-rule:nonzero"
+   id="tspan4">GIUSEPPE</tspan> SPATARO</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;line-height:1.25;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.264583"
+         x="81.158905"
+         y="94.581291"
+         id="text2"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.175px;font-family:Roboto;-inkscape-font-specification:'Roboto Light';fill:#f6edd5;fill-opacity:1;stroke-width:0.264583"
+           x="81.158905"
+           y="98.550041"
+           id="tspan6">WEB DEVELOPER • PIANIST</tspan></text>
+    </g>
+  </g>
+</svg>
