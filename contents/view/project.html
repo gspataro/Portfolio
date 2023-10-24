@@ -18,7 +18,8 @@
             </div>
             {%include './components/project/meta.html' with {'meta': {
                 "Categoria": project.meta.categories|join(', '),
-                "Tecnologie": project.meta.tags|join(', ')
+                "Tecnologie": project.meta.tags|join(', '),
+                "Versione": project.meta.version
             }} only%}
         </header>
         {{project.content|raw}}
