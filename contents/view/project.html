@@ -1,6 +1,11 @@
 {%set page = {
+    'title': project.meta.name ~ ' &bullet; Progetti',
     'layout': {
         'contain': true
+    },
+    'meta': {
+        'description': project.meta.description,
+        'keywords': project.meta.keywords
     }
 }%}
 {%extends "./layout.html"%}
