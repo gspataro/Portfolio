@@ -22,6 +22,12 @@
                 "Versione": project.meta.version
             }} only%}
         </header>
-        {{project.content|raw}}
+        <div class="prose">
+            {%if project.meta.twig%}
+                {{include(template_from_string(project.content))}}
+            {%else%}
+                {{project.content|raw}}
+            {%endif%}
+        </div>
     </article>
 {%endblock%}
