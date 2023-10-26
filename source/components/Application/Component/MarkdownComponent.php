@@ -26,8 +26,7 @@ final class MarkdownComponent extends Component
     public function boot(): void
     {
         $environment = $this->container->get('markdown.environment', [
-            'html_input' => 'strip',
-            'allow_unsafe_links' => false
+            'safe' => false
         ]);
 
         $environment->addExtension(new CommonMarkCoreExtension());
