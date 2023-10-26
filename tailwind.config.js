@@ -202,6 +202,18 @@ module.exports = {
                     "&:last-child": {
                         marginBottom: 0
                     }
+                },
+                ul: {
+                    marginTop: theme('spacing.xs'),
+                    marginBottom: theme('spacing.xs'),
+                    paddingLeft: '2rem',
+                    listStyleType: 'disc',
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    }
                 }
             }
         })
