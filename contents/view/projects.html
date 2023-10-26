@@ -10,7 +10,10 @@
     <h1 class="mb-md">Progetti</h1>
     <div class="grid grid-cols-1 gap-sm">
         {%for project in projects%}
-            {%include './components/project/card.html' with {'project': project} only%}
+            {%include './components/project/card.html' with {
+                'project': project,
+                'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end'
+            } only%}
         {%endfor%}
     </div>
 {%endblock%}
