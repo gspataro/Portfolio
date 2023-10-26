@@ -134,7 +134,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function({addBase, theme}) {
+    plugin(function({addBase, addComponents, theme}) {
         addBase({
             body: {
                 backgroundColor: theme('colors.ablescent.lightest'),
@@ -177,6 +177,31 @@ module.exports = {
                 },
                 a: {
                     color: theme('colors.brass.DEFAULT')
+                }
+            }
+        })
+
+        addComponents({
+            ".prose": {
+                "h1, h2, h3, h4, h5, h6": {
+                    marginTop: theme('spacing.md'),
+                    marginBottom: theme('spacing.sm'),
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    }
+                },
+                p: {
+                    marginTop: theme('spacing.xs'),
+                    marginBottom: theme('spacing.xs'),
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    }
                 }
             }
         })
