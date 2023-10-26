@@ -22,6 +22,11 @@
                 "Versione": project.meta.version
             }} only%}
         </header>
+        {%if project.meta.thumbnail%}
+            <figure class="mb-md">
+                <img src="{{website.url}}/assets/images/{{project.meta.thumbnail}}" alt="{{project.meta.title}}">
+            </figure>
+        {%endif%}
         <div class="prose">
             {%if project.meta.twig%}
                 {{include(template_from_string(project.content))}}
