@@ -41,6 +41,14 @@ abstract class BaseBuilder implements BuilderInterface
     protected array $contents;
 
     /**
+     * Builder options
+     *
+     * @var array
+     */
+
+    protected array $options = [];
+
+    /**
      * Initialize page builder
      *
      * @param Sitemap $sitemap
@@ -66,6 +74,7 @@ abstract class BaseBuilder implements BuilderInterface
         $this->template = $item['template'];
         $this->output = $item['output'];
         $this->contents = $item['contents'];
+        $this->options = $item['builder']['options'] ?? [];
     }
 
     /**

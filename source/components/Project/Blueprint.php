@@ -80,7 +80,17 @@ final class Blueprint extends DotNavigator
                 );
             }
 
-            $item['builder'] ??= 'simple';
+            $item['builder'] ??= [
+                'type' => 'simple',
+                'options' => []
+            ];
+
+            if (is_string($item['builder'])) {
+                $item['builder'] = [
+                    'type' => $item['builder'],
+                    'options' => []
+                ];
+            }
 
             if (!isset($item['contents'])) {
                 $item['contents'] = [];

@@ -26,7 +26,7 @@ final class BuildCommand extends BaseCommand
 
         foreach ($this->blueprint->get('items') as $item) {
             $item['contents'] = $this->compileContents($item['contents']);
-            $builder = $this->builders->get($item['builder']);
+            $builder = $this->builders->get($item['builder']['type']);
 
             $builder->setup($item);
             $builder->compile();
