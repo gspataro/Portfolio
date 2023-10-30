@@ -34,7 +34,6 @@ abstract class BaseBuilder implements BuilderInterface
     protected function getOutputPath(string $tag, string $path): string
     {
         $outputDirName = pathinfo($path, PATHINFO_DIRNAME);
-        $outputFileName = pathinfo($path, PATHINFO_FILENAME);
         $outputDirPath = pathJoin(DIR_OUTPUT, $outputDirName);
 
         if (!is_dir($outputDirPath)) {
