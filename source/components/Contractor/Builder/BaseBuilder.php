@@ -9,6 +9,38 @@ use GSpataro\Contractor\Interface\BuilderInterface;
 abstract class BaseBuilder implements BuilderInterface
 {
     /**
+     * Item tag
+     *
+     * @var string
+     */
+
+    protected string $tag;
+
+    /**
+     * Item template
+     *
+     * @var string
+     */
+
+    protected string $template;
+
+    /**
+     * Item output
+     *
+     * @var string
+     */
+
+    protected string $output;
+
+    /**
+     * Item contents
+     *
+     * @var array
+     */
+
+    protected array $contents;
+
+    /**
      * Initialize page builder
      *
      * @param Sitemap $sitemap
@@ -19,6 +51,21 @@ abstract class BaseBuilder implements BuilderInterface
         protected readonly Sitemap $sitemap,
         protected readonly TwigEnvironment $twig
     ) {
+    }
+
+    /**
+     * Setup builder
+     *
+     * @param array $item
+     * @return void
+     */
+
+    public function setup(array $item): void
+    {
+        $this->tag = $item['tag'];
+        $this->template = $item['template'];
+        $this->output = $item['output'];
+        $this->contents = $item['contents'];
     }
 
     /**

@@ -28,7 +28,8 @@ final class BuildCommand extends BaseCommand
             $item['contents'] = $this->compileContents($item['contents']);
             $builder = $this->builders->get($item['builder']);
 
-            $builder->compile($item);
+            $builder->setup($item);
+            $builder->compile();
         }
 
         $assets->compile();
