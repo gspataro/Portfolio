@@ -12,9 +12,9 @@
         "project": {
             "template": "project",
             "output": "/project",
-            "builder": "projects",
+            "builder": "post",
             "contents": {
-                "projects": "markdown:projects/*.md"
+                "project": "markdown:projects/*.md"
             }
         },
         "projects": {

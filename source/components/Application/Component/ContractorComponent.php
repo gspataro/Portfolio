@@ -4,8 +4,8 @@ namespace GSpataro\Application\Component;
 
 use GSpataro\Contractor\BuildersCollection;
 use GSpataro\DependencyInjection\Component;
+use GSpataro\Contractor\Builder\PostBuilder;
 use GSpataro\Contractor\Builder\SimpleBuilder;
-use GSpataro\Contractor\Builder\ProjectsBuilder;
 
 final class ContractorComponent extends Component
 {
@@ -25,7 +25,7 @@ final class ContractorComponent extends Component
             $this->container->get('twig')
         ));
 
-        $buildersCollection->add('projects', new ProjectsBuilder(
+        $buildersCollection->add('post', new PostBuilder(
             $this->container->get('project.sitemap'),
             $this->container->get('twig')
         ));
