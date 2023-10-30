@@ -38,8 +38,32 @@ final class Sitemap
             $path = $this->generateUniquePath($path);
         }
 
+        if (isset($this->sitemap[$tag])) {
+            $tag = $this->generateUniqueTag($tag);
+        }
+
         $this->sitemap[$tag] = $path;
         return $path;
+    }
+
+    /**
+     * Generate a unique tag
+     *
+     * @param string $tag
+     * @return string
+     */
+
+    public function generateUniqueTag(string $tag): string
+    {
+        if (!isset($this->sitemap[$tag])) {
+            return $tag;
+        }
+
+        while (isset($this->sitemap[$tag])) {
+            $tag .= '-copy';
+        }
+
+        return $tag;
     }
 
     /**
