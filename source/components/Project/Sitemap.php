@@ -80,10 +80,7 @@ final class Sitemap
         }
 
         while ($this->has($path)) {
-            $pathinfo = pathinfo($path);
-            $basepath = $pathinfo['dirname'] . DIRECTORY_SEPARATOR . $pathinfo['filename'];
-            $extension = $pathinfo['extension'];
-            $path = $basepath . '-copy.' . $extension;
+            $path = addSuffixToFilename($path, '-copy');
         }
 
         return $path;

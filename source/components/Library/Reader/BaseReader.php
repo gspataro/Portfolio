@@ -54,13 +54,16 @@ abstract class BaseReader implements ReaderInterface
      * @return mixed
      */
 
-    protected function handleOne(string $source): mixed
+    protected function handleOne(string $source): array
     {
         if ($this->archive->has($source)) {
             return $this->archive->get($source);
         }
 
         $result = $this->compiler($source);
+        $result['meta']['title'] ??= pathinfo($source, PATHINFO_BASENAME);
+        $result['meta']['slug'] ??= pathinfo($source, PATHINFO_FILENAME);
+
         $this->archive->add($source, $result);
 
         return $result;
@@ -107,16 +110,33 @@ abstract class BaseReader implements ReaderInterface
     }
 
     /**
+     * Prepare the compiler output
+     *
+     * @param array $meta
+     * @param mixed $content
+     * @return array
+     */
+
+    protected function prepareOutput(array $meta, mixed $content): array
+    {
+        return [
+            'meta' => $meta,
+            'content' => $content
+        ];
+    }
+
+    /**
      * Compile and return the given data
      *
      * @param string $source
-     * @return mixed
+     * @return array
      */
 
-    public function compile(string $source): mixed
+    public function compile(string $source): array
     {
         if (is_file($this->getPath($source))) {
-            return $this->handleOne($source);
+            $result = $this->handleOne($source);
+            return $result;
         }
 
         if (str_contains($source, ';')) {

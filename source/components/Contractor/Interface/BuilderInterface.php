@@ -5,19 +5,12 @@ namespace GSpataro\Contractor\Interface;
 interface BuilderInterface
 {
     /**
-     * Setup builder
+     * Execute build
      *
+     * @param string $template
      * @param array $item
      * @return void
      */
 
-    public function setup(array $item): void;
-
-    /**
-     * Execute build
-     *
-     * @return void
-     */
-
-    public function compile(): void;
+    public function compile(string $template, array $item): void;
 }

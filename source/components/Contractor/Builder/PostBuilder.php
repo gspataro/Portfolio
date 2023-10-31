@@ -7,12 +7,14 @@ final class PostBuilder extends BaseBuilder
     /**
      * Compile post
      *
+     * @param string $template
+     * @param array $item
      * @return void
      */
 
-    public function compile(): void
+    public function compile(string $template, array $item): void
     {
-        foreach ($this->contents as $group => $contents) {
+        /*foreach ($this->contents as $group => $contents) {
             foreach ($contents as $content) {
                 $outputPath = $this->getOutputPath(
                     $this->tag . '.' . $content['meta']['slug'],
@@ -24,6 +26,12 @@ final class PostBuilder extends BaseBuilder
                 ]);
                 file_put_contents(pathJoin(DIR_OUTPUT, $outputPath), $compiledTemplate);
             }
-        }
+        }*/
+        $outputPath = $this->getOutputPath($item['permalink']);
+        $compiledTemplate = $this->twig->render($template . '.html', [
+            'post' => $item
+        ]);
+
+        file_put_contents($outputPath, $compiledTemplate);
     }
 }

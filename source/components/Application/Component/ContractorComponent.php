@@ -2,6 +2,7 @@
 
 namespace GSpataro\Application\Component;
 
+use GSpataro\Contractor\Builder\ArchiveBuilder;
 use GSpataro\Contractor\BuildersCollection;
 use GSpataro\DependencyInjection\Component;
 use GSpataro\Contractor\Builder\PostBuilder;
@@ -19,11 +20,6 @@ final class ContractorComponent extends Component
     public function boot(): void
     {
         $buildersCollection = $this->container->get('contractor.builders');
-
-        $buildersCollection->add('simple', new SimpleBuilder(
-            $this->container->get('project.sitemap'),
-            $this->container->get('twig')
-        ));
 
         $buildersCollection->add('post', new PostBuilder(
             $this->container->get('project.sitemap'),

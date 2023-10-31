@@ -1,0 +1,22 @@
+{%set page = {
+    'title': 'Blog',
+    'id': 'blog',
+    'layout': {
+        'contain': true
+    }
+}%}
+{%extends "./layout.html"%}
+{%block main%}
+    <h1 class="mb-md">Blog</h1>
+    <div class="grid grid-cols-1 gap-sm">
+        {%for article in articles%}
+            {{article.meta.name}}
+        {%endfor%}
+        {%if pagination.prev%}
+            <a href="{{url('blog.page-' ~ pagination.prev)}}">Precedente &rarr;</a>
+        {%endif%}
+        {%if pagination.next%}
+            <a href="{{url('blog.page-' ~ pagination.next)}}">Successivo &rarr;</a>
+        {%endif%}
+    </div>
+{%endblock%}

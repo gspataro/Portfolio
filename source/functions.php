@@ -110,3 +110,21 @@ function pathJoin(string $base, string $path): string
 
     return $base . $separator . $path;
 }
+
+/**
+ * Add suffix to a file name
+ *
+ * @param string $filename
+ * @param string $suffix
+ * @return string
+ */
+
+function addSuffixToFilename(string $filename, string $suffix): string
+{
+    if (!str_contains($filename, '.')) {
+        return $filename . $suffix;
+    }
+
+    $extensionPosition = strrpos($filename, '.');
+    return substr($filename, 0, $extensionPosition) . $suffix . substr($filename, $extensionPosition);
+}

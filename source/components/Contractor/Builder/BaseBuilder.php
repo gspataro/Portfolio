@@ -9,46 +9,6 @@ use GSpataro\Contractor\Interface\BuilderInterface;
 abstract class BaseBuilder implements BuilderInterface
 {
     /**
-     * Item tag
-     *
-     * @var string
-     */
-
-    protected string $tag;
-
-    /**
-     * Item template
-     *
-     * @var string
-     */
-
-    protected string $template;
-
-    /**
-     * Item output
-     *
-     * @var string
-     */
-
-    protected string $output;
-
-    /**
-     * Item contents
-     *
-     * @var array
-     */
-
-    protected array $contents;
-
-    /**
-     * Builder options
-     *
-     * @var array
-     */
-
-    protected array $options = [];
-
-    /**
      * Initialize page builder
      *
      * @param Sitemap $sitemap
@@ -62,40 +22,21 @@ abstract class BaseBuilder implements BuilderInterface
     }
 
     /**
-     * Setup builder
-     *
-     * @param array $item
-     * @return void
-     */
-
-    public function setup(array $item): void
-    {
-        $this->tag = $item['tag'];
-        $this->template = $item['template'];
-        $this->output = $item['output'];
-        $this->contents = $item['contents'];
-        $this->options = $item['builder']['options'] ?? [];
-    }
-
-    /**
      * Get output path
-     * The output path will be transformed into a unique one and registered in the sitemap with the appropriate tag
-     * If the output base directory doesn't exists, it will be created recursively
      *
-     * @param string $tag
      * @param string $path
      * @return string
      */
 
-    protected function getOutputPath(string $tag, string $path): string
+    protected function getOutputPath(string $path): string
     {
-        $outputDirName = pathinfo($path, PATHINFO_DIRNAME);
-        $outputDirPath = pathJoin(DIR_OUTPUT, $outputDirName);
+        $outputPath = pathJoin(DIR_OUTPUT, $path) . '.html';
+        $outputDir = pathinfo($outputPath, PATHINFO_DIRNAME);
 
-        if (!is_dir($outputDirPath)) {
-            mkdir($outputDirPath, 0777, true);
+        if (!is_dir($outputDir)) {
+            mkdir($outputDir, 0777, true);
         }
 
-        return $this->sitemap->add($tag, $path);
+        return $outputPath;
     }
 }

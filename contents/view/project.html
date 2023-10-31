@@ -1,11 +1,11 @@
 {%set page = {
-    'title': project.meta.name ~ ' &bullet; Progetti',
+    'title': post.meta.name ~ ' &bullet; Progetti',
     'layout': {
         'contain': true
     },
     'meta': {
-        'description': project.meta.description,
-        'keywords': project.meta.keywords
+        'description': post.meta.description,
+        'keywords': post.meta.keywords
     }
 }%}
 {%extends "./layout.html"%}
@@ -13,25 +13,25 @@
     <article>
         <header class="mb-lg">
             <div class="flex items-center mb-md">
-                <h1 class="flex-1">{{project.meta.name}}</h1>
+                <h1 class="flex-1">{{post.meta.title}}</h1>
                 {%include './components/project/links.html'%}
             </div>
             {%include './components/project/meta.html' with {'meta': {
-                "Categoria": project.meta.categories|join(', '),
-                "Tecnologie": project.meta.tags|join(', '),
-                "Versione": project.meta.version
+                "Categoria": post.meta.categories|join(', '),
+                "Tecnologie": post.meta.tags|join(', '),
+                "Versione": post.meta.version
             }} only%}
         </header>
-        {%if project.meta.thumbnail%}
+        {%if post.meta.thumbnail%}
             <figure class="mb-md">
-                <img src="{{website.url}}/assets/images/{{project.meta.thumbnail}}" alt="{{project.meta.title}}">
+                <img src="{{website.url}}/assets/images/{{post.meta.thumbnail}}" alt="{{post.meta.title}}">
             </figure>
         {%endif%}
         <div class="prose">
-            {%if project.meta.twig%}
-                {{include(template_from_string(project.content))}}
+            {%if post.meta.twig%}
+                {{include(template_from_string(post.content))}}
             {%else%}
-                {{project.content|raw}}
+                {{post.content|raw}}
             {%endif%}
         </div>
     </article>

@@ -8,36 +8,20 @@
     },
     "languages": ["it", "en"],
     "default_language": "it",
-    "items": {
+    "contents": {
+        "page": {
+            "data": "markdown:pages/*.md",
+            "template": "page",
+            "output": "/"
+        },
         "project": {
+            "data": "markdown:projects/*.md",
             "template": "project",
             "output": "/project",
-            "builder": "post",
-            "contents": {
-                "project": "markdown:projects/*.md"
+            "archive": {
+                "template": "projects",
+                "slug": "projects"
             }
-        },
-        "projects": {
-            "template": "projects",
-            "output": "/projects.html",
-            "contents": {
-                "projects": "markdown:projects/*.md"
-            }
-        },
-        "index": {
-            "template": "index",
-            "output": "/index.html",
-            "contents": {
-                "projects": "markdown:projects/cli.md;projects/portfolio.md;projects/dependencyinjection.md"
-            }
-        },
-        "colors": {
-            "template": "colors",
-            "output": "/colors.html"
-        },
-        "typography": {
-            "template": "typography",
-            "output": "/typography.html"
         }
     },
     "exclude_assets": [

@@ -1,5 +1,5 @@
 ---
-name: Dependency Injection
+title: Dependency Injection
 slug: dependency-injection
 description: Un container PHP per la gestione semplificata del boot di un applicativo tramite l'uso della dependency injection.
 github: https://github.com/gspataro/DependencyInjection

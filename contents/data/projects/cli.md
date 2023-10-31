@@ -1,5 +1,5 @@
 ---
-name: CLI
+title: CLI
 slug: cli
 description: Componente PHP per la creazione di script eseguibili via riga di comando.
 github: https://github.com/gspataro/CLI

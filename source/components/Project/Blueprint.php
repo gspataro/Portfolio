@@ -2,8 +2,6 @@
 
 namespace GSpataro\Project;
 
-use GSpataro\Library\Exception\InvalidDataItemException;
-use GSpataro\Project\Exception\InvalidItemException;
 use GSpataro\Utilities\DotNavigator;
 
 final class Blueprint extends DotNavigator
@@ -49,88 +47,52 @@ final class Blueprint extends DotNavigator
     {
         $data = json_decode($rawJson, true);
 
-        if (isset($data['items'])) {
-            $this->prepareItems($data['items']);
-        }
+        $this->prepareContents($data['contents']);
 
         return $data;
     }
 
     /**
-     * Prepare items structure
-     *
-     * @param array $items
-     * @return void
-     */
-
-    private function prepareItems(array &$items): void
-    {
-        foreach ($items as $tag => &$item) {
-            $item['tag'] = $tag;
-
-            if (!isset($item['template'])) {
-                throw new Exception\InvalidItemException(
-                    "Item '{$tag}' must contain a template index."
-                );
-            }
-
-            if (!isset($item['output'])) {
-                throw new Exception\InvalidItemException(
-                    "Item '{$tag}' must contain an output index."
-                );
-            }
-
-            $item['builder'] ??= [
-                'type' => 'simple',
-                'options' => []
-            ];
-
-            if (is_string($item['builder'])) {
-                $item['builder'] = [
-                    'type' => $item['builder'],
-                    'options' => []
-                ];
-            }
-
-            if (!isset($item['contents'])) {
-                $item['contents'] = [];
-                continue;
-            }
-
-            if (!is_array($item['contents'])) {
-                throw new Exception\InvalidItemException(
-                    "Contents of item '{$tag}' must be an associative array."
-                );
-            }
-
-            $this->prepareItemContents($item['contents']);
-        }
-    }
-
-    /**
-     * Prepare item contents
+     * Prepare contents structure
      *
      * @param array $contents
      * @return void
      */
 
-    private function prepareItemContents(array &$contents): void
+    private function prepareContents(array &$contents): void
     {
-        foreach ($contents as $tag => &$source) {
-            if (!is_string($source)) {
-                throw new InvalidItemException(
-                    "Invalid source provided for content with tag '{$tag}'. It must be a string."
-                );
-            }
-
-            if (str_contains($source, ':')) {
-                [$reader, $path] = explode(':', $source, 2);
-            }
-
-            $source = [
-                'reader' => $reader ?? 'text',
-                'source' => $path ?? $source
+        foreach ($contents as $type => &$definition) {
+            $definition['type'] = $type;
+            $definition['template'] ??= 'post';
+            $definition['output'] ??= DIRECTORY_SEPARATOR . $type;
+            $definition['data'] ??= [
+                [
+                    'reader' => 'markdown',
+                    'path' => $type . DIRECTORY_SEPARATOR . '*.md'
+                ]
             ];
+            $definition['archive'] ??= false;
+
+            if ($definition['archive']) {
+                $definition['archive']['template'] ??= 'archive';
+                $definition['archive']['slug'] ??= $type;
+                $definition['archive']['per_page'] ??= 12;
+            }
+
+            if (!is_array($definition['data'])) {
+                $definition['data'] = [$definition['data']];
+            }
+
+            foreach ($definition['data'] as &$source) {
+                if (str_contains($source, ':')) {
+                    [$reader, $path] = explode(':', $source, 2);
+                }
+
+                $source = [
+                    'reader' => $reader ?? 'text',
+                    'path' => $path ?? $source
+                ];
+            }
         }
     }
 }
