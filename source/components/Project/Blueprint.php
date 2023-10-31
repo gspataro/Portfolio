@@ -93,6 +93,14 @@ final class Blueprint extends DotNavigator
                     'path' => $path ?? $source
                 ];
             }
+
+            $definition = new Content(
+                $type,
+                $definition['template'],
+                $definition['output'],
+                $definition['data'],
+                $definition['archive']
+            );
         }
     }
 }

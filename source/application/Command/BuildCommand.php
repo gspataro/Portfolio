@@ -5,6 +5,7 @@ namespace GSpataro\Application\Command;
 use GSpataro\Project\Blueprint;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Contractor\BuildersCollection;
+use GSpataro\Project\Content;
 use GSpataro\Project\Sitemap;
 
 final class BuildCommand extends BaseCommand
@@ -28,16 +29,18 @@ final class BuildCommand extends BaseCommand
         $assets = $this->app->get('assets.handler');
 
         foreach ($this->blueprint->get('contents') as $content) {
-            $this->output->print('{bold}Processing "' . $content['type'] . '" content type');
+            $this->output->print('{bold}Processing "' . $content->type . '" content type');
 
-            $this->output->print('[' . $content['type'] . '] Reading data from sources...');
-            $content['data'] = $this->compileData($content['data']);
+            $this->output->print('[' . $content->type . '] Reading data from sources...');
+            $data = [];
+            $data = $this->compileData($content->data);
 
-            $this->output->print('[' . $content['type'] . '] Creating sitemap...');
-            $this->createSitemap($content);
+            $this->output->print('[' . $content->type . '] Creating sitemap...');
+            $items = [];
+            $items = $this->createSitemap($data, $content);
 
-            $this->output->print('[' . $content['type'] . '] Building pages...');
-            $this->buildPages($content);
+            $this->output->print('[' . $content->type . '] Building pages...');
+            $this->buildPages($items, $content);
         }
 
         $this->output->print('{bold}Copying assets...');
@@ -58,42 +61,30 @@ final class BuildCommand extends BaseCommand
         return $output;
     }
 
-    private function createSitemap(array &$content): void
+    private function createSitemap(array $data, Content $content): array
     {
-        foreach ($content['data'][0] as &$item) {
-            $item['permalink'] = $this->sitemap->add(
-                $content['type'] . '.' . $item['meta']['slug'],
-                pathJoin($content['output'], $item['meta']['slug'])
-            );
+        $items = [];
+
+        foreach ($data as $source) {
+            foreach ($source as $item) {
+                $item['permalink'] = $this->sitemap->add(
+                    $content->type . '.' . $item['meta']['slug'],
+                    pathJoin($content->output, $item['meta']['slug'])
+                );
+
+                $items[] = $item;
+            }
         }
 
-        if (!$content['archive']) {
-            return;
-        }
-
-        $content['archive']['permalink'] = $this->sitemap->add(
-            $content['type'] . '.' . $content['archive']['slug'],
-            pathJoin($content['output'], $content['archive']['slug'])
-        );
+        return $items;
     }
 
-    private function buildPages(array $content): void
+    private function buildPages(array $items, Content $content): void
     {
         $postBuilder = $this->builders->get('post');
 
-        foreach ($content['data'][0] as $item) {
-            $postBuilder->compile($item['meta']['template'] ?? $content['template'], $item);
+        foreach ($items as $item) {
+            $postBuilder->compile($item['meta']['template'] ?? $content->template, $item);
         }
-
-        /*if (!$content['archive']) {
-            return;
-        }
-
-        $perPage = $content['archive']['per_page'];
-        $totalPages = ceil(count($content['data'][0]) / $perPage);
-
-        for ($i = 0; $i < $totalPages; $i++) {
-
-        }*/
     }
 }
