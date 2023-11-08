@@ -35,9 +35,12 @@ final class MarkdownReader extends BaseReader
         );
 
         if ($result instanceof RenderedContentWithFrontMatter) {
-            return $this->prepareOutput($result->getFrontMatter(), $result->getContent());
+            return [
+                'frontmatter' => $result->getFrontMatter(),
+                'content' => $result->getContent()
+            ];
         }
 
-        return $this->prepareOutput([], $result->getContent());
+        return $result->getContent();
     }
 }

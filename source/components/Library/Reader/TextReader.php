@@ -8,13 +8,11 @@ final class TextReader extends BaseReader
      * Handle a single file
      *
      * @param string $source
-     * @return array
+     * @return mixed
      */
 
-    protected function compiler(string $source): array
+    protected function compiler(string $source): mixed
     {
-        $content = file_get_contents($this->getPath($source));
-
-        return $this->prepareOutput([], $content);
+        return file_get_contents($this->getPath($source));
     }
 }

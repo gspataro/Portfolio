@@ -61,9 +61,6 @@ abstract class BaseReader implements ReaderInterface
         }
 
         $result = $this->compiler($source);
-        $result['meta']['title'] ??= pathinfo($source, PATHINFO_BASENAME);
-        $result['meta']['slug'] ??= pathinfo($source, PATHINFO_FILENAME);
-
         $this->archive->add($source, $result);
 
         return $result;
@@ -107,22 +104,6 @@ abstract class BaseReader implements ReaderInterface
         }
 
         return $results;
-    }
-
-    /**
-     * Prepare the compiler output
-     *
-     * @param array $meta
-     * @param mixed $content
-     * @return array
-     */
-
-    protected function prepareOutput(array $meta, mixed $content): array
-    {
-        return [
-            'meta' => $meta,
-            'content' => $content
-        ];
     }
 
     /**
