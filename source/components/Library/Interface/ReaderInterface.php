@@ -9,11 +9,12 @@ interface ReaderInterface
     /**
      * Compile and return the given data
      *
+     * @param string $group
      * @param string $source
      * @return mixed
      */
 
-    public function compile(string $source): mixed;
+    public function compile(string $group, string $source): mixed;
 
     /**
      * Get failed status

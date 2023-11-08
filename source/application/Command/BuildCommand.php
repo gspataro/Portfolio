@@ -33,7 +33,7 @@ final class BuildCommand extends BaseCommand
         $this->output->print('{bold}{fg_red}Build execution disabled, work in progress.');
         //$this->build();
 
-        var_dump($this->processContents());
+        $this->processContents();
     }
 
     private function build(): void
@@ -71,7 +71,7 @@ final class BuildCommand extends BaseCommand
 
         foreach ($this->prototype->get('contents') as $group => $source) {
             $reader = $this->readers->get($source['reader']);
-            $contents[$group] = $reader->compile($source['path']);
+            $contents[$group] = $reader->compile($group, $source['path']);
 
             if ($reader->failed()) {
                 $error = $reader->getError();

@@ -88,11 +88,12 @@ abstract class BaseReader implements ReaderInterface
     /**
      * Handle a single file
      *
+     * @param string $group
      * @param string $source
      * @return mixed
      */
 
-    protected function handleOne(string $source): mixed
+    protected function handleOne(string $group, string $source): mixed
     {
         if ($this->archive->has($source)) {
             return $this->archive->get($source);
@@ -103,8 +104,11 @@ abstract class BaseReader implements ReaderInterface
             return [];
         }
 
+        $filename = pathinfo($source, PATHINFO_FILENAME);
+        $tag = $this->fileToTag($filename);
         $result = $this->compiler($source);
-        $this->archive->add($source, $result);
+
+        $this->archive->set($group . '.' . $tag, $result);
 
         return $result;
     }
@@ -112,11 +116,12 @@ abstract class BaseReader implements ReaderInterface
     /**
      * Handle multiple files
      *
+     * @param string $group
      * @param array $sources
      * @return array
      */
 
-    protected function handleMultiple(array $sources): array
+    protected function handleMultiple(string $group, array $sources): array
     {
         $results = [];
 
@@ -124,7 +129,7 @@ abstract class BaseReader implements ReaderInterface
             $filename = pathinfo($source, PATHINFO_FILENAME);
             $tag = $this->fileToTag($filename);
 
-            $results[$tag] = $this->handleOne($source);
+            $results[$tag] = $this->handleOne($group, $source);
 
             if ($this->failed()) {
                 return [];
@@ -137,11 +142,12 @@ abstract class BaseReader implements ReaderInterface
     /**
      * Handle pattern
      *
+     * @param string $group
      * @param string $pattern
      * @return array
      */
 
-    protected function handlePattern(string $pattern): array
+    protected function handlePattern(string $group, string $pattern): array
     {
         $results = [];
 
@@ -153,7 +159,7 @@ abstract class BaseReader implements ReaderInterface
             $filename = pathinfo($file, PATHINFO_FILENAME);
             $tag = $this->fileToTag($filename);
 
-            $results[$tag] = $this->handleOne($file);
+            $results[$tag] = $this->handleOne($group, $file);
 
             if ($this->failed()) {
                 return [];
@@ -166,23 +172,24 @@ abstract class BaseReader implements ReaderInterface
     /**
      * Compile and return the given data
      *
+     * @param string $group
      * @param string $source
      * @return array
      */
 
-    public function compile(string $source): array
+    public function compile(string $group, string $source): array
     {
         if (is_file($this->getPath($source))) {
-            $result = $this->handleOne($source);
+            $result = $this->handleOne($group, $source);
             return $result;
         }
 
         if (str_contains($source, ';')) {
             $sources = explode(';', $source);
-            return $this->handleMultiple($sources);
+            return $this->handleMultiple($group, $sources);
         }
 
-        return $this->handlePattern($source);
+        return $this->handlePattern($group, $source);
     }
 
     /**
