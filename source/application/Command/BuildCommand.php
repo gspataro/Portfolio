@@ -78,7 +78,7 @@ final class BuildCommand extends BaseCommand
                 $this->output->print('{bold}{fg_red}Contents processing failed.');
                 $this->output->print('{bold}Error: {clear}' . $error->getMessage());
                 $this->output->print('{bold}Source: {clear}' . $reader->getFailedSource());
-                exit();
+                exit(1);
             }
         }
 
