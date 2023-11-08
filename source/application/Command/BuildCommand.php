@@ -72,6 +72,14 @@ final class BuildCommand extends BaseCommand
         foreach ($this->prototype->get('contents') as $group => $source) {
             $reader = $this->readers->get($source['reader']);
             $contents[$group] = $reader->compile($source['path']);
+
+            if ($reader->failed()) {
+                $error = $reader->getError();
+                $this->output->print('{bold}{fg_red}Contents processing failed.');
+                $this->output->print('{bold}Error: {clear}' . $error->getMessage());
+                $this->output->print('{bold}Source: {clear}' . $reader->getFailedSource());
+                exit();
+            }
         }
 
         return $contents;

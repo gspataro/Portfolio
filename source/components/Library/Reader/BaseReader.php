@@ -3,10 +3,35 @@
 namespace GSpataro\Library\Reader;
 
 use GSpataro\Library\Archive;
+use GSpataro\Library\ErrorEnum;
 use GSpataro\Library\Interface\ReaderInterface;
 
 abstract class BaseReader implements ReaderInterface
 {
+    /**
+     * Store error
+     *
+     * @var ErrorEnum
+     */
+
+    private ErrorEnum $error;
+
+    /**
+     * Store failed status
+     *
+     * @var bool
+     */
+
+    private bool $failed = false;
+
+    /**
+     * Store failed source
+     *
+     * @var string
+     */
+
+    private string $failedSource;
+
     /**
      * Initialize reader
      *
@@ -67,10 +92,15 @@ abstract class BaseReader implements ReaderInterface
      * @return mixed
      */
 
-    protected function handleOne(string $source): array
+    protected function handleOne(string $source): mixed
     {
         if ($this->archive->has($source)) {
             return $this->archive->get($source);
+        }
+
+        if (str_contains($source, ' ')) {
+            $this->fail(ErrorEnum::SpacesInFilename, $source);
+            return [];
         }
 
         $result = $this->compiler($source);
@@ -95,6 +125,10 @@ abstract class BaseReader implements ReaderInterface
             $tag = $this->fileToTag($filename);
 
             $results[$tag] = $this->handleOne($source);
+
+            if ($this->failed()) {
+                return [];
+            }
         }
 
         return $results;
@@ -120,6 +154,10 @@ abstract class BaseReader implements ReaderInterface
             $tag = $this->fileToTag($filename);
 
             $results[$tag] = $this->handleOne($file);
+
+            if ($this->failed()) {
+                return [];
+            }
         }
 
         return $results;
@@ -145,5 +183,53 @@ abstract class BaseReader implements ReaderInterface
         }
 
         return $this->handlePattern($source);
+    }
+
+    /**
+     * Set failed status to true, stop the reading process and set the error code
+     *
+     * @param ErrorEnum $code
+     * @param string $source;
+     * @return void
+     */
+
+    protected function fail(ErrorEnum $code, string $source): void
+    {
+        $this->failed = true;
+        $this->error = $code;
+        $this->failedSource = $source;
+    }
+
+    /**
+     * Get failed status
+     *
+     * @return bool
+     */
+
+    public function failed(): bool
+    {
+        return $this->failed;
+    }
+
+    /**
+     * Get error
+     *
+     * @return array
+     */
+
+    public function getError(): ErrorEnum
+    {
+        return $this->error;
+    }
+
+    /**
+     * Get failed source
+     *
+     * @return string
+     */
+
+    public function getFailedSource(): string
+    {
+        return $this->failedSource;
     }
 }
