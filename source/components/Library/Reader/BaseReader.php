@@ -39,6 +39,19 @@ abstract class BaseReader implements ReaderInterface
     }
 
     /**
+     * Convert file name to tag
+     *
+     * @param string $filename
+     * @return string
+     */
+
+    protected function fileToTag(string $filename): string
+    {
+        $tag = str_replace(' ', '_', strtolower($filename));
+        return $tag;
+    }
+
+    /**
      * Content compiler
      *
      * @param string $source
@@ -78,7 +91,10 @@ abstract class BaseReader implements ReaderInterface
         $results = [];
 
         foreach ($sources as $source) {
-            $results[] = $this->handleOne($source);
+            $filename = pathinfo($source, PATHINFO_FILENAME);
+            $tag = $this->fileToTag($filename);
+
+            $results[$tag] = $this->handleOne($source);
         }
 
         return $results;
@@ -100,7 +116,10 @@ abstract class BaseReader implements ReaderInterface
                 continue;
             }
 
-            $results[] = $this->handleOne($file);
+            $filename = pathinfo($file, PATHINFO_FILENAME);
+            $tag = $this->fileToTag($filename);
+
+            $results[$tag] = $this->handleOne($file);
         }
 
         return $results;
