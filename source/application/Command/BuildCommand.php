@@ -2,11 +2,12 @@
 
 namespace GSpataro\Application\Command;
 
-use GSpataro\Project\Blueprint;
-use GSpataro\Library\ReadersCollection;
-use GSpataro\Contractor\BuildersCollection;
 use GSpataro\Project\Content;
 use GSpataro\Project\Sitemap;
+use GSpataro\Project\Blueprint;
+use GSpataro\Project\Prototype;
+use GSpataro\Library\ReadersCollection;
+use GSpataro\Contractor\BuildersCollection;
 
 final class BuildCommand extends BaseCommand
 {
@@ -15,6 +16,7 @@ final class BuildCommand extends BaseCommand
 
     private readonly Sitemap $sitemap;
     private readonly Blueprint $blueprint;
+    private readonly Prototype $prototype;
     private readonly ReadersCollection $readers;
     private readonly BuildersCollection $builders;
 
@@ -23,12 +25,13 @@ final class BuildCommand extends BaseCommand
         $this->output->print('{bold}Running the building process...');
 
         $this->blueprint = $this->app->get('project.blueprint');
+        $this->prototype = $this->app->get('project.prototype');
         $this->sitemap = $this->app->get('project.sitemap');
         $this->readers = $this->app->get('library.readers');
         $this->builders = $this->app->get('contractor.builders');
         $assets = $this->app->get('assets.handler');
 
-        foreach ($this->blueprint->get('contents') as $content) {
+        foreach ($this->prototype->get('contents') as $content) {
             $this->output->print('{bold}Processing "' . $content->type . '" content type');
 
             $this->output->print('[' . $content->type . '] Reading data from sources...');
