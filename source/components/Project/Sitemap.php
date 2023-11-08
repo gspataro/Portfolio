@@ -13,13 +13,25 @@ final class Sitemap
     private array $sitemap = [];
 
     /**
+     * Verify if a page exists in the sitemap
+     *
+     * @param string $tag
+     * @return bool
+     */
+
+    public function has(string $tag): bool
+    {
+        return isset($this->sitemap[$tag]);
+    }
+
+    /**
      * Verify if a path exists in the sitemap
      *
      * @param string $path
      * @return bool
      */
 
-    public function has(string $path): bool
+    public function hasPath(string $path): bool
     {
         return in_array($path, array_values($this->sitemap));
     }
@@ -34,36 +46,12 @@ final class Sitemap
 
     public function add(string $tag, string $path): string
     {
-        if ($this->has($path)) {
+        if ($this->hasPath($path)) {
             $path = $this->generateUniquePath($path);
-        }
-
-        if (isset($this->sitemap[$tag])) {
-            $tag = $this->generateUniqueTag($tag);
         }
 
         $this->sitemap[$tag] = $path;
         return $path;
-    }
-
-    /**
-     * Generate a unique tag
-     *
-     * @param string $tag
-     * @return string
-     */
-
-    public function generateUniqueTag(string $tag): string
-    {
-        if (!isset($this->sitemap[$tag])) {
-            return $tag;
-        }
-
-        while (isset($this->sitemap[$tag])) {
-            $tag .= '-copy';
-        }
-
-        return $tag;
     }
 
     /**
@@ -75,11 +63,11 @@ final class Sitemap
 
     public function generateUniquePath(string $path): string
     {
-        if (!$this->has($path)) {
+        if (!$this->hasPath($path)) {
             return $path;
         }
 
-        while ($this->has($path)) {
+        while ($this->hasPath($path)) {
             $path = addSuffixToFilename($path, '-copy');
         }
 
