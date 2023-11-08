@@ -30,7 +30,8 @@ final class BuildCommand extends BaseCommand
         $this->builders = $this->app->get('contractor.builders');
         $this->assets = $this->app->get('assets.handler');
 
-        $this->build();
+        $this->output->print('{bold}{fg_red}Build execution disabled, work in progress.');
+        //$this->build();
     }
 
     private function build(): void
