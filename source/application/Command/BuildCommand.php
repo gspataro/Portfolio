@@ -57,6 +57,24 @@ final class BuildCommand extends BaseCommand
         $this->output->print('{bold}{fg_green}Build completed successfully!');
     }
 
+    /**
+     * Process contents from prototype
+     *
+     * @return array
+     */
+
+    private function processContents(): array
+    {
+        $contents = [];
+
+        foreach ($this->prototype->get('contents') as $group => $source) {
+            $reader = $this->readers->get($source['reader']);
+            $contents[$group][] = $reader->compile($source['path']);
+        }
+
+        return $contents;
+    }
+
     private function compileData(array $data): array
     {
         $output = [];
