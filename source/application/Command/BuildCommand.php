@@ -22,7 +22,7 @@ final class BuildCommand extends BaseCommand
 
     public function main(): void
     {
-        $this->output->print('{bold}Running the building process...');
+        $this->output->print('{bold}Running the building process{nl}');
 
         $this->prototype = $this->app->get('project.prototype');
         $this->sitemap = $this->app->get('project.sitemap');
@@ -43,13 +43,17 @@ final class BuildCommand extends BaseCommand
     {
         $contents = [];
 
+        $this->output->print('{bold}Processing contents');
+
         foreach ($this->prototype->get('contents') as $group => $source) {
+            $this->output->print("Working on content group '{$group}'");
+
             $reader = $this->readers->get($source['reader']);
             $contents[$group] = $reader->compile($group, $source['path']);
 
             if ($reader->failed()) {
                 $error = $reader->getError();
-                $this->output->print('{bold}{fg_red}Contents processing failed.');
+                $this->output->print("{bold}{fg_red}Contents processing failed on group'{$group}'.");
                 $this->output->print('{bold}Error: {clear}' . $error->getMessage());
                 $this->output->print('{bold}Source: {clear}' . $reader->getFailedSource());
                 exit(1);
