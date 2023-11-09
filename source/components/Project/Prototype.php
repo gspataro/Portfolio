@@ -16,7 +16,7 @@ final class Prototype extends DotNavigator
         private readonly Blueprint $blueprint
     ) {
         $this->readContents();
-        $this->readPages();
+        $this->readSchemas();
     }
 
     /**
@@ -50,46 +50,46 @@ final class Prototype extends DotNavigator
     }
 
     /**
-     * Read pages from blueprint
+     * Read schemas from blueprint
      *
      * @return void
      */
 
-    public function readPages(): void
+    public function readSchemas(): void
     {
-        $this->set('pages', []);
+        $this->set('schemas', []);
 
-        if (empty($this->blueprint->get('pages'))) {
+        if (empty($this->blueprint->get('schemas'))) {
             return;
         }
 
-        foreach ($this->blueprint->get('pages') as $tag => $page) {
-            if (!isset($page['template'])) {
+        foreach ($this->blueprint->get('schemas') as $tag => $schema) {
+            if (!isset($schema['template'])) {
                 throw new Exception\InvalidBlueprintException(
-                    "You must provide a template for page '{$tag}'."
+                    "You must provide a template for schema '{$tag}'."
                 );
             }
 
-            if (!isset($page['builder'])) {
+            if (!isset($schema['builder'])) {
                 throw new Exception\InvalidBlueprintException(
-                    "You must provide a builder for page '{$tag}'."
+                    "You must provide a builder for schema '{$tag}'."
                 );
             }
 
-            if (!isset($page['slug'])) {
+            if (!isset($schema['slug'])) {
                 throw new Exception\InvalidBlueprintException(
-                    "You must provide a slug for page '{$tag}'."
+                    "You must provide a slug for schema '{$tag}'."
                 );
             }
 
-            if (!str_starts_with($page['slug'], '/')) {
-                $page['slug'] = '/' . $page['slug'];
+            if (!str_starts_with($schema['slug'], '/')) {
+                $schema['slug'] = '/' . $schema['slug'];
             }
 
-            $page['contents'] ??= [];
-            $page['options'] ??= [];
+            $schema['contents'] ??= [];
+            $schema['options'] ??= [];
 
-            $this->set('pages.' . $tag, $page);
+            $this->set('schemas.' . $tag, $schema);
         }
     }
 }
