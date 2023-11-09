@@ -7,10 +7,10 @@ interface BuilderInterface
     /**
      * Execute build
      *
-     * @param string $template
-     * @param array $item
-     * @return void
+     * @param array $schema
+     * @param array $contents
+     * @return mixed
      */
 
-    public function compile(string $template, array $item): void;
+    public function compile(array $schema, array $contents = []): mixed;
 }
