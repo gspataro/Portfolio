@@ -30,33 +30,7 @@ final class BuildCommand extends BaseCommand
         $this->builders = $this->app->get('contractor.builders');
         $this->assets = $this->app->get('assets.handler');
 
-        $this->output->print('{bold}{fg_red}Build execution disabled, work in progress.');
-        //$this->build();
-
         $this->processContents();
-    }
-
-    private function build(): void
-    {
-        foreach ($this->prototype->get('contents') as $content) {
-            $this->output->print('{bold}Processing "' . $content->type . '" content type');
-
-            $this->output->print('[' . $content->type . '] Reading data from sources...');
-            $data = [];
-            $data = $this->compileData($content->data);
-
-            $this->output->print('[' . $content->type . '] Creating sitemap...');
-            $items = [];
-            $items = $this->createSitemap($data, $content);
-
-            $this->output->print('[' . $content->type . '] Building pages...');
-            $this->buildPages($items, $content);
-        }
-
-        $this->output->print('{bold}Copying assets...');
-        $this->assets->compile();
-
-        $this->output->print('{bold}{fg_green}Build completed successfully!');
     }
 
     /**
@@ -83,44 +57,5 @@ final class BuildCommand extends BaseCommand
         }
 
         return $contents;
-    }
-
-    private function compileData(array $data): array
-    {
-        $output = [];
-
-        foreach ($data as $source) {
-            $reader = $this->readers->get($source['reader']);
-            $output[] = $reader->compile($source['path']);
-        }
-
-        return $output;
-    }
-
-    private function createSitemap(array $data, Content $content): array
-    {
-        $items = [];
-
-        foreach ($data as $source) {
-            foreach ($source as $item) {
-                $item['permalink'] = $this->sitemap->add(
-                    $content->type . '.' . $item['meta']['slug'],
-                    pathJoin($content->output, $item['meta']['slug'])
-                );
-
-                $items[] = $item;
-            }
-        }
-
-        return $items;
-    }
-
-    private function buildPages(array $items, Content $content): void
-    {
-        $postBuilder = $this->builders->get('post');
-
-        foreach ($items as $item) {
-            $postBuilder->compile($item['meta']['template'] ?? $content->template, $item);
-        }
     }
 }
