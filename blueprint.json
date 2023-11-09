@@ -9,19 +9,26 @@
     "languages": ["it", "en"],
     "default_language": "it",
     "contents": {
-        "page": {
-            "data": "markdown:pages/*.md",
-            "template": "page",
-            "output": "/"
+        "projects": "markdown:projects/*.md"
+    },
+    "schemas": {
+        "index": {
+            "contents": [
+                "projects"
+            ],
+            "template": "index",
+            "builder": "simple",
+            "slug": "/index",
+            "generate": "once"
         },
         "project": {
-            "data": "markdown:projects/*.md",
+            "contents": [
+                "projects"
+            ],
             "template": "project",
-            "output": "/project",
-            "archive": {
-                "template": "projects",
-                "slug": "projects"
-            }
+            "builder": "post",
+            "slug": "/project",
+            "generate": "loop:projects"
         }
     },
     "exclude_assets": [

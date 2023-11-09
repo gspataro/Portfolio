@@ -76,6 +76,12 @@ final class Prototype extends DotNavigator
                 );
             }
 
+            if (!isset($schema['generate'])) {
+                throw new Exception\InvalidItemException(
+                    "You must provide a generator for schema '{$tag}'."
+                );
+            }
+
             if (!isset($schema['slug'])) {
                 throw new Exception\InvalidBlueprintException(
                     "You must provide a slug for schema '{$tag}'."
@@ -86,8 +92,14 @@ final class Prototype extends DotNavigator
                 $schema['slug'] = '/' . $schema['slug'];
             }
 
+            if (str_contains($schema['generate'], ':')) {
+                [$generator, $generate_based_on] = explode(':', $schema['generate'], 2);
+            }
+
+            $schema['tag'] = $tag;
             $schema['contents'] ??= [];
-            $schema['options'] ??= [];
+            $schema['generator'] = $generator ?? $schema['generate'];
+            $schema['generate_based_on'] = $generate_based_on ?? '';
 
             $this->set('schemas.' . $tag, $schema);
         }

@@ -2,6 +2,7 @@
 
 namespace GSpataro\Contractor\Builder;
 
+use GSpataro\Project\Schema;
 use GSpataro\Project\Sitemap;
 use Twig\Environment as TwigEnvironment;
 use GSpataro\Contractor\Interface\BuilderInterface;
@@ -11,12 +12,10 @@ abstract class BaseBuilder implements BuilderInterface
     /**
      * Initialize page builder
      *
-     * @param Sitemap $sitemap
      * @param TwigEnvironment $twig
      */
 
     public function __construct(
-        protected readonly Sitemap $sitemap,
         protected readonly TwigEnvironment $twig
     ) {
     }

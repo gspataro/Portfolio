@@ -24,6 +24,7 @@ $app->loadComponents([
     Component\TwigComponent::class,
     Component\MarkdownComponent::class,
     Component\LibraryComponent::class,
+    Component\PagesComponent::class,
     Component\ContractorComponent::class,
     Component\AssetsComponent::class,
     Component\CLIComponent::class

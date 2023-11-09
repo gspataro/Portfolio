@@ -21,8 +21,11 @@ final class ContractorComponent extends Component
     {
         $buildersCollection = $this->container->get('contractor.builders');
 
+        $buildersCollection->add('simple', new SimpleBuilder(
+            $this->container->get('twig')
+        ));
+
         $buildersCollection->add('post', new PostBuilder(
-            $this->container->get('project.sitemap'),
             $this->container->get('twig')
         ));
     }

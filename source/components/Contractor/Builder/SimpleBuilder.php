@@ -7,14 +7,15 @@ final class SimpleBuilder extends BaseBuilder
     /**
      * Compile a page
      *
-     * @return void
+     * @param array $page
+     * @return mixed
      */
 
-    public function compile(): void
+    public function compile(array $page): void
     {
-        $outputPath = $this->getOutputPath($this->tag, $this->output);
+        $outputPath = $this->getOutputPath($page['permalink']);
+        $compiled = $this->twig->render($page['template'] . '.html', $page['contents']);
 
-        $compiledTemplate = $this->twig->render($this->template . '.html', $this->contents);
-        file_put_contents(pathJoin(DIR_OUTPUT, $outputPath), $compiledTemplate);
+        file_put_contents($outputPath, $compiled);
     }
 }
