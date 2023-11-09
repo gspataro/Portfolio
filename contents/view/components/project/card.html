@@ -1,18 +1,18 @@
 <article class="border-thunder-darkest border-2 p-md dark:border-thunder {{class}}">
     <header class="mb-2xs">
         <h3>
-            <a href="{{url('project.' ~ project.meta.slug)}}" class="text-thunder-darkest no-underline dark:text-ablescent-lightest">
-                {{project.meta.name}}
+            <a href="{{url('project.' ~ project.frontmatter.slug)}}" class="text-thunder-darkest no-underline dark:text-ablescent-lightest">
+                {{project.frontmatter.name}}
             </a>
         </h3>
     </header>
     <p class="mb-sm">
-        {{project.meta.description}}
+        {{project.frontmatter.description}}
     </p>
     <div class="flex gap-3xs items-center">
         {%include './components/project/links.html'%}
         <div class="flex-1"></div>
-        <a href="{{url('project.' ~ project.meta.slug)}}" class="font-normal no-underline">
+        <a href="{{url('project.' ~ project.frontmatter.slug)}}" class="font-normal no-underline">
             apri progetto &rarr;
         </a>
     </div>

@@ -37,7 +37,7 @@ final class LoopGenerator extends BaseGenerator
                 $this->sitemap->add($tag, $schema['slug'] . '/' . $contentTag),
                 $schema['template'],
                 $schema['builder'],
-                array_merge($contents, [$contentTag => $content])
+                array_merge($contents, [$schema['tag'] => $content])
             ));
         }
     }

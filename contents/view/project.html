@@ -1,11 +1,11 @@
 {%set page = {
-    'title': post.meta.name ~ ' &bullet; Progetti',
+    'title': project.frontmatter.name ~ ' &bullet; Progetti',
     'layout': {
         'contain': true
     },
     'meta': {
-        'description': post.meta.description,
-        'keywords': post.meta.keywords
+        'description': project.frontmatter.description,
+        'keywords': project.frontmatter.keywords
     }
 }%}
 {%extends "./layout.html"%}
@@ -13,25 +13,25 @@
     <article>
         <header class="mb-lg">
             <div class="flex items-center mb-md">
-                <h1 class="flex-1">{{post.meta.title}}</h1>
+                <h1 class="flex-1">{{project.frontmatter.name}}</h1>
                 {%include './components/project/links.html'%}
             </div>
             {%include './components/project/meta.html' with {'meta': {
-                "Categoria": post.meta.categories|join(', '),
-                "Tecnologie": post.meta.tags|join(', '),
-                "Versione": post.meta.version
+                "Tipologia": project.frontmatter.type,
+                "Tecnologie": project.frontmatter.technologies|join(', '),
+                "Versione": project.frontmatter.version
             }} only%}
         </header>
-        {%if post.meta.thumbnail%}
+        {%if project.frontmatter.thumbnail%}
             <figure class="mb-md">
-                <img src="{{website.url}}/assets/images/{{post.meta.thumbnail}}" alt="{{post.meta.title}}">
+                <img src="{{website.url}}/assets/images/{{project.frontmatter.thumbnail}}" alt="{{project.frontmatter.title}}">
             </figure>
         {%endif%}
         <div class="prose">
-            {%if post.meta.twig%}
-                {{include(template_from_string(post.content))}}
+            {%if project.frontmatter.twig%}
+                {{include(template_from_string(project.content))}}
             {%else%}
-                {{post.content|raw}}
+                {{project.content|raw}}
             {%endif%}
         </div>
     </article>

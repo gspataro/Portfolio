@@ -1,14 +1,12 @@
 ---
-title: CLI
-slug: cli
+name: CLI
 description: Componente PHP per la creazione di script eseguibili via riga di comando.
 github: https://github.com/gspataro/CLI
 version: '2.0.1'
 twig: true
-tags:
+type: Componente
+technologies:
     - PHP
-categories:
-    - Componente
 ---
 
 GSpataro/CLI è un componente PHP per la creazione di script eseguibili via riga di comando.
