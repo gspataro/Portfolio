@@ -20,12 +20,23 @@ final class TwigSitemap extends AbstractExtension
         $url = $this->blueprint->get('website.url');
         $path = $this->sitemap->get($tag);
         $separator = null;
+        $suffix = null;
 
         if (!str_ends_with($url, '/') && !str_starts_with($path, '/')) {
             $separator = '/';
         }
 
-        return $url . $separator . $path;
+        if (!str_ends_with($path, '.html')) {
+            $suffix = '.html';
+        }
+
+        if ($path == '/index') {
+            $path = null;
+            $separator = null;
+            $suffix = null;
+        }
+
+        return $url . $separator . $path . $suffix;
     }
 
     public function getFunctions()
