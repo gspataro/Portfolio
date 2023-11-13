@@ -62,7 +62,7 @@ final class BuildCommand extends BaseCommand
 
             if ($reader->failed()) {
                 $error = $reader->getError();
-                $this->output->print("{bold}{fg_red}Contents processing failed on group'{$group}'.");
+                $this->output->print("{bold}{fg_red}Contents processing failed on group '{$group}'.");
                 $this->output->print('{bold}Error: {clear}' . $error->value);
                 $this->output->print('{bold}Source: {clear}' . $reader->getFailedSource());
                 exit(1);
