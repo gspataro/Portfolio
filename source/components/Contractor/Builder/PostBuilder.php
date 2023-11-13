@@ -13,13 +13,13 @@ final class PostBuilder extends BaseBuilder
 
     public function compile(array $page): void
     {
-        foreach ($page as $post) {
-            if ($post == 'post') {
-                continue;
-            }
+        if (!$page['collection']) {
+            return;
+        }
 
+        foreach ($page['collection'] as $post) {
             $outputPath = $this->getOutputPath($post['permalink']);
-            $compiled = $this->twig->render($post['template'] . '.html', $post['contents']);
+            $compiled = $this->twig->render($page['template'] . '.html', array_merge($page['contents'], $post['contents']));
 
             file_put_contents($outputPath, $compiled);
         }

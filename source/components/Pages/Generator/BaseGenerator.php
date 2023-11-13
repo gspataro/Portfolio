@@ -49,4 +49,49 @@ abstract class BaseGenerator implements GeneratorInterface
             'contents' => $contents
         ]);
     }
+
+    /**
+     * Create a collection of pages
+     *
+     * @param string $tag
+     * @param string $template
+     * @param string $builder
+     * @param array $contents
+     * @return void
+     */
+
+    protected function createCollection(
+        string $tag,
+        string $template,
+        string $builder,
+        array $contents = []
+    ): void {
+        $this->pages->set($tag, [
+            'template' => $template,
+            'builder' => $builder,
+            'contents' => $contents,
+            'collection' => []
+        ]);
+    }
+
+    /**
+     * Add a page to a collection
+     *
+     * @param string $collectionTag
+     * @param string $pageTag
+     * @param array $contents
+     * @return void
+     */
+
+    protected function addPageToCollection(
+        string $collectionTag,
+        string $pageTag,
+        string $permalink,
+        array $contents = []
+    ): void {
+        $this->pages->set($collectionTag . '.collection.' . $pageTag, [
+            'permalink' => $permalink,
+            'contents' => $contents
+        ]);
+    }
 }
