@@ -22,8 +22,8 @@ final class LoopGenerator extends BaseGenerator
 
         $contents = [];
 
-        if (!empty($otherContentsents)) {
-            foreach ($otherContentsents as $group) {
+        if (!empty($otherContents)) {
+            foreach ($otherContents as $group) {
                 $contents[$group] = $this->archive->get($group);
             }
         }
