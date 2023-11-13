@@ -28,7 +28,6 @@ final class LoopGenerator extends BaseGenerator
             }
         }
 
-        //$this->pages->set($schema['tag'] . '.builder', $schema['builder']);
         $this->createCollection(
             $schema['tag'],
             $schema['template'],
@@ -39,13 +38,6 @@ final class LoopGenerator extends BaseGenerator
         foreach ($basedOn as $contentTag => $content) {
             $tag = $schema['tag'] . '.' . $contentTag;
 
-            /*$this->createPage(
-                $tag,
-                $this->sitemap->add($tag, $schema['slug'] . '/' . $contentTag),
-                $schema['template'],
-                $schema['builder'],
-                array_merge($contents, [$schema['tag'] => $content])
-            );*/
             $this->addPageToCollection(
                 $schema['tag'],
                 $contentTag,
