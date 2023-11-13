@@ -13,24 +13,24 @@ final class LoopGenerator extends BaseGenerator
 
     public function generate(array $schema): void
     {
-        $other_contents = array_diff($schema['contents'], [$schema['generate_based_on']]);
-        $based_on = $this->archive->get($schema['generate_based_on']);
+        $otherContents = array_diff($schema['contents'], [$schema['generate_based_on']]);
+        $basedOn = $this->archive->get($schema['generate_based_on']);
 
-        if (empty($based_on)) {
+        if (empty($basedOn)) {
             return;
         }
 
         $contents = [];
 
-        if (!empty($other_contents)) {
-            foreach ($other_contents as $group) {
+        if (!empty($otherContentsents)) {
+            foreach ($otherContentsents as $group) {
                 $contents[$group] = $this->archive->get($group);
             }
         }
 
         $this->pages->set($schema['tag'] . '.builder', $schema['builder']);
 
-        foreach ($based_on as $contentTag => $content) {
+        foreach ($basedOn as $contentTag => $content) {
             $tag = $schema['tag'] . '.' . $contentTag;
 
             $this->pages->set($tag, $this->createPage(
