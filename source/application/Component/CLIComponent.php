@@ -4,6 +4,7 @@ namespace GSpataro\Application\Component;
 
 use GSpataro\CLI\Handler;
 use GSpataro\Application\Command;
+use GSpataro\CLI\Helper\Stopwatch;
 use GSpataro\CLI\CommandsCollection;
 use GSpataro\DependencyInjection\Component;
 
@@ -17,6 +18,10 @@ final class CLIComponent extends Component
             return new Handler(
                 $container->get('cli.commands')
             );
+        });
+
+        $this->container->add('cli.stopwatch', function ($container, $args): object {
+            return new Stopwatch();
         });
     }
 

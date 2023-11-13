@@ -2,15 +2,13 @@
 
 namespace GSpataro\Application\Command;
 
-use GSpataro\Project\Content;
-use GSpataro\Project\Sitemap;
+use GSpataro\Pages\Pages;
 use GSpataro\Project\Prototype;
+use GSpataro\CLI\Helper\Stopwatch;
 use GSpataro\Assets\Handler as Assets;
 use GSpataro\Library\ReadersCollection;
-use GSpataro\Contractor\BuildersCollection;
 use GSpataro\Pages\GeneratorsCollection;
-use GSpataro\Pages\Pages;
-use GSpataro\Project\SchemaCollection;
+use GSpataro\Contractor\BuildersCollection;
 
 final class BuildCommand extends BaseCommand
 {
@@ -19,7 +17,7 @@ final class BuildCommand extends BaseCommand
 
     private readonly Pages $pages;
     private readonly Assets $assets;
-    private readonly Sitemap $sitemap;
+    private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
     private readonly ReadersCollection $readers;
     private readonly BuildersCollection $builders;
@@ -30,16 +28,20 @@ final class BuildCommand extends BaseCommand
         $this->output->print('{bold}Running the building process{nl}');
 
         $this->prototype = $this->app->get('project.prototype');
-        $this->sitemap = $this->app->get('project.sitemap');
         $this->generators = $this->app->get('pages.generators');
         $this->readers = $this->app->get('library.readers');
         $this->builders = $this->app->get('contractor.builders');
         $this->pages = $this->app->get('pages.collection');
         $this->assets = $this->app->get('assets.handler');
+        $this->stopwatch = $this->app->get('cli.stopwatch');
 
+        $this->stopwatch->start();
         $this->processContents();
         $this->processSchemas();
         $this->buildPages();
+        $this->copyAssets();
+
+        $this->output->print('{bold}{fg_green}Build completed in ' . $this->stopwatch->stop(). ' seconds!');
     }
 
     /**
@@ -100,5 +102,18 @@ final class BuildCommand extends BaseCommand
             $builder = $this->builders->get($page['builder']);
             $builder->compile($page);
         }
+    }
+
+    /**
+     * Copy assets
+     *
+     * @return void
+     */
+
+    private function copyAssets(): void
+    {
+        $this->output->print('{bold}Copying assets');
+
+        $this->assets->compile();
     }
 }
