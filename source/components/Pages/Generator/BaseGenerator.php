@@ -27,20 +27,26 @@ abstract class BaseGenerator implements GeneratorInterface
     /**
      * Create page
      *
+     * @param string $tag
      * @param string $permalink
      * @param string $template
      * @param string $builder
      * @param array $contents
-     * @return array
+     * @return void
      */
 
-    protected function createPage(string $permalink, string $template, string $builder, array $contents = []): array
-    {
-        return [
+    protected function createPage(
+        string $tag,
+        string $permalink,
+        string $template,
+        string $builder,
+        array $contents = []
+    ): void {
+        $this->pages->set($tag, [
             'permalink' => $permalink,
             'template' => $template,
             'builder' => $builder,
             'contents' => $contents
-        ];
+        ]);
     }
 }

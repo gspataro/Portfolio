@@ -21,11 +21,12 @@ final class OnceGenerator extends BaseGenerator
             }
         }
 
-        $this->pages->set($schema['tag'], $this->createPage(
+        $this->createPage(
+            $schema['tag'],
             $this->sitemap->add($schema['tag'], $schema['slug']),
             $schema['template'],
             $schema['builder'],
             $contents
-        ));
+        );
     }
 }

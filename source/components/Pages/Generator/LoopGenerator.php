@@ -33,12 +33,13 @@ final class LoopGenerator extends BaseGenerator
         foreach ($basedOn as $contentTag => $content) {
             $tag = $schema['tag'] . '.' . $contentTag;
 
-            $this->pages->set($tag, $this->createPage(
+            $this->createPage(
+                $tag,
                 $this->sitemap->add($tag, $schema['slug'] . '/' . $contentTag),
                 $schema['template'],
                 $schema['builder'],
                 array_merge($contents, [$schema['tag'] => $content])
-            ));
+            );
         }
     }
 }
