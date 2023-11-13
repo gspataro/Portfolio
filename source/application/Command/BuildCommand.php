@@ -41,7 +41,7 @@ final class BuildCommand extends BaseCommand
         $this->buildPages();
         $this->copyAssets();
 
-        $this->output->print('{bold}{fg_green}Build completed in ' . $this->stopwatch->stop(). ' seconds!');
+        $this->output->print('{bold}{fg_green}Build completed in ' . $this->stopwatch->stop() . ' seconds!');
     }
 
     /**
