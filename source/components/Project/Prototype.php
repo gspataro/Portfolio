@@ -93,13 +93,13 @@ final class Prototype extends DotNavigator
             }
 
             if (str_contains($schema['generate'], ':')) {
-                [$generator, $generate_based_on] = explode(':', $schema['generate'], 2);
+                [$generator, $generateBasedOn] = explode(':', $schema['generate'], 2);
             }
 
             $schema['tag'] = $tag;
             $schema['contents'] ??= [];
             $schema['generator'] = $generator ?? $schema['generate'];
-            $schema['generate_based_on'] = $generate_based_on ?? '';
+            $schema['generate_based_on'] = $generateBasedOn ?? '';
 
             $this->set('schemas.' . $tag, $schema);
         }
