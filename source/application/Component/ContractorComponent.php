@@ -28,5 +28,9 @@ final class ContractorComponent extends Component
         $buildersCollection->add('post', new PostBuilder(
             $this->container->get('twig')
         ));
+
+        $buildersCollection->add('archive', new ArchiveBuilder(
+            $this->container->get('twig')
+        ));
     }
 }

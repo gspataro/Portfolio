@@ -29,6 +29,15 @@
             "builder": "post",
             "slug": "/project",
             "generate": "loop:projects"
+        },
+        "projects": {
+            "contents": [
+                "projects"
+            ],
+            "template": "projects",
+            "builder": "archive",
+            "slug": "/projects",
+            "generate": "paginate:projects"
         }
     },
     "exclude_assets": [
