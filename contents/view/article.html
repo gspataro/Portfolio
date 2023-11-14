@@ -10,11 +10,31 @@
 }%}
 {%extends "./layout.html"%}
 {%block main%}
+    {%set meta = {
+        "Pubbicato": article.frontmatter.published|date('d F Y')
+    }%}
+    {%if article.frontmatter.modified%}
+        {%set meta = meta|merge({
+            "Aggiornato": article.frontmatter.modified|date('d F Y')
+        })%}
+    {%endif%}
+    {%if article.frontmatter.categories%}
+        {%set categories = []%}
+        {%for category in article.frontmatter.categories%}
+            {%set categories = categories|merge([
+                articles_cats[category].label ?? category
+            ])%}
+        {%endfor%}
+        {%set meta = meta|merge({
+            "Categorie": categories|join(', ')
+        })%}
+    {%endif%}
     <article>
         <header class="mb-lg">
             <div class="flex items-center mb-md">
                 <h1 class="flex-1">{{article.frontmatter.title}}</h1>
             </div>
+            {%include './components/post/meta.html' with {'meta': meta} only%}
         </header>
         {%if article.frontmatter.thumbnail%}
             <figure class="mb-md">

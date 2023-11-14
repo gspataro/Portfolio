@@ -12,7 +12,8 @@
     "contents": {
         "projects": "markdown:projects/*.md",
         "projects_cats": "json:projects_categories.json",
-        "articles": "markdown:articles/*.md"
+        "articles": "markdown:articles/*.md",
+        "articles_cats": "json:articles_categories.json"
     },
     "schemas": {
         "index": {
@@ -49,7 +50,8 @@
         },
         "article": {
             "contents": [
-                "articles"
+                "articles",
+                "articles_cats"
             ],
             "template": "article",
             "builder": "post",
