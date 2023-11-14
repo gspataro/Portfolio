@@ -9,14 +9,21 @@
 {%block main%}
     <h1 class="mb-md">Blog</h1>
     <div class="grid grid-cols-1 gap-sm">
-        {%for article in articles%}
-            {{article.meta.name}}
+        {%for id, article in blog%}
+            {%include './components/article/card.html' with {
+                'id': id,
+                'article': article,
+                'articles_cats': articles_cats,
+                'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end'
+            } only%}
         {%endfor%}
+    </div>
+    <div>
         {%if pagination.prev%}
-            <a href="{{url('blog.page-' ~ pagination.prev)}}">Precedente &rarr;</a>
+            <a href="{{url('projects.page-' ~ pagination.prev)}}">Precedente</a>
         {%endif%}
         {%if pagination.next%}
-            <a href="{{url('blog.page-' ~ pagination.next)}}">Successivo &rarr;</a>
+            <a href="{{url('projects.page-' ~ pagination.next)}}">Successivo</a>
         {%endif%}
     </div>
 {%endblock%}

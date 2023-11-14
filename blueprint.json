@@ -58,6 +58,19 @@
             "builder": "post",
             "slug": "/articolo",
             "generate": "loop:articles"
+        },
+        "blog": {
+            "contents": [
+                "articles",
+                "articles_cats"
+            ],
+            "template": "blog",
+            "builder": "archive",
+            "slug": "/blog",
+            "generate": "paginate:articles",
+            "options": {
+                "per_page": 12
+            }
         }
     },
     "exclude_assets": [
