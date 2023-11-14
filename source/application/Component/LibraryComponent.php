@@ -6,6 +6,7 @@ use GSpataro\Library\Archive;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Library\Reader\TextReader;
 use GSpataro\DependencyInjection\Component;
+use GSpataro\Library\Reader\JsonReader;
 use GSpataro\Library\Reader\MarkdownReader;
 
 final class LibraryComponent extends Component
@@ -28,9 +29,14 @@ final class LibraryComponent extends Component
         $readersCollection->add('text', new TextReader(
             $this->container->get('library.archive')
         ));
+
         $readersCollection->add('markdown', new MarkdownReader(
             $this->container->get('library.archive'),
             $this->container->get('markdown.converter')
+        ));
+
+        $readersCollection->add('json', new JsonReader(
+            $this->container->get('library.archive')
         ));
     }
 }
