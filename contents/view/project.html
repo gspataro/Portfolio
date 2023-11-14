@@ -16,7 +16,7 @@
                 <h1 class="flex-1">{{project.frontmatter.name}}</h1>
                 {%include './components/project/links.html'%}
             </div>
-            {%include './components/project/meta.html' with {'meta': {
+            {%include './components/post/meta.html' with {'meta': {
                 "Categoria": projects_cats[project.frontmatter.category].label,
                 "Tecnologie": project.frontmatter.technologies|join(', '),
                 "Versione": project.frontmatter.version
