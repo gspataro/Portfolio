@@ -90,10 +90,11 @@ abstract class BaseReader implements ReaderInterface
      *
      * @param string $group
      * @param string $source
+     * @param bool $collection
      * @return mixed
      */
 
-    protected function handleOne(string $group, string $source): mixed
+    protected function handleOne(string $group, string $source, bool $collection = false): mixed
     {
         if ($this->archive->has($source)) {
             return $this->archive->get($source);
@@ -105,10 +106,10 @@ abstract class BaseReader implements ReaderInterface
         }
 
         $filename = pathinfo($source, PATHINFO_FILENAME);
-        $tag = $this->fileToTag($filename);
-        $result = $this->compiler($source);
+        $tag = $collection ? $group . '.' . $this->fileToTag($filename) : $group;
+        $result = $this->compiler($this->getPath($source));
 
-        $this->archive->set($group . '.' . $tag, $result);
+        $this->archive->set($tag, $result);
 
         return $result;
     }
@@ -129,7 +130,7 @@ abstract class BaseReader implements ReaderInterface
             $filename = pathinfo($source, PATHINFO_FILENAME);
             $tag = $this->fileToTag($filename);
 
-            $results[$tag] = $this->handleOne($group, $source);
+            $results[$tag] = $this->handleOne($group, $source, true);
 
             if ($this->failed()) {
                 return [];
@@ -159,7 +160,7 @@ abstract class BaseReader implements ReaderInterface
             $filename = pathinfo($file, PATHINFO_FILENAME);
             $tag = $this->fileToTag($filename);
 
-            $results[$tag] = $this->handleOne($group, $file);
+            $results[$tag] = $this->handleOne($group, $file, true);
 
             if ($this->failed()) {
                 return [];
