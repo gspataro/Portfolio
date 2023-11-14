@@ -17,7 +17,7 @@
                 {%include './components/project/links.html'%}
             </div>
             {%include './components/project/meta.html' with {'meta': {
-                "Tipologia": project.frontmatter.type,
+                "Categoria": projects_cats[project.frontmatter.category].label,
                 "Tecnologie": project.frontmatter.technologies|join(', '),
                 "Versione": project.frontmatter.version
             }} only%}

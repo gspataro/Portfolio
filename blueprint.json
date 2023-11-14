@@ -10,7 +10,8 @@
     "languages": ["it", "en"],
     "default_language": "it",
     "contents": {
-        "projects": "markdown:projects/*.md"
+        "projects": "markdown:projects/*.md",
+        "projects_cats": "json:projects_categories.json"
     },
     "schemas": {
         "index": {
@@ -24,7 +25,8 @@
         },
         "project": {
             "contents": [
-                "projects"
+                "projects",
+                "projects_cats"
             ],
             "template": "project",
             "builder": "post",

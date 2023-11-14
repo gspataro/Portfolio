@@ -4,7 +4,7 @@ description: Componente PHP per la creazione di script eseguibili via riga di co
 github: https://github.com/gspataro/CLI
 version: '2.0.1'
 twig: true
-type: Componente
+category: component
 technologies:
     - PHP
 ---
