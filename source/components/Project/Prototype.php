@@ -100,6 +100,7 @@ final class Prototype extends DotNavigator
             $schema['contents'] ??= [];
             $schema['generator'] = $generator ?? $schema['generate'];
             $schema['generate_based_on'] = $generateBasedOn ?? '';
+            $schema['options'] ??= [];
 
             $this->set('schemas.' . $tag, $schema);
         }
