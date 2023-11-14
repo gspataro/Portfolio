@@ -30,7 +30,21 @@
             'viewport': true,
         }%}
             {%block content%}
-                <h2>Ultime dal blog</h2>
+                <h2 class="mb-md">Ultime dal blog</h2>
+                <div class="grid grid-cols-1 gap-sm mb-lg">
+                    {%for id, article in articles%}
+                        {%include './components/article/card.html' with {
+                            'id': id,
+                            'article': article,
+                            'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end'
+                        } only%}
+                    {%endfor%}
+                </div>
+                <div class="flex items-center justify-center">
+                    <a href="{{url('articles.page-1')}}" class="btn-retro">
+                        Vai al blog
+                    </a>
+                </div>
             {%endblock%}
         {%endembed%}
     {%endif%}

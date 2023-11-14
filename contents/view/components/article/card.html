@@ -1,0 +1,16 @@
+<article class="border-thunder-darkest border-2 p-md dark:border-thunder {{class}}">
+    <header class="mb-2xs">
+        <h3>
+            <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline dark:text-ablescent-lightest">
+                {{article.frontmatter.title}}
+            </a>
+        </h3>
+    </header>
+    <div class="flex gap-3xs items-center">
+        {%include './components/project/links.html'%}
+        <div class="flex-1"></div>
+        <a href="{{url('article.' ~ id)}}" class="font-normal no-underline">
+            leggi &rarr;
+        </a>
+    </div>
+</article>

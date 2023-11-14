@@ -1,0 +1,32 @@
+{%set page = {
+    'title': article.frontmatter.name ~ ' &bullet; Blog',
+    'layout': {
+        'contain': true
+    },
+    'meta': {
+        'description': article.frontmatter.description,
+        'keywords': article.frontmatter.keywords
+    }
+}%}
+{%extends "./layout.html"%}
+{%block main%}
+    <article>
+        <header class="mb-lg">
+            <div class="flex items-center mb-md">
+                <h1 class="flex-1">{{article.frontmatter.title}}</h1>
+            </div>
+        </header>
+        {%if article.frontmatter.thumbnail%}
+            <figure class="mb-md">
+                <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}">
+            </figure>
+        {%endif%}
+        <div class="prose">
+            {%if article.frontmatter.twig%}
+                {{include(template_from_string(article.content))}}
+            {%else%}
+                {{article.content|raw}}
+            {%endif%}
+        </div>
+    </article>
+{%endblock%}
