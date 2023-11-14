@@ -28,7 +28,7 @@ final class PaginateGenerator extends BaseGenerator
             }
         }
 
-        $perPage = 12;
+        $perPage = 2;
         $totalPages = ceil(count($basedOn) / $perPage);
 
         $this->createCollection(
@@ -40,6 +40,7 @@ final class PaginateGenerator extends BaseGenerator
 
         for ($i = 0; $i < $totalPages; $i++) {
             $currentPage = $i + 1;
+            $currentSlug = $currentPage > 1 ? $currentPage : 'index';
             $slice = array_slice($basedOn, $i * $perPage, $perPage);
 
             $this->addPageToCollection(
@@ -47,7 +48,7 @@ final class PaginateGenerator extends BaseGenerator
                 'page-' . $currentPage,
                 $this->sitemap->add(
                     $schema['tag'] . '.page-' . $currentPage,
-                    $schema['slug'] . ($currentPage > 1 ? '-' . $currentPage : null)
+                    $schema['slug'] . '/' . $currentSlug
                 ),
                 [
                     $schema['tag'] => $slice,
