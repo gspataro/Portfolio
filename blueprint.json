@@ -19,6 +19,7 @@
         "index": {
             "contents": [
                 "articles",
+                "articles_cats",
                 "projects"
             ],
             "template": "index",
