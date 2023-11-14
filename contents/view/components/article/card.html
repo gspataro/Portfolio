@@ -6,6 +6,10 @@
             </a>
         </h3>
     </header>
+    <p>
+        {%set excerpt = article.frontmatter.excerpt ?? article.content%}
+        {{excerpt|striptags|u.truncate(250, '...', false)}}
+    </p>
     <div class="flex gap-3xs items-center">
         {%include './components/project/links.html'%}
         <div class="flex-1"></div>
