@@ -32,7 +32,7 @@ final class LoopGenerator extends BaseGenerator
             $schema['tag'],
             $schema['template'],
             $schema['builder'],
-            $otherContents
+            $contents
         );
 
         foreach ($basedOn as $contentTag => $content) {
