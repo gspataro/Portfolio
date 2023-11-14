@@ -37,7 +37,10 @@
             "template": "projects",
             "builder": "archive",
             "slug": "/projects",
-            "generate": "paginate:projects"
+            "generate": "paginate:projects",
+            "options": {
+                "per_page": 12
+            }
         }
     },
     "exclude_assets": [

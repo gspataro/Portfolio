@@ -28,7 +28,7 @@ final class PaginateGenerator extends BaseGenerator
             }
         }
 
-        $perPage = 2;
+        $perPage = $schema['options']['per_page'] ?? 12;
         $totalPages = ceil(count($basedOn) / $perPage);
 
         $this->createCollection(
