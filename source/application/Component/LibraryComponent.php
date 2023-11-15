@@ -3,11 +3,12 @@
 namespace GSpataro\Application\Component;
 
 use GSpataro\Library\Archive;
+use GSpataro\Library\Researcher;
+use GSpataro\Library\Reader\JsonReader;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Library\Reader\TextReader;
-use GSpataro\DependencyInjection\Component;
-use GSpataro\Library\Reader\JsonReader;
 use GSpataro\Library\Reader\MarkdownReader;
+use GSpataro\DependencyInjection\Component;
 
 final class LibraryComponent extends Component
 {
@@ -19,6 +20,10 @@ final class LibraryComponent extends Component
 
         $this->container->add('library.archive', function ($container, $args): object {
             return new Archive();
+        });
+
+        $this->container->add('library.researcher', function ($container, $args): object {
+            return new Researcher();
         });
     }
 

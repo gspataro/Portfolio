@@ -18,9 +18,15 @@
     "schemas": {
         "index": {
             "contents": [
-                "articles",
+                {
+                    "group": "articles",
+                    "limit": 3
+                },
                 "articles_cats",
-                "projects"
+                {
+                    "group": "projects",
+                    "select": ["cli", "dependencyinjection", "portfolio"]
+                }
             ],
             "template": "index",
             "builder": "simple",

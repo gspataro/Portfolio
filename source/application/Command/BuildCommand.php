@@ -10,6 +10,7 @@ use GSpataro\Library\ReadersCollection;
 use GSpataro\Pages\GeneratorsCollection;
 use GSpataro\Contractor\BuildersCollection;
 use GSpataro\Library\Archive;
+use GSpataro\Library\Researcher;
 
 final class BuildCommand extends BaseCommand
 {
@@ -21,6 +22,7 @@ final class BuildCommand extends BaseCommand
     private readonly Archive $archive;
     private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
+    private readonly Researcher $researcher;
     private readonly ReadersCollection $readers;
     private readonly BuildersCollection $builders;
     private readonly GeneratorsCollection $generators;
@@ -37,6 +39,7 @@ final class BuildCommand extends BaseCommand
         $this->assets = $this->app->get('assets.handler');
         $this->stopwatch = $this->app->get('cli.stopwatch');
         $this->archive = $this->app->get('library.archive');
+        $this->researcher = $this->app->get('library.researcher');
 
         $this->stopwatch->start();
         $this->processContents();
@@ -109,7 +112,22 @@ final class BuildCommand extends BaseCommand
         }
 
         foreach ($contents as $label => $query) {
-            $output[$label] = $this->archive->get($query['group']);
+            $content = $this->archive->get($query['group']);
+            $research = $this->researcher->start($label, $content);
+
+            if (isset($query['select'])) {
+                $research->select($query['select']);
+            }
+
+            if (isset($query['skip'])) {
+                $research->select($query['skip']);
+            }
+
+            if (isset($query['limit'])) {
+                $research->limit($query['limit']);
+            }
+
+            $output[$label] = $research->fetch();
         }
 
         return $output;
