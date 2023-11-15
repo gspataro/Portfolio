@@ -20,7 +20,9 @@
             "contents": [
                 {
                     "group": "articles",
-                    "limit": 3
+                    "limit": 3,
+                    "orderBy": "frontmatter.published",
+                    "order": "desc"
                 },
                 "articles_cats",
                 {

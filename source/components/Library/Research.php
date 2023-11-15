@@ -50,7 +50,7 @@ final class Research
      * @var array
      */
 
-    private array $fetched;
+    private array $result;
 
     /**
      * Initialize research
@@ -150,7 +150,7 @@ final class Research
     public function desc(): static
     {
         if (!isset($this->order)) {
-            $this->order == 'desc';
+            $this->order = 'desc';
         }
 
         return $this;
@@ -164,28 +164,94 @@ final class Research
 
     public function fetch(): array
     {
-        if (isset($this->fetched)) {
-            return $this->fetched;
+        if (isset($this->result)) {
+            return $this->result;
         }
 
-        $result = $this->content;
+        $this->result = $this->content;
 
+        $this->performSelection();
+        $this->performSort();
+        $this->performLimit();
+
+        return $this->result;
+    }
+
+    /**
+     * Get a nested value
+     *
+     * @param string $field
+     * @param array $data
+     * @return mixed
+     */
+
+    private function getNestedValue(string $field, array $data): mixed
+    {
+        foreach (explode('.', $field) as $index) {
+            if (!isset($data[$index])) {
+                return null;
+            }
+
+            $data = $data[$index];
+        }
+
+        return $data;
+    }
+
+    /**
+     * Filter results based on selection
+     *
+     * @return void
+     */
+
+    private function performSelection(): void
+    {
         if (!empty($this->selection)) {
-            $result = array_filter($result, function ($item) {
+            $this->result = array_filter($this->result, function ($item) {
                 return in_array($item, $this->selection);
             }, ARRAY_FILTER_USE_KEY);
         }
+    }
 
+    /**
+     * Shrink results based on skip/limit
+     *
+     * @return void
+     */
+
+    private function performLimit(): void
+    {
         if (isset($this->skip) || isset($this->limit)) {
-            $result = array_slice(
-                $result,
+            $this->result = array_slice(
+                $this->result,
                 $this->skip ?? 0,
                 $this->limit ?? null,
                 true
             );
         }
+    }
 
-        $this->fetched = $result;
-        return $result;
+    /**
+     * Sort results
+     *
+     * @return void
+     */
+
+    private function performSort(): void
+    {
+        if (empty($this->orderBy)) {
+            return;
+        }
+
+        $this->asc();
+
+        $order = strtolower($this->order) === 'asc' ? SORT_ASC : SORT_DESC;
+        $column = [];
+
+        foreach ($this->result as $id => $item) {
+            $column[$id] = $this->getNestedValue($this->orderBy, $item);
+        }
+
+        array_multisort($column, $order, $this->result);
     }
 }

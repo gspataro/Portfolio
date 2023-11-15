@@ -127,6 +127,21 @@ final class BuildCommand extends BaseCommand
                 $research->limit($query['limit']);
             }
 
+            if (isset($query['orderBy'])) {
+                $research->orderBy($query['orderBy']);
+            }
+
+            if (isset($query['order'])) {
+                switch (strtolower($query['order'])) {
+                    case 'asc':
+                        $research->asc();
+                        break;
+                    case 'desc':
+                        $research->desc();
+                        break;
+                }
+            }
+
             $output[$label] = $research->fetch();
         }
 
