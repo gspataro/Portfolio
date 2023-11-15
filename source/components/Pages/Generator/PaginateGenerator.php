@@ -35,7 +35,7 @@ final class PaginateGenerator extends BaseGenerator
             $schema['tag'],
             $schema['template'],
             $schema['builder'],
-            $otherContents
+            $contents
         );
 
         for ($i = 0; $i < $totalPages; $i++) {
