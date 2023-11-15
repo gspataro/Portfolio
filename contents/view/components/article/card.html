@@ -1,17 +1,17 @@
-<article class="border-thunder-darkest border-2 dark:border-thunder {{class}}">
-    <figure>
+<article class="{{class}}">
+    <figure class="mb-xs">
         <a href="{{url('article.' ~ id)}}">
-            <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}">
+            <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}" class="rounded-lg aspect-[1]">
         </a>
     </figure>
-    <header class="pt-sm pb-2xs px-sm">
+    <header class="mb-3xs">
         <h3>
             <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline dark:text-ablescent-lightest">
                 {{article.frontmatter.title}}
             </a>
         </h3>
     </header>
-    <div class="flex gap-3xs items-center pb-sm px-sm">
+    <div class="flex gap-3xs items-center">
         {%if article.frontmatter.categories%}
             <ul class="flex">
                 {%for category in article.frontmatter.categories%}
@@ -23,7 +23,7 @@
         {%endif%}
         <div class="flex-1"></div>
         <a href="{{url('article.' ~ id)}}" class="font-normal no-underline">
-            leggi articolo &rarr;
+            leggi articolo &gt;
         </a>
     </div>
 </article>

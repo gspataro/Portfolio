@@ -31,7 +31,7 @@
         }%}
             {%block content%}
                 <h2 class="mb-md">Ultime dal blog</h2>
-                <div class="grid grid-cols-1 gap-sm mb-lg">
+                <div class="grid grid-cols-1 gap-lg mb-xl">
                     {%for id, article in articles%}
                         {%include './components/article/card.html' with {
                             'id': id,
