@@ -13,20 +13,12 @@ final class OnceGenerator extends BaseGenerator
 
     public function generate(array $schema): void
     {
-        $contents = [];
-
-        if (!empty($schema['contents'])) {
-            foreach ($schema['contents'] as $group) {
-                $contents[$group] = $this->archive->get($group);
-            }
-        }
-
         $this->createPage(
             $schema['tag'],
             $this->sitemap->add($schema['tag'], $schema['slug']),
             $schema['template'],
             $schema['builder'],
-            $contents
+            $schema['contents']
         );
     }
 }

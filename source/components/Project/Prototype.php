@@ -2,6 +2,7 @@
 
 namespace GSpataro\Project;
 
+use GSpataro\Project\Exception\InvalidBlueprintException;
 use GSpataro\Utilities\DotNavigator;
 
 final class Prototype extends DotNavigator
@@ -96,8 +97,34 @@ final class Prototype extends DotNavigator
                 [$generator, $generateBasedOn] = explode(':', $schema['generate'], 2);
             }
 
+            $contents = [];
+
+            if (isset($schema['contents'])) {
+                foreach ($schema['contents'] as $query) {
+                    if (!is_array($query)) {
+                        $contents[$query] = [
+                            'group' => $query
+                        ];
+                        continue;
+                    }
+
+                    if (!isset($query['group'])) {
+                        throw new InvalidBlueprintException(
+                            "Invalid content query for schema '{$tag}'. A content group must be provided."
+                        );
+                    }
+
+                    $queryLabel = $query['label'] ?? $query['group'];
+
+                    $contents = array_merge($contents, [
+                        $queryLabel => $query
+                    ]);
+                }
+            }
+
             $schema['tag'] = $tag;
             $schema['contents'] ??= [];
+            $schema['contents'] = $contents;
             $schema['generator'] = $generator ?? $schema['generate'];
             $schema['generate_based_on'] = $generateBasedOn ?? '';
             $schema['options'] ??= [];

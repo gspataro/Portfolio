@@ -9,6 +9,7 @@ use GSpataro\Assets\Handler as Assets;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Pages\GeneratorsCollection;
 use GSpataro\Contractor\BuildersCollection;
+use GSpataro\Library\Archive;
 
 final class BuildCommand extends BaseCommand
 {
@@ -17,6 +18,7 @@ final class BuildCommand extends BaseCommand
 
     private readonly Pages $pages;
     private readonly Assets $assets;
+    private readonly Archive $archive;
     private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
     private readonly ReadersCollection $readers;
@@ -34,6 +36,7 @@ final class BuildCommand extends BaseCommand
         $this->pages = $this->app->get('pages.collection');
         $this->assets = $this->app->get('assets.handler');
         $this->stopwatch = $this->app->get('cli.stopwatch');
+        $this->archive = $this->app->get('library.archive');
 
         $this->stopwatch->start();
         $this->processContents();
@@ -83,9 +86,33 @@ final class BuildCommand extends BaseCommand
         foreach ($this->prototype->get('schemas') as $tag => $schema) {
             $this->output->print("Working on schema '{$tag}'");
 
+            $schema['contents'] = $this->processSchemaContents($schema['contents']);
+
             $generator = $this->generators->get($schema['generator']);
             $generator->generate($schema);
         }
+    }
+
+    /**
+     * Process schema contents
+     *
+     * @param array $contents
+     * @return array
+     */
+
+    public function processSchemaContents(array $contents): array
+    {
+        $output = [];
+
+        if (empty($contents)) {
+            return $output;
+        }
+
+        foreach ($contents as $label => $query) {
+            $output[$label] = $this->archive->get($query['group']);
+        }
+
+        return $output;
     }
 
     /**

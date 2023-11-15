@@ -13,20 +13,14 @@ final class PaginateGenerator extends BaseGenerator
 
     public function generate(array $schema): void
     {
-        $otherContents = array_diff($schema['contents'], [$schema['generate_based_on']]);
+        $contents = $schema['contents'];
         $basedOn = $this->archive->get($schema['generate_based_on']);
 
         if (empty($basedOn)) {
             return;
         }
 
-        $contents = [];
-
-        if (!empty($otherContents)) {
-            foreach ($otherContents as $group) {
-                $contents[$group] = $this->archive->get($group);
-            }
-        }
+        unset($contents[$schema['generate_based_on']]);
 
         $perPage = $schema['options']['per_page'] ?? 12;
         $totalPages = ceil(count($basedOn) / $perPage);
