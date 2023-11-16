@@ -55,12 +55,12 @@
     }%}
         {%block content%}
             <h2 class="mb-md">Progetti in evidenza</h2>
-            <div class="grid grid-cols-1 gap-sm mb-lg">
+            <div class="grid grid-cols-1 gap-sm mb-lg laptop-sm:grid-cols-3">
                 {%for id, project in projects%}
                     {%include './components/project/card.html' with {
                         'id': id,
                         'project': project,
-                        'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end'
+                        'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end laptop-sm:w-full'
                     } only%}
                 {%endfor%}
             </div>
