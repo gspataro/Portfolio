@@ -34,15 +34,7 @@ final class Research
      * @var string
      */
 
-    private string $orderBy;
-
-    /**
-     * Store order criteria
-     *
-     * @var string
-     */
-
-    private string $order;
+    private array $orderBy;
 
     /**
      * Store fetched data
@@ -114,43 +106,17 @@ final class Research
      * Set order by criteria
      *
      * @param string $column
+     * @param string $order
      * @return static
      */
 
-    public function orderBy(string $column): static
+    public function orderBy(string $column, string $order = 'asc'): static
     {
         if (!isset($this->orderBy)) {
-            $this->orderBy = $column;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set order criteria to ASCENDENT
-     *
-     * @return static
-     */
-
-    public function asc(): static
-    {
-        if (!isset($this->order)) {
-            $this->order = 'asc';
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set order criteria to DESCENDENT
-     *
-     * @return static
-     */
-
-    public function desc(): static
-    {
-        if (!isset($this->order)) {
-            $this->order = 'desc';
+            $this->orderBy = [
+                'column' => $column,
+                'order' => $order === 'asc' ? SORT_ASC : SORT_DESC
+            ];
         }
 
         return $this;
@@ -243,15 +209,12 @@ final class Research
             return;
         }
 
-        $this->asc();
-
-        $order = strtolower($this->order) === 'asc' ? SORT_ASC : SORT_DESC;
         $column = [];
 
         foreach ($this->result as $id => $item) {
-            $column[$id] = $this->getNestedValue($this->orderBy, $item);
+            $column[$id] = $this->getNestedValue($this->orderBy['column'], $item);
         }
 
-        array_multisort($column, $order, $this->result);
+        array_multisort($column, $this->orderBy['order'], $this->result);
     }
 }

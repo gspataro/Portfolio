@@ -128,18 +128,10 @@ final class BuildCommand extends BaseCommand
             }
 
             if (isset($query['orderBy'])) {
-                $research->orderBy($query['orderBy']);
-            }
-
-            if (isset($query['order'])) {
-                switch (strtolower($query['order'])) {
-                    case 'asc':
-                        $research->asc();
-                        break;
-                    case 'desc':
-                        $research->desc();
-                        break;
-                }
+                $research->orderBy(
+                    $query['orderBy'],
+                    $query['order'] ?? 'asc'
+                );
             }
 
             $output[$label] = $research->fetch();
