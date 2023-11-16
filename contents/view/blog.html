@@ -8,7 +8,7 @@
 {%extends "./layout.html"%}
 {%block main%}
     <h1 class="mb-md">Blog</h1>
-    <div class="grid grid-cols-1 gap-sm">
+    <div class="grid grid-cols-1 gap-lg">
         {%for id, article in blog%}
             {%include './components/article/card.html' with {
                 'id': id,
