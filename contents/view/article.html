@@ -30,17 +30,20 @@
         })%}
     {%endif%}
     <article>
-        <header class="mb-lg">
-            <div class="flex items-center mb-md">
-                <h1 class="flex-1">{{article.frontmatter.title}}</h1>
+        <header class="mb-md laptop-sm:flex laptop-sm:gap-xl">
+            <div class="laptop-sm:basis-[400px] desktop:basis-[500px]">
+                <h1 class="mb-xs">{{article.frontmatter.title}}</h1>
+                {%include './components/post/meta.html' with {
+                    'meta': meta,
+                    'class': 'laptop-sm:col-start-1 laptop-sm:w-full'
+                } only%}
             </div>
-            {%include './components/post/meta.html' with {'meta': meta} only%}
+            {%if article.frontmatter.thumbnail%}
+                <figure class="mt-lg laptop-sm:mt laptop-sm:flex-1">
+                    <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}">
+                </figure>
+            {%endif%}
         </header>
-        {%if article.frontmatter.thumbnail%}
-            <figure class="mb-md">
-                <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}">
-            </figure>
-        {%endif%}
         <div class="prose">
             {%if article.frontmatter.twig%}
                 {{include(template_from_string(article.content))}}
