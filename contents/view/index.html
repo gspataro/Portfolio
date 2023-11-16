@@ -31,13 +31,13 @@
         }%}
             {%block content%}
                 <h2 class="mb-md">Ultime dal blog</h2>
-                <div class="grid grid-cols-1 gap-lg mb-xl">
+                <div class="grid grid-cols-1 tablet-v:grid-cols-2 gap-lg mb-xl">
                     {%for id, article in articles%}
                         {%include './components/article/card.html' with {
                             'id': id,
                             'article': article,
                             'articles_cats': articles_cats,
-                            'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end'
+                            'class': 'tablet-v:first:w-2/3 tablet-v:first:col-span-2 tablet-v:even:justify-self-end'
                         } only%}
                     {%endfor%}
                 </div>
