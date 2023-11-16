@@ -11,11 +11,14 @@
             </a>
         </h3>
     </header>
+    <p class="mb-xs">
+        {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
+    </p>
     <div class="flex gap-3xs items-center">
         {%if article.frontmatter.categories%}
             <ul class="flex">
                 {%for category in article.frontmatter.categories%}
-                    <li>
+                    <li class="py-3xs px-xs border-thunder-darkest border rounded-lg text-xs lowercase">
                         {{articles_cats[category].label ?? category}}
                     </li>
                 {%endfor%}
