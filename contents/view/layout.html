@@ -18,8 +18,14 @@
             {%if page.layout.contain%}
                 <div class="container my-lg">
             {%endif%}
+                {%if page.layout.breadcrumb%}
+                    {%include './components/breadcrumb.html' with {'breadcrumb': page.layout.breadcrumb} only%}
+                {%endif%}
                 {%block main%}
                 {%endblock%}
+                {%if page.layout.breadcrumb%}
+                    {%include './components/breadcrumb.html' with {'breadcrumb': page.layout.breadcrumb} only%}
+                {%endif%}
             {%if page.layout.contain%}
                 </div>
             {%endif%}

@@ -1,0 +1,14 @@
+<ul class="flex gap-2xs first:mb-md last:mt-xl">
+    {%for page, label in breadcrumb%}
+        <li>
+            {%if page%}
+                <a href="{{url(page)}}">
+                    {{label}}
+                </a>
+            {%else%}
+                {{label}}
+            {%endif%}
+        </li>
+        <li class="last:hidden">/</li>
+    {%endfor%}
+</ul>

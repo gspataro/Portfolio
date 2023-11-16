@@ -1,7 +1,12 @@
 {%set page = {
     'title': article.frontmatter.title,
     'layout': {
-        'contain': true
+        'contain': true,
+        'breadcrumb': {
+            'index': 'Home',
+            'blog.page-1': 'Blog',
+            '': article.frontmatter.title
+        }
     },
     'meta': {
         'description': article.frontmatter.description,

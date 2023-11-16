@@ -1,7 +1,12 @@
 {%set page = {
     'title': project.frontmatter.name,
     'layout': {
-        'contain': true
+        'contain': true,
+        'breadcrumb': {
+            'index': 'Home',
+            'projects.page-1': 'Progetti',
+            '': project.frontmatter.name
+        }
     },
     'meta': {
         'description': project.frontmatter.description,
