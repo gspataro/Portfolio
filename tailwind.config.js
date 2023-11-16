@@ -103,8 +103,8 @@ module.exports = {
             "tablet-v": "768px",
             "tablet-h": "992px",
             "laptop-sm": "1232px",
-            "laptop-lg": "1392px",
-            "desktop": "1500px"
+            "laptop-lg": "1200px",
+            "desktop": "1200px"
         }
     },
     extend: {
