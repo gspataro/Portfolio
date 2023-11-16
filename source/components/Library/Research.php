@@ -172,11 +172,13 @@ final class Research
 
     private function performSelection(): void
     {
-        if (!empty($this->selection)) {
-            $this->result = array_filter($this->result, function ($item) {
-                return in_array($item, $this->selection);
-            }, ARRAY_FILTER_USE_KEY);
+        if (empty($this->selection)) {
+            return;
         }
+
+        $this->result = array_filter($this->result, function ($item) {
+            return in_array($item, $this->selection);
+        }, ARRAY_FILTER_USE_KEY);
     }
 
     /**
@@ -187,14 +189,16 @@ final class Research
 
     private function performLimit(): void
     {
-        if (isset($this->skip) || isset($this->limit)) {
-            $this->result = array_slice(
-                $this->result,
-                $this->skip ?? 0,
-                $this->limit ?? null,
-                true
-            );
+        if (!isset($this->skip) && !isset($this->limit)) {
+            return;
         }
+
+        $this->result = array_slice(
+            $this->result,
+            $this->skip ?? 0,
+            $this->limit ?? null,
+            true
+        );
     }
 
     /**
