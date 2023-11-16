@@ -98,6 +98,13 @@ module.exports = {
             DEFAULT: "1rem",
             "tablet": "1.5rem",
             "desktop": "2rem"
+        },
+        screens: {
+            "tablet-v": "768px",
+            "tablet-h": "992px",
+            "laptop-sm": "1232px",
+            "laptop-lg": "1392px",
+            "desktop": "1500px"
         }
     },
     extend: {
