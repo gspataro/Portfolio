@@ -3,7 +3,7 @@
         <div class="bg-thunder-darkest h-[2px] w-full dark:bg-thunder"></div>
     </div>
 {%endif%}
-<section {%if id and not viewport%}id="{{id}}"{%endif%} class="{%if viewport%}min-h-[calc(100vh-var(--header-outer-height))]{%endif%} py-lg {{class}}">
+<section {%if id and not viewport%}id="{{id}}"{%endif%} class="{%if viewport%}min-h-[calc(100vh-var(--header-outer-height))] laptop-sm:min-h-0{%endif%} py-lg {{class}}">
     {%if not nocontainer%}<div class="container">{%endif%}
         {%block content%}
         {%endblock%}
