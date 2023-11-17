@@ -21,10 +21,6 @@ final class LibraryComponent extends Component
         $this->container->add('library.archive', function ($container, $args): object {
             return new Archive();
         });
-
-        $this->container->add('library.researcher', function ($container, $args): object {
-            return new Researcher();
-        });
     }
 
     public function boot(): void

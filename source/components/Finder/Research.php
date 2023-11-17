@@ -1,6 +1,6 @@
 <?php
 
-namespace GSpataro\Library;
+namespace GSpataro\Finder;
 
 final class Research
 {

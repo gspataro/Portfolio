@@ -4,13 +4,12 @@ namespace GSpataro\Application\Command;
 
 use GSpataro\Pages\Pages;
 use GSpataro\Project\Prototype;
+use GSpataro\Finder\Researcher;
 use GSpataro\CLI\Helper\Stopwatch;
 use GSpataro\Assets\Handler as Assets;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Pages\GeneratorsCollection;
 use GSpataro\Contractor\BuildersCollection;
-use GSpataro\Library\Archive;
-use GSpataro\Library\Researcher;
 
 final class BuildCommand extends BaseCommand
 {
@@ -19,7 +18,6 @@ final class BuildCommand extends BaseCommand
 
     private readonly Pages $pages;
     private readonly Assets $assets;
-    private readonly Archive $archive;
     private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
     private readonly Researcher $researcher;
@@ -38,8 +36,7 @@ final class BuildCommand extends BaseCommand
         $this->pages = $this->app->get('pages.collection');
         $this->assets = $this->app->get('assets.handler');
         $this->stopwatch = $this->app->get('cli.stopwatch');
-        $this->archive = $this->app->get('library.archive');
-        $this->researcher = $this->app->get('library.researcher');
+        $this->researcher = $this->app->get('finder.researcher');
 
         $this->stopwatch->start();
         $this->processContents();
@@ -112,8 +109,7 @@ final class BuildCommand extends BaseCommand
         }
 
         foreach ($contents as $label => $query) {
-            $content = $this->archive->get($query['group']);
-            $research = $this->researcher->start($label, $content);
+            $research = $this->researcher->start($label, $query['group']);
 
             if (isset($query['select'])) {
                 $research->select($query['select']);
