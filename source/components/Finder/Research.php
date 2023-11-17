@@ -2,7 +2,7 @@
 
 namespace GSpataro\Finder;
 
-final class ResearchBuilder
+final class Research
 {
     /**
      * Store items selection

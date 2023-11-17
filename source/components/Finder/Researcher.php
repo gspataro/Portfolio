@@ -46,7 +46,7 @@ final class Researcher
      * @return Research
      */
 
-    public function start(string $label, string $content): ResearchBuilder
+    public function start(string $label, string $content): Research
     {
         if ($this->has($label)) {
             return $this->researches[$label];
@@ -60,6 +60,6 @@ final class Researcher
             );
         }
 
-        return new ResearchBuilder($data);
+        return new Research($data);
     }
 }
