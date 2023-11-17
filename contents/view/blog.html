@@ -12,13 +12,13 @@
 {%extends "./layout.html"%}
 {%block main%}
     <h1 class="mb-md">Blog</h1>
-    <div class="grid grid-cols-1 gap-lg">
+    <div class="grid grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3 gap-lg">
         {%for id, article in blog%}
             {%include './components/article/card.html' with {
                 'id': id,
                 'article': article,
                 'articles_cats': articles_cats,
-                'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end'
+                'class': ''
             } only%}
         {%endfor%}
     </div>
