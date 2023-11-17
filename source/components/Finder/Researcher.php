@@ -2,8 +2,8 @@
 
 namespace GSpataro\Finder;
 
-use GSpataro\Finder\Exception\InvalidResearchContent;
 use GSpataro\Library\Archive;
+use GSpataro\Finder\Exception\InvalidResearchContent;
 
 final class Researcher
 {
