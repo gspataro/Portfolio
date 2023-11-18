@@ -1,10 +1,8 @@
 <div class="bg-ablescent-lightest border-thunder-darkest border-2 p-sm relative after:content-[''] after:absolute after:border-thunder-darkest after:border-2 after:top-[10px] after:left-[10px] after:-bottom-[10px] after:-right-[10px] after:-z-10 dark:bg-thunder-darkest dark:border-thunder dark:after:border-thunder {{class}}">
-    <ul class="flex flex-col gap-2xs">
+    <div class="grid grid-cols-[max-content_1fr] gap-x-sm gap-y-2xs">
         {%for tag, value in meta%}
-            <li class="flex gap-xs">
-                <span class="basis-1/3 shrink-0 font-normal">{{tag}}</span>
-                <span>{{value|raw}}</span>
-            </li>
+            <span class="font-normal">{{tag}}</span>
+            <span>{{value|raw}}</span>
         {%endfor%}
-    </ul>
+        </div>
 </div>
