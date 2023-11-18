@@ -115,6 +115,12 @@ final class BuildCommand extends BaseCommand
                 $research->select($query['select']);
             }
 
+            if (!empty($query['where'])) {
+                $field = array_key_first($query['where']);
+                $value = $query['where'][$field];
+                $research->where($field, $value);
+            }
+
             if (isset($query['skip'])) {
                 $research->select($query['skip']);
             }

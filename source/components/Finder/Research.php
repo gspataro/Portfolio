@@ -13,6 +13,14 @@ final class Research
     private array $selection;
 
     /**
+     * Store where clause
+     *
+     * @var array
+     */
+
+    private array $where;
+
+    /**
      * Store skip offset
      *
      * @var int
@@ -66,6 +74,26 @@ final class Research
     {
         if (!isset($this->selection)) {
             $this->selection = $items;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Select items based on a condition
+     *
+     * @param string $field
+     * @param mixed $value
+     * @return static
+     */
+
+    public function where(string $field, mixed $value): static
+    {
+        if (!isset($this->where)) {
+            $this->where = [
+                'field' => $field,
+                'value' => $value
+            ];
         }
 
         return $this;
@@ -137,6 +165,7 @@ final class Research
         $this->result = $this->content;
 
         $this->performSelection();
+        $this->performWhere();
         $this->performSort();
         $this->performLimit();
 
@@ -179,6 +208,32 @@ final class Research
         $this->result = array_filter($this->result, function ($item) {
             return in_array($item, $this->selection);
         }, ARRAY_FILTER_USE_KEY);
+    }
+
+    /**
+     * Filter results based on where clause
+     *
+     * @return void
+     */
+
+    private function performWhere(): void
+    {
+        if (empty($this->where)) {
+            return;
+        }
+
+        foreach ($this->result as $tag => $item) {
+            $value = $this->getNestedValue($this->where['field'], $item);
+
+            if (is_array($value) && !in_array($this->where['value'], $value)) {
+                unset($this->result[$tag]);
+                continue;
+            }
+
+            if (!is_array($value) && $value !== $this->where['value']) {
+                unset($this->result[$tag]);
+            }
+        }
     }
 
     /**
