@@ -16,22 +16,18 @@
 {%extends "./layout.html"%}
 {%block main%}
     <article>
-        <header class="mb-lg">
+        <header class="mb-lg tablet-v:w-2/3 tablet-h:w-1/2">
             <div class="flex items-center mb-md">
                 <h1 class="flex-1">{{project.frontmatter.name}}</h1>
-                {%include './components/project/links.html'%}
+
             </div>
             {%include './components/post/meta.html' with {'meta': {
                 "Categoria": projects_cats[project.frontmatter.category].label,
                 "Tecnologie": project.frontmatter.technologies|join(', '),
-                "Versione": project.frontmatter.version
+                "Versione": project.frontmatter.version,
+                "Links": include('./components/project/links.html')
             }} only%}
         </header>
-        {%if project.frontmatter.thumbnail%}
-            <figure class="mb-md">
-                <img src="{{website.url}}/assets/images/{{project.frontmatter.thumbnail}}" alt="{{project.frontmatter.title}}">
-            </figure>
-        {%endif%}
         <div class="prose">
             {%if project.frontmatter.twig%}
                 {{include(template_from_string(project.content))}}
