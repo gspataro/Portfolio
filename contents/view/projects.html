@@ -12,12 +12,11 @@
 {%extends "./layout.html"%}
 {%block main%}
     <h1 class="mb-md">Progetti</h1>
-    <div class="grid grid-cols-1 gap-sm">
+    <div class="grid grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3 gap-sm">
         {%for id, project in projects%}
             {%include './components/project/card.html' with {
                 'id': id,
-                'project': project,
-                'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end'
+                'project': project
             } only%}
         {%endfor%}
     </div>
