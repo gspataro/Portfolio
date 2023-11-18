@@ -18,7 +18,7 @@
         {%if article.frontmatter.categories%}
             <ul class="flex">
                 {%for category in article.frontmatter.categories%}
-                    <li class="py-3xs px-xs border-thunder-darkest border rounded-lg text-xs lowercase">
+                    <li class="py-3xs px-xs border-thunder-darkest border rounded-lg text-xs lowercase dark:border-thunder">
                         {{articles_cats[category].label ?? category}}
                     </li>
                 {%endfor%}
