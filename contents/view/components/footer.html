@@ -2,10 +2,10 @@
     <div class="bg-thunder-darkest h-[2px] w-full dark:bg-thunder"></div>
 </div>
 <footer class="bg-ablescent-lightest dark:bg-thunder-darkest">
-    <div class="container flex flex-col gap-md items-center py-lg">
-        <div class="tablet-v:w-1/2">
-            <p class="font-normal uppercase mb-xs text-center">Contattami</p>
-            <p class="text-center">
+    <div class="container grid grid-cols-1 gap-md items-center py-lg tablet-v:w-1/2 tablet-h:w-full tablet-h:grid-cols-3 tablet-h:items-start">
+        <div class="tablet-h:w-auto">
+            <p class="font-normal uppercase mb-xs text-center tablet-h:text-left">Contattami</p>
+            <p class="text-center tablet-h:text-left">
                 Scrivimi a <a href="mailto:gspatarodev@gmail.com">gspatarodev@gmail.com</a>, sarò felice di rispondere a qualsiasi domanda.
             </p>
         </div>
@@ -13,7 +13,7 @@
             <p class="font-normal uppercase mb-xs text-center">Seguimi sui Social</p>
             {%include './components/social.html'%}
         </div>
-        <div>
+        <div class="text-center tablet-h:text-right">
             &copy; 2023 Giuseppe Spataro.
         </div>
     </div>
