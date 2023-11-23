@@ -1,6 +1,6 @@
 {%extends "./layout.html"%}
 {%block main%}
-    {%embed './components/section.html' with {'class': "h-[calc(100vh-var(--header-outer-height))] flex flex-col laptop-sm:h-[70vh]", 'nocontainer': true}%}
+    {%embed './components/section.html' with {'class': "min-h-[calc(100vh-var(--header-outer-height))] flex flex-col tablet-v:min-h-[70vh]", 'nocontainer': true}%}
         {%block content%}
             <div class="container flex-1 flex flex-col bg-thunder-darkest rounded-xl py-sm tablet-v:bg-transparent tablet-v:py">
                 <div class="flex-1 flex flex-col tablet-v:bg-thunder-darkest tablet-v:rounded-xl tablet-v:p-lg">
