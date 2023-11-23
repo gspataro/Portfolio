@@ -1,4 +1,4 @@
-<section {%if id%}id="{{id}}"{%endif%} class="{%if viewport%}min-h-[calc(100vh-var(--header-outer-height))] laptop-sm:min-h-0{%endif%} py-2xl {{class}}">
+<section {%if id%}id="{{id}}"{%endif%} class="{%if viewport%}min-h-[calc(100vh-var(--header-outer-height))] laptop-sm:min-h-0{%endif%} py-lg my-2xl first:mt last:mb {{class}}">
     {%if not nocontainer%}<div class="container">{%endif%}
         {%block content%}
         {%endblock%}
