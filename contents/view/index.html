@@ -1,29 +1,27 @@
 {%extends "./layout.html"%}
 {%block main%}
-    {%embed './components/section.html' with {'class': "min-h-[calc(100vh-var(--header-outer-height))] flex flex-col tablet-v:min-h-[70vh]", 'nocontainer': true}%}
+    {%embed './components/section.html' with {'class': "bg-thunder-darkest min-h-[calc(100vh-var(--header-outer-height))] flex flex-col relative tablet-v:min-h-[70vh]", 'nocontainer': true}%}
         {%block content%}
-            <div class="container flex-1 flex flex-col bg-thunder-darkest rounded-xl py-sm tablet-v:bg-transparent tablet-v:py">
-                <div class="flex-1 flex flex-col tablet-v:bg-thunder-darkest tablet-v:rounded-xl tablet-v:p-lg">
-                    <h1 class="font-light text-ablescent-lightest">
-                        <div>
-                            Ciao,<br>
-                            il mio nome è
-                        </div>
-                        <div>
-                            <span class="font-normal">GIUSEPPE SPATARO</span>,
-                        </div>
-                        <div class="w-max relative z-0">
-                            sono un <span class="text-brass mix-blend-difference">pianista</span> e<br>
-                            <span class="text-brass mix-blend-difference">sviluppatore web</span><span class="animate-pulse">_</span>
-                            <div class="absolute top -right-[25%] w-[200px] h-[200px] bg-brass rounded-full -z-10"></div>
-                        </div>
-                    </h1>
-                    <div class="flex-1"></div>
-                    <a href="{%if articles%}#blog{%else%}#projects{%endif%}" class="self-end flex gap-2xs items-center justify-center font-normal text-brass">
-                        <span class="uppercase">Continua a Leggere</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 5H5v2h7v10.172l-3.95-3.95l-1.414 1.414L13 21l6.364-6.364l-1.414-1.414l-3.95 3.95V5Z"/></svg>
-                    </a>
-                </div>
+            <div class="container flex-1 flex flex-col rounded-xl py-sm tablet-v:bg-transparent tablet-v:py">
+                <h1 class="font-light text-ablescent-lightest">
+                    <div>
+                        Ciao,<br>
+                        il mio nome è
+                    </div>
+                    <div>
+                        <span class="font-normal">GIUSEPPE SPATARO</span>,
+                    </div>
+                    <div class="w-max relative z-0">
+                        sono un <span class="text-brass mix-blend-difference">pianista</span> e<br>
+                        <span class="text-brass mix-blend-difference">sviluppatore web</span><span class="animate-pulse">_</span>
+                        <div class="absolute top -right-[25%] w-[200px] h-[200px] bg-brass rounded-full -z-10"></div>
+                    </div>
+                </h1>
+                <div class="flex-1"></div>
+                <a href="{%if articles%}#blog{%else%}#projects{%endif%}" class="self-end flex gap-2xs items-center justify-center font-normal text-brass">
+                    <span class="uppercase">Continua a Leggere</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 5H5v2h7v10.172l-3.95-3.95l-1.414 1.414L13 21l6.364-6.364l-1.414-1.414l-3.95 3.95V5Z"/></svg>
+                </a>
             </div>
         {%endblock%}
     {%endembed%}
