@@ -141,7 +141,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function({addBase, addComponents, theme}) {
+    plugin(function({addBase, addComponents, addUtilities, theme}) {
         addBase({
             body: {
                 backgroundColor: theme('colors.ablescent.lightest'),
@@ -213,6 +213,18 @@ module.exports = {
                         marginBottom: 0
                     }
                 }
+            }
+        })
+
+        addUtilities({
+            '.writing-h-tb': {
+                'writing-mode': 'horizontal-tb'
+            },
+            '.writing-v-lr': {
+                'writing-mode': 'vertical-lr'
+            },
+            '.writing-v-rl': {
+                'writing-mode': 'vertical-rl'
             }
         })
     })
