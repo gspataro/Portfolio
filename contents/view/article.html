@@ -13,7 +13,7 @@
         'keywords': article.frontmatter.keywords
     }
 }%}
-{%extends "./layout.html"%}
+{%extends "./layout/default.html"%}
 {%block main%}
     {%set meta = {
         "Pubbicato": article.frontmatter.published|date('d F Y')
