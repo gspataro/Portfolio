@@ -4,7 +4,6 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   content: ["./contents/view/**/*.html", "./contents/view/**/*.js"],
-  darkMode: 'class',
   theme: {
     fontFamily: {
         "sans": ['Roboto', 'Sans-Serif', 'Arial'],
@@ -177,15 +176,6 @@ module.exports = {
             a: {
                 color: theme('colors.stiletto.DEFAULT'),
                 textDecoration: 'underline'
-            },
-            ".dark": {
-                body: {
-                    backgroundColor: theme('colors.thunder.darkest'),
-                    color: theme('colors.ablescent.lightest')
-                },
-                a: {
-                    color: theme('colors.brass.DEFAULT')
-                }
             }
         })
 

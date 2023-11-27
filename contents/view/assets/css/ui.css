@@ -197,19 +197,11 @@
         font-weight: normal;
         text-transform: lowercase;
         text-decoration: none;
-
-        @apply
-            dark:bg-thunder-darkest
-            dark:border-thunder;
     }
 
     .btn-retro:hover {
         background-color: theme('colors.stiletto.DEFAULT');
         color: theme('colors.ablescent.lightest');
-
-        @apply
-            dark:bg-brass
-            dark:text-thunder-darkest;
     }
 
     .btn-retro::after {
@@ -220,17 +212,10 @@
         position: absolute;
         inset: 5px -5px -5px 5px;
         z-index: -10;
-
-        @apply
-            dark:bg-thunder
-            dark:border-thunder;
     }
 
     .btn-retro:hover::after {
         background-color: theme('colors.ablescent.lightest');
-
-        @apply
-            dark:bg-thunder-darkest;
     }
 }
 

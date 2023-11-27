@@ -6,7 +6,7 @@
     </figure>
     <header class="mb-3xs">
         <h3>
-            <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline dark:text-ablescent-lightest">
+            <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">
                 {{article.frontmatter.title}}
             </a>
         </h3>
@@ -18,7 +18,7 @@
         {%if article.frontmatter.categories%}
             <ul class="flex">
                 {%for category in article.frontmatter.categories%}
-                    <li class="py-3xs px-xs border-thunder-darkest border rounded-lg text-xs lowercase dark:border-thunder">
+                    <li class="py-3xs px-xs border-thunder-darkest border rounded-lg text-xs lowercase">
                         {{articles_cats[category].label ?? category}}
                     </li>
                 {%endfor%}
