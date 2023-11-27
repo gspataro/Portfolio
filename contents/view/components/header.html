@@ -1,4 +1,4 @@
-<header class="{%if not transparent%}bg-thunder-darkest{%endif%} {%if sticky%}sticky top z-20{%endif%}">
+<header class="{%if not transparent%}bg-thunder-darkest{%endif%} {%if sticky%}sticky top z-20{%endif%} {{class}}">
     <div class="h-[--header-height] container flex items-center">
         <a href="{{url('index')}}">
             {%if logo_dark%}
@@ -9,6 +9,7 @@
         </a>
         <div class="flex-1"></div>
         {%include './components/navbar.html' with {
+            'inverted': navbar_dark,
             'items': {
                 'blog': {
                     'label': 'Blog',
