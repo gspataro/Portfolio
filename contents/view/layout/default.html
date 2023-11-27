@@ -5,7 +5,9 @@
     </head>
 
     <body class="tablet-h:!overflow-y-auto">
-        {%include './components/header.html'%}
+        {%include './components/header.html' with {
+            'sticky': true
+        }%}
         <main>
             <div class="container my-lg">
                 {%if page.layout.breadcrumb%}
