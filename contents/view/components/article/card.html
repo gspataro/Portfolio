@@ -11,9 +11,11 @@
             </a>
         </h3>
     </header>
-    <p class="mb-xs">
-        {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
-    </p>
+    {%if excerpt%}
+        <p class="mb-xs">
+            {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
+        </p>
+    {%endif%}
     <div class="flex gap-3xs items-center">
         {%if article.frontmatter.categories%}
             <ul class="flex">

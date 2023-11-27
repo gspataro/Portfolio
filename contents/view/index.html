@@ -5,7 +5,7 @@
         'class': "h-[100vh] relative"
     }%}
         {%block content%}
-            <div class="container grid grid-cols-2 gap-3xl h-full pt-[--header-outer-height]">
+            <div class="container grid grid-cols-2 gap-3xl h-full pt-[--header-outer-height] max-w-[1600px]">
                 <div class="flex flex-col">
                     <h1 class="font-light">
                         <div>
@@ -35,31 +35,37 @@
         {%embed './components/section.html' with {
             'id': 'blog',
             'viewport': true,
-            'class': 'bg-thunder-darkest'
+            'nocontainer': true
         }%}
             {%block content%}
-                <h2 class="mb-md">Ultime dal blog</h2>
-                <div class="grid grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3 gap-lg mb-xl">
-                    {%for id, article in articles%}
-                        {%include './components/article/card.html' with {
-                            'id': id,
-                            'article': article,
-                            'articles_cats': articles_cats,
-                            'class': 'tablet-v:first:w-2/3 tablet-v:first:col-span-2 tablet-v:even:justify-self-end tablet-h:first:w-full tablet-h:first:col-span-1'
-                        } only%}
-                    {%endfor%}
-                </div>
-                <div class="flex items-center justify-center">
-                    <a href="{{url('blog.page-1')}}" class="btn-retro">
-                        Vai al blog
-                    </a>
+                <div class="container grid grid-cols-2 gap-3xl max-w-[1600px]">
+                    <div class="h-full flex">
+                        <h2 class="writing-v-lr rotate-180 text-huge text-right">
+                            BLOG
+                        </h2>
+                        <p class="flex-1">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-lg">
+                        {%for id, article in articles%}
+                            {%include './components/article/card.html' with {
+                                'id': id,
+                                'article': article,
+                                'articles_cats': articles_cats,
+                                'class': 'first:col-span-2',
+                                'excerpt': loop.first
+                            } only%}
+                        {%endfor%}
+                    </div>
                 </div>
             {%endblock%}
         {%endembed%}
     {%endif%}
     {%embed './components/section.html' with {
         'id': 'projects',
-        'viewport': true
+        'viewport': true,
+        'class': 'bg-thunder-darkest'
     }%}
         {%block content%}
             <h2 class="mb-md">Progetti in evidenza</h2>
