@@ -173,7 +173,7 @@
 
     :root {
         --header-height: 80px;
-        --header-outer-height: calc(var(--header-height) + 2px);
+        --header-outer-height: var(--header-height);
     }
 
     @media screen(tablet-v) {
