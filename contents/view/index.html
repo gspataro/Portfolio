@@ -24,7 +24,7 @@
                     <div class="flex-1"></div>
                     <a href="javascript:void(0)" class="self-end flex gap-2xs items-center justify-center font-normal next-section">
                         <span class="uppercase">Continua a Leggere</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 5H5v2h7v10.172l-3.95-3.95l-1.414 1.414L13 21l6.364-6.364l-1.414-1.414l-3.95 3.95V5Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12 13H4v-2h8V4l8 8l-8 8v-7Z"/></svg>
                     </a>
                 </div>
             </div>
@@ -38,13 +38,23 @@
         }%}
             {%block content%}
                 <div class="flex-1 py-lg container flex gap-3xl max-w-[1600px]">
-                    <div class="basis-[35%] flex text-ablescent-lightest">
-                        <h2 class="writing-v-lr rotate-180 text-huge text-right leading-none">
-                            BLOG
-                        </h2>
-                        <p class="flex-1">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.
-                        </p>
+                    <div class="basis-[35%] text-ablescent-lightest">
+                        <div class="flex">
+                            <h2 class="writing-v-lr rotate-180 text-huge text-right leading-none">
+                                BLOG
+                            </h2>
+                            <p class="flex-1">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.
+                            </p>
+                        </div>
+                        <div class="self-end grid grid-cols-2 mt-xl">
+                            <span class="prev-section justify-self-start cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m10.828 12l4.95 4.95l-1.414 1.415L8 12l6.364-6.364l1.414 1.414l-4.95 4.95Z"/></svg>
+                            </span>
+                            <span class="next-section justify-self-end cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m13.171 12l-4.95-4.95l1.415-1.413L16 12l-6.364 6.364l-1.414-1.415l4.95-4.95Z"/></svg>
+                            </span>
+                        </div>
                     </div>
                     <div class="flex-1 grid grid-cols-2 gap-lg">
                         {%for id, article in articles%}
@@ -79,13 +89,20 @@
                         {%endfor%}
                     </div>
                 </div>
-                <div class="basis-[35%] flex text-ablescent-lightest">
-                    <p class="self-end">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores similique in sapiente aspernatur! Rem, laboriosam beatae vel voluptate et eius eveniet sapiente est. Quia fugit totam ut provident magnam.
-                    </p>
-                    <h2 class="writing-v-lr text-right text-huge leading-none">
-                        PROGETTI
-                    </h2>
+                <div class="basis-[35%] text-ablescent-lightest">
+                    <div class="self-end grid grid-cols-2 mb-xl">
+                        <span class="prev-section justify-self-start cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m10.828 12l4.95 4.95l-1.414 1.415L8 12l6.364-6.364l1.414 1.414l-4.95 4.95Z"/></svg>
+                        </span>
+                    </div>
+                    <div class="flex">
+                        <p class="self-end">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores similique in sapiente aspernatur! Rem, laboriosam beatae vel voluptate et eius eveniet sapiente est. Quia fugit totam ut provident magnam.
+                        </p>
+                        <h2 class="writing-v-lr text-right text-huge leading-none">
+                            PROGETTI
+                        </h2>
+                    </div>
                 </div>
             </div>
         {%endblock%}
