@@ -1,11 +1,8 @@
-<header id="header" class="{%if not transparent%}bg-thunder-darkest{%endif%} {%if sticky%}sticky top z-20{%endif%} {{class}}">
+<header id="header" class="{%if not transparent%}bg-thunder-darkest{%endif%} {%if sticky%}sticky top z-20{%endif%} {{class}} group/header" data-style="{{style}}">
     <div class="h-[--header-height] container flex items-center {%if large_container%}max-w-[1600px]{%endif%}">
         <a href="{{url('index')}}">
-            {%if logo_dark%}
-                <img src="{{website.url}}/assets/images/logo.svg" alt="" aria-label="Giuseppe Spataro" class="logo">
-            {%else%}
-                <img src="{{website.url}}/assets/images/logo-light.svg" alt="" aria-label="Giuseppe Spataro" class="logo">
-            {%endif%}
+            <img src="{{website.url}}/assets/images/logo.svg" alt="Giuseppe Spataro" aria-label="Giuseppe Spataro" class="logo {%if not transparent%}hidden{%endif%} group-data-[style=pianoforte]/header:block group-data-[style=fortepiano]/header:hidden">
+            <img src="{{website.url}}/assets/images/logo-light.svg" alt="Giuseppe Spataro" aria-label="Giuseppe Spataro" class="logo {%if transparent%}hidden{%endif%} group-data-[style=pianoforte]/header:hidden group-data-[style=fortepiano]/header:block">
         </a>
         <div class="flex-1"></div>
         {%include './components/navbar.html' with {
