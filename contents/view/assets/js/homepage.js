@@ -19,9 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 break;
         }
 
+        goToSection(currentSection);
+    });
+
+    function goToSection(number) {
         main.scrollTo({
-            left: window.innerWidth * currentSection,
+            left: window.innerWidth * number,
             behavior: 'smooth'
         });
-    });
+    }
 });

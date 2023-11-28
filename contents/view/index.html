@@ -35,7 +35,7 @@
         {%embed './components/section.html' with {
             'id': 'blog',
             'nocontainer': true,
-            'class': 'snap-start py-3xl'
+            'class': 'py-3xl relative'
         }%}
             {%block content%}
                 <div class="container flex gap-3xl max-w-[1600px]">
@@ -59,13 +59,14 @@
                         {%endfor%}
                     </div>
                 </div>
+                <div class="bg-thunder-darkest w-[50vw] absolute top left bottom -z-10"></div>
             {%endblock%}
         {%endembed%}
     {%endif%}
     {%embed './components/section.html' with {
         'id': 'projects',
         'nocontainer': true,
-        'class': 'bg-thunder-darkest py-3xl'
+        'class': 'py-3xl relative'
     }%}
         {%block content%}
             <div class="container flex gap-3xl max-w-[1600px] text-ablescent-lightest">
@@ -87,6 +88,7 @@
                     </h2>
                 </div>
             </div>
+            <div class="bg-thunder-darkest w-[50vw] absolute top right bottom -z-10"></div>
         {%endblock%}
     {%endembed%}
 {%endblock%}
