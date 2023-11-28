@@ -67,19 +67,19 @@
         'class': 'bg-gradient-to-r from-ablescent-lightest from-60% to-thunder-darkest to-60% min-h-[100vh] pt-[--header-outer-height] flex flex-col'
     }%}
         {%block content%}
-            <div class="flex-1 container py-lg flex gap-3xl max-w-[1600px] text-ablescent-lightest">
+            <div class="flex-1 container py-lg flex gap-3xl max-w-[1600px]">
                 <div class="flex-1">
-                    <div class="grid grid-cols-3">
+                    <div class="grid grid-rows-3 gap-lg">
                         {%for id, project in projects%}
                             {%include './components/project/card.html' with {
                                 'id': id,
                                 'project': project,
-                                'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end laptop-sm:w-full'
+                                'class': 'w-2/3 even:justify-self-end'
                             } only%}
                         {%endfor%}
                     </div>
                 </div>
-                <div class="basis-[35%] flex">
+                <div class="basis-[35%] flex text-ablescent-lightest">
                     <p class="self-end">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores similique in sapiente aspernatur! Rem, laboriosam beatae vel voluptate et eius eveniet sapiente est. Quia fugit totam ut provident magnam.
                     </p>
