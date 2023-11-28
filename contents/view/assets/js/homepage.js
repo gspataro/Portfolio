@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
         goToSection(currentSection);
     });
 
+    window.addEventListener('resize', function () {
+        goToSection(currentSection);
+    });
+
     function goToSection(number) {
         if (number === 1) {
             header.dataset.style = 'fortepiano';

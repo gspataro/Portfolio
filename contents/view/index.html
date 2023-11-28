@@ -2,12 +2,12 @@
 {%block main%}
     {%embed './components/section.html' with {
         'nocontainer': true,
-        'class': "bg-gradient-to-r from-ablescent-lightest from-50% to-thunder-darkest to-50% h-[100vh] border-b-thunder-darkest border-b-2"
+        'class': "bg-gradient-to-r from-ablescent-lightest from-50% to-thunder-darkest to-50% min-h-[100vh] pt-[--header-outer-height] flex flex-col"
     }%}
         {%block content%}
-            <div class="container grid grid-cols-2 gap-3xl h-full pt-[--header-outer-height] max-w-[1600px]">
+            <div class="flex-1 py-lg container grid grid-cols-2 gap-3xl max-w-[1600px]">
                 <div class="flex flex-col">
-                    <h1 class="font-light">
+                    <h1 class="font-light text-big">
                         <div>
                             Ciao,<br>
                             il mio nome è
@@ -34,12 +34,12 @@
         {%embed './components/section.html' with {
             'id': 'blog',
             'nocontainer': true,
-            'class': 'bg-gradient-to-r from-thunder-darkest from-50% to-ablescent-lightest to-50% py-3xl'
+            'class': 'bg-gradient-to-r from-thunder-darkest from-40% to-ablescent-lightest to-40% min-h-[100vh] pt-[--header-outer-height] flex flex-col'
         }%}
             {%block content%}
-                <div class="container flex gap-3xl max-w-[1600px]">
-                    <div class="basis-1/3 h-full flex text-ablescent-lightest">
-                        <h2 class="writing-v-lr rotate-180 text-huge text-right">
+                <div class="flex-1 py-lg container flex gap-3xl max-w-[1600px]">
+                    <div class="basis-[35%] flex text-ablescent-lightest">
+                        <h2 class="writing-v-lr rotate-180 text-huge text-right leading-none">
                             BLOG
                         </h2>
                         <p class="flex-1">
@@ -64,29 +64,30 @@
     {%embed './components/section.html' with {
         'id': 'projects',
         'nocontainer': true,
-        'class': 'bg-gradient-to-r from-ablescent-lightest from-50% to-thunder-darkest to-50% py-3xl'
+        'class': 'bg-gradient-to-r from-ablescent-lightest from-60% to-thunder-darkest to-60% min-h-[100vh] pt-[--header-outer-height] flex flex-col'
     }%}
         {%block content%}
-            <div class="container flex gap-3xl max-w-[1600px] text-ablescent-lightest">
-                <div class="flex-1 grid grid-cols-3">
-                    {%for id, project in projects%}
-                        {%include './components/project/card.html' with {
-                            'id': id,
-                            'project': project,
-                            'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end laptop-sm:w-full'
-                        } only%}
-                    {%endfor%}
+            <div class="flex-1 container py-lg flex gap-3xl max-w-[1600px] text-ablescent-lightest">
+                <div class="flex-1">
+                    <div class="grid grid-cols-3">
+                        {%for id, project in projects%}
+                            {%include './components/project/card.html' with {
+                                'id': id,
+                                'project': project,
+                                'class': 'tablet-v:w-2/3 tablet-v:even:justify-self-end laptop-sm:w-full'
+                            } only%}
+                        {%endfor%}
+                    </div>
                 </div>
-                <div class="basis-1/3 h-full flex">
+                <div class="basis-[35%] flex">
                     <p class="self-end">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores similique in sapiente aspernatur! Rem, laboriosam beatae vel voluptate et eius eveniet sapiente est. Quia fugit totam ut provident magnam.
                     </p>
-                    <h2 class="writing-v-lr rotate-180 text-huge">
+                    <h2 class="writing-v-lr text-right text-huge leading-none">
                         PROGETTI
                     </h2>
                 </div>
             </div>
-            <!--<div class="bg-thunder-darkest w-[50vw] absolute top right bottom -z-10"></div>-->
         {%endblock%}
     {%endembed%}
 {%endblock%}
