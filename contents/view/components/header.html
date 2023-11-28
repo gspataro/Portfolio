@@ -1,5 +1,5 @@
 <header id="header" class="{%if not transparent%}bg-thunder-darkest{%endif%} {%if sticky%}sticky top z-20{%endif%} {{class}}">
-    <div class="h-[--header-height] container flex items-center">
+    <div class="h-[--header-height] container flex items-center {%if large_container%}max-w-[1600px]{%endif%}">
         <a href="{{url('index')}}">
             {%if logo_dark%}
                 <img src="{{website.url}}/assets/images/logo.svg" alt="" aria-label="Giuseppe Spataro" class="logo">

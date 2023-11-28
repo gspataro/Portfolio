@@ -2,15 +2,17 @@
 <html lang="it">
     <head>
         {%include './components/head.html'%}
+        <script src="{{website.url}}/assets/js/homepage.js"></script>
     </head>
 
-    <body class="homepage tablet-h:!overflow-y-auto">
+    <body class="homepage !overflow-y-auto">
         {%include './components/header.html' with {
             'transparent': true,
             'logo_dark': true,
+            'large_container': true,
             'class': 'fixed top left right z-10'
         }%}
-        <main>
+        <main class="grid grid-cols-[repeat(3,100vw)] overflow-x-hidden">
             {%block main%}
             {%endblock%}
         </main>

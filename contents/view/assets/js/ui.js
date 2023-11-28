@@ -30,23 +30,4 @@ document.addEventListener('DOMContentLoaded', function () {
         navbarElement.dataset.status = 'closed';
         document.body.style.overflowY = 'auto';
     });
-
-    // Homepage header
-
-    if (document.body.classList.contains('homepage')) {
-        const header = document.getElementById('header');
-        const logo = header.getElementsByClassName('logo')[0];
-
-        window.addEventListener('scroll', function () {
-            let scrollPosition = document.documentElement.scrollTop;
-
-            if (scrollPosition > 100) {
-                header.classList.add('bg-thunder-darkest');
-                logo.src = 'http://gspataro.test/assets/images/logo-light.svg';
-            } else {
-                header.classList.remove('bg-thunder-darkest');
-                logo.src = 'http://gspataro.test/assets/images/logo.svg';
-            }
-        });
-    }
 });
