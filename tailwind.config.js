@@ -75,6 +75,8 @@ module.exports = {
     fontSize: {
         DEFAULT: "1.125rem",
         "huge": "7.5rem",
+        "biggest": "6rem",
+        "bigger": "5rem",
         "big": "3rem",
         "3xl": "2.2rem",
         "2xl": "2rem",

@@ -16,7 +16,13 @@
         <div class="basis-[35%] grid text-ablescent-lightest">
             {%block sidebar%}
                 <div class="flex gap-xs">
-                    <h2 class="writing-v-lr group-data-[style=fortepiano]/section:rotate-180 text-huge text-right leading-none">
+                    <h2 class="
+                        writing-v-lr
+                        text-huge
+                        text-right
+                        leading-none
+                        group-data-[style=fortepiano]/section:rotate-180
+                        laptop-sm:text-biggest">
                         {{heading}}
                     </h2>
                     <p class="flex-1 group-data-[style=pianoforte]/section:self-end">
@@ -25,10 +31,14 @@
                 </div>
                 <div class="self-end grid grid-cols-2 group-data-[style=pianoforte]/section:-order-1 group-data-[style=pianoforte]/section:self-start">
                     <span class="prev-section justify-self-start cursor-pointer group-first/section:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m10.828 12l4.95 4.95l-1.414 1.415L8 12l6.364-6.364l1.414 1.414l-4.95 4.95Z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" class="laptop-sm:w-[48px] laptop-sm:h-[48px]">
+                            <path fill="currentColor" d="m10.828 12l4.95 4.95l-1.414 1.415L8 12l6.364-6.364l1.414 1.414l-4.95 4.95Z"/>
+                        </svg>
                     </span>
-                    <span class="next-section justify-self-end cursor-pointer group-last/section:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m13.171 12l-4.95-4.95l1.415-1.413L16 12l-6.364 6.364l-1.414-1.415l4.95-4.95Z"/></svg>
+                    <span class="next-section justify-self-end cursor-pointer group-last/section:hidden" class="laptop-sm:w-[48px] laptop-sm:h-[48px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="m13.171 12l-4.95-4.95l1.415-1.413L16 12l-6.364 6.364l-1.414-1.415l4.95-4.95Z"/>
+                        </svg>
                     </span>
                 </div>
             {%endblock%}
