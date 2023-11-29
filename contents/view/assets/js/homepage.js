@@ -52,11 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
      */
 
     function goToSection(number) {
-        if (number === 1) {
-            header.dataset.style = 'fortepiano';
-        } else {
-            header.dataset.style = 'pianoforte';
+        const section = sections[number];
+
+        if (section.length < 1) {
+            return;
         }
+
+        // Change header style based on section style
+        header.dataset.style = section.dataset.style;
 
         main.scrollTo({
             left: window.innerWidth * number,
