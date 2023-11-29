@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const navPrev = document.getElementsByClassName('prev-section');
     let currentSection = 0;
 
+    // Setup current section based on scroll position
+    currentSection = main.scrollLeft / main.offsetWidth;
+    goToSection(currentSection);
+
     // Arrow keys navigation
     document.addEventListener('keydown', function (e) {
         if (!e.code === 'ArrowRight' && !e.code === 'ArrowLeft') {
