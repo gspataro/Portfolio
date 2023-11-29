@@ -48,16 +48,18 @@
                         </span>
                     </div>
                 </div>
-                <div class="flex-1 grid grid-cols-2 gap-lg">
-                    {%for id, article in articles%}
-                        {%include './components/article/card.html' with {
-                            'id': id,
-                            'article': article,
-                            'articles_cats': articles_cats,
-                            'class': 'first:col-span-2 first:w-2/3',
-                            'excerpt': loop.first
-                        } only%}
-                    {%endfor%}
+                <div class="flex-1">
+                    <div class="grid grid-cols-2 gap-lg w-2/3 mx-auto">
+                        {%for id, article in articles%}
+                            {%include './components/article/card.html' with {
+                                'id': id,
+                                'article': article,
+                                'articles_cats': articles_cats,
+                                'class': 'first:col-span-2 first:w-2/3',
+                                'excerpt': loop.first
+                            } only%}
+                        {%endfor%}
+                    </div>
                 </div>
             </div>
         {%endblock%}
