@@ -8,7 +8,15 @@
     pt-[--header-outer-height]
     flex flex-col
     group/section" data-style="{{style ?? 'pianoforte'}}">
-    <div class="flex-1 py-lg container flex group-data-[style=fortepiano]/section:flex-row-reverse gap-3xl max-w-[1600px]">
+    <div class="
+        flex-1
+        py-lg
+        container
+        max-w-[1600px]
+        flex
+        gap-xl
+        group-data-[style=fortepiano]/section:flex-row-reverse
+        laptop-sm:gap-3xl">
         <div class="flex-1">
             {%block content%}
             {%endblock%}
@@ -18,11 +26,12 @@
                 <div class="flex gap-xs">
                     <h2 class="
                         writing-v-lr
-                        text-huge
+                        text-bigger
                         text-right
                         leading-none
                         group-data-[style=fortepiano]/section:rotate-180
-                        laptop-sm:text-biggest">
+                        laptop-sm:text-biggest
+                        laptop-lg:text-huge">
                         {{heading}}
                     </h2>
                     <p class="flex-1 group-data-[style=pianoforte]/section:self-end">

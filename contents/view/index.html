@@ -3,7 +3,7 @@
     {%embed './components/home/section.html'%}
         {%block content%}
             <div class="h-full flex flex-col">
-                <h1 class="font-light text-big">
+                <h1 class="font-light laptop-sm:text-big">
                     <div>
                         Ciao,<br>
                         il mio nome è
@@ -56,8 +56,9 @@
                 grid
                 grid-rows-3
                 gap-xs
-                laptop-sm:grid-cols-2
-                laptop-sm:grid-rows-none">
+                tablet-h:grid-cols-2
+                tablet-h:grid-rows-none
+                laptop-lg:grid-cols-1">
                 {%for id, project in projects%}
                     {%include './components/project/card.html' with {
                         'id': id,
