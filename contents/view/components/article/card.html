@@ -1,34 +1,43 @@
-<article class="{{class}}">
-    <figure class="mb-xs">
+<article class="
+    data-[layout=horizontal]:grid
+    data-[layout=horizontal]:grid-cols-2
+    data-[layout=horizontal]:gap-sm
+    group/article
+    {{class}}" data-layout="{{layout ?? 'vertical'}}">
+    <figure class="
+        group-data-[layout=horizontal]/article:col-start-1
+        mb-xs">
         <a href="{{url('article.' ~ id)}}">
             <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}" class="rounded-lg aspect-[1]">
         </a>
     </figure>
-    <header class="mb-3xs">
-        <h3>
-            <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">
-                {{article.frontmatter.title}}
-            </a>
-        </h3>
-    </header>
-    {%if excerpt%}
-        <p class="mb-xs">
-            {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
-        </p>
-    {%endif%}
-    <div class="flex gap-3xs items-center">
-        {%if article.frontmatter.categories%}
-            <ul class="flex">
-                {%for category in article.frontmatter.categories%}
-                    <li class="py-3xs px-xs border-thunder-darkest border rounded-lg text-xs lowercase">
-                        {{articles_cats[category].label ?? category}}
-                    </li>
-                {%endfor%}
-            </ul>
+    <div class="group-data-[layout=horizontal]/article:col-start-2">
+        <header class="mb-3xs">
+            <h3>
+                <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">
+                    {{article.frontmatter.title}}
+                </a>
+            </h3>
+        </header>
+        {%if excerpt%}
+            <p class="mb-xs">
+                {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
+            </p>
         {%endif%}
-        <div class="flex-1"></div>
-        <a href="{{url('article.' ~ id)}}" class="font-normal no-underline">
-            leggi articolo &gt;
-        </a>
+        <div class="flex gap-3xs items-center">
+            {%if article.frontmatter.categories%}
+                <ul class="flex">
+                    {%for category in article.frontmatter.categories%}
+                        <li class="py-3xs px-xs border-thunder-darkest border rounded-lg text-xs lowercase">
+                            {{articles_cats[category].label ?? category}}
+                        </li>
+                    {%endfor%}
+                </ul>
+            {%endif%}
+            <div class="flex-1"></div>
+            <a href="{{url('article.' ~ id)}}" class="font-normal no-underline">
+                leggi articolo &gt;
+            </a>
+        </div>
     </div>
 </article>
