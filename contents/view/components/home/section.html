@@ -8,6 +8,30 @@
     pt-[--header-outer-height]
     flex flex-col
     group/section" data-style="{{style ?? 'pianoforte'}}">
-    {%block content%}
-    {%endblock%}
+    <div class="flex-1 py-lg container flex group-data-[style=fortepiano]/section:flex-row-reverse gap-3xl max-w-[1600px]">
+        <div class="flex-1">
+            {%block content%}
+            {%endblock%}
+        </div>
+        <div class="basis-[35%] grid text-ablescent-lightest">
+            {%block sidebar%}
+                <div class="flex gap-xs">
+                    <h2 class="writing-v-lr group-data-[style=fortepiano]/section:rotate-180 text-huge text-right leading-none">
+                        {{heading}}
+                    </h2>
+                    <p class="flex-1 group-data-[style=pianoforte]/section:self-end">
+                        {{description}}
+                    </p>
+                </div>
+                <div class="self-end grid grid-cols-2 group-data-[style=pianoforte]/section:-order-1 group-data-[style=pianoforte]/section:self-start">
+                    <span class="prev-section justify-self-start cursor-pointer group-first/section:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m10.828 12l4.95 4.95l-1.414 1.415L8 12l6.364-6.364l1.414 1.414l-4.95 4.95Z"/></svg>
+                    </span>
+                    <span class="next-section justify-self-end cursor-pointer group-last/section:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m13.171 12l-4.95-4.95l1.415-1.413L16 12l-6.364 6.364l-1.414-1.415l4.95-4.95Z"/></svg>
+                    </span>
+                </div>
+            {%endblock%}
+        </div>
+    </div>
 </section>
