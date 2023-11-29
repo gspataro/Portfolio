@@ -1,0 +1,13 @@
+<section {%if id%}id="{{id}}"{%endif%} class="
+    bg-gradient-to-r
+    data-[style=pianoforte]:from-60% data-[style=fortepiano]:from-40%
+    data-[style=pianoforte]:from-ablescent-lightest data-[style=fortepiano]:from-thunder-darkest
+    data-[style=pianoforte]:to-thunder-darkest data-[style=fortepiano]:to-ablescent-lightest
+    data-[style=pianoforte]:to-60% data-[style=fortepiano]:to-40%
+    min-h-[100vh]
+    pt-[--header-outer-height]
+    flex flex-col
+    group/section" data-style="{{style ?? 'pianoforte'}}">
+    {%block content%}
+    {%endblock%}
+</section>

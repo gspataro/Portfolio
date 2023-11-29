@@ -1,9 +1,6 @@
 {%extends "./layout/homepage.html"%}
 {%block main%}
-    {%embed './components/section.html' with {
-        'nocontainer': true,
-        'class': "bg-gradient-to-r from-ablescent-lightest from-50% to-thunder-darkest to-50% min-h-[100vh] pt-[--header-outer-height] flex flex-col"
-    }%}
+    {%embed './components/home/section.html'%}
         {%block content%}
             <div class="flex-1 py-lg container grid grid-cols-2 gap-3xl max-w-[1600px]">
                 <div class="flex flex-col">
@@ -30,52 +27,42 @@
             </div>
         {%endblock%}
     {%endembed%}
-    {%if articles%}
-        {%embed './components/section.html' with {
-            'id': 'blog',
-            'nocontainer': true,
-            'class': 'bg-gradient-to-r from-thunder-darkest from-40% to-ablescent-lightest to-40% min-h-[100vh] pt-[--header-outer-height] flex flex-col'
-        }%}
-            {%block content%}
-                <div class="flex-1 py-lg container flex gap-3xl max-w-[1600px]">
-                    <div class="basis-[35%] text-ablescent-lightest">
-                        <div class="flex">
-                            <h2 class="writing-v-lr rotate-180 text-huge text-right leading-none">
-                                BLOG
-                            </h2>
-                            <p class="flex-1">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.
-                            </p>
-                        </div>
-                        <div class="self-end grid grid-cols-2 mt-xl">
-                            <span class="prev-section justify-self-start cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m10.828 12l4.95 4.95l-1.414 1.415L8 12l6.364-6.364l1.414 1.414l-4.95 4.95Z"/></svg>
-                            </span>
-                            <span class="next-section justify-self-end cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m13.171 12l-4.95-4.95l1.415-1.413L16 12l-6.364 6.364l-1.414-1.415l4.95-4.95Z"/></svg>
-                            </span>
-                        </div>
+    {%embed './components/home/section.html' with {'style': 'fortepiano'}%}
+        {%block content%}
+            <div class="flex-1 py-lg container flex gap-3xl max-w-[1600px]">
+                <div class="basis-[35%] text-ablescent-lightest">
+                    <div class="flex">
+                        <h2 class="writing-v-lr rotate-180 text-huge text-right leading-none">
+                            BLOG
+                        </h2>
+                        <p class="flex-1">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.
+                        </p>
                     </div>
-                    <div class="flex-1 grid grid-cols-2 gap-lg">
-                        {%for id, article in articles%}
-                            {%include './components/article/card.html' with {
-                                'id': id,
-                                'article': article,
-                                'articles_cats': articles_cats,
-                                'class': 'first:col-span-2 first:w-2/3',
-                                'excerpt': loop.first
-                            } only%}
-                        {%endfor%}
+                    <div class="self-end grid grid-cols-2 mt-xl">
+                        <span class="prev-section justify-self-start cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m10.828 12l4.95 4.95l-1.414 1.415L8 12l6.364-6.364l1.414 1.414l-4.95 4.95Z"/></svg>
+                        </span>
+                        <span class="next-section justify-self-end cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24"><path fill="currentColor" d="m13.171 12l-4.95-4.95l1.415-1.413L16 12l-6.364 6.364l-1.414-1.415l4.95-4.95Z"/></svg>
+                        </span>
                     </div>
                 </div>
-            {%endblock%}
-        {%endembed%}
-    {%endif%}
-    {%embed './components/section.html' with {
-        'id': 'projects',
-        'nocontainer': true,
-        'class': 'bg-gradient-to-r from-ablescent-lightest from-60% to-thunder-darkest to-60% min-h-[100vh] pt-[--header-outer-height] flex flex-col'
-    }%}
+                <div class="flex-1 grid grid-cols-2 gap-lg">
+                    {%for id, article in articles%}
+                        {%include './components/article/card.html' with {
+                            'id': id,
+                            'article': article,
+                            'articles_cats': articles_cats,
+                            'class': 'first:col-span-2 first:w-2/3',
+                            'excerpt': loop.first
+                        } only%}
+                    {%endfor%}
+                </div>
+            </div>
+        {%endblock%}
+    {%endembed%}
+    {%embed './components/home/section.html'%}
         {%block content%}
             <div class="flex-1 container py-lg flex gap-3xl max-w-[1600px]">
                 <div class="flex-1">
