@@ -1,33 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Navbar
 
-    const navbarElement = document.getElementById('navbar');
-    const navbarElementToggle = navbarElement.getElementsByClassName('toggle')[0];
-    const navbarElementClose = navbarElement.getElementsByClassName('close')[0];
+    const navbar = document.getElementById('navbar');
+    const navbarToggle = navbar.getElementsByClassName('toggle')[0];
+    const navbarClose = navbar.getElementsByClassName('close')[0];
 
-    navbarElementToggle.addEventListener('click', function () {
-        let status = navbarElement.dataset.status;
+    navbarToggle.addEventListener('click', function () {
+        let status = navbar.dataset.status;
 
         if (status == 'open') {
-            navbarElement.dataset.status = 'closed';
+            navbar.dataset.status = 'closed';
             document.body.style.overflowY = 'auto';
         } else {
-            navbarElement.dataset.status = 'open';
+            navbar.dataset.status = 'open';
             document.body.style.overflowY = 'hidden';
         }
     });
 
-    navbarElementClose.addEventListener('click', function () {
-        navbarElement.dataset.status = 'closed';
+    navbarClose.addEventListener('click', function () {
+        navbar.dataset.status = 'closed';
         document.body.style.overflowY = 'auto';
     });
 
-    navbarElementClose.addEventListener('keydown', function (e) {
+    navbarClose.addEventListener('keydown', function (e) {
         if (e.code !== 'Escape') {
             return;
         }
 
-        navbarElement.dataset.status = 'closed';
+        navbar.dataset.status = 'closed';
         document.body.style.overflowY = 'auto';
     });
 });
