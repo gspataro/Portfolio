@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Navigation
 
     const header = document.getElementById('header');
+    const navbar = document.getElementById('navbar');
     const main = document.getElementsByTagName('main')[0];
     const sections = main.getElementsByTagName('section');
     const navNext = document.getElementsByClassName('next-section');
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
     {
         const section = sections[number];
 
-        if (!section) {
+        if (!section || navbar.dataset.status == 'open') {
             return;
         }
 
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function nextSection()
     {
-        if (currentSection >= (sections.length - 1)) {
+        if (currentSection >= (sections.length - 1) || navbar.dataset.status == 'open') {
             return;
         }
 
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function prevSection()
     {
-        if (currentSection <= 0) {
+        if (currentSection <= 0 || navbar.dataset.status == 'open') {
             return;
         }
 
