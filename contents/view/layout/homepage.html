@@ -9,9 +9,9 @@
         {%include './components/header.html' with {
             'style': 'pianoforte',
             'large_container': true,
-            'class': 'absolute top left right z-10'
+            'class': 'sticky top z-10 tablet-h:absolute tablet-h:left tablet-h:right'
         }%}
-        <main class="grid grid-cols-[repeat(3,100vw)] items-start snap-mandatory snap-x overflow-y-hidden overflow-x-scroll scrollbar-hide">
+        <main class="items-start tablet-h:grid tablet-h:grid-cols-[repeat(3,100vw)] tablet-h:snap-mandatory tablet-h:snap-x tablet-h:overflow-y-hidden tablet-h:overflow-x-scroll tablet-h:scrollbar-hide">
             {%block main%}
             {%endblock%}
         </main>
