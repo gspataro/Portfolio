@@ -7,27 +7,53 @@ document.addEventListener('DOMContentLoaded', function () {
     const navNext = document.getElementsByClassName('next-section');
     const navPrev = document.getElementsByClassName('prev-section');
     let currentSection = 0;
+    let arrowKeyLock = false;
 
     // Setup current section based on scroll position
     currentSection = main.scrollLeft / main.offsetWidth;
     goToSection(currentSection);
 
+    // Update current section based on scroll snap
+    main.addEventListener('scroll', function () {
+        currentSection = Math.round(main.scrollLeft / main.offsetWidth);
+        setupSection(currentSection);
+    });
+
     // Arrow keys navigation
     document.addEventListener('keydown', function (e) {
-        if (!e.code === 'ArrowRight' && !e.code === 'ArrowLeft') {
+        if (e.code !== 'ArrowLeft' && e.code !== 'ArrowRight') {
             return;
         }
 
+        if (arrowKeyLock) {
+            return;
+        }
+
+        e.preventDefault();
+
         switch (e.code) {
             case 'ArrowRight':
-                currentSection = currentSection < (sections.length - 1) ? currentSection + 1 : currentSection;
+                nextSection();
                 break;
             case 'ArrowLeft':
-                currentSection = currentSection > 0 ? currentSection - 1 : currentSection;
+                prevSection();
                 break;
         }
 
-        goToSection(currentSection);
+        arrowKeyLock = true;
+    });
+
+    // Reset arrow keys
+    document.addEventListener('keyup', function (e) {
+        if (e.code !== 'ArrowLeft' && e.code !== 'ArrowRight') {
+            return;
+        }
+
+        if (!arrowKeyLock) {
+            return;
+        }
+
+        arrowKeyLock = false;
     });
 
     // Navigation
@@ -49,6 +75,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /**
+     * Setup a section
+     *
+     * @param number
+     * @return void
+     */
+
+    function setupSection(number)
+    {
+        const section = sections[number];
+
+        if (!section) {
+            return;
+        }
+
+        // Change header style based on section style
+        header.dataset.style = section.dataset.style;
+    }
+
+    /**
      * Go to a specific section
      *
      * @param number
@@ -58,16 +103,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function goToSection(number) {
         const section = sections[number];
 
-        if (section.length < 1) {
+        if (!sections[number]) {
             return;
         }
 
-        // Change header style based on section style
-        header.dataset.style = section.dataset.style;
+        setupSection(number);
 
-        main.scrollTo({
-            left: window.innerWidth * number,
-            behavior: 'smooth'
+        section.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'start'
         });
     }
 

@@ -228,6 +228,13 @@ module.exports = {
             },
             '.writing-v-rl': {
                 'writing-mode': 'vertical-rl'
+            },
+            '.scrollbar-hide': {
+                'scrollbar-width': 'none',
+                '-ms-overflow-style': 'none',
+                '&::-webkit-scrollbar': {
+                    'display': 'none'
+                }
             }
         })
     })
