@@ -1,12 +1,11 @@
-<header id="header" class="{%if not transparent%}bg-thunder-darkest{%endif%} {%if sticky%}sticky top z-20{%endif%} {{class}} group/header" data-style="{{style}}">
+<header id="header" class="bg-thunder-darkest {%if sticky%}sticky top z-20{%endif%} {{class}} data-[style=pianoforte]:bg-transparent data-[style=fortepiano]:bg-transparent group/header" data-style="{{style ?? 'default'}}">
     <div class="h-[--header-height] container flex items-center {%if large_container%}max-w-[1600px]{%endif%}">
         <a href="{{url('index')}}">
-            <img src="{{website.url}}/assets/images/logo.svg" alt="Giuseppe Spataro" aria-label="Giuseppe Spataro" class="logo {%if not transparent%}hidden{%endif%} group-data-[style=pianoforte]/header:block group-data-[style=fortepiano]/header:hidden">
-            <img src="{{website.url}}/assets/images/logo-light.svg" alt="Giuseppe Spataro" aria-label="Giuseppe Spataro" class="logo {%if transparent%}hidden{%endif%} group-data-[style=pianoforte]/header:hidden group-data-[style=fortepiano]/header:block">
+            <img src="{{website.url}}/assets/images/logo.svg" alt="Giuseppe Spataro" aria-label="Giuseppe Spataro" class="logo hidden group-data-[style=pianoforte]/header:block group-data-[style=fortepiano]/header:hidden">
+            <img src="{{website.url}}/assets/images/logo-light.svg" alt="Giuseppe Spataro" aria-label="Giuseppe Spataro" class="logo group-data-[style=default]:block group-data-[style=pianoforte]/header:hidden group-data-[style=fortepiano]/header:block">
         </a>
         <div class="flex-1"></div>
         {%include './components/navbar.html' with {
-            'inverted': navbar_dark,
             'items': {
                 'blog': {
                     'label': 'Blog',
