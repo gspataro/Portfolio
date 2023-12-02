@@ -33,11 +33,15 @@
                         group-data-[style=fortepiano]/section:rotate-180
                         laptop-sm:text-biggest
                         laptop-lg:text-huge">
-                        {{heading}}
+                        {%block heading%}
+                            {{heading}}
+                        {%endblock%}
                     </h2>
-                    <p class="flex-1 group-data-[style=pianoforte]/section:self-end">
-                        {{description}}
-                    </p>
+                    <div class="flex-1 group-data-[style=pianoforte]/section:self-end">
+                        {%block description%}
+                            {{description}}
+                        {%endblock%}
+                    </div>
                 </div>
                 <div class="self-end grid grid-cols-2 group-data-[style=pianoforte]/section:-order-1 group-data-[style=pianoforte]/section:self-start">
                     <span class="prev-section justify-self-start cursor-pointer group-first/section:hidden">
