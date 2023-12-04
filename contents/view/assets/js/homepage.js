@@ -9,15 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const navPrev = document.getElementsByClassName('prev-section');
     let currentSection = 0;
     let arrowKeyLock = false;
-    let bigScreen = window.screen.width >= 1024;
 
     // Setup current section based on scroll position
     currentSection = main.scrollLeft / main.offsetWidth;
     goToSection(currentSection);
-
-    if (!bigScreen) {
-        header.dataset.style = 'default';
-    }
 
     // Update current section based on scroll snap
     main.addEventListener('scroll', function () {
@@ -28,10 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Arrow keys navigation
     document.addEventListener('keydown', function (e) {
         if (e.code !== 'ArrowLeft' && e.code !== 'ArrowRight') {
-            return;
-        }
-
-        if (!bigScreen) {
             return;
         }
 
@@ -81,12 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Reset position on screen resize
     window.addEventListener('resize', function () {
-        bigScreen = window.screen.width >= 1024;
         goToSection(currentSection);
-
-        if (!bigScreen) {
-            header.dataset.style = 'default';
-        }
     });
 
     /**
@@ -98,10 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function setupSection(number)
     {
-        if (!bigScreen) {
-            return;
-        }
-
         const section = sections[number];
 
         if (!section || navbar.dataset.status == 'open') {
@@ -110,6 +92,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Change header style based on section style
         header.dataset.style = section.dataset.style;
+
+        // Change main height based on section height
+        main.style.height = section.offsetHeight + 'px';
     }
 
     /**
@@ -120,10 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
      */
 
     function goToSection(number) {
-        if (!bigScreen) {
-            return;
-        }
-
         const section = sections[number];
 
         if (!sections[number]) {
@@ -146,10 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function nextSection()
     {
-        if (!bigScreen) {
-            return;
-        }
-
         if (currentSection >= (sections.length - 1) || navbar.dataset.status == 'open') {
             return;
         }
@@ -166,10 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function prevSection()
     {
-        if (!bigScreen) {
-            return;
-        }
-
         if (currentSection <= 0 || navbar.dataset.status == 'open') {
             return;
         }
