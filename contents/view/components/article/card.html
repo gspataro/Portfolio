@@ -1,17 +1,17 @@
 <article class="
-    data-[layout=horizontal]:grid
-    data-[layout=horizontal]:grid-cols-2
-    data-[layout=horizontal]:gap-sm
+    tablet-v:data-[layout=horizontal]:grid
+    tablet-v:data-[layout=horizontal]:grid-cols-2
+    tablet-v:data-[layout=horizontal]:gap-sm
     group/article
     {{class}}" data-layout="{{layout ?? 'vertical'}}">
     <figure class="
-        group-data-[layout=horizontal]/article:col-start-1
+        tablet-v:group-data-[layout=horizontal]/article:col-start-1
         mb-xs">
         <a href="{{url('article.' ~ id)}}">
             <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}" class="rounded-lg">
         </a>
     </figure>
-    <div class="group-data-[layout=horizontal]/article:col-start-2">
+    <div class="tablet-v:group-data-[layout=horizontal]/article:col-start-2">
         <header class="mb-3xs">
             <h3>
                 <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">

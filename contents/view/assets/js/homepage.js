@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Navigation
-
     const header = document.getElementById('header');
     const navbar = document.getElementById('navbar');
     const main = document.getElementsByTagName('main')[0];
     const sections = main.getElementsByTagName('section');
     const navNext = document.getElementsByClassName('next-section');
     const navPrev = document.getElementsByClassName('prev-section');
+    const projectsSection = document.getElementById('projects');
+    const projects = projectsSection.getElementsByTagName('article');
     let currentSection = 0;
     let arrowKeyLock = false;
 
     // Setup current section based on scroll position
     currentSection = main.scrollLeft / main.offsetWidth;
-    goToSection(currentSection);
+    //goToSection(currentSection);
 
     // Update current section based on scroll snap
     main.addEventListener('scroll', function () {
@@ -73,7 +73,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // Reset position on screen resize
     window.addEventListener('resize', function () {
         goToSection(currentSection);
+
+        if (window.screen.width < 1024 && projects) {
+            for (let i = 0; i < projects.length; i++) {
+                projects[i].dataset.style = 'light';
+            }
+        } else {
+            for (let i = 0; i < projects.length; i++) {
+                projects[i].dataset.style = 'dark';
+            }
+        }
     });
+
+    window.dispatchEvent(new Event('resize'));
 
     /**
      * Setup a section

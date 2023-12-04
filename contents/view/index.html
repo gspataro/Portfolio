@@ -28,28 +28,8 @@
         {%endblock%}
     {%endembed%}
     {%embed './components/home/section.html' with {
-        'id': 'blog',
-        'style': 'fortepiano',
-        'heading': 'BLOG',
-        'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.'
-    }%}
-        {%block content%}
-            <div class="grid grid-cols-2 gap-lg">
-                {%for id, article in articles%}
-                    {%include './components/article/card.html' with {
-                        'id': id,
-                        'article': article,
-                        'articles_cats': articles_cats,
-                        'class': 'first:col-span-2',
-                        'layout': loop.first ? 'horizontal' : 'vertical',
-                        'excerpt': loop.first
-                    } only%}
-                {%endfor%}
-            </div>
-        {%endblock%}
-    {%endembed%}
-    {%embed './components/home/section.html' with {
         'id': 'projects',
+        'style': 'fortepiano',
         'heading': 'PROGETTI',
         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt maiores similique in sapiente aspernatur! Rem, laboriosam beatae vel voluptate et eius eveniet sapiente est. Quia fugit totam ut provident magnam.'
     }%}
@@ -66,6 +46,26 @@
                         'id': id,
                         'project': project,
                         'class': 'laptop-lg:w-2/3 laptop-lg:even:justify-self-end'
+                    } only%}
+                {%endfor%}
+            </div>
+        {%endblock%}
+    {%endembed%}
+    {%embed './components/home/section.html' with {
+        'id': 'blog',
+        'heading': 'BLOG',
+        'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.'
+    }%}
+        {%block content%}
+            <div class="grid tablet-v:grid-cols-2 gap-lg">
+                {%for id, article in articles%}
+                    {%include './components/article/card.html' with {
+                        'id': id,
+                        'article': article,
+                        'articles_cats': articles_cats,
+                        'class': 'tablet-v:first:col-span-2',
+                        'layout': loop.first ? 'horizontal' : 'vertical',
+                        'excerpt': loop.first
                     } only%}
                 {%endfor%}
             </div>

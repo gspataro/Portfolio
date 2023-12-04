@@ -1,19 +1,19 @@
-<article class="flex flex-col border-thunder-darkest border-2 p-md {{class}}">
+<article class="flex flex-col border-thunder-darkest border-2 p-md {{class}} data-[style=light]:border-thunder group" data-style="{{style}}">
     <header class="mb-2xs">
         <h3>
-            <a href="{{url('project.' ~ id)}}" class="text-thunder-darkest no-underline">
+            <a href="{{url('project.' ~ id)}}" class="text-thunder-darkest no-underline group-data-[style=light]:text-ablescent-lightest">
                 {{project.frontmatter.name}}
             </a>
         </h3>
     </header>
-    <p class="mb-sm">
+    <p class="mb-sm group-data-[style=light]:text-ablescent-lightest">
         {{project.frontmatter.description}}
     </p>
     <div class="flex-1"></div>
     <div class="flex gap-3xs items-center">
         {%include './components/project/links.html'%}
         <div class="flex-1"></div>
-        <a href="{{url('project.' ~ id)}}" class="font-normal no-underline">
+        <a href="{{url('project.' ~ id)}}" class="font-normal no-underline group-data-[style=light]:text-brass">
             &lt;apri progetto /&gt;
         </a>
     </div>
