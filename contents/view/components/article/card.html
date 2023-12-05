@@ -1,18 +1,21 @@
 <article class="
-    tablet-v:data-[layout=horizontal]:grid
+    bg-ablescent-lighter
+    shadow-ablescent-dark
+    shadow-lg
+    rounded-lg
+    grid
+    grid-rows-[auto_1fr]
     tablet-v:data-[layout=horizontal]:grid-cols-2
     tablet-v:data-[layout=horizontal]:gap-sm
     group/article
     {{class}}" data-layout="{{layout ?? 'vertical'}}">
-    <figure class="
-        tablet-v:group-data-[layout=horizontal]/article:col-start-1
-        mb-xs">
+    <figure class="tablet-v:group-data-[layout=horizontal]/article:col-start-1">
         <a href="{{url('article.' ~ id)}}">
             <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}" class="rounded-lg">
         </a>
     </figure>
-    <div class="tablet-v:group-data-[layout=horizontal]/article:col-start-2">
-        <header class="mb-3xs">
+    <div class="flex flex-col p-xs tablet-v:group-data-[layout=horizontal]/article:col-start-2">
+        <header class="mb-xs">
             <h3>
                 <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">
                     {{article.frontmatter.title}}
@@ -24,6 +27,7 @@
                 {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
             </p>
         {%endif%}
+        <div class="flex-1"></div>
         <div class="flex gap-3xs items-center">
             {%if article.frontmatter.categories%}
                 <ul class="flex">

@@ -57,7 +57,7 @@
         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.'
     }%}
         {%block content%}
-            <div class="grid gap-lg tablet-v:grid-cols-2 laptop-sm:gap-xl">
+            <div class="grid gap-lg tablet-v:grid-cols-2">
                 {%for id, article in articles%}
                     {%include './components/article/card.html' with {
                         'id': id,
