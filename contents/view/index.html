@@ -57,15 +57,13 @@
         'description': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, ipsum. Eos, dolor et aliquid amet, quod architecto iure placeat libero quam illum excepturi obcaecati ipsam temporibus accusamus beatae? Officiis, est.'
     }%}
         {%block content%}
-            <div class="grid tablet-v:grid-cols-2 gap-lg">
+            <div class="grid gap-lg tablet-v:grid-cols-2 laptop-sm:gap-xl">
                 {%for id, article in articles%}
                     {%include './components/article/card.html' with {
                         'id': id,
                         'article': article,
                         'articles_cats': articles_cats,
-                        'class': 'tablet-v:first:col-span-2',
-                        'layout': loop.first ? 'horizontal' : 'vertical',
-                        'excerpt': loop.first
+                        'class': 'tablet-v:col-start-1 tablet-v:even:col-start-2 tablet-v:even:row-span-2 tablet-v:even:self-center'
                     } only%}
                 {%endfor%}
             </div>
