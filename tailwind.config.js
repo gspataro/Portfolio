@@ -154,27 +154,33 @@ module.exports = {
             },
             h1: {
                 fontSize: theme('fontSize.3xl'),
-                fontWeight: 400
+                fontWeight: 400,
+                lineHeight: 1.2
             },
             h2: {
                 fontSize: theme('fontSize.2xl'),
-                fontWeight: 400
+                fontWeight: 400,
+                lineHeight: 1.2
             },
             h3: {
                 fontSize: theme('fontSize.xl'),
-                fontWeight: 400
+                fontWeight: 400,
+                lineHeight: 1.2
             },
             h4: {
                 fontSize: theme('fontSize.lg'),
-                fontWeight: 400
+                fontWeight: 400,
+                lineHeight: 1.2
             },
             h5: {
                 fontSize: theme('fontSize.md'),
-                fontWeight: 400
+                fontWeight: 400,
+                lineHeight: 1.2
             },
             h6: {
                 fontSize: theme('fontSize.sm'),
-                fontWeight: 400
+                fontWeight: 400,
+                lineHeight: 1.2
             },
             a: {
                 color: theme('colors.stiletto.DEFAULT'),
