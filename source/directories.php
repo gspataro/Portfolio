@@ -42,6 +42,12 @@ define("DIR_DATA", DIR_CONTENTS . "/data");
 define("DIR_LANGS", DIR_CONTENTS . "/languages");
 
 /**
+ * Media dir: /contents/media
+ */
+
+define('DIR_MEDIA', DIR_CONTENTS . '/media');
+
+/**
  * View dir: /contents/view
  */
 

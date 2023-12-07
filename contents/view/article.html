@@ -45,7 +45,7 @@
             </div>
             {%if article.frontmatter.thumbnail%}
                 <figure class="mt-lg laptop-sm:mt laptop-sm:flex-1">
-                    <img src="{{website.url}}/assets/images/{{article.frontmatter.thumbnail}}" alt="{{article.frontmatter.title}}">
+                    <img src="{{media(article.frontmatter.thumbnail, 'large')}}" alt="{{article.frontmatter.title}}">
                 </figure>
             {%endif%}
         </header>

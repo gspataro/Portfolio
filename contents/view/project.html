@@ -29,11 +29,7 @@
             }} only%}
         </header>
         <div class="prose">
-            {%if project.frontmatter.twig%}
-                {{include(template_from_string(project.content))}}
-            {%else%}
-                {{project.content|raw}}
-            {%endif%}
+            {{include(template_from_string(project.content))}}
         </div>
     </article>
 {%endblock%}

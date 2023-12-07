@@ -7,6 +7,7 @@ use GSpataro\Project\Prototype;
 use GSpataro\Finder\Researcher;
 use GSpataro\CLI\Helper\Stopwatch;
 use GSpataro\Assets\Handler as Assets;
+use GSpataro\Assets\Media;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Pages\GeneratorsCollection;
 use GSpataro\Contractor\BuildersCollection;
@@ -17,6 +18,7 @@ final class BuildCommand extends BaseCommand
     protected ?string $description = 'Run the build process';
 
     private readonly Pages $pages;
+    private readonly Media $media;
     private readonly Assets $assets;
     private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
@@ -35,6 +37,7 @@ final class BuildCommand extends BaseCommand
         $this->builders = $this->app->get('contractor.builders');
         $this->pages = $this->app->get('pages.collection');
         $this->assets = $this->app->get('assets.handler');
+        $this->media = $this->app->get('assets.media');
         $this->stopwatch = $this->app->get('cli.stopwatch');
         $this->researcher = $this->app->get('finder.researcher');
 
@@ -166,6 +169,14 @@ final class BuildCommand extends BaseCommand
 
     private function copyAssets(): void
     {
+        $this->output->print('{bold}Generating media');
+
+        $mediaFiles = glob(DIR_MEDIA . '/*.{jpg,jpeg,png}', GLOB_BRACE);
+
+        foreach ($mediaFiles as $mediaFile) {
+            $this->media->resizeMedia($mediaFile);
+        }
+
         $this->output->print('{bold}Copying assets');
 
         $this->assets->compile();

@@ -38,11 +38,18 @@ final class TwigSitemap extends AbstractExtension
         return $url . $separator . $path;
     }
 
+    public function media($file, $size)
+    {
+        $url = $this->blueprint->get('website.url');
+        return $url . '/media/' . $size . '/' . $file;
+    }
+
     public function getFunctions()
     {
         $functions = [];
 
         $functions[] = new TwigFunction('url', [$this, 'url']);
+        $functions[] = new TwigFunction('media', [$this, 'media']);
 
         return $functions;
     }
