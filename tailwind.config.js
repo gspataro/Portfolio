@@ -50,14 +50,14 @@ module.exports = {
             "darker": "#D77219",
             "darkest": "#B45F14"
         },
-        "ablescent": {
-            "lightest": "#f9f2e2",
-            "lighter": "#f8f1dd",
-            "light": "#f7efd9",
-            DEFAULT: "#F6EDD5",
-            "dark": "#ddd5c0",
-            "darker": "#c5beaa",
-            "darkest": "#aca695"
+        "ivory": {
+            "lightest": "#FFFFF8",
+            "lighter": "#FFFFF5",
+            "light": "#FFFFF2",
+            DEFAULT: "#FFFFF0",
+            "dark": "#E6E6D8",
+            "darker": "#CCCCC0",
+            "darkest": "#B3B3A8"
         }
     },
     spacing: {
@@ -147,7 +147,7 @@ module.exports = {
     plugin(function({addBase, addComponents, addUtilities, theme}) {
         addBase({
             body: {
-                backgroundColor: theme('colors.ablescent.lightest'),
+                backgroundColor: theme('colors.ivory.lightest'),
                 color: theme('colors.thunder.darkest'),
                 fontSize: theme('fontSize.DEFAULT'),
                 fontWeight: 300

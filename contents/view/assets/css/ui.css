@@ -189,7 +189,7 @@
      */
 
     .btn-retro {
-        background-color: theme('colors.ablescent.lightest');
+        background-color: theme('colors.ivory.lightest');
         padding: theme('spacing.2xs') theme('spacing.xs');
         border: theme('borderWidth.2') solid theme('colors.thunder.darkest');
         display: inline-block;
@@ -201,7 +201,7 @@
 
     .btn-retro:hover {
         background-color: theme('colors.stiletto.DEFAULT');
-        color: theme('colors.ablescent.lightest');
+        color: theme('colors.ivory.lightest');
     }
 
     .btn-retro::after {
@@ -215,7 +215,7 @@
     }
 
     .btn-retro:hover::after {
-        background-color: theme('colors.ablescent.lightest');
+        background-color: theme('colors.ivory.lightest');
     }
 }
 
