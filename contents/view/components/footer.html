@@ -1,17 +1,18 @@
-<footer class="bg-ivory-lightest border-thunder-darkest border-t-2">
-    <div class="container grid grid-cols-1 gap-md items-center py-lg tablet-v:w-1/2 tablet-h:w-full tablet-h:grid-cols-3 tablet-h:items-start">
-        <div class="tablet-h:w-auto">
-            <p class="font-normal uppercase mb-xs text-center tablet-h:text-left">Contattami</p>
-            <p class="text-center tablet-h:text-left">
-                Scrivimi a <a href="mailto:gspatarodev@gmail.com">gspatarodev@gmail.com</a>, sarò felice di rispondere a qualsiasi domanda.
-            </p>
+<footer id="footer" class="-mt-lg z-10 relative">
+    <div class="bg-stiletto rounded-3xl p-lg">
+        <div class="container {%if large_container%}max-w-[1600px]{%endif%}">
+            <a href="mailto:gspatarodev@gmail.com" class="text-ivory-lightest text-big">Scrivimi a gspatarodev@gmail.com</a>
         </div>
-        <div>
-            <p class="font-normal uppercase mb-xs text-center">Seguimi sui Social</p>
-            {%include './components/social.html'%}
-        </div>
-        <div class="text-center tablet-h:text-right">
-            &copy; 2023 Giuseppe Spataro.
+    </div>
+    <div class="py-md">
+        <div class="container flex {%if large_container%}max-w-[1600px]{%endif%}">
+            <div>
+                &copy; 2024 Giuseppe Spataro.
+            </div>
+            <div class="flex-1"></div>
+            <div>
+                {%include './components/social.html'%}
+            </div>
         </div>
     </div>
 </footer>

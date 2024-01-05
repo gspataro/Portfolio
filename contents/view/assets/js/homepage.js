@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
+    const footer = document.getElementById('footer');
     const navbar = document.getElementById('navbar');
     const main = document.getElementsByTagName('main')[0];
     const sections = main.getElementsByTagName('section');
