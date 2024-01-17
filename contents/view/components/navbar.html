@@ -1,11 +1,15 @@
 <nav>
+    <!-- WRAPPER -->
     <ul class="flex gap-sm">
         {%for id, item in items%}
+            <!-- ITEM -->
             <li class="text-[24px] font-oswald font-normal uppercase">
-                <a href="{{item.url}}" class="text-ivory-lightest no-underline">
+                <a href="{{item.url}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]/header:text-ivory-lightest">
                     {{item.label}}
                 </a>
             </li>
+            <!-- END ITEM -->
         {%endfor%}
     </ul>
+    <!-- END WRAPPER -->
 </nav>
