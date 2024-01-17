@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     fontFamily: {
         "sans": ['Roboto', 'Sans-Serif', 'Arial'],
-        "roboto-flex": ['Roboto Flex', 'Roboto', 'Sans-Serif', 'Arial']
+        "roboto": ['Roboto', 'Sans-Serif', 'Arial'],
+        "roboto-flex": ['Roboto Flex', 'Sans-Serif', 'Arial'],
+        "oswald": ['Oswald', 'Sans-Serif', 'Arial']
     },
     colors: {
         "transparent": "transparent",
@@ -24,22 +26,13 @@ module.exports = {
 
         },
         "stiletto": {
-            "lightest": "#cd625f",
-            "lighter": "#c44441",
-            "light": "#b13735",
-            DEFAULT: "#9a2e2c",
+            "lightest": "#CD625F",
+            "lighter": "#C44441",
+            "light": "#B13735",
+            DEFAULT: "#9A2E2C",
             "dark": "#882826",
-            "darker": "#7c2523",
-            "darkest": "#6c2220"
-        },
-        "fawn": {
-            "lightest": "#ac7e6d",
-            "lighter": "#a16b58",
-            "light": "#955943",
-            DEFAULT: "#89462E",
-            "dark": "#7b3f29",
-            "darker": "#6e3825",
-            "darkest": "#603120"
+            "darker": "#7C2523",
+            "darkest": "#6C2220"
         },
         "brass": {
             "lightest": "#F9D5B6",
@@ -61,32 +54,40 @@ module.exports = {
         }
     },
     spacing: {
-        DEFAULT: "0",
-        "3xs": "0.25rem",
-        "2xs": "0.5rem",
-        "xs": "1rem",
-        "sm": "1.5rem",
-        "md": "2rem",
-        "lg": "3rem",
-        "xl": "5rem",
-        "2xl": "7rem",
-        "3xl": "9rem"
+        "none": "0",
+        "5xs": "4px",
+        "4xs": "6px",
+        "3xs": "12px",
+        "2xs": "16px",
+        "xs": "22px",
+        "sm": "32px",
+        "md": "44px",
+        "lg": "56px",
+        "xl": "72px",
+        "2xl": "90px",
+        "3xl": "110px",
+        "4xl": "130px",
+        "5xl": "150px"
     },
     fontSize: {
-        DEFAULT: "1.125rem",
-        "huge": "7.5rem",
-        "biggest": "6rem",
-        "bigger": "5rem",
-        "big": "3rem",
-        "3xl": "2.2rem",
-        "2xl": "2rem",
-        "xl": "1.6rem",
-        "lg": "1.4rem",
-        "md": "1.250rem",
-        "sm": "1.125rem",
-        "xs": "1rem",
-        "2xs": "0.9rem",
-        "3xs": "0.8rem"
+        "3xl": "120px",
+        "2xl": "86px",
+        "xl": "70px",
+        "lg": "48px",
+        "md": "38px",
+        "sm": "18px",
+        DEFAULT: "16px",
+        "xs": "14px",
+        "2xs": "12px",
+        "3xs": "10px",
+        "h1": "40px",
+        "h2": "36px",
+        "h3": "34px",
+        "h4": "28px",
+        "h5": "26px",
+        "h6": "24px",
+        "s1": "22px",
+        "s2": "20px"
     },
     screens: {
         "tablet-v": "768px",
@@ -98,9 +99,9 @@ module.exports = {
     container: {
         center: true,
         padding: {
-            DEFAULT: "1rem",
-            "tablet": "1.5rem",
-            "desktop": "2rem"
+            DEFAULT: "16px",
+            "tablet": "32px",
+            "desktop": "64px"
         },
         screens: {
             "tablet-v": "768px",
@@ -109,39 +110,7 @@ module.exports = {
             "laptop-lg": "1200px",
             "desktop": "1200px"
         }
-    },
-    extend: {
-        animation: {
-            nogravity: 'nogravity 25s linear infinite',
-            nogravitynegative: 'nogravitynegative 25s linear infinite'
-        },
-        keyframes: {
-            nogravity: {
-                "0%": {
-                    transform: "translateY(0) translateX(0) rotate(0deg)",
-                    opacity: 1,
-                    "border-radius": 0
-                },
-                "100%": {
-                    transform: "translateY(-1000px) translateX(500px) rotate(720deg)",
-                    opacity: 0,
-                    "border-radius": 5
-                }
-            },
-            nogravitynegative: {
-                "0%": {
-                    transform: "translateY(0) translateX(0) rotate(0deg)",
-                    opacity: 1,
-                    "border-radius": 0
-                },
-                "100%": {
-                    transform: "translateY(-1000px) translateX(-500px) rotate(720deg)",
-                    opacity: 0,
-                    "border-radius": 5
-                }
-            }
-        }
-    },
+    }
   },
   plugins: [
     plugin(function({addBase, addComponents, addUtilities, theme}) {
@@ -149,38 +118,82 @@ module.exports = {
             body: {
                 backgroundColor: theme('colors.ivory.lightest'),
                 color: theme('colors.thunder.darkest'),
+                fontFamily: theme('fontFamily.roboto'),
                 fontSize: theme('fontSize.DEFAULT'),
                 fontWeight: 300
             },
             h1: {
-                fontSize: theme('fontSize.3xl'),
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.h1'),
                 fontWeight: 400,
-                lineHeight: 1.2
+                lineHeight: "46px"
             },
             h2: {
-                fontSize: theme('fontSize.2xl'),
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.h2'),
                 fontWeight: 400,
-                lineHeight: 1.2
+                lineHeight: "40px"
             },
             h3: {
-                fontSize: theme('fontSize.xl'),
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.h3'),
                 fontWeight: 400,
-                lineHeight: 1.2
+                lineHeight: "38px"
             },
             h4: {
-                fontSize: theme('fontSize.lg'),
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.h4'),
                 fontWeight: 400,
-                lineHeight: 1.2
+                lineHeight: "32px"
             },
             h5: {
-                fontSize: theme('fontSize.md'),
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.h5'),
                 fontWeight: 400,
-                lineHeight: 1.2
+                lineHeight: "30px"
             },
             h6: {
-                fontSize: theme('fontSize.sm'),
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.h6'),
                 fontWeight: 400,
-                lineHeight: 1.2
+                lineHeight: "26px"
+            },
+            ".subtitle-1": {
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.s1'),
+                fontWeight: 400,
+                lineHeight: "1.5rem"
+            },
+            ".subtitle-2": {
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.s2'),
+                fontWeight: 400,
+                lineHeight: "1.375rem"
+            },
+            ".text-huge": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.3xl'),
+                fontWeight: 400
+            },
+            ".text-biggest": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.2xl'),
+                fontWeight: 400
+            },
+            ".text-bigger": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.xl'),
+                fontWeight: 400
+            },
+            ".text-big": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.lg'),
+                fontWeight: 400
+            },
+            ".text-medium": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.md'),
+                fontWeight: 400
             },
             a: {
                 color: theme('colors.stiletto.DEFAULT'),
@@ -191,8 +204,8 @@ module.exports = {
         addComponents({
             ".prose": {
                 "h1, h2, h3, h4, h5, h6": {
-                    marginTop: theme('spacing.md'),
-                    marginBottom: theme('spacing.sm'),
+                    marginTop: theme('spacing.xs'),
+                    marginBottom: theme('spacing.3xs'),
                     "&:first-child": {
                         marginTop: 0
                     },
@@ -201,8 +214,8 @@ module.exports = {
                     }
                 },
                 p: {
-                    marginTop: theme('spacing.xs'),
-                    marginBottom: theme('spacing.xs'),
+                    marginTop: theme('spacing.3xs'),
+                    marginBottom: theme('spacing.3xs'),
                     "&:first-child": {
                         marginTop: 0
                     },
@@ -211,8 +224,8 @@ module.exports = {
                     }
                 },
                 ul: {
-                    marginTop: theme('spacing.xs'),
-                    marginBottom: theme('spacing.xs'),
+                    marginTop: theme('spacing.3xs'),
+                    marginBottom: theme('spacing.3xs'),
                     paddingLeft: '2rem',
                     listStyleType: 'disc',
                     "&:first-child": {
