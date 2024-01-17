@@ -1,9 +1,9 @@
 <nav>
     <!-- WRAPPER -->
-    <ul class="flex gap-sm">
+    <ul class="flex gap-xs desktop:gap-sm">
         {%for id, item in items%}
             <!-- ITEM -->
-            <li class="text-[24px] font-oswald font-normal uppercase">
+            <li class="text-[22px] font-oswald font-normal uppercase desktop:text-[24px]">
                 <a href="{{item.url}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]/header:text-ivory-lightest">
                     {{item.label}}
                 </a>
