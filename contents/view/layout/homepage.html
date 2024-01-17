@@ -6,17 +6,9 @@
     </head>
 
     <body class="homepage overflow-y-auto">
-        {%include './components/header.html' with {
-            'style': 'pianoforte',
-            'large_container': true,
-            'class': 'top z-10 absolute left right'
-        }%}
         <main class="items-start grid grid-cols-[repeat(3,100vw)] snap-mandatory snap-x overflow-y-hidden overflow-x-scroll scrollbar-hide">
             {%block main%}
             {%endblock%}
         </main>
-        {%include './components/footer.html' with {
-            'large_container': true
-        }%}
     </body>
 </html>
