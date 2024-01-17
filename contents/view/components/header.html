@@ -1,29 +1,32 @@
-<header id="header" class="bg-thunder-darkest {%if sticky%}sticky top z-20{%endif%} {{class}} data-[style=pianoforte]:bg-transparent data-[style=fortepiano]:bg-transparent group/header" data-style="{{style ?? 'default'}}">
-    <div class="h-[--header-height] container flex items-center {%if large_container%}max-w-[1600px]{%endif%}">
-        <a href="{{url('index')}}">
-            <img src="{{website.url}}/assets/images/logo.svg" alt="Giuseppe Spataro" aria-label="Giuseppe Spataro" class="logo hidden group-data-[style=pianoforte]/header:block group-data-[style=fortepiano]/header:hidden">
-            <img src="{{website.url}}/assets/images/logo-light.svg" alt="Giuseppe Spataro" aria-label="Giuseppe Spataro" class="logo group-data-[style=default]:block group-data-[style=pianoforte]/header:hidden group-data-[style=fortepiano]/header:block">
-        </a>
-        <div class="flex-1"></div>
-        {%include './components/navbar.html' with {
-            'items': {
-                'blog': {
-                    'label': 'Blog',
-                    'url': url('blog.page-1')
-                },
-                'projects': {
-                    'label': 'Progetti',
-                    'url': url('projects.page-1')
-                },
-                'about': {
-                    'label': 'Chi sono',
-                    'url': '#'
-                },
-                'contacts': {
-                    'label': 'Scrivimi',
-                    'url': 'mailto:gspatarodev@gmail.com'
-                }
-            }
-        }%}
+<header class="bg-thunder-darkest sticky top-0 left-0 bottom-0 w-[100px] h-[100vh]">
+    <div class="h-full w-full writing-v-lr">
+        <div class="flex items-center w-full py-xs">
+            <div class="rotate-180">
+                {%include './components/navbar.html' with {
+                    'items': {
+                        'blog': {
+                            'label': 'Blog',
+                            'url': url('blog.page-1')
+                        },
+                        'projects': {
+                            'label': 'Progetti',
+                            'url': url('projects.page-1')
+                        },
+                        'about': {
+                            'label': 'Chi sono',
+                            'url': '#'
+                        },
+                        'contacts': {
+                            'label': 'Scrivimi',
+                            'url': 'mailto:gspatarodev@gmail.com'
+                        }
+                    }
+                }%}
+            </div>
+            <div class="flex-1"></div>
+            <a href="{{url('index')}}">
+                <img src="{{website.url}}/assets/images/logo-light-vertical.svg" alt="Giuseppe Spataro" aria-label="Homepage">
+            </a>
+        </div>
     </div>
 </header>
