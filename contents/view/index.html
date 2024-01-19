@@ -1,16 +1,23 @@
 {%extends "./layout/homepage.html"%}
 {%block main%}
-    {%embed './components/home/section.html'%}
+    {%embed './components/home/section.html' with {
+        'label': 'Hero'
+    }%}
         {%block content%}
             Hero
         {%endblock%}
     {%endembed%}
-    {%embed './components/home/section.html' with {'style': 'fortepiano'}%}
+    {%embed './components/home/section.html' with {
+        'style': 'fortepiano',
+        'label': 'Progetti'
+    }%}
         {%block content%}
             Progetti
         {%endblock%}
     {%endembed%}
-    {%embed './components/home/section.html'%}
+    {%embed './components/home/section.html' with {
+        'label': 'Blog'
+    }%}
         {%block content%}
             Blog
         {%endblock%}

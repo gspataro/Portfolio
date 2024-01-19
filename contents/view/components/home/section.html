@@ -1,8 +1,22 @@
-<section class="snap-always snap-start group/section data-[style=fortepiano]:bg-thunder-darkest" data-style="{{style ?? 'pianoforte'}}">
+<section class="snap-always snap-start group/section data-[style=fortepiano]:bg-thunder-darkest data-[style=fortepiano]:text-ivory-lightest" data-style="{{style ?? 'pianoforte'}}">
     <div class="flex h-[100vh]">
         <div class="flex-1">
         </div>
-        <div class="-order-1 desktop:order-1 desktop:w-[300px] desktop:bg-thunder-darkest desktop:group-data-[style=fortepiano]/section:bg-ivory-lightest">
-        </div>
+        {%block sidebar%}
+            <div class="
+                -order-1
+                desktop:order-1
+                desktop:w-[300px]
+                desktop:bg-thunder-darkest
+                desktop:text-ivory-lightest
+                desktop:group-data-[style=fortepiano]/section:bg-ivory-lightest
+                desktop:group-data-[style=fortepiano]/section:text-thunder-darkest">
+                {%block sidebar_label%}
+                    <div class="writing-v-lr">
+                        {{label}}
+                    </div>
+                {%endblock%}
+            </div>
+        {%endblock%}
     </div>
 </section>
