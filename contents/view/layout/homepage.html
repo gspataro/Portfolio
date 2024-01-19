@@ -7,9 +7,11 @@
 
     <body class="homepage overflow-y-auto">
         {%include './components/header.html'%}
-        <main class="items-start grid grid-cols-[repeat(3,100vw)] snap-mandatory snap-x overflow-y-hidden overflow-x-scroll scrollbar-hide">
-            {%block main%}
-            {%endblock%}
-        </main>
+        <div class="pl-[--header-height]">
+            <main class="items-start grid grid-cols-[repeat(3,100vw)] snap-mandatory snap-x overflow-y-hidden overflow-x-scroll scrollbar-hide">
+                {%block main%}
+                {%endblock%}
+            </main>
+        </div>
     </body>
 </html>
