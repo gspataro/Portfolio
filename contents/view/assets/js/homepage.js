@@ -1,134 +1,46 @@
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
-    const footer = document.getElementById('footer');
-    const navbar = document.getElementById('navbar');
-    const main = document.getElementsByTagName('main')[0];
+    const main = document.getElementById('main');
     const sections = main.getElementsByTagName('section');
-    const navNext = document.getElementsByClassName('next-section');
-    const navPrev = document.getElementsByClassName('prev-section');
-    const projectsSection = document.getElementById('projects');
-    const projects = projectsSection.getElementsByTagName('article');
-    let currentSection = 0;
-    let arrowKeyLock = false;
-
-    // Setup current section based on scroll position
-    currentSection = main.scrollLeft / main.offsetWidth;
-    //goToSection(currentSection);
-
-    // Update current section based on scroll snap
-    main.addEventListener('scroll', function () {
-        currentSection = Math.round(main.scrollLeft / main.offsetWidth);
-        setupSection(currentSection);
-    });
-
-    // Arrow keys navigation
-    document.addEventListener('keydown', function (e) {
-        if (e.code !== 'ArrowLeft' && e.code !== 'ArrowRight') {
-            return;
-        }
-
-        if (arrowKeyLock) {
-            return;
-        }
-
-        e.preventDefault();
-
-        switch (e.code) {
-            case 'ArrowRight':
-                nextSection();
-                break;
-            case 'ArrowLeft':
-                prevSection();
-                break;
-        }
-
-        arrowKeyLock = true;
-    });
-
-    // Reset arrow keys
-    document.addEventListener('keyup', function (e) {
-        if (e.code !== 'ArrowLeft' && e.code !== 'ArrowRight') {
-            return;
-        }
-
-        if (!arrowKeyLock) {
-            return;
-        }
-
-        arrowKeyLock = false;
-    });
-
-    // Navigation
-    for (let i = 0; i < navNext.length; i++) {
-        navNext[i].addEventListener('click', function () {
-            nextSection();
-        });
-    }
-
-    for (let i = 0; i < navPrev.length; i++) {
-        navPrev[i].addEventListener('click', function () {
-            prevSection();
-        });
-    }
-
-    // Reset position on screen resize
-    window.addEventListener('resize', function () {
-        goToSection(currentSection);
-
-        if (window.screen.width < 1024 && projects) {
-            for (let i = 0; i < projects.length; i++) {
-                projects[i].dataset.style = 'light';
-            }
-        } else {
-            for (let i = 0; i < projects.length; i++) {
-                projects[i].dataset.style = 'dark';
-            }
-        }
-    });
-
-    window.dispatchEvent(new Event('resize'));
+    let currentSectionId = 0;
 
     /**
-     * Setup a section
+     * Setup DOM based on section informations
      *
-     * @param number
+     * @param DOMElement section
      * @return void
      */
 
-    function setupSection(number)
+    function setupSection(section)
     {
-        const section = sections[number];
-
-        if (!section || navbar.dataset.status == 'open') {
+        if (!section) {
             return;
         }
 
-        // Change header style based on section style
-        header.dataset.style = section.dataset.style;
+        const sectionStyle = section.dataset.style ?? 'pianoforte';
 
-        // Change main height based on section height
-        main.style.height = section.offsetHeight + 'px';
+        // Update header style based on section
+        header.dataset.style = sectionStyle;
     }
 
     /**
-     * Go to a specific section
+     * Go to a section
      *
-     * @param number
+     * @param int id
      * @return void
      */
 
-    function goToSection(number) {
-        const section = sections[number];
+    function goToSection(id)
+    {
+        const section = sections[id] ?? null;
 
-        if (!sections[number]) {
+        if (!section) {
             return;
         }
 
-        setupSection(number);
-
+        setupSection(section);
         section.scrollIntoView({
-            behavior: 'smooth',
-            inline: 'start'
+            'behavior': 'smooth'
         });
     }
 
@@ -140,12 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function nextSection()
     {
-        if (currentSection >= (sections.length - 1) || navbar.dataset.status == 'open') {
+        const nextSection = currentSectionId + 1;
+
+        if (nextSection > sections.length) {
             return;
         }
 
-        currentSection++;
-        goToSection(currentSection);
+        goToSection(nextSection);
     }
 
     /**
@@ -156,11 +69,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function prevSection()
     {
-        if (currentSection <= 0 || navbar.dataset.status == 'open') {
+        const prevSection = currentSectionId - 1;
+
+        if (prevSection < 0) {
             return;
         }
 
-        currentSection--;
-        goToSection(currentSection);
+        goToSection(prevSection);
     }
+
+    currentSectionId = main.scrollLeft / main.offsetWidth;
+    setupSection(sections[currentSectionId]);
+
+    // Determine current section based on scroll snap
+    main.addEventListener('scroll', function () {
+        currentSectionId = Math.round(main.scrollLeft / main.offsetWidth);
+        setupSection(sections[currentSectionId]);
+    });
 });
