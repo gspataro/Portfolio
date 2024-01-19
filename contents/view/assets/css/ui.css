@@ -248,13 +248,24 @@
      */
 
     :root {
-        --header-height: 80px;
-        --header-outer-height: var(--header-height);
+        --header-height: 50px;
     }
 
     @media screen(tablet-v) {
         :root {
-            --header-height: 90px;
+            --header-height: 60px;
+        }
+    }
+
+    @media screen(tablet-h) {
+        :root {
+            --header-height: 80px;
+        }
+    }
+
+    @media screen(desktop) {
+        :root {
+            --header-height: 100px;
         }
     }
 }
