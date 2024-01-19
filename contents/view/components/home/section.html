@@ -2,6 +2,7 @@
     <div class="flex h-[100vh]">
         <div class="flex-1">
         </div>
+        <!-- SIDEBAR -->
         {%block sidebar%}
             <div class="
                 -order-1
@@ -11,12 +12,22 @@
                 desktop:text-ivory-lightest
                 desktop:group-data-[style=fortepiano]/section:bg-ivory-lightest
                 desktop:group-data-[style=fortepiano]/section:text-thunder-darkest">
-                {%block sidebar_label%}
-                    <div class="writing-v-lr">
-                        {{label}}
-                    </div>
-                {%endblock%}
+                <!-- WRAPPER -->
+                <div class="flex flex-col h-full py-[--container-padding-y]">
+                    <!-- SPACER -->
+                    <div class="flex-1"></div>
+                    <!-- END SPACER -->
+                    <!-- LABEL -->
+                    {%block sidebar_label%}
+                        <div class="writing-v-lr font-oswald font-normal text-2xl uppercase">
+                            {{label}}
+                        </div>
+                    {%endblock%}
+                    <!-- END LABEL -->
+                </div>
+                <!-- END WRAPPER -->
             </div>
         {%endblock%}
+        <!-- END SIDEBAR -->
     </div>
 </section>

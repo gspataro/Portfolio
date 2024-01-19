@@ -249,11 +249,13 @@
 
     :root {
         --header-height: 50px;
+        --container-padding-y: theme('spacing.3xs');
     }
 
     @media screen(tablet-v) {
         :root {
             --header-height: 60px;
+            --container-padding-y: theme('spacing.xs');
         }
     }
 
