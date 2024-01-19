@@ -1,3 +1,18 @@
 {%extends "./layout/homepage.html"%}
 {%block main%}
+    {%embed './components/home/section.html'%}
+        {%block content%}
+            Hero
+        {%endblock%}
+    {%endembed%}
+    {%embed './components/home/section.html' with {'style': 'fortepiano'}%}
+        {%block content%}
+            Progetti
+        {%endblock%}
+    {%endembed%}
+    {%embed './components/home/section.html'%}
+        {%block content%}
+            Blog
+        {%endblock%}
+    {%endembed%}
 {%endblock%}

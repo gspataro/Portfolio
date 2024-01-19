@@ -1,67 +1,8 @@
-<section {%if id%}id="{{id}}"{%endif%} class="
-    snap-always snap-start
-    data-[style=pianoforte]:bg-ivory-lightest
-    data-[style=fortepiano]:bg-thunder-darkest
-    data-[style=pianoforte]:from-65% data-[style=fortepiano]:from-35%
-    data-[style=pianoforte]:from-ivory-lightest data-[style=fortepiano]:from-thunder-darkest
-    data-[style=pianoforte]:to-thunder-darkest data-[style=fortepiano]:to-ivory-lightest
-    data-[style=pianoforte]:to-65% data-[style=fortepiano]:to-35%
-    min-h-[calc(100vh+3rem)]
-    pt-[--header-outer-height]
-    pb-lg
-    flex flex-col
-    tablet-h:bg-gradient-to-r
-    group/section" data-style="{{style ?? 'pianoforte'}}">
-    <div class="
-        flex-1
-        py-lg
-        container
-        max-w-[1600px]
-        flex
-        flex-col-reverse
-        gap-xl
-        tablet-h:flex-row
-        tablet-h:group-data-[style=fortepiano]/section:flex-row-reverse
-        laptop-sm:gap-3xl">
+<section class="snap-always snap-start group/section data-[style=fortepiano]:bg-thunder-darkest" data-style="{{style ?? 'pianoforte'}}">
+    <div class="flex h-[100vh]">
         <div class="flex-1">
-            {%block content%}
-            {%endblock%}
         </div>
-        <div class="basis-[30%] grid text-thunder-darkest group-data-[style=fortepiano]/section:text-ivory-lightest tablet-h:text-ivory-lightest">
-            {%block sidebar%}
-                <div class="flex flex-col gap-xs tablet-h:flex-row">
-                    <h2 class="
-                        text-big
-                        leading-none
-                        tablet-h:text-bigger
-                        tablet-h:text-right
-                        tablet-h:group-data-[style=fortepiano]/section:rotate-180
-                        tablet-h:writing-v-lr
-                        laptop-sm:text-biggest
-                        laptop-lg:text-huge">
-                        {%block heading%}
-                            {{heading}}
-                        {%endblock%}
-                    </h2>
-                    <div class="flex-1 group-data-[style=pianoforte]/section:self-end">
-                        {%block description%}
-                            {{description}}
-                        {%endblock%}
-                    </div>
-                </div>
-                <div class="self-end grid grid-cols-2 group-data-[style=pianoforte]/section:-order-1 group-data-[style=pianoforte]/section:self-start">
-                    <span class="prev-section justify-self-start cursor-pointer group-first/section:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" class="laptop-sm:w-[48px] laptop-sm:h-[48px]">
-                            <path fill="currentColor" d="m10.828 12l4.95 4.95l-1.414 1.415L8 12l6.364-6.364l1.414 1.414l-4.95 4.95Z"/>
-                        </svg>
-                    </span>
-                    <span class="next-section justify-self-end cursor-pointer group-last/section:hidden" class="laptop-sm:w-[48px] laptop-sm:h-[48px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="m13.171 12l-4.95-4.95l1.415-1.413L16 12l-6.364 6.364l-1.414-1.415l4.95-4.95Z"/>
-                        </svg>
-                    </span>
-                </div>
-            {%endblock%}
+        <div class="bg-thunder-darkest w-[300px] group-data-[style=fortepiano]/section:bg-ivory-lightest">
         </div>
     </div>
 </section>
