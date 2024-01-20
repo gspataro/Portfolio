@@ -1,18 +1,32 @@
-<footer id="footer" class="-mt-lg z-10 relative">
-    <div class="bg-stiletto rounded-3xl p-lg">
-        <div class="container {%if large_container%}max-w-[1600px]{%endif%}">
-            <a href="mailto:gspatarodev@gmail.com" class="text-ivory-lightest text-big">Scrivimi a gspatarodev@gmail.com</a>
-        </div>
-    </div>
-    <div class="py-md">
-        <div class="container flex {%if large_container%}max-w-[1600px]{%endif%}">
+<footer class="
+    relative
+    bg-thunder-darkest
+    border-t-[10px]
+    border-t-stiletto
+    text-ivory-lightest
+    after:absolute
+    after:top-0
+    after:left-[calc(50%-15px)]
+    after:border-[24px]
+    after:border-transparent
+    after:border-t-stiletto">
+    <div class="container">
+        <!-- WRAPPER -->
+        <div class="flex py-sm">
+            <!-- CONTACTS -->
             <div>
+                {%include './components/social.html' with {'style': 'fortepiano'}%}
+            </div>
+            <!-- END CONTACTS -->
+            <!-- SPACER -->
+            <div class="flex-1"></div>
+            <!-- END SPACER -->
+            <!-- COPYRIGHT -->
+            <div class="font-normal">
                 &copy; 2024 Giuseppe Spataro.
             </div>
-            <div class="flex-1"></div>
-            <div>
-                {%include './components/social.html'%}
-            </div>
+            <!-- END COPYRIGHT -->
         </div>
+        <!-- END WRAPPER -->
     </div>
 </footer>
