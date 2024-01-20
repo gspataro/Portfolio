@@ -1,3 +1,53 @@
+{%set keys = [
+    {
+        'name': 'C',
+        'frequency': '261.63',
+        'sharp': {
+            'name': 'C#',
+            'frequency': '277.18'
+        }
+    },
+    {
+        'name': 'D',
+        'frequency': '293.66',
+        'sharp': {
+            'name': 'D#',
+            'frequency': '311.13'
+        }
+    },
+    {
+        'name': 'E',
+        'frequency': '329.63'
+    },
+    {
+        'name': 'F',
+        'frequency': '349.23',
+        'sharp': {
+            'name': 'F#',
+            'frequency': '369.99'
+        }
+    },
+    {
+        'name': 'G',
+        'frequency': '392.00',
+        'sharp': {
+            'name': 'G#',
+            'frequency': '415.30'
+        }
+    },
+    {
+        'name': 'A',
+        'frequency': '440.00',
+        'sharp': {
+            'name': 'A#',
+            'frequency': '466.16'
+        }
+    },
+    {
+        'name': 'B',
+        'frequency': '493.88'
+    }
+]%}
 {%embed './components/home/section.html' with {
     'label': 'Pianista'
 }%}
@@ -12,18 +62,18 @@
             <div class="flex-1"></div>
             <!-- END SPACER -->
             <!-- PIANO -->
-            <div class="flex gap-[1px] w-3/4 h-[500px] mx-auto bg-ivory-darkest border-4 border-thunder-darkest">
+            <div id="keyboard" class="flex gap-[1px] w-3/4 h-[500px] mx-auto bg-ivory-darkest border-4 border-thunder-darkest">
                 <!-- KEYS -->
-                {%for i in 0..6%}
-                <!-- WHITE KEY-->
-                <div class="bg-ivory-lightest relative flex-1">
-                    {%if i not in [2, 6, 7]%}
-                        <!-- BLACK KEY -->
-                        <div class="bg-thunder-darkest w-1/2 h-2/3 absolute top-0 -right-1/4 z-10"></div>
-                        <!-- END BLACK KEY -->
+                {%for key in keys%}
+                <!-- WHITE KEY {{key.name}} -->
+                <div class="bg-ivory-lightest relative flex-1 key" data-name="{{key.name}}" data-frequency="{{key.frequency}}">
+                    {%if key.sharp%}
+                        <!-- BLACK KEY {{key.sharp.name}} -->
+                        <div class="bg-thunder-darkest w-1/2 h-2/3 absolute top-0 -right-1/4 z-10 key" data-name="{{key.sharp.name}}" data-frequency="{{key.sharp.frequency}}"></div>
+                        <!-- END BLACK KEY {{key.sharp.name}} -->
                     {%endif%}
                 </div>
-                <!-- END WHITE KEY -->
+                <!-- END WHITE KEY {{key.name}} -->
                 {%endfor%}
                 <!-- END KEYS-->
             </div>
