@@ -97,4 +97,19 @@ document.addEventListener('DOMContentLoaded', function () {
     for (const element of navigationNext) {
         element.addEventListener('click', nextSection);
     }
+
+    // Add arrow keys navigation functionality
+    window.addEventListener('keydown', function (e) {
+        if (e.repeat) {
+            return;
+        }
+
+        if (e.key == 'ArrowRight') {
+            nextSection();
+        }
+
+        if (e.key == 'ArrowLeft') {
+            prevSection();
+        }
+    });
 });
