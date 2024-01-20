@@ -100,9 +100,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add arrow keys navigation functionality
     window.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') {
+            return;
+        }
+
         if (e.repeat) {
             return;
         }
+
+        e.preventDefault();
 
         if (e.key == 'ArrowRight') {
             nextSection();
