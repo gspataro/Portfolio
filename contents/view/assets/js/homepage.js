@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
     const main = document.getElementById('main');
     const sections = main.getElementsByTagName('section');
+    const navigationPrev = main.getElementsByClassName('nav-prev');
+    const navigationNext = main.getElementsByClassName('nav-next');
     let currentSectionId = 0;
 
     /**
@@ -86,4 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
         currentSectionId = Math.round(main.scrollLeft / main.offsetWidth);
         setupSection(sections[currentSectionId]);
     });
+
+    // Apply functionality to prev/next navigation
+    for (const element of navigationPrev) {
+        element.addEventListener('click', prevSection);
+    }
+
+    for (const element of navigationNext) {
+        element.addEventListener('click', nextSection);
+    }
 });
