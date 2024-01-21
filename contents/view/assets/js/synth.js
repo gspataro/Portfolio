@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Setup gain node
     const mainGainNode = audioContext.createGain();
     mainGainNode.connect(audioContext.destination);
-    mainGainNode.gain.value = 50;
+    mainGainNode.gain.value = 10;
 
     // Prepare wave form
     const sineTerms = new Float32Array([0, 1, 1, 0, 0]);
