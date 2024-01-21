@@ -2,54 +2,67 @@
     {
         'name': 'C4',
         'frequency': '261.63',
+        'shortcut': 'a',
         'sharp': {
             'name': 'C#4',
-            'frequency': '277.18'
+            'frequency': '277.18',
+            'shortcut': 'w'
         }
     },
     {
         'name': 'D4',
         'frequency': '293.66',
+        'shortcut': 's',
         'sharp': {
             'name': 'D#4',
-            'frequency': '311.13'
+            'frequency': '311.13',
+            'shortcut': 'e'
         }
     },
     {
         'name': 'E4',
-        'frequency': '329.63'
+        'frequency': '329.63',
+        'shortcut': 'd'
     },
     {
         'name': 'F4',
         'frequency': '349.23',
+        'shortcut': 'f',
         'sharp': {
             'name': 'F#4',
-            'frequency': '369.99'
+            'frequency': '369.99',
+            'shortcut': 't'
         }
     },
     {
         'name': 'G4',
         'frequency': '392.00',
+        'shortcut': 'g',
         'sharp': {
             'name': 'G#4',
-            'frequency': '415.30'
+            'frequency': '415.30',
+            'shortcut': 'y'
         }
     },
     {
         'name': 'A4',
         'frequency': '440.00',
+        'shortcut': 'h',
         'sharp': {
             'name': 'A#4',
-            'frequency': '466.16'
+            'frequency': '466.16',
+            'shortcut': 'u'
         }
     },
     {
         'name': 'B4',
-        'frequency': '493.88'
+        'frequency': '493.88',
+        'shortcut': 'j'
     },
     {
         'name': 'C5',
-        'frequency': '523.26'
+        'frequency': '523.26',
+        'shortcut': 'k'
     }
 ]%}
 {%embed './components/home/section.html' with {
@@ -70,10 +83,10 @@
                 <!-- KEYS -->
                 {%for key in keys%}
                 <!-- WHITE KEY {{key.name}} -->
-                <div class="flex-1 bg-ivory-lightest relative key" data-name="{{key.name}}" data-frequency="{{key.frequency}}">
+                <div class="flex-1 bg-ivory-lightest relative key" data-name="{{key.name}}" data-frequency="{{key.frequency}}" data-shortcut="{{key.shortcut}}">
                     {%if key.sharp%}
                         <!-- BLACK KEY {{key.sharp.name}} -->
-                        <div class="bg-thunder-darkest w-1/2 h-2/3 absolute top-0 -right-1/4 z-10 key" data-name="{{key.sharp.name}}" data-frequency="{{key.sharp.frequency}}"></div>
+                        <div class="bg-thunder-darkest w-1/2 h-2/3 absolute top-0 -right-1/4 z-10 key" data-name="{{key.sharp.name}}" data-frequency="{{key.sharp.frequency}}" data-shortcut="{{key.sharp.shortcut}}"></div>
                         <!-- END BLACK KEY {{key.sharp.name}} -->
                     {%endif%}
                 </div>

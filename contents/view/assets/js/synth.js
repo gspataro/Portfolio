@@ -37,47 +37,91 @@ document.addEventListener('DOMContentLoaded', function () {
     /**
      * Note pressed
      *
-     * @param e
+     * @param key
      * @return void
      */
 
-    function pressNote(e)
+    function pressNote(key)
     {
-        if (e.buttons & 1) {
-            if (!e.target.dataset.pressed) {
-                e.stopPropagation();
-                oscList[e.target.dataset['name']] = playTone(e.target.dataset.frequency);
-                e.target.dataset.pressed = true;
-            }
+        if (!key.dataset.pressed) {
+            oscList[key.dataset['name']] = playTone(key.dataset.frequency);
+            key.dataset.pressed = true;
         }
     }
 
     /**
      * Note realeased
      *
+     * @param key
+     * @return void
+     */
+
+    function releaseNote(key)
+    {
+        if (key.dataset && key.dataset.pressed) {
+            if (oscList[key.dataset['name']]) {
+                oscList[key.dataset['name']].stop();
+                delete oscList[key.dataset['name']];
+                delete key.dataset.pressed;
+            }
+        }
+    }
+
+    /**
+     * Click press note
+     *
      * @param e
      * @return void
      */
 
-    function releaseNote(e)
-    {
-        if (e.target.dataset && e.target.dataset.pressed) {
-            if (oscList[e.target.dataset['name']]) {
-                oscList[e.target.dataset['name']].stop();
-                delete oscList[e.target.dataset['name']];
-                delete e.target.dataset.pressed;
-            }
+    function clickPressNote(e) {
+        if (e.buttons & 1) {
+            e.stopPropagation();
+            pressNote(e.target);
         }
+    }
+
+    /**
+     * Click release note
+     *
+     * @param e
+     * @return void
+     */
+
+    function clickReleaseNote(e) {
+        releaseNote(e.target);
     }
 
     for (let i = 0; i < 9; i++) {
         oscList[i] = {};
     }
 
+    // Register events for each note
     for (const key of keys) {
-        key.addEventListener('mousedown', pressNote, false);
-        key.addEventListener('mouseup', releaseNote, false);
-        key.addEventListener('mouseover', pressNote, false);
-        key.addEventListener('mouseleave', releaseNote, false);
+        key.addEventListener('mousedown', clickPressNote, false);
+        key.addEventListener('mouseup', clickReleaseNote, false);
+        key.addEventListener('mouseover', clickPressNote, false);
+        key.addEventListener('mouseleave', clickReleaseNote, false);
     }
+
+    // Listen for key presses
+    window.addEventListener('keydown', function (e) {
+        const key = keyboard.querySelector('.key[data-shortcut="' + e.key + '"');
+
+        if (!key) {
+            return;
+        }
+
+        pressNote(key);
+    }, false);
+
+    window.addEventListener('keyup', function (e) {
+        const key = keyboard.querySelector('.key[data-shortcut=' + e.key);
+
+        if (!key) {
+            return;
+        }
+
+        releaseNote(key);
+    });
 });
