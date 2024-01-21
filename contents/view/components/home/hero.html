@@ -1,51 +1,55 @@
 {%set keys = [
     {
-        'name': 'C',
+        'name': 'C4',
         'frequency': '261.63',
         'sharp': {
-            'name': 'C#',
+            'name': 'C#4',
             'frequency': '277.18'
         }
     },
     {
-        'name': 'D',
+        'name': 'D4',
         'frequency': '293.66',
         'sharp': {
-            'name': 'D#',
+            'name': 'D#4',
             'frequency': '311.13'
         }
     },
     {
-        'name': 'E',
+        'name': 'E4',
         'frequency': '329.63'
     },
     {
-        'name': 'F',
+        'name': 'F4',
         'frequency': '349.23',
         'sharp': {
-            'name': 'F#',
+            'name': 'F#4',
             'frequency': '369.99'
         }
     },
     {
-        'name': 'G',
+        'name': 'G4',
         'frequency': '392.00',
         'sharp': {
-            'name': 'G#',
+            'name': 'G#4',
             'frequency': '415.30'
         }
     },
     {
-        'name': 'A',
+        'name': 'A4',
         'frequency': '440.00',
         'sharp': {
-            'name': 'A#',
+            'name': 'A#4',
             'frequency': '466.16'
         }
     },
     {
-        'name': 'B',
+        'name': 'B4',
         'frequency': '493.88'
+    },
+    {
+        'name': 'C5',
+        'frequency': '523.26'
     }
 ]%}
 {%embed './components/home/section.html' with {
@@ -66,7 +70,7 @@
                 <!-- KEYS -->
                 {%for key in keys%}
                 <!-- WHITE KEY {{key.name}} -->
-                <div class="bg-ivory-lightest relative flex-1 key" data-name="{{key.name}}" data-frequency="{{key.frequency}}">
+                <div class="flex-1 bg-ivory-lightest relative key" data-name="{{key.name}}" data-frequency="{{key.frequency}}">
                     {%if key.sharp%}
                         <!-- BLACK KEY {{key.sharp.name}} -->
                         <div class="bg-thunder-darkest w-1/2 h-2/3 absolute top-0 -right-1/4 z-10 key" data-name="{{key.sharp.name}}" data-frequency="{{key.sharp.frequency}}"></div>
