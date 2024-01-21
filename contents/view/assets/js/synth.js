@@ -102,6 +102,13 @@ document.addEventListener('DOMContentLoaded', function () {
         key.addEventListener('mouseup', clickReleaseNote, false);
         key.addEventListener('mouseover', clickPressNote, false);
         key.addEventListener('mouseleave', clickReleaseNote, false);
+
+        key.addEventListener('touchstart', function (e) {
+            pressNote(e.target);
+        }, false);
+        key.addEventListener('touchend', function (e) {
+            releaseNote(e.target);
+        }, false);
     }
 
     // Listen for key presses
