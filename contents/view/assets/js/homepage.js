@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
     const main = document.getElementById('main');
+    const footer = document.getElementById('footer');
     const sections = main.getElementsByTagName('section');
     const navigationPrev = main.getElementsByClassName('nav-prev');
     const navigationNext = main.getElementsByClassName('nav-next');
@@ -21,8 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const sectionStyle = section.dataset.style ?? 'pianoforte';
 
-        // Update header style based on section
+        // Update header and footer styles based on section
         header.dataset.style = sectionStyle;
+        footer.dataset.style = sectionStyle;
     }
 
     /**
