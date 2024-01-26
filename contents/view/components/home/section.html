@@ -1,12 +1,14 @@
 <section class="snap-always snap-start group/section data-[style=fortepiano]:bg-thunder-darkest data-[style=fortepiano]:text-ivory-lightest" data-style="{{style ?? 'pianoforte'}}">
     <div class="flex flex-col h-[100vh] tablet-h:flex-row">
         <!-- MAIN CONTENT -->
-        <div class="flex-1 py-[--container-padding-y]">
-            <div class="container h-full">
-                {%block content%}
-                {%endblock%}
+        {%block container%}
+            <div class="flex-1 py-[--container-padding-y]">
+                <div class="container h-full">
+                    {%block content%}
+                    {%endblock%}
+                </div>
             </div>
-        </div>
+        {%endblock%}
         <!-- END MAIN CONTENT-->
         <!-- SIDEBAR -->
         {%block sidebar%}
