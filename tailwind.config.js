@@ -100,15 +100,13 @@ module.exports = {
         center: true,
         padding: {
             DEFAULT: "16px",
-            "tablet": "32px",
-            "desktop": "64px"
+            "tablet-h": "32px"
         },
         screens: {
             "tablet-v": "768px",
             "tablet-h": "992px",
             "laptop-sm": "1232px",
-            "laptop-lg": "1200px",
-            "desktop": "1200px"
+            "laptop-lg": "1200px"
         }
     }
   },
