@@ -22,30 +22,33 @@
                 tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest
                 laptop-sm:w-[300px]">
                 <!-- WRAPPER -->
-                <div class="flex flex-col h-full py-[--container-padding-y] px-2xs">
+                <div class="flex flex-row-reverse h-full py-[--container-padding-y] px-2xs tablet-h:flex-col">
                     <!-- CONTROLS -->
                     <div class="flex flex-col">
                         <a href="javascript:void(0)" class="
                             nav-next
-                            self-end
-                            text-ivory-lightest
+                            text-thunder-darkest
                             text-md
                             font-normal
                             uppercase
                             no-underline
                             group-last-of-type/section:hidden
-                            group-data-[style=fortepiano]/section:text-thunder-darkest">
+                            group-data-[style=fortepiano]/section:text-ivory-lightest
+                            tablet-h:text-ivory-lightest
+                            tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
                             Avanti &rarr;
                         </a>
                         <a href="javascript:void(0)" class="
                             nav-prev
-                            text-ivory-lightest
+                            text-thunder-darkest
                             text-md
                             font-normal
                             uppercase
                             no-underline
                             group-first-of-type/section:hidden
-                            group-data-[style=fortepiano]/section:text-thunder-darkest">
+                            group-data-[style=fortepiano]/section:text-ivory-lightest
+                            tablet-h:text-ivory-lightest
+                            tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
                             &larr; Indietro
                         </a>
                     </div>
@@ -56,14 +59,14 @@
                     <!-- LABEL -->
                     {%block sidebar_label%}
                         <div class="
-                            writing-v-lr
                             font-oswald
                             font-normal
                             text-2xl
                             leading-none
                             uppercase
-                            group-data-[style=fortepiano]/section:self-end
-                            group-data-[style=fortepiano]/section:rotate-180">
+                            tablet-h:writing-v-lr
+                            tablet-h:group-data-[style=fortepiano]/section:self-end
+                            tablet-h:group-data-[style=fortepiano]/section:rotate-180">
                             {{label}}
                         </div>
                     {%endblock%}
