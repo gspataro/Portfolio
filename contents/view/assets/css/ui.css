@@ -254,7 +254,7 @@
 
     @media screen(tablet-v) {
         :root {
-            --header-height: 60px;
+            --header-height: 70px;
             --container-padding-y: theme('spacing.xs');
         }
     }

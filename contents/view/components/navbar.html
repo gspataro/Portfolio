@@ -4,7 +4,12 @@
         {%for id, item in items%}
             <!-- ITEM -->
             <li class="text-sm font-oswald font-normal uppercase tablet-v:text-[20px] tablet-h:text-[22px] desktop:text-[24px]">
-                <a href="{{item.url}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]/header:text-ivory-lightest">
+                <a href="{{item.url}}" class="
+                    no-underline
+                    group-data-[style=pianoforte]/header:text-ivory-lightest
+                    group-data-[style=fortepiano]/header:text-thunder-darkest
+                    tablet-h:group-data-[style=fortepiano]/header:text-ivory-lightest
+                    tablet-h:group-data-[style=pianoforte]/header:text-thunder-darkest">
                     {{item.label}}
                 </a>
             </li>
