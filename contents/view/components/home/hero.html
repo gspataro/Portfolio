@@ -93,19 +93,27 @@
                     h-full
                     mx-auto
                     bg-ivory-darkest
-                    border-4
-                    border-thunder-darkest
+                    rounded-3xl
+                    shadow-xl
+                    shadow-thunder-lightest/10
                     tablet-h:h-[500px]
                     tablet-h:rotate-0
                     desktop:w-3/4">
                     <!-- KEYS -->
                     {%for key in keys%}
                     <!-- WHITE KEY {{key.name}} -->
-                    <div class="flex-1 bg-ivory-lightest relative key" data-name="{{key.name}}" data-frequency="{{key.frequency}}" data-shortcut="{{key.shortcut}}">
+                    <div class="
+                        flex-1
+                        bg-ivory-lightest
+                        relative
+                        first:rounded-l-3xl
+                        last:rounded-r-3xl
+                        key" data-name="{{key.name}}" data-frequency="{{key.frequency}}" data-shortcut="{{key.shortcut}}">
                         {%if key.sharp%}
                             <!-- BLACK KEY {{key.sharp.name}} -->
                             <div class="
                                 bg-thunder-darkest
+                                rounded-b-lg
                                 w-2/3
                                 h-1/2
                                 absolute
