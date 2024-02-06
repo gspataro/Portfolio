@@ -69,75 +69,73 @@
     'label': 'Pianista'
 }%}
     {%block container%}
-        <div class="flex-1 py-[--container-padding-y]">
-            <div class="flex flex-col h-full">
-                <!-- HEADING -->
-                <div class="order-1 container font-oswald font-normal text-lg leading-none text-right uppercase tablet-v:text-2xl tablet-h:order-none">
-                    Web Developer
-                </div>
-                <!-- END HEADING -->
-                <!-- SPACER -->
-                <div class="container relative tablet-h:flex-1 tablet-h:h-auto">
-                    <!-- DECOR -->
-                    <div class="hidden absolute top-2xs right-xs bottom-xs w-[400px] border-t-4 border-l-4 border-stiletto tablet-h:block laptop-sm:top-xs">
-                        <div class="bg-stiletto w-[24px] h-[24px] rounded-full absolute -bottom-[12px] -left-[14px]"></div>
-                    </div>
-                    <!-- END DECOR -->
-                </div>
-                <!-- END SPACER -->
-                <!-- PIANO -->
-                <div class="flex-1 container writing-v-lr tablet-h:writing-h-tb tablet-h:flex-grow-0">
-                    <div id="keyboard" class="
-                        flex
-                        gap-[1px]
-                        w-full
-                        h-full
-                        mx-auto
-                        bg-ivory-darkest
-                        border-4
-                        border-thunder-darkest
-                        tablet-h:h-[500px]
-                        tablet-h:rotate-0
-                        desktop:w-3/4">
-                        <!-- KEYS -->
-                        {%for key in keys%}
-                        <!-- WHITE KEY {{key.name}} -->
-                        <div class="flex-1 bg-ivory-lightest relative key" data-name="{{key.name}}" data-frequency="{{key.frequency}}" data-shortcut="{{key.shortcut}}">
-                            {%if key.sharp%}
-                                <!-- BLACK KEY {{key.sharp.name}} -->
-                                <div class="
-                                    bg-thunder-darkest
-                                    w-2/3
-                                    h-1/2
-                                    absolute
-                                    right-0
-                                    -bottom-1/4
-                                    z-10
-                                    tablet-h:w-1/2
-                                    tablet-h:h-2/3
-                                    tablet-h:top-0
-                                    tablet-h:-right-1/4
-                                    tablet-h:bottom-auto
-                                    key" data-name="{{key.sharp.name}}" data-frequency="{{key.sharp.frequency}}" data-shortcut="{{key.sharp.shortcut}}"></div>
-                                <!-- END BLACK KEY {{key.sharp.name}} -->
-                            {%endif%}
-                        </div>
-                        <!-- END WHITE KEY {{key.name}} -->
-                        {%endfor%}
-                        <!-- END KEYS-->
-                    </div>
-                </div>
-                <!-- END PIANO -->
-                <!-- SPACER -->
-                <div class="h-sm relative tablet-h:flex-1 tablet-h:h-auto">
-                    <!-- DECOR -->
-                    <div class="hidden absolute top-xs right-sm bottom-3xs w-[50%] border-l-4 border-b-4 border-stiletto tablet-h:block laptop-sm:bottom-sm desktop:bottom-md">
-                        <div class="bg-stiletto w-[24px] h-[24px] rounded-full absolute -top-[12px] -left-[14px]"></div>
-                    </div>
-                    <!-- END DECOR -->
-                </div>
-                <!-- END SPACER-->
+        <div class="flex-1 flex flex-col py-[--container-padding-y]">
+            <!-- HEADING -->
+            <div class="order-1 container font-oswald font-normal text-lg leading-none text-right uppercase tablet-v:text-2xl tablet-h:order-none">
+                Web Developer
             </div>
+            <!-- END HEADING -->
+            <!-- SPACER -->
+            <div class="container relative tablet-h:flex-1 tablet-h:h-auto">
+                <!-- DECOR -->
+                <div class="hidden absolute top-2xs right-xs bottom-xs w-[400px] border-t-4 border-l-4 border-stiletto tablet-h:block laptop-sm:top-xs">
+                    <div class="bg-stiletto w-[24px] h-[24px] rounded-full absolute -bottom-[12px] -left-[14px]"></div>
+                </div>
+                <!-- END DECOR -->
+            </div>
+            <!-- END SPACER -->
+            <!-- PIANO -->
+            <div class="flex-1 container writing-v-lr tablet-h:writing-h-tb tablet-h:flex-grow-0">
+                <div id="keyboard" class="
+                    flex
+                    gap-[1px]
+                    w-full
+                    h-full
+                    mx-auto
+                    bg-ivory-darkest
+                    border-4
+                    border-thunder-darkest
+                    tablet-h:h-[500px]
+                    tablet-h:rotate-0
+                    desktop:w-3/4">
+                    <!-- KEYS -->
+                    {%for key in keys%}
+                    <!-- WHITE KEY {{key.name}} -->
+                    <div class="flex-1 bg-ivory-lightest relative key" data-name="{{key.name}}" data-frequency="{{key.frequency}}" data-shortcut="{{key.shortcut}}">
+                        {%if key.sharp%}
+                            <!-- BLACK KEY {{key.sharp.name}} -->
+                            <div class="
+                                bg-thunder-darkest
+                                w-2/3
+                                h-1/2
+                                absolute
+                                right-0
+                                -bottom-1/4
+                                z-10
+                                tablet-h:w-1/2
+                                tablet-h:h-2/3
+                                tablet-h:top-0
+                                tablet-h:-right-1/4
+                                tablet-h:bottom-auto
+                                key" data-name="{{key.sharp.name}}" data-frequency="{{key.sharp.frequency}}" data-shortcut="{{key.sharp.shortcut}}"></div>
+                            <!-- END BLACK KEY {{key.sharp.name}} -->
+                        {%endif%}
+                    </div>
+                    <!-- END WHITE KEY {{key.name}} -->
+                    {%endfor%}
+                    <!-- END KEYS-->
+                </div>
+            </div>
+            <!-- END PIANO -->
+            <!-- SPACER -->
+            <div class="h-sm relative tablet-h:flex-1 tablet-h:h-auto">
+                <!-- DECOR -->
+                <div class="hidden absolute top-xs right-sm bottom-3xs w-[50%] border-l-4 border-b-4 border-stiletto tablet-h:block laptop-sm:bottom-sm desktop:bottom-md">
+                    <div class="bg-stiletto w-[24px] h-[24px] rounded-full absolute -top-[12px] -left-[14px]"></div>
+                </div>
+                <!-- END DECOR -->
+            </div>
+            <!-- END SPACER-->
         </div>
     {%endblock%}
 {%endembed%}
