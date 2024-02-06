@@ -13,8 +13,8 @@
             </a>
         </div>
         <div class="grid grid-cols-2 gap-sm w-4/5">
-            {%for project in projects%}
-                {%include './components/project/card.html' with {'project': project, 'style': 'dark'}%}
+            {%for id, project in projects%}
+                {%include './components/project/card.html' with {'id': id, 'project': project, 'style': 'dark'}%}
             {%endfor%}
         </div>
     {%endblock%}
