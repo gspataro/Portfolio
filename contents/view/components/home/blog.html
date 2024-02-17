@@ -1,0 +1,21 @@
+{%embed './components/home/section.html' with {
+    'label': 'Blog',
+    'style': 'pianoforte'
+}%}
+    {%block content%}
+        <div class="w-1/2 mb-3xl ml-auto">
+            <h2 class="mb-4xs">LOREM IPSUM, DOLOR</h2>
+            <p class="mb-2xs">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mollis ultricies nunc, eget viverra purus blandit at. Vivamus condimentum interdum euismod. Morbi porttitor laoreet leo, sed rutrum orci faucibus vel. Nulla aliquam erat ac metus vulputate sagittis. Vestibulum convallis fermentum imperdiet.
+            </p>
+            <a href="#" class="text-sm font-normal uppercase no-underline">
+                Tutti gli Articoli &rarr;
+            </a>
+        </div>
+        <div class="grid grid-cols-3 gap-sm">
+            {%for id, article in articles%}
+                {%include './components/article/card.html' with {'id': id, 'article': article}%}
+            {%endfor%}
+        </div>
+    {%endblock%}
+{%endembed%}

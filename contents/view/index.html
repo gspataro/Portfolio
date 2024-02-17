@@ -2,11 +2,5 @@
 {%block main%}
     {%include './components/home/hero.html'%}
     {%include './components/home/projects.html'%}
-    {%embed './components/home/section.html' with {
-        'label': 'Blog'
-    }%}
-        {%block content%}
-            Blog
-        {%endblock%}
-    {%endembed%}
+    {%include './components/home/blog.html'%}
 {%endblock%}
