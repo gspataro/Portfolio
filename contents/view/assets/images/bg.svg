@@ -1,0 +1,20 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_219_2)">
+<rect width="500" height="500" fill="#FFFFF8"/>
+<line opacity="0.5" x1="99.5" y1="500" x2="99.5" y2="2.18557e-08" stroke="#E6E6D8"/>
+<line opacity="0.5" x1="199.5" y1="500" x2="199.5" y2="2.18557e-08" stroke="#E6E6D8"/>
+<line opacity="0.5" x1="299.5" y1="500" x2="299.5" y2="2.18557e-08" stroke="#E6E6D8"/>
+<line opacity="0.5" x1="399.5" y1="500" x2="399.5" y2="2.18557e-08" stroke="#E6E6D8"/>
+<line opacity="0.5" x1="499.5" y1="500" x2="499.5" y2="2.18557e-08" stroke="#E6E6D8"/>
+<line opacity="0.5" y1="99.5" x2="500" y2="99.5" stroke="#E6E6D8"/>
+<line opacity="0.5" y1="199.5" x2="500" y2="199.5" stroke="#E6E6D8"/>
+<line opacity="0.5" y1="299.5" x2="500" y2="299.5" stroke="#E6E6D8"/>
+<line opacity="0.5" y1="399.5" x2="500" y2="399.5" stroke="#E6E6D8"/>
+<line opacity="0.5" y1="499.5" x2="500" y2="499.5" stroke="#E6E6D8"/>
+</g>
+<defs>
+<clipPath id="clip0_219_2">
+<rect width="500" height="500" fill="white"/>
+</clipPath>
+</defs>
+</svg>

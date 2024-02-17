@@ -2,6 +2,7 @@
 <header id="header" class="
     w-[--header-height]
     h-[100vh]
+    border-r
     sticky
     top-0
     left-0
@@ -9,8 +10,12 @@
     group/header
     data-[style=pianoforte]:bg-thunder-darkest
     data-[style=fortepiano]:bg-ivory-lightest
+    data-[style=pianoforte]:border-r-thunder-dark
+    data-[style=fortepiano]:border-r-ivory-dark/50
     tablet-h:data-[style=pianoforte]:bg-ivory-lightest
-    tablet-h:data-[style=fortepiano]:bg-thunder-darkest" data-style="{{style ?? 'pianoforte'}}">
+    tablet-h:data-[style=pianoforte]:border-r-ivory-dark/50
+    tablet-h:data-[style=fortepiano]:bg-thunder-darkest
+    tablet-h:data-[style=fortepiano]:border-r-thunder-dark" data-style="{{style ?? 'pianoforte'}}">
     <div class="h-full w-full writing-v-lr">
         <div class="flex items-center w-full py-[--container-padding-y]">
             <div class="rotate-180">
