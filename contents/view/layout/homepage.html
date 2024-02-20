@@ -9,8 +9,8 @@
     <body class="homepage overflow-y-auto">
         <div class="flex">
             {%include './components/header.html'%}
-            <div class="w-[calc(100%-var(--header-height))] flex flex-col">
-                <main id="main" class="items-start grid grid-cols-[repeat(3,100%)] snap-mandatory snap-x overflow-x-scroll scrollbar-hide">
+            <div id="main-wrapper" class="w-[calc(100%-var(--header-height))] flex flex-col overflow-y-hidden">
+                <main id="main" class="items-start grid grid-cols-[repeat(3,100%)] snap-mandatory snap-x overflow-x-scroll overflow-y-hidden scrollbar-hide">
                     {%block main%}
                     {%endblock%}
                 </main>

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const header = document.getElementById('header');
+    const mainWrapper = document.getElementById('main-wrapper');
     const main = document.getElementById('main');
     const footer = document.getElementById('footer');
     const sections = main.getElementsByTagName('section');
@@ -25,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update header and footer styles based on section
         header.dataset.style = sectionStyle;
         footer.dataset.style = sectionStyle;
+
+        // Main section height
+        mainWrapper.style.height = section.offsetHeight + 'px';
     }
 
     /**
@@ -84,6 +88,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     currentSectionId = main.scrollLeft / main.offsetWidth;
     setupSection(sections[currentSectionId]);
+
+    // Redo section setup on window resize
+    window.addEventListener('resize', function () {
+        currentSectionId = main.scrollLeft / main.offsetWidth;
+        setupSection(sections[currentSectionId]);
+    });
 
     // Determine current section based on scroll snap
     main.addEventListener('scroll', function () {
