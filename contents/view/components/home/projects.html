@@ -12,7 +12,7 @@
                 Scopri tutti i progetti &rarr;
             </a>
         </div>
-        <div class="grid grid-cols-2 gap-sm laptop-lg:w-4/5">
+        <div class="grid gap-sm tablet-v:grid-cols-2 laptop-lg:w-4/5">
             {%for id, project in projects%}
                 {%include './components/project/card.html' with {'id': id, 'project': project, 'style': 'dark'}%}
             {%endfor%}

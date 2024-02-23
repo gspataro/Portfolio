@@ -85,7 +85,7 @@
             </div>
             <!-- END SPACER -->
             <!-- PIANO -->
-            <div class="flex-1 container writing-v-lr tablet-h:writing-h-tb tablet-h:flex-grow-0">
+            <div class="flex-1 container -rotate-180 writing-v-lr tablet-h:writing-h-tb tablet-h:flex-grow-0 tablet-h:rotate-0">
                 <div id="keyboard" class="
                     flex
                     gap-[1px]
@@ -108,24 +108,30 @@
                     <div class="
                         flex-1
                         bg-ivory-lightest
-                        border-r
-                        border-r-ivory-dark
+                        border-b
+                        border-ivory-dark
                         last:border-r-0
                         relative
-                        first:rounded-l-3xl
-                        last:rounded-r-3xl
+                        first:rounded-t-3xl
+                        last:rounded-b-3xl
+                        tablet-h:first:rounded-l-3xl
+                        tablet-h:last:rounded-r-3xl
+                        tablet-h:border-b-0
+                        tablet-h:border-r
                         key" data-name="{{key.name}}" data-frequency="{{key.frequency}}" data-shortcut="{{key.shortcut}}">
                         {%if key.sharp%}
                             <!-- BLACK KEY {{key.sharp.name}} -->
                             <div class="
                                 bg-thunder-darkest
-                                rounded-b-lg
+                                rounded-l-lg
                                 w-2/3
                                 h-1/2
                                 absolute
                                 right-0
                                 -bottom-1/4
                                 z-10
+                                tablet-h:rounded-tl-none
+                                tablet-h:rounded-b-lg
                                 tablet-h:w-1/2
                                 tablet-h:h-2/3
                                 tablet-h:top-0

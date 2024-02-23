@@ -12,7 +12,7 @@
                 Tutti gli Articoli &rarr;
             </a>
         </div>
-        <div class="grid grid-cols-3 gap-sm">
+        <div class="grid gap-sm tablet-v:grid-cols-3">
             {%for id, article in articles%}
                 {%include './components/article/card.html' with {'id': id, 'article': article}%}
             {%endfor%}
