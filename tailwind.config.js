@@ -75,7 +75,7 @@ module.exports = {
         "xl": "70px",
         "lg": "48px",
         "md": "38px",
-        "sm": "18px",
+        "sm": "22px",
         DEFAULT: "18px",
         "xs": "16px",
         "2xs": "14px",
