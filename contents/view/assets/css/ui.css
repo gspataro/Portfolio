@@ -275,36 +275,63 @@
 
 @layer components {
     /**
-     * Retro button style
+     * CTA style
      */
 
-    .btn-retro {
-        background-color: theme('colors.ivory.lightest');
-        padding: theme('spacing.2xs') theme('spacing.xs');
-        border: theme('borderWidth.2') solid theme('colors.thunder.darkest');
-        display: inline-block;
+    .cta {
+        display: flex;
+        align-items: center;
+        gap: theme('spacing.4xs');
+        padding: theme('spacing.4xs') theme('spacing.3xs');
         position: relative;
-        font-weight: normal;
-        text-transform: lowercase;
+        color: theme('colors.thunder.darkest');
+        font-weight: 500;
         text-decoration: none;
     }
 
-    .btn-retro:hover {
-        background-color: theme('colors.stiletto.DEFAULT');
+    .cta::after {
+        content: '';
+        background-image: url('../images/icons/chevron-right.svg');
+        background-size: 100% 100%;
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        margin-right: 0px;
+        transition: margin 200ms;
+    }
+
+    .cta:hover::after {
+        margin-left: 5px;
+        margin-right: -5px;
+    }
+
+    .cta::before {
+        content: '';
+        background-color: theme('colors.thunder.darkest');
+        display: block;
+        width: calc(100% - 44px);
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: theme('spacing.3xs');
+        transition: transform 200ms;
+        transform: scaleX(0);
+        transform-origin: 0 0;
+    }
+
+    .cta:hover::before {
+        transform: scaleX(1);
+    }
+
+    .cta-light {
         color: theme('colors.ivory.lightest');
     }
 
-    .btn-retro::after {
-        content: ' ';
-        background-color: theme('colors.thunder.darkest');
-        border: theme('borderWidth.2') solid theme('colors.thunder.darkest');
-        display: block;
-        position: absolute;
-        inset: 5px -5px -5px 5px;
-        z-index: -10;
+    .cta-light::after {
+        background-image: url('../images/icons/chevron-right-light.svg');
     }
 
-    .btn-retro:hover::after {
+    .cta-light::before {
         background-color: theme('colors.ivory.lightest');
     }
 }

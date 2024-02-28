@@ -1,4 +1,14 @@
-<article class="flex flex-col border-thunder-darkest rounded-3xl border-4 p-sm {{class}} data-[style=dark]:bg-thunder-dark data-[style=dark]:border-thunder group" data-style="{{style}}">
+<article class="
+    flex
+    flex-col
+    border-thunder-darkest
+    rounded-3xl
+    border
+    p-sm
+    data-[style=dark]:bg-thunder-dark
+    data-[style=dark]:border-thunder
+    group
+    {{class}}" data-style="{{style}}">
     <header class="mb-3xs">
         <{{heading_type ?? 'h5'}}>
             <a href="{{url('project.' ~ id)}}" class="text-thunder-darkest no-underline group-data-[style=dark]:text-ivory-lightest">
@@ -13,8 +23,8 @@
     <div class="flex gap-3xs items-center">
         {%include './components/project/links.html'%}
         <div class="flex-1"></div>
-        <a href="{{url('project.' ~ id)}}" class="font-normal no-underline group-data-[style=dark]:text-brass">
-            &lt;scopri di più /&gt;
+        <a href="{{url('project.' ~ id)}}" class="cta {%if style == 'dark'%}cta-light{%endif%}">
+            Scopri di più
         </a>
     </div>
 </article>
