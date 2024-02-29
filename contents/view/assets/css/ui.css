@@ -279,10 +279,10 @@
      */
 
     .cta {
-        display: flex;
+        display: inline-flex;
         align-items: center;
         gap: theme('spacing.4xs');
-        padding: theme('spacing.4xs') theme('spacing.3xs');
+        padding: theme('spacing.4xs') theme('spacing.3xs') theme('spacing.4xs') 0;
         position: relative;
         color: theme('colors.thunder.darkest');
         font-weight: 500;
@@ -290,13 +290,19 @@
     }
 
     .cta::after {
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23000' d='m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17'/%3E%3C/svg%3E");
+
         content: '';
-        background-image: url('../images/icons/chevron-right.svg');
-        background-size: 100% 100%;
-        width: 14px;
-        height: 14px;
         display: inline-block;
-        margin-right: 0px;
+        width: 1em;
+        height: 1em;
+        background-color: currentColor;
+        -webkit-mask-image: var(--svg);
+        mask-image: var(--svg);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
         transition: margin 200ms;
     }
 
@@ -307,13 +313,13 @@
 
     .cta::before {
         content: '';
-        background-color: theme('colors.thunder.darkest');
+        background-color: currentColor;
         display: block;
-        width: calc(100% - 44px);
+        width: calc(100% - (theme('spacing.4xs') + 1em + theme('spacing.3xs')));
         height: 2px;
         position: absolute;
         bottom: 0;
-        left: theme('spacing.3xs');
+        left: 0;
         transition: transform 200ms;
         transform: scaleX(0);
         transform-origin: 0 0;
@@ -321,18 +327,6 @@
 
     .cta:hover::before {
         transform: scaleX(1);
-    }
-
-    .cta-light {
-        color: theme('colors.ivory.lightest');
-    }
-
-    .cta-light::after {
-        background-image: url('../images/icons/chevron-right-light.svg');
-    }
-
-    .cta-light::before {
-        background-color: theme('colors.ivory.lightest');
     }
 }
 
