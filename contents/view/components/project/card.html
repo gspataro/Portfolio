@@ -23,7 +23,7 @@
     <div class="flex gap-3xs items-center">
         {%include './components/project/links.html'%}
         <div class="flex-1"></div>
-        <a href="{{url('project.' ~ id)}}" class="cta text-ivory-lightest">
+        <a href="{{url('project.' ~ id)}}" class="cta {%if style == 'dark'%}text-ivory-lightest{%endif%}">
             Scopri di più
         </a>
     </div>
