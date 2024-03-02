@@ -10,7 +10,7 @@
             <img src="{{media(article.frontmatter.thumbnail, 'thumbnail')}}" alt="{{article.frontmatter.title}}" class="rounded-lg">
         </a>
     </figure>
-    <div class="flex flex-col pt-xs tablet-v:group-data-[layout=horizontal]/article:col-start-2">
+    <div class="pt-xs tablet-v:group-data-[layout=horizontal]/article:col-start-2">
         <header class="mb-xs">
             <ul class="flex">
                 {%for category in article.frontmatter.categories%}
@@ -30,7 +30,6 @@
                 {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
             </p>
         {%endif%}
-        <div class="flex-1"></div>
         <div class="flex gap-3xs items-center">
             <a href="{{url('article.' ~ id)}}" class="cta">
                 Leggi articolo
