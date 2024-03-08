@@ -121,37 +121,37 @@ module.exports = {
                 fontWeight: 300
             },
             h1: {
-                fontFamily: theme('fontFamily.roboto'),
+                fontFamily: theme('fontFamily.oswald'),
                 fontSize: theme('fontSize.h1'),
                 fontWeight: 400,
                 lineHeight: "46px"
             },
             h2: {
-                fontFamily: theme('fontFamily.roboto'),
+                fontFamily: theme('fontFamily.oswald'),
                 fontSize: theme('fontSize.h2'),
                 fontWeight: 400,
                 lineHeight: "40px"
             },
             h3: {
-                fontFamily: theme('fontFamily.roboto'),
+                fontFamily: theme('fontFamily.oswald'),
                 fontSize: theme('fontSize.h3'),
                 fontWeight: 400,
                 lineHeight: "38px"
             },
             h4: {
-                fontFamily: theme('fontFamily.roboto'),
+                fontFamily: theme('fontFamily.oswald'),
                 fontSize: theme('fontSize.h4'),
                 fontWeight: 400,
                 lineHeight: "32px"
             },
             h5: {
-                fontFamily: theme('fontFamily.roboto'),
+                fontFamily: theme('fontFamily.oswald'),
                 fontSize: theme('fontSize.h5'),
                 fontWeight: 400,
                 lineHeight: "30px"
             },
             h6: {
-                fontFamily: theme('fontFamily.roboto'),
+                fontFamily: theme('fontFamily.oswald'),
                 fontSize: theme('fontSize.h6'),
                 fontWeight: 400,
                 lineHeight: "26px"
