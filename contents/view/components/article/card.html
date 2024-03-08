@@ -12,17 +12,27 @@
         <figcaption class="hidden">{{article.frontmatter.title}}</figcaption>
     </figure>
     <div class="pt-xs tablet-v:group-data-[layout=horizontal]/article:col-start-2">
-        <header class="mb-xs">
+        <header class="mb-3xs">
             <h4>
                 <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">
                     {{article.frontmatter.title}}
                 </a>
             </h4>
         </header>
-        <div class="flex gap-3xs items-center">
-            <a href="{{url('article.' ~ id)}}" class="cta text-stiletto">
-                Leggi articolo
-            </a>
+        <p class="mb-2xs">
+            {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
+        </p>
+        <div class="flex items-center gap-xs text-2xs">
+            <ul class="flex">
+                {%for category in article.frontmatter.categories%}
+                    <li class="text-xs lowercase font-normal">
+                        {{articles_cats[category].label ?? category}}
+                    </li>
+                {%endfor%}
+            </ul>
+            <time datetime="{{article.frontmatter.published|date('Y-m-d')}}">
+                {{article.frontmatter.published|date('d F Y')}}
+            </time>
         </div>
     </div>
 </article>

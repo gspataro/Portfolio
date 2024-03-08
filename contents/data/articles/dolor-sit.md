@@ -2,8 +2,8 @@
 title: Dolor sit amet, consectetur adipiscing elit
 categories:
  - misc
-published: 2023/10/12
-modified: 2023/11/15
+published: 2023-10-12
+modified: 2023-11-15
 thumbnail: placeholder.jpg
 ---
 

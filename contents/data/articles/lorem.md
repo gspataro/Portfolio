@@ -2,8 +2,8 @@
 title: Lorem Ipsum
 categories:
  - misc
-published: 2023/11/14
-modified: 2023/11/15
+published: 2023-11-14
+modified: 2023-11-15
 thumbnail: placeholder.jpg
 ---
 
