@@ -25,10 +25,10 @@ final class AssetsComponent extends Component
     {
         $media = $this->container->get('assets.media');
 
-        $media->addSize('thumbnail', 400, null, 90);
-        $media->addSize('medium', 600, null, 90);
-        $media->addSize('large', 900, null, 90);
-        $media->addSize('full', 1920, null, 90);
+        $media->addSize('thumbnail', 400, 0, 90);
+        $media->addSize('medium', 600, 0, 90);
+        $media->addSize('large', 900, 0, 90);
+        $media->addSize('full', 1920, 0, 90);
         $media->addSize('original', 0, 0, 90);
     }
 }
