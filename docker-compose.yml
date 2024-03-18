@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  web:
+    image: php:8.2-apache
+    hostname: gspataro.test
+    ports:
+      - "80:80"
+    volumes:
+      - ./output:/var/www/html
