@@ -3,24 +3,43 @@
     'style': 'pianoforte'
 }%}
     {%block content%}
-        <div class="grid gap-x-2xs mb-lg mx-auto laptop-lg:mb-3xl laptop-lg:w-1/2">
-            <h2 class="contents">
-                <span class="col-start-1 row-span-3 self-start font-oswald font-normal text-xl leading-none writing-v-lr rotate-180 underline">COGITO</span>
-                <span class="col-start-2">ERGO SUM</span>
-            </h2>
-            <p class="mb-2xs col-start-2">
-                Il mio blog è la sezione dove voglio dar sfogo ai miei pensieri e alla mia creatività. Voglio raccogliere le mie idee riguardo programmazione e musica, senza tralasciare qualche off topic di tanto in tanto.
-            </p>
-            <div class="col-start-2">
-                <a href="#" class="btn text-stiletto">
-                    Tutti gli articoli
-                </a>
+        <div class="flex items-start gap-sm">
+            <div class="grid gap-x-2xs mb-lg w-1/2">
+                <h2 class="contents">
+                    <span class="col-start-1 row-span-3 self-start font-oswald font-normal text-xl leading-none writing-v-lr rotate-180">COGITO</span>
+                    <span class="col-start-2 mb-xs">ERGO SUM</span>
+                </h2>
+                <p class="mb-2xs col-start-2">
+                    Il mio blog è la sezione dove voglio dar sfogo ai miei pensieri e alla mia creatività. Voglio raccogliere le mie idee riguardo programmazione e musica, senza tralasciare qualche off topic di tanto in tanto.
+                </p>
+                <div class="col-start-2">
+                    <a href="#" class="btn text-stiletto">
+                        Tutti gli articoli
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="grid gap-sm tablet-v:grid-cols-3">
-            {%for id, article in articles%}
-                {%include './components/article/card.html' with {'id': id, 'article': article}%}
-            {%endfor%}
+            <div class="pl-md relative">
+                <div class="absolute top-0 bottom-0 left-[22px]">
+                    <div class="w-[2px] h-full bg-thunder-darkest"></div>
+                </div>
+                {%for id, article in articles%}
+                    <article class="relative mb-md">
+                        <div class="absolute top-4xs right-full mr-[15px] bg-ivory-lightest border-2 border-thunder-darkest w-[12px] h-[12px] rounded-full"></div>
+                        <time datetime="{{article.frontmatter.date}}" class="mb-4xs">
+                            {{article.frontmatter.published|date('d F Y')}}
+                        </time>
+                        <h4 class="mb-3xs">
+                            {{article.frontmatter.title}}
+                        </h4>
+                        <div>
+                            <span class="cta text-stiletto">
+                                Leggi articolo
+                            </span>
+                        </div>
+                        <a href="#" class="absolute inset-0"></a>
+                    </article>
+                {%endfor%}
+            </div>
         </div>
     {%endblock%}
 {%endembed%}
