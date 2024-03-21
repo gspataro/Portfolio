@@ -13,7 +13,7 @@
                     Il mio blog è la sezione dove voglio dar sfogo ai miei pensieri e alla mia creatività. Voglio raccogliere le mie idee riguardo programmazione e musica, senza tralasciare qualche off topic di tanto in tanto.
                 </p>
                 <div class="col-start-2">
-                    <a href="#" class="btn text-stiletto">
+                    <a href="{{url('blog.page-1')}}" class="btn text-stiletto">
                         Tutti gli articoli
                     </a>
                 </div>
@@ -31,7 +31,7 @@
                         <h4 class="mb-3xs group-hover:underline">
                             {{article.frontmatter.title}}
                         </h4>
-                        <a href="#" class="absolute inset-0"></a>
+                        <a href="{{url('article.' ~ id)}}" class="absolute inset-0"></a>
                     </article>
                 {%endfor%}
             </div>
