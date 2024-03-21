@@ -119,6 +119,7 @@
                         tablet-h:last:rounded-r-3xl
                         tablet-h:border-b-0
                         tablet-h:border-r
+                        data-[pressed=true]:bg-ivory
                         key" data-name="{{key.name}}" data-frequency="{{key.frequency}}" data-shortcut="{{key.shortcut}}">
                         {%if key.sharp%}
                             <!-- BLACK KEY {{key.sharp.name}} -->
@@ -138,6 +139,7 @@
                                 tablet-h:top-0
                                 tablet-h:-right-1/4
                                 tablet-h:bottom-auto
+                                data-[pressed=true]:bg-thunder
                                 key" data-name="{{key.sharp.name}}" data-frequency="{{key.sharp.frequency}}" data-shortcut="{{key.sharp.shortcut}}"></div>
                             <!-- END BLACK KEY {{key.sharp.name}} -->
                         {%endif%}
