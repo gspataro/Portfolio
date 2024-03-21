@@ -211,6 +211,23 @@ module.exports = {
                         marginBottom: 0
                     }
                 },
+                figure: {
+                    marginTop: theme('spacing.3xs'),
+                    marginBottom: theme('spacing.3xs'),
+                    textAlign: 'center',
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    },
+                    img: {
+                        display: 'inline'
+                    },
+                    figcaption: {
+                        fontStyle: 'italic'
+                    }
+                },
                 p: {
                     marginTop: theme('spacing.3xs'),
                     marginBottom: theme('spacing.3xs'),

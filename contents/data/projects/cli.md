@@ -10,9 +10,10 @@ technologies:
 
 GSpataro/CLI è un componente PHP per la creazione di script eseguibili via riga di comando.
 
-<center>
+<figure>
     <img src="{{media('cli-main.png', 'original')}}" alt="Esempio di uno script creato con GSpataro/CLI">
-</center>
+    <figcaption>Esempio di uno script creato con GSpataro/CLI</figcaption>
+</figure>
 
 ## Sviluppo
 
