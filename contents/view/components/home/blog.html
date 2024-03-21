@@ -31,7 +31,7 @@
                         <h4 class="mb-3xs group-hover:underline">
                             {{article.frontmatter.title}}
                         </h4>
-                        <a href="{{url('article.' ~ id)}}" class="absolute inset-0"></a>
+                        <a href="{{url('article.' ~ id)}}" class="absolute inset-0" aria-label="Leggi articolo"></a>
                     </article>
                 {%endfor%}
             </div>
