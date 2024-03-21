@@ -212,8 +212,8 @@ module.exports = {
                     }
                 },
                 figure: {
-                    marginTop: theme('spacing.3xs'),
-                    marginBottom: theme('spacing.3xs'),
+                    marginTop: theme('spacing.2xs'),
+                    marginBottom: theme('spacing.2xs'),
                     textAlign: 'center',
                     "&:first-child": {
                         marginTop: 0
