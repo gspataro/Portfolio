@@ -4,17 +4,17 @@
     text-thunder-darkest" data-style="{{style ?? 'pianoforte'}}">
     <div class="container">
         <!-- WRAPPER -->
-        <div class="flex py-sm">
+        <div class="flex flex-col gap-xs py-sm tablet-v:flex-row">
             <!-- CONTACTS -->
             <div>
                 {%include './components/social.html' with {'style': 'pianoforte'}%}
             </div>
             <!-- END CONTACTS -->
             <!-- SPACER -->
-            <div class="flex-1"></div>
+            <div class="flex-1 hidden tablet-v:block"></div>
             <!-- END SPACER -->
             <!-- COPYRIGHT -->
-            <div class="font-normal">
+            <div class="font-normal text-center tablet-v:text-right">
                 &copy; 2024 Giuseppe Spataro.
             </div>
             <!-- END COPYRIGHT -->
