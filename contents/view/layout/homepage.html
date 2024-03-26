@@ -7,7 +7,7 @@
     </head>
 
     <body class="homepage overflow-y-auto">
-        <div class="flex">
+        <div class="flex flex-col tablet-v:flex-row">
             {%include './components/header.html'%}
             <div id="main-wrapper" class="w-[calc(100%-var(--header-height))] flex flex-col overflow-y-hidden">
                 <main id="main" class="items-start grid grid-cols-[repeat(3,100%)] snap-mandatory snap-x overflow-x-scroll overflow-y-hidden scrollbar-hide">
