@@ -33,10 +33,13 @@
                     left-0
                     right-0
                     bottom-0
+                    h-[calc(100vh-var(--header-height))]
                     group-data-[open=true]/header:block
+                    container
+                    tablet-v:h-auto
                     tablet-v:bg-transparent
                     tablet-v:static
-                    tablet-v:block">
+                    tablet-v:contents">
                     {%include './components/navbar.html' with {
                         'items': {
                             'blog': {
