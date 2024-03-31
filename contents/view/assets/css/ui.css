@@ -248,7 +248,7 @@
      */
 
     :root {
-        --header-height: 50px;
+        --header-height: 58px;
         --container-padding-y: theme('spacing.3xs');
     }
 
