@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     navbarToggler.onclick = function () {
         if (header.dataset.open === 'false') {
             header.dataset.open = 'true';
+            document.body.classList.add('hamburger-open');
         } else {
             header.dataset.open = 'false';
+            document.body.classList.remove('hamburger-open');
         }
     };
 });

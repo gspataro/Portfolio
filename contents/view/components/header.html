@@ -35,31 +35,46 @@
                     bottom-0
                     h-[calc(100vh-var(--header-height))]
                     group-data-[open=true]/header:block
-                    container
                     tablet-v:h-auto
                     tablet-v:bg-transparent
                     tablet-v:static
                     tablet-v:contents">
-                    {%include './components/navbar.html' with {
-                        'items': {
-                            'blog': {
-                                'label': 'Blog',
-                                'url': url('blog.page-1')
-                            },
-                            'projects': {
-                                'label': 'Progetti',
-                                'url': url('projects.page-1')
-                            },
-                            'about': {
-                                'label': 'Chi sono',
-                                'url': '#'
-                            },
-                            'contacts': {
-                                'label': 'Scrivimi',
-                                'url': 'mailto:gspatarodev@gmail.com'
+                    <div class="
+                        h-full
+                        flex
+                        flex-col
+                        container
+                        py-xl
+                        tablet-v:h-auto
+                        tablet-v:py-0
+                        tablet-v:contents">
+                        {%include './components/navbar.html' with {
+                            'items': {
+                                'blog': {
+                                    'label': 'Blog',
+                                    'url': url('blog.page-1')
+                                },
+                                'projects': {
+                                    'label': 'Progetti',
+                                    'url': url('projects.page-1')
+                                },
+                                'about': {
+                                    'label': 'Chi sono',
+                                    'url': '#'
+                                },
+                                'contacts': {
+                                    'label': 'Scrivimi',
+                                    'url': 'mailto:gspatarodev@gmail.com'
+                                }
                             }
-                        }
-                    }%}
+                        }%}
+                        <div class="flex-1 tablet-v:hidden"></div>
+                        <div class="tablet-v:hidden">
+                            {%include './components/social.html' with {
+                                'style': 'fortepiano'
+                            }%}
+                        </div>
+                    </div>
                 </div>
                 <a href="javascript:void(0)" class="text-white tablet-v:hidden" id="navbar-toggle">
                     <span class="group-data-[open=true]/header:hidden">
