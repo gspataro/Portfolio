@@ -201,6 +201,7 @@ module.exports = {
 
         addComponents({
             ".prose": {
+                fontSize: theme('fontSize.sm'),
                 "h1, h2, h3, h4, h5, h6": {
                     marginTop: theme('spacing.xs'),
                     marginBottom: theme('spacing.3xs'),
