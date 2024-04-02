@@ -47,8 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         setupSection(section);
-        section.scrollIntoView({
-            'behavior': 'smooth'
+
+        const sectionXCoords = section.offsetLeft;
+        main.scroll({
+            top: 0,
+            left: sectionXCoords,
+            behavior: 'smooth'
         });
     }
 
