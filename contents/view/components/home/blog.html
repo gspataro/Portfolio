@@ -23,7 +23,7 @@
                     <div class="w-[2px] h-full bg-thunder-darkest"></div>
                 </div>
                 {%for id, article in articles%}
-                    <article class="relative mb-md w-max group">
+                    <article class="relative mb-md max-w-max group">
                         <div class="absolute top-4xs right-full mr-[15px] bg-ivory-lightest border-2 border-thunder-darkest w-[12px] h-[12px] rounded-full"></div>
                         <time datetime="{{article.frontmatter.date}}" class="mb-4xs">
                             {{article.frontmatter.published|date('d F Y')}}
