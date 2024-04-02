@@ -35,6 +35,12 @@
             "slug": "/index",
             "generate": "once"
         },
+        "about": {
+            "template": "about",
+            "builder": "simple",
+            "slug": "/chi-sono",
+            "generate": "once"
+        },
         "project": {
             "contents": [
                 "projects",
