@@ -1,6 +1,8 @@
 <nav>
     <!-- WRAPPER -->
-    <ul class="flex flex-col gap-2xs items-center tablet-v:flex-row tablet-h:gap-xs desktop:gap-sm">
+    <ul class="flex flex-col gap-xs tablet-v:flex-row tablet-h:gap-xs desktop:gap-sm">
+        <li class="bg-thunder-lightest h-[1px] w-full tablet-v:hidden">
+        </li>
         {%for id, item in items%}
             <!-- ITEM -->
             <li class="text-[24px] font-oswald font-normal uppercase tablet-v:text-[20px] tablet-h:text-[22px] desktop:text-[24px]">
@@ -12,6 +14,8 @@
                     tablet-h:group-data-[style=pianoforte]/header:text-thunder-darkest">
                     {{item.label}}
                 </a>
+            </li>
+            <li class="bg-thunder-lightest h-[1px] w-full tablet-v:hidden">
             </li>
             <!-- END ITEM -->
         {%endfor%}
