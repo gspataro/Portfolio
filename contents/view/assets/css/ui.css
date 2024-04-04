@@ -248,14 +248,13 @@
      */
 
     :root {
-        --header-height: 58px;
-        --container-padding-y: theme('spacing.3xs');
+        --header-height: 64px;
+        --container-padding-y: theme('spacing.xs');
     }
 
     @media screen(tablet-v) {
         :root {
             --header-height: 70px;
-            --container-padding-y: theme('spacing.xs');
         }
     }
 
