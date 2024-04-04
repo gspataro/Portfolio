@@ -100,6 +100,7 @@ module.exports = {
         center: true,
         padding: {
             DEFAULT: "16px",
+            "tablet-v": "24px",
             "tablet-h": "32px"
         },
         screens: {
