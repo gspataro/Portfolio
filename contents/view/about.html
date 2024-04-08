@@ -1,10 +1,20 @@
 {%set page = {
     'title': 'Chi sono',
     'layout': {
-        'contain': true
+        'fluid': true
     }
 }%}
 {%extends "./layout/default.html"%}
 {%block main%}
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus sint nihil maxime eius. Deleniti maiores sunt maxime voluptatem consequatur soluta corporis nobis impedit error, illum cum vitae quisquam voluptates labore.
+    <div class="grid h-[100vh] tablet-h:grid-cols-[300px_1fr] laptop-sm:grid-cols-[500px_1fr]">
+        <div class="bg-thunder-dark">
+            <img src="{{website.url}}/assets/images/drama.jpg" alt="" width="500px" height="auto" class="w-full h-[300px] object-cover object-center tablet-h:h-full">
+        </div>
+        <div class="p-lg prose">
+            <h1>Giuseppe Spataro</h1>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus sint nihil maxime eius. Deleniti maiores sunt maxime voluptatem consequatur soluta corporis nobis impedit error, illum cum vitae quisquam voluptates labore.
+            </p>
+        </div>
+    </div>
 {%endblock%}
