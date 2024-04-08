@@ -6,14 +6,47 @@
 }%}
 {%extends "./layout/default.html"%}
 {%block main%}
-    <div class="grid h-[100vh] tablet-h:grid-cols-[300px_1fr] laptop-sm:grid-cols-[500px_1fr]">
+    <div class="grid min-h-[100vh] grid-rows-[300px_1fr] tablet-v:grid-rows-[400px_1fr] tablet-h:grid-rows-1 tablet-h:grid-cols-[300px_1fr] laptop-sm:grid-cols-[500px_1fr]">
         <div class="bg-thunder-dark">
-            <img src="{{website.url}}/assets/images/drama.jpg" alt="" width="500px" height="auto" class="w-full h-[300px] object-cover object-center tablet-h:h-full">
+            <img src="{{website.url}}/assets/images/drama.jpg" alt="" width="500px" height="auto" class="w-full h-[300px] object-cover object-center tablet-v:h-[400px] tablet-h:h-full">
         </div>
-        <div class="p-lg prose">
-            <h1>Giuseppe Spataro</h1>
+        <div class="container py-lg tablet-h:p-lg">
+            <h2 class="mb-sm">Sono un pianista e sviluppatore web maniaco dell'ordine e con una forte dipendenza da musica.</h2>
+            <div class="prose mb-md">
+                <p>
+                    Spesso da piccoli coltiviamo più passioni e ci viene chiesto cosa vorremmo fare da grandi, io semplicemente non sono mai riuscito a scegliere e possibilmente non mi porrò mai il problema di farlo.<br>
+                    Certo, questo nella vita ha richiesto e richiede parecchi sforzi, ma scontentare una parte di se stessi sarebbe più tragico di fare qualche ora extra.
+                </p>
+                <p>
+                    Mi chiamo Giuseppe Spataro, sono un ragazzo siciliano e amo tutto ciò che richiede il mettere insieme i pezzi di un puzzle, sia che si tratti di un puzzle musicale che di uno informatico.<br>
+                    Ammetto che non mi dispiacciono neanche quelli veri di puzzle, e possibilmente ciò fa di me un maniaco dell'ordine.
+                </p>
+                <p>
+                    Ho studiato in conservatorio prendendo la specialistica in pianoforte con 110/110 e lode presso l'ISSM Vincenzo Bellini di Catania. Attualmente lavoro nel settore dello sviluppo web e lavoro a progetti in vari ambiti.
+                </p>
+            </div>
+            <h2 class="mb-sm">Studi</h2>
+            <div class="mb-xs">
+                <h4>Laurea Magistrale</h4>
+                <p>Pianoforte presso ISSM V. Bellini di Catania</p>
+                <p>2019 - 2021</p>
+            </div>
+            <div class="mb-xs">
+                <h4>Laurea Triennale</h4>
+                <p>Pianoforte presso ISSM V. Bellini di Catania</p>
+                <p>2016 - 2019</p>
+            </div>
+            <div class="mb-md">
+                <h4>Liceo Classico</h4>
+                <p>Giusto per aggiungere qualcosa al mio minestrone, non ho studiato "né allo scientifico né al musicale"</p>
+                <p>2011 - 2016</p>
+            </div>
+            <h2 class="mb-sm">Contattami</h2>
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus sint nihil maxime eius. Deleniti maiores sunt maxime voluptatem consequatur soluta corporis nobis impedit error, illum cum vitae quisquam voluptates labore.
+                Sentiti libero di contattarmi per pormi qualsiasi domanda o anche solo per restare in contatto.
+            </p>
+            <p>
+                <a href="mailto:gspatarodev@gmail.com">gspatarodev@gmail.com</a>
             </p>
         </div>
     </div>
