@@ -5,9 +5,11 @@ namespace GSpataro\Application\Component;
 use Twig\Environment;
 use GSpataro\View\TwigSitemap;
 use GSpataro\View\TwigBlueprint;
+use GSpataro\View\TwigHighlighter;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extra\String\StringExtension;
 use GSpataro\DependencyInjection\Component;
+use GSpataro\View\TwigHighlightest;
 use Twig\Extension\StringLoaderExtension;
 
 final class TwigComponent extends Component
@@ -35,6 +37,9 @@ final class TwigComponent extends Component
 
         $twig->addExtension(new StringExtension());
         $twig->addExtension(new StringLoaderExtension());
+        $twig->addExtension(new TwigHighlighter(
+            $this->container->get('tempest.highlight')
+        ));
         $twig->addExtension(new TwigBlueprint(
             $this->container->get('project.blueprint')
         ));

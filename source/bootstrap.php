@@ -21,6 +21,7 @@ $app = new Container();
 $app->loadComponents([
     Component\LocalizationComponent::class,
     Component\ProjectComponent::class,
+    Component\HighlightComponent::class,
     Component\TwigComponent::class,
     Component\MarkdownComponent::class,
     Component\LibraryComponent::class,
