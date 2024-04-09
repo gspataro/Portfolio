@@ -41,6 +41,12 @@
             "slug": "/chi-sono",
             "generate": "once"
         },
+        "darkside": {
+            "template": "darkside",
+            "builder": "simple",
+            "slug": "/darkside",
+            "generate": "once"
+        },
         "project": {
             "contents": [
                 "projects",

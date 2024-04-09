@@ -15,6 +15,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const cosineTerms = new Float32Array(sineTerms.length);
     const waveForm = audioContext.createPeriodicWave(cosineTerms, sineTerms);
 
+    // Secret combination
+    const correctCombination = ['C4', 'D#4', 'G4', 'B4'];
+    let currentCombination = [];
+
+    /**
+     * Try combination
+     *
+     * @param note
+     * @return void
+     */
+
+    function tryCombination(note) {
+        let position = currentCombination.length;
+
+        if (note !== correctCombination[position]) {
+            currentCombination = [];
+            return;
+        }
+
+        currentCombination.push(note);
+
+        if (currentCombination.length === correctCombination.length) {
+            setInterval(() => window.location.replace('/darkside'), 500);
+        }
+    }
+
     /**
      * Play a tone
      *
@@ -46,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!key.dataset.pressed) {
             oscList[key.dataset['name']] = playTone(key.dataset.frequency);
             key.dataset.pressed = true;
+            tryCombination(key.dataset['name']);
         }
     }
 
