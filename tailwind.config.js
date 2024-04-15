@@ -9,7 +9,8 @@ module.exports = {
         "sans": ['Roboto', 'Sans-Serif', 'Arial'],
         "roboto": ['Roboto', 'Sans-Serif', 'Arial'],
         "roboto-flex": ['Roboto Flex', 'Sans-Serif', 'Arial'],
-        "oswald": ['Oswald', 'Sans-Serif', 'Arial']
+        "oswald": ['Oswald', 'Sans-Serif', 'Arial'],
+        "geist": ['Geist', 'Sans-Serif', 'Arial']
     },
     colors: {
         "transparent": "transparent",
@@ -122,37 +123,37 @@ module.exports = {
                 fontWeight: 300
             },
             h1: {
-                fontFamily: theme('fontFamily.roboto-flex'),
+                fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h1'),
                 fontWeight: 400,
                 lineHeight: "46px"
             },
             h2: {
-                fontFamily: theme('fontFamily.roboto-flex'),
+                fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h2'),
                 fontWeight: 400,
                 lineHeight: "40px"
             },
             h3: {
-                fontFamily: theme('fontFamily.roboto-flex'),
+                fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h3'),
                 fontWeight: 400,
                 lineHeight: "38px"
             },
             h4: {
-                fontFamily: theme('fontFamily.roboto-flex'),
+                fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h4'),
                 fontWeight: 400,
                 lineHeight: "32px"
             },
             h5: {
-                fontFamily: theme('fontFamily.roboto-flex'),
+                fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h5'),
                 fontWeight: 400,
                 lineHeight: "30px"
             },
             h6: {
-                fontFamily: theme('fontFamily.roboto-flex'),
+                fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h6'),
                 fontWeight: 400,
                 lineHeight: "26px"
