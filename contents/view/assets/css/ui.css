@@ -380,6 +380,20 @@
         margin-left: 5px;
         margin-right: -5px;
     }
+
+    /**
+     * Code highlight
+     */
+
+    pre {
+        background-color: theme('colors.ivory.DEFAULT');
+        padding: theme('spacing.sm');
+        border-radius: 10px;
+        max-width: 100%;
+        overflow-y: auto;
+        font-family: theme('fontFamily.roboto');
+        font-size: inherit;
+    }
 }
 
 @layer utilities {

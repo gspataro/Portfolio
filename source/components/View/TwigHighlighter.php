@@ -2,7 +2,7 @@
 
 namespace GSpataro\View;
 
-use Twig\TwigFunction;
+use Twig\TwigFilter;
 use Tempest\Highlight\Highlighter;
 use Twig\Extension\AbstractExtension;
 
@@ -18,12 +18,14 @@ final class TwigHighlighter extends AbstractExtension
         return $this->highlighter->parse($code, $language);
     }
 
-    public function getFunctions()
+    public function getFilters()
     {
-        $functions = [];
+        $filters = [];
 
-        $functions[] = new TwigFunction('highlight', [$this, 'highlight']);
+        $filters[] = new TwigFilter('highlight', [$this, 'highlight'], [
+            'is_safe' => ['html']
+        ]);
 
-        return $functions;
+        return $filters;
     }
 }
