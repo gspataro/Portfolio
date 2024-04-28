@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
     mainGainNode.gain.value = 10;
 
     // Prepare wave form
-    const sineTerms = new Float32Array([0, 1, 1, 0, 0]);
-    const cosineTerms = new Float32Array(sineTerms.length);
+    const sineTerms = new Float32Array([0, 0, 0, 0, 0, 0, 0, 0]);
+    const cosineTerms = new Float32Array([0, 0.5, 0, 0.25, 0, 0.125, 0, 0.0625]);
     const waveForm = audioContext.createPeriodicWave(cosineTerms, sineTerms);
 
     // Secret combination
