@@ -23,13 +23,13 @@
             {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
         </p>
         <div class="flex items-center gap-xs text-2xs">
-            <ul class="flex">
+            {#<ul class="flex">
                 {%for category in article.frontmatter.categories%}
                     <li class="text-xs lowercase font-normal">
                         {{articles_cats[category].label ?? category}}
                     </li>
                 {%endfor%}
-            </ul>
+            </ul>#}
             <time datetime="{{article.frontmatter.published|date('Y-m-d')}}">
                 {{article.frontmatter.published|date('d F Y')}}
             </time>
