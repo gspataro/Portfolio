@@ -196,8 +196,9 @@ module.exports = {
                 fontWeight: 400
             },
             a: {
-                color: theme('colors.stiletto.DEFAULT'),
-                textDecoration: 'underline'
+                color: theme('colors.thunder.darkest'),
+                textDecoration: 'underline',
+                fontWeight: 400
             }
         })
 
