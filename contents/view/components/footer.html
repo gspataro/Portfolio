@@ -25,13 +25,29 @@
 
 <footer id="footer">
     <!-- PRE FOOTER -->
-    <div class="bg-brass/20 py-md">
-        <div class="container w-2/3 flex flex-wrap items-center gap-xl">
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <a href="#" class="cta text-sm">
+    <div class="bg-brass/20 py-xl">
+        <div class="container flex flex-col items-start justify-center gap-sm tablet-h:flex-row tablet-h:items-center tablet-h:flex-wrap tablet-h:w-2/3 tablet-h:gap-2xl">
+            <div class="basis-2/4">
+                <h3 class="mb-4xs">Contattami</h3>
+                <p class="text-sm">Scrivimi se vuoi farmi delle domande o restare in contatto, sarò felice di risponderti!</p>
+            </div>
+            <a href="#" class="btn text-sm">
                 SCRIVIMI
             </a>
         </div>
     </div>
     <!-- END PRE FOOTER -->
+    <!-- FOOTER -->
+    <div>
+        <div class="container flex items-center gap-xs flex-col py-sm tablet-v:flex-row">
+            <div>
+                {%include './components/social.html' with {'style': 'pianoforte'}%}
+            </div>
+            <div class="flex-1 hidden tablet-v:block"></div>
+            <div>
+                &copy; 2024 Giuseppe Spataro.
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER-->
 </footer>
