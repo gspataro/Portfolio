@@ -17,7 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
     customCursor.classList.add('cursor');
     document.body.append(customCursor);
 
-    document.addEventListener('mousemove', function (e) {
+    document.addEventListener('pointermove', function (e) {
+        if (document.documentElement.clientWidth < 992) {
+            return;
+        }
+
         const xpos = e.clientX - (customCursor.clientWidth / 2);
         const ypos = e.clientY - (customCursor.clientHeight / 2);
 
