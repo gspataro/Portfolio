@@ -7,15 +7,15 @@
     </head>
 
     <body class="homepage overflow-y-auto">
-        <div class="flex flex-col tablet-v:flex-row">
-            {%include './components/header.html'%}
-            <div id="main-wrapper" class="flex flex-col overflow-y-hidden tablet-v:w-[calc(100%-var(--header-height))]">
+        <div class="grid grid-cols-1 tablet-v:grid-cols-[auto_1fr]">
+            {%include './components/header.html' with {'class': 'tablet-v:col-start-1 tablet-v:row-span-2'}%}
+            <div id="main-wrapper" class="flex flex-col overflow-y-hidden tablet-v:col-start-2">
                 <main id="main" class="items-start grid grid-cols-[repeat(3,100%)] snap-mandatory snap-x overflow-x-scroll overflow-y-hidden scrollbar-hide">
                     {%block main%}
                     {%endblock%}
                 </main>
             </div>
+            {%include './components/footer.html' with {'class': 'col-start-2'}%}
         </div>
-        {%include './components/footer.html'%}
     </body>
 </html>

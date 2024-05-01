@@ -296,6 +296,7 @@
      */
 
     .cursor {
+        display: none;
         position: fixed;
         z-index: 999;
         top: 0;
@@ -308,6 +309,10 @@
         transition: transform;
         transition-duration: 200ms;
         pointer-events: none;
+
+        @media screen(laptop-sm) {
+            display: block;
+        }
     }
 
     .cursor.hover {
