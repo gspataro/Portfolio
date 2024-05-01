@@ -286,7 +286,10 @@
     }
 
     * {
-        cursor: none;
+
+        @media screen(laptop-sm) {
+            cursor: none;
+        }
     }
 }
 
