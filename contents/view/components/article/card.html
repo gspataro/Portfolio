@@ -19,9 +19,6 @@
                 </a>
             </h4>
         </header>
-        <p class="mb-2xs">
-            {{(article.frontmatter.excerpt ?? article.content)|striptags|u.truncate(100, '...', false)}}
-        </p>
         <div class="flex items-center gap-xs text-2xs">
             {#<ul class="flex">
                 {%for category in article.frontmatter.categories%}
