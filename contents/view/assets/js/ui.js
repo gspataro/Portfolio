@@ -46,4 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         customCursor.classList.remove('hover');
     });
+
+    document.addEventListener('mousedown', function () {
+        customCursor.classList.add('click');
+    });
+
+    document.addEventListener('mouseup', function () {
+        customCursor.classList.remove('click');
+    });
 });

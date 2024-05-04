@@ -319,7 +319,12 @@
         border-width: 1px;
         border-style: solid;
         border-color: #ffffff;
-        transform: scale(2);
+        transform: scale(1.8);
+    }
+
+    .cursor.click {
+        background-color: #ffffff;
+        transform: scale(.6);
     }
 
     /**
