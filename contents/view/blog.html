@@ -2,7 +2,7 @@
     'title': 'Blog',
     'id': 'blog',
     'layout': {
-        'contain': true,
+        'fluid': true,
         'breadcrumb': {
             'index': 'Home',
             '': 'Blog'
@@ -11,23 +11,32 @@
 }%}
 {%extends "./layout/default.html"%}
 {%block main%}
-    <h1 class="mb-md">Blog</h1>
-    <div class="grid grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3 gap-lg">
-        {%for id, article in blog%}
-            {%include './components/article/card.html' with {
-                'id': id,
-                'article': article,
-                'articles_cats': articles_cats,
-                'class': ''
-            } only%}
-        {%endfor%}
+    <div class="bg-ivory-dark/20 py-xl mb-md">
+        <div class="container">
+            <h1 class="mb-xs">Blog</h1>
+            <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, explicabo. Aliquid eos fuga iste ad eligendi assumenda. Iure explicabo cupiditate laboriosam beatae, nisi illo, temporibus impedit repellat provident incidunt ipsam?
+            </div>
+        </div>
     </div>
-    <div>
-        {%if pagination.prev%}
-            <a href="{{url('projects.page-' ~ pagination.prev)}}">Precedente</a>
-        {%endif%}
-        {%if pagination.next%}
-            <a href="{{url('projects.page-' ~ pagination.next)}}">Successivo</a>
-        {%endif%}
+    <div class="container">
+        <div class="grid grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3 gap-lg">
+            {%for id, article in blog%}
+                {%include './components/article/card.html' with {
+                    'id': id,
+                    'article': article,
+                    'articles_cats': articles_cats,
+                    'class': ''
+                } only%}
+            {%endfor%}
+        </div>
+        <div>
+            {%if pagination.prev%}
+                <a href="{{url('projects.page-' ~ pagination.prev)}}">Precedente</a>
+            {%endif%}
+            {%if pagination.next%}
+                <a href="{{url('projects.page-' ~ pagination.next)}}">Successivo</a>
+            {%endif%}
+        </div>
     </div>
 {%endblock%}
