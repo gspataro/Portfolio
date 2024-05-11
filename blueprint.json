@@ -1,17 +1,15 @@
 {
     "website": {
         "name": "Giuseppe Spataro",
-        "description": "Giuseppe Spataro, pianista e sviluppatore web siciliano",
+        "description": "Giuseppe Spataro, pianista siciliano",
         "author": "Giuseppe Spataro",
-        "keywords": "pianista, sviluppatore web, sicilia",
+        "keywords": "pianista, musicista, pianista accompagnatore, insegnante di musica, sicilia",
         "url": "http://gspataro.test",
         "friendly_urls": true
     },
-    "languages": ["it", "en"],
+    "languages": ["it"],
     "default_language": "it",
     "contents": {
-        "projects": "markdown:projects/*.md",
-        "projects_cats": "json:projects_categories.json",
         "articles": "markdown:articles/*.md",
         "articles_cats": "json:articles_categories.json"
     },
@@ -24,11 +22,7 @@
                     "orderBy": "frontmatter.published",
                     "order": "desc"
                 },
-                "articles_cats",
-                {
-                    "group": "projects",
-                    "select": ["cli", "dependencyinjection", "portfolio"]
-                }
+                "articles_cats"
             ],
             "template": "index",
             "builder": "simple",
@@ -52,28 +46,6 @@
             "builder": "simple",
             "slug": "/darkside",
             "generate": "once"
-        },
-        "project": {
-            "contents": [
-                "projects",
-                "projects_cats"
-            ],
-            "template": "project",
-            "builder": "post",
-            "slug": "/progetto",
-            "generate": "loop:projects"
-        },
-        "projects": {
-            "contents": [
-                "projects"
-            ],
-            "template": "projects",
-            "builder": "archive",
-            "slug": "/progetti",
-            "generate": "paginate:projects",
-            "options": {
-                "per_page": 12
-            }
         },
         "article": {
             "contents": [
