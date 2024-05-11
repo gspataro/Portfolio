@@ -4,35 +4,20 @@
 }%}
     {%block content%}
         <div class="flex flex-col gap-sm tablet-h:pl-sm">
-            <div class="grid gap-x-2xs mb-lg laptop-sm:w-1/2">
-                <h2 class="contents">
-                    <span class="col-start-1 row-span-3 self-start font-oswald font-normal text-xl leading-none writing-v-lr rotate-180">COGITO</span>
-                    <span class="col-start-2 mb-2xs">ERGO SUM</span>
+            <div class="mb-md tablet-v:w-2/3 tablet-h:w-1/2">
+                <h2 class="mb-3xs">
+                    COGITO ERGO SUM
                 </h2>
-                <p class="mb-2xs col-start-2">
-                    Il blog è lo spazio dove raccolgo i miei pensieri e la mia creatività fondendo tra di loro argomenti tecnici, filosofici e artistici alla ricerca del perfetto equilibrio tra musica e programmazione che rappresentano i pilastri fondamentali del mio pensiero.
+                <p class="text-sm mb-xs">
+                    Il blog è lo spazio dove pubblico i miei pensieri e le mie riflessioni spaziando dall'ambito prettamente musicale a quello più educativo e quindi filosofico.
                 </p>
-                <div class="col-start-2">
-                    <a href="{{url('blog.page-1')}}" class="btn text-stiletto">
-                        Tutti gli articoli
-                    </a>
-                </div>
+                <a href="{{url('blog.page-1')}}" class="cta">
+                    VAI AL BLOG
+                </a>
             </div>
-            <div class="pl-md relative">
-                <div class="absolute top-0 bottom-0 left-[22px]">
-                    <div class="w-[2px] h-full bg-thunder-darkest"></div>
-                </div>
+            <div class="grid tablet-v:grid-cols-2 laptop-sm:w-2/3 gap-md">
                 {%for id, article in articles%}
-                    <article class="relative mb-md max-w-max group">
-                        <div class="absolute top-4xs right-full mr-[15px] bg-ivory-lightest border-2 border-thunder-darkest w-[12px] h-[12px] rounded-full"></div>
-                        <time datetime="{{article.frontmatter.date}}" class="mb-4xs">
-                            {{article.frontmatter.published|date('d F Y')}}
-                        </time>
-                        <h4 class="mb-3xs group-hover:underline">
-                            {{article.frontmatter.title}}
-                        </h4>
-                        <a href="{{url('article.' ~ id)}}" class="absolute inset-0" aria-label="Leggi articolo"></a>
-                    </article>
+                    {%include('./components/article/card.html') with {article: article}%}
                 {%endfor%}
             </div>
         </div>
