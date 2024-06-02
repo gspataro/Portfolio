@@ -17,7 +17,11 @@
             </div>
             <div class="grid tablet-v:grid-cols-2 laptop-sm:w-2/3 gap-md">
                 {%for id, article in articles%}
-                    {%include('./components/article/card.html') with {article: article}%}
+                    {%include('./components/article/card.html') with {
+                        article: article,
+                        layout: loop.index == 1 ? 'horizontal' : 'vertical',
+                        class: 'first:col-span-2'
+                    }%}
                 {%endfor%}
             </div>
         </div>
