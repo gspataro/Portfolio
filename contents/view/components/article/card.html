@@ -7,7 +7,7 @@
     {{class}}" data-layout="{{layout ?? 'vertical'}}">
     <figure class="overflow-hidden tablet-v:group-data-[layout=horizontal]/article:col-start-1">
         <a href="{{url('article.' ~ id)}}">
-            <img src="{{media(article.frontmatter.thumbnail, 'thumbnail')}}" class="pointer-events-none" alt="{{article.frontmatter.title}}" class="group-hover/article:scale-110 transition-transform duration-150">
+            <img src="{{media(article.frontmatter.thumbnail, 'thumbnail')}}" class="pointer-events-none w-full" alt="{{article.frontmatter.title}}" class="group-hover/article:scale-110 transition-transform duration-150">
         </a>
         <figcaption class="hidden">{{article.frontmatter.title}}</figcaption>
     </figure>
