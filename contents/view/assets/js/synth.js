@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const muteControl = document.getElementById('keyboard-mute');
     const keyboard = document.getElementById('keyboard');
     const keys = keyboard.getElementsByClassName('key');
 
@@ -18,6 +19,24 @@ document.addEventListener('DOMContentLoaded', function () {
     // Secret combination
     const correctCombination = ['C4', 'D#4', 'G4', 'B4'];
     let currentCombination = [];
+
+    /**
+     * Listen to mute control
+     */
+
+    muteControl.addEventListener('click', function () {
+        if (muteControl.dataset.muted === 'false') {
+            audioContext.suspend();
+            muteControl.dataset.muted = 'true';
+
+            muteControl.getElementsByClassName('')
+
+            return;
+        }
+
+        audioContext.resume();
+        muteControl.dataset.muted = 'false';
+    });
 
     /**
      * Try combination
