@@ -23,7 +23,7 @@
     tablet-h:data-[style=fortepiano]:bg-thunder-darkest
     tablet-h:data-[style=fortepiano]:border-thunder-dark" data-style="{{style ?? 'pianoforte'}}" data-open="false">
     <div class="container h-full tablet-v:w-full tablet-v:writing-v-lr">
-        <div class="flex flex-row-reverse items-center h-full w-full tablet-v:py-[--container-padding-y] tablet-v:flex-row">
+        <div class="flex flex-row-reverse items-center w-full h-full tablet-v:py-[--container-padding-y] tablet-v:flex-row">
             <!-- NAVBAR -->
             <div class="tablet-v:rotate-180">
                 <div id="navbar" class="
@@ -40,15 +40,7 @@
                     tablet-v:bg-transparent
                     tablet-v:static
                     tablet-v:contents">
-                    <div class="
-                        h-full
-                        flex
-                        flex-col
-                        container
-                        py-xl
-                        tablet-v:h-auto
-                        tablet-v:py-0
-                        tablet-v:contents">
+                    <div class="container flex flex-col h-full py-xl tablet-v:h-auto tablet-v:py-0 tablet-v:contents">
                         {%include './components/navbar.html' with {
                             'items': {
                                 'blog': {

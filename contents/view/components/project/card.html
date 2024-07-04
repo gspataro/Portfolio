@@ -20,7 +20,7 @@
         {{project.frontmatter.description}}
     </p>
     <div class="flex-1"></div>
-    <div class="flex gap-3xs items-center">
+    <div class="flex items-center gap-3xs">
         {%include './components/project/links.html'%}
         <div class="flex-1"></div>
         <a href="{{url('project.' ~ id)}}" class="cta {%if style == 'dark'%}text-ivory-lightest{%endif%}">

@@ -7,14 +7,14 @@
     {{class}}" data-layout="{{layout ?? 'vertical'}}">
     <figure class="overflow-hidden tablet-v:group-data-[layout=horizontal]/article:col-start-1">
         <a href="{{url('article.' ~ id)}}">
-            <img src="{{media(article.frontmatter.thumbnail, 'thumbnail')}}" class="pointer-events-none w-full" alt="{{article.frontmatter.title}}" class="group-hover/article:scale-110 transition-transform duration-150">
+            <img src="{{media(article.frontmatter.thumbnail, 'thumbnail')}}" class="w-full pointer-events-none" alt="{{article.frontmatter.title}}" class="transition-transform duration-150 group-hover/article:scale-110">
         </a>
         <figcaption class="hidden">{{article.frontmatter.title}}</figcaption>
     </figure>
     <div class="pt-xs tablet-v:group-data-[layout=horizontal]/article:col-start-2">
         <header class="mb-3xs">
             <h4>
-                <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline group-hover/article:underline">
+                <a href="{{url('article.' ~ id)}}" class="no-underline text-thunder-darkest group-hover/article:underline">
                     {{article.frontmatter.title}}
                 </a>
             </h4>
@@ -22,7 +22,7 @@
         <div class="flex items-center gap-xs text-2xs">
             {#<ul class="flex">
                 {%for category in article.frontmatter.categories%}
-                    <li class="text-xs lowercase font-normal">
+                    <li class="text-xs font-normal lowercase">
                         {{articles_cats[category].label ?? category}}
                     </li>
                 {%endfor%}
