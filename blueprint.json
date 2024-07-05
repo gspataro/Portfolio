@@ -35,12 +35,6 @@
             "slug": "/404",
             "generate": "once"
         },
-        "about": {
-            "template": "about",
-            "builder": "simple",
-            "slug": "/chi-sono",
-            "generate": "once"
-        },
         "darkside": {
             "template": "darkside",
             "builder": "simple",
