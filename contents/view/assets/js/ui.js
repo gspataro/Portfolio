@@ -1,16 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const header = document.getElementById('header');
-    const navbarToggler = document.getElementById('navbar-toggle');
+    initHeader();
 
-    navbarToggler.onclick = function () {
-        if (header.dataset.open === 'false') {
-            header.dataset.open = 'true';
-            document.body.classList.add('hamburger-open');
-        } else {
-            header.dataset.open = 'false';
-            document.body.classList.remove('hamburger-open');
+    function initHeader()
+    {
+        const header = document.getElementById('header');
+        const navbarToggler = document.getElementById('navbar-toggle');
+
+        if (!header || !navbarToggler) {
+            return;
         }
-    };
+
+        navbarToggler.onclick = function () {
+            if (header.dataset.open === 'false') {
+                header.dataset.open = 'true';
+                document.body.classList.add('hamburger-open');
+            } else {
+                header.dataset.open = 'false';
+                document.body.classList.remove('hamburger-open');
+            }
+        };
+    }
 
     const customCursor = document.createElement('div');
     customCursor.style.display = 'none';
