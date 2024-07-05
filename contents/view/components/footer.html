@@ -1,20 +1,17 @@
-<footer id="footer" class="{{class}}">
-    <!-- PRE FOOTER -->
-    <div class="bg-brass/20 py-xl">
-        <div class="container flex flex-col justify-center items-start gap-sm tablet-h:flex-row tablet-h:items-center tablet-h:flex-wrap tablet-h:w-2/3 tablet-h:gap-2xl">
-            <div class="basis-2/4">
-                <h3 class="mb-4xs">Contattami</h3>
-                <p class="text-sm">Scrivimi se vuoi farmi delle domande o se hai delle richieste, sarò felice di risponderti!</p>
+<footer id="footer" class="bg-brass/20 py-xl {{class}}">
+    <div class="container">
+        <div class="bg-thunder-darkest text-ivory-lightest p-lg rounded-xl mb-md">
+            <div class="flex flex-col justify-center items-start gap-sm mx-auto tablet-h:flex-row tablet-h:items-center tablet-h:flex-wrap tablet-h:w-2/3 tablet-h:gap-2xl">
+                <div class="basis-2/4">
+                    <h3 class="mb-4xs">Contattami</h3>
+                    <p class="text-sm">Scrivimi se vuoi farmi delle domande o se hai delle richieste, sarò felice di risponderti!</p>
+                </div>
+                <a href="mailto:giuseppe.spataro.96@gmail.com" class="text-ivory-lightest text-sm btn">
+                    SCRIVIMI
+                </a>
             </div>
-            <a href="mailto:giuseppe.spataro.96@gmail.com" class="text-sm btn">
-                SCRIVIMI
-            </a>
         </div>
-    </div>
-    <!-- END PRE FOOTER -->
-    <!-- FOOTER -->
-    <div>
-        <div class="container flex flex-col items-center gap-xs py-sm tablet-v:flex-row">
+        <div class="flex flex-col items-center gap-xs tablet-v:flex-row">
             <div>
                 {%include './components/social.html' with {'style': 'pianoforte'}%}
             </div>
@@ -24,5 +21,4 @@
             </div>
         </div>
     </div>
-    <!-- END FOOTER-->
 </footer>
