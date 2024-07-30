@@ -11,6 +11,7 @@
     "default_language": "it",
     "contents": {
         "articles": "markdown:articles/*.md",
+        "projects": "markdown:projects/*.md",
         "articles_cats": "json:articles_categories.json"
     },
     "schemas": {
@@ -21,6 +22,10 @@
                     "limit": 3,
                     "orderBy": "frontmatter.published",
                     "order": "desc"
+                },
+                {
+                    "group": "projects",
+                    "limit": 3
                 },
                 "articles_cats"
             ],
