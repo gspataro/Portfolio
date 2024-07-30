@@ -12,4 +12,10 @@ technologies:
     - Javascript
 ---
 
-Script in PHP utilizzabile via riga di comando per generare la versione statica del mio portfolio partendo da dei template, compilati utilizzando Twig, e dei dati in formato JSON e Markdown. Per il frontend ho utilizzato Tailwind CSS.
+Il mio portfolio è un esempio concreto dei miei esperimenti. Si tratta di un sito web statico e ho colto questa sfida per poter creare un generatore interamente
+personalizzato. Questo generatore converte i dati markdown/json in delle pagine HTML applicandole a dei template definiti.
+
+## Sviluppo
+
+La sfida più grande è stata quella di gestire i dati in maniera flessibile e automatica, non volevo trovarmi nella condizione di dover aggiungere una pagina alla
+volta. Così ho creato un sistema basato su un file chiamato blueprint.json che contiene tutte le informazioni per la generazione automatica del sito, l'unica cosa che vanno forniti sono i template e i file markdown/json.
