@@ -1,9 +1,9 @@
 {
     "website": {
         "name": "Giuseppe Spataro",
-        "description": "Giuseppe Spataro, pianista siciliano",
+        "description": "Giuseppe Spataro, pianista e sviluppatoresiciliano",
         "author": "Giuseppe Spataro",
-        "keywords": "pianista, musicista, pianista accompagnatore, insegnante di musica, sicilia",
+        "keywords": "pianista, musicista, sviluppatore web, programmatore, sicilia",
         "url": "http://gspataro.test",
         "friendly_urls": true
     },
@@ -11,8 +11,9 @@
     "default_language": "it",
     "contents": {
         "articles": "markdown:articles/*.md",
+        "articles_cats": "json:articles_categories.json",
         "projects": "markdown:projects/*.md",
-        "articles_cats": "json:articles_categories.json"
+        "projects_cats": "json:projects_categories.json"
     },
     "schemas": {
         "index": {
@@ -23,11 +24,11 @@
                     "orderBy": "frontmatter.published",
                     "order": "desc"
                 },
+                "articles_cats",
                 {
                     "group": "projects",
-                    "limit": 3
-                },
-                "articles_cats"
+                    "select": ["cli", "dependencyinjection", "portfolio"]
+                }
             ],
             "template": "index",
             "builder": "simple",
@@ -55,6 +56,28 @@
             "builder": "post",
             "slug": "/articolo",
             "generate": "loop:articles"
+        },
+        "project": {
+            "contents": [
+                "projects",
+                "projects_cats"
+            ],
+            "template": "project",
+            "builder": "post",
+            "slug": "/progetto",
+            "generate": "loop:projects"
+        },
+        "projects": {
+            "contents": [
+                "projects"
+            ],
+            "template": "projects",
+            "builder": "archive",
+            "slug": "/progetti",
+            "generate": "paginate:projects",
+            "options": {
+                "per_page": 12
+            }
         },
         "blog": {
             "contents": [

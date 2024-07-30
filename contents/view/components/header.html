@@ -43,17 +43,13 @@
                     <div class="container flex flex-col h-full py-xl tablet-v:h-auto tablet-v:py-0 tablet-v:contents">
                         {%include './components/navbar.html' with {
                             'items': {
-                                'home': {
-                                    'label': 'Home',
-                                    'url': url('index')
-                                },
                                 'blog': {
                                     'label': 'Blog',
                                     'url': url('blog.page-1')
                                 },
                                 'projects': {
                                     'label': 'Progetti',
-                                    'url': '#'
+                                    'url': url('projects.page-1')
                                 },
                                 'about': {
                                     'label': 'Chi sono',

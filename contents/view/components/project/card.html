@@ -5,25 +5,25 @@
     rounded-3xl
     border
     p-sm
-    data-[style=dark]:bg-thunder-dark
-    data-[style=dark]:border-thunder
+    data-[style=fortepiano]:bg-thunder-dark
+    data-[style=fortepiano]:border-thunder
     group
-    {{class}}" data-style="{{style}}">
+    {{class}}" data-style="{{style ?? 'pianoforte'}}">
     <header class="mb-3xs">
         <{{heading_type ?? 'h5'}}>
-            <a href="{{url('project.' ~ id)}}" class="text-thunder-darkest no-underline group-data-[style=dark]:text-ivory-lightest">
+            <a href="{{url('project.' ~ id)}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]:text-ivory-lightest">
                 {{project.frontmatter.name}}
             </a>
         </{{heading_type ?? 'h5'}}>
     </header>
-    <p class="mb-xs group-data-[style=dark]:text-ivory-lightest">
+    <p class="mb-xs group-data-[style=fortepiano]:text-ivory-lightest">
         {{project.frontmatter.description}}
     </p>
     <div class="flex-1"></div>
     <div class="flex items-center gap-3xs">
         {%include './components/project/links.html'%}
         <div class="flex-1"></div>
-        <a href="{{url('project.' ~ id)}}" class="cta {%if style == 'dark'%}text-ivory-lightest{%endif%}">
+        <a href="{{url('project.' ~ id)}}" class="cta group-data-[style=fortepiano]:text-ivory-lightest">
             Scopri di più
         </a>
     </div>
