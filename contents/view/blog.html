@@ -22,12 +22,19 @@
             } only%}
         {%endfor%}
     </div>
-    <div>
-        {%if pagination.prev%}
-            <a href="{{url('projects.page-' ~ pagination.prev)}}">Precedente</a>
-        {%endif%}
-        {%if pagination.next%}
-            <a href="{{url('projects.page-' ~ pagination.next)}}">Successivo</a>
-        {%endif%}
-    </div>
+    {%if pagination.prev or pagination.next%}
+        <div class="flex mt-lg">
+            {%if pagination.prev%}
+                <a href="{{url('blog.page-' ~ pagination.prev)}}" class="cta cta-inverted">
+                    PRECEDENTE
+                </a>
+            {%endif%}
+            <div class="flex-1"></div>
+            {%if pagination.next%}
+                <a href="{{url('blog.page-' ~ pagination.next)}}" class="cta">
+                    SUCCESSIVO
+                </a>
+            {%endif%}
+        </div>
+    {%endif%}
 {%endblock%}
