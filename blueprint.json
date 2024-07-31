@@ -35,6 +35,12 @@
             "slug": "/index",
             "generate": "once"
         },
+        "about": {
+            "template": "about",
+            "builder": "simple",
+            "slug": "/about",
+            "generate": "once"
+        },
         "404": {
             "template": "404",
             "builder": "simple",

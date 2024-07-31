@@ -1,0 +1,29 @@
+{%set page = {
+    'title': 'Chi sono',
+    'id': 'about',
+    'layout': {
+        'fluid': true
+    }
+}%}
+{%extends "./layout/default.html"%}
+{%block main%}
+    <div class="tablet-h:grid tablet-h:grid-cols-[auto_1fr] tablet-h:min-h-screen">
+        <figure class="bg-thunder-darkest mb-sm tablet-h:w-[300px] desktop:w-[500px] tablet-h:mb-0">
+
+        </figure>
+        <div class="container py-[--container-padding-y]">
+            <div class="prose max-w-[800px] mx-auto">
+                <h1 class="mb-sm">Chi sono</h1>
+                <p class="mb-xs">
+                    Mi chiamo Giuseppe Spataro e sono un pianista e sviluppatore web siciliano. Ho iniziato a studiare pianoforte all'età di 5 anni
+                    e ho proseguito nel percorso fino alla laurea specialistica. In parallelo ho iniziato a programmare all'età di 11 anni rendendo
+                    adesso quest'attività il mio lavoro.
+                </p>
+                <p>
+                    In realtà non saprei dire quale tra le due attività è il lavoro e quale l'hobby, preferisco considerarle entrambe parte di me
+                    e continuare a svilupparle in egual modo.
+                </p>
+            </div>
+        </div>
+    </div>
+{%endblock%}
