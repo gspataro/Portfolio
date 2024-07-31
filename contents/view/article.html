@@ -24,14 +24,8 @@
         })%}
     {%endif%}
     {%if article.frontmatter.categories%}
-        {%set categories = []%}
-        {%for category in article.frontmatter.categories%}
-            {%set categories = categories|merge([
-                articles_cats[category].label ?? category
-            ])%}
-        {%endfor%}
         {%set meta = meta|merge({
-            "Categorie": categories|join(', ')
+            "Categorie": include('./components/article/categories.html', {categories: article.frontmatter.categories})
         })%}
     {%endif%}
     <article class="laptop-lg:max-w-[1000px] mx-auto">
