@@ -382,6 +382,23 @@
         transform: scaleX(1);
     }
 
+    .cta.cta-inverted::after {
+        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23000' d='m184.49 136.49l-80 80a12 12 0 0 1-17-17L159 128L87.51 56.49a12 12 0 1 1 17-17l80 80a12 12 0 0 1-.02 17'/%3E%3C/svg%3E");
+
+        transform: rotate(180deg);
+        order: -1;
+    }
+
+    .cta.cta-inverted:hover::after {
+        margin-right: 5px;
+        margin-left: -5px;
+    }
+
+    .cta.cta-inverted::before {
+        left: calc(theme('spacing.4xs') + 1em);
+        transform-origin: 100% 100%;
+    }
+
     /**
      * Button
      */
