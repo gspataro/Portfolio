@@ -13,20 +13,19 @@
     </figure>
     <div class="pt-xs tablet-v:group-data-[layout=horizontal]/article:col-start-2">
         <header class="mb-3xs">
-            <h4>
+            <h5>
                 <a href="{{url('article.' ~ id)}}" class="no-underline text-thunder-darkest group-hover/article:underline">
                     {{article.frontmatter.title}}
                 </a>
-            </h4>
+            </h5>
         </header>
-        <div class="flex items-center gap-xs text-2xs">
-            {#<ul class="flex">
-                {%for category in article.frontmatter.categories%}
-                    <li class="text-xs font-normal lowercase">
-                        {{articles_cats[category].label ?? category}}
-                    </li>
-                {%endfor%}
-            </ul>#}
+        <div class="flex items-center gap-4xs text-2xs">
+            {%include './components/article/categories.html' with {
+                'categories': article.frontmatter.categories
+            }%}
+            <span>
+                &bullet;
+            </span>
             <time datetime="{{article.frontmatter.published|date('Y-m-d')}}">
                 {{article.frontmatter.published|date('d F Y')}}
             </time>
