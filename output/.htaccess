@@ -1,3 +1,8 @@
+AuthName "Login"
+AuthType Basic
+AuthUserFile /var/www/html/giuseppespataro.it/output/.htpasswd
+Require valid-user
+
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
