@@ -1,0 +1,92 @@
+<section class="
+    snap-always
+    snap-start
+    group/section
+    data-[style=fortepiano]:bg-thunder-darkest
+    data-[style=fortepiano]:text-ivory-lightest
+    {%if background%}bg-[image:--section-bg-url]{%endif%}" data-style="{{style ?? 'pianoforte'}}" {%if background%}style="--section-bg-url: url({{background}});"{%endif%}>
+    <div class="flex flex-col h-full min-h-[100vh] tablet-h:flex-row">
+        <!-- MAIN CONTENT -->
+        {%block container%}
+            <div class="flex-1 py-[--container-padding-y]">
+                <div class="container h-full">
+                    {%block content%}
+                    {%endblock%}
+                </div>
+            </div>
+        {%endblock%}
+        <!-- END MAIN CONTENT-->
+        <!-- SIDEBAR -->
+        {%block sidebar%}
+            <div class="
+                -order-1
+                tablet-h:order-1
+                tablet-h:w-[180px]
+                tablet-h:bg-thunder-darkest
+                tablet-h:text-ivory-lightest
+                tablet-h:group-data-[style=fortepiano]/section:bg-ivory-lightest
+                tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest
+                laptop-sm:w-[220px]">
+                <!-- WRAPPER -->
+                <div class="container flex flex-row-reverse h-full py-[--container-padding-y] tablet-h:px-3xs tablet-h:flex-col tablet-h:sticky tablet-h:top-0 tablet-h:h-[100vh]">
+                    <!-- CONTROLS -->
+                    <div class="flex justify-end items-center gap-sm">
+                        <a href="javascript:void(0)" class="
+                        nav-prev
+                        text-thunder-darkest
+                        text-sm
+                        font-normal
+                        uppercase
+                        no-underline
+                        group-first-of-type/section:hidden
+                        group-data-[style=fortepiano]/section:text-ivory-lightest
+                        tablet-v:text-md
+                        tablet-h:text-ivory-lightest
+                        tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
+                            <img src="{{website.url}}/assets/images/icons/chevron-left.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione precedente">
+                            <img src="{{website.url}}/assets/images/icons/chevron-left-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione precedente">
+                        </a>
+                        <div class="hidden flex-1 tablet-v:block"></div>
+                        <a href="javascript:void(0)" class="
+                            nav-next
+                            text-thunder-darkest
+                            text-sm
+                            font-normal
+                            uppercase
+                            no-underline
+                            group-last-of-type/section:hidden
+                            group-data-[style=fortepiano]/section:text-ivory-lightest
+                            tablet-v:text-md
+                            tablet-h:text-ivory-lightest
+                            tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
+                            <img src="{{website.url}}/assets/images/icons/chevron-right.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione successiva">
+                            <img src="{{website.url}}/assets/images/icons/chevron-right-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione successiva">
+                        </a>
+                    </div>
+                    <!-- END CONTROLS -->
+                    <!-- SPACER -->
+                    <div class="flex-1"></div>
+                    <!-- END SPACER -->
+                    <!-- LABEL -->
+                    {%block sidebar_label%}
+                        <div class="
+                            font-oswald
+                            font-normal
+                            text-lg
+                            leading-none
+                            uppercase
+                            tablet-v:text-2xl
+                            tablet-h:writing-v-lr
+                            tablet-h:group-data-[style=fortepiano]/section:self-end
+                            tablet-h:group-data-[style=fortepiano]/section:rotate-180">
+                            {{label}}
+                        </div>
+                    {%endblock%}
+                    <!-- END LABEL -->
+                </div>
+                <!-- END WRAPPER -->
+            </div>
+        {%endblock%}
+        <!-- END SIDEBAR -->
+    </div>
+</section>

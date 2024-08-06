@@ -1,3 +1,5 @@
-node_modules/
-public/
-source/vendor/
+.DS_Store
+/node_modules/
+/output/*
+!/output/.htaccess
+/source/vendor/

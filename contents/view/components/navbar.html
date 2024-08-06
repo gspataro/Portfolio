@@ -1,0 +1,24 @@
+<nav>
+    <!-- WRAPPER -->
+    <ul class="flex flex-col gap-xs tablet-v:flex-row tablet-h:gap-xs desktop:gap-sm">
+        <li class="w-full bg-thunder-lightest h-[1px] tablet-v:hidden">
+        </li>
+        {%for id, item in items%}
+            <!-- ITEM -->
+            <li class="font-normal uppercase text-[24px] font-oswald tablet-v:text-[20px] tablet-h:text-[22px] desktop:text-[24px]">
+                <a href="{{item.url}}" class="
+                    no-underline
+                    group-data-[style=pianoforte]/header:text-ivory-lightest
+                    group-data-[style=fortepiano]/header:text-thunder-darkest
+                    tablet-h:group-data-[style=fortepiano]/header:text-ivory-lightest
+                    tablet-h:group-data-[style=pianoforte]/header:text-thunder-darkest">
+                    {{item.label}}
+                </a>
+            </li>
+            <li class="w-full bg-thunder-lightest h-[1px] tablet-v:hidden">
+            </li>
+            <!-- END ITEM -->
+        {%endfor%}
+    </ul>
+    <!-- END WRAPPER -->
+</nav>

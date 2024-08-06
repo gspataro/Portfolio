@@ -1,8 +1,7 @@
 <?php
 
-use GSpataro\Localization;
-use GSpataro\Builder;
-use Erusev\Parsedown\Parsedown;
+use GSpataro\Application\Component;
+use GSpataro\DependencyInjection\Container;
 
 // Include directories aliases
 
@@ -16,42 +15,20 @@ require_once DIR_VENDOR . "/autoload.php";
 
 (new \NunoMaduro\Collision\Provider())->register();
 
-// Initialize parsedown
+// Initialize dependency injection container
 
-$parsedown = new Parsedown();
-
-// Initialize twig/twig component
-
-$twigLoader = new \Twig\Loader\FilesystemLoader(DIR_VIEW);
-$twig = new \Twig\Environment($twigLoader);
-$twig->addExtension(new \Twig\Extra\String\StringExtension());
-
-// Load data from blueprint.json
-
-$rawBlueprint = file_get_contents(DIR_ROOT . "/blueprint.json");
-$blueprint = json_decode($rawBlueprint, true);
-
-// Initialize localization
-
-$locales = new Localization\Locales();
-
-foreach ($blueprint['languages'] as $langKey) {
-    $locales->addLanguage(new Localization\Language($langKey, DIR_LANGS . "/{$langKey}"));
-}
-
-// Initialize builder
-
-$dataBuilder = new Builder\Data(DIR_DATA);
-$pageBuilder = new Builder\Page($twig);
-
-foreach ($blueprint['data'] as $dataFile) {
-    $dataBuilder->load($dataFile);
-}
-
-// Include twig extensions
-
-require_once DIR_SOURCE . "/twig_extensions.php";
-
-// Include build process
-
-require_once DIR_SOURCE . "/build_process.php";
+$app = new Container();
+$app->loadComponents([
+    Component\LocalizationComponent::class,
+    Component\ProjectComponent::class,
+    Component\HighlightComponent::class,
+    Component\TwigComponent::class,
+    Component\MarkdownComponent::class,
+    Component\LibraryComponent::class,
+    Component\FinderComponent::class,
+    Component\PagesComponent::class,
+    Component\ContractorComponent::class,
+    Component\AssetsComponent::class,
+    Component\CLIComponent::class
+]);
+$app->boot();

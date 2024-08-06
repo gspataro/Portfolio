@@ -1,14 +1,5 @@
 {
     "meta": {
         "description": "Giuseppe Spataro is an italian pianist and web developer."
-    },
-    "navbar": {
-        "index": "Home",
-        "portfolio": "Portfolio",
-        "about": "About Me",
-        "contacts": "Contact Me"
-    },
-    "footer": {
-        "info": "If you need|more informations|contact me"
     }
 }

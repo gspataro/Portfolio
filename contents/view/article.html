@@ -1,0 +1,54 @@
+{%set page = {
+    'title': article.frontmatter.title,
+    'layout': {
+        'contain': true,
+        'breadcrumb': {
+            'index': 'Home',
+            'blog.page-1': 'Blog',
+            '': article.frontmatter.title
+        }
+    },
+    'meta': {
+        'description': article.frontmatter.description,
+        'keywords': article.frontmatter.keywords
+    }
+}%}
+{%extends "./layout/default.html"%}
+{%block main%}
+    {%set meta = {
+        "Pubbicato": article.frontmatter.published|date('d F Y')
+    }%}
+    {%if article.frontmatter.modified%}
+        {%set meta = meta|merge({
+            "Aggiornato": article.frontmatter.modified|date('d F Y')
+        })%}
+    {%endif%}
+    {%if article.frontmatter.categories%}
+        {%set meta = meta|merge({
+            "Categorie": include('./components/article/categories.html', {categories: article.frontmatter.categories})
+        })%}
+    {%endif%}
+    <article class="laptop-lg:max-w-[1000px] mx-auto">
+        <header class="mb-md laptop-sm:flex laptop-sm:gap-xl">
+            <div class="laptop-sm:basis-[400px] desktop:basis-[500px]">
+                <h1 class="mb-xs">{{article.frontmatter.title}}</h1>
+                {%include './components/post/meta.html' with {
+                    'meta': meta,
+                    'class': 'tablet-v:w-2/3 laptop-sm:col-start-1 laptop-sm:w-full'
+                } only%}
+            </div>
+            {%if article.frontmatter.thumbnail%}
+                <figure class="mt-lg laptop-sm:mt laptop-sm:flex-1">
+                    <img src="{{media(article.frontmatter.thumbnail, 'large')}}" alt="{{article.frontmatter.title}}">
+                </figure>
+            {%endif%}
+        </header>
+        <div class="prose">
+            {%if article.frontmatter.twig%}
+                {{include(template_from_string(article.content))}}
+            {%else%}
+                {{article.content|raw}}
+            {%endif%}
+        </div>
+    </article>
+{%endblock%}
