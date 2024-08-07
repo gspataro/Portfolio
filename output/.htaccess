@@ -1,10 +1,13 @@
 AuthName "Login"
 AuthType Basic
-AuthUserFile /var/www/html/giuseppespataro.it/output/.htpasswd
+AuthUserFile /var/www/html/giuseppespataro.it/.htpasswd
 Require valid-user
 
 <IfModule mod_rewrite.c>
     RewriteEngine on
+
+    RewriteCond %{HTTP_HOST} ^www.giuseppespataro.it [NC]
+    RewriteRule ^(.*)$ https://giuseppespataro.it/$1 [L,R=301]
 
     ErrorDocument 404 /404
 
