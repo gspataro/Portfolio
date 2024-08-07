@@ -1,48 +1,72 @@
 <?php
 
 /**
- * Recursively copy a directory
+ * Recursively copy a file or directory to another location excluding the items in the $exclude array
  *
- * @param string $inputDirectory
- * @param string $outputDirectory
+ * @param string $from
+ * @param string $top
  * @param array $exclude
  * @return void
  */
 
-function recursiveCopy(string $inputDirectory, string $outputDirectory, $exclude = []): void
+function recursiveCopy(string $from, string $to, array $exclude = []): void
 {
-    if (!is_dir($inputDirectory)) {
-        throw new Exception(
-            "Input directory not found: {$inputDirectory}"
-        );
+    if (!is_dir($to)) {
+        mkdir($to, 0777, true);
     }
 
-    $structure = scandir($inputDirectory);
+    $directory = new DirectoryIterator($from);
 
-    if (!is_dir($outputDirectory)) {
-        mkdir($outputDirectory);
-    }
-
-    foreach ($structure as $item) {
-        if ($item == "." || $item == "..") {
+    foreach ($directory as $item) {
+        if ($item->isDot()) {
             continue;
         }
 
-        $inputItemPath = "{$inputDirectory}/{$item}";
-        $outputItemPath = "{$outputDirectory}/{$item}";
+        $source = $item->getPathname();
+        $destination = $to . '/' . $item->getBasename();
 
-        if (in_array($inputItemPath, $exclude)) {
+        if (in_array($item->getBasename(), $exclude)) {
             continue;
         }
 
-        if (is_dir($inputItemPath)) {
-            recursiveCopy($inputItemPath, $outputItemPath, $exclude);
+        if (is_file($source)) {
+            copy($source, $destination);
+            continue;
         }
 
-        if (is_file($inputItemPath)) {
-            copy($inputItemPath, $outputItemPath);
-        }
+        recursiveCopy($source, $destination, $exclude);
     }
+}
+
+/**
+ * Recursively delete a directory and its content
+ *
+ * @param string $path
+ * @return void
+ */
+
+function recursiveDelete(string $path): void
+{
+    if (!is_dir($path)) {
+        return;
+    }
+
+    $directory = new DirectoryIterator($path);
+
+    foreach ($directory as $item) {
+        if ($item->isDot()) {
+            continue;
+        }
+
+        if ($item->isFile()) {
+            unlink($item->getPathname());
+            continue;
+        }
+
+        recursiveDelete($item->getPathname());
+    }
+
+    rmdir($path);
 }
 
 /**
@@ -66,4 +90,41 @@ function getStringBetween(string $string, string $openTag, string $closeTag): ?s
     $end = strpos($string, $closeTag, $start) - $start;
 
     return substr($string, $start, $end);
+}
+
+/**
+ * Join two paths together
+ *
+ * @param string $base
+ * @param string $path
+ * @return string
+ */
+
+function pathJoin(string $base, string $path): string
+{
+    $separator = null;
+
+    if (!str_ends_with($base, '/') && !str_starts_with($path, '/')) {
+        $separator = DIRECTORY_SEPARATOR;
+    }
+
+    return $base . $separator . $path;
+}
+
+/**
+ * Add suffix to a file name
+ *
+ * @param string $filename
+ * @param string $suffix
+ * @return string
+ */
+
+function addSuffixToFilename(string $filename, string $suffix): string
+{
+    if (!str_contains($filename, '.')) {
+        return $filename . $suffix;
+    }
+
+    $extensionPosition = strrpos($filename, '.');
+    return substr($filename, 0, $extensionPosition) . $suffix . substr($filename, $extensionPosition);
 }

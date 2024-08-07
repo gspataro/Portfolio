@@ -3,117 +3,277 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: ["./contents/view/**/*.html"],
+  content: ["./contents/view/**/*.html", "./contents/view/**/*.js"],
   theme: {
+    fontFamily: {
+        "sans": ['Roboto', 'Sans-Serif', 'Arial'],
+        "roboto": ['Roboto', 'Sans-Serif', 'Arial'],
+        "roboto-flex": ['Roboto Flex', 'Sans-Serif', 'Arial'],
+        "oswald": ['Oswald', 'Sans-Serif', 'Arial'],
+        "geist": ['Geist', 'Sans-Serif', 'Arial']
+    },
     colors: {
         "transparent": "transparent",
         "black": "#000000",
         "white": "#ffffff",
-        "green": "#49ab38",
         "thunder": {
             "lightest": "#656465",
             "lighter": "#4f4d4f",
-            "light": "#393739",
-            DEFAULT: "#232123",
-            "dark": "#393739",
+            "light": "#434143",
+            DEFAULT: "#393739",
+            "dark": "#232123",
             "darker": "#191719",
             "darkest": "#121112"
 
         },
-        "fawn": {
-            "lightest": "#ac7e6d",
-            "lighter": "#a16b58",
-            "light": "#955943",
-            DEFAULT: "#89462E",
-            "dark": "#7b3f29",
-            "darker": "#6e3825",
-            "darkest": "#603120"
+        "stiletto": {
+            "lightest": "#CD625F",
+            "lighter": "#C44441",
+            "light": "#B13735",
+            DEFAULT: "#9A2E2C",
+            "dark": "#882826",
+            "darker": "#7C2523",
+            "darkest": "#6C2220"
         },
         "brass": {
-            "lightest": "#d9ad8d",
-            "lighter": "#d4a17d",
-            "light": "#ce966c",
-            DEFAULT: "#C98A5C",
-            "dark": "#b57c53",
-            "darker": "#a16e4a",
-            "darkest": "#8d6140"
+            "lightest": "#F9D5B6",
+            "lighter": "#F7C192",
+            "light": "#F4B379",
+            DEFAULT: "#F2A25C",
+            "dark": "#EB8C38",
+            "darker": "#D77219",
+            "darkest": "#B45F14"
         },
-        "ablescent": {
-            "lightest": "#f9f2e2",
-            "lighter": "#f8f1dd",
-            "light": "#f7efd9",
-            DEFAULT: "#F6EDD5",
-            "dark": "#ddd5c0",
-            "darker": "#c5beaa",
-            "darkest": "#aca695"
+        "ivory": {
+            "lightest": "#FFFFF8",
+            "lighter": "#FFFFF5",
+            "light": "#FFFFF2",
+            DEFAULT: "#FFFFF0",
+            "dark": "#E6E6D8",
+            "darker": "#CCCCC0",
+            "darkest": "#B3B3A8"
         }
     },
     spacing: {
-        DEFAULT: "0",
-        "3xs": "0.25rem",
-        "2xs": "0.5rem",
-        "xs": "1rem",
-        "sm": "1.5rem",
-        "md": "2rem",
-        "lg": "3rem",
-        "xl": "5rem",
-        "2xl": "7rem",
-        "3xl": "9rem"
+        "0": "0",
+        "5xs": "4px",
+        "4xs": "6px",
+        "3xs": "12px",
+        "2xs": "16px",
+        "xs": "22px",
+        "sm": "32px",
+        "md": "44px",
+        "lg": "56px",
+        "xl": "72px",
+        "2xl": "90px",
+        "3xl": "110px",
+        "4xl": "130px",
+        "5xl": "150px"
+    },
+    fontSize: {
+        "3xl": "120px",
+        "2xl": "86px",
+        "xl": "70px",
+        "lg": "48px",
+        "md": "38px",
+        "sm": "18px",
+        DEFAULT: "16px",
+        "xs": "16px",
+        "2xs": "14px",
+        "3xs": "12px",
+        "h1": "40px",
+        "h2": "36px",
+        "h3": "34px",
+        "h4": "28px",
+        "h5": "26px",
+        "h6": "24px",
+        "s1": "22px",
+        "s2": "20px"
     },
     screens: {
-        "tablet": "768px",
-        "laptop": "1024px",
-        "desktop": "1280px"
+        "tablet-v": "768px",
+        "tablet-h": "992px",
+        "laptop-sm": "1280px",
+        "laptop-lg": "1440px",
+        "desktop": "1920px"
     },
     container: {
         center: true,
         padding: {
-            DEFAULT: "0.5rem",
-            "tablet": "1rem",
-            "desktop": "0.5rem"
-        }
-    },
-    extend: {
-        animation: {
-            nogravity: 'nogravity 25s linear infinite',
-            nogravitynegative: 'nogravitynegative 25s linear infinite'
+            DEFAULT: "16px",
+            "tablet-v": "24px",
+            "tablet-h": "32px"
         },
-        keyframes: {
-            nogravity: {
-                "0%": {
-                    transform: "translateY(0) translateX(0) rotate(0deg)",
-                    opacity: 1,
-                    "border-radius": 0
-                },
-                "100%": {
-                    transform: "translateY(-1000px) translateX(500px) rotate(720deg)",
-                    opacity: 0,
-                    "border-radius": 5
-                }
-            },
-            nogravitynegative: {
-                "0%": {
-                    transform: "translateY(0) translateX(0) rotate(0deg)",
-                    opacity: 1,
-                    "border-radius": 0
-                },
-                "100%": {
-                    transform: "translateY(-1000px) translateX(-500px) rotate(720deg)",
-                    opacity: 0,
-                    "border-radius": 5
-                }
-            }
+        screens: {
+            "tablet-v": "768px",
+            "tablet-h": "992px",
+            "laptop-sm": "1232px",
+            "laptop-lg": "1200px"
         }
-    },
+    }
   },
   plugins: [
-    plugin(function({addBase, theme}) {
+    plugin(function({addBase, addComponents, addUtilities, theme}) {
         addBase({
-            "h1": {fontSize: theme("fontSize.4xl")},
-            "h2": {fontSize: theme("fontSize.3xl")},
-            "h3": {fontSize: theme("fontSize.2xl")},
-            "h4": {fontSize: theme("fontSize.xl")},
-            "h5": {fontSize: theme("fontSize.lg")}
+            body: {
+                backgroundColor: theme('colors.ivory.lightest'),
+                color: theme('colors.thunder.darkest'),
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.DEFAULT'),
+                fontWeight: 300
+            },
+            h1: {
+                fontFamily: theme('fontFamily.geist'),
+                fontSize: theme('fontSize.h1'),
+                fontWeight: 400,
+                lineHeight: "46px"
+            },
+            h2: {
+                fontFamily: theme('fontFamily.geist'),
+                fontSize: theme('fontSize.h2'),
+                fontWeight: 400,
+                lineHeight: "40px"
+            },
+            h3: {
+                fontFamily: theme('fontFamily.geist'),
+                fontSize: theme('fontSize.h3'),
+                fontWeight: 400,
+                lineHeight: "38px"
+            },
+            h4: {
+                fontFamily: theme('fontFamily.geist'),
+                fontSize: theme('fontSize.h4'),
+                fontWeight: 400,
+                lineHeight: "32px"
+            },
+            h5: {
+                fontFamily: theme('fontFamily.geist'),
+                fontSize: theme('fontSize.h5'),
+                fontWeight: 400,
+                lineHeight: "30px"
+            },
+            h6: {
+                fontFamily: theme('fontFamily.geist'),
+                fontSize: theme('fontSize.h6'),
+                fontWeight: 400,
+                lineHeight: "26px"
+            },
+            ".subtitle-1": {
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.s1'),
+                fontWeight: 400,
+                lineHeight: "1.5rem"
+            },
+            ".subtitle-2": {
+                fontFamily: theme('fontFamily.roboto'),
+                fontSize: theme('fontSize.s2'),
+                fontWeight: 400,
+                lineHeight: "1.375rem"
+            },
+            ".text-huge": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.3xl'),
+                fontWeight: 400
+            },
+            ".text-biggest": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.2xl'),
+                fontWeight: 400
+            },
+            ".text-bigger": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.xl'),
+                fontWeight: 400
+            },
+            ".text-big": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.lg'),
+                fontWeight: 400
+            },
+            ".text-medium": {
+                fontFamily: theme('fontFamily.oswald'),
+                fontSize: theme('fontSize.md'),
+                fontWeight: 400
+            },
+            a: {
+                color: theme('colors.thunder.darkest'),
+                textDecoration: 'underline',
+                fontWeight: 400
+            }
+        })
+
+        addComponents({
+            ".prose": {
+                fontSize: theme('fontSize.sm'),
+                "h1, h2, h3, h4, h5, h6": {
+                    marginTop: theme('spacing.xs'),
+                    marginBottom: theme('spacing.3xs'),
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    }
+                },
+                figure: {
+                    marginTop: theme('spacing.2xs'),
+                    marginBottom: theme('spacing.2xs'),
+                    textAlign: 'center',
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    },
+                    img: {
+                        display: 'inline'
+                    },
+                    figcaption: {
+                        fontStyle: 'italic'
+                    }
+                },
+                p: {
+                    marginTop: theme('spacing.3xs'),
+                    marginBottom: theme('spacing.3xs'),
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    }
+                },
+                ul: {
+                    marginTop: theme('spacing.3xs'),
+                    marginBottom: theme('spacing.3xs'),
+                    paddingLeft: '2rem',
+                    listStyleType: 'disc',
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    }
+                }
+            }
+        })
+
+        addUtilities({
+            '.writing-h-tb': {
+                'writing-mode': 'horizontal-tb'
+            },
+            '.writing-v-lr': {
+                'writing-mode': 'vertical-lr'
+            },
+            '.writing-v-rl': {
+                'writing-mode': 'vertical-rl'
+            },
+            '.scrollbar-hide': {
+                'scrollbar-width': 'none',
+                '-ms-overflow-style': 'none',
+                '&::-webkit-scrollbar': {
+                    'display': 'none'
+                }
+            }
         })
     })
   ],

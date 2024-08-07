@@ -1,31 +1,24 @@
-<div class="container">
-    <!-- Contacts -->
-    {%if not page.exclude_contact_footer%}
-        {%set footerInfoSection = lang('footer.info', 'global')|split("|")%}
-        <div class="py-2xl">
-            <p class="text-4xl mb-3xs">{{footerInfoSection[0]}}</p>
-            <p class="text-4xl my-3xs">{{footerInfoSection[1]}}</p>
-            <p class="text-4xl mt-3xs">
-                <a href="{{link('contacts.html')}}" class="link-highlight">{{footerInfoSection[2]}}</a>
-            </p>
+<footer id="footer" class="bg-brass/20 py-xl {{class}}">
+    <div class="container">
+        <div class="bg-thunder-darkest text-ivory-lightest p-lg rounded-xl mb-md">
+            <div class="flex flex-col justify-center items-start gap-sm mx-auto tablet-h:flex-row tablet-h:items-center tablet-h:flex-wrap tablet-h:w-2/3 tablet-h:gap-2xl">
+                <div class="basis-2/4">
+                    <h3 class="mb-4xs">Contattami</h3>
+                    <p class="text-sm">Se vuoi avere più informazioni o scambiare qualche parola sarò felice di risponderti.</p>
+                </div>
+                <a href="mailto:giuseppe.spataro.96@gmail.com" class="text-ivory-lightest text-sm btn">
+                    SCRIVIMI
+                </a>
+            </div>
         </div>
-    {%endif%}
-    <!-- Copyright and Social -->
-    <div class="flex flex-col items-center gap-2xs py-xs border-t-2 border-t-thunder tablet:flex-row desktop:py-sm">
-        <div class="text-center tablet:justify-self-start">
-            &copy; 2022 Giuseppe Spataro. All rights reserved.
-        </div>
-        <div class="hidden tablet:block tablet:flex-1"></div>
-        <div class="tablet:justify-self-end">
-            <ul class="flex gap-xs justify-center items-center">
-                {%for item in data('global.socials')%}
-                    <li>
-                        <a href="{{item.link}}" class="text-xl" target="_blank">
-                            <i class="{{item.icon}}"></i>
-                        </a>
-                    </li>
-                {%endfor%}
-            </ul>
+        <div class="flex flex-col items-center gap-xs tablet-v:flex-row">
+            <div>
+                {%include './components/social.html' with {'style': 'pianoforte'}%}
+            </div>
+            <div class="hidden flex-1 tablet-v:block"></div>
+            <div>
+                &copy; 2024 Giuseppe Spataro.
+            </div>
         </div>
     </div>
-</div>
+</footer>

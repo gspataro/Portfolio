@@ -1,0 +1,15 @@
+{
+    "component": {
+        "label": "Componente",
+        "projects": [
+            "cli",
+            "dependencyinjection"
+        ]
+    },
+    "website": {
+        "label": "Sito Web",
+        "projects": [
+            "portfolio"
+        ]
+    }
+}

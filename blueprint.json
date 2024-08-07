@@ -1,36 +1,105 @@
 {
-    "languages": ["it", "en"],
+    "website": {
+        "name": "Giuseppe Spataro",
+        "description": "Giuseppe Spataro, pianista e sviluppatoresiciliano",
+        "author": "Giuseppe Spataro",
+        "keywords": "pianista, musicista, sviluppatore web, programmatore, sicilia",
+        "url": "https://giuseppespataro.it",
+        "friendly_urls": true
+    },
+    "languages": ["it"],
     "default_language": "it",
-    "data": [
-        "global",
-        "index",
-        "portfolio",
-        "about",
-        "contacts"
-    ],
-    "pages": [
-        {
+    "contents": {
+        "articles": "markdown:articles/*.md",
+        "articles_cats": "json:articles_categories.json",
+        "projects": "markdown:projects/*.md",
+        "projects_cats": "json:projects_categories.json"
+    },
+    "schemas": {
+        "index": {
+            "contents": [
+                {
+                    "group": "articles",
+                    "limit": 3,
+                    "orderBy": "frontmatter.published",
+                    "order": "desc"
+                },
+                "articles_cats",
+                {
+                    "group": "projects",
+                    "select": ["cli", "dependencyinjection", "portfolio"]
+                }
+            ],
             "template": "index",
-            "output": "/index.html"
+            "builder": "simple",
+            "slug": "/index",
+            "generate": "once"
         },
-        {
-            "template": "portfolio",
-            "output": "/portfolio.html"
-        },
-        {
+        "about": {
             "template": "about",
-            "output": "/about.html"
+            "builder": "simple",
+            "slug": "/about",
+            "generate": "once"
         },
-        {
-            "template": "contacts",
-            "output": "/contacts.html"
+        "404": {
+            "template": "404",
+            "builder": "simple",
+            "slug": "/404",
+            "generate": "once"
         },
-        {
-            "template": "success",
-            "output": "/success.html"
+        "darkside": {
+            "template": "darkside",
+            "builder": "simple",
+            "slug": "/darkside",
+            "generate": "once"
+        },
+        "article": {
+            "contents": [
+                "articles",
+                "articles_cats"
+            ],
+            "template": "article",
+            "builder": "post",
+            "slug": "/articolo",
+            "generate": "loop:articles"
+        },
+        "project": {
+            "contents": [
+                "projects",
+                "projects_cats"
+            ],
+            "template": "project",
+            "builder": "post",
+            "slug": "/progetto",
+            "generate": "loop:projects"
+        },
+        "projects": {
+            "contents": [
+                "projects"
+            ],
+            "template": "projects",
+            "builder": "archive",
+            "slug": "/progetti",
+            "generate": "paginate:projects",
+            "options": {
+                "per_page": 12
+            }
+        },
+        "blog": {
+            "contents": [
+                "articles",
+                "articles_cats"
+            ],
+            "template": "blog",
+            "builder": "archive",
+            "slug": "/blog",
+            "generate": "paginate:articles",
+            "options": {
+                "per_page": 12
+            }
         }
-    ],
+    },
     "exclude_assets": [
-        "css/ui.css"
+        "ui.css"
     ]
 }

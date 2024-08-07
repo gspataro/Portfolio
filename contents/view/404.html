@@ -1,0 +1,17 @@
+{%set page = {
+    'title': 'Pagina non trovata'
+}%}
+{%extends "./layout/default.html"%}
+{%block main%}
+    <div class="text-center">
+        <h1 class="text-xl leading-none mb-sm font-oswald tablet-v:text-3xl">
+            404
+        </h1>
+        <p class="text-sm mb-3xs tablet-v:text-md">
+            Non ho trovato la pagina che cercavi.
+        </p>
+        <div>
+            <a href="{{website.url}}" class="text-sm cta">Torna alla home</a>
+        </div>
+    </div>
+{%endblock%}

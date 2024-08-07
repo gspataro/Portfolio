@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        {%include './components/head.html'%}
+    </head>
+
+    <body class="bg-thunder-darkest text-ivory-lightest">
+        <div class="container max-w-[800px] py-xl">
+            <div class="prose">
+                <h1>Hey, benvenuto nel lato oscuro!</h1>
+                <p>
+                    Te lo aspettavi diverso, non è così? Certo il nero fa pensare a qualcosa di oscuro, tuttavia ho altro in mente per questa sezione.
+                    Mettiti comodo e ambientati.
+                </p>
+                <h2>Come ho realizzato questo blog</h2>
+                <p>
+                    Oltre ad essere un pianista sono anche uno sviluppatore web e questo sito è un mio progetto personale. Si tratta di un sito web
+                    statico e realizzarlo è stata una bella sfida che voglio raccontarti di seguito.
+                </p>
+                <h2>La grafica</h2>
+                <p>
+                    Come si può facilmente comprendere, la grafica non è il mio forte, in ogni caso ho voluto mettere tutto il mio impegno per creare
+                    un design che mi soddisfacesse. Per prima cosa ho scelto una palette realizzata campionando immagini di pianoforti, volevo che
+                    somigliasse il più possibile all'avorio dei tasti, al nero della carcassa, all'ottone del telaio e degli altri oggetti metallici e
+                    al rosso dei feltri.
+                </p>
+                <p>
+                    Ho poi creato dei piccoli wireframe su Figma per poi passare all'approfondimento dell'idea principale: volevo una homepage che
+                    simulasse l'idea di guardare la tastiera di un pianoforte. L'ho così sviluppata in orizzontale alternando l'avorio e il nero.
+                </p>
+                <h2>Il generatore</h2>
+                <p>
+                    Per un sito web statico il generatore è tutto, la parte più complicata è stata crearne uno. Certo avrei potuto usare uno strumento
+                    già esistente, del resto perché reinventare la ruota. Non volevo però togliermi tutto il divertimento, così mi sono cimentato in questa sfida.
+                </p>
+                <p>
+                    Il generatore è scritto interamente in PHP con l'utilizzo di alcuni componenti di terze parti come symfony/twig per la gestione delle view,
+                    league/commonmark per l'interprete markdown e altri che puoi trovare nel composer.json che trovi sul repository github.
+                </p>
+                <h2>Tutto il resto</h2>
+                <p>
+                    Mettere insieme i pezzi della grafica e del generatore è stato il tassello finale per la creazione del sito, o almeno quasi.
+                    Durante tutto questo processo ho scoperto quanto è difficile riuscire a decidere cosa tenere e cosa no nel proprio sito web.
+                    È molto facile cadere nell'errore di inondare il sito di informazioni che all'utente finale potrebbero pure risultare superflue,
+                    oltre a considerare tutte le problematiche legate alla navigabilità, all'esperienza utente e molto altro.
+                </p>
+                <p>
+                    La sfida principale adesso sarà il mantenimento di questo sito web per fare spazio alle altre idee che ho deciso di sviluppare
+                    e aggiungere nel tempo. Continua a collegarti, magari ne scoverai qualcuna di tanto in tanto!
+                </p>
+            </div>
+            <div class="mt-md">
+                <a href="{{website.url}}" class="btn text-ivory-lightest">
+                    Torna al sito
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

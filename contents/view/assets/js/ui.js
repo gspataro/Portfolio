@@ -1,41 +1,66 @@
-const header = document.getElementById("header");
-let headerHeight = header.clientHeight + "px";
+document.addEventListener('DOMContentLoaded', function () {
+    initHeader();
 
-/**
- * Fix header placeholder height on resize
- * @return void
- */
+    function initHeader()
+    {
+        const header = document.getElementById('header');
+        const navbarToggler = document.getElementById('navbar-toggle');
 
-function headerResizeEvent() {
-    const headerPlaceholder = document.getElementById("header-placeholder");
-    headerHeight = header.clientHeight + "px";
+        if (!header || !navbarToggler) {
+            return;
+        }
 
-    headerPlaceholder.style.height = headerHeight;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    /**
-     * Header
-     */
-
-    headerResizeEvent();
-
-    /**
-     * Navbar
-     */
-
-    const navbar = document.getElementById("navbar");
-    const navbarToggle = document.getElementById("navbar-toggle");
-    const navbarToggleOpen = navbarToggle.getElementsByClassName("open")[0];
-    const navbarToggleClose = navbarToggle.getElementsByClassName("close")[0];
-
-    navbarToggle.onclick = function () {
-        document.body.style.overflow = document.body.style.overflow == "hidden" ? "auto" : "hidden";
-        navbarToggleOpen.classList.toggle("hidden");
-        navbarToggleClose.classList.toggle("hidden");
-        navbar.classList.toggle("hidden");
-        navbar.style.top = headerHeight;
+        navbarToggler.onclick = function () {
+            if (header.dataset.open === 'false') {
+                header.dataset.open = 'true';
+                document.body.classList.add('hamburger-open');
+            } else {
+                header.dataset.open = 'false';
+                document.body.classList.remove('hamburger-open');
+            }
+        };
     }
-});
 
-window.addEventListener("resize", headerResizeEvent);
+    const customCursor = document.createElement('div');
+    customCursor.style.display = 'none';
+    customCursor.classList.add('cursor');
+    document.body.append(customCursor);
+
+    document.addEventListener('pointermove', function (e) {
+        if (document.documentElement.clientWidth < 992) {
+            return;
+        }
+
+        const xpos = e.clientX - (customCursor.clientWidth / 2);
+        const ypos = e.clientY - (customCursor.clientHeight / 2);
+
+        customCursor.style.display = 'block';
+
+        customCursor.style.top = ypos + 'px';
+        customCursor.style.left = xpos + 'px';
+    });
+
+    document.addEventListener('mouseover', function (e) {
+        if (e.target.tagName.toLowerCase() !== 'a') {
+            return;
+        }
+
+        customCursor.classList.add('hover');
+    });
+
+    document.addEventListener('mouseout', function (e) {
+        if (e.target.tagName.toLowerCase() !== 'a') {
+            return;
+        }
+
+        customCursor.classList.remove('hover');
+    });
+
+    document.addEventListener('mousedown', function () {
+        customCursor.classList.add('click');
+    });
+
+    document.addEventListener('mouseup', function () {
+        customCursor.classList.remove('click');
+    });
+});
