@@ -2,8 +2,8 @@
 name: Portfolio
 description: Il codice sorgente del mio portfolio.
 github: https://github.com/gspataro/Portfolio
-link: https://gspataro.github.io
-version: '2.0'
+link: https://giuseppespataro.it
+version: '3.0'
 category: website
 technologies:
     - PHP
