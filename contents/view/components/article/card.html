@@ -1,34 +1,30 @@
 <article class="
-    grid
-    grid-rows-[auto_1fr]
-    tablet-v:data-[layout=horizontal]:grid-cols-2
-    tablet-v:data-[layout=horizontal]:gap-sm
-    group/article
-    {{class}}" data-layout="{{layout ?? 'vertical'}}">
-    <figure class="overflow-hidden tablet-v:group-data-[layout=horizontal]/article:col-start-1">
-        <a href="{{url('article.' ~ id)}}">
-            <img src="{{media(article.frontmatter.thumbnail, 'thumbnail')}}" class="w-full pointer-events-none" alt="{{article.frontmatter.title}}" class="transition-transform duration-150 group-hover/article:scale-110">
+    flex
+    flex-col
+    border-thunder-darkest
+    rounded-3xl
+    border
+    p-sm
+    group
+    {{class}}">
+    <header class="mb-3xs">
+        <{{heading_type ?? 'h5'}}>
+            <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">
+                {{article.frontmatter.title}}
+            </a>
+        </{{heading_type ?? 'h5'}}>
+    </header>
+    <time datetime="{{article.frontmatter.published|date('Y-m-d')}}" class="mb-xs">
+        {{article.frontmatter.published|date('d F Y')}}
+    </time>
+    <div class="flex-1"></div>
+    <div class="flex items-center gap-3xs">
+        {%include './components/article/categories.html' with {
+            'categories': article.frontmatter.categories
+        }%}
+        <div class="flex-1"></div>
+        <a href="{{url('article.' ~ id)}}" class="cta">
+            Leggi
         </a>
-        <figcaption class="hidden">{{article.frontmatter.title}}</figcaption>
-    </figure>
-    <div class="pt-xs tablet-v:group-data-[layout=horizontal]/article:col-start-2">
-        <header class="mb-3xs">
-            <h5>
-                <a href="{{url('article.' ~ id)}}" class="no-underline text-thunder-darkest group-hover/article:underline">
-                    {{article.frontmatter.title}}
-                </a>
-            </h5>
-        </header>
-        <div class="flex items-center gap-4xs text-2xs">
-            {%include './components/article/categories.html' with {
-                'categories': article.frontmatter.categories
-            }%}
-            <span>
-                &bullet;
-            </span>
-            <time datetime="{{article.frontmatter.published|date('Y-m-d')}}">
-                {{article.frontmatter.published|date('d F Y')}}
-            </time>
-        </div>
     </div>
 </article>
