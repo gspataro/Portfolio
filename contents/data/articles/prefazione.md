@@ -16,8 +16,8 @@ Il circolo vizioso che si crea è sempre lo stesso: ho un’idea, parto in quint
 
 Ad un certo punto ho deciso: era il momento di chiudere il progetto e pubblicarlo, solo così sarei uscito da questa condizione, bisognava darsi degli obbiettivi più chiari. Non c’è niente di male del resto a lasciare delle idee fuori dalla prima versione del progetto con l’intento di valutarle e implementarle più avanti. Anzi, questo crea la possibilità di rendere il progetto vivo tramite l’aggiunta di piccoli dettagli quà e là. Questo è vero per la creazione di un sito web, ma si può applicare a qualsiasi processo creativo.
 
-## Benvenuti su giuseppespataro.it
+## Benvenuto su giuseppespataro.it
 
-Questo è il mio nuovo sito, per la prima volta con un blog. Ho sempre avuto la necessità di pubblicare i miei pensieri dando sfogo a quella parte creativa di me che tende a stare stretta dentro la mia testa molto facilmente, così ho deciso di dedicarmi alla scrittura di articoli di vario genere.
+Questo è il mio nuovo sito, per la prima volta con un blog. Ho sempre avuto la necessità di condividere i miei pensieri dando sfogo a quella parte creativa di me che tende a stare stretta dentro la mia testa molto facilmente, così ho deciso di dedicarmi alla scrittura di articoli di vario genere.
 
 Benvenuto sul mio sito web personale, sperando che questo sia l’inizio di una lunga avventura insieme.
