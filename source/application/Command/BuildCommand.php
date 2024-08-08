@@ -11,6 +11,8 @@ use GSpataro\Assets\Media;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Pages\GeneratorsCollection;
 use GSpataro\Contractor\BuildersCollection;
+use GSpataro\Project\Sitemap;
+use SimpleXMLElement;
 
 final class BuildCommand extends BaseCommand
 {
@@ -20,6 +22,7 @@ final class BuildCommand extends BaseCommand
     private readonly Pages $pages;
     private readonly Media $media;
     private readonly Assets $assets;
+    private readonly Sitemap $sitemap;
     private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
     private readonly Researcher $researcher;
@@ -40,12 +43,14 @@ final class BuildCommand extends BaseCommand
         $this->media = $this->app->get('assets.media');
         $this->stopwatch = $this->app->get('cli.stopwatch');
         $this->researcher = $this->app->get('finder.researcher');
+        $this->sitemap = $this->app->get('project.sitemap');
 
         $this->stopwatch->start();
         $this->processContents();
         $this->processSchemas();
         $this->buildPages();
         $this->copyAssets();
+        $this->buildSitemapXml();
 
         $this->output->print('{bold}{fg_green}Build completed in ' . $this->stopwatch->stop() . ' seconds!');
     }
@@ -180,5 +185,31 @@ final class BuildCommand extends BaseCommand
         $this->output->print('{bold}Copying assets');
 
         $this->assets->compile();
+    }
+
+    /**
+     * Build sitemap.xml file
+     *
+     * @return void
+     */
+
+    private function buildSitemapXml(): void
+    {
+        $this->output->print('{bold}Generating sitemap.xml');
+
+        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset></urlset>');
+        $xml->addAttribute('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+
+        foreach ($this->sitemap->getAll() as $url) {
+            if (str_ends_with($url, '/index')) {
+                $url = substr($url, 0, strlen('index') * -1);
+            }
+
+            $urlElement = $xml->addChild('url');
+            $urlElement->addChild('loc', 'https://giuseppespataro.it' . $url);
+            $urlElement->addChild('lastmod', date('c'));
+        }
+
+        $xml->asXml(DIR_OUTPUT . '/sitemap.xml');
     }
 }
