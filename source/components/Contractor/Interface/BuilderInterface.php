@@ -2,8 +2,6 @@
 
 namespace GSpataro\Contractor\Interface;
 
-use GSpataro\Project\Schema;
-
 interface BuilderInterface
 {
     /**
