@@ -29,7 +29,7 @@
         })%}
     {%endif%}
     <article class="laptop-lg:max-w-[1000px] mx-auto">
-        <header class="mb-md laptop-sm:flex laptop-sm:gap-xl">
+        {#<header class="mb-md laptop-sm:flex laptop-sm:gap-xl">
             <div class="laptop-sm:basis-[400px] desktop:basis-[500px]">
                 <h1 class="mb-xs">{{article.frontmatter.title}}</h1>
                 {%include './components/post/meta.html' with {
@@ -42,6 +42,14 @@
                     <img src="{{media(article.frontmatter.thumbnail, 'large')}}" alt="{{article.frontmatter.title}}">
                 </figure>
             {%endif%}
+        </header>#}
+        <header class="mb-lg tablet-v:w-2/3 tablet-h:w-1/2">
+            <div class="flex items-center mb-md">
+                <h1 class="flex-1">{{article.frontmatter.title}}</h1>
+            </div>
+            {%include './components/post/meta.html' with {
+                'meta': meta
+            } only%}
         </header>
         <div class="prose">
             {%if article.frontmatter.twig%}
