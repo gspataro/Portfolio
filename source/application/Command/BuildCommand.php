@@ -205,6 +205,10 @@ final class BuildCommand extends BaseCommand
                 $url = substr($url, 0, strlen('index') * -1);
             }
 
+            if ($url === '/404') {
+                continue;
+            }
+
             $urlElement = $xml->addChild('url');
             $urlElement->addChild('loc', 'https://giuseppespataro.it' . $url);
             $urlElement->addChild('lastmod', date('c'));

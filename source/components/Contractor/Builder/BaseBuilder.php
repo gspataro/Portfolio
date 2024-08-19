@@ -2,8 +2,6 @@
 
 namespace GSpataro\Contractor\Builder;
 
-use GSpataro\Project\Schema;
-use GSpataro\Project\Sitemap;
 use Twig\Environment as TwigEnvironment;
 use GSpataro\Contractor\Interface\BuilderInterface;
 
