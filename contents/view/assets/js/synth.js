@@ -1,15 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const maxGain = 1;
     const muteControl = document.getElementById('keyboard-mute');
     const keyboard = document.getElementById('keyboard');
     const keys = keyboard.getElementsByClassName('key');
 
     const audioContext = new AudioContext();
+    audioContext.suspend();
     const oscList = [];
 
     // Setup gain node
     const mainGainNode = audioContext.createGain();
+
     mainGainNode.connect(audioContext.destination);
-    mainGainNode.gain.value = 10;
+    mainGainNode.gain.value = maxGain;
+
+    mainGainNode.gain.setValueAtTime(0, audioContext.currentTime);
+    mainGainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.5);
 
     // Prepare wave form
     const sineTerms = new Float32Array([0, 0, 0, 0, 0, 0, 0, 0]);
@@ -19,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Secret combination
     const correctCombination = ['C4', 'D#4', 'G4', 'B4'];
     let currentCombination = [];
+
+    // Prevent drag
+    let currentClickedKey = null;
 
     /**
      * Listen to mute control
@@ -72,6 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const oscillator = audioContext.createOscillator();
         oscillator.connect(mainGainNode);
 
+        mainGainNode.gain.value = maxGain / oscList.length;
+
         oscillator.setPeriodicWave(waveForm);
         oscillator.frequency.value = frequency;
         oscillator.start();
@@ -123,6 +134,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function clickPressNote(e) {
         if (e.buttons & 1) {
             e.stopPropagation();
+
+            if (currentClickedKey !== null && e.target !== currentClickedKey) {
+                releaseNote(currentClickedKey);
+            }
+
+            currentClickedKey = e.target;
             pressNote(e.target);
         }
     }
