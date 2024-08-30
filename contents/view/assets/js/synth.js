@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const maxGain = 3;
     const muteControl = document.getElementById('keyboard-mute');
     const keyboard = document.getElementById('keyboard');
     const keys = keyboard.getElementsByClassName('key');
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Setup gain node
     const mainGainNode = audioContext.createGain();
     mainGainNode.connect(audioContext.destination);
-    mainGainNode.gain.value = 10;
+    mainGainNode.gain.value = maxGain;
 
     // Prepare wave form
     const sineTerms = new Float32Array([0, 0, 0, 0, 0, 0, 0, 0]);
@@ -71,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
     {
         const oscillator = audioContext.createOscillator();
         oscillator.connect(mainGainNode);
+
+        mainGainNode.gain.value = maxGain / oscList.length;
 
         oscillator.setPeriodicWave(waveForm);
         oscillator.frequency.value = frequency;
