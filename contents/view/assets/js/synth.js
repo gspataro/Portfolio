@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const correctCombination = ['C4', 'D#4', 'G4', 'B4'];
     let currentCombination = [];
 
+    // Prevent drag
+    let currentClickedKey = null;
+
     /**
      * Listen to mute control
      */
@@ -126,6 +129,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function clickPressNote(e) {
         if (e.buttons & 1) {
             e.stopPropagation();
+
+            if (currentClickedKey !== null && e.target !== currentClickedKey) {
+                releaseNote(currentClickedKey);
+            }
+
+            currentClickedKey = e.target;
             pressNote(e.target);
         }
     }
