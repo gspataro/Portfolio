@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const maxGain = 3;
+    const maxGain = 1;
     const muteControl = document.getElementById('keyboard-mute');
     const keyboard = document.getElementById('keyboard');
     const keys = keyboard.getElementsByClassName('key');
