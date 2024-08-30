@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const keys = keyboard.getElementsByClassName('key');
 
     const audioContext = new AudioContext();
+    audioContext.suspend();
     const oscList = [];
 
     // Setup gain node
