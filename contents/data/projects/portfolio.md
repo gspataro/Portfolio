@@ -15,7 +15,11 @@ technologies:
 Il mio portfolio è un esempio concreto dei miei esperimenti. Si tratta di un sito web statico e ho colto questa sfida per poter creare un generatore interamente
 personalizzato. Questo generatore converte i dati markdown/json in delle pagine HTML applicandole a dei template definiti.
 
+## Il generatore
+
+Creare un generatore di siti web statici può sembrare semplice, ma in realtà è una sfida piuttosto complessa. La prima difficoltà è stata gestire in maniera flessibile i dati e cercare di rendere il processo il più automatico possibile. Nel mio caso ho deciso di creare un file che faccia da template per la generazione del sito, il blueprint.json. In questo file definisco la struttura principale del sito e il modo in cui devono essere generate le pagine.
+
 ## Sviluppo
 
-La sfida più grande è stata quella di gestire i dati in maniera flessibile e automatica, non volevo trovarmi nella condizione di dover aggiungere una pagina alla
-volta. Così ho creato un sistema basato su un file chiamato blueprint.json che contiene tutte le informazioni per la generazione automatica del sito, l'unica cosa che vanno forniti sono i template e i file markdown/json.
+Una volta stabilita quale doveva essere la struttura del file blueprint.json il prossimo passo era creare il resto dell'applicativo. Un ulteriore complicazione è derivata dal fatto che ho deciso di non seguire il principio del "non reinventare la ruota". L'applicativo è stato costruito interamente da zero e utilizzando
+i componenti <a href="{{url('project.cli')}}">CLI</a> e <a href="{{url('project.dependencyinjecgtion')}}">Dependency Injection</a>.
