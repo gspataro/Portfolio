@@ -1,10 +1,12 @@
 <footer id="footer" class="bg-brass/20 py-xl {{class}}">
     <div class="container">
-        <div class="bg-thunder-darkest text-ivory-lightest p-lg rounded-xl mb-md">
-            <div class="flex flex-col justify-center items-start gap-sm mx-auto tablet-h:flex-row tablet-h:items-center tablet-h:flex-wrap tablet-h:w-2/3 tablet-h:gap-2xl">
+        <div class="bg-thunder-darkest text-ivory-lightest p-md rounded-xl mb-md laptop-sm:p-lg">
+            <div class="flex flex-col justify-center items-start gap-sm mx-auto tablet-h:flex-row tablet-h:items-center tablet-h:flex-wrap tablet-h:gap-2xl">
                 <div class="basis-2/4">
-                    <h3 class="mb-4xs">Contattami</h3>
-                    <p class="text-sm">Se vuoi avere più informazioni o scambiare qualche parola sarò felice di risponderti.</p>
+                    <h3 class="mb-4xs">{{page.layout.footer.contacts.title ?? 'Contattami'}}</h3>
+                    <p class="text-sm">
+                        {{page.layout.footer.contacts.description ?? 'Se vuoi avere più informazioni o scambiare qualche parola sarò felice di risponderti.'}}
+                    </p>
                 </div>
                 <a href="mailto:{{website.email}}" class="text-ivory-lightest text-sm btn">
                     SCRIVIMI
