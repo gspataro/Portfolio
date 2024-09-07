@@ -8,7 +8,7 @@
     <div class="flex flex-col h-full min-h-[100vh] tablet-h:flex-row">
         <!-- MAIN CONTENT -->
         {%block container%}
-            <div class="flex-1 py-[--container-padding-y]">
+            <div class="flex-1 pb-[--container-padding-y] tablet-h:pt-[--container-padding-y]">
                 <div class="container h-full">
                     {%block content%}
                     {%endblock%}
@@ -28,7 +28,7 @@
                 tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest
                 laptop-sm:w-[220px]">
                 <!-- WRAPPER -->
-                <div class="container flex flex-row-reverse h-full py-[--container-padding-y] tablet-h:px-3xs tablet-h:flex-col tablet-h:sticky tablet-h:top-0 tablet-h:h-[100vh]">
+                <div class="container flex flex-row-reverse h-full pt-[--container-padding-y] mb-xs tablet-h:pb-[--container-padding-y] tablet-h:mb-0 tablet-h:px-3xs tablet-h:flex-col tablet-h:sticky tablet-h:top-0 tablet-h:h-[100vh]">
                     <!-- CONTROLS -->
                     <div class="flex justify-end items-center gap-sm">
                         <a href="javascript:void(0)" class="
@@ -59,8 +59,8 @@
                             tablet-v:text-md
                             tablet-h:text-ivory-lightest
                             tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
-                            <img src="{{website.url}}/assets/images/icons/chevron-right.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione successiva">
-                            <img src="{{website.url}}/assets/images/icons/chevron-right-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione successiva">
+                            <img src="{{website.url}}/assets/images/icons/chevron-right.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione successiva" width="22px" height="39px">
+                            <img src="{{website.url}}/assets/images/icons/chevron-right-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione successiva" width="22px" height="39px">
                         </a>
                     </div>
                     <!-- END CONTROLS -->
