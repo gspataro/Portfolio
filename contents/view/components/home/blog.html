@@ -3,25 +3,23 @@
     'style': 'pianoforte'
 }%}
     {%block content%}
-        <div class="flex flex-col gap-sm tablet-h:py-lg tablet-h:pl-sm">
-            <div class="mb-md tablet-v:w-2/3 tablet-h:w-1/2">
-                <h2 class="mb-3xs">
-                    COGITO ERGO SUM
-                </h2>
-                <p class="text-sm mb-xs">
-                    Il blog è lo spazio dove pubblico i miei pensieri e le mie riflessioni cercando di condividere la mia passione per la musica e per la tecnologia.
-                </p>
-                <a href="{{url('blog.page-1')}}" class="cta">
-                    VAI AL BLOG
-                </a>
-            </div>
-            <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
-                {%for id, article in articles%}
-                    {%include('./components/article/card.html') with {
-                        article: article
-                    }%}
-                {%endfor%}
-            </div>
+        <div class="mb-md tablet-v:w-2/3 tablet-h:w-1/2">
+            <h2 class="mb-3xs">
+                COGITO ERGO SUM
+            </h2>
+            <p class="text-sm mb-xs">
+                Il blog è lo spazio dove pubblico i miei pensieri e le mie riflessioni cercando di condividere la mia passione per la musica e per la tecnologia.
+            </p>
+            <a href="{{url('blog.page-1')}}" class="cta">
+                VAI AL BLOG
+            </a>
+        </div>
+        <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
+            {%for id, article in articles%}
+                {%include('./components/article/card.html') with {
+                    article: article
+                }%}
+            {%endfor%}
         </div>
     {%endblock%}
 {%endembed%}

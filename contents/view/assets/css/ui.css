@@ -263,7 +263,7 @@
 
     :root {
         --header-height: 64px;
-        --container-padding-y: theme('spacing.xs');
+        --container-padding-y: theme('spacing.md');
     }
 
     @media screen(tablet-v) {
