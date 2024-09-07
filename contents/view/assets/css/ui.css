@@ -264,6 +264,14 @@
     :root {
         --header-height: 64px;
         --container-padding-y: theme('spacing.md');
+
+        @media screen(tablet-h) {
+            --container-padding-y: theme('spacing.sm');
+        }
+
+        @media screen(laptop-sm) {
+            --container-padding-y: theme('spacing.md');
+        }
     }
 
     @media screen(tablet-v) {
