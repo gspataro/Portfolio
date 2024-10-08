@@ -17,7 +17,8 @@
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
             {%for id, project in projects%}
             {%include('./components/project/card.html') with {
-                project: project
+                project: project,
+                heading_type: 'h4'
             }%}
         {%endfor%}
         </div>
