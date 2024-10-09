@@ -1,0 +1,21 @@
+name: Build & Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy gspataro
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{secrets.SSH_USER}}
+
+          script: |
+            cd Portfolio
+            git pull
+            php gspataro.php build
+            echo 'Successfully deployed.'
