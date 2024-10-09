@@ -1,5 +1,6 @@
 <?php
 
+use Dotenv\Dotenv;
 use GSpataro\Application\Component;
 use GSpataro\DependencyInjection\Container;
 
@@ -14,6 +15,11 @@ require_once DIR_VENDOR . "/autoload.php";
 // Initialize nunomaduro/collision component
 
 (new \NunoMaduro\Collision\Provider())->register();
+
+// Initialize vlucas/phpdotenv
+
+$dotenv = Dotenv::createImmutable(DIR_ROOT);
+$dotenv->load();
 
 // Initialize dependency injection container
 
