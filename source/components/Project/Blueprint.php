@@ -33,6 +33,12 @@ final class Blueprint extends DotNavigator
         $rawJson = file_get_contents($filePath);
         $data = $this->readData($rawJson);
 
+        if (!isset($data['website'])) {
+            $data['website'] = [];
+        }
+
+        $data['website']['url'] = $_ENV['WEBSITE_URL'];
+
         $this->fill($data);
     }
 
