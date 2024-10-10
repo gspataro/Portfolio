@@ -262,7 +262,7 @@
      */
 
     :root {
-        --header-height: 64px;
+        --header-height: 70px;
         --container-padding-y: theme('spacing.md');
 
         @media screen(tablet-h) {
@@ -271,12 +271,6 @@
 
         @media screen(laptop-sm) {
             --container-padding-y: theme('spacing.md');
-        }
-    }
-
-    @media screen(tablet-v) {
-        :root {
-            --header-height: 70px;
         }
     }
 
