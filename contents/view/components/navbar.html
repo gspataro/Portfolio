@@ -7,12 +7,26 @@
             <!-- ITEM -->
             <li class="font-normal uppercase text-[24px] font-oswald tablet-v:text-[20px] tablet-h:text-[22px] desktop:text-[24px]">
                 <a href="{{item.url}}" class="
+                    relative
+                    block
                     no-underline
                     group-data-[style=pianoforte]/header:text-ivory-lightest
                     group-data-[style=fortepiano]/header:text-ivory-lightest
                     tablet-v:group-data-[style=fortepiano]/header:text-thunder-darkest
                     tablet-h:group-data-[style=fortepiano]/header:text-ivory-lightest
-                    tablet-h:group-data-[style=pianoforte]/header:text-thunder-darkest">
+                    tablet-h:group-data-[style=pianoforte]/header:text-thunder-darkest
+                    laptop-sm:after:absolute
+                    laptop-sm:after:top-0
+                    laptop-sm:after:-left-[4px]
+                    laptop-sm:after:bg-thunder-darkest
+                    laptop-sm:after:w-[2px]
+                    laptop-sm:after:h-full
+                    laptop-sm:after:scale-y-0
+                    laptop-sm:after:transition-all
+                    laptop-sm:after:duration-300
+                    laptop-sm:hover:after:scale-y-100
+                    laptop-sm:hover:after:h-full
+                    laptop-sm:group-data-[style=fortepiano]/header:after:bg-ivory-lightest">
                     {{item.label}}
                 </a>
             </li>
