@@ -10,7 +10,7 @@
         <div class="tablet-v:grid tablet-v:grid-cols-[auto_1fr]">
             {%include './components/header.html' with {'class': 'w-[100vw] tablet-v:col-start-1 tablet-v:row-span-2'}%}
             <div id="main-wrapper" class="flex overflow-y-hidden flex-col tablet-v:col-start-2">
-                <main id="main" class="items-start grid grid-cols-[repeat(3,100%)] snap-mandatory snap-x overflow-x-scroll overflow-y-hidden scrollbar-hide">
+                <main id="main" class="items-start grid grid-cols-1 tablet-v:grid-cols-[repeat(3,100%)] tablet-v:snap-mandatory tablet-v:snap-x tablet-v:overflow-x-scroll tablet-v:overflow-y-hidden tablet-v:scrollbar-hide">
                     {%block main%}
                     {%endblock%}
                 </main>

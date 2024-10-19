@@ -27,7 +27,7 @@
             <!-- NAVBAR -->
             <div class="tablet-v:rotate-180">
                 <div id="navbar" class="
-                    hidden
+                    invisible
                     bg-thunder-darkest
                     absolute
                     top-[--header-height]
@@ -35,10 +35,15 @@
                     right-0
                     bottom-0
                     h-[calc(100vh-var(--header-height))]
-                    group-data-[open=true]/header:block
+                    opacity-0
+                    transition-all
+                    duration-300
+                    group-data-[open=true]/header:opacity-100
+                    group-data-[open=true]/header:visible
                     tablet-v:h-auto
                     tablet-v:bg-transparent
                     tablet-v:static
+                    tablet-v:visible
                     tablet-v:contents">
                     <div class="container flex flex-col h-full py-xl tablet-v:h-auto tablet-v:py-0 tablet-v:contents">
                         {%include './components/navbar.html' with {

@@ -1,7 +1,7 @@
-version: '3.8'
 services:
   web:
-    image: php:8.2-apache
+    build:
+        dockerfile: Dockerfile
     hostname: gspataro.test
     ports:
       - "80:80"

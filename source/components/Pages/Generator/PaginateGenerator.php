@@ -14,7 +14,7 @@ final class PaginateGenerator extends BaseGenerator
     public function generate(array $schema): void
     {
         $contents = $schema['contents'];
-        $basedOn = $this->archive->get($schema['generate_based_on']);
+        $basedOn = $contents[$schema['generate_based_on']];
 
         if (empty($basedOn)) {
             return;
