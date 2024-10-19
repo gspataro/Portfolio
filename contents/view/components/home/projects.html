@@ -3,7 +3,7 @@
     'style': 'fortepiano'
 }%}
     {%block content%}
-        {#<div class="mb-md tablet-v:w-2/3 tablet-h:w-1/2">
+        <div class="mb-xl tablet-v:w-2/3 tablet-h:w-1/2">
             <h3 class="mb-3xs hidden tablet-h:block">
                 COSA FACCIO
             </h3>
@@ -13,22 +13,6 @@
             <a href="{{url('projects.page-1')}}" class="cta text-ivory-lightest">
                 TUTTI I PROGETTI
             </a>
-        </div>#}
-        <div class="mb-3xl laptop-sm:flex laptop-sm:items-center laptop-sm:justify-between">
-            <div class="tablet-h:max-w-[600px]">
-                <h3 class="mb-3xs hidden tablet-h:block">
-                    COSA FACCIO
-                </h3>
-                <p class="text-sm mb-xs">
-                    Lavoro come sviluppatore web. Nel tempo libero mi piace dedicarmi a progetti open source che sfrutto per apprendere nuovi concetti e nuove tecnologie.
-                </p>
-                <a href="{{url('projects.page-1')}}" class="cta text-ivory-lightest">
-                    TUTTI I PROGETTI
-                </a>
-            </div>
-            <figure class="hidden laptop-sm:block">
-                <img src="{{website.url}}/assets/images/gspataro-anatomy.png" alt="" width="500" height="400" class="rounded-2xl">
-            </figure>
         </div>
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
             {%for id, project in projects%}
