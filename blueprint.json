@@ -87,7 +87,11 @@
         },
         "blog": {
             "contents": [
-                "articles",
+                {
+                    "group": "articles",
+                    "orderBy": "frontmatter.published",
+                    "order": "desc"
+                },
                 "articles_cats"
             ],
             "template": "blog",

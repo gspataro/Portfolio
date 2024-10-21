@@ -5,7 +5,7 @@
     data-[style=fortepiano]:bg-thunder-darkest
     data-[style=fortepiano]:text-ivory-lightest
     {%if background%}bg-[image:--section-bg-url]{%endif%}" data-style="{{style ?? 'pianoforte'}}" {%if background%}style="--section-bg-url: url({{background}});"{%endif%}>
-    <div class="flex flex-col h-full min-h-[100vh] tablet-h:flex-row">
+    <div class="flex flex-col h-full tablet-v:min-h-[100vh] tablet-h:flex-row">
         <!-- MAIN CONTENT -->
         {%block container%}
             <div class="flex-1 pb-[--container-padding-y] tablet-h:pt-[--container-padding-y]">
@@ -32,31 +32,31 @@
                     <!-- CONTROLS -->
                     <div class="flex justify-end items-center gap-sm">
                         <a href="javascript:void(0)" class="
-                        nav-prev
-                        text-thunder-darkest
-                        text-sm
-                        font-normal
-                        uppercase
-                        no-underline
-                        group-first-of-type/section:hidden
-                        group-data-[style=fortepiano]/section:text-ivory-lightest
-                        tablet-v:text-md
-                        tablet-h:text-ivory-lightest
-                        tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
+                            hidden
+                            nav-prev
+                            text-thunder-darkest
+                            font-normal
+                            uppercase
+                            no-underline
+                            group-first-of-type/section:hidden
+                            group-data-[style=fortepiano]/section:text-ivory-lightest
+                            tablet-v:block
+                            tablet-h:text-ivory-lightest
+                            tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
                             <img src="{{website.url}}/assets/images/icons/chevron-left.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione precedente" width="22" height="39">
                             <img src="{{website.url}}/assets/images/icons/chevron-left-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione precedente" width="22" height="39">
                         </a>
                         <div class="hidden flex-1 tablet-v:block"></div>
                         <a href="javascript:void(0)" class="
+                            hidden
                             nav-next
                             text-thunder-darkest
-                            text-sm
                             font-normal
                             uppercase
                             no-underline
                             group-last-of-type/section:hidden
                             group-data-[style=fortepiano]/section:text-ivory-lightest
-                            tablet-v:text-md
+                            tablet-v:block
                             tablet-h:text-ivory-lightest
                             tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
                             <img src="{{website.url}}/assets/images/icons/chevron-right.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione successiva" width="22" height="39">
