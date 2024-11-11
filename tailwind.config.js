@@ -253,6 +253,23 @@ module.exports = {
                     "&:last-child": {
                         marginBottom: 0
                     }
+                },
+                ol: {
+                    marginTop: theme('spacing.3xs'),
+                    marginBottom: theme('spacing.3xs'),
+                    paddingLeft: '2rem',
+                    listStyleType: 'decimal',
+                    "&:first-child": {
+                        marginTop: 0
+                    },
+                    "&:last-child": {
+                        marginBottom: 0
+                    }
+                },
+                blockquote: {
+                    paddingLeft: '1rem',
+                    borderLeft: '2px solid ' + theme('colors.thunder.darkest'),
+                    fontStyle: 'italic'
                 }
             }
         })
