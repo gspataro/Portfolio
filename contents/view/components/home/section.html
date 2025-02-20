@@ -30,37 +30,30 @@
                 <!-- WRAPPER -->
                 <div class="container flex flex-row-reverse h-full pt-[--container-padding-y] mb-xs tablet-h:pb-[--container-padding-y] tablet-h:mb-0 tablet-h:px-3xs tablet-h:flex-col tablet-h:sticky tablet-h:top-0 tablet-h:h-[100vh]">
                     <!-- CONTROLS -->
-                    <div class="flex justify-end items-center gap-sm">
+                    <div class="hidden tablet-v:flex flex-col items-start gap-3xs">
                         <a href="javascript:void(0)" class="
-                            hidden
+                        cta
+                        uppercase
+                        nav-next
+                        text-thunder-darkest
+                        group-last-of-type/section:hidden
+                        ml-auto
+                        group-data-[style=fortepiano]/section:text-ivory-lightest
+                        tablet-h:text-ivory-lightest
+                        tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
+                            {{next_text}}
+                        </a>
+                        <a href="javascript:void(0)" class="
+                            cta
+                            cta-inverted
                             nav-prev
                             text-thunder-darkest
-                            font-normal
                             uppercase
-                            no-underline
                             group-first-of-type/section:hidden
                             group-data-[style=fortepiano]/section:text-ivory-lightest
-                            tablet-v:block
                             tablet-h:text-ivory-lightest
                             tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
-                            <img src="{{website.url}}/assets/images/icons/chevron-left.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione precedente" width="22" height="39">
-                            <img src="{{website.url}}/assets/images/icons/chevron-left-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione precedente" width="22" height="39">
-                        </a>
-                        <div class="hidden flex-1 tablet-v:block"></div>
-                        <a href="javascript:void(0)" class="
-                            hidden
-                            nav-next
-                            text-thunder-darkest
-                            font-normal
-                            uppercase
-                            no-underline
-                            group-last-of-type/section:hidden
-                            group-data-[style=fortepiano]/section:text-ivory-lightest
-                            tablet-v:block
-                            tablet-h:text-ivory-lightest
-                            tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
-                            <img src="{{website.url}}/assets/images/icons/chevron-right.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione successiva" width="22" height="39">
-                            <img src="{{website.url}}/assets/images/icons/chevron-right-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione successiva" width="22" height="39">
+                            {{prev_text}}
                         </a>
                     </div>
                     <!-- END CONTROLS -->
