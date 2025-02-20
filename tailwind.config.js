@@ -71,9 +71,9 @@ module.exports = {
         "5xl": "150px"
     },
     fontSize: {
-        "3xl": "120px",
-        "2xl": "86px",
-        "xl": "70px",
+        "3xl": "90px",
+        "2xl": "70px",
+        "xl": "60px",
         "lg": "48px",
         "md": "38px",
         "sm": "18px",
