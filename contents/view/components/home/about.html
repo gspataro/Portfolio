@@ -10,19 +10,10 @@
                 MI PRESENTO
             </h3>
             <p class="text-sm mb-xs">
-                Lavoro come sviluppatore web. Nel tempo libero mi piace dedicarmi a progetti open source che sfrutto per apprendere nuovi concetti e nuove tecnologie.
+                Mi chiamo Giuseppe Spataro, sono un pianista e sviluppatore web. È vero, mi occupo di due attività che all'apparenza possono sembrare molto
+                differenti tra loro. In realtà ritengo che il mondo della musica e il mondo della programmazione abbiano molto in comune, entrambe sono forme
+                d'arte. Gli strumenti musicali e la programmazione sono mezzi attraverso i quali esprimere qualcosa.
             </p>
-            <a href="{{url('projects.page-1')}}" class="cta text-ivory-lightest">
-                TUTTI I PROGETTI
-            </a>
-        </div>
-        <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
-            {%for id, project in projects%}
-            {%include('./components/project/card.html') with {
-                project: project,
-                heading_type: 'h4'
-            }%}
-        {%endfor%}
         </div>
     {%endblock%}
 {%endembed%}

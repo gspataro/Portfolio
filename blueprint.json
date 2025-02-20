@@ -24,11 +24,7 @@
                     "orderBy": "frontmatter.published",
                     "order": "desc"
                 },
-                "articles_cats",
-                {
-                    "group": "projects",
-                    "select": ["cli", "dependencyinjection", "portfolio"]
-                }
+                "articles_cats"
             ],
             "template": "index",
             "builder": "simple",
