@@ -361,7 +361,8 @@
         transition: margin 200ms;
     }
 
-    .cta:hover::after {
+    .cta:hover::after,
+    .group\/card:hover .cta::after {
         margin-left: 5px;
         margin-right: -5px;
     }
@@ -380,7 +381,8 @@
         transform-origin: 0 0;
     }
 
-    .cta:hover::before {
+    .cta:hover::before,
+    .group\/card:hover .cta::before {
         transform: scaleX(1);
     }
 
@@ -391,7 +393,8 @@
         order: -1;
     }
 
-    .cta.cta-inverted:hover::after {
+    .cta.cta-inverted:hover::after,
+    .group\/card:hover .cta::after {
         margin-right: 5px;
         margin-left: -5px;
     }
