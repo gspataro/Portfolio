@@ -43,6 +43,24 @@
             "slug": "/darkside",
             "generate": "once"
         },
+        "webdev": {
+            "contents": [
+                "projects"
+            ],
+            "template": "webdev",
+            "builder": "simple",
+            "slug": "/webdev",
+            "generate": "once"
+        },
+        "pianist": {
+            "contents": [
+                "projects"
+            ],
+            "template": "pianist",
+            "builder": "simple",
+            "slug": "/pianista",
+            "generate": "once"
+        },
         "article": {
             "contents": [
                 "articles",
