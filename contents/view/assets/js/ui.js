@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('mouseover', function (e) {
-        if (e.target.tagName.toLowerCase() !== 'a') {
+        if (e.target.tagName.toLowerCase() !== 'a' && e.target.closest('a') === null) {
             return;
         }
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('mouseout', function (e) {
-        if (e.target.tagName.toLowerCase() !== 'a') {
+        if (e.target.tagName.toLowerCase() !== 'a' && e.target.closest('a') === null) {
             return;
         }
 
