@@ -45,7 +45,12 @@
         },
         "webdev": {
             "contents": [
-                "projects"
+                {
+                    "group": "projects",
+                    "limit": "3",
+                    "orderBy": "frontmatter.published",
+                    "order": "desc"
+                }
             ],
             "template": "webdev",
             "builder": "simple",

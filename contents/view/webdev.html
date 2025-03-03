@@ -1,3 +1,60 @@
 {%extends "./layout/default.html"%}
 {%block main%}
+    <div class="w-1/2 prose mb-xl">
+        <h1>Web Developer</h1>
+        <p class="text-sm">
+            Sono uno sviluppatore web full stack.
+            Ho iniziato ad appassionarmi allo sviluppo web all'età di 11 anni. Negli anni ho maturato numerose esperienze nella creazione di
+            soluzioni completamente personalizzate nell'ambito di ecommerce, blog e landing pages. Sono un perfezionista e mi piace ricercare
+            la soluzione più efficiente.
+        </p>
+    </div>
+    <div class="mb-xl">
+        <h2 class="mb-sm">Tecnologie</h2>
+        <div class="mb-xs">
+            <h3 class="mb-3xs">Backend</h3>
+            <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">PHP</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">MySQL</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Laravel</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Wordpress</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Woocommerce</li>
+            </ul>
+        </div>
+        <div class="mb-xs">
+            <h3 class="mb-3xs">Frontend</h3>
+            <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">HTML</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">CSS</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Javascript</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">SASS/SCSS</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">JQuery</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">TailwindCSS</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Bootstrap</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Webpack</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="mb-3xs">Altro</h3>
+            <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Git</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">UI/UX</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Accessibilità</li>
+                <li class="bg-brass/20 px-3xs py-5xs rounded-lg">SEO</li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div class="flex gap-xs mb-sm">
+            <h2 class="leading-none">Progetti</h2>
+            <a href="{{url('projects.page-1')}}" class="cta text-thunder-lightest leading-none text-h4">Vedi tutti</a>
+        </div>
+        <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
+            {%for id, project in projects%}
+                {%include('./components/project/card.html') with {
+                    project: project
+                }%}
+            {%endfor%}
+        </div>
+    </div>
 {%endblock%}
