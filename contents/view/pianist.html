@@ -1,9 +1,34 @@
+{%set experiences = [
+    {
+        "name": "Pianoforte brillante",
+        "year": "2024",
+        "location": "Teatro Donnafugata &bullet; Ragusa Ibla (RG)",
+        "description": "Pianoforte a quattro mani"
+    },
+    {
+        "name": "Premio Giovani Eccellenze",
+        "year": "2021",
+        "location": "Teatro Perracchio &bullet; Ragusa (RG)",
+        "description": "Pianista solista"
+    },
+    {
+        "name": "Musica da Metro",
+        "year": "2019",
+        "location": "Metro Piazza Stesicoro &bullet; Catania (CT)",
+        "description": "Pianista solista"
+    },
+    {
+        "name": "Apertura di concerto",
+        "year": "2018",
+        "location": "Teatro donnafugata &bullet; Ragusa Ibla (RG)",
+        "description": "Pianista solista"
+    }
+]%}
 {%extends "./layout/default.html"%}
 {%block main%}
     <div class="w-1/2 prose mb-xl">
         <h1>Pianista</h1>
         <p class="text-sm">
-            Sono un insegnante, pianista solista e pianista accompagnatore.
             Ho iniziato a studiare pianoforte all'età di 5 anni e ho completato gli studi nel 2022 conseguendo la laurea magistrale in Pianoforte
             con il massimo dei voti e la lode.
             Negli anni ho maturato numerose esperienze per teatri ed enti privati, ho
@@ -11,6 +36,28 @@
         </p>
     </div>
     <div class="mb-xl">
+        <h2 class="mb-sm">Esperienze</h2>
+        <div class="max-w-full overflow-y-clip overflow-x-auto scrollbar-hide">
+            <div>
+                <div class="flex gap-md pl-xs">
+                    {%for experience in experiences%}
+                        <div class="shrink-0 relative pl-xs pb-xs border-l-2 border-l-stiletto after:block after:bg-stiletto after:w-[12px] after:h-[12px] after:rounded-full after:absolute after:-left-[7px] after:-bottom-[7px]">
+                            <h5>{{experience.name}}</h5>
+                            <div class="text-thunder-light">
+                                {{experience.location|raw}} | {{experience.year}}
+                            </div>
+                            <div>
+                                {{experience.description}}
+                            </div>
+                        </div>
+                    {%endfor%}
+                </div>
+                <div class="bg-thunder-darkest h-[2px] w-full">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
         <h2 class="leading-none mb-sm">Progetti</h2>
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
             <div class="border-thunder-darkest border-2 border-dashed rounded-3xl p-sm">
