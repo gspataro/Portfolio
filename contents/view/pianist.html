@@ -35,28 +35,6 @@
             anche preso parte a molti concorsi nazionali e masterclasses con pianisti di fama internazionale.
         </p>
     </div>
-    <div class="mb-xl">
-        <h2 class="mb-sm">Esperienze</h2>
-        <div class="max-w-full overflow-y-clip overflow-x-auto scrollbar-hide">
-            <div>
-                <div class="flex gap-md pl-xs">
-                    {%for experience in experiences%}
-                        <div class="shrink-0 relative pl-xs pb-xs border-l-2 border-l-stiletto after:block after:bg-stiletto after:w-[12px] after:h-[12px] after:rounded-full after:absolute after:-left-[7px] after:-bottom-[7px]">
-                            <h5>{{experience.name}}</h5>
-                            <div class="text-thunder-light">
-                                {{experience.location|raw}} | {{experience.year}}
-                            </div>
-                            <div>
-                                {{experience.description}}
-                            </div>
-                        </div>
-                    {%endfor%}
-                </div>
-                <div class="bg-thunder-darkest h-[2px] w-full">
-                </div>
-            </div>
-        </div>
-    </div>
     <div>
         <h2 class="leading-none mb-sm">Progetti</h2>
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
