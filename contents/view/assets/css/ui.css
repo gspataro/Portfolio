@@ -266,24 +266,17 @@
         --container-padding-y: theme('spacing.md');
 
         @media screen(tablet-h) {
+            --header-height: 80px;
             --container-padding-y: theme('spacing.sm');
         }
 
         @media screen(laptop-sm) {
             --container-padding-y: theme('spacing.md');
         }
-    }
 
-    @media screen(tablet-h) {
-        :root {
-            --header-height: 80px;
-        }
-    }
-
-    @media screen(desktop) {
-        :root {
+        @media screen(desktop) {
             --header-height: 100px;
-            --container-padding-y: theme('spacing.sm');
+            /*--container-padding-y: theme('spacing.md');*/
         }
     }
 
