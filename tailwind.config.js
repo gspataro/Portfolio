@@ -81,12 +81,12 @@ module.exports = {
         "xs": "16px",
         "2xs": "14px",
         "3xs": "12px",
-        "h1": "40px",
-        "h2": "36px",
-        "h3": "34px",
-        "h4": "28px",
-        "h5": "26px",
-        "h6": "24px",
+        "h1": "48px",
+        "h2": "40px",
+        "h3": "32px",
+        "h4": "26px",
+        "h5": "22px",
+        "h6": "18px",
         "s1": "22px",
         "s2": "20px"
     },
@@ -126,37 +126,37 @@ module.exports = {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h1'),
                 fontWeight: 400,
-                lineHeight: "46px"
+                lineHeight: "1.5"
             },
             h2: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h2'),
                 fontWeight: 400,
-                lineHeight: "40px"
+                lineHeight: "1.5"
             },
             h3: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h3'),
                 fontWeight: 400,
-                lineHeight: "38px"
+                lineHeight: "1.5"
             },
             h4: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h4'),
                 fontWeight: 400,
-                lineHeight: "32px"
+                lineHeight: "1.5"
             },
             h5: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h5'),
                 fontWeight: 400,
-                lineHeight: "30px"
+                lineHeight: "1.5"
             },
             h6: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h6'),
                 fontWeight: 400,
-                lineHeight: "26px"
+                lineHeight: "1.5"
             },
             ".subtitle-1": {
                 fontFamily: theme('fontFamily.roboto'),
