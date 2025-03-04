@@ -41,10 +41,7 @@
         </div>
     </div>
     <div>
-        <div class="flex gap-xs mb-sm">
-            <h2 class="leading-none">Progetti</h2>
-            <a href="{{url('projects.page-1')}}" class="cta text-thunder-lightest leading-none text-h4">Vedi tutti</a>
-        </div>
+        <h2 class="leading-none mb-sm">Progetti</h2>
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
             {%for id, project in projects%}
                 {%include('./components/project/card.html') with {

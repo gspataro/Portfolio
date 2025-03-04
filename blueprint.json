@@ -45,12 +45,7 @@
         },
         "webdev": {
             "contents": [
-                {
-                    "group": "projects",
-                    "limit": "3",
-                    "orderBy": "frontmatter.published",
-                    "order": "desc"
-                }
+                "projects"
             ],
             "template": "webdev",
             "builder": "simple",
@@ -85,18 +80,6 @@
             "builder": "post",
             "slug": "/progetto",
             "generate": "loop:projects"
-        },
-        "projects": {
-            "contents": [
-                "projects"
-            ],
-            "template": "projects",
-            "builder": "archive",
-            "slug": "/progetti",
-            "generate": "paginate:projects",
-            "options": {
-                "per_page": 12
-            }
         },
         "blog": {
             "contents": [
