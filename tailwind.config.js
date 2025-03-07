@@ -126,37 +126,37 @@ module.exports = {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h1'),
                 fontWeight: 400,
-                lineHeight: "1.5"
+                lineHeight: "1.2"
             },
             h2: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h2'),
                 fontWeight: 400,
-                lineHeight: "1.5"
+                lineHeight: "1.2"
             },
             h3: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h3'),
                 fontWeight: 400,
-                lineHeight: "1.5"
+                lineHeight: "1.2"
             },
             h4: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h4'),
                 fontWeight: 400,
-                lineHeight: "1.5"
+                lineHeight: "1.2"
             },
             h5: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h5'),
                 fontWeight: 400,
-                lineHeight: "1.5"
+                lineHeight: "1.2"
             },
             h6: {
                 fontFamily: theme('fontFamily.geist'),
                 fontSize: theme('fontSize.h6'),
                 fontWeight: 400,
-                lineHeight: "1.5"
+                lineHeight: "1.2"
             },
             ".subtitle-1": {
                 fontFamily: theme('fontFamily.roboto'),
