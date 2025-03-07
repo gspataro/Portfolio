@@ -17,11 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function setupSection(section)
     {
-        if (window.innerWidth < 768) {
-            mainWrapper.style.height = '';
-            return;
-        }
-
         if (!section) {
             return;
         }
@@ -45,10 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function goToSection(id)
     {
-        if (window.innerWidth < 768) {
-            return;
-        }
-
         const section = sections[id] ?? null;
 
         if (!section) {
@@ -99,10 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
         goToSection(prevSection);
     }
 
-    if (window.innerWidth >= 768) {
-        currentSectionId = main.scrollLeft / main.offsetWidth;
-        setupSection(sections[currentSectionId]);
-    }
+    currentSectionId = main.scrollLeft / main.offsetWidth;
+    setupSection(sections[currentSectionId]);
 
     // Redo section setup on window resize
     window.addEventListener('resize', function () {

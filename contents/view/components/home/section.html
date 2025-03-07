@@ -8,7 +8,7 @@
     <div class="flex flex-col h-full tablet-v:min-h-[100vh] tablet-h:flex-row">
         <!-- MAIN CONTENT -->
         {%block container%}
-            <div class="flex-1 pb-[--container-padding-y] tablet-h:pt-[--container-padding-y]">
+            <div class="flex-1 pt-[--container-padding-y] tablet-h:pb-[--container-padding-y]">
                 <div class="container h-full">
                     {%block content%}
                     {%endblock%}
@@ -20,8 +20,7 @@
         {%block sidebar%}
             <div class="
                 relative
-                -order-1
-                tablet-h:order-1
+                pb-[--container-padding-y]
                 tablet-h:w-[212px]
                 tablet-h:pl-sm
                 tablet-h:bg-thunder-darkest
@@ -42,7 +41,7 @@
                 <!-- WRAPPER -->
                 <div class="container flex flex-row-reverse h-full pt-[--container-padding-y] mb-xs tablet-h:pb-[--container-padding-y] tablet-h:mb-0 tablet-h:px-3xs tablet-h:flex-col tablet-h:sticky tablet-h:top-0 tablet-h:h-[100vh]">
                     <!-- CONTROLS -->
-                    <div class="hidden tablet-v:flex flex-col items-start gap-3xs">
+                    <div class="flex-1 flex flex-row-reverse items-center gap-3xs tablet-h:flex-none tablet-h:items-start tablet-h:flex-col">
                         <a href="javascript:void(0)" class="
                         cta
                         uppercase
@@ -50,12 +49,13 @@
                         text-sm
                         text-thunder-darkest
                         group-last-of-type/section:hidden
-                        ml-auto
                         group-data-[style=fortepiano]/section:text-ivory-lightest
+                        tablet-h:ml-auto
                         tablet-h:text-ivory-lightest
                         tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
                             {{next_text}}
                         </a>
+                        <div class="flex-1 tablet-h:hidden"></div>
                         <a href="javascript:void(0)" class="
                             cta
                             cta-inverted
@@ -72,17 +72,19 @@
                     </div>
                     <!-- END CONTROLS -->
                     <!-- SPACER -->
-                    <div class="flex-1"></div>
+                    <div class="tablet-h:flex-1"></div>
                     <!-- END SPACER -->
                     <!-- LABEL -->
                     {%block sidebar_label%}
                         <h2 class="
+                            hidden
                             font-oswald
                             font-normal
                             text-lg
                             leading-none
                             uppercase
                             tablet-v:text-2xl
+                            tablet-h:block
                             tablet-h:writing-v-lr
                             tablet-h:group-data-[style=fortepiano]/section:self-end
                             tablet-h:group-data-[style=fortepiano]/section:rotate-180">

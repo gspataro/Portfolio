@@ -5,7 +5,7 @@
     'style': 'fortepiano'
 }%}
     {%block content%}
-        <div class="flex justify-between mb-2xl">
+        <div class="flex flex-col justify-between mb-2xl tablet-v:flex-row">
             <div class="tablet-v:w-2/3 tablet-h:w-1/2">
                 <h3 class="mb-3xs hidden tablet-h:block">
                     MI PRESENTO
@@ -16,14 +16,14 @@
                     d'arte. Gli strumenti musicali e la programmazione sono mezzi attraverso i quali esprimere qualcosa.
                 </p>
             </div>
-            <div class="w-[400px] h-[400px] rounded-full overflow-hidden border-thunder-lighter border-4">
-                <img src="{{media('about-photo.jpg', 'thumbnail')}}" alt="" width="400" height="420">
-            </div>
+            <figure>
+                <img src="{{media('about-photo.jpg', 'thumbnail')}}" class="aspect-square object-top object-cover rounded-full border-thunder-lighter border-4" alt="" width="400" height="420">
+            </figure>
         </div>
         <div class="font-oswald text-md text-center mb-lg">
             VUOI SAPERNE DI PIÙ?
         </div>
-        <div class="flex justify-between">
+        <div class="flex flex-col justify-between tablet-v:flex-row">
             <a href="{{url('webdev')}}" class="flex-1 flex gap-sm text-ivory-lightest no-underline group/card">
                 <h3 class="font-oswald text-md writing-v-lr rotate-180 group-hover/card:text-brass">
                     WEB//DEV
