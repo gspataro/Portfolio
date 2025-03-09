@@ -69,8 +69,10 @@ document.addEventListener('DOMContentLoaded', function () {
      * @return void
      */
 
-    function nextSection()
+    function nextSection(e)
     {
+        e.preventDefault();
+
         const nextSection = currentSectionId + 1;
 
         if (nextSection > sections.length) {
@@ -86,8 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
      * @return void
      */
 
-    function prevSection()
+    function prevSection(e)
     {
+        e.preventDefault();
+
         const prevSection = currentSectionId - 1;
 
         if (prevSection < 0) {

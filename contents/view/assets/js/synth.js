@@ -33,7 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
      * Listen to mute control
      */
 
-    muteControl.addEventListener('click', function () {
+    muteControl.addEventListener('click', function (e) {
+        e.preventDefault();
+
         if (muteControl.dataset.muted === 'false') {
             audioContext.suspend();
             muteControl.dataset.muted = 'true';

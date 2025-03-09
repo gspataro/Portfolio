@@ -18,7 +18,8 @@
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
             {%for id, article in articles%}
                 {%include('./components/article/card.html') with {
-                    article: article
+                    article: article,
+                    heading_type: 'h4'
                 }%}
             {%endfor%}
         </div>

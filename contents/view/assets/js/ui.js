@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        navbarToggler.onclick = function () {
+        navbarToggler.onclick = function (e) {
+            e.preventDefault();
+
             if (header.dataset.open === 'false') {
                 header.dataset.open = 'true';
                 document.body.classList.add('hamburger-open');
