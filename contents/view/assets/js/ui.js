@@ -26,8 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
     customCursor.classList.add('cursor');
     document.body.append(customCursor);
 
+    let isTouch = false;
+
+    document.addEventListener('touchstart', function (e) {
+        isTouch = true;
+    }, {
+        passive: true
+    });
+
+    document.addEventListener('mousemove', function (e) {
+        isTouch = false;
+    });
+
     document.addEventListener('pointermove', function (e) {
-        if (document.documentElement.clientWidth < 992) {
+        if (isTouch) {
             return;
         }
 
@@ -41,6 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('mouseover', function (e) {
+        if (isTouch) {
+            return;
+        }
+
         if (e.target.tagName.toLowerCase() !== 'a' && e.target.closest('a') === null) {
             return;
         }
@@ -49,6 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('mouseout', function (e) {
+        if (isTouch) {
+            return;
+        }
+
         if (e.target.tagName.toLowerCase() !== 'a' && e.target.closest('a') === null) {
             return;
         }
@@ -57,10 +77,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('mousedown', function () {
+        if (isTouch) {
+            return;
+        }
+
         customCursor.classList.add('click');
     });
 
     document.addEventListener('mouseup', function () {
+        if (isTouch) {
+            return;
+        }
+
         customCursor.classList.remove('click');
     });
 });
