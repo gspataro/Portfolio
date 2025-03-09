@@ -54,6 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
             left: sectionXCoords,
             behavior: 'smooth'
         });
+
+        if (window.scrollY > 0) {
+            window.scroll({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     }
 
     /**
