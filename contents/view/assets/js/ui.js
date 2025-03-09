@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('touchstart', function (e) {
         isTouch = true;
+
+        customCursor.style.display = 'none';
     }, {
         passive: true
     });
