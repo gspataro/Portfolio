@@ -75,20 +75,22 @@
                     <!-- END SPACER -->
                     <!-- LABEL -->
                     {%block sidebar_label%}
-                        <h2 class="
-                            hidden
-                            font-oswald
-                            font-normal
-                            text-lg
-                            leading-none
-                            uppercase
-                            tablet-v:text-2xl
-                            tablet-h:block
-                            tablet-h:writing-v-lr
-                            tablet-h:group-data-[style=fortepiano]/section:self-end
-                            tablet-h:group-data-[style=fortepiano]/section:rotate-180">
-                            {{label}}
-                        </h2>
+                        {%if label%}
+                            <h2 class="
+                                hidden
+                                font-oswald
+                                font-normal
+                                text-lg
+                                leading-none
+                                uppercase
+                                tablet-v:text-2xl
+                                tablet-h:block
+                                tablet-h:writing-v-lr
+                                tablet-h:group-data-[style=fortepiano]/section:self-end
+                                tablet-h:group-data-[style=fortepiano]/section:rotate-180">
+                                {{label}}
+                            </h2>
+                        {%endif%}
                     {%endblock%}
                     <!-- END LABEL -->
                 </div>
