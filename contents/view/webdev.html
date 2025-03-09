@@ -1,6 +1,6 @@
 {%extends "./layout/default.html"%}
 {%block main%}
-    <div class="w-1/2 prose mb-xl">
+    <div class="prose mb-xl tablet-v:w-2/3 tablet-h:w-1/2">
         <h1>Creo siti web</h1>
         <p class="text-sm">
             Come sviluppatore web full stack, mi occupo dell'intero processo di creazione,
@@ -9,7 +9,7 @@
     </div>
     <div class="mb-2xl">
         <h2 class="mb-xs">Conoscenze</h2>
-        <div class="grid grid-cols-[auto_1fr] gap-xs items-center">
+        <div class="grid grid-cols-1 gap-xs items-start laptop-sm:grid-cols-[auto_1fr] laptop-sm:items-center">
             <h3>Backend</h3>
             <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
                 <li class="bg-brass/20 px-3xs py-5xs rounded-lg">PHP</li>
@@ -38,7 +38,7 @@
             </ul>
         </div>
     </div>
-    <div class="bg-thunder-darkest rounded-3xl text-ivory-lightest p-lg mb-2xl">
+    <div class="bg-thunder-darkest rounded-3xl text-ivory-lightest p-sm mb-2xl tablet-v:p-lg">
         <h2 class="mb-5xs">Costruiamo qualcosa insieme</h2>
         <p class="text-sm mb-xs">Fammi sapere se hai un'idea che vorresti realizzare o se hai bisogno di un confronto, sarò felice di risponderti.</p>
         <a href="mailto:{{website.email}}" class="btn text-ivory-lightest">Contattami</a>
