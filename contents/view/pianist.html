@@ -74,14 +74,14 @@
 }%}
 {%extends "./layout/default.html"%}
 {%block main%}
-    <div class="w-1/2 prose mb-xl">
+    <div class="prose mb-xl tablet-v:w-2/3 tablet-h:w-1/2">
         <h1>Condivido la mia musica</h1>
         <p class="text-sm">
             Come pianista solista, accompagnatore e insegnante di pianoforte, coniugo esperienza e sensibilità musicale,
             sia nell'esecuzione che nell'insegnamento, per valorizzare ogni percorso artistico.
         </p>
     </div>
-    <div class="bg-thunder-darkest rounded-3xl text-ivory-lightest p-lg mb-2xl">
+    <div class="bg-thunder-darkest rounded-3xl text-ivory-lightest p-sm mb-2xl tablet-v:p-lg">
         <h2 class="mb-5xs">Facciamo musica insieme</h2>
         <p class="text-sm mb-xs">Fammi sapere se hai un progetto che vorresti realizzare o se hai bisogno di un confronto, sarò felice di risponderti.</p>
         <a href="mailto:{{website.email}}" class="btn text-ivory-lightest">Contattami</a>
@@ -91,7 +91,7 @@
         {%for year, experiences in timeline%}
             <div class="flex mb-md gap-sm items-start last-of-type:mb-0">
                 <h3 class="writing-v-lr rotate-180">{{year}}</h3>
-                <div class="grid grid-cols-3 gap-xs">
+                <div class="grid grid-cols-1 gap-xs tablet-h:grid-cols-3">
                     {%for experience in experiences%}
                         <div>
                             <h4 class="text-h6">{{experience.name}}</h4>
