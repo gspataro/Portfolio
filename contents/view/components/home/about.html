@@ -6,7 +6,7 @@
 }%}
     {%block content%}
         <div class="flex flex-col-reverse gap-sm justify-between mb-2xl tablet-v:flex-row tablet-v:gap-xs">
-            <div class="tablet-v:w-2/3 tablet-h:w-1/2">
+            <div class="tablet-v:w-2/3 laptop-sm:w-1/2">
                 <h3 class="mb-3xs hidden tablet-h:block">
                     MI PRESENTO
                 </h3>
@@ -16,14 +16,14 @@
                     d'arte. Gli strumenti musicali e la programmazione sono mezzi attraverso i quali esprimere qualcosa.
                 </p>
             </div>
-            <figure class="w-4/5 mx-auto tablet-v:w-auto tablet-v:mx-[unset]">
+            <figure class="max-w-[200px] mx-auto tablet-v:max-w-[300px] tablet-v:w-1/3 tablet-v:mx-[unset]">
                 <img src="{{media('about-photo.jpg', 'thumbnail')}}" class="aspect-square object-top object-cover rounded-full border-thunder-lighter border-4" alt="" width="400" height="420">
             </figure>
         </div>
         <div class="font-oswald text-md text-center mb-lg">
             VUOI SAPERNE DI PIÙ?
         </div>
-        <div class="flex flex-col gap-lg justify-between mb-sm tablet-v:mb-0 tablet-v:gap-xs tablet-v:flex-row">
+        <div class="flex flex-col gap-lg justify-between mb-sm tablet-v:mb-0 tablet-h:gap-xs tablet-h:flex-row">
             <a href="{{url('webdev')}}" class="flex-1 flex justify-between gap-sm text-ivory-lightest no-underline group/card tablet-v:justify-normal">
                 <h3 class="font-oswald text-md writing-v-lr rotate-180 group-hover/card:text-brass">
                     WEB//DEV
@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </a>
-            <div class="h-[3px] w-full bg-thunder-dark tablet-v:w-[3px] tablet-v:h-[inherit]"></div>
+            <div class="h-[3px] w-full bg-thunder-dark tablet-h:w-[3px] tablet-h:h-[inherit]"></div>
             <a href="{{url('pianist')}}" class="flex-1 flex gap-sm justify-between text-ivory-lightest no-underline group/card tablet-v:justify-end">
                 <div class="w-2/3">
                     Sono un pianista solista, accompagnatore e insegnante di pianoforte.
