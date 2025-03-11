@@ -4,7 +4,7 @@
     group/section
     data-[style=fortepiano]:bg-thunder-darkest
     data-[style=fortepiano]:text-ivory-lightest
-    {%if background%}bg-[image:--section-bg-url]{%endif%}" data-style="{{style ?? 'pianoforte'}}" {%if background%}style="--section-bg-url: url({{background}});"{%endif%}>
+    {%if background%}bg-[image:--section-bg-url]{%endif%}" data-style="{{style ?? 'pianoforte'}}" {%if background%}style="--section-bg-url: url({{background}});"{%endif%} {%if id%}id="{{id}}"{%endif%}>
     <div class="flex flex-col h-full tablet-v:min-h-[100vh] tablet-h:flex-row">
         <!-- MAIN CONTENT -->
         {%block container%}

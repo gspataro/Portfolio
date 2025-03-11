@@ -101,6 +101,18 @@ document.addEventListener('DOMContentLoaded', function () {
         goToSection(prevSection);
     }
 
+    if (window.location.hash) {
+        let hash = window.location.hash.replace('#', '');
+        let hashSection = document.getElementById(hash);
+
+        if (hashSection.length) {
+            main.scrollTo({
+                left: hashSection.scrollLeft,
+                behavior: 'smooth'
+            });
+        }
+    }
+
     currentSectionId = main.scrollLeft / main.offsetWidth;
     setupSection(sections[currentSectionId]);
 
