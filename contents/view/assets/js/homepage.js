@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         footer.dataset.style = sectionStyle;
 
         // Main section height
-        mainWrapper.style.height = section.offsetHeight + 'px';
+        mainWrapper.style.height = (section.offsetHeight - 0.5) + 'px';
     }
 
     /**
