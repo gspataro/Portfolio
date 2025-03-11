@@ -89,7 +89,7 @@
     <div class="mb-xl">
         <h2 class="leading-none mb-sm">Esperienze</h2>
         {%for year, experiences in timeline%}
-            <div class="flex mb-md gap-sm items-start last-of-type:mb-0">
+            <div class="grid grid-cols-[auto_1fr] mb-md gap-sm items-start last-of-type:mb-0">
                 <h3 class="writing-v-lr rotate-180">{{year}}</h3>
                 <div class="grid grid-cols-1 gap-xs tablet-h:grid-cols-3">
                     {%for experience in experiences%}
