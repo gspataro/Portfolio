@@ -4,6 +4,8 @@
     RewriteCond %{HTTP_HOST} ^www.giuseppespataro.it [NC]
     RewriteRule ^(.*)$ https://giuseppespataro.it/$1 [L,R=301]
 
+    RedirectMatch 301 ^/about$ /#chi-sono
+
     ErrorDocument 404 /404
 
     RewriteCond %{REQUEST_FILENAME} !-d
