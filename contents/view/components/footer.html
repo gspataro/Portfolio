@@ -1,19 +1,18 @@
 <footer id="footer" class="
-    py-xl
     group/footer
     data-[style=pianoforte]:bg-thunder-darkest
     data-[style=pianoforte]:text-ivory-lightest
     data-[style=fortepiano]:bg-ivory-lightest
     data-[style=fortepiano]:text-thunder-darkest
     {{class}}" data-style="{{style ?? 'pianoforte'}}">
-    <div class="container">
+    <div class="container pt-xl pb-md">
         <div class="
             p-md
             rounded-xl
             mb-md
             group-data-[style=pianoforte]/footer:bg-thunder-dark
             group-data-[style=pianoforte]/footer:text-ivory-lightest
-            group-data-[style=fortepiano]/footer:bg-brass/20
+            group-data-[style=fortepiano]/footer:bg-brass-lightest
             group-data-[style=fortepiano]/footer:text-thunder-darkest
             laptop-sm:p-lg">
             <div class="flex flex-col justify-center items-start gap-sm mx-auto tablet-h:flex-row tablet-h:items-center tablet-h:flex-wrap tablet-h:gap-2xl">
@@ -28,13 +27,14 @@
                 </a>
             </div>
         </div>
-        <div class="flex flex-col items-center gap-xs tablet-v:flex-row">
-            <div>
-                {%include './components/social.html'%}
+        <div class="flex flex-col-reverse items-center gap-xs tablet-v:flex-row">
+            <div class="text-center tablet-v:text-left">
+                &copy; 2024 Giuseppe Spataro.<br>
+                <span class="text-2xs">Questo sito non fa uso di cookies o sistemi di tracciamento.</span>
             </div>
             <div class="hidden flex-1 tablet-v:block"></div>
             <div>
-                &copy; 2024 Giuseppe Spataro.
+                {%include './components/social.html'%}
             </div>
         </div>
     </div>
