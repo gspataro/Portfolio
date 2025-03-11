@@ -138,11 +138,11 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
 
         if (e.key == 'ArrowRight') {
-            nextSection();
+            nextSection(e);
         }
 
         if (e.key == 'ArrowLeft') {
-            prevSection();
+            prevSection(e);
         }
     });
 });
