@@ -1,10 +1,12 @@
 {%embed './components/home/section.html' with {
     'label': 'Blog',
-    'style': 'pianoforte'
+    'prev_text': 'Chi sono',
+    'style': 'pianoforte',
+    'id': 'blog'
 }%}
     {%block content%}
         <div class="mb-md tablet-v:w-2/3 tablet-h:w-1/2">
-            <h3 class="mb-3xs hidden tablet-h:block">
+            <h3 class="mb-3xs">
                 COGITO ERGO SUM
             </h3>
             <p class="text-sm mb-xs">
@@ -17,7 +19,8 @@
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
             {%for id, article in articles%}
                 {%include('./components/article/card.html') with {
-                    article: article
+                    article: article,
+                    heading_type: 'h4'
                 }%}
             {%endfor%}
         </div>

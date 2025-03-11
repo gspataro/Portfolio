@@ -24,21 +24,11 @@
                     "orderBy": "frontmatter.published",
                     "order": "desc"
                 },
-                "articles_cats",
-                {
-                    "group": "projects",
-                    "select": ["cli", "dependencyinjection", "portfolio"]
-                }
+                "articles_cats"
             ],
             "template": "index",
             "builder": "simple",
             "slug": "/index",
-            "generate": "once"
-        },
-        "about": {
-            "template": "about",
-            "builder": "simple",
-            "slug": "/about",
             "generate": "once"
         },
         "404": {
@@ -51,6 +41,24 @@
             "template": "darkside",
             "builder": "simple",
             "slug": "/darkside",
+            "generate": "once"
+        },
+        "webdev": {
+            "contents": [
+                "projects"
+            ],
+            "template": "webdev",
+            "builder": "simple",
+            "slug": "/webdev",
+            "generate": "once"
+        },
+        "pianist": {
+            "contents": [
+                "projects"
+            ],
+            "template": "pianist",
+            "builder": "simple",
+            "slug": "/pianista",
             "generate": "once"
         },
         "article": {
@@ -72,18 +80,6 @@
             "builder": "post",
             "slug": "/progetto",
             "generate": "loop:projects"
-        },
-        "projects": {
-            "contents": [
-                "projects"
-            ],
-            "template": "projects",
-            "builder": "archive",
-            "slug": "/progetti",
-            "generate": "paginate:projects",
-            "options": {
-                "per_page": 12
-            }
         },
         "blog": {
             "contents": [

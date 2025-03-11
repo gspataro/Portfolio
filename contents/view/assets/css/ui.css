@@ -266,24 +266,17 @@
         --container-padding-y: theme('spacing.md');
 
         @media screen(tablet-h) {
+            --header-height: 80px;
             --container-padding-y: theme('spacing.sm');
         }
 
         @media screen(laptop-sm) {
             --container-padding-y: theme('spacing.md');
         }
-    }
 
-    @media screen(tablet-h) {
-        :root {
-            --header-height: 80px;
-        }
-    }
-
-    @media screen(desktop) {
-        :root {
+        @media screen(desktop) {
             --header-height: 100px;
-            --container-padding-y: theme('spacing.sm');
+            /*--container-padding-y: theme('spacing.md');*/
         }
     }
 
@@ -361,7 +354,8 @@
         transition: margin 200ms;
     }
 
-    .cta:hover::after {
+    .cta:hover::after,
+    .group\/card:hover .cta::after {
         margin-left: 5px;
         margin-right: -5px;
     }
@@ -380,7 +374,8 @@
         transform-origin: 0 0;
     }
 
-    .cta:hover::before {
+    .cta:hover::before,
+    .group\/card:hover .cta::before {
         transform: scaleX(1);
     }
 
@@ -391,7 +386,8 @@
         order: -1;
     }
 
-    .cta.cta-inverted:hover::after {
+    .cta.cta-inverted:hover::after,
+    .group\/card:hover .cta.cta-inverted::after {
         margin-right: 5px;
         margin-left: -5px;
     }

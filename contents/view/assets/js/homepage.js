@@ -17,11 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function setupSection(section)
     {
-        if (window.innerWidth < 768) {
-            mainWrapper.style.height = '';
-            return;
-        }
-
         if (!section) {
             return;
         }
@@ -33,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         footer.dataset.style = sectionStyle;
 
         // Main section height
-        mainWrapper.style.height = section.offsetHeight + 'px';
+        mainWrapper.style.height = (section.offsetHeight - 0.5) + 'px';
     }
 
     /**
@@ -45,10 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function goToSection(id)
     {
-        if (window.innerWidth < 768) {
-            return;
-        }
-
         const section = sections[id] ?? null;
 
         if (!section) {
@@ -63,6 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
             left: sectionXCoords,
             behavior: 'smooth'
         });
+
+        if (window.scrollY > 0) {
+            window.scroll({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     }
 
     /**
@@ -71,8 +69,10 @@ document.addEventListener('DOMContentLoaded', function () {
      * @return void
      */
 
-    function nextSection()
+    function nextSection(e)
     {
+        e.preventDefault();
+
         const nextSection = currentSectionId + 1;
 
         if (nextSection > sections.length) {
@@ -88,8 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
      * @return void
      */
 
-    function prevSection()
+    function prevSection(e)
     {
+        e.preventDefault();
+
         const prevSection = currentSectionId - 1;
 
         if (prevSection < 0) {
@@ -99,10 +101,20 @@ document.addEventListener('DOMContentLoaded', function () {
         goToSection(prevSection);
     }
 
-    if (window.innerWidth >= 768) {
-        currentSectionId = main.scrollLeft / main.offsetWidth;
-        setupSection(sections[currentSectionId]);
+    if (window.location.hash) {
+        let hash = window.location.hash.replace('#', '');
+        let hashSection = document.getElementById(hash);
+
+        if (hashSection.length) {
+            main.scrollTo({
+                left: hashSection.scrollLeft,
+                behavior: 'smooth'
+            });
+        }
     }
+
+    currentSectionId = main.scrollLeft / main.offsetWidth;
+    setupSection(sections[currentSectionId]);
 
     // Redo section setup on window resize
     window.addEventListener('resize', function () {
@@ -138,11 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
 
         if (e.key == 'ArrowRight') {
-            nextSection();
+            nextSection(e);
         }
 
         if (e.key == 'ArrowLeft') {
-            prevSection();
+            prevSection(e);
         }
     });
 });

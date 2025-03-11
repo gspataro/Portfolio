@@ -4,11 +4,11 @@
     group/section
     data-[style=fortepiano]:bg-thunder-darkest
     data-[style=fortepiano]:text-ivory-lightest
-    {%if background%}bg-[image:--section-bg-url]{%endif%}" data-style="{{style ?? 'pianoforte'}}" {%if background%}style="--section-bg-url: url({{background}});"{%endif%}>
+    {%if background%}bg-[image:--section-bg-url]{%endif%}" data-style="{{style ?? 'pianoforte'}}" {%if background%}style="--section-bg-url: url({{background}});"{%endif%} {%if id%}id="{{id}}"{%endif%}>
     <div class="flex flex-col h-full tablet-v:min-h-[100vh] tablet-h:flex-row">
         <!-- MAIN CONTENT -->
         {%block container%}
-            <div class="flex-1 pb-[--container-padding-y] tablet-h:pt-[--container-padding-y]">
+            <div class="flex-1 pt-[--container-padding-y] tablet-h:pb-[--container-padding-y]">
                 <div class="container h-full">
                     {%block content%}
                     {%endblock%}
@@ -19,68 +19,78 @@
         <!-- SIDEBAR -->
         {%block sidebar%}
             <div class="
-                -order-1
-                tablet-h:order-1
-                tablet-h:w-[180px]
+                relative
+                tablet-h:w-[212px]
+                tablet-h:pl-sm
                 tablet-h:bg-thunder-darkest
                 tablet-h:text-ivory-lightest
                 tablet-h:group-data-[style=fortepiano]/section:bg-ivory-lightest
                 tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest
-                laptop-sm:w-[220px]">
+                tablet-h:group-data-[style=fortepiano]/section:after:bg-thunder-darkest
+                tablet-h:after:block
+                tablet-h:after:w-sm
+                tablet-h:after:h-full
+                tablet-h:after:absolute
+                tablet-h:after:left-0
+                tablet-h:after:top-0
+                tablet-h:after:bottom-0
+                tablet-h:after:bg-ivory-lightest
+                tablet-h:after:rounded-r-3xl
+                laptop-sm:w-[252px]">
                 <!-- WRAPPER -->
-                <div class="container flex flex-row-reverse h-full pt-[--container-padding-y] mb-xs tablet-h:pb-[--container-padding-y] tablet-h:mb-0 tablet-h:px-3xs tablet-h:flex-col tablet-h:sticky tablet-h:top-0 tablet-h:h-[100vh]">
+                <div class="container flex flex-row-reverse h-full pt-md pb-[--container-padding-y] tablet-h:py-[--container-padding-y] tablet-h:mb-0 tablet-h:px-3xs tablet-h:flex-col tablet-h:sticky tablet-h:top-0 tablet-h:h-[100vh]">
                     <!-- CONTROLS -->
-                    <div class="flex justify-end items-center gap-sm">
-                        <a href="javascript:void(0)" class="
-                            hidden
+                    <div class="flex-1 flex flex-row-reverse items-center gap-3xs tablet-h:flex-none tablet-h:items-start tablet-h:flex-col">
+                        <a href="#" class="
+                        cta
+                        uppercase
+                        nav-next
+                        text-sm
+                        text-thunder-darkest
+                        group-last-of-type/section:hidden
+                        group-data-[style=fortepiano]/section:text-ivory-lightest
+                        tablet-h:ml-auto
+                        tablet-h:text-ivory-lightest
+                        tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
+                            {{next_text}}
+                        </a>
+                        <div class="flex-1 tablet-h:hidden"></div>
+                        <a href="#" class="
+                            cta
+                            cta-inverted
                             nav-prev
+                            text-sm
                             text-thunder-darkest
-                            font-normal
                             uppercase
-                            no-underline
                             group-first-of-type/section:hidden
                             group-data-[style=fortepiano]/section:text-ivory-lightest
-                            tablet-v:block
                             tablet-h:text-ivory-lightest
                             tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
-                            <img src="{{website.url}}/assets/images/icons/chevron-left.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione precedente" width="22" height="39">
-                            <img src="{{website.url}}/assets/images/icons/chevron-left-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione precedente" width="22" height="39">
-                        </a>
-                        <div class="hidden flex-1 tablet-v:block"></div>
-                        <a href="javascript:void(0)" class="
-                            hidden
-                            nav-next
-                            text-thunder-darkest
-                            font-normal
-                            uppercase
-                            no-underline
-                            group-last-of-type/section:hidden
-                            group-data-[style=fortepiano]/section:text-ivory-lightest
-                            tablet-v:block
-                            tablet-h:text-ivory-lightest
-                            tablet-h:group-data-[style=fortepiano]/section:text-thunder-darkest">
-                            <img src="{{website.url}}/assets/images/icons/chevron-right.svg" alt="" class="group-data-[style=fortepiano]/section:hidden tablet-h:hidden tablet-h:group-data-[style=fortepiano]/section:block" aria-label="Sezione successiva" width="22" height="39">
-                            <img src="{{website.url}}/assets/images/icons/chevron-right-light.svg" alt="" class="hidden group-data-[style=fortepiano]/section:block tablet-h:block tablet-h:group-data-[style=fortepiano]/section:hidden" aria-label="Sezione successiva" width="22" height="39">
+                            {{prev_text}}
                         </a>
                     </div>
                     <!-- END CONTROLS -->
                     <!-- SPACER -->
-                    <div class="flex-1"></div>
+                    <div class="tablet-h:flex-1"></div>
                     <!-- END SPACER -->
                     <!-- LABEL -->
                     {%block sidebar_label%}
-                        <h2 class="
-                            font-oswald
-                            font-normal
-                            text-lg
-                            leading-none
-                            uppercase
-                            tablet-v:text-2xl
-                            tablet-h:writing-v-lr
-                            tablet-h:group-data-[style=fortepiano]/section:self-end
-                            tablet-h:group-data-[style=fortepiano]/section:rotate-180">
-                            {{label}}
-                        </h2>
+                        {%if label%}
+                            <h2 class="
+                                hidden
+                                font-oswald
+                                font-normal
+                                text-lg
+                                leading-none
+                                uppercase
+                                tablet-v:text-2xl
+                                tablet-h:block
+                                tablet-h:writing-v-lr
+                                tablet-h:group-data-[style=fortepiano]/section:self-end
+                                tablet-h:group-data-[style=fortepiano]/section:rotate-180">
+                                {{label}}
+                            </h2>
+                        {%endif%}
                     {%endblock%}
                     <!-- END LABEL -->
                 </div>
