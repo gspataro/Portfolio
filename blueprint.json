@@ -45,7 +45,11 @@
         },
         "webdev": {
             "contents": [
-                "projects"
+                {
+                    "group": "projects",
+                    "orderBy": "frontmatter.published",
+                    "order": "desc"
+                }
             ],
             "template": "webdev",
             "builder": "simple",

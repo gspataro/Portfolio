@@ -5,6 +5,7 @@ github: https://github.com/gspataro/Portfolio
 link: https://giuseppespataro.it
 version: '3.0'
 category: website
+published: 2022-06-15
 technologies:
     - PHP
     - TailwindCSS

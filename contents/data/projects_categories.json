@@ -1,4 +1,10 @@
 {
+    "concept": {
+        "label": "Concept",
+        "projects": [
+            "eclipse"
+        ]
+    },
     "component": {
         "label": "Componente",
         "projects": [
