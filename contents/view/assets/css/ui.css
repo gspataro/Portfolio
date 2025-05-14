@@ -449,6 +449,19 @@
         font-family: theme('fontFamily.roboto');
         font-size: inherit;
     }
+
+    /**
+     * Play icon
+     */
+
+    .play-icon {
+        display: inline-block;
+        width: 32px;
+        height: 22px;
+        border-width: 22px 32px;
+        border-style: solid;
+        border-color: transparent transparent transparent theme('colors.thunder.darkest');
+    }
 }
 
 @layer utilities {
