@@ -4,6 +4,7 @@ description: Un container PHP per la gestione semplificata del boot di un applic
 github: https://github.com/gspataro/DependencyInjection
 version: '1.0.0'
 category: component
+published: 2022-07-05
 technologies:
     - PHP
 ---

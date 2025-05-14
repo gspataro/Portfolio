@@ -1,5 +1,8 @@
 {
     "misc": {
         "label": "Generali"
+    },
+    "dev": {
+        "label": "Sviluppo"
     }
 }
