@@ -157,4 +157,14 @@ document.addEventListener('DOMContentLoaded', function () {
             prevSection(e);
         }
     });
+
+    // Hero piano
+    const welcome = document.getElementById('hero-welcome');
+    const keyboard = document.getElementById('hero-keyboard');
+    const playPianoCta = document.getElementById('hero-welcome-play');
+
+    playPianoCta.addEventListener('click', function () {
+        welcome.classList.add('hidden');
+        keyboard.dataset.hidden = 'false';
+    });
 });
