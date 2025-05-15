@@ -143,6 +143,16 @@
             text-thunder-darkest
             font-roboto
             font-light;
+
+        &.hamburger-open {
+            @apply
+                overflow-y-hidden!;
+
+            @media (width >= theme(--breakpoint-tablet-v)) {
+                @apply
+                    overflow-y-auto!;
+            }
+        }
     }
 
     /**
