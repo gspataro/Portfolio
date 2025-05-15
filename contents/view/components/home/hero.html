@@ -1,10 +1,11 @@
 {%embed './components/home/section.html' with {
     'label': '',
     'next_text': 'Chi sono',
-    'id': 'benvenuto'
+    'id': 'benvenuto',
+    'fullscreen': true
 }%}
     {%block content%}
-        <div id="hero-welcome" class="h-full flex items-center justify-center">
+        <div id="hero-welcome" class="flex-1 flex items-center justify-center">
             <div class="text-center">
                 <h2 class="uppercase text-lg font-normal font-oswald tablet-v:text-2xl">
                     Giuseppe Spataro
