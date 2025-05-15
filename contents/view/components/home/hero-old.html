@@ -71,7 +71,7 @@
     'id': 'benvenuto'
 }%}
     {%block container%}
-        <div class="flex flex-col min-h-[calc(100vh-180px)] flex-1 pt-[--container-padding-y] tablet-h:pb-[--container-padding-y]">
+        <div class="flex flex-col min-h-[calc(100vh-180px)] flex-1 pt-(--container-padding-y) tablet-h:pb-(--container-padding-y)">
             <!-- HEADING -->
             <h2 class="container text-lg font-normal leading-none uppercase font-oswald tablet-v:text-2xl">
                 BENVENUTO
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <!-- END CONTROLS -->
-                <div id="keyboard" class="flex flex-1 select-none mx-auto rounded-l-3xl border-l shadow-xl -rotate-180 gap-[1px] border-ivory-dark writing-v-lr shadow-brass-lightest/40 tablet-h:w-full tablet-h:min-h-[450px] tablet-h:writing-h-tb tablet-h:rotate-0 tablet-h:rounded-b-3xl tablet-h:rounded-tl-none tablet-h:border-r laptop-sm:min-h-[550px]">
+                <div id="keyboard" class="flex flex-1 select-none mx-auto rounded-l-3xl border-l shadow-xl -rotate-180 gap-px border-ivory-dark writing-v-lr shadow-brass-lightest/40 tablet-h:w-full tablet-h:min-h-[450px] tablet-h:writing-h-tb tablet-h:rotate-0 tablet-h:rounded-b-3xl tablet-h:rounded-tl-none tablet-h:border-r laptop-sm:min-h-[550px]">
                     <!-- KEYS -->
                     {%for key in keys%}
                     <!-- WHITE KEY {{key.name}} -->

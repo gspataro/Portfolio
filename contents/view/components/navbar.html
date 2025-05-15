@@ -1,7 +1,7 @@
 <nav>
     <!-- WRAPPER -->
     <ul class="flex flex-col gap-xs tablet-v:flex-row tablet-h:gap-xs desktop:gap-sm">
-        <li class="w-full bg-thunder-lightest h-[1px] tablet-v:hidden">
+        <li class="w-full bg-thunder-lightest h-px tablet-v:hidden">
         </li>
         {%for id, item in items%}
             <!-- ITEM -->
@@ -30,7 +30,7 @@
                     {{item.label}}
                 </a>
             </li>
-            <li class="w-full bg-thunder-lightest h-[1px] tablet-v:hidden">
+            <li class="w-full bg-thunder-lightest h-px tablet-v:hidden">
             </li>
             <!-- END ITEM -->
         {%endfor%}
