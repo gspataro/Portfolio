@@ -19,6 +19,12 @@
         "index": {
             "contents": [
                 {
+                    "group": "projects",
+                    "limit": 3,
+                    "orderBy": "frontmatter.published",
+                    "order": "desc"
+                },
+                {
                     "group": "articles",
                     "limit": 3,
                     "orderBy": "frontmatter.published",
