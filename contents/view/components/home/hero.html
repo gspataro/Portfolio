@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div id="hero-keyboard" class="flex h-full items-center justify-center data-[hidden=true]:hidden" data-hidden="true">
+        <div id="hero-keyboard" class="flex-1 flex flex-col justify-center data-[hidden=true]:hidden" data-hidden="true">
             {%set keys = [
                 {
                     'name': 'C4',
@@ -101,7 +101,7 @@
                 }
             ]%}
             <!-- PIANO -->
-            <div class="container flex flex-1 tablet-h:flex-col desktop:w-3/4">
+            <div class="flex flex-1 tablet-h:flex-col tablet-h:grow-0">
                 <!-- CONTROLS -->
                 <div class="flex z-10 flex-col items-center rounded-l-xl px-2xs py-sm bg-thunder-darkest tablet-h:px-sm tablet-h:py-2xs tablet-h:rounded-bl-none tablet-h:rounded-t-xl tablet-h:flex-row">
                     <div>
@@ -111,9 +111,6 @@
                         </a>
                     </div>
                     <div class="flex-1"></div>
-                    <div class="hidden leading-none -rotate-180 font-oswald text-md text-ivory-lightest writing-v-lr tablet-v:block tablet-h:rotate-0 tablet-h:writing-h-tb">
-                        SUONA IL PIANOFORTE
-                    </div>
                 </div>
                 <!-- END CONTROLS -->
                 <div id="keyboard" class="flex flex-1 select-none mx-auto rounded-l-3xl border-l shadow-xl -rotate-180 gap-[1px] border-ivory-dark writing-v-lr shadow-brass-lightest/40 tablet-h:w-full tablet-h:min-h-[450px] tablet-h:writing-h-tb tablet-h:rotate-0 tablet-h:rounded-b-3xl tablet-h:rounded-tl-none tablet-h:border-r laptop-sm:min-h-[550px]">
