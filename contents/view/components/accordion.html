@@ -1,11 +1,11 @@
-<ul id="{{id}}">
+<ul id="accordion_{{id}}">
     {%for i, item in items%}
-        <li>
+        <li class="border-b border-thunder first:border-t">
             <input type="radio" id="accordion_{{id}}_{{i}}" name="accordion_{{id}}" class="hidden peer" {%if i == 0%}checked{%endif%}>
-            <label for="accordion_{{id}}_{{i}}">
+            <label class="block py-sm h4 peer-checked:pb-3xs" for="accordion_{{id}}_{{i}}">
                 {{item.title}}
             </label>
-            <div class="hidden peer-checked:block">
+            <div class="hidden pb-sm peer-checked:block">
                 {{item.description}}
             </div>
         </li>
