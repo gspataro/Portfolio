@@ -1,9 +1,9 @@
 {
     "website": {
         "name": "Giuseppe Spataro",
-        "description": "Giuseppe Spataro, pianista e sviluppatore siciliano",
+        "description": "Giuseppe Spataro, pianista e compositore siciliano",
         "author": "Giuseppe Spataro",
-        "keywords": "pianista, musicista, sviluppatore web, programmatore, sicilia",
+        "keywords": "pianista, musicista, sicilia",
         "email": "gspatarodev@gmail.com",
         "friendly_urls": true
     },
@@ -60,6 +60,12 @@
             "template": "webdev",
             "builder": "simple",
             "slug": "/webdev",
+            "generate": "once"
+        },
+        "about": {
+            "template": "about",
+            "builder": "simple",
+            "slug": "/chi-sono",
             "generate": "once"
         },
         "pianist": {

@@ -48,17 +48,21 @@
                     <div class="container flex flex-col h-full py-xl tablet-v:h-auto tablet-v:py-0 tablet-v:contents">
                         {%include './components/navbar.html' with {
                             'items': {
-                                'blog': {
-                                    'label': 'Blog',
-                                    'url': url('blog.page-1')
+                                'about': {
+                                    'label': 'Chi sono',
+                                    'url': url('about')
+                                },
+                                'services': {
+                                    'label': 'Servizi',
+                                    'url': url('services')
                                 },
                                 'pianist': {
                                     'label': 'Portfolio',
                                     'url': url('portfolio')
                                 },
-                                'about': {
-                                    'label': 'Chi sono',
-                                    'url': url('about')
+                                'blog': {
+                                    'label': 'Blog',
+                                    'url': url('blog.page-1')
                                 },
                                 'contacts': {
                                     'label': 'Scrivimi',
