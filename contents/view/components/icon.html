@@ -1,0 +1,4 @@
+{%macro icon(name, width = '24', height = '24', aria_label = null)%}
+    {%set iconPath = './assets/images/icons/' ~ name ~ '.svg'%}
+    {%include iconPath%}
+{%endmacro%}
