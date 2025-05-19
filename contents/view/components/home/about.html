@@ -6,7 +6,7 @@
     'id': 'cosa-faccio'
 }%}
     {%block content%}
-        <div class="mb-md tablet-v:w-2/3 tablet-h:w-1/2">
+        <div class="mb-xl tablet-v:w-2/3 tablet-h:w-1/2">
             <h3 class="mb-3xs">
                 DI COSA MI OCCUPO
             </h3>
@@ -20,7 +20,7 @@
         {%include './components/cards.html' with {
             'items': [
                 {
-                    'title': 'Performances & Registrazioni',
+                    'title': 'Performances',
                     'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec lacus blandit lorem egestas porttitor nec quis est. Etiam a ultrices metus. Cras bibendum placerat ultrices. Sed posuere laoreet elit, sit amet eleifend justo mattis eu.'
                 },
                 {
@@ -33,5 +33,10 @@
                 }
             ]
         }%}
+        <div class="mt-md text-center">
+            <a href="{{url('services')}}" class="btn text-inherit">
+                SCOPRI DI PIÙ
+            </a>
+        </div>
     {%endblock%}
 {%endembed%}
