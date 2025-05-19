@@ -68,6 +68,12 @@
             "slug": "/chi-sono",
             "generate": "once"
         },
+        "services": {
+            "template": "services",
+            "builder": "simple",
+            "slug": "/servizi",
+            "generate": "once"
+        },
         "pianist": {
             "contents": [
                 "projects"
