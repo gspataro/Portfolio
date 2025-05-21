@@ -23,6 +23,10 @@ final class TwigSitemap extends AbstractExtension
         $separator = null;
         $suffix = $friendlyUrls ? null : '.html';
 
+        if (!$path) {
+            return $url;
+        }
+
         if (!str_ends_with($url, '/') && !str_starts_with($path, '/')) {
             $separator = '/';
         }
