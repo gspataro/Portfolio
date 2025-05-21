@@ -1,32 +1,47 @@
 {%extends "./layout/default.html"%}
 {%block main%}
-    {%include './components/accordion.html' with {
-        'id': 'services',
-        'items': [
-            {
-                'title': 'Performance dal vivo',
-                'description': 'Mi esibisco per svariate tipologie di eventi pubblici e privati, concerti e matrimoni.'
-            },
-            {
-                'title': 'Sessioni in studio',
-                'description': 'Trasformo le tue idee in suono per le registrazioni in studio di cui hai bisogno.'
-            },
-            {
-                'title': 'Accompagnamento',
-                'description': 'Sono un pianista accompagnatore per solisti o ensamble strumentali.'
-            },
-            {
-                'title': 'Branding musicale aziendale',
-                'description': 'Curo la brand identity musicale della tua azienda, dal sound logo ai jingle pubblicitari per le tue campagne.'
-            },
-            {
-                'title': 'Soundtracks',
-                'description': 'Realizzo le colonne sonore per i tuoi video, videogiochi o altre tipologie di prodotti.'
-            },
-            {
-                'title': 'Lezioni private',
-                'description': 'Offro lezioni private di pianoforte ad ogni livello.'
-            }
-        ]
-    }%}
+    <div class="prose mb-xl tablet-v:w-2/3 tablet-h:w-1/2">
+        <h1>Condivido la mia musica</h1>
+        <p class="text-sm">
+            Come pianista solista, accompagnatore, compositore e insegnante di pianoforte, coniugo esperienza e sensibilità musicale,
+            sia nell'esecuzione che nell'insegnamento, per valorizzare ogni percorso artistico.
+        </p>
+    </div>
+    <div class="bg-thunder-darkest rounded-3xl text-ivory-lightest p-sm mb-2xl tablet-v:p-lg">
+        <h2 class="mb-5xs">Costruiamo qualcosa insieme</h2>
+        <p class="text-sm mb-xs">Hai domande o vuoi parlare dei tuoi progetti? Contattami, sarò felice di risponderti.</p>
+        <a href="mailto:{{website.email}}" class="btn text-ivory-lightest">Scrivimi</a>
+    </div>
+    <div>
+        <h2 class="leading-none mb-sm">Cosa faccio</h2>
+        {%include './components/accordion.html' with {
+            'id': 'services',
+            'items': [
+                {
+                    'title': 'Performance dal vivo',
+                    'description': 'Mi esibisco per svariate tipologie di eventi pubblici e privati, concerti e matrimoni.'
+                },
+                {
+                    'title': 'Sessioni in studio',
+                    'description': 'Trasformo le tue idee in suono per le registrazioni in studio di cui hai bisogno.'
+                },
+                {
+                    'title': 'Accompagnamento',
+                    'description': 'Sono un pianista accompagnatore per solisti o ensamble strumentali.'
+                },
+                {
+                    'title': 'Branding musicale aziendale',
+                    'description': 'Curo la brand identity musicale della tua azienda, dal sound logo ai jingle pubblicitari per le tue campagne.'
+                },
+                {
+                    'title': 'Soundtracks',
+                    'description': 'Realizzo le colonne sonore per i tuoi video, videogiochi o altre tipologie di prodotti.'
+                },
+                {
+                    'title': 'Lezioni private',
+                    'description': 'Offro lezioni private di pianoforte ad ogni livello.'
+                }
+            ]
+        }%}
+    </div>
 {%endblock%}
