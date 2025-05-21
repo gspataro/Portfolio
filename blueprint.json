@@ -71,7 +71,7 @@
         "services": {
             "template": "services",
             "builder": "simple",
-            "slug": "/servizi",
+            "slug": "/cosa-faccio",
             "generate": "once"
         },
         "pianist": {
