@@ -93,7 +93,7 @@
             <p class="text-sm mb-xs">Performances dal vivo, sessioni in studio, composizione e didattica.</p>
             <a href="{{url('services')}}" class="btn text-ivory-lightest">Scopri di più</a>
         </div>
-        <div>
+        <div class="mb-2xl">
             <h2 class="leading-none mb-sm">Esperienze</h2>
             {%for year, experiences in timeline%}
                 <div class="grid grid-cols-[auto_1fr] mb-md gap-sm items-start last-of-type:mb-0">
@@ -109,5 +109,15 @@
                     </div>
                 </div>
             {%endfor%}
+        </div>
+        <div class="prose mb-xl tablet-v:w-2/3 tablet-h:w-1/2">
+            <h2>Side project</h2>
+            <p class="text-sm">
+                Sono appassianato di tecnologia e da anni mi occupo di sviluppo web. Ho realizzato numerosi progetti e mi piace cimentarmi
+                nell'apprendimento di nuovi concetti legati alla programmazione.
+            </p>
+            <a href="{{url('webdev')}}" class="cta text-inherit">
+                Scopri di più
+            </a>
         </div>
 {%endblock%}
