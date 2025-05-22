@@ -22,7 +22,7 @@ Creare un generatore di siti web statici può sembrare semplice, ma in realtà �
 
 ## Sviluppo
 
-Una volta stabilita quale doveva essere la struttura del file blueprint.json, il prossimo passo era creare il resto dell'applicativo. Un ulteriore complicazione è derivata dal fatto che ho deciso di non seguire il principio del "non reinventare la ruota". L'applicativo è stato costruito interamente da zero e utilizzando i componenti <a href="{{url('project.cli')}}">CLI</a> e <a href="{{url('project.dependencyinjection')}}">Dependency Injection</a>.
+Una volta stabilita quale doveva essere la struttura del file blueprint.json, il prossimo passo era creare il resto dell'applicativo. Un ulteriore complicazione è derivata dal fatto che ho deciso di non seguire il principio del "non reinventare la ruota". L'applicativo è stato costruito interamente da zero e utilizzando i componenti <a href="{{url('webdev_project.cli')}}">CLI</a> e <a href="{{url('webdev_project.dependencyinjection')}}">Dependency Injection</a>.
 Questa scelta è stata voluta per darmi l'opportunità di imparare qualcosa di nuovo sia sugli applicativi eseguibili da riga di comando che sui generatori
 statici.
 

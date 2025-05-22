@@ -11,7 +11,7 @@
     {{class}}" data-style="{{style ?? 'pianoforte'}}">
     <header class="mb-3xs">
         <{{heading_type ?? 'h5'}}>
-            <a href="{{url('project.' ~ id)}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]:text-ivory-lightest">
+            <a href="{{url('webdev_project.' ~ id)}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]:text-ivory-lightest">
                 {{project.frontmatter.name}}
             </a>
         </{{heading_type ?? 'h5'}}>
@@ -21,9 +21,9 @@
     </p>
     <div class="flex-1"></div>
     <div class="flex items-center gap-3xs">
-        {%include './components/project/links.html'%}
+        {%include './components/webdev_project/links.html'%}
         <div class="flex-1"></div>
-        <a href="{{url('project.' ~ id)}}" class="cta group-data-[style=fortepiano]:text-ivory-lightest">
+        <a href="{{url('webdev_project.' ~ id)}}" class="cta group-data-[style=fortepiano]:text-ivory-lightest">
             Scopri di più
         </a>
     </div>

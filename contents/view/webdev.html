@@ -47,7 +47,7 @@
         <h2 class="leading-none mb-sm">Progetti</h2>
         <div class="grid tablet-v:grid-cols-2 desktop:grid-cols-3 gap-md">
             {%for id, project in projects%}
-                {%include('./components/project/card.html') with {
+                {%include('./components/webdev_project/card.html') with {
                     project: project
                 }%}
             {%endfor%}

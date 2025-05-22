@@ -49,7 +49,7 @@
             "slug": "/darkside",
             "generate": "once"
         },
-        "webdev": {
+        "webdev@index": {
             "contents": [
                 {
                     "group": "projects",
@@ -93,7 +93,7 @@
             "slug": "/articolo",
             "generate": "loop:articles"
         },
-        "project": {
+        "webdev_project": {
             "contents": [
                 "projects",
                 "projects_cats"
