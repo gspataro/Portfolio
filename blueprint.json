@@ -59,7 +59,7 @@
             ],
             "template": "webdev",
             "builder": "simple",
-            "slug": "/webdev",
+            "slug": "/webdev/index",
             "generate": "once"
         },
         "about": {
@@ -100,7 +100,7 @@
             ],
             "template": "project",
             "builder": "post",
-            "slug": "/progetto",
+            "slug": "/webdev",
             "generate": "loop:projects"
         },
         "blog": {
