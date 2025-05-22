@@ -13,6 +13,7 @@ use GSpataro\Pages\GeneratorsCollection;
 use GSpataro\Contractor\BuildersCollection;
 use GSpataro\Project\Sitemap;
 use SimpleXMLElement;
+use DirectoryIterator;
 
 final class BuildCommand extends BaseCommand
 {
@@ -51,6 +52,7 @@ final class BuildCommand extends BaseCommand
         $this->buildPages();
         $this->copyAssets();
         $this->buildSitemapXml();
+        $this->cleanup();
 
         $this->output->print('{bold}{fg_green}Build completed in ' . $this->stopwatch->stop() . ' seconds!');
     }
@@ -215,5 +217,46 @@ final class BuildCommand extends BaseCommand
         }
 
         $xml->asXml(DIR_OUTPUT . '/sitemap.xml');
+    }
+
+    /**
+     * Delete files that are no more present in the project
+     *
+     * @param string $directory
+     * @return void
+     */
+
+    private function cleanup($directory = DIR_OUTPUT): void
+    {
+        if ($directory === DIR_OUTPUT) {
+            $this->output->print('{bold}Cleaning up');
+        }
+
+        $sitemap = array_values($this->sitemap->getAll());
+        $outputDirectory = new DirectoryIterator($directory);
+        $excluded = ['assets', '.htaccess', 'sitemap.xml', 'media'];
+
+        foreach ($outputDirectory as $item) {
+            if ($item->isDot()) {
+                continue;
+            }
+
+            if (in_array($item->getBasename(), $excluded)) {
+                continue;
+            }
+
+            $itemPath = $item->isFile()
+                ? substr($item->getPathname(), strlen(DIR_OUTPUT), strlen('.html') * -1)
+                : substr($item->getPathname(), strlen(DIR_OUTPUT));
+
+            if ($item->isFile() && !in_array($itemPath, $sitemap)) {
+                unlink($item->getPathname());
+                continue;
+            }
+
+            if ($item->isDir()) {
+                $this->cleanup($item->getPathname());
+            }
+        }
     }
 }
