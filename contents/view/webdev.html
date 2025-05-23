@@ -46,7 +46,7 @@
     <div>
         <h2 class="leading-none mb-sm">Progetti</h2>
         <div class="grid tablet-v:grid-cols-2 desktop:grid-cols-3 gap-md">
-            {%for id, project in projects%}
+            {%for id, project in webdev_projects%}
                 {%include('./components/webdev_project/card.html') with {
                     project: project
                 }%}

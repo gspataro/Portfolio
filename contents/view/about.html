@@ -74,7 +74,7 @@
 }%}
 {%extends "./layout/default.html"%}
 {%block main%}
-        <div class="flex flex-col-reverse gap-sm mb-2xl tablet-v:flex-row tablet-v:gap-lg">
+        <div class="flex flex-col gap-sm mb-3xl tablet-v:flex-row tablet-v:gap-lg">
             <figure class="max-w-[200px] mx-auto tablet-v:max-w-[230px] tablet-v:w-1/3 tablet-v:mx-[unset]">
                 <img src="{{media('about-photo.jpg', 'thumbnail')}}" class="aspect-square object-top object-cover rounded-full border-thunder-darkest border-4" alt="" width="400" height="420">
             </figure>
@@ -88,17 +88,12 @@
                 </p>
             </div>
         </div>
-        <div class="bg-thunder-darkest rounded-3xl text-ivory-lightest p-sm mb-2xl tablet-v:p-lg">
-            <h2 class="mb-5xs">Di cosa mi occupo</h2>
-            <p class="text-sm mb-xs">Performances dal vivo, sessioni in studio, composizione e didattica.</p>
-            <a href="{{url('services')}}" class="btn text-ivory-lightest">Scopri di più</a>
-        </div>
-        <div class="mb-2xl">
-            <h2 class="leading-none mb-sm">Esperienze</h2>
+        <div class="mb-3xl">
+            <h2 class="leading-none mb-md">Esperienze</h2>
             {%for year, experiences in timeline%}
-                <div class="grid grid-cols-[auto_1fr] mb-md gap-sm items-start last-of-type:mb-0">
+                <div class="grid grid-cols-[auto_1fr] mb-lg gap-sm items-start last-of-type:mb-0">
                     <h3 class="writing-v-lr rotate-180">{{year}}</h3>
-                    <div class="grid grid-cols-1 gap-xs tablet-h:grid-cols-3">
+                    <div class="grid gap-sm grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
                         {%for experience in experiences%}
                             <div>
                                 <h4 class="text-h6">{{experience.name}}</h4>
@@ -116,7 +111,7 @@
                 Sono appassianato di tecnologia e da anni mi occupo di sviluppo web. Ho realizzato numerosi progetti e mi piace cimentarmi
                 nell'apprendimento di nuovi concetti legati alla programmazione.
             </p>
-            <a href="{{url('webdev')}}" class="cta text-inherit">
+            <a href="{{url('webdev@index')}}" class="cta text-inherit">
                 Scopri di più
             </a>
         </div>
