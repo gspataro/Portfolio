@@ -13,17 +13,13 @@
         "articles": "markdown:articles/*.md",
         "articles_cats": "json:articles_categories.json",
         "projects": "markdown:projects/*.md",
-        "projects_cats": "json:projects_categories.json"
+        "projects_cats": "json:projects_categories.json",
+        "webdev_projects": "markdown:webdev_projects/*.md",
+        "webdev_projects_cats": "json:webdev_projects_categories.json"
     },
     "schemas": {
         "index": {
             "contents": [
-                {
-                    "group": "projects",
-                    "limit": 3,
-                    "orderBy": "frontmatter.published",
-                    "order": "desc"
-                },
                 {
                     "group": "articles",
                     "limit": 3,
@@ -52,7 +48,7 @@
         "webdev@index": {
             "contents": [
                 {
-                    "group": "projects",
+                    "group": "webdev_projects",
                     "orderBy": "frontmatter.published",
                     "order": "desc"
                 }
@@ -74,15 +70,6 @@
             "slug": "/cosa-faccio",
             "generate": "once"
         },
-        "pianist": {
-            "contents": [
-                "projects"
-            ],
-            "template": "pianist",
-            "builder": "simple",
-            "slug": "/pianista",
-            "generate": "once"
-        },
         "article": {
             "contents": [
                 "articles",
@@ -95,13 +82,13 @@
         },
         "webdev_project": {
             "contents": [
-                "projects",
-                "projects_cats"
+                "webdev_projects",
+                "webdev_projects_cats"
             ],
             "template": "project",
             "builder": "post",
             "slug": "/webdev",
-            "generate": "loop:projects"
+            "generate": "loop:webdev_projects"
         },
         "blog": {
             "contents": [
