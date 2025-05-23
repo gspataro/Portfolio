@@ -85,7 +85,7 @@
                 "webdev_projects",
                 "webdev_projects_cats"
             ],
-            "template": "project",
+            "template": "webdev_project",
             "builder": "post",
             "slug": "/webdev",
             "generate": "loop:webdev_projects"
@@ -103,6 +103,23 @@
             "builder": "archive",
             "slug": "/blog",
             "generate": "paginate:articles",
+            "options": {
+                "per_page": 12
+            }
+        },
+        "projects": {
+            "contents": [
+                {
+                    "group": "projects",
+                    "orderBy": "frontmatter.published",
+                    "order": "desc"
+                },
+                "projects_cats"
+            ],
+            "template": "projects",
+            "builder": "archive",
+            "slug": "/progetti",
+            "generate": "paginate:projects",
             "options": {
                 "per_page": 12
             }

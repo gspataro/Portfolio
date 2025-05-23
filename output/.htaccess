@@ -5,7 +5,6 @@
     RewriteRule ^(.*)$ https://giuseppespataro.it/$1 [L,R=301]
 
     RedirectMatch 301 ^/about$ /#chi-sono
-    RedirectMatch 301 ^/progetti/$ /webdev
 
     ErrorDocument 404 /404
 
