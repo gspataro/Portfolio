@@ -93,28 +93,14 @@
             <!-- END SPACER -->
             <!-- LOGO -->
             <div class="tablet-v:flex tablet-v:h-[38px] tablet-v:basis-[177px] tablet-v:items-start tablet-v:justify-center tablet-h:basis-[215px]">
-                <a href="{{url('index')}}" class="-rotate-90">
-                    <img src="{{website.url}}/assets/images/logo.svg" alt="Giuseppe Spataro" aria-label="Homepage" width="58" height="271" class="
-                        h-[40px]
-                        hidden
-                        w-auto
-                        pointer-events-none
-                        tablet-v:h-[38px]
-                        tablet-v:group-data-[style=fortepiano]/header:block
-                        tablet-h:h-[44px]
-                        tablet-h:group-data-[style=pianoforte]/header:block
-                        tablet-h:group-data-[style=fortepiano]/header:hidden
-                        desktop:h-[48px]">
-                    <img src="{{website.url}}/assets/images/logo-light.svg" alt="Giuseppe Spataro" aria-label="Homepage" width="58" height="271" class="
-                        h-[40px]
-                        w-auto
-                        pointer-events-none
-                        tablet-v:h-[38px]
-                        tablet-v:group-data-[style=fortepiano]/header:hidden
-                        tablet-h:h-[44px]
-                        tablet-h:group-data-[style=pianoforte]/header:hidden
-                        tablet-h:group-data-[style=fortepiano]/header:block
-                        desktop:h-[48px]">
+                <a href="{{url('index')}}" class="-rotate-90 text-ivory-lightest tablet-h:group-data-[style=pianoforte]/header:text-thunder-darkest">
+                    {%include './components/logo.html' with {
+                        'width': 271,
+                        'height': 58,
+                        'attributes': {
+                            'class': 'h-[40px] w-auto pointer-events-none tablet-v:h-[38px] tablet-h:h-[44px] desktop:h-[48px]'
+                        }
+                    }%}
                 </a>
             </div>
             <!-- END LOGO -->
