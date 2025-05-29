@@ -162,9 +162,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const welcome = document.getElementById('hero-welcome');
     const keyboard = document.getElementById('hero-keyboard');
     const playPianoCta = document.getElementById('hero-welcome-play');
+    const closePianoCta = document.getElementById('hero-keyboard-close');
 
     playPianoCta.addEventListener('click', function () {
         welcome.classList.add('hidden');
         keyboard.dataset.hidden = 'false';
+    });
+
+    closePianoCta.addEventListener('click', function () {
+        keyboard.dataset.hidden = 'true';
+        welcome.classList.remove('hidden');
     });
 });
