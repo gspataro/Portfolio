@@ -1,45 +1,43 @@
 {%embed './components/home/section.html' with {
-    'label': 'Cosa faccio',
+    'label': 'Chi sono',
     'prev_text': 'Benvenuto',
     'next_text': 'Blog',
     'style': 'fortepiano',
-    'id': 'cosa-faccio'
+    'id': 'chi-sono'
 }%}
     {%block content%}
-        <div class="mb-xl tablet-v:w-2/3 tablet-h:w-1/2">
+        <div class="mb-2xl tablet-v:w-2/3 tablet-h:w-1/2">
             <h3 class="mb-3xs">
-                DI COSA MI OCCUPO
+                MI PRESENTO
             </h3>
             <p class="text-sm mb-xs">
-                Sono un pianista, compositore e insegnante con anni di esperienza maturati sul campo.
+                Mi chiamo Giuseppe Spataro, sono un pianista, compositore e insegnante di pianoforte. Sono un professionista specializzato in conservatorio, mi occupo di didattica, performances e branding aziendale musicale.
             </p>
-            <a href="mailto:{{website.email}}" class="cta text-current">
-                RICHIEDI INFORMAZIONI
+            <a href="{{url('about')}}" class="cta uppercase text-current">
+                Scopri di più
             </a>
         </div>
+        <h3 class="mb-sm">
+            DI COSA MI OCCUPO
+        </h3>
         {%include './components/cards.html' with {
             'items': [
                 {
                     'icon': 'live',
                     'title': 'Performances',
-                    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec lacus blandit lorem egestas porttitor nec quis est. Etiam a ultrices metus. Cras bibendum placerat ultrices. Sed posuere laoreet elit, sit amet eleifend justo mattis eu.'
+                    'description': "Mi esibisco dal vivo sia come pianista solista che accompagnatore, adattando il mio repertorio a qualsiasi tipologia di evento, spaziando dai teatri ai matrimoni."
                 },
                 {
                     'icon': 'album',
                     'title': 'Composizione',
-                    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec lacus blandit lorem egestas porttitor nec quis est. Etiam a ultrices metus. Cras bibendum placerat ultrices. Sed posuere laoreet elit, sit amet eleifend justo mattis eu.'
+                    'description': "Compongo brani inediti e mi occupo di branding aziendale musicale, dal sound logo ai jingle pubblicitari per migliorare l'engagement degli utenti."
                 },
                 {
                     'icon': 'education',
                     'title': 'Didattica',
-                    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec lacus blandit lorem egestas porttitor nec quis est. Etiam a ultrices metus. Cras bibendum placerat ultrices. Sed posuere laoreet elit, sit amet eleifend justo mattis eu.'
+                    'description': "Condivido la mia esperienza con persone che vogliono studiare pianoforte, migliorare le proprie performances o prepararsi per l'accesso al conservatorio."
                 }
             ]
         }%}
-        <div class="mt-md text-center">
-            <a href="{{url('services')}}" class="btn text-inherit">
-                SCOPRI DI PIÙ
-            </a>
-        </div>
     {%endblock%}
 {%endembed%}
