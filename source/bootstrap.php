@@ -28,13 +28,13 @@ $app->loadComponents([
     Component\LocalizationComponent::class,
     Component\ProjectComponent::class,
     Component\HighlightComponent::class,
+    Component\AssetsComponent::class,
     Component\TwigComponent::class,
     Component\MarkdownComponent::class,
     Component\LibraryComponent::class,
     Component\FinderComponent::class,
     Component\PagesComponent::class,
     Component\ContractorComponent::class,
-    Component\AssetsComponent::class,
     Component\CLIComponent::class
 ]);
 $app->boot();

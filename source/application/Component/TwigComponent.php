@@ -9,6 +9,7 @@ use GSpataro\View\TwigHighlighter;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extra\String\StringExtension;
 use GSpataro\DependencyInjection\Component;
+use GSpataro\View\TwigGenerics;
 use GSpataro\View\TwigHighlightest;
 use Twig\Extension\StringLoaderExtension;
 
@@ -37,6 +38,9 @@ final class TwigComponent extends Component
 
         $twig->addExtension(new StringExtension());
         $twig->addExtension(new StringLoaderExtension());
+        $twig->addExtension(new TwigGenerics(
+            $this->container->get('assets.vite')
+        ));
         $twig->addExtension(new TwigHighlighter(
             $this->container->get('tempest.highlight')
         ));

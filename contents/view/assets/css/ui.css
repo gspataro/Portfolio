@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import './fonts';
+@import './highlight-light-lite';
 
 @theme {
 

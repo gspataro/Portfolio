@@ -2,17 +2,18 @@
 
 namespace GSpataro\Application\Component;
 
-use GSpataro\Assets\Handler;
 use GSpataro\Assets\Media;
+use GSpataro\Assets\Vite;
 use GSpataro\DependencyInjection\Component;
 
 final class AssetsComponent extends Component
 {
     public function register(): void
     {
-        $this->container->add('assets.handler', function ($container, $args): object {
-            return new Handler(
-                $container->get('project.blueprint')
+        $this->container->add('assets.vite', function ($container, $args): object {
+            return new Vite(
+                $args['manifestPath'],
+                $args['outputPath']
             );
         });
 
@@ -23,6 +24,12 @@ final class AssetsComponent extends Component
 
     public function boot(): void
     {
+        $vite = $this->container->get('assets.vite', [
+            'manifestPath' => DIR_OUTPUT . '/assets/.vite/manifest.json',
+            'outputPath' => '/assets/'
+        ]);
+        $vite->loadManifest();
+
         $media = $this->container->get('assets.media');
 
         $media->addSize('thumbnail', 400, 0, 90);

@@ -118,8 +118,5 @@
                 "per_page": 12
             }
         }
-    },
-    "exclude_assets": [
-        "ui.css"
-    ]
+    }
 }

@@ -6,7 +6,6 @@ use GSpataro\Pages\Pages;
 use GSpataro\Project\Prototype;
 use GSpataro\Finder\Researcher;
 use GSpataro\CLI\Helper\Stopwatch;
-use GSpataro\Assets\Handler as Assets;
 use GSpataro\Assets\Media;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Pages\GeneratorsCollection;
@@ -14,6 +13,7 @@ use GSpataro\Contractor\BuildersCollection;
 use GSpataro\Project\Sitemap;
 use SimpleXMLElement;
 use DirectoryIterator;
+use GSpataro\Assets\Vite;
 
 final class BuildCommand extends BaseCommand
 {
@@ -22,7 +22,7 @@ final class BuildCommand extends BaseCommand
 
     private readonly Pages $pages;
     private readonly Media $media;
-    private readonly Assets $assets;
+    private readonly Vite $vite;
     private readonly Sitemap $sitemap;
     private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
@@ -40,7 +40,7 @@ final class BuildCommand extends BaseCommand
         $this->readers = $this->app->get('library.readers');
         $this->builders = $this->app->get('contractor.builders');
         $this->pages = $this->app->get('pages.collection');
-        $this->assets = $this->app->get('assets.handler');
+        $this->vite = $this->app->get('assets.vite');
         $this->media = $this->app->get('assets.media');
         $this->stopwatch = $this->app->get('cli.stopwatch');
         $this->researcher = $this->app->get('finder.researcher');
@@ -49,8 +49,9 @@ final class BuildCommand extends BaseCommand
         $this->stopwatch->start();
         $this->processContents();
         $this->processSchemas();
+        $this->prepareAssets();
         $this->buildPages();
-        $this->copyAssets();
+        //$this->copyAssets();
         $this->buildSitemapXml();
         $this->cleanup();
 
@@ -153,6 +154,17 @@ final class BuildCommand extends BaseCommand
     }
 
     /**
+     * Prepare assets
+     *
+     * @return void
+     */
+
+    public function prepareAssets(): void
+    {
+        $this->output->print('{bold}Preparing assets');
+    }
+
+    /**
      * Build pages
      *
      * @return void
@@ -234,7 +246,7 @@ final class BuildCommand extends BaseCommand
 
         $sitemap = array_values($this->sitemap->getAll());
         $outputDirectory = new DirectoryIterator($directory);
-        $excluded = ['assets', '.htaccess', 'sitemap.xml', 'media'];
+        $excluded = ['.vite', 'assets', '.htaccess', 'sitemap.xml', 'favicon.png', 'media'];
 
         foreach ($outputDirectory as $item) {
             if ($item->isDot()) {

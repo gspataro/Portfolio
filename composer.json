@@ -28,5 +28,8 @@
             "GSpataro\\Application\\": "source/application"
         },
         "files": ["source/functions.php"]
+    },
+    "scripts": {
+        "build": "npm run build && ./gspataro.php build"
     }
 }

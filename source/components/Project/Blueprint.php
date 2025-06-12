@@ -37,7 +37,7 @@ final class Blueprint extends DotNavigator
             $data['website'] = [];
         }
 
-        $data['website']['url'] = $_ENV['WEBSITE_URL'];
+        $data['website']['url'] = getenv('WEBSITE_URL');
 
         $this->fill($data);
     }
