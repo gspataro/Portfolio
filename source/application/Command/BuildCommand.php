@@ -22,7 +22,6 @@ final class BuildCommand extends BaseCommand
 
     private readonly Pages $pages;
     private readonly Media $media;
-    private readonly Vite $vite;
     private readonly Sitemap $sitemap;
     private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
@@ -40,7 +39,6 @@ final class BuildCommand extends BaseCommand
         $this->readers = $this->app->get('library.readers');
         $this->builders = $this->app->get('contractor.builders');
         $this->pages = $this->app->get('pages.collection');
-        $this->vite = $this->app->get('assets.vite');
         $this->media = $this->app->get('assets.media');
         $this->stopwatch = $this->app->get('cli.stopwatch');
         $this->researcher = $this->app->get('finder.researcher');
@@ -51,7 +49,7 @@ final class BuildCommand extends BaseCommand
         $this->processSchemas();
         $this->prepareAssets();
         $this->buildPages();
-        //$this->copyAssets();
+        $this->generateMedia();
         $this->buildSitemapXml();
         $this->cleanup();
 
@@ -181,12 +179,12 @@ final class BuildCommand extends BaseCommand
     }
 
     /**
-     * Copy assets
+     * Generate media
      *
      * @return void
      */
 
-    private function copyAssets(): void
+    private function generateMedia(): void
     {
         $this->output->print('{bold}Generating media');
 
@@ -195,10 +193,6 @@ final class BuildCommand extends BaseCommand
         foreach ($mediaFiles as $mediaFile) {
             $this->media->resizeMedia($mediaFile);
         }
-
-        $this->output->print('{bold}Copying assets');
-
-        $this->assets->compile();
     }
 
     /**
