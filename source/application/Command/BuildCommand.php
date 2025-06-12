@@ -30,6 +30,17 @@ final class BuildCommand extends BaseCommand
     private readonly BuildersCollection $builders;
     private readonly GeneratorsCollection $generators;
 
+    public function options(): array
+    {
+        $options = [];
+
+        $options['view-only'] = [
+            'type' => 'toggle'
+        ];
+
+        return $options;
+    }
+
     public function main(): void
     {
         $this->output->print('{bold}Running the building process{nl}');
@@ -45,12 +56,16 @@ final class BuildCommand extends BaseCommand
         $this->sitemap = $this->app->get('project.sitemap');
 
         $this->stopwatch->start();
+
         $this->processContents();
         $this->processSchemas();
-        $this->prepareAssets();
         $this->buildPages();
-        $this->generateMedia();
-        $this->buildSitemapXml();
+
+        if ($this->argument('view-only') !== false) {
+            $this->generateMedia();
+            $this->buildSitemapXml();
+        }
+
         $this->cleanup();
 
         $this->output->print('{bold}{fg_green}Build completed in ' . $this->stopwatch->stop() . ' seconds!');
@@ -149,17 +164,6 @@ final class BuildCommand extends BaseCommand
         }
 
         return $output;
-    }
-
-    /**
-     * Prepare assets
-     *
-     * @return void
-     */
-
-    public function prepareAssets(): void
-    {
-        $this->output->print('{bold}Preparing assets');
     }
 
     /**

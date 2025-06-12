@@ -1,6 +1,30 @@
 import { defineConfig } from "vite";
 import * as path from 'path';
 import tailwindcss from "@tailwindcss/vite";
+import { exec } from 'child_process';
+
+function gspataro() {
+    return {
+        name: 'gspataro-run-build',
+        closeBundle() {
+            exec('./gspataro.php build --view-only', (err, stdout, stderr) => {
+                if (!process.argv.includes('--watch')) {
+                    return;
+                }
+
+                if (err) {
+                    console.error(`Build error: ${err.message}`);
+                }
+
+                if (stderr) {
+                    console.error(`stderr: ${err}`);
+                }
+
+                console.log(`stdout: ${stdout}`);
+            });
+        }
+    };
+}
 
 export default defineConfig({
     base: '/assets/',
@@ -21,6 +45,7 @@ export default defineConfig({
         }
     },
     plugins: [
-        tailwindcss()
+        tailwindcss(),
+        gspataro()
     ]
 });
