@@ -34,8 +34,8 @@ export default defineConfig({
         manifest: true,
         rollupOptions: {
             input: [
-                path.resolve(__dirname, 'contents/view/assets/css/ui.css'),
-                path.resolve(__dirname, 'contents/view/assets/js/main.js')
+                path.resolve(__dirname, 'contents/assets/css/ui.css'),
+                path.resolve(__dirname, 'contents/assets/js/main.js')
             ],
             output: {
                 entryFileNames: `[name]-[hash].js`,
