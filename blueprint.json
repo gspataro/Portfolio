@@ -64,12 +64,6 @@
             "slug": "/chi-sono",
             "generate": "once"
         },
-        "services": {
-            "template": "services",
-            "builder": "simple",
-            "slug": "/cosa-faccio",
-            "generate": "once"
-        },
         "article": {
             "contents": [
                 "articles",
