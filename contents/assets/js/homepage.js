@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+export function initHomepage() {
     const header = document.getElementById('header');
     const mainWrapper = document.getElementById('main-wrapper');
     const main = document.getElementById('main');
@@ -173,4 +173,4 @@ document.addEventListener('DOMContentLoaded', function () {
         keyboard.dataset.hidden = 'true';
         welcome.classList.remove('hidden');
     });
-});
+}
