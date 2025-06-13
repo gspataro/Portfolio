@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import './fonts';
 @import './highlight-light-lite';
+@import 'swiper/css';
 
 @theme {
 

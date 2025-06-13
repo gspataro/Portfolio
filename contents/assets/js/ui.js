@@ -61,7 +61,11 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (e.target.tagName.toLowerCase() !== 'a' && e.target.closest('a') === null) {
+        if (
+            e.target.tagName.toLowerCase() !== 'a' &&
+            e.target.closest('a') === null &&
+            e.target.tagName.toLowerCase() !== 'button' &&
+            e.target.closest('button') === null) {
             return;
         }
 
@@ -73,7 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (e.target.tagName.toLowerCase() !== 'a' && e.target.closest('a') === null) {
+        if (
+            e.target.tagName.toLowerCase() !== 'a' &&
+            e.target.closest('a') === null &&
+            e.target.tagName.toLowerCase() !== 'button' &&
+            e.target.closest('button') === null) {
             return;
         }
 

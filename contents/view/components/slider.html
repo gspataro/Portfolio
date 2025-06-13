@@ -1,0 +1,66 @@
+{%from './components/icon.html' import icon%}
+<div class="swiper {{class}}">
+    <div class="flex items-center mb-sm">
+        <h2>
+            {{title}}
+        </h2>
+        <div class="flex-1"></div>
+        <div class="flex gap-3xs">
+            <button class="
+                swiper-button-prev
+                inline-flex
+                justify-center
+                items-center
+                w-10
+                h-10
+                border-thunder-darkest
+                border-1
+                rounded-full
+                transition-all
+                duration-300
+                hover:bg-thunder-darkest
+                hover:text-ivory-lightest
+                disabled:opacity-60
+                disabled:hover:bg-transparent
+                disabled:hover:text-thunder-darkest">
+                {{icon('arrow-left')}}
+            </button>
+            <button class="
+                swiper-button-next
+                inline-flex
+                justify-center
+                items-center
+                w-10
+                h-10
+                border-thunder-darkest
+                border-1
+                rounded-full
+                transition-all
+                duration-300
+                hover:bg-thunder-darkest
+                hover:text-ivory-lightest
+                disabled:opacity-60
+                disabled:hover:bg-transparent
+                disabled:hover:text-thunder-darkest">
+                {{icon('arrow-right')}}
+            </button>
+        </div>
+    </div>
+    <div class="swiper-wrapper">
+        {%for slide in slides%}
+            <div class="swiper-slide border-thunder-darkest rounded-3xl border-2 p-sm">
+                {%if slide.icon%}
+                    <div class="mb-2xs">
+                        {{icon(slide.icon, '48', '48')}}
+                    </div>
+                {%endif%}
+                <h4 class="mb-4xs">
+                    {{slide.title}}
+                </h4>
+                <div>
+                    {{slide.description}}
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+</div>
