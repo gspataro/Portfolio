@@ -1,3 +1,4 @@
+{%from './components/icon.html' import icon%}
 {%set timeline = {
     "2024": [
         {
@@ -121,7 +122,7 @@
         <div class="mb-3xl">
             <h2 class="leading-none mb-md">Esperienze</h2>
             {%for year, experiences in timeline%}
-                <div class="grid grid-cols-[auto_1fr] mb-lg gap-sm items-start last-of-type:mb-0">
+                <div class="grid grid-cols-[auto_1fr] mb-lg gap-sm items-start last-of-type:mb-0 {%if loop.index > 2%}hidden{%endif%}">
                     <h3 class="writing-v-lr rotate-180">{{year}}</h3>
                     <div class="grid gap-sm grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
                         {%for experience in experiences%}
@@ -134,15 +135,27 @@
                     </div>
                 </div>
             {%endfor%}
+            <div>
+                <a href="#" class="btn">
+                    Vedi di più
+                </a>
+            </div>
         </div>
-        <div class="prose mb-xl tablet-v:w-2/3 tablet-h:w-1/2">
-            <h2>Side project</h2>
-            <p class="text-sm">
-                Sono appassianato di tecnologia e da anni mi occupo di sviluppo web. Ho realizzato numerosi progetti e mi piace cimentarmi
-                nell'apprendimento di nuovi concetti legati alla programmazione.
-            </p>
-            <a href="{{url('webdev@index')}}" class="cta text-inherit">
-                Scopri di più
-            </a>
+        <div class="bg-brass-lightest flex flex-col-reverse gap-3xs p-sm rounded-3xl tablet-v:p-lg tablet-v:justify-between tablet-v:flex-row tablet-v:items-center">
+            <div class="prose tablet-v:w-2/3 tablet-h:w-1/2">
+                <h2>Side project</h2>
+                <p class="text-sm">
+                    Sono appassianato di tecnologia e da anni mi occupo di sviluppo web. Ho realizzato numerosi progetti e mi piace cimentarmi
+                    nell'apprendimento di nuovi concetti legati alla programmazione.
+                </p>
+                <a href="{{url('webdev@index')}}" class="cta text-inherit">
+                    Scopri di più
+                </a>
+            </div>
+            <div class="text-thunder-darkest/10">
+                {{icon('dev', 120, attributes: {
+                    'class': 'w-14 h-14 tablet-v:w-auto tablet-v:h-auto'
+                })}}
+            </div>
         </div>
 {%endblock%}
