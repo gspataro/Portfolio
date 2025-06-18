@@ -1,9 +1,9 @@
 {%from './components/icon.html' import icon%}
-<div class="swiper {{class}}">
+<div class="swiper group/slider {{class}}" data-style="{{style ?? 'pianoforte'}}">
     <div class="flex items-center mb-sm">
-        <h2>
+        <{{title_tag ?? 'h2'}}>
             {{title}}
-        </h2>
+        </{{title_tag ?? 'h2'}}>
         <div class="flex-1"></div>
         <div class="flex gap-3xs">
             <button class="
@@ -22,7 +22,11 @@
                 hover:text-ivory-lightest
                 disabled:opacity-60
                 disabled:hover:bg-transparent
-                disabled:hover:text-thunder-darkest">
+                disabled:hover:text-thunder-darkest
+                group-data-[style=fortepiano]/slider:border-ivory-lightest
+                group-data-[style=fortepiano]/slider:hover:bg-ivory-lightest
+                group-data-[style=fortepiano]/slider:hover:text-thunder-darkest
+                group-data-[style=fortepiano]/slider:disabled:hover:text-ivory-lightest">
                 {{icon('arrow-left')}}
             </button>
             <button class="
@@ -41,14 +45,25 @@
                 hover:text-ivory-lightest
                 disabled:opacity-60
                 disabled:hover:bg-transparent
-                disabled:hover:text-thunder-darkest">
+                disabled:hover:text-thunder-darkest
+                group-data-[style=fortepiano]/slider:border-ivory-lightest
+                group-data-[style=fortepiano]/slider:hover:bg-ivory-lightest
+                group-data-[style=fortepiano]/slider:hover:text-thunder-darkest
+                group-data-[style=fortepiano]/slider:disabled:hover:text-ivory-lightest">
                 {{icon('arrow-right')}}
             </button>
         </div>
     </div>
     <div class="swiper-wrapper">
         {%for slide in slides%}
-            <div class="swiper-slide border-thunder-darkest rounded-3xl border-2 p-sm">
+            <div class="
+                swiper-slide
+                border-thunder-darkest
+                rounded-3xl
+                border-2
+                p-sm
+                group-data-[style=fortepiano]/slider:border-thunder
+                group-data-[style=fortepiano]/slider:bg-thunder-dark">
                 {%if slide.icon%}
                     <div class="mb-2xs">
                         {{icon(slide.icon, '48', '48')}}

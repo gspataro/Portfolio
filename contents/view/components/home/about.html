@@ -17,27 +17,8 @@
                 Scopri di più
             </a>
         </div>
-        <h3 class="mb-sm">
-            DI COSA MI OCCUPO
-        </h3>
-        {%include './components/cards.html' with {
-            'items': [
-                {
-                    'icon': 'live',
-                    'title': 'Performances',
-                    'description': "Mi esibisco dal vivo sia come pianista solista che accompagnatore, adattando il mio repertorio a qualsiasi tipologia di evento, spaziando dai teatri ai matrimoni."
-                },
-                {
-                    'icon': 'album',
-                    'title': 'Composizione',
-                    'description': "Compongo brani inediti e mi occupo di branding aziendale musicale, dal sound logo ai jingle pubblicitari per migliorare l'engagement degli utenti."
-                },
-                {
-                    'icon': 'education',
-                    'title': 'Didattica',
-                    'description': "Condivido la mia esperienza con persone che vogliono studiare pianoforte, migliorare le proprie performances o prepararsi per l'accesso al conservatorio."
-                }
-            ]
+        {%include './components/services.html' with {
+            'title_tag': 'h3'
         }%}
     {%endblock%}
 {%endembed%}
