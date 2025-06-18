@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+export function initSynth() {
     const maxGain = 1;
     const muteControl = document.getElementById('keyboard-mute');
     const keyboard = document.getElementById('keyboard');
@@ -196,4 +196,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
         releaseNote(key);
     });
-});
+};
