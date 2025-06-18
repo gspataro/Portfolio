@@ -101,6 +101,16 @@
                 "per_page": 12
             }
         },
+        "project": {
+            "contents": [
+                "projects",
+                "projects_cats"
+            ],
+            "template": "project",
+            "builder": "post",
+            "slug": "/progetto",
+            "generate": "loop:projects"
+        },
         "projects": {
             "contents": [
                 {

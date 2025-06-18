@@ -16,7 +16,7 @@
         {%for id, project in projects%}
             {%include './components/project/card.html' with {
                 'project': project
-            } only%}
+            }%}
         {%endfor%}
     </div>
     {%if pagination.prev or pagination.next%}
