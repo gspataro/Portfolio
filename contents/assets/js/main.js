@@ -1,5 +1,6 @@
 import './ui';
 import './slider';
+import './player';
 
 if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
     import('./synth').then((module) => {

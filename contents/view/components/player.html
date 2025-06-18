@@ -1,0 +1,27 @@
+{%from './components/icon.html' import icon%}
+<div class="player group/player {{class}}">
+    <div class="bg-thunder-darkest flex justify-between p-sm rounded-3xl text-ivory-lightest">
+        <div class="font-semibold">
+            {{title}}
+        </div>
+        <div class="flex gap-xs">
+            <a href="#" data-control="play" class="text-inherit">
+                <span class="group-data-playing/player:hidden">
+                    {{icon('play')}}
+                </span>
+                <span class="hidden group-data-playing/player:inline">
+                    {{icon('pause')}}
+                </span>
+            </a>
+            <a href="#" data-control="stop" class="text-inherit">
+                {{icon('stop')}}
+            </a>
+        </div>
+    </div>
+    <audio class="hidden">
+        {%for source in sources%}
+            <source src="{{source.src}}" type="{{source.type}}">
+        {%endfor%}
+        Audio not supported
+    </audio>
+</div>
