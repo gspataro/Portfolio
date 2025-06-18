@@ -1,17 +1,20 @@
 {%set page = {
-    'title': 'Pagina non trovata'
+    'title': 'Pagina non trovata',
+    'layout': {
+        'screen': true
+    }
 }%}
 {%extends "./layout/default.html"%}
 {%block main%}
-    <div class="text-center">
-        <h1 class="text-xl leading-none mb-sm font-oswald tablet-v:text-3xl">
+    <div class="flex flex-col justify-center items-center min-h-[inherit]">
+        <h1 class="text-5xl">
             404
         </h1>
-        <p class="text-sm mb-3xs tablet-v:text-md">
-            Non ho trovato la pagina che cercavi.
+        <p class="mb-sm text-md text-center">
+            Abbiamo toccato i tasti sbagliati.
         </p>
         <div>
-            <a href="{{website.url}}" class="text-sm cta">Torna alla home</a>
+            <a href="{{website.url}}" class="text-sm btn">Torna alla home</a>
         </div>
     </div>
 {%endblock%}

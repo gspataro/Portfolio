@@ -8,8 +8,8 @@
         <div class="tablet-v:grid tablet-v:grid-cols-[auto_1fr] tablet-v:grid-rows-1">
             {%include './components/header.html' with {'class': 'tablet-v:col-start-1 tablet-v:row-span-2'}%}
             <div class="flex overflow-y-hidden flex-col tablet-v:col-start-2">
-                <main>
-                    <div class="{%if not page.layout.fluid%}container py-(--container-padding-y){%endif%}">
+                <main {%if page.layout.screen%}class="min-h-screen"{%endif%}>
+                    <div class="{%if not page.layout.fluid%}container py-(--container-padding-y){%endif%} {%if page.layout.screen%}min-h-[calc(100vh-(var(--container-padding-y)*2))]{%endif%}">
                         {%block main%}
                         {%endblock%}
                     </div>
