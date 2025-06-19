@@ -1,20 +1,20 @@
 {%from './components/icon.html' import icon%}
 <div class="player group/player {{class}}">
-    <div class="bg-thunder-darkest flex justify-between p-sm rounded-3xl text-ivory-lightest">
-        <div class="font-semibold">
+    <div class="border-2 border-thunder-darkest flex items-center justify-between p-sm rounded-3xl">
+        <div class="text-h5 font-normal">
             {{title}}
         </div>
-        <div class="flex gap-xs">
+        <div class="flex items-center gap-2xs">
             <a href="#" data-control="play" class="text-inherit">
                 <span class="group-data-playing/player:hidden">
-                    {{icon('play')}}
+                    {{icon('play', 28)}}
                 </span>
                 <span class="hidden group-data-playing/player:inline">
-                    {{icon('pause')}}
+                    {{icon('pause', 28)}}
                 </span>
             </a>
             <a href="#" data-control="stop" class="text-inherit">
-                {{icon('stop')}}
+                {{icon('stop', 28)}}
             </a>
         </div>
     </div>

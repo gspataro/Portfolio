@@ -446,6 +446,13 @@
             }
         }
 
+        .player {
+            @apply
+                my-md
+                first:mt-0
+                last:mb-0;
+        }
+
         p {
             @apply
                 my-3xs

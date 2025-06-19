@@ -21,6 +21,9 @@
     </p>
     <div class="flex-1"></div>
     <div class="flex items-center gap-3xs">
+        {%include './components/project/categories.html' with {
+            'categories': project.frontmatter.categories
+        }%}
         <div class="flex-1"></div>
         <a href="{{url('project.' ~ id)}}" class="cta group-data-[style=fortepiano]:text-ivory-lightest">
             Scopri di più
