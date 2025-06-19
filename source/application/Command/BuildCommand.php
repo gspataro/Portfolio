@@ -13,7 +13,6 @@ use GSpataro\Contractor\BuildersCollection;
 use GSpataro\Project\Sitemap;
 use SimpleXMLElement;
 use DirectoryIterator;
-use GSpataro\Assets\Vite;
 
 final class BuildCommand extends BaseCommand
 {
@@ -38,6 +37,10 @@ final class BuildCommand extends BaseCommand
             'type' => 'toggle'
         ];
 
+        $options['cleanup-only'] = [
+            'type' => 'toggle'
+        ];
+
         return $options;
     }
 
@@ -59,9 +62,12 @@ final class BuildCommand extends BaseCommand
 
         $this->processContents();
         $this->processSchemas();
-        $this->buildPages();
 
-        if ($this->argument('view-only') !== false) {
+        if ($this->argument('cleanup-only') !== false) {
+            $this->buildPages();
+        }
+
+        if ($this->argument('view-only') !== false && $this->argument('cleanup-only') !== false) {
             $this->generateMedia();
             $this->buildSitemapXml();
         }
