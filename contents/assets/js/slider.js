@@ -11,9 +11,11 @@ const swiper = new Swiper('.swiper', {
     },
     breakpoints: {
         768: {
+            slidesPerGroup: 2,
             slidesPerView: 2
         },
         1280: {
+            slidesPerGroup: 3,
             slidesPerView: 3
         }
     }

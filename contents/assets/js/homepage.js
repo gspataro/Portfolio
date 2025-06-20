@@ -163,14 +163,23 @@ export function initHomepage() {
     const keyboard = document.getElementById('hero-keyboard');
     const playPianoCta = document.getElementById('hero-welcome-play');
     const closePianoCta = document.getElementById('hero-keyboard-close');
+    const muteControl = document.getElementById('keyboard-mute');
 
     playPianoCta.addEventListener('click', function () {
         welcome.classList.add('hidden');
         keyboard.dataset.hidden = 'false';
+
+        if (muteControl.dataset.muted === 'true') {
+            muteControl.click();
+        }
     });
 
     closePianoCta.addEventListener('click', function () {
         keyboard.dataset.hidden = 'true';
         welcome.classList.remove('hidden');
+
+        if (muteControl.dataset.muted === 'false') {
+            muteControl.click();
+        }
     });
 }

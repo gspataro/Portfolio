@@ -49,7 +49,7 @@
         <div class="grid tablet-v:grid-cols-2 desktop:grid-cols-3 gap-md">
             {%for id, project in webdev_projects%}
                 {%include('./components/webdev_project/card.html') with {
-                    project: project
+                    webdev_project: project
                 }%}
             {%endfor%}
         </div>

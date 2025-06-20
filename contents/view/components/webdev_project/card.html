@@ -12,12 +12,12 @@
     <header class="mb-3xs">
         <{{heading_type ?? 'h5'}}>
             <a href="{{url('webdev_project.' ~ id)}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]:text-ivory-lightest">
-                {{project.frontmatter.name}}
+                {{webdev_project.frontmatter.name}}
             </a>
         </{{heading_type ?? 'h5'}}>
     </header>
     <p class="mb-xs group-data-[style=fortepiano]:text-ivory-lightest">
-        {{project.frontmatter.description}}
+        {{webdev_project.frontmatter.description}}
     </p>
     <div class="flex-1"></div>
     <div class="flex items-center gap-3xs">
