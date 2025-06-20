@@ -6,17 +6,23 @@ category: concept
 published: 2025-05-23
 ---
 
-LUXA è un'azienda immaginaria che realizza prodotti per smart home. Per generare questo concept ho sfruttato l'intelligenza artificiale,
-simulando un possibile colloquio con la compagnia.
-Il servizio richiesto è un kit aziendale composto di due elementi: **sound logo** e un **jingle**. Entrambi devono poter essere
-sfruttati su più piattaforme.
+LUXA è un'azienda fittizia specializzata nella progettazione di soluzioni per la smart home.
 
-Durante il colloquio siamo risaliti al mood generale che devono evocare: **minimal**, **elegante** e **moderno**.
+Per sviluppare questo concept, è stata utilizzata l'intelligenza artificiale con l’obiettivo di simulare un ipotetico colloquio con l’azienda.
 
-## Sound logo
+Nelle fasi iniziali dell’incontro sono stati definiti con chiarezza gli obiettivi,
+che hanno portato alla creazione di un kit composto da due elementi principali: un **sound logo** e un **jingle pubblicitario**.
+In particolare, il jingle è stato pensato per essere integrato nella campagna promozionale attualmente in corso.
 
-In una prima fase ho sviluppato il sound logo. Questo fa uso di sintetizzatori, per la parte moderna, e di suoni morbidi e dolci per mantenere
-una certa eleganza. Di seguito il risultato.
+Successivamente, è stato individuato il mood generale da trasmettere: **minimalista**, **elegante** e **moderno**.
+
+## Identità sonora: il sound logo
+
+In una fase iniziale è stato sviluppato il sound logo, progettato per riflettere l'identità sonora del brand.
+La composizione unisce l’uso di sintetizzatori, che richiamano l’aspetto più moderno e tecnologico dell’azienda,
+a sonorità morbide e delicate, pensate per trasmettere un senso di eleganza e raffinatezza.
+
+Di seguito il risultato.
 
 {%include './components/player.html' with {
     'title': 'Sound logo',
@@ -30,15 +36,17 @@ una certa eleganza. Di seguito il risultato.
 
 ## Jingle pubblicitario
 
-Dopo aver sviluppato il sound logo, mi sono dedicato allo sviluppo del jingle pubblicitario.
-Questo può anche essere coniugato in diverse forme:
+Successivamente, mi sono dedicato alla realizzazione del jingle pubblicitario,
+pensato per essere versatile e adattabile a diversi contesti comunicativi.
 
-- Loop
-- Versione corta
+Il jingle è stato concepito in più varianti, tra cui:
+
+- Loop continuo
+- Versione breve
 - Solo jingle
-- Jingle con logo
+- Jingle integrato con sound logo
 
-La versione di seguito è quella completa con logo.
+Quella proposta di seguito è la **versione completa con sound logo integrato**.
 
 {%include './components/player.html' with {
     'title': 'Jingle',
@@ -50,11 +58,20 @@ La versione di seguito è quella completa con logo.
     ]
 }%}
 
-Per il jingle ho fatto uso di sintetizzatori, strumenti ad arco, percussioni e pianoforte.
-Mi sono occupato di creare un'atmosfera accattivante ma al contempo elegante e minimal.
-Tutto è stato scritto per poi integrarsi perfettamente con il sound logo, in modo da ottenere un risultato omogeneo.
+Per la realizzazione del jingle, è stata impiegata una combinazione di **sintetizzatori**,
+**strumenti ad arco**, **percussioni** e **pianoforte**.
 
-## La gestione multi-piattaforma
+L’obiettivo compositivo è stato quello di creare un’atmosfera **coinvolgente**,
+mantenendo al tempo stesso un tono **elegante** e **minimalista**, coerente con l’identità del brand.
 
-Il kit aziendale è stato testato su più piattaforme per accertarsi che i tratti caratteristici siano sempre in evidenza.
-Per evitare problemi di compressione sui social, sia il sound logo che il jingle rispettano gli standard in LUFS delle piattaforme.
+Particolare attenzione è stata dedicata all’integrazione armonica con il sound logo,
+al fine di ottenere un risultato **coeso** e **stilisticamente uniforme**.
+
+## Ottimizzazione per le piattaforme social
+
+Il **kit sonoro aziendale** è stato testato su diverse piattaforme per garantire che
+le sue caratteristiche distintive risultino sempre chiare e riconoscibili, indipendentemente dal contesto di diffusione.
+
+Per assicurare una resa ottimale, sia il sound logo che il jingle sono
+stati **ottimizzati secondo gli standard di loudness (LUFS)** richiesti dalle principali piattaforme digitali,
+minimizzando eventuali problemi di **compressione o perdita di qualità** durante la riproduzione, in particolare sui social media.
