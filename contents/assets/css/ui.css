@@ -424,6 +424,14 @@
                 hover:after:mr-[5px]
                 hover:after:-ml-[5px];
         }
+
+        &.cta-expand {
+            @apply
+                after:rotate-90
+                hover:after:mr-0
+                hover:after:ml-0
+                data-expanded:after:-rotate-90;
+        }
     }
 
     /**
