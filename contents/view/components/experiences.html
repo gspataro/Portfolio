@@ -74,7 +74,7 @@
 }%}
 <div class="{{class}} group/experiences" id="experiences">
     <{{title_tag ?? 'h2'}} class="leading-none mb-md">
-        Esperienze
+        Eventi preferiti
     </{{title_tag ?? 'h2'}}>
     {%for year, experiences in timeline%}
         <div class="
@@ -87,7 +87,7 @@
             {%if loop.index > 2%}hidden{%endif%}
             group-data-expanded/experiences:grid">
             <h3 class="writing-v-lr rotate-180">{{year}}</h3>
-            <div class="grid gap-sm grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
+            <div class="grid gap-sm grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3">
                 {%for experience in experiences%}
                     <div>
                         <h4 class="text-h6">{{experience.name}}</h4>
