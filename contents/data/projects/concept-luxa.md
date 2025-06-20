@@ -1,7 +1,8 @@
 ---
 name: LUXA Smart Home
-categories:
-    - concept
+client: LUXA
+services: Sound Logo, Jingle
+category: concept
 published: 2025-05-23
 ---
 
