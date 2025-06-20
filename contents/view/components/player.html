@@ -7,14 +7,14 @@
         <div class="flex items-center gap-2xs">
             <a href="#" data-control="play" class="text-inherit">
                 <span class="group-data-playing/player:hidden">
-                    {{icon('play', 28)}}
+                    {{icon('play', 28, label: 'Riproduci ' ~ title)}}
                 </span>
                 <span class="hidden group-data-playing/player:inline">
-                    {{icon('pause', 28)}}
+                    {{icon('pause', 28, label: 'Metti in pausa ' ~ title)}}
                 </span>
             </a>
             <a href="#" data-control="stop" class="text-inherit">
-                {{icon('stop', 28)}}
+                {{icon('stop', 28, label: 'Interrompi ' ~ title)}}
             </a>
         </div>
     </div>
