@@ -165,7 +165,9 @@ export function initHomepage() {
     const closePianoCta = document.getElementById('hero-keyboard-close');
     const muteControl = document.getElementById('keyboard-mute');
 
-    playPianoCta.addEventListener('click', function () {
+    playPianoCta.addEventListener('click', function (e) {
+        e.preventDefault();
+
         welcome.classList.add('hidden');
         keyboard.dataset.hidden = 'false';
 
@@ -174,7 +176,9 @@ export function initHomepage() {
         }
     });
 
-    closePianoCta.addEventListener('click', function () {
+    closePianoCta.addEventListener('click', function (e) {
+        e.preventDefault();
+
         keyboard.dataset.hidden = 'true';
         welcome.classList.remove('hidden');
 
