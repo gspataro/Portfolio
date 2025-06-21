@@ -26,9 +26,9 @@
                 <h1 class="flex-1">{{project.frontmatter.name}}</h1>
             </div>
             {%include './components/post/meta.html' with {'meta': {
-                "Categoria": category,
                 "Cliente": project.frontmatter.client,
-                "Servizi": project.frontmatter.services
+                "Servizi": project.frontmatter.services,
+                "Categoria": category
             }} only%}
         </header>
         <div class="prose">
