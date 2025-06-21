@@ -34,10 +34,6 @@ final class CLIComponent extends Component
             new Command\BuildCommand($this->container)
         );
 
-        $commands->register(
-            new Command\CleanupCommand($this->container)
-        );
-
         $cli->deploy();
     }
 }

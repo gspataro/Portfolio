@@ -18,7 +18,7 @@ jobs:
           script: |
             cd Portfolio
             git pull
+            npm install
             composer install
-            npm run build
-            php gspataro.php build
+            composer run build
             echo 'Successfully deployed.'

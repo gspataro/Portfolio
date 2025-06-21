@@ -17,11 +17,15 @@ final class TwigSitemap extends AbstractExtension
 
     public function url($tag)
     {
-        $url = $this->blueprint->get('website.url');
+        $url = $_ENV['WEBSITE_URL'] ?? '';
         $friendlyUrls = $this->blueprint->get('website.friendly_urls');
         $path = $this->sitemap->get($tag);
         $separator = null;
         $suffix = $friendlyUrls ? null : '.html';
+
+        if (!$path) {
+            $path = $tag;
+        }
 
         if (!str_ends_with($url, '/') && !str_starts_with($path, '/')) {
             $separator = '/';
@@ -40,7 +44,7 @@ final class TwigSitemap extends AbstractExtension
 
     public function media($file, $size)
     {
-        $url = $this->blueprint->get('website.url');
+        $url = $_ENV['WEBSITE_URL'] ?? '';
         return $url . '/media/' . $size . '/' . $file;
     }
 

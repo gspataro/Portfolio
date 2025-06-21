@@ -1,0 +1,111 @@
+{%set timeline = {
+    "2024": [
+        {
+            "name": "Pianoforte Brillante",
+            "location": "Teatro Donnafugata &bullet; Ragusa Ibla (RG)",
+            "description": "Pianoforte a quattro mani"
+        }
+    ],
+    "2022": [
+        {
+            "name": "Laurea magistrale",
+            "location": "Conservatorio V. Bellini &bullet; Catania (CT)",
+            "description": "Diploma accademico di secondo livello in pianoforte conseguito con 110 e lode"
+        }
+    ],
+    "2021": [
+        {
+            "name": "Premio Giovani Eccellenze",
+            "location": "Teatro Perracchio &bullet; Ragusa (RG)",
+            "description": "Pianista solista"
+        }
+    ],
+    "2019": [
+        {
+            "name": "Musica da Metro",
+            "location": "Metro Piazza Stesicoro &bullet; Catania (CT)",
+            "description": "Pianista solista"
+        },
+        {
+            "name": "Laurea triennale",
+            "location": "Conservatorio V. Bellini &bullet; Catania (CT)",
+            "description": "Diploma accademico di primo livello in pianoforte conseguito con 110 e lode"
+        },
+        {
+            "name": "Masterclass",
+            "location": "Conservatorio V. Bellini &bullet; Catania (CT)",
+            "description": "Masterclass con il M° Joaquin Achùcarro"
+        },
+        {
+            "name": "XVII Concorso Nazionale “Alfio Pulvirenti”",
+            "location": "Comiso (RG)",
+            "description": "Primo premio con voto 96/100"
+        },
+        {
+            "name": "XI Festival Concorso Nazionale “Giovani Musicisti in Orchestra”",
+            "location": "Modica (RG)",
+            "description": "Primo premio con voto 98/100."
+        }
+    ],
+    "2018": [
+        {
+            "name": "Apertura di concerto",
+            "location": "Teatro donnafugata &bullet; Ragusa Ibla (RG)",
+            "description": "Pianista solista"
+        },
+        {
+            "name": "Masterclass",
+            "location": "Rachmaninov Academy &bullet; Catania (CT)",
+            "description": "Masterclass con la M° Violetta Egorova"
+        },
+        {
+            "name": "XVI Concorso Nazionale “Alfio Pulvirenti”",
+            "location": "Comiso (RG)",
+            "description": "Primo premio con voto 97/100."
+        }
+    ],
+    "2017": [
+        {
+            "name": "Masterclass",
+            "location": "Rachmaninov Academy &bullet; Catania (CT)",
+            "description": "Masterclass con la M° Violetta Egorova"
+        }
+    ]
+}%}
+<div class="{{class}} group/experiences" id="experiences">
+    <{{title_tag ?? 'h2'}} class="leading-none mb-md">
+        Eventi preferiti
+    </{{title_tag ?? 'h2'}}>
+    {%for year, experiences in timeline%}
+        <div class="
+            grid
+            grid-cols-[auto_1fr]
+            mb-lg
+            gap-sm
+            items-start
+            last-of-type:mb-0
+            {%if loop.index > 2%}hidden{%endif%}
+            group-data-expanded/experiences:grid">
+            <h3 class="writing-v-lr rotate-180">{{year}}</h3>
+            <div class="grid gap-sm grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3">
+                {%for experience in experiences%}
+                    <div>
+                        <h4 class="text-h6">{{experience.name}}</h4>
+                        <div class="text-thunder-lightest font-normal">{{experience.location|raw}}</div>
+                        <div>{{experience.description}}</div>
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+    {%endfor%}
+    <div>
+        <a href="#" class="cta cta-expand group-data-expanded/experiences:after:-rotate-90" id="experiences-more">
+            <span class="group-data-expanded/experiences:hidden">
+                Vedi di più
+            </span>
+            <span class="hidden group-data-expanded/experiences:inline">
+                Vedi di meno
+            </span>
+        </a>
+    </div>
+</div>

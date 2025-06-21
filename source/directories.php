@@ -57,4 +57,4 @@ define("DIR_VIEW", DIR_CONTENTS . "/view");
  * Assets dir: /contents/view/assets
  */
 
-define("DIR_ASSETS", DIR_VIEW . '/assets');
+define("DIR_ASSETS", DIR_CONTENTS . '/assets');

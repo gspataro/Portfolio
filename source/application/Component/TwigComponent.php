@@ -9,7 +9,7 @@ use GSpataro\View\TwigHighlighter;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extra\String\StringExtension;
 use GSpataro\DependencyInjection\Component;
-use GSpataro\View\TwigHighlightest;
+use GSpataro\View\TwigGenerics;
 use Twig\Extension\StringLoaderExtension;
 
 final class TwigComponent extends Component
@@ -19,9 +19,7 @@ final class TwigComponent extends Component
         $this->container->variable('twig.viewsPath', DIR_VIEW);
 
         $this->container->add('twig.loader', function ($container, $args): object {
-            return new FilesystemLoader(
-                $container->variable('twig.viewsPath')
-            );
+            return new FilesystemLoader($container->variable('twig.viewsPath'));
         });
 
         $this->container->add('twig', function ($container, $args): object {
@@ -33,10 +31,14 @@ final class TwigComponent extends Component
 
     public function boot(): void
     {
+        $this->container->get('twig.loader')->addPath(DIR_ASSETS, 'assets');
         $twig = $this->container->get('twig');
 
         $twig->addExtension(new StringExtension());
         $twig->addExtension(new StringLoaderExtension());
+        $twig->addExtension(new TwigGenerics(
+            $this->container->get('assets.vite')
+        ));
         $twig->addExtension(new TwigHighlighter(
             $this->container->get('tempest.highlight')
         ));

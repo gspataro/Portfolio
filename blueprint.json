@@ -1,10 +1,10 @@
 {
     "website": {
         "name": "Giuseppe Spataro",
-        "description": "Giuseppe Spataro, pianista e sviluppatore siciliano",
+        "description": "Giuseppe Spataro, pianista e compositore siciliano",
         "author": "Giuseppe Spataro",
-        "keywords": "pianista, musicista, sviluppatore web, programmatore, sicilia",
-        "email": "gspatarodev@gmail.com",
+        "keywords": "pianista, musicista, sicilia",
+        "email": "info@giuseppespataro.it",
         "friendly_urls": true
     },
     "languages": ["it"],
@@ -13,7 +13,9 @@
         "articles": "markdown:articles/*.md",
         "articles_cats": "json:articles_categories.json",
         "projects": "markdown:projects/*.md",
-        "projects_cats": "json:projects_categories.json"
+        "projects_cats": "json:projects_categories.json",
+        "webdev_projects": "markdown:webdev_projects/*.md",
+        "webdev_projects_cats": "json:webdev_projects_categories.json"
     },
     "schemas": {
         "index": {
@@ -43,26 +45,23 @@
             "slug": "/darkside",
             "generate": "once"
         },
-        "webdev": {
+        "webdev@index": {
             "contents": [
                 {
-                    "group": "projects",
+                    "group": "webdev_projects",
                     "orderBy": "frontmatter.published",
                     "order": "desc"
                 }
             ],
             "template": "webdev",
             "builder": "simple",
-            "slug": "/webdev",
+            "slug": "/webdev/index",
             "generate": "once"
         },
-        "pianist": {
-            "contents": [
-                "projects"
-            ],
-            "template": "pianist",
+        "about": {
+            "template": "about",
             "builder": "simple",
-            "slug": "/pianista",
+            "slug": "/chi-sono",
             "generate": "once"
         },
         "article": {
@@ -75,15 +74,15 @@
             "slug": "/articolo",
             "generate": "loop:articles"
         },
-        "project": {
+        "webdev_project": {
             "contents": [
-                "projects",
-                "projects_cats"
+                "webdev_projects",
+                "webdev_projects_cats"
             ],
-            "template": "project",
+            "template": "webdev_project",
             "builder": "post",
-            "slug": "/progetto",
-            "generate": "loop:projects"
+            "slug": "/webdev",
+            "generate": "loop:webdev_projects"
         },
         "blog": {
             "contents": [
@@ -101,9 +100,33 @@
             "options": {
                 "per_page": 12
             }
+        },
+        "project": {
+            "contents": [
+                "projects",
+                "projects_cats"
+            ],
+            "template": "project",
+            "builder": "post",
+            "slug": "/progetto",
+            "generate": "loop:projects"
+        },
+        "projects": {
+            "contents": [
+                {
+                    "group": "projects",
+                    "orderBy": "frontmatter.published",
+                    "order": "desc"
+                },
+                "projects_cats"
+            ],
+            "template": "projects",
+            "builder": "archive",
+            "slug": "/progetti",
+            "generate": "paginate:projects",
+            "options": {
+                "per_page": 12
+            }
         }
-    },
-    "exclude_assets": [
-        "ui.css"
-    ]
+    }
 }

@@ -5,17 +5,20 @@
     'id': 'blog'
 }%}
     {%block content%}
-        <div class="mb-md tablet-v:w-2/3 tablet-h:w-1/2">
+        <div class="mb-2xl tablet-v:w-2/3 tablet-h:w-1/2">
             <h3 class="mb-3xs">
                 COGITO ERGO SUM
             </h3>
             <p class="text-sm mb-xs">
-                Il blog è lo spazio dove pubblico i miei pensieri e le mie riflessioni cercando di condividere la mia passione per la musica e per la tecnologia.
+                Uno spazio dove condivido la mia passione per la musica attraverso riflessioni, consigli e approfondimenti sul mondo pianistico e compositivo.
             </p>
             <a href="{{url('blog.page-1')}}" class="cta">
                 VAI AL BLOG
             </a>
         </div>
+        <h3 class="mb-sm">
+            Ultimi articoli
+        </h3>
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
             {%for id, article in articles%}
                 {%include('./components/article/card.html') with {

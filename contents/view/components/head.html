@@ -5,7 +5,5 @@
 <meta name="author" content="{{website.author}}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{(page.title ? page.title ~ " - ")|raw}}{{website.name}}</title>
-<link href="{{website.url}}/assets/css/ui.css" rel="stylesheet">
-<link href="{{website.url}}/assets/css/highlight-light-lite.css" rel="stylesheet">
-<link rel="icon" type="image/png" href="{{website.url}}/assets/images/favicon.png">
-<script src="{{website.url}}/assets/js/ui.js"></script>
+<link rel="icon" type="image/png" href="{{website.url}}/favicon.png">
+{{vite.css()|raw}}

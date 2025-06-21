@@ -2,13 +2,11 @@
 <html lang="it">
     <head>
         {%include './components/head.html'%}
-        <script src="{{website.url}}/assets/js/homepage.js"></script>
-        <script src="{{website.url}}/assets/js/synth.js"></script>
     </head>
 
     <body class="overflow-y-auto homepage">
         <div class="grid tablet-v:grid-cols-[auto_1fr]">
-            {%include './components/header.html' with {'class': 'w-[100vw] tablet-v:col-start-1 tablet-v:row-span-2'}%}
+            {%include './components/header.html' with {'class': 'w-screen tablet-v:col-start-1 tablet-v:row-span-2'}%}
             <div id="main-wrapper" class="flex overflow-y-hidden flex-col tablet-v:col-start-2">
                 <main id="main" class="items-start grid grid-cols-[repeat(3,100%)] snap-mandatory snap-x overflow-x-scroll overflow-y-hidden scrollbar-hide">
                     {%block main%}
@@ -17,7 +15,6 @@
             </div>
         </div>
         {%include './components/footer.html'%}
-        <!-- 100% privacy-first analytics -->
-        <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        {%include './components/foot.html'%}
     </body>
 </html>

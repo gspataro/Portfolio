@@ -6,13 +6,13 @@ use GSpataro\Pages\Pages;
 use GSpataro\Project\Prototype;
 use GSpataro\Finder\Researcher;
 use GSpataro\CLI\Helper\Stopwatch;
-use GSpataro\Assets\Handler as Assets;
 use GSpataro\Assets\Media;
 use GSpataro\Library\ReadersCollection;
 use GSpataro\Pages\GeneratorsCollection;
 use GSpataro\Contractor\BuildersCollection;
 use GSpataro\Project\Sitemap;
 use SimpleXMLElement;
+use DirectoryIterator;
 
 final class BuildCommand extends BaseCommand
 {
@@ -21,7 +21,6 @@ final class BuildCommand extends BaseCommand
 
     private readonly Pages $pages;
     private readonly Media $media;
-    private readonly Assets $assets;
     private readonly Sitemap $sitemap;
     private readonly Stopwatch $stopwatch;
     private readonly Prototype $prototype;
@@ -29,6 +28,21 @@ final class BuildCommand extends BaseCommand
     private readonly ReadersCollection $readers;
     private readonly BuildersCollection $builders;
     private readonly GeneratorsCollection $generators;
+
+    public function options(): array
+    {
+        $options = [];
+
+        $options['view-only'] = [
+            'type' => 'toggle'
+        ];
+
+        $options['cleanup-only'] = [
+            'type' => 'toggle'
+        ];
+
+        return $options;
+    }
 
     public function main(): void
     {
@@ -39,18 +53,26 @@ final class BuildCommand extends BaseCommand
         $this->readers = $this->app->get('library.readers');
         $this->builders = $this->app->get('contractor.builders');
         $this->pages = $this->app->get('pages.collection');
-        $this->assets = $this->app->get('assets.handler');
         $this->media = $this->app->get('assets.media');
         $this->stopwatch = $this->app->get('cli.stopwatch');
         $this->researcher = $this->app->get('finder.researcher');
         $this->sitemap = $this->app->get('project.sitemap');
 
         $this->stopwatch->start();
+
         $this->processContents();
         $this->processSchemas();
-        $this->buildPages();
-        $this->copyAssets();
+
+        if ($this->argument('cleanup-only') !== false) {
+            $this->buildPages();
+        }
+
+        if ($this->argument('view-only') !== false && $this->argument('cleanup-only') !== false) {
+            $this->generateMedia();
+        }
+
         $this->buildSitemapXml();
+        $this->cleanup();
 
         $this->output->print('{bold}{fg_green}Build completed in ' . $this->stopwatch->stop() . ' seconds!');
     }
@@ -167,12 +189,12 @@ final class BuildCommand extends BaseCommand
     }
 
     /**
-     * Copy assets
+     * Generate media
      *
      * @return void
      */
 
-    private function copyAssets(): void
+    private function generateMedia(): void
     {
         $this->output->print('{bold}Generating media');
 
@@ -181,10 +203,6 @@ final class BuildCommand extends BaseCommand
         foreach ($mediaFiles as $mediaFile) {
             $this->media->resizeMedia($mediaFile);
         }
-
-        $this->output->print('{bold}Copying assets');
-
-        $this->assets->compile();
     }
 
     /**
@@ -200,12 +218,14 @@ final class BuildCommand extends BaseCommand
         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset></urlset>');
         $xml->addAttribute('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
 
+        $excluded = ['/404', '/darkside'];
+
         foreach ($this->sitemap->getAll() as $url) {
             if (str_ends_with($url, '/index')) {
                 $url = substr($url, 0, strlen('index') * -1);
             }
 
-            if ($url === '/404') {
+            if (in_array($url, $excluded)) {
                 continue;
             }
 
@@ -215,5 +235,46 @@ final class BuildCommand extends BaseCommand
         }
 
         $xml->asXml(DIR_OUTPUT . '/sitemap.xml');
+    }
+
+    /**
+     * Delete files that are no more present in the project
+     *
+     * @param string $directory
+     * @return void
+     */
+
+    private function cleanup($directory = DIR_OUTPUT): void
+    {
+        if ($directory === DIR_OUTPUT) {
+            $this->output->print('{bold}Cleaning up');
+        }
+
+        $sitemap = array_values($this->sitemap->getAll());
+        $outputDirectory = new DirectoryIterator($directory);
+        $excluded = ['.vite', 'assets', '.htaccess', 'sitemap.xml', 'favicon.png', 'media'];
+
+        foreach ($outputDirectory as $item) {
+            if ($item->isDot()) {
+                continue;
+            }
+
+            if (in_array($item->getBasename(), $excluded)) {
+                continue;
+            }
+
+            $itemPath = $item->isFile()
+                ? substr($item->getPathname(), strlen(DIR_OUTPUT), strlen('.html') * -1)
+                : substr($item->getPathname(), strlen(DIR_OUTPUT));
+
+            if ($item->isFile() && !in_array($itemPath, $sitemap)) {
+                unlink($item->getPathname());
+                continue;
+            }
+
+            if ($item->isDir()) {
+                $this->cleanup($item->getPathname());
+            }
+        }
     }
 }

@@ -1,0 +1,39 @@
+{%set page = {
+    'title': 'Progetti',
+    'id': 'projects',
+    'layout': {
+        'fluid': false,
+        'breadcrumb': {
+            'index': 'Home',
+            '': 'Progetti'
+        }
+    }
+}%}
+{%extends "./layout/default.html"%}
+{%block main%}
+    <h1 class="mb-lg">
+        Progetti
+    </h1>
+    <div class="grid grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3 gap-lg">
+        {%for id, project in projects%}
+            {%include './components/project/card.html' with {
+                'project': project
+            }%}
+        {%endfor%}
+    </div>
+    {%if pagination.prev or pagination.next%}
+        <div class="flex mt-lg">
+            {%if pagination.prev%}
+                <a href="{{url('projects.page-' ~ pagination.prev)}}" class="cta cta-inverted">
+                    PRECEDENTE
+                </a>
+            {%endif%}
+            <div class="flex-1"></div>
+            {%if pagination.next%}
+                <a href="{{url('projects.page-' ~ pagination.next)}}" class="cta">
+                    SUCCESSIVO
+                </a>
+            {%endif%}
+        </div>
+    {%endif%}
+{%endblock%}

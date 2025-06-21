@@ -1,15 +1,16 @@
 <!-- HEADER -->
+{%from './components/icon.html' import icon%}
 <header id="header" class="
     {{class}}
-    h-[--header-height]
+    h-(--header-height)
     sticky
     top-0
     left-0
     right-0
-    z-20
+    z-40
     group/header
-    tablet-v:w-[--header-height]
-    tablet-v:h-[100vh]
+    tablet-v:w-(--header-height)
+    tablet-v:h-screen
     tablet-v:border-r
     tablet-v:right-auto
     tablet-v:bottom-0
@@ -22,15 +23,15 @@
     tablet-h:data-[style=pianoforte]:border-ivory-dark/50
     tablet-h:data-[style=fortepiano]:bg-thunder-darkest
     tablet-h:data-[style=fortepiano]:border-thunder-dark" data-style="{{style ?? 'pianoforte'}}" data-open="false">
-    <div class="container h-full tablet-v:w-full tablet-v:writing-v-lr">
-        <div class="flex flex-row-reverse items-center w-full h-full tablet-v:py-[--container-padding-y] tablet-v:flex-row">
+    <div class="container h-full tablet-v:w-full tablet-v:writing-v-lr tablet-v:px-(--container-padding-y)">
+        <div class="flex flex-row-reverse items-center w-full h-full tablet-v:flex-row">
             <!-- NAVBAR -->
             <div class="tablet-v:rotate-180">
                 <div id="navbar" class="
                     invisible
                     bg-thunder-darkest
                     absolute
-                    top-[--header-height]
+                    top-(--header-height)
                     left-0
                     right-0
                     bottom-0
@@ -48,17 +49,17 @@
                     <div class="container flex flex-col h-full py-xl tablet-v:h-auto tablet-v:py-0 tablet-v:contents">
                         {%include './components/navbar.html' with {
                             'items': {
+                                'about': {
+                                    'label': 'Chi sono',
+                                    'url': url('about')
+                                },
+                                'projects': {
+                                    'label': 'Progetti',
+                                    'url': url('projects.page-1')
+                                },
                                 'blog': {
                                     'label': 'Blog',
                                     'url': url('blog.page-1')
-                                },
-                                'webdev': {
-                                    'label': 'WEB//DEV',
-                                    'url': url('webdev')
-                                },
-                                'pianist': {
-                                    'label': 'Pianista',
-                                    'url': url('pianist')
                                 },
                                 'contacts': {
                                     'label': 'Scrivimi',
@@ -76,10 +77,10 @@
                 </div>
                 <a href="#" class="text-white tablet-v:hidden" id="navbar-toggle">
                     <span class="group-data-[open=true]/header:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Apri Menu" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+                        {{icon('hamburger', 32, 32, 'Apri menu')}}
                     </span>
                     <span class="group-data-[open=false]/header:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Chiudi Menu" width="32" height="32" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="m12 13.414l5.657 5.657a1 1 0 0 0 1.414-1.414L13.414 12l5.657-5.657a1 1 0 0 0-1.414-1.414L12 10.586L6.343 4.929A1 1 0 0 0 4.93 6.343L10.586 12l-5.657 5.657a1 1 0 1 0 1.414 1.414z"/></g></svg>
+                        {{icon('close', 32, 32, 'Chiudi menu')}}
                     </span>
                 </a>
             </div>
@@ -89,28 +90,14 @@
             <!-- END SPACER -->
             <!-- LOGO -->
             <div class="tablet-v:flex tablet-v:h-[38px] tablet-v:basis-[177px] tablet-v:items-start tablet-v:justify-center tablet-h:basis-[215px]">
-                <a href="{{url('index')}}" class="-rotate-90">
-                    <img src="{{website.url}}/assets/images/logo.svg" alt="Giuseppe Spataro" aria-label="Homepage" width="58" height="271" class="
-                        h-[40px]
-                        hidden
-                        w-auto
-                        pointer-events-none
-                        tablet-v:h-[38px]
-                        tablet-v:group-data-[style=fortepiano]/header:block
-                        tablet-h:h-[44px]
-                        tablet-h:group-data-[style=pianoforte]/header:block
-                        tablet-h:group-data-[style=fortepiano]/header:hidden
-                        desktop:h-[48px]">
-                    <img src="{{website.url}}/assets/images/logo-light.svg" alt="Giuseppe Spataro" aria-label="Homepage" width="58" height="271" class="
-                        h-[40px]
-                        w-auto
-                        pointer-events-none
-                        tablet-v:h-[38px]
-                        tablet-v:group-data-[style=fortepiano]/header:hidden
-                        tablet-h:h-[44px]
-                        tablet-h:group-data-[style=pianoforte]/header:hidden
-                        tablet-h:group-data-[style=fortepiano]/header:block
-                        desktop:h-[48px]">
+                <a href="{{url('index')}}" class="-rotate-90 text-ivory-lightest tablet-h:group-data-[style=pianoforte]/header:text-thunder-darkest">
+                    {%include './components/logo.html' with {
+                        'width': 211,
+                        'height': 26,
+                        'attributes': {
+                            'class': 'h-[--spacing(6.5)] w-auto pointer-events-none tablet-v:h-7'
+                        }
+                    }%}
                 </a>
             </div>
             <!-- END LOGO -->

@@ -1,11 +1,11 @@
 <nav>
     <!-- WRAPPER -->
     <ul class="flex flex-col gap-xs tablet-v:flex-row tablet-h:gap-xs desktop:gap-sm">
-        <li class="w-full bg-thunder-lightest h-[1px] tablet-v:hidden">
+        <li class="w-full bg-thunder-lightest h-px tablet-v:hidden">
         </li>
         {%for id, item in items%}
             <!-- ITEM -->
-            <li class="font-normal uppercase text-[24px] font-oswald tablet-v:text-[20px] tablet-h:text-[22px] desktop:text-[24px]">
+            <li class="font-normal uppercase text-[24px] font-oswald tablet-v:text-[20px] tablet-h:text-[22px]">
                 <a href="{{item.url}}" class="
                     relative
                     block
@@ -30,7 +30,7 @@
                     {{item.label}}
                 </a>
             </li>
-            <li class="w-full bg-thunder-lightest h-[1px] tablet-v:hidden">
+            <li class="w-full bg-thunder-lightest h-px tablet-v:hidden">
             </li>
             <!-- END ITEM -->
         {%endfor%}
