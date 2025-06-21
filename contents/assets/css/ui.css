@@ -232,7 +232,7 @@
 
     a {
         @apply
-            text-thunder-darkest
+            text-inherit
             underline
             font-normal;
     }

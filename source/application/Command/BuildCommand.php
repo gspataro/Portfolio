@@ -69,9 +69,9 @@ final class BuildCommand extends BaseCommand
 
         if ($this->argument('view-only') !== false && $this->argument('cleanup-only') !== false) {
             $this->generateMedia();
-            $this->buildSitemapXml();
         }
 
+        $this->buildSitemapXml();
         $this->cleanup();
 
         $this->output->print('{bold}{fg_green}Build completed in ' . $this->stopwatch->stop() . ' seconds!');
@@ -218,12 +218,14 @@ final class BuildCommand extends BaseCommand
         $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset></urlset>');
         $xml->addAttribute('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
 
+        $excluded = ['/404', '/darkside'];
+
         foreach ($this->sitemap->getAll() as $url) {
             if (str_ends_with($url, '/index')) {
                 $url = substr($url, 0, strlen('index') * -1);
             }
 
-            if ($url === '/404') {
+            if (in_array($url, $excluded)) {
                 continue;
             }
 
