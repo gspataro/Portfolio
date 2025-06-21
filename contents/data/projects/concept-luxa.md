@@ -28,7 +28,7 @@ Di seguito il risultato.
     'title': 'Sound logo',
     'sources': [
         {
-            'src': url('media/audio/luxa-sound-logo.mp3'),
+            'src': 'https://sound.giuseppespataro.it/concept/luxa/luxa-sound-logo.mp3',
             'type': 'audio/mp3'
         }
     ]
@@ -52,7 +52,7 @@ Quella proposta di seguito è la **versione completa con sound logo integrato**.
     'title': 'Jingle',
     'sources': [
         {
-            'src': url('media/audio/luxa-jingle.mp3'),
+            'src': 'https://sound.giuseppespataro.it/concept/luxa/luxa-jingle.mp3',
             'type': 'audio/mp3'
         }
     ]
