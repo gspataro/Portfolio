@@ -4,5 +4,8 @@
     },
     "dev": {
         "label": "Sviluppo"
+    },
+    "sound": {
+        "label": "Sound"
     }
 }
