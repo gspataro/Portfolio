@@ -58,11 +58,7 @@
             } only%}
         </header>
         <div class="prose">
-            {%if article.frontmatter.twig%}
-                {{include(template_from_string(article.content))}}
-            {%else%}
-                {{article.content|raw}}
-            {%endif%}
+            {{include(template_from_string(article.content))}}
         </div>
     </article>
 {%endblock%}
