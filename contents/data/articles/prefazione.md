@@ -8,6 +8,8 @@ thumbnail: blog-prefazione-main.jpg
 
 Tutto è partito da una semplice idea: realizzare il mio sito web personale. Del resto passo molto tempo a lavorare sui siti web delle altre persone, serviva un posto dove far esplodere le mie idee e la mia creatività. Il mio sito però aveva bisogno di racchiudere due aspetti di me molto differenti tra loro: il musicista e il programmatore.
 
+[ARTICLE:TOC]
+
 ## Il processo creativo
 
 All’inizio sembrava semplice, ho iniziato a pensare alla struttura, alla palette dei colori, alle tecnologie che avrei utilizzato per realizzarlo. Con il passare del tempo però è passato l’entusiasmo del momento e così sono finito nel vortice della procrastinazione.

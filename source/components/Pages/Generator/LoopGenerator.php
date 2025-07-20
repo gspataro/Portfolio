@@ -31,6 +31,7 @@ final class LoopGenerator extends BaseGenerator
 
         foreach ($basedOn as $contentTag => $content) {
             $tag = $schema['tag'] . '.' . $contentTag;
+            $content['id'] = $contentTag;
 
             $this->addPageToCollection(
                 $schema['tag'],

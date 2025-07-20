@@ -9,6 +9,8 @@ published: 2025-03-13
 
 Creare un sito web è un'impresa impegnativa: richiede uno studio attento sulla disposizione dei contenuti, sul design e deve riflettere l'identità di chi o cosa si sta rappresentando. Di solito, si tratta di siti web dedicati a un singolo prodotto o a una persona con una specifica attività. Ma cosa succede quando le attività da rappresentare sono molteplici?
 
+[ARTICLE:TOC]
+
 ## Strutturare la navigazione per un sito web multi-attività
 
 Essendo sia pianista che sviluppatore web, volevo realizzare uno spazio personale che mettesse in evidenza entrambe le mie attività. Tuttavia, la gestione della navigazione si stava rivelando complessa a causa di alcune differenze:

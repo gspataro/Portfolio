@@ -10,6 +10,9 @@ published: 2025-06-26
 Quando parliamo di **brand identity** le prime cose che ci vengono in mente sono il naming, lo slogan, il logo, i colori e così via. Tutti questi elementi sono fondamentali per rendere un'azienda unica e riconoscibile.
 
 Ma se ti dicessi che esiste un modo per rendere la propria azienda riconoscibile anche **a occhi chiusi**? Entra in gioco il **sound branding**, una componente spesso sottovalutata, ma capace di aumentare significativamente il valore del marchio.
+
+[ARTICLE:TOC]
+
 ## La voce del brand: cos'è il sound branding
 
 Con **identità sonora** (o sound branding) si intende l'insieme degli elementi audio e musicali che rendono un marchio immediatamente riconoscibile.
