@@ -48,8 +48,16 @@
                 <h1 class="flex-1">{{article.frontmatter.title}}</h1>
             </div>
         </header>
-        <div class="prose">
+        <div class="prose mb-xl">
             {{include(template_from_string(article.content))}}
+        </div>
+        <div class="flex items-center gap-xs">
+            <div class="font-normal">
+                CONDIVIDI
+            </div>
+            {%include './components/share.html' with {
+                'url': url('article.' ~ article.id)
+            }%}
         </div>
     </article>
 {%endblock%}
