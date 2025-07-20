@@ -488,6 +488,13 @@
             }
         }
 
+        .table-of-contents {
+            @apply
+                my-md
+                first:mt-0
+                last:mb-0;
+        }
+
         .player {
             @apply
                 my-md
@@ -509,6 +516,11 @@
                 list-disc
                 first:mt-0
                 last:mt-0;
+
+            ul, ol {
+                @apply
+                    my-0;
+            }
         }
 
         ol {

@@ -13,6 +13,8 @@ Premetto che questo articolo non vuole essere un saggio accademico, ma nasce com
 
 Poiché suonare a memoria è fonte di stress per molti musicisti, proviamo ad analizzare la questione da un punto di vista storico e tecnico, per poi interrogarci sull'effettiva utilità di questa pratica oggi.
 
+[ARTICLE:TOC]
+
 ## Cenni storici
 
 Un nome fondamentale, se vogliamo parlare di memoria in ambito musicale, è quello di **Franz Liszt**. Oltre a essere uno dei compositori più influenti del repertorio romantico, fu anche un celebre virtuoso del pianoforte. Liszt era noto per esibirsi con programmi interamente a memoria.

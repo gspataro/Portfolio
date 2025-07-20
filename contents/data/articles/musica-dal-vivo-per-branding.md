@@ -13,6 +13,8 @@ Fin dall'antichità, la musica è stata parte integrante di cerimonie religiose,
 
 Nel contesto aziendale contemporaneo, la musica dal vivo va ben oltre l’intrattenimento: può diventare uno strumento potente di marketing esperienziale e identità di brand. Che si tratti di un lancio prodotto, una cena aziendale o l’inaugurazione di uno store, una performance musicale contribuisce a definire l’immagine e il posizionamento del marchio.
 
+[ARTICLE:TOC]
+
 ## Fare branding con la musica: suono, atmosfera e identità
 
 Una performance musicale è parte integrante dell’esperienza complessiva di un evento. Fare branding attraverso la musica significa creare coerenza tra suono, atmosfera e messaggio aziendale.
