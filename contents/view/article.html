@@ -21,41 +21,32 @@
 }%}
 {%extends "./layout/default.html"%}
 {%block main%}
-    {%set meta = {
-        "Pubbicato": article.frontmatter.published|date('d F Y')
-    }%}
-    {%if article.frontmatter.modified%}
-        {%set meta = meta|merge({
-            "Aggiornato": article.frontmatter.modified|date('d F Y')
-        })%}
-    {%endif%}
-    {%if article.frontmatter.categories%}
-        {%set meta = meta|merge({
-            "Categorie": include('./components/article/categories.html', {categories: article.frontmatter.categories})
-        })%}
-    {%endif%}
     <article class="max-w-[800px] mx-auto">
-        {#<header class="mb-md laptop-sm:flex laptop-sm:gap-xl">
-            <div class="laptop-sm:basis-[400px] desktop:basis-[500px]">
-                <h1 class="mb-xs">{{article.frontmatter.title}}</h1>
-                {%include './components/post/meta.html' with {
-                    'meta': meta,
-                    'class': 'tablet-v:w-2/3 laptop-sm:col-start-1 laptop-sm:w-full'
-                } only%}
-            </div>
-            {%if article.frontmatter.thumbnail%}
-                <figure class="mt-lg laptop-sm:mt laptop-sm:flex-1">
-                    <img src="{{media(article.frontmatter.thumbnail, 'large')}}" alt="{{article.frontmatter.title}}">
-                </figure>
+        <header class="mb-md">
+            {%if article.frontmatter.categories%}
+                <div class="flex items-center gap-2xs mb-2xs">
+                    <a href="{{url('blog.page-1')}}" class="cta cta-inverted cta-inline">
+                        Blog
+                    </a>
+                    <div class="font-normal">
+                        /
+                    </div>
+                    <div class="font-normal">
+                        <time datetime="{{article.frontmatter.published|date('Y-m-d')}}" class="block">
+                            {{article.frontmatter.published|date('d F Y')}}
+                        </time>
+                    </div>
+                    <div class="font-normal">
+                        /
+                    </div>
+                    {%include './components/article/categories.html' with {
+                        categories: article.frontmatter.categories
+                    }%}
+                </div>
             {%endif%}
-        </header>#}
-        <header class="mb-lg tablet-v:w-2/3 tablet-h:w-2/3">
-            <div class="flex items-center mb-md">
+            <div class="flex items-center">
                 <h1 class="flex-1">{{article.frontmatter.title}}</h1>
             </div>
-            {%include './components/post/meta.html' with {
-                'meta': meta
-            } only%}
         </header>
         <div class="prose">
             {{include(template_from_string(article.content))}}

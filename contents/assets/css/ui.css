@@ -432,6 +432,13 @@
                 hover:after:ml-0
                 data-expanded:after:-rotate-90;
         }
+
+        &.cta-inline {
+            @apply
+                font-normal
+                p-0
+                before:w-[calc(100%-(var(--spacing-4xs)+1em))];
+        }
     }
 
     /**
@@ -454,12 +461,12 @@
 
     .prose {
         @apply
-            text-sm;
+            text-[20px];
 
         h1, h2, h3, h4, h5 {
             @apply
-                mt-xs
-                mb-3xs
+                mt-md
+                mb-xs
                 first:mt-0
                 last:mb-0;
         }
@@ -490,7 +497,7 @@
 
         p {
             @apply
-                my-3xs
+                my-2xs
                 first:mt-0
                 last:mt-0;
         }
