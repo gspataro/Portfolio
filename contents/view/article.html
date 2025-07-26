@@ -2,11 +2,6 @@
     'title': article.frontmatter.title,
     'layout': {
         'contain': true,
-        'breadcrumb': {
-            'index': 'Home',
-            'blog.page-1': 'Blog',
-            '': article.frontmatter.title
-        },
         'footer': {
             'contacts': {
                 'title': 'Lascia un commento',
@@ -33,7 +28,7 @@
                     </div>
                     <div class="font-normal">
                         <time datetime="{{article.frontmatter.published|date('Y-m-d')}}" class="block">
-                            {{article.frontmatter.published|date('d F Y')}}
+                            {{article.frontmatter.published|format_date('long', locale: 'it')}}
                         </time>
                     </div>
                     <div class="font-normal">

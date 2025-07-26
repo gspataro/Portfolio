@@ -11,6 +11,7 @@ use Twig\Extra\String\StringExtension;
 use GSpataro\DependencyInjection\Component;
 use GSpataro\View\TwigGenerics;
 use Twig\Extension\StringLoaderExtension;
+use Twig\Extra\Intl\IntlExtension;
 
 final class TwigComponent extends Component
 {
@@ -35,6 +36,7 @@ final class TwigComponent extends Component
         $twig = $this->container->get('twig');
 
         $twig->addExtension(new StringExtension());
+        $twig->addExtension(new IntlExtension());
         $twig->addExtension(new StringLoaderExtension());
         $twig->addExtension(new TwigGenerics(
             $this->container->get('assets.vite')

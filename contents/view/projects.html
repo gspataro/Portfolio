@@ -14,7 +14,7 @@
     <h1 class="mb-lg">
         Progetti
     </h1>
-    <div class="grid grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3 gap-lg">
+    <div class="grid grid-cols-1 gap-lg tablet-v:gap-xs tablet-v:grid-cols-2 tablet-h:grid-cols-3 laptop-sm:gap-lg">
         {%for id, project in projects%}
             {%include './components/project/card.html' with {
                 'project': project
