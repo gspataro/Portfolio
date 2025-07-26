@@ -252,7 +252,7 @@ final class BuildCommand extends BaseCommand
 
         $sitemap = array_values($this->sitemap->getAll());
         $outputDirectory = new DirectoryIterator($directory);
-        $excluded = ['.vite', 'assets', '.htaccess', 'sitemap.xml', 'favicon.png', 'media'];
+        $excluded = ['.vite', 'assets', '.htaccess', 'sitemap.xml', 'favicon.png', 'favicon-dark.png', 'media'];
 
         foreach ($outputDirectory as $item) {
             if ($item->isDot()) {

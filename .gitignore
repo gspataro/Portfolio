@@ -3,5 +3,6 @@
 /output/*
 !/output/.htaccess
 !/output/favicon.png
+!/output/favicon-dark.png
 /source/vendor/
 .env

@@ -1,4 +1,5 @@
 import './ui';
+import './favicon';
 import './slider';
 import './player';
 
