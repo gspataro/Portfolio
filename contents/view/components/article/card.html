@@ -15,7 +15,7 @@
         </{{heading_type ?? 'h5'}}>
     </header>
     <time datetime="{{article.frontmatter.published|date('Y-m-d')}}" class="mb-xs">
-        {{article.frontmatter.published|date('d F Y')}}
+        {{article.frontmatter.published|format_date('long', locale: 'it')}}
     </time>
     <div class="flex-1"></div>
     <div class="flex items-center gap-3xs">
