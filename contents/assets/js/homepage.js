@@ -1,8 +1,6 @@
-export function initHomepage() {
-    const header = document.getElementById('header');
+export function init() {
     const mainWrapper = document.getElementById('main-wrapper');
     const main = document.getElementById('main');
-    const footer = document.getElementById('footer');
     const sections = main.getElementsByTagName('section');
     const navigationPrev = main.getElementsByClassName('nav-prev');
     const navigationNext = main.getElementsByClassName('nav-next');
@@ -11,24 +9,20 @@ export function initHomepage() {
     /**
      * Setup DOM based on section informations
      *
-     * @param DOMElement section
+     * @param int id
      * @return void
      */
 
-    function setupSection(section)
+    function setupSection(id)
     {
-        if (!section) {
+        if (!sections[id]) {
             return;
         }
 
-        const sectionStyle = section.dataset.style ?? 'pianoforte';
-
-        // Update header and footer styles based on section
-        header.dataset.style = sectionStyle;
-        footer.dataset.style = sectionStyle;
+        document.body.dataset.style = id % 2 ? 'fortepiano' : 'pianoforte';
 
         // Main section height
-        mainWrapper.style.height = (section.offsetHeight - 0.5) + 'px';
+        mainWrapper.style.height = (sections[id].offsetHeight - 0.5) + 'px';
     }
 
     /**
@@ -114,18 +108,18 @@ export function initHomepage() {
     }
 
     currentSectionId = main.scrollLeft / main.offsetWidth;
-    setupSection(sections[currentSectionId]);
+    setupSection(currentSectionId);
 
     // Redo section setup on window resize
     window.addEventListener('resize', function () {
         currentSectionId = main.scrollLeft / main.offsetWidth;
-        setupSection(sections[currentSectionId]);
+        setupSection(currentSectionId);
     });
 
     // Determine current section based on scroll snap
     main.addEventListener('scroll', function () {
         currentSectionId = Math.round(main.scrollLeft / main.offsetWidth);
-        setupSection(sections[currentSectionId]);
+        setupSection(currentSectionId);
     });
 
     // Apply functionality to prev/next navigation
@@ -186,4 +180,4 @@ export function initHomepage() {
             muteControl.click();
         }
     });
-}
+};

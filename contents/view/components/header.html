@@ -9,24 +9,20 @@
     right-0
     z-40
     group/header
-    tablet-v:w-(--header-height)
-    tablet-v:h-screen
-    tablet-v:border-r
-    tablet-v:right-auto
-    tablet-v:bottom-0
+    tablet-h:w-(--header-height)
+    tablet-h:h-screen
+    tablet-h:border-r
+    tablet-h:right-auto
+    tablet-h:bottom-0
     bg-thunder-darkest
-    tablet-v:data-[style=pianoforte]:bg-thunder-darkest
-    tablet-v:data-[style=fortepiano]:bg-ivory-lightest
-    tablet-v:data-[style=pianoforte]:border-thunder-dark
-    tablet-v:data-[style=fortepiano]:border-ivory-dark/50
-    tablet-h:data-[style=pianoforte]:bg-ivory-lightest
-    tablet-h:data-[style=pianoforte]:border-ivory-dark/50
-    tablet-h:data-[style=fortepiano]:bg-thunder-darkest
-    tablet-h:data-[style=fortepiano]:border-thunder-dark" data-style="{{style ?? 'pianoforte'}}" data-open="false">
-    <div class="container h-full tablet-v:w-full tablet-v:writing-v-lr tablet-v:px-(--container-padding-y)">
-        <div class="flex flex-row-reverse items-center w-full h-full tablet-v:flex-row">
+    tablet-h:group-data-[style=pianoforte]/body:bg-ivory-lightest
+    tablet-h:group-data-[style=pianoforte]/body:border-ivory-dark/50
+    tablet-h:group-data-[style=fortepiano]/body:bg-thunder-darkest
+    tablet-h:group-data-[style=fortepiano]/body:border-thunder-dark" data-open="false">
+    <div class="container h-full tablet-h:w-full tablet-h:writing-v-lr tablet-h:px-(--container-padding-y)">
+        <div class="flex flex-row-reverse items-center w-full h-full tablet-h:flex-row">
             <!-- NAVBAR -->
-            <div class="tablet-v:rotate-180">
+            <div class="tablet-h:rotate-180">
                 <div id="navbar" class="
                     invisible
                     bg-thunder-darkest
@@ -41,12 +37,12 @@
                     duration-300
                     group-data-[open=true]/header:opacity-100
                     group-data-[open=true]/header:visible
-                    tablet-v:h-auto
-                    tablet-v:bg-transparent
-                    tablet-v:static
-                    tablet-v:visible
-                    tablet-v:contents">
-                    <div class="container flex flex-col h-full py-xl tablet-v:h-auto tablet-v:py-0 tablet-v:contents">
+                    tablet-h:h-auto
+                    tablet-h:bg-transparent
+                    tablet-h:static
+                    tablet-h:visible
+                    tablet-h:contents">
+                    <div class="container flex flex-col h-full py-xl tablet-h:h-auto tablet-h:py-0 tablet-h:contents">
                         {%include './components/navbar.html' with {
                             'items': {
                                 'about': {
@@ -67,15 +63,15 @@
                                 }
                             }
                         }%}
-                        <div class="flex-1 tablet-v:hidden"></div>
-                        <div class="tablet-v:hidden">
+                        <div class="flex-1 tablet-h:hidden"></div>
+                        <div class="tablet-h:hidden">
                             {%include './components/social.html' with {
                                 'style': 'fortepiano'
                             }%}
                         </div>
                     </div>
                 </div>
-                <a href="#" class="text-white tablet-v:hidden" id="navbar-toggle">
+                <a href="#" class="text-white tablet-h:hidden" id="navbar-toggle">
                     <span class="group-data-[open=true]/header:hidden">
                         {{icon('hamburger', 32, 32, 'Apri menu')}}
                     </span>
@@ -89,19 +85,17 @@
             <div class="flex-1"></div>
             <!-- END SPACER -->
             <!-- LOGO -->
-            <div class="tablet-v:flex tablet-v:h-[38px] tablet-v:basis-[177px] tablet-v:items-start tablet-v:justify-center tablet-h:basis-[215px]">
+            <div class="tablet-h:flex tablet-h:h-[38px tablet-h:basis-[215px] tablet-h:items-start tablet-h:justify-center">
                 <a href="{{url('index')}}" class="
                     -rotate-90
                     text-ivory-lightest
-                    tablet-v:text-thunder-darkest
-                    tablet-v:group-data-[style=pianoforte]/header:text-ivory-lightest
                     tablet-h:text-ivory-lightest
-                    tablet-h:group-data-[style=pianoforte]/header:text-thunder-darkest">
+                    tablet-h:group-data-[style=pianoforte]/body:text-thunder-darkest">
                     {%include './components/logo.html' with {
                         'width': 211,
                         'height': 26,
                         'attributes': {
-                            'class': 'h-[--spacing(6.5)] w-auto pointer-events-none tablet-v:h-7'
+                            'class': 'h-[--spacing(6.5)] w-auto pointer-events-none tablet-h:h-7'
                         }
                     }%}
                 </a>
