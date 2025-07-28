@@ -172,8 +172,7 @@
         @apply
             bg-ivory-lightest
             text-thunder-darkest
-            font-roboto
-            font-light;
+            font-roboto;
 
         &.hamburger-open {
             @apply
@@ -460,8 +459,7 @@
      */
 
     .prose {
-        @apply
-            text-[20px];
+        @apply text-sm;
 
         h1, h2, h3, h4, h5 {
             @apply

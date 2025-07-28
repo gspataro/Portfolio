@@ -90,9 +90,9 @@
             <div class="grid gap-sm grid-cols-1 tablet-v:grid-cols-2 tablet-h:grid-cols-3">
                 {%for experience in experiences%}
                     <div>
-                        <h4 class="text-h6">{{experience.name}}</h4>
-                        <div class="text-thunder-lightest font-normal">{{experience.location|raw}}</div>
-                        <div>{{experience.description}}</div>
+                        <h4 class="text-h6 mb-5xs">{{experience.name}}</h4>
+                        <div class="mb-4xs">{{experience.location|raw}}</div>
+                        <div class="text-thunder-lightest">{{experience.description}}</div>
                     </div>
                 {%endfor%}
             </div>
