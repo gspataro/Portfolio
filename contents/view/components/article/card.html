@@ -5,11 +5,13 @@
     rounded-3xl
     border-2
     p-sm
-    group
+    group-data-[style=fortepiano]/body:bg-thunder-darker
+    group-data-[style=fortepiano]/body:text-ivory-lightest
+    group-data-[style=fortepiano]/body:border-thunder-dark
     {{class}}">
     <header class="mb-3xs">
         <{{heading_type ?? 'h5'}}>
-            <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">
+            <a href="{{url('article.' ~ id)}}" class="text-current no-underline">
                 {{article.frontmatter.title}}
             </a>
         </{{heading_type ?? 'h5'}}>
@@ -23,7 +25,7 @@
             'categories': article.frontmatter.categories
         }%}
         <div class="flex-1"></div>
-        <a href="{{url('article.' ~ id)}}" class="cta">
+        <a href="{{url('article.' ~ id)}}" class="cta text-current">
             Leggi
         </a>
     </div>
