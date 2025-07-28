@@ -338,6 +338,7 @@
             border-2
             border-solid
             border-current
+            rounded-xl
             text-thunder-darkest
             font-medium
             no-underline
@@ -359,6 +360,13 @@
             mask-repeat: no-repeat;
             -webkit-mask-size: 100% 100%;
             mask-size: 100% 100%;
+        }
+
+        &.btn-lg {
+            @apply
+                text-[1.2rem]
+                py-3xs
+                px-xs;
         }
     }
 
