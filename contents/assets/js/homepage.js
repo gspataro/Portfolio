@@ -111,14 +111,49 @@ export function init() {
     setupSection(currentSectionId);
 
     // Redo section setup on window resize
+    let resizeTimeout = null;
+
     window.addEventListener('resize', function () {
-        currentSectionId = main.scrollLeft / main.offsetWidth;
-        setupSection(currentSectionId);
+        if (!currentSectionId) {
+            currentSectionId = main.scrollLeft / main.offsetWidth;
+            setupSection(currentSectionId);
+        }
+
+        resizeTimeout = setTimeout(function () {
+            const section = sections[currentSectionId];
+
+            if (main.scrollLeft !== section.offsetLeft) {
+                main.scroll({
+                    left: section.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }, 150);
     });
 
     // Determine current section based on scroll snap
+    let scrollTimeout = null;
+
     main.addEventListener('scroll', function () {
+        if (scrollTimeout !== null) {
+            clearTimeout(scrollTimeout);
+        }
+
         currentSectionId = Math.round(main.scrollLeft / main.offsetWidth);
+
+        window.addEventListener('touchend', function () {
+            scrollTimeout = setTimeout(function () {
+                const section = sections[currentSectionId];
+
+                if (main.scrollLeft !== section.offsetLeft) {
+                    main.scroll({
+                        left: section.offsetLeft,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 150);
+        });
+
         setupSection(currentSectionId);
     });
 
