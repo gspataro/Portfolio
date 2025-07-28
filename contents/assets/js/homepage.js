@@ -1,5 +1,4 @@
 export function init() {
-    const mainWrapper = document.getElementById('main-wrapper');
     const main = document.getElementById('main');
     const sections = main.getElementsByTagName('section');
     const navigationPrev = main.getElementsByClassName('nav-prev');
@@ -24,7 +23,7 @@ export function init() {
         document.body.dataset.style = id % 2 ? 'fortepiano' : 'pianoforte';
 
         // Main section height
-        mainWrapper.style.height = (sections[id].offsetHeight - 0.5) + 'px';
+        main.style.height = sections[id].offsetHeight + 'px';
     }
 
     /**
