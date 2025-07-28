@@ -4,6 +4,8 @@ export function init() {
     const sections = main.getElementsByTagName('section');
     const navigationPrev = main.getElementsByClassName('nav-prev');
     const navigationNext = main.getElementsByClassName('nav-next');
+    let manualNavigation = false;
+    let scrollTimeout = null;
     let currentSectionId = 0;
 
     /**
@@ -34,6 +36,8 @@ export function init() {
 
     function goToSection(id)
     {
+        clearTimeout(scrollTimeout);
+        manualNavigation = true;
         const section = sections[id] ?? null;
 
         if (!section) {
@@ -111,15 +115,13 @@ export function init() {
     setupSection(currentSectionId);
 
     // Redo section setup on window resize
-    let resizeTimeout = null;
-
     window.addEventListener('resize', function () {
         if (!currentSectionId) {
             currentSectionId = main.scrollLeft / main.offsetWidth;
             setupSection(currentSectionId);
         }
 
-        resizeTimeout = setTimeout(function () {
+        setTimeout(function () {
             const section = sections[currentSectionId];
 
             if (main.scrollLeft !== section.offsetLeft) {
@@ -132,29 +134,32 @@ export function init() {
     });
 
     // Determine current section based on scroll snap
-    let scrollTimeout = null;
-
     main.addEventListener('scroll', function () {
+        currentSectionId = Math.round(main.scrollLeft / main.offsetWidth);
+        setupSection(currentSectionId);
+        manualNavigation = false;
+    });
+
+    // Fix section scroll on mobile device
+    window.addEventListener('touchend', function () {
+        if (manualNavigation) {
+            return;
+        }
+
         if (scrollTimeout !== null) {
             clearTimeout(scrollTimeout);
         }
 
-        currentSectionId = Math.round(main.scrollLeft / main.offsetWidth);
+        scrollTimeout = setTimeout(function () {
+            const section = sections[currentSectionId];
 
-        window.addEventListener('touchend', function () {
-            scrollTimeout = setTimeout(function () {
-                const section = sections[currentSectionId];
-
-                if (main.scrollLeft !== section.offsetLeft) {
-                    main.scroll({
-                        left: section.offsetLeft,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 150);
-        });
-
-        setupSection(currentSectionId);
+            if (main.scrollLeft !== section.offsetLeft) {
+                main.scroll({
+                    left: section.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }, 150);
     });
 
     // Apply functionality to prev/next navigation
