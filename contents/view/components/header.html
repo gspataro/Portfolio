@@ -2,30 +2,48 @@
 {%from './components/icon.html' import icon%}
 <header id="header" class="
     {{class}}
-    h-(--header-height)
+    container
+    px-4xs
+    pt-4xs
     sticky
     top-0
     left-0
     right-0
     z-40
     group/header
-    tablet-h:w-(--header-height)
-    tablet-h:h-screen
-    tablet-h:border-r
+    tablet-h:w-auto
     tablet-h:right-auto
     tablet-h:bottom-0
-    bg-thunder-darkest
-    tablet-h:group-data-[style=pianoforte]/body:bg-ivory-lightest
-    tablet-h:group-data-[style=pianoforte]/body:border-ivory-dark/50
-    tablet-h:group-data-[style=fortepiano]/body:bg-thunder-darkest
-    tablet-h:group-data-[style=fortepiano]/body:border-thunder-dark" data-open="false">
-    <div class="container h-full tablet-h:w-full tablet-h:writing-v-lr tablet-h:px-(--container-padding-y)">
+    tablet-h:py-0
+    tablet-h:px-0
+    tablet-h:h-screen
+    tablet-h:mx-[unset]" data-open="false">
+    <div class="
+        bg-thunder-darker
+        text-ivory-lightest
+        px-xs
+        h-(--header-height)
+        rounded-2xl
+        border
+        border-thunder-light
+        tablet-h:writing-v-lr
+        tablet-h:w-(--header-height)
+        tablet-h:h-full
+        tablet-h:border-0
+        tablet-h:border-r
+        tablet-h:px-(--container-padding-y)
+        tablet-h:rounded-none
+        tablet-h:group-data-[style=pianoforte]/body:bg-ivory-lightest
+        tablet-h:group-data-[style=pianoforte]/body:text-thunder-darkest
+        tablet-h:group-data-[style=pianoforte]/body:border-ivory-dark/50
+        tablet-h:group-data-[style=fortepiano]/body:bg-thunder-darkest
+        tablet-h:group-data-[style=fortepiano]/body:text-ivory-lightest
+        tablet-h:group-data-[style=fortepiano]/body:border-thunder-dark">
         <div class="flex flex-row-reverse items-center w-full h-full tablet-h:flex-row">
             <!-- NAVBAR -->
             <div class="tablet-h:rotate-180">
                 <div id="navbar" class="
                     invisible
-                    bg-thunder-darkest
                     absolute
                     top-(--header-height)
                     left-0
@@ -33,16 +51,27 @@
                     bottom-0
                     h-[calc(100vh-var(--header-height))]
                     opacity-0
-                    transition-all
+                    transition-opacity
                     duration-300
                     group-data-[open=true]/header:opacity-100
                     group-data-[open=true]/header:visible
+                    group-data-[style=pianoforte]/body:text-thunder-darkest
+                    group-data-[style=fortepiano]/body:text-ivory-lightest
                     tablet-h:h-auto
                     tablet-h:bg-transparent
                     tablet-h:static
                     tablet-h:visible
-                    tablet-h:contents">
-                    <div class="container flex flex-col h-full py-xl tablet-h:h-auto tablet-h:py-0 tablet-h:contents">
+                    tablet-h:contents
+                    tablet-h:text-inherit">
+                    <div class="
+                        container
+                        flex
+                        flex-col
+                        h-full
+                        py-xl
+                        tablet-h:h-auto
+                        tablet-h:py-0
+                        tablet-h:contents">
                         {%include './components/navbar.html' with {
                             'items': {
                                 'about': {
@@ -65,13 +94,11 @@
                         }%}
                         <div class="flex-1 tablet-h:hidden"></div>
                         <div class="tablet-h:hidden">
-                            {%include './components/social.html' with {
-                                'style': 'fortepiano'
-                            }%}
+                            {%include './components/social.html'%}
                         </div>
                     </div>
                 </div>
-                <a href="#" class="text-white tablet-h:hidden" id="navbar-toggle">
+                <a href="#" class="tablet-h:hidden" id="navbar-toggle">
                     <span class="group-data-[open=true]/header:hidden">
                         {{icon('hamburger', 32, 32, 'Apri menu')}}
                     </span>
@@ -86,22 +113,32 @@
             <!-- END SPACER -->
             <!-- LOGO -->
             <div class="tablet-h:flex tablet-h:h-[38px tablet-h:basis-[215px] tablet-h:items-start tablet-h:justify-center">
-                <a href="{{url('index')}}" class="
-                    -rotate-90
-                    text-ivory-lightest
-                    tablet-h:text-ivory-lightest
-                    tablet-h:group-data-[style=pianoforte]/body:text-thunder-darkest">
+                <a href="{{url('index')}}" class="text-inherit -rotate-90">
                     {%include './components/logo.html' with {
                         'width': 211,
                         'height': 26,
                         'attributes': {
-                            'class': 'h-[--spacing(6.5)] w-auto pointer-events-none tablet-h:h-7'
+                            'class': 'h-5 w-auto pointer-events-none tablet-v:h-6 tablet-h:h-7'
                         }
                     }%}
                 </a>
             </div>
             <!-- END LOGO -->
         </div>
+    </div>
+    <div class="
+        invisible
+        bg-ivory-lightest
+        fixed
+        inset-0
+        -z-10
+        opacity-0
+        transition-all
+        duration-300
+        group-data-[open=true]/header:opacity-100
+        group-data-[open=true]/header:visible
+        group-data-[style=fortepiano]/body:bg-thunder-darkest
+        tablet-h:hidden">
     </div>
 </header>
 <!-- END HEADER -->
