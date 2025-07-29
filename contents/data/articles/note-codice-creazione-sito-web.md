@@ -5,6 +5,10 @@ keywords: creare un sito web, sviluppo web, sito statico, web design minimalista
 categories:
  - dev
 published: 2025-03-13
+thumbnail:
+    src: blog-note-codice.jpg
+    alt: Scrivania con computer desktop e portatile
+    caption: 'Foto di <a href="https://unsplash.com/photos/a-macbook-with-lines-of-code-on-its-screen-on-a-busy-desk-m_HRfLhgABo" target="_blank">Christopher Gower</a>'
 ---
 
 Creare un sito web è un'impresa impegnativa: richiede uno studio attento sulla disposizione dei contenuti, sul design e deve riflettere l'identità di chi o cosa si sta rappresentando. Di solito, si tratta di siti web dedicati a un singolo prodotto o a una persona con una specifica attività. Ma cosa succede quando le attività da rappresentare sono molteplici?

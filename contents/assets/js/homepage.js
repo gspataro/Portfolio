@@ -1,34 +1,29 @@
-export function initHomepage() {
-    const header = document.getElementById('header');
-    const mainWrapper = document.getElementById('main-wrapper');
+export function init() {
     const main = document.getElementById('main');
-    const footer = document.getElementById('footer');
     const sections = main.getElementsByTagName('section');
     const navigationPrev = main.getElementsByClassName('nav-prev');
     const navigationNext = main.getElementsByClassName('nav-next');
+    let manualNavigation = false;
+    let scrollTimeout = null;
     let currentSectionId = 0;
 
     /**
      * Setup DOM based on section informations
      *
-     * @param DOMElement section
+     * @param int id
      * @return void
      */
 
-    function setupSection(section)
+    function setupSection(id)
     {
-        if (!section) {
+        if (!sections[id]) {
             return;
         }
 
-        const sectionStyle = section.dataset.style ?? 'pianoforte';
-
-        // Update header and footer styles based on section
-        header.dataset.style = sectionStyle;
-        footer.dataset.style = sectionStyle;
+        document.body.dataset.style = id % 2 ? 'fortepiano' : 'pianoforte';
 
         // Main section height
-        mainWrapper.style.height = (section.offsetHeight - 0.5) + 'px';
+        main.style.height = sections[id].offsetHeight + 'px';
     }
 
     /**
@@ -40,6 +35,8 @@ export function initHomepage() {
 
     function goToSection(id)
     {
+        clearTimeout(scrollTimeout);
+        manualNavigation = true;
         const section = sections[id] ?? null;
 
         if (!section) {
@@ -114,18 +111,54 @@ export function initHomepage() {
     }
 
     currentSectionId = main.scrollLeft / main.offsetWidth;
-    setupSection(sections[currentSectionId]);
+    setupSection(currentSectionId);
 
     // Redo section setup on window resize
     window.addEventListener('resize', function () {
-        currentSectionId = main.scrollLeft / main.offsetWidth;
-        setupSection(sections[currentSectionId]);
+        if (!currentSectionId) {
+            currentSectionId = main.scrollLeft / main.offsetWidth;
+            setupSection(currentSectionId);
+        }
+
+        setTimeout(function () {
+            const section = sections[currentSectionId];
+
+            if (main.scrollLeft !== section.offsetLeft) {
+                main.scroll({
+                    left: section.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }, 150);
     });
 
     // Determine current section based on scroll snap
     main.addEventListener('scroll', function () {
         currentSectionId = Math.round(main.scrollLeft / main.offsetWidth);
-        setupSection(sections[currentSectionId]);
+        setupSection(currentSectionId);
+        manualNavigation = false;
+    });
+
+    // Fix section scroll on mobile device
+    window.addEventListener('touchend', function () {
+        if (manualNavigation) {
+            return;
+        }
+
+        if (scrollTimeout !== null) {
+            clearTimeout(scrollTimeout);
+        }
+
+        scrollTimeout = setTimeout(function () {
+            const section = sections[currentSectionId];
+
+            if (main.scrollLeft !== section.offsetLeft) {
+                main.scroll({
+                    left: section.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }, 150);
     });
 
     // Apply functionality to prev/next navigation
@@ -186,4 +219,4 @@ export function initHomepage() {
             muteControl.click();
         }
     });
-}
+};

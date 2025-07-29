@@ -3,7 +3,10 @@ title: Prefazione
 categories:
  - misc
 published: 2024-08-07
-thumbnail: blog-prefazione-main.jpg
+thumbnail:
+    src: blog-prefazione.jpg
+    alt: Prefazione
+    caption: 'Foto di <a href="https://unsplash.com/photos/person-holding-white-printer-paper-OzjBOLKNAQI" target="_blank">kennyzhang29</a>'
 ---
 
 Tutto è partito da una semplice idea: realizzare il mio sito web personale. Del resto passo molto tempo a lavorare sui siti web delle altre persone, serviva un posto dove far esplodere le mie idee e la mia creatività. Il mio sito però aveva bisogno di racchiudere due aspetti di me molto differenti tra loro: il musicista e il programmatore.

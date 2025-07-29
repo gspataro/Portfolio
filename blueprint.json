@@ -15,18 +15,21 @@
         "projects": "markdown:projects/*.md",
         "projects_cats": "json:projects_categories.json",
         "webdev_projects": "markdown:webdev_projects/*.md",
-        "webdev_projects_cats": "json:webdev_projects_categories.json"
+        "webdev_projects_cats": "json:webdev_projects_categories.json",
+        "services": "json:services.json",
+        "experiences": "json:experiences.json"
     },
     "schemas": {
         "index": {
             "contents": [
                 {
                     "group": "articles",
-                    "limit": 3,
+                    "limit": 5,
                     "orderBy": "frontmatter.published",
                     "order": "desc"
                 },
-                "articles_cats"
+                "articles_cats",
+                "services"
             ],
             "template": "index",
             "builder": "simple",
@@ -59,6 +62,10 @@
             "generate": "once"
         },
         "about": {
+            "contents": [
+                "services",
+                "experiences"
+            ],
             "template": "about",
             "builder": "simple",
             "slug": "/chi-sono",

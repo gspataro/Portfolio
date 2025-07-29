@@ -1,15 +1,14 @@
-<article class="
-    flex
-    flex-col
-    border-thunder-darkest
-    rounded-3xl
-    border-2
-    p-sm
-    group
-    {{class}}">
+<article class="{{class}}">
+    {%if article.frontmatter.thumbnail%}
+        <figure class="mb-2xs">
+            <a href="{{url('article.' ~ id)}}">
+                <img src="{{media(article.frontmatter.thumbnail.src, 'thumbnail')}}" alt="{{article.frontmatter.thumbnail.alt}}">
+            </a>
+        </figure>
+    {%endif%}
     <header class="mb-3xs">
         <{{heading_type ?? 'h5'}}>
-            <a href="{{url('article.' ~ id)}}" class="text-thunder-darkest no-underline">
+            <a href="{{url('article.' ~ id)}}" class="text-current no-underline hover:underline">
                 {{article.frontmatter.title}}
             </a>
         </{{heading_type ?? 'h5'}}>
@@ -17,14 +16,4 @@
     <time datetime="{{article.frontmatter.published|date('Y-m-d')}}" class="mb-xs">
         {{article.frontmatter.published|format_date('long', locale: 'it')}}
     </time>
-    <div class="flex-1"></div>
-    <div class="flex items-center gap-3xs">
-        {%include './components/article/categories.html' with {
-            'categories': article.frontmatter.categories
-        }%}
-        <div class="flex-1"></div>
-        <a href="{{url('article.' ~ id)}}" class="cta">
-            Leggi
-        </a>
-    </div>
 </article>

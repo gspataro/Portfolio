@@ -83,7 +83,7 @@
      * Breakpoints
      */
 
-    --breakpoint-tablet-v: 768px;
+    --breakpoint-tablet-v: 744px;
     --breakpoint-tablet-h: 992px;
     --breakpoint-laptop-sm: 1280px;
     --breakpoint-laptop-lg: 1440px;
@@ -172,8 +172,7 @@
         @apply
             bg-ivory-lightest
             text-thunder-darkest
-            font-roboto
-            font-light;
+            font-roboto;
 
         &.hamburger-open {
             @apply
@@ -339,6 +338,7 @@
             border-2
             border-solid
             border-current
+            rounded-xl
             text-thunder-darkest
             font-medium
             no-underline
@@ -360,6 +360,13 @@
             mask-repeat: no-repeat;
             -webkit-mask-size: 100% 100%;
             mask-size: 100% 100%;
+        }
+
+        &.btn-lg {
+            @apply
+                text-[1.2rem]
+                py-3xs
+                px-xs;
         }
     }
 
@@ -460,8 +467,7 @@
      */
 
     .prose {
-        @apply
-            text-[20px];
+        @apply text-sm;
 
         h1, h2, h3, h4, h5 {
             @apply

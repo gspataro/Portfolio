@@ -86,7 +86,7 @@ final class Media
                 continue;
             }
 
-            $image->resizeImage($size['width'], $size['height'], 0, Imagick::FILTER_UNDEFINED);
+            $image->resizeImage($size['width'], $size['height'], Imagick::FILTER_UNDEFINED, 0.9);
             $image->writeImage($outputFile);
         }
     }

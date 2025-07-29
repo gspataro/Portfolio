@@ -1,5 +1,5 @@
 {%from './components/icon.html' import icon%}
-<div class="swiper group/slider {{class}}" data-style="{{style ?? 'pianoforte'}}">
+<div class="swiper slider-services {{class}}">
     <div class="flex items-center mb-sm">
         <{{title_tag ?? 'h2'}}>
             {{title}}
@@ -23,10 +23,10 @@
                 disabled:opacity-60
                 disabled:hover:bg-transparent
                 disabled:hover:text-thunder-darkest
-                group-data-[style=fortepiano]/slider:border-ivory-lightest
-                group-data-[style=fortepiano]/slider:hover:bg-ivory-lightest
-                group-data-[style=fortepiano]/slider:hover:text-thunder-darkest
-                group-data-[style=fortepiano]/slider:disabled:hover:text-ivory-lightest">
+                group-data-[style=fortepiano]/body:border-ivory-lightest
+                group-data-[style=fortepiano]/body:hover:bg-ivory-lightest
+                group-data-[style=fortepiano]/body:hover:text-thunder-darkest
+                group-data-[style=fortepiano]/body:disabled:hover:text-ivory-lightest">
                 {{icon('arrow-left', label: 'Slide successiva')}}
             </button>
             <button class="
@@ -46,16 +46,16 @@
                 disabled:opacity-60
                 disabled:hover:bg-transparent
                 disabled:hover:text-thunder-darkest
-                group-data-[style=fortepiano]/slider:border-ivory-lightest
-                group-data-[style=fortepiano]/slider:hover:bg-ivory-lightest
-                group-data-[style=fortepiano]/slider:hover:text-thunder-darkest
-                group-data-[style=fortepiano]/slider:disabled:hover:text-ivory-lightest">
+                group-data-[style=fortepiano]/body:border-ivory-lightest
+                group-data-[style=fortepiano]/body:hover:bg-ivory-lightest
+                group-data-[style=fortepiano]/body:hover:text-thunder-darkest
+                group-data-[style=fortepiano]/body:disabled:hover:text-ivory-lightest">
                 {{icon('arrow-right', label: 'Slide precedente')}}
             </button>
         </div>
     </div>
     <div class="swiper-wrapper items-stretch">
-        {%for slide in slides%}
+        {%for service in services%}
             <div class="
                 swiper-slide
                 !h-auto
@@ -63,18 +63,13 @@
                 rounded-3xl
                 border-2
                 p-sm
-                group-data-[style=fortepiano]/slider:border-thunder
-                group-data-[style=fortepiano]/slider:bg-thunder-dark">
-                {%if slide.icon%}
-                    <div class="mb-2xs">
-                        {{icon(slide.icon, '48', '48')}}
-                    </div>
-                {%endif%}
-                <{{slide_title_tag ?? 'h3'}} class="text-h4 mb-4xs">
-                    {{slide.title}}
+                group-data-[style=fortepiano]/body:border-thunder
+                group-data-[style=fortepiano]/body:bg-thunder-dark">
+                <{{slide_title_tag ?? 'h3'}} class="text-h4 mb-2xs">
+                    {{service.title}}
                 </{{slide_title_tag ?? 'h3'}}>
                 <div>
-                    {{slide.description}}
+                    {{service.description}}
                 </div>
             </div>
         {%endfor%}

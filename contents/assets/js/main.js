@@ -11,7 +11,7 @@ if (window.location.pathname === '/' || window.location.pathname === '/index.htm
     });
 
     import('./homepage').then((module) => {
-        module.initHomepage();
+        module.init();
     }).catch((error) => {
         console.error(`Failed to load homepage module: ${error.message}`);
     });
