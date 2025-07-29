@@ -16,7 +16,8 @@
         "projects_cats": "json:projects_categories.json",
         "webdev_projects": "markdown:webdev_projects/*.md",
         "webdev_projects_cats": "json:webdev_projects_categories.json",
-        "services": "json:services.json"
+        "services": "json:services.json",
+        "experiences": "json:experiences.json"
     },
     "schemas": {
         "index": {
@@ -62,7 +63,8 @@
         },
         "about": {
             "contents": [
-                "services"
+                "services",
+                "experiences"
             ],
             "template": "about",
             "builder": "simple",
