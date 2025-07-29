@@ -5,6 +5,10 @@ keywords: suonare a memoria, memoria musicale, performance musicale, suonare a m
 categories:
  - music
 published: 2025-07-03
+thumbnail:
+    src: blog-suonare-memoria.jpg
+    alt: Partitura sul leggio di un pianoforte
+    caption: 'Foto di <a href="https://unsplash.com/photos/musical-notes-on-black-piano-pwkWUfaUoqc" target="_blank">Eilis Garvey</a>'
 ---
 
 Durante i miei studi mi sono spesso chiesto: esibirsi a memoria è davvero una necessità o solo una forma di spettacolo?

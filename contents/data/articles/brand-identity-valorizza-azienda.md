@@ -5,6 +5,10 @@ keywords: sound branding, identità sonora, brand identity, jingle pubblicitario
 categories:
  - sound
 published: 2025-06-26
+thumbnail:
+    src: blog-brand-identity.jpg
+    alt: Giradischi sotto la finestra con vinile
+    caption: 'Foto di <a href="https://unsplash.com/photos/gray-turntable-playing-F-B7kWlkxDQ" target="_blank">Travis Yewell</a>'
 ---
 
 Quando parliamo di **brand identity** le prime cose che ci vengono in mente sono il naming, lo slogan, il logo, i colori e così via. Tutti questi elementi sono fondamentali per rendere un'azienda unica e riconoscibile.

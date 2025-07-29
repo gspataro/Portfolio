@@ -5,6 +5,10 @@ keywords: musica dal vivo eventi aziendali, musica live identità di brand, come
 categories:
  - music
 published: 2025-07-10
+thumbnail:
+    src: blog-musica-dal-vivo.jpg
+    alt: Persona che suona una chitarra
+    caption: 'Foto di <a href="https://unsplash.com/photos/man-in-black-t-shirt-playing-brown-acoustic-guitar-OPQ_0C_JHxM" target="_blank">Gio Bartlett</a>'
 ---
 
 La musica dal vivo è presente in numerose occasioni: cerimonie, presentazioni, inaugurazioni. Ma se la considerassimo come un vero e proprio strumento strategico per aumentare il valore degli eventi aziendali?

@@ -5,6 +5,10 @@ keywords: musicista, intelligenza artificiale, compositore, artisti, sviluppator
 categories:
  - music
 published: 2025-07-24
+thumbnail:
+    src: blog-ai-musica.jpg
+    alt: Robot che suona un pianoforte
+    caption: 'Foto di <a href="https://unsplash.com/photos/robot-playing-piano-U3sOwViXhkY" target="_blank">Possessed Photography</a>'
 ---
 
 Da qualche anno si parla continuamente di intelligenza artificiale, della sua regolamentazione e del suo impatto sul lavoro e la vita di tutti i giorni. Si leggono notizie inerenti il vibe coding, per i programmatori, e questioni etiche relative al copyright per le immagini e i brani musicali generate con l'AI.
