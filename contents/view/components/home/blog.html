@@ -16,7 +16,7 @@
                 VAI AL BLOG
             </a>
         </div>
-        <h3 class="mb-sm">
+        <!--<h3 class="mb-sm">
             Ultimi articoli
         </h3>
         <div class="grid tablet-v:grid-cols-2 laptop-lg:grid-cols-3 gap-md">
@@ -26,6 +26,10 @@
                     heading_type: 'h4'
                 }%}
             {%endfor%}
-        </div>
+        </div>-->
+        {%include './components/slider-blog.html' with {
+            'title': 'Ultimi articoli',
+            'title_tag': 'h3'
+        }%}
     {%endblock%}
 {%endembed%}
