@@ -10,7 +10,7 @@ new Swiper('.swiper.slider-services', {
         nextEl: '.swiper-button-next'
     },
     breakpoints: {
-        768: {
+        744: {
             slidesPerGroup: 2,
             slidesPerView: 2
         },
@@ -30,7 +30,7 @@ new Swiper('.swiper.slider-blog', {
         nextEl: '.swiper-button-next'
     },
     breakpoints: {
-        768: {
+        744: {
             slidesPerGroup: 2,
             slidesPerView: 2
         },
