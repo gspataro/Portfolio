@@ -137,6 +137,7 @@
 
     :root {
         --header-height: 70px;
+        --header-padding-y: var(--spacing-md);
         --container-padding-y: var(--spacing-md);
 
         @media (width >= theme(--breakpoint-tablet-h)) {
