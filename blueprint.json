@@ -83,30 +83,6 @@
                 }
             ]
         },
-        "webdev_projects": {
-            "files": "webdev_projects/*.md",
-            "reader": "markdown",
-            "relationships": [
-                {
-                    "with": "webdev_projects_cats",
-                    "field": "metadata.slug",
-                    "operator": "containsAny",
-                    "value": "metadata.categories"
-                }
-            ]
-        },
-        "webdev_projects_cats": {
-            "files": "webdev_projects_categories/*.md",
-            "reader": "markdown",
-            "relationships": [
-                {
-                    "with": "webdev_projects",
-                    "field": "metadata.categories",
-                    "operator": "containsAny",
-                    "value": "metadata.slug"
-                }
-            ]
-        },
         "services": {
             "files": "services.json",
             "reader": "json"
@@ -142,6 +118,7 @@
             "generate": "once"
         },
         "webdev@index": {
+            "draft": true,
             "contents": [
                 {
                     "group": "webdev_projects",
@@ -171,15 +148,6 @@
             "generate": "loop",
             "source": "articles"
         },
-        "webdev_project": {
-            "contents": [
-                "webdev_projects"
-            ],
-            "template": "webdev_project",
-            "slug": "/webdev",
-            "generate": "loop",
-            "source": "webdev_projects"
-        },
         "blog": {
             "contents": [
                 {
@@ -207,18 +175,29 @@
         },
         "projects": {
             "contents": [
-                {
-                    "group": "projects",
-                    "orderBy": "frontmatter.published",
-                    "order": "desc"
-                }
+                "projects"
             ],
             "template": "projects",
             "slug": "/progetti",
             "generate": "archive",
-            "source": "projects",
+            "source": "projects"
+        },
+        "projects_categories": {
+            "contents": [
+                {
+                    "group": "projects_cats",
+                    "where": [
+                        ["metadata.slug", "containsAny", ["dev", "musica"]]
+                    ]
+                }
+            ],
+            "template": "projects",
+            "slug": "/progetti",
+            "generate": "collection",
+            "source": "projects_cats",
             "options": {
-                "per_page": 12
+                "per_page": 12,
+                "fillWith": "projects"
             }
         }
     }
