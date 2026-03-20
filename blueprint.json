@@ -152,8 +152,10 @@
             "contents": [
                 {
                     "group": "articles",
-                    "orderBy": "frontmatter.published",
-                    "order": "desc"
+                    "order": {
+                        "by": "metadata.published",
+                        "direction": "desc"
+                    }
                 }
             ],
             "template": "blog",
