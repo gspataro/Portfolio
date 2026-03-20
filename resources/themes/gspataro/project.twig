@@ -15,9 +15,10 @@
 }%}
 {%extends "./layout/default.twig"%}
 {%block main%}
+    {%set main_category = related('projects_cats')|first%}
     {%set category%}
         <span class="inline px-3xs border border-thunder-darkest rounded-full font-normal lowercase">
-            {{project_cats[post.metadata.category].label ?? post.metadata.category}}
+            {{main_category.metadata.name}}
         </span>
     {%endset%}
     <article class="max-w-[800px] mx-auto">
