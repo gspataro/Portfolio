@@ -200,5 +200,11 @@
                 "fillWith": "projects"
             }
         }
+    },
+    "orchestra": {
+        "cleanup": [
+            "favicon.png",
+            "favicon-dark.png"
+        ]
     }
 }
