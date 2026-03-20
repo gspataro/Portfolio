@@ -40,7 +40,7 @@
             "reader": "markdown",
             "relationships": [
                 {
-                    "with": "articles_categories",
+                    "with": "articles_cats",
                     "field": "metadata.slug",
                     "operator": "containsAny",
                     "value": "metadata.categories"
