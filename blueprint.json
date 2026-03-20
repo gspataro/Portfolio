@@ -64,7 +64,7 @@
             "reader": "markdown",
             "relationships": [
                 {
-                    "with": "projects_categories",
+                    "with": "projects_cats",
                     "field": "metadata.slug",
                     "operator": "containsAny",
                     "value": "metadata.categories"
@@ -88,7 +88,7 @@
             "reader": "markdown",
             "relationships": [
                 {
-                    "with": "webdev_projects_categories",
+                    "with": "webdev_projects_cats",
                     "field": "metadata.slug",
                     "operator": "containsAny",
                     "value": "metadata.categories"
