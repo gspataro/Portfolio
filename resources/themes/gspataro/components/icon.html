@@ -1,0 +1,10 @@
+{%macro icon(name, width = null, height = null, label = null, attributes = {})%}
+    {{svg(
+        theme_path('/src/images/icons/' ~ name ~ '.svg'),
+        {
+            'width': width ?? height ?? 24,
+            'height': height ?? width ?? 24,
+            'aria-label': label
+        }
+    )}}
+{%endmacro%}

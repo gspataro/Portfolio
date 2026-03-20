@@ -1,0 +1,13 @@
+{
+    "name": "GSpataro",
+    "description": "Official theme for https://giuseppespataro.it",
+    "version": "1.0",
+    "url": "https://giuseppespataro.it",
+    "author": {
+        "name": "Giuseppe Spataro",
+        "url": "https://giuseppespataro.it"
+    },
+    "assets": {
+        "driver": "vite"
+    }
+}

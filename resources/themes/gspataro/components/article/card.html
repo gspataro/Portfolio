@@ -1,0 +1,21 @@
+<article {{html_attributes(attributes ?? {})}}>
+    {%if post.metadata.thumbnail%}
+        <figure class="mb-2xs">
+            <a href="{{url(post.id)}}">
+                {{image('/' ~ post.metadata.thumbnail.src, 'thumbnail', {
+                    altText: article.frontmatter.thumbnail.alt
+                })}}
+            </a>
+        </figure>
+    {%endif%}
+    <header class="mb-3xs">
+        <{{heading_type ?? 'h5'}}>
+            <a href="{{url(post.id)}}" class="text-current no-underline hover:underline">
+                {{post.metadata.title}}
+            </a>
+        </{{heading_type ?? 'h5'}}>
+    </header>
+    <time datetime="{{post.metadata.published|date('Y-m-d')}}" class="mb-xs">
+        {{post.metadata.published|format_date('long', locale: 'it')}}
+    </time>
+</article>

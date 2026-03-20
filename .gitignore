@@ -1,10 +1,8 @@
 .DS_Store
-.env*
-!.env.example
 
 /.vscode
+/cache
 /vendor
-/node_modules
 
 /contents/*
 !/contents/.gitkeep

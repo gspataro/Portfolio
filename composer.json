@@ -10,9 +10,6 @@
         }
     ],
     "require": {
-        "gspataro/orchestra": "^1.0"
-    },
-    "scripts": {
-        "build": "npm run build && php solista build"
+        "gspataro/orchestra": "^2.0"
     }
 }
