@@ -75,6 +75,8 @@ for (const accordion of accordions) {
 
             if (item.accordion.isOpen()) {
                 item.accordion.content.style.height = `${item.accordion.contentHeight}px`;
+            } else {
+                item.accordion.content.style.height = '0px';
             }
         });
 
