@@ -1,19 +1,31 @@
 {%from './components/icon.html' import icon%}
 {%extends "./layout/default.twig"%}
 {%block main%}
-        <div class="flex flex-col gap-sm mb-3xl tablet-v:flex-row tablet-v:gap-lg">
-            <figure aria-label="Foto di Giuseppe Spataro" class="max-w-[200px] mx-auto tablet-v:mx-[unset] tablet-v:max-w-[230px] tablet-v:w-1/3">
-                <img src="{{media('/about-photo.jpg', 'thumbnail')}}" class="aspect-square object-top object-cover rounded-full border-thunder-darkest border-4" alt="Foto di Giuseppe Spataro" width="400" height="420">
-            </figure>
-            <div class="prose tablet-v:w-2/3 tablet-h:w-1/2">
-                <h1>
+        <section class="bg-thunder-darker rounded-3xl flex flex-col-reverse text-ivory-lightest/80 mb-3xl tablet-h:flex-row tablet-h:justify-between tablet-h:items-stretch">
+            <div class="p-xs prose tablet-h:max-w-3/5 tablet-h:p-lg">
+                <h1 class="text-ivory-lightest">
                     Mi presento
                 </h1>
                 <p>
-                    Mi chiamo Giuseppe Spataro, sono un pianista, compositore e insegnante di pianoforte. Ho intrapreso lo studio dello strumento all'età di cinque anni, sviluppando fin da subito una forte dedizione per la musica, che mi ha condotto al conseguimento della laurea magistrale in pianoforte presso il conservatorio.
+                    Mi chiamo Giuseppe Spataro.
+                </p>
+                <p>
+                    Mi occupo di musica, sviluppo web e didattica. Sono ambiti diversi, ma quello che mi interessa è il modo in cui si costruiscono le cose: progettare, risolvere problemi e lavorare con attenzione ai dettagli.
+                </p>
+                <p>
+                    Accanto alla parte operativa, porto avanti una componente di riflessione: cerco di capire cosa funziona, perché funziona e come può essere migliorato nel tempo.
+                </p>
+                <p>
+                    Lavoro su linguaggi diversi, ma con un approccio comune, orientato alla chiarezza, alla qualità e alla costruzione di qualcosa che abbia senso nel tempo.
                 </p>
             </div>
-        </div>
+            <figure aria-label="Foto di Giuseppe Spataro" class="h-inherit min-h-70 mx-3xs mt-3xs tablet-h:max-w-2/5 tablet-h:m-0">
+                {{image('/about-photo.jpg', 'medium', {
+                    'class': 'aspect-square object-top object-cover w-full h-full rounded-xl tablet-h:rounded-3xl',
+                    'alt': 'Uomo dal sorriso accennato con capelli e barba scuri che indossa una camicia azzurra e una cravatta blu su uno sfondo bianco'
+                })}}
+            </figure>
+        </section>
         {%include './components/slider-services.html' with {
             'title': 'Cosa faccio',
             'class': 'mb-3xl'
