@@ -69,6 +69,15 @@ for (const accordion of accordions) {
             toggle: () => item.accordion.isOpen() ? item.accordion.close() : item.accordion.open()
         }
 
+        window.addEventListener('resize', () => {
+            item.accordion.content.style.height = 'auto';
+            item.accordion.contentHeight = content.scrollHeight;
+
+            if (item.accordion.isOpen()) {
+                item.accordion.content.style.height = `${item.accordion.contentHeight}px`;
+            }
+        });
+
         accordion.addEventListener('click', (e) => {
             const toggle = e.target.closest('.accordion-toggle');
 

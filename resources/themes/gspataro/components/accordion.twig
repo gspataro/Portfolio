@@ -3,16 +3,16 @@
     {%for item in items%}
         <li class="bg-ivory-dark/30 p-sm rounded-3xl group accordion-item">
             <div class="grid grid-cols-[1fr_auto] gap-x-sm">
-                <h3 class="mb-4xs accordion-toggle">
+                <h3 class="accordion-toggle">
                     {{item.title}}
                 </h3>
                 <a href="#" class="rotate-180 accordion-arrow">
                     {{icon('chevron-up', 38)}}
                 </a>
-                <div class="col-start-1 text-thunder-lightest accordion-toggle">
+                <div class="mt-4xs row-start-2 col-start-1 col-span-2 text-thunder-lightest accordion-toggle tablet-v:col-span-1">
                     {{item.subtitle}}
                 </div>
-                <div class="h-0 overflow-hidden col-start-1 accordion-content">
+                <div class="h-0 overflow-hidden row-start-3 col-start-1 col-span-2 accordion-content tablet-v:col-span-1">
                     <div class="pt-2xs">
                         {{item.content|raw}}
                     </div>
