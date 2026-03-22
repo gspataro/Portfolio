@@ -26,37 +26,65 @@
                 })}}
             </figure>
         </section>
-        {%include './components/slider-services.html' with {
-            'title': 'Cosa faccio',
-            'class': 'mb-3xl'
-        }%}
-        <div class="prose mb-3xl tablet-h:w-2/3">
-            <h2>
-                Esperienze
+        <section>
+            <h2 class="mb-lg">
+                Di cosa mi occupo
             </h2>
-            <p>
-                Nel corso della mia formazione ho partecipato a numerose masterclass con pianisti di rilievo internazionale, approfondendo repertori e approcci interpretativi. Ho preso parte a concorsi nazionali e ho maturato un'ampia esperienza concertistica, sia come solista che come pianista accompagnatore.
-            </p>
-            <p>
-                Negli ultimi anni ho affiancato all'attività performativa l'insegnamento strumentale e la composizione, dedicandomi in particolare alla creazione di contenuti musicali per il branding aziendale e la comunicazione sonora.
-            </p>
-        </div>
-        <div class="bg-brass-lightest flex flex-col-reverse gap-3xs p-sm rounded-3xl tablet-v:p-lg tablet-v:justify-between tablet-v:flex-row tablet-v:items-center">
-            <div class="prose tablet-v:w-2/3 tablet-h:w-1/2">
-                <h2>Side project</h2>
-                <p class="text-sm">
-                    Sono appassianato di tecnologia e da anni mi occupo di sviluppo web. Ho realizzato numerosi progetti e mi piace cimentarmi
-                    nell'apprendimento di nuovi concetti legati alla programmazione.
-                </p>
-                <a href="{{url('webdev@index')}}" class="cta text-inherit">
-                    Scopri di più
-                </a>
-            </div>
-            <div class="text-thunder-darkest/10">
-                {{icon('dev', 120, attributes: {
-                    'class': 'w-14 h-14 tablet-v:w-auto tablet-v:h-auto',
-                    'aria-hidden': 'true'
-                })}}
-            </div>
-        </div>
+            {%set webdev_content%}
+                Il mio approccio si basa su progettazione, problem solving e riflessione sui metodi migliori da applicare.
+                <h4>Backend</h4>
+                <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">PHP</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">MySQL</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Laravel</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Wordpress</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Woocommerce</li>
+                </ul>
+                <h4>Frontend</h4>
+                <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">HTML</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">CSS</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Javascript</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">SASS/SCSS</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">JQuery</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">TailwindCSS</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Bootstrap</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Webpack</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Vite</li>
+                </ul>
+                <h4>Altro</h4>
+                <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Git</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">UI/UX</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Accessibilità</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">SEO</li>
+                </ul>
+            {%endset%}
+            {%include './components/accordion.twig' with {
+                items: [
+                    {
+                        'title': 'Musica',
+                        'subtitle': 'Mi occupo di interpretazione e creazione musicale, concentrandomi su precisione e struttura.',
+                        'content': '
+                            Ho maturato esperienza concertistica come pianista solista e accompagnatore, partecipando a masterclass e progetti musicali che mi hanno permesso di affinare approcci interpretativi e tecnici.<br>
+                            Mi dedico anche alla musica originale e al branding sonoro, cercando sempre un equilibrio tra creatività e metodo.
+                        '
+                    },
+                    {
+                        'title': 'Didattica',
+                        'subtitle': 'Insegno pianoforte attraverso percorsi personalizzati, con attenzione alla comprensione, alla tecnica e al metodo.',
+                        'content': '
+                            L’insegnamento è per me anche un’occasione di riflessione sui metodi e sulle strategie di apprendimento.<br>
+                            Affianco all’insegnamento la riflessione sui processi di apprendimento, cercando di adattare metodi e strategie alle necessità di ciascun studente.<br>
+                            L’obiettivo è sviluppare autonomia, disciplina e capacità di comprendere profondamente ciò che si studia, oltre alla tecnica strumentale.
+                        '
+                    },
+                    {
+                        'title': 'Sviluppo web',
+                        'subtitle': 'Progetto e realizzo siti web e applicazioni con attenzione alla logica, alla chiarezza e alla coerenza.',
+                        'content': webdev_content
+                    }
+                ]
+            } only%}
+        </section>
 {%endblock%}

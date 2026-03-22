@@ -1,0 +1,21 @@
+{%from './components/icon.html' import icon%}
+<ul class="flex flex-col gap-md accordion">
+    {%for item in items%}
+        <li class="bg-ivory-dark/30 p-sm rounded-3xl group item">
+            <div class="grid grid-cols-[1fr_auto] gap-x-sm">
+                <h3 class="mb-4xs">
+                    {{item.title}}
+                </h3>
+                <a href="#" class="rotate-180 group-data-open:rotate-0 arrow">
+                    {{icon('chevron-up', 38)}}
+                </a>
+                <div class="col-start-1 text-thunder-lightest">
+                    {{item.subtitle}}
+                </div>
+                <div class="hidden col-start-1 mt-2xs group-data-open:block">
+                    {{item.content|raw}}
+                </div>
+            </div>
+        </li>
+    {%endfor%}
+</ul>
