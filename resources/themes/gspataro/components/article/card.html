@@ -8,6 +8,14 @@
             </a>
         </figure>
     {%endif%}
+    {%if related('articles_cats')%}
+        {%include './components/article/categories.twig' with {
+            categories: related('articles_cats'),
+            attributes: {
+                class: 'mb-2xs'
+            }
+        } only%}
+    {%endif%}
     <header class="mb-3xs">
         <{{heading_type ?? 'h5'}}>
             <a href="{{url(post.id)}}" class="text-current no-underline hover:underline">
