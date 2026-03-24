@@ -5,6 +5,6 @@
             'width': width ?? height ?? 24,
             'height': height ?? width ?? 24,
             'aria-label': label
-        }
+        }|merge(attributes)
     )}}
 {%endmacro%}
