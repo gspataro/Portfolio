@@ -23,7 +23,7 @@ export function init() {
         document.body.dataset.style = id % 2 ? 'fortepiano' : 'pianoforte';
 
         // Main section height
-        main.style.height = sections[id].offsetHeight + 'px';
+        main.style.height = `${sections[id].getBoundingClientRect().height}px`;
     }
 
     /**
