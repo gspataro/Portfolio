@@ -246,16 +246,16 @@
         },
         {
             "name": "gspataro/orchestra",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gspataro/Orchestra.git",
-                "reference": "a4e7dd2cb6311c1041e07051ad3f3eff7eab768f"
+                "reference": "f93667fd29db68f5a8725a8fb679b4ba1fcb087b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gspataro/Orchestra/zipball/a4e7dd2cb6311c1041e07051ad3f3eff7eab768f",
-                "reference": "a4e7dd2cb6311c1041e07051ad3f3eff7eab768f",
+                "url": "https://api.github.com/repos/gspataro/Orchestra/zipball/f93667fd29db68f5a8725a8fb679b4ba1fcb087b",
+                "reference": "f93667fd29db68f5a8725a8fb679b4ba1fcb087b",
                 "shasum": ""
             },
             "require": {
@@ -297,9 +297,9 @@
             "description": "The framework behind Solista",
             "support": {
                 "issues": "https://github.com/gspataro/Orchestra/issues",
-                "source": "https://github.com/gspataro/Orchestra/tree/2.0.5"
+                "source": "https://github.com/gspataro/Orchestra/tree/2.0.6"
             },
-            "time": "2026-03-20T17:24:06+00:00"
+            "time": "2026-03-24T16:45:21+00:00"
         },
         {
             "name": "league/commonmark",
