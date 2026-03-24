@@ -166,6 +166,25 @@
                 "per_page": 12
             }
         },
+        "articles_categories": {
+            "draft": true,
+            "contents": [
+                {
+                    "group": "articles_cats",
+                    "where": [
+                        ["metadata.slug", "containsAny", ["musica", "sviluppo", "sound"]]
+                    ]
+                }
+            ],
+            "template": "blog",
+            "slug": "/blog",
+            "generate": "collection",
+            "source": "articles_cats",
+            "options": {
+                "per_page": 12,
+                "fillWith": "articles"
+            }
+        },
         "project": {
             "contents": [
                 "projects"
