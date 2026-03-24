@@ -3,7 +3,7 @@
         <figure class="mb-2xs">
             <a href="{{url(post.id)}}">
                 {{image('/' ~ post.metadata.thumbnail.src, 'thumbnail', {
-                    altText: article.frontmatter.thumbnail.alt
+                    altText: post.metadata.thumbnail.alt
                 })}}
             </a>
         </figure>
