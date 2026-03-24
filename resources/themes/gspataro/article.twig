@@ -16,7 +16,7 @@
 }%}
 {%extends "./layout/default.twig"%}
 {%block main%}
-    <article class="max-w-[800px] mx-auto">
+    <article class="max-w-200 mx-auto">
         <header class="mb-sm">
             {%if post.metadata.categories%}
                 <div class="flex items-center gap-2xs mb-2xs">
@@ -34,7 +34,7 @@
                     <div class="font-normal">
                         /
                     </div>
-                    {%include './components/article/categories.html' with {
+                    {%include './components/article/categories.twig' with {
                         categories: related('articles_cats')
                     }%}
                 </div>
