@@ -172,7 +172,7 @@
                 {
                     "group": "articles_cats",
                     "where": [
-                        ["metadata.slug", "containsAny", ["musica", "sviluppo", "sound"]]
+                        ["metadata.slug", "containsAny", ["musica", "sviluppo", "didattica"]]
                     ]
                 }
             ],
