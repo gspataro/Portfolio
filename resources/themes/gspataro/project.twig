@@ -15,21 +15,16 @@
 }%}
 {%extends "./layout/default.twig"%}
 {%block main%}
-    {%set main_category = related('projects_cats')|first%}
-    {%set category%}
-        <span class="inline px-3xs border border-thunder-darkest rounded-full font-normal lowercase">
-            {{main_category.metadata.name}}
-        </span>
-    {%endset%}
-    <article class="max-w-[800px] mx-auto">
+    <article class="max-w-200 mx-auto">
         <header class="mb-lg tablet-v:w-2/3 tablet-h:w-1/2">
             <div class="flex items-center mb-md">
                 <h1 class="flex-1">{{post.metadata.name}}</h1>
             </div>
-            {%include './components/post/meta.html' with {'meta': {
+            {%include './components/project/meta.twig' with {'meta': {
                 "Cliente": post.metadata.client,
                 "Servizi": post.metadata.services,
-                "Categoria": category
+                "Categorie": related('projects_cats') ? include('./components/article/categories.twig', {categories: related('projects_cats')}) : '',
+                "Links": include('./components/project/links.twig', {project: post})
             }} only%}
         </header>
         <div class="prose">
