@@ -225,7 +225,8 @@
     "orchestra": {
         "cleanup": [
             "favicon.png",
-            "favicon-dark.png"
+            "favicon-dark.png",
+            "contattami"
         ]
     }
 }
