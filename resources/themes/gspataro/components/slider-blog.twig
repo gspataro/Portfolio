@@ -1,4 +1,4 @@
-{%from './components/icon.html' import icon%}
+{%from './components/icon.twig' import icon%}
 <div class="swiper slider-blog {{class}}">
     <div class="flex items-center mb-sm">
         <{{title_tag ?? 'h2'}}>
@@ -56,7 +56,7 @@
     </div>
     <div class="swiper-wrapper">
         {%for article in content('articles')%}
-            {%include './components/article/card.html' with {
+            {%include './components/article/card.twig' with {
                 post: article,
                 attributes: {
                     'class': 'swiper-slide'

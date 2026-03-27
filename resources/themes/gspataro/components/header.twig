@@ -1,5 +1,5 @@
 <!-- HEADER -->
-{%from './components/icon.html' import icon%}
+{%from './components/icon.twig' import icon%}
 <header id="header" class="
     {{class}}
     container
@@ -74,7 +74,7 @@
                         tablet-h:h-auto
                         tablet-h:py-0
                         tablet-h:contents">
-                        {%include './components/navbar.html' with {
+                        {%include './components/navbar.twig' with {
                             'items': {
                                 'about': {
                                     'label': 'Chi sono',
@@ -96,7 +96,7 @@
                         }%}
                         <div class="flex-1 tablet-h:hidden"></div>
                         <div class="tablet-h:hidden">
-                            {%include './components/social.html'%}
+                            {%include './components/social.twig'%}
                         </div>
                     </div>
                 </div>
@@ -114,9 +114,9 @@
             <div class="flex-1"></div>
             <!-- END SPACER -->
             <!-- LOGO -->
-            <div class="tablet-h:flex tablet-h:basis-[215px] tablet-h:items-start tablet-h:justify-center">
+            <div class="tablet-h:flex tablet-h:basis-53.75 tablet-h:items-start tablet-h:justify-center">
                 <a href="{{url('index')}}" class="text-inherit -rotate-90">
-                    {%include './components/logo.html' with {
+                    {%include './components/logo.twig' with {
                         'width': 211,
                         'height': 26,
                         'attributes': {

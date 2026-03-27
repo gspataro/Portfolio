@@ -21,7 +21,7 @@
     </div>
     <div class="grid grid-cols-1 gap-lg tablet-v:gap-xs tablet-v:grid-cols-2 tablet-h:grid-cols-3 laptop-sm:gap-lg">
         {%for project in archive.loop%}
-            {%include './components/project/card.html' with {'project': project} only%}
+            {%include './components/project/card.twig' with {'project': project} only%}
         {%endfor%}
     </div>
     {%if archive.pagination.prev or archive.pagination.next%}
