@@ -1,33 +1,31 @@
-<article class="
-    flex
-    flex-col
-    border-thunder-darkest
-    rounded-3xl
-    border-2
-    p-sm
-    data-[style=fortepiano]:bg-thunder-dark
-    data-[style=fortepiano]:border-thunder
-    group
-    {{class}}" data-style="{{style ?? 'pianoforte'}}">
+<article {{html_attributes(
+    {
+        class: 'group',
+        'data-style': style ?? 'pianoforte'
+    },
+    attributes ?? {}
+)}}>
+    {%if related('projects_cats')%}
+        {%include './components/article/categories.twig' with {
+            categories: related('projects_cats'),
+            attributes: {
+                class: 'mb-2xs'
+            }
+        } only%}
+    {%endif%}
     <header class="mb-3xs">
         <{{heading_type ?? 'h5'}}>
-            <a href="{{url(project.id)}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]:text-ivory-lightest">
-                {{project.metadata.name}}
+            <a href="{{url(post.id)}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]:text-ivory-lightest">
+                {{post.metadata.name}}
             </a>
         </{{heading_type ?? 'h5'}}>
     </header>
-    <p class="mb-xs group-data-[style=fortepiano]:text-ivory-lightest">
-        {{project.metadata.description}}
-    </p>
-    <div class="flex-1"></div>
-    <div class="flex items-center gap-3xs">
-        <span class="inline px-3xs border border-thunder-darkest rounded-full font-normal lowercase">
-            {%set main_category = related('projects_cats', project)|first%}
-            {{main_category.metadata.name}}
-        </span>
-        <div class="flex-1"></div>
-        <a href="{{url(project.id)}}" class="cta group-data-[style=fortepiano]:text-ivory-lightest">
-            Scopri
-        </a>
-    </div>
+    {%if post.metadata.description%}
+        <p class="line-clamp-1 mb-xs group-data-[style=fortepiano]:text-ivory-lightest">
+            {{post.metadata.description}}
+        </p>
+    {%endif%}
+    <a href="{{url(post.id)}}" class="cta group-data-[style=fortepiano]:text-ivory-lightest">
+        Scopri di più
+    </a>
 </article>

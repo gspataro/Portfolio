@@ -19,10 +19,60 @@
             Una raccolta dei miei progetti musicali: composizioni originali, idee in evoluzione e percorsi di ricerca sonora e artistica personale, tra sperimentazione e identità.
         </p>
     </div>
-    <div class="grid grid-cols-1 gap-lg tablet-v:gap-xs tablet-v:grid-cols-2 tablet-h:grid-cols-3 laptop-sm:gap-lg">
-        {%for project in archive.loop%}
-            {%include './components/project/card.twig' with {'project': project} only%}
-        {%endfor%}
+    <div class="relative">
+        <div class="
+            pointer-events-none
+            absolute
+            inset-0
+            z-10
+            grid
+            grid-cols-1
+            gap-lg
+            tablet-v:grid-cols-2
+            tablet-v:gap-xs
+            tablet-h:grid-cols-3
+            laptop-sm:gap-lg">
+            <div class="border-x border-ivory-dark tablet-h:border-l-0"></div>
+            <div class="border-x border-ivory-dark hidden tablet-v:block"></div>
+            <div class="border-l border-ivory-dark hidden tablet-h:block"></div>
+        </div>
+        <div class="
+            grid
+            grid-cols-1
+            gap-lg
+            tablet-v:gap-xs
+            tablet-v:grid-cols-2
+            tablet-h:grid-cols-3
+            laptop-sm:gap-lg">
+            {%for project in archive.loop%}
+                <div class="
+                    before:absolute
+                    before:border-t
+                    before:border-ivory-dark
+                    before:w-full
+                    before:left-0
+                    after:absolute
+                    after:border-t
+                    after:border-ivory-dark
+                    after:w-full
+                    after:left-0
+                    tablet-v:before:hidden
+                    tablet-v:after:hidden
+                    tablet-v:nth-[2n+1]:before:block
+                    tablet-v:nth-[2n+1]:after:block
+                    tablet-h:nth-[2n+1]:before:hidden
+                    tablet-h:nth-[3n+1]:before:block
+                    tablet-h:nth-[2n+1]:after:hidden
+                    tablet-h:nth-[3n+1]:after:block">
+                    {%include './components/project/card.twig' with {
+                        post: project,
+                        attributes: {
+                            class: 'p-sm'
+                        }
+                    } only%}
+                </div>
+            {%endfor%}
+        </div>
     </div>
     {%if archive.pagination.prev or archive.pagination.next%}
         <div class="flex mt-lg">
