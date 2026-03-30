@@ -48,7 +48,7 @@
     --font-roboto: 'Roboto', Sans-Serif, Arial;
     --font-geist: 'Geist', Sans-Serif, Arial;
     --font-oswald: 'Oswald', Sans-Serif, Arial;
-    --font-sans: var(--font-roboto);
+    --font-sans: var(--font-geist);
 
     /**
      * Font size
