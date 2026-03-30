@@ -1,9 +1,10 @@
 <article {{html_attributes(attributes ?? {})}}>
     {%if post.metadata.thumbnail%}
-        <figure class="mb-2xs">
+        <figure class="mb-2xs group overflow-hidden">
             <a href="{{url(post.id)}}">
                 {{image('/' ~ post.metadata.thumbnail.src, 'thumbnail', {
-                    altText: post.metadata.thumbnail.alt
+                    altText: post.metadata.thumbnail.alt,
+                    class: 'duration-300 scale-100 laptop-sm:group-hover:scale-110'
                 })}}
             </a>
         </figure>
