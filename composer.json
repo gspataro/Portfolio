@@ -11,5 +11,9 @@
     ],
     "require": {
         "gspataro/orchestra": "^2.0"
+    },
+    "scripts": {
+        "build": "php solista build",
+        "rebuild": "php solista cache:clean && php solista build"
     }
 }

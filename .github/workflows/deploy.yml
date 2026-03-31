@@ -20,5 +20,5 @@ jobs:
             git pull
             npm install
             composer install
-            composer run build
+            composer run rebuild
             echo 'Successfully deployed.'
