@@ -24,19 +24,10 @@
             {%include './components/article/card.twig' with {post: post} only%}
         {%endfor%}
     </div>
-    {%if archive.pagination.prev or archive.pagination.next%}
-        <div class="flex mt-lg">
-            {%if archive.pagination.prev%}
-                <a href="{{url(archive.pagination.prev)}}" class="cta cta-inverted">
-                    PRECEDENTE
-                </a>
-            {%endif%}
-            <div class="flex-1"></div>
-            {%if archive.pagination.next%}
-                <a href="{{url(archive.pagination.next)}}" class="cta">
-                    SUCCESSIVO
-                </a>
-            {%endif%}
-        </div>
-    {%endif%}
+    {%include './components/pagination.twig' with {
+        archive: archive,
+        attributes: {
+            class: 'mt-2xl'
+        }
+    } only%}
 {%endblock%}

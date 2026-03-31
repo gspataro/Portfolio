@@ -201,7 +201,10 @@
             "template": "projects",
             "slug": "/progetti",
             "generate": "archive",
-            "source": "projects"
+            "source": "projects",
+            "options": {
+                "per_page": 12
+            }
         },
         "projects_categories": {
             "contents": [
