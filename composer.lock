@@ -246,16 +246,16 @@
         },
         {
             "name": "gspataro/orchestra",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gspataro/Orchestra.git",
-                "reference": "f93667fd29db68f5a8725a8fb679b4ba1fcb087b"
+                "reference": "fbf1865a891bf176e3ab346e9c326e71a65aac7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gspataro/Orchestra/zipball/f93667fd29db68f5a8725a8fb679b4ba1fcb087b",
-                "reference": "f93667fd29db68f5a8725a8fb679b4ba1fcb087b",
+                "url": "https://api.github.com/repos/gspataro/Orchestra/zipball/fbf1865a891bf176e3ab346e9c326e71a65aac7a",
+                "reference": "fbf1865a891bf176e3ab346e9c326e71a65aac7a",
                 "shasum": ""
             },
             "require": {
@@ -297,9 +297,9 @@
             "description": "The framework behind Solista",
             "support": {
                 "issues": "https://github.com/gspataro/Orchestra/issues",
-                "source": "https://github.com/gspataro/Orchestra/tree/2.0.6"
+                "source": "https://github.com/gspataro/Orchestra/tree/2.0.7"
             },
-            "time": "2026-03-24T16:45:21+00:00"
+            "time": "2026-03-31T13:40:57+00:00"
         },
         {
             "name": "league/commonmark",
@@ -1986,16 +1986,16 @@
         },
         {
             "name": "tempest/highlight",
-            "version": "2.17.2",
+            "version": "2.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tempestphp/highlight.git",
-                "reference": "8e4a11a0cfb09a55fba8f02f9425941580cbb9ef"
+                "reference": "03276a52320f8682987509249d68fd30fe705bf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/8e4a11a0cfb09a55fba8f02f9425941580cbb9ef",
-                "reference": "8e4a11a0cfb09a55fba8f02f9425941580cbb9ef",
+                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/03276a52320f8682987509249d68fd30fe705bf4",
+                "reference": "03276a52320f8682987509249d68fd30fe705bf4",
                 "shasum": ""
             },
             "require": {
@@ -2033,7 +2033,7 @@
             "description": "Fast, extensible, server-side code highlighting",
             "support": {
                 "issues": "https://github.com/tempestphp/highlight/issues",
-                "source": "https://github.com/tempestphp/highlight/tree/2.17.2"
+                "source": "https://github.com/tempestphp/highlight/tree/2.18.0"
             },
             "funding": [
                 {
@@ -2041,7 +2041,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-10T07:05:58+00:00"
+            "time": "2026-03-31T08:52:03+00:00"
         },
         {
             "name": "twig/intl-extra",
