@@ -14,7 +14,7 @@
     },
     "scripts": {
         "build": "php solista build",
-        "rebuild": "./bin/clean-view-cache.sh && php solista build",
+        "rebuild": "./bin/clean-view-cache.sh && npm run build --prefix ./resources/themes/gspataro && php solista build",
         "deploy": "./bin/deploy.sh",
         "upload": "./bin/upload.sh",
         "stage:deploy": "./bin/deploy.sh stage",
