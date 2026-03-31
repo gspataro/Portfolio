@@ -14,10 +14,10 @@
     },
     "scripts": {
         "build": "php solista build",
-        "rebuild": "./bin/clean-view-cache.sh && npm run build --prefix ./resources/themes/gspataro && php solista build",
+        "rebuild": "./bin/clean-view-cache.sh && npm install --prefix ./resources/themes/gspataro && npm run build --prefix ./resources/themes/gspataro && php solista build",
         "deploy": "./bin/deploy.sh",
         "upload": "./bin/upload.sh",
-        "stage:rebuild": "./bin/clean-view-cache.sh && npm run build --prefix ./resources/themes/gspataro && php solista build --base-url=''",
+        "stage:rebuild": "./bin/clean-view-cache.sh && npm install --prefix ./resources/themes/gspataro && npm run build --prefix ./resources/themes/gspataro && php solista build --base-url=''",
         "stage:deploy": "./bin/deploy.sh stage",
         "stage:upload": "./bin/upload.sh stage"
     }
