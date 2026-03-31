@@ -14,6 +14,6 @@
     },
     "scripts": {
         "build": "php solista build",
-        "rebuild": "php solista cache:clean && php solista build"
+        "rebuild": "./clean-view-cache.sh && php solista build"
     }
 }
