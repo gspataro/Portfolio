@@ -46,8 +46,10 @@
         {%if post.metadata.thumbnail%}
             <figure class="mb-lg">
                 {{image('/' ~ post.metadata.thumbnail.src, 'large', {
-                    'altText': post.metadata.thumbnail.alt,
-                    'class': 'max-w-full'
+                    alt: post.metadata.thumbnail.alt,
+                    class: 'max-w-full',
+                    width: 900,
+                    height: 900
                 })}}
                 {%if post.metadata.thumbnail.caption%}
                     <figcaption class="mt-3xs">

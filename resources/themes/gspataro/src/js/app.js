@@ -3,6 +3,7 @@ import './favicon';
 import './slider';
 import './player';
 import './accordion';
+import './image';
 
 if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
     import('./synth').then((module) => {

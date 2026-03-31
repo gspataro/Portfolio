@@ -3,8 +3,10 @@
         <figure class="mb-2xs group overflow-hidden">
             <a href="{{url(post.id)}}">
                 {{image('/' ~ post.metadata.thumbnail.src, 'thumbnail', {
-                    altText: post.metadata.thumbnail.alt,
-                    class: 'duration-300 scale-100 laptop-sm:group-hover:scale-110'
+                    alt: post.metadata.thumbnail.alt,
+                    class: 'duration-300 scale-100 laptop-sm:group-hover:scale-110',
+                    width: 400,
+                    height: 400
                 })}}
             </a>
         </figure>
