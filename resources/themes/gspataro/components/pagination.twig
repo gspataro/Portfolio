@@ -1,0 +1,20 @@
+{%if archive.pagination.prev or archive.pagination.next%}
+    <div {{html_attributes(
+        {
+            'class': 'flex'
+        },
+        attributes ?? {}
+    )}}>
+        {%if archive.pagination.prev%}
+            <a href="{{url(archive.pagination.prev)}}" class="cta cta-inverted">
+                PRECEDENTE
+            </a>
+        {%endif%}
+        <div class="flex-1"></div>
+        {%if archive.pagination.next%}
+            <a href="{{url(archive.pagination.next)}}" class="cta">
+                SUCCESSIVO
+            </a>
+        {%endif%}
+    </div>
+{%endif%}

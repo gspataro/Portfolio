@@ -1,0 +1,10 @@
+<div class="relative border-2 bg-ivory-lightest border-thunder-darkest p-sm after:content-[''] after:absolute after:border-thunder-darkest after:border-2 after:top-2.5 after:left-2.5 after:-bottom-2.5 after:-right-2.5 after:-z-10 {{class}}">
+    <div class="grid grid-cols-[max-content_1fr] gap-x-sm gap-y-2xs">
+        {%for tag, value in meta%}
+            {%if value%}
+                <div class="font-normal">{{tag}}</div>
+                <div>{{value|raw}}</div>
+            {%endif%}
+        {%endfor%}
+    </div>
+</div>

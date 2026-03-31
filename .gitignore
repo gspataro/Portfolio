@@ -3,8 +3,8 @@
 !.env.example
 
 /.vscode
+/cache
 /vendor
-/node_modules
 
 /contents/*
 !/contents/.gitkeep
@@ -13,3 +13,4 @@
 !/public/.htaccess
 !/public/favicon.png
 !/public/favicon-dark.png
+!/public/contattami

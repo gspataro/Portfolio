@@ -5,17 +5,93 @@
         "author": "Giuseppe Spataro",
         "keywords": "pianista, musicista, sicilia",
         "email": "info@giuseppespataro.it",
+        "url": "https://giuseppespataro.it",
+        "theme": "gspataro",
         "friendly_urls": true
     },
+    "media": {
+        "images": {
+            "sizes": {
+                "thumbnail": {
+                    "width": 400,
+                    "quality": 90
+                },
+                "medium": {
+                    "width": 600,
+                    "quality": 90
+                },
+                "large": {
+                    "width": 900,
+                    "quality": 90
+                },
+                "full": {
+                    "width": 1920,
+                    "quality": 90
+                },
+                "original": {
+                    "quality": 90
+                }
+            },
+            "responsive": ["thumbnail", "medium", "large", "full"]
+        }
+    },
     "contents": {
-        "articles": "markdown:articles/*.md",
-        "articles_cats": "json:articles_categories.json",
-        "projects": "markdown:projects/*.md",
-        "projects_cats": "json:projects_categories.json",
-        "webdev_projects": "markdown:webdev_projects/*.md",
-        "webdev_projects_cats": "json:webdev_projects_categories.json",
-        "services": "json:services.json",
-        "experiences": "json:experiences.json"
+        "articles": {
+            "files": "articles/*.md",
+            "reader": "markdown",
+            "relationships": [
+                {
+                    "with": "articles_cats",
+                    "field": "metadata.slug",
+                    "operator": "containsAny",
+                    "value": "metadata.categories"
+                }
+            ]
+        },
+        "articles_cats": {
+            "files": "articles_categories/*.md",
+            "reader": "markdown",
+            "relationships": [
+                {
+                    "with": "articles",
+                    "field": "metadata.categories",
+                    "operator": "containsAny",
+                    "value": "metadata.slug"
+                }
+            ]
+        },
+        "projects": {
+            "files": "projects/*.md",
+            "reader": "markdown",
+            "relationships": [
+                {
+                    "with": "projects_cats",
+                    "field": "metadata.slug",
+                    "operator": "containsAny",
+                    "value": "metadata.categories"
+                }
+            ]
+        },
+        "projects_cats": {
+            "files": "projects_categories/*.md",
+            "reader": "markdown",
+            "relationships": [
+                {
+                    "with": "projects",
+                    "field": "metadata.categories",
+                    "operator": "containsAny",
+                    "value": "metadata.slug"
+                }
+            ]
+        },
+        "services": {
+            "files": "services.json",
+            "reader": "json"
+        },
+        "experiences": {
+            "files": "experiences.json",
+            "reader": "json"
+        }
     },
     "schemas": {
         "index": {
@@ -26,27 +102,24 @@
                     "orderBy": "frontmatter.published",
                     "order": "desc"
                 },
-                "articles_cats",
                 "services"
             ],
             "template": "index",
-            "builder": "simple",
             "slug": "/index",
             "generate": "once"
         },
         "404": {
             "template": "404",
-            "builder": "simple",
             "slug": "/404",
             "generate": "once"
         },
         "darkside": {
             "template": "darkside",
-            "builder": "simple",
             "slug": "/darkside",
             "generate": "once"
         },
         "webdev@index": {
+            "draft": true,
             "contents": [
                 {
                     "group": "webdev_projects",
@@ -55,7 +128,6 @@
                 }
             ],
             "template": "webdev",
-            "builder": "simple",
             "slug": "/webdev/index",
             "generate": "once"
         },
@@ -65,73 +137,100 @@
                 "experiences"
             ],
             "template": "about",
-            "builder": "simple",
             "slug": "/chi-sono",
             "generate": "once"
         },
         "article": {
             "contents": [
-                "articles",
-                "articles_cats"
+                "articles"
             ],
             "template": "article",
-            "builder": "post",
             "slug": "/articolo",
-            "generate": "loop:articles"
-        },
-        "webdev_project": {
-            "contents": [
-                "webdev_projects",
-                "webdev_projects_cats"
-            ],
-            "template": "webdev_project",
-            "builder": "post",
-            "slug": "/webdev",
-            "generate": "loop:webdev_projects"
+            "generate": "loop",
+            "source": "articles"
         },
         "blog": {
             "contents": [
                 {
                     "group": "articles",
-                    "orderBy": "frontmatter.published",
-                    "order": "desc"
-                },
-                "articles_cats"
+                    "order": {
+                        "by": "metadata.published",
+                        "direction": "desc"
+                    }
+                }
             ],
             "template": "blog",
-            "builder": "archive",
             "slug": "/blog",
-            "generate": "paginate:articles",
+            "generate": "archive",
+            "source": "articles",
             "options": {
                 "per_page": 12
+            }
+        },
+        "articles_categories": {
+            "draft": true,
+            "contents": [
+                {
+                    "group": "articles_cats",
+                    "where": [
+                        ["metadata.slug", "containsAny", ["musica", "sviluppo", "didattica"]]
+                    ]
+                }
+            ],
+            "template": "blog",
+            "slug": "/blog",
+            "generate": "collection",
+            "source": "articles_cats",
+            "options": {
+                "per_page": 12,
+                "fillWith": "articles"
             }
         },
         "project": {
             "contents": [
-                "projects",
-                "projects_cats"
+                "projects"
             ],
             "template": "project",
-            "builder": "post",
             "slug": "/progetto",
-            "generate": "loop:projects"
+            "generate": "loop",
+            "source": "projects"
         },
         "projects": {
             "contents": [
-                {
-                    "group": "projects",
-                    "orderBy": "frontmatter.published",
-                    "order": "desc"
-                },
-                "projects_cats"
+                "projects"
             ],
             "template": "projects",
-            "builder": "archive",
             "slug": "/progetti",
-            "generate": "paginate:projects",
+            "generate": "archive",
+            "source": "projects",
             "options": {
                 "per_page": 12
             }
+        },
+        "projects_categories": {
+            "contents": [
+                {
+                    "group": "projects_cats",
+                    "where": [
+                        ["metadata.slug", "containsAny", ["dev", "musica"]]
+                    ]
+                }
+            ],
+            "template": "projects",
+            "slug": "/progetti",
+            "generate": "collection",
+            "source": "projects_cats",
+            "options": {
+                "per_page": 12,
+                "fillWith": "projects"
+            }
         }
+    },
+    "orchestra": {
+        "cleanup": [
+            "favicon.png",
+            "favicon-dark.png",
+            "contattami"
+        ]
     }
 }

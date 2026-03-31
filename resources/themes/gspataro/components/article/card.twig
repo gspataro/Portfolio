@@ -1,0 +1,32 @@
+<article {{html_attributes(attributes ?? {})}}>
+    {%if post.metadata.thumbnail%}
+        <figure class="mb-2xs group overflow-hidden">
+            <a href="{{url(post.id)}}">
+                {{image('/' ~ post.metadata.thumbnail.src, 'thumbnail', {
+                    alt: post.metadata.thumbnail.alt,
+                    class: 'duration-300 scale-100 laptop-sm:group-hover:scale-110',
+                    width: 400,
+                    height: 400
+                })}}
+            </a>
+        </figure>
+    {%endif%}
+    {%if related('articles_cats')%}
+        {%include './components/article/categories.twig' with {
+            categories: related('articles_cats'),
+            attributes: {
+                class: 'mb-2xs'
+            }
+        } only%}
+    {%endif%}
+    <header class="mb-3xs">
+        <{{heading_type ?? 'h5'}}>
+            <a href="{{url(post.id)}}" class="text-current no-underline hover:underline">
+                {{post.metadata.title}}
+            </a>
+        </{{heading_type ?? 'h5'}}>
+    </header>
+    <time datetime="{{post.metadata.published|date('Y-m-d')}}" class="mb-xs">
+        {{post.metadata.published|format_date('long', locale: 'it')}}
+    </time>
+</article>

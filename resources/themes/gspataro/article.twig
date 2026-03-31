@@ -1,0 +1,73 @@
+{%set page = {
+    'title': post.metadata.title,
+    'layout': {
+        'contain': true,
+        'footer': {
+            'contacts': {
+                'title': 'Lascia un commento',
+                'description': 'Se hai notato un errore o vuoi condividere con me la tua opinione, contattami, sarò felice di risponderti.'
+            }
+        }
+    },
+    'meta': {
+        'description': post.metadata.description,
+        'keywords': post.metadata.keywords
+    }
+}%}
+{%extends "./layout/default.twig"%}
+{%block main%}
+    <article class="max-w-200 mx-auto">
+        <header class="mb-sm">
+            {%if post.metadata.categories%}
+                <div class="flex items-center gap-2xs mb-2xs">
+                    <a href="{{url('blog')}}" class="cta cta-inverted cta-inline">
+                        Blog
+                    </a>
+                    <div class="font-normal">
+                        /
+                    </div>
+                    <div class="font-normal">
+                        <time datetime="{{post.metadata.published|date('Y-m-d')}}" class="block">
+                            {{post.metadata.published|format_date('long', locale: 'it')}}
+                        </time>
+                    </div>
+                    <div class="font-normal">
+                        /
+                    </div>
+                    {%include './components/article/categories.twig' with {
+                        categories: related('articles_cats')
+                    }%}
+                </div>
+            {%endif%}
+            <div class="flex items-center">
+                <h1 class="flex-1">{{post.metadata.title}}</h1>
+            </div>
+        </header>
+        {%if post.metadata.thumbnail%}
+            <figure class="mb-lg">
+                {{image('/' ~ post.metadata.thumbnail.src, 'large', {
+                    alt: post.metadata.thumbnail.alt,
+                    class: 'max-w-full',
+                    width: 900,
+                    height: 900
+                })}}
+                {%if post.metadata.thumbnail.caption%}
+                    <figcaption class="mt-3xs">
+                        {{post.metadata.thumbnail.caption|raw}}
+                    </figcaption>
+                {%endif%}
+            </figure>
+        {%endif%}
+        <div class="prose mb-xl">
+            {{post.body|orchestra_content}}
+        </div>
+        <div class="flex items-center gap-xs">
+            <div class="font-normal">
+                CONDIVIDI
+            </div>
+            {%include './components/share.twig' with {
+                'url': url(post.id)
+            }%}
+        </div>
+    </article>
+{%endblock%}

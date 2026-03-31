@@ -1,0 +1,14 @@
+<img
+    src="{{src}}"
+    {{html_attributes(
+        {
+            'srcset': srcset|join(', '),
+            'sizes': sizes ?? null,
+            'alt': altText ?? null,
+            'title': title ?? null,
+            'loading': 'lazy',
+            'class': 'opacity-0 data-loaded:opacity-100'
+        },
+        attributes ?? {}
+    )}}
+>

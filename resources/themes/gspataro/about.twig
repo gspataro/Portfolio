@@ -1,0 +1,99 @@
+{%from './components/icon.twig' import icon%}
+{%extends "./layout/default.twig"%}
+{%block main%}
+        <section class="bg-thunder-darker rounded-3xl flex flex-col-reverse text-ivory-lightest/80 mb-3xl tablet-h:flex-row tablet-h:justify-between tablet-h:items-stretch">
+            <div class="p-xs prose tablet-h:max-w-3/5 tablet-h:p-lg">
+                <h1 class="text-ivory-lightest">
+                    Mi presento
+                </h1>
+                <p>
+                    Mi chiamo Giuseppe Spataro.
+                </p>
+                <p>
+                    Mi occupo di musica, sviluppo web e didattica. Sono ambiti diversi, ma quello che mi interessa è il modo in cui si costruiscono le cose: progettare, risolvere problemi e lavorare con attenzione ai dettagli.
+                </p>
+                <p>
+                    Accanto alla parte operativa, porto avanti una componente di riflessione: cerco di capire cosa funziona, perché funziona e come può essere migliorato nel tempo.
+                </p>
+                <p>
+                    Lavoro su linguaggi diversi, ma con un approccio comune, orientato alla chiarezza, alla qualità e alla costruzione di qualcosa che abbia senso nel tempo.
+                </p>
+            </div>
+            <figure aria-label="Foto di Giuseppe Spataro" class="h-inherit min-h-70 mx-3xs mt-3xs tablet-h:max-w-2/5 tablet-h:m-0">
+                {{image('/about-photo.jpg', 'medium', {
+                    'class': 'aspect-square object-top object-cover w-full h-full rounded-xl tablet-h:rounded-3xl',
+                    'alt': 'Uomo dal sorriso accennato con capelli e barba scuri che indossa una camicia azzurra e una cravatta blu su uno sfondo bianco'
+                })}}
+            </figure>
+        </section>
+        <section>
+            <h2 class="mb-lg">
+                Di cosa mi occupo
+            </h2>
+            {%set webdev_content%}
+                Il mio approccio si basa su progettazione, problem solving e riflessione sui metodi migliori da applicare.
+                <h4>Backend</h4>
+                <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">PHP</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">MySQL</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Laravel</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Wordpress</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Woocommerce</li>
+                </ul>
+                <h4>Frontend</h4>
+                <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">HTML</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">CSS</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Javascript</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">SASS/SCSS</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">JQuery</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">TailwindCSS</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Bootstrap</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Webpack</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Vite</li>
+                </ul>
+                <h4>Altro</h4>
+                <ul class="flex-1 flex flex-wrap items-start gap-3xs font-normal">
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Git</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">UI/UX</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">Accessibilità</li>
+                    <li class="bg-brass/20 px-3xs py-5xs rounded-lg">SEO</li>
+                </ul>
+            {%endset%}
+            {%include './components/accordion.twig' with {
+                items: [
+                    {
+                        'title': 'Musica',
+                        'subtitle': 'Mi occupo di interpretazione e creazione musicale, concentrandomi su precisione e struttura.',
+                        'content': '
+                            <div class="prose">
+                                <p>Ho maturato esperienza concertistica come pianista solista e accompagnatore, partecipando a masterclass e progetti musicali che mi hanno permesso di affinare approcci interpretativi e tecnici.</p>
+                                <p>Mi dedico anche alla musica originale e al branding sonoro, cercando sempre un equilibrio tra creatività e metodo.</p>
+                            </div>
+                        '
+                    },
+                    {
+                        'title': 'Didattica',
+                        'subtitle': 'Insegno pianoforte attraverso percorsi personalizzati, con attenzione alla comprensione, alla tecnica e al metodo.',
+                        'content': '
+                            <div class="prose">
+                                <p>Affianco all’insegnamento la riflessione sui processi di apprendimento, cercando di adattare metodi e strategie alle necessità di ciascun studente.</p>
+                                <p>L’obiettivo è sviluppare autonomia, disciplina e capacità di comprendere profondamente ciò che si studia, oltre alla tecnica strumentale.</p>
+                            </div>
+                        '
+                    },
+                    {
+                        'title': 'Sviluppo web',
+                        'subtitle': 'Progetto e realizzo siti web e applicazioni con attenzione alla logica, alla chiarezza e alla coerenza.',
+                        'content': '
+                            <div class="prose">
+                                <p>Mi occupo di sviluppo backend e frontend, lavorando principalmente con PHP e Laravel, insieme a database MySQL.</p>
+                                <p>Sul lato frontend utilizzo HTML, CSS e JavaScript, con strumenti come SASS, Tailwind e Vite per strutturare interfacce chiare e performanti.</p>
+                                <p>Affianco allo sviluppo anche aspetti legati a accessibilità, SEO e progettazione dell’esperienza utente, con l’obiettivo di costruire prodotti coerenti e funzionali.</p>
+                            </div>
+                        '
+                    }
+                ]
+            } only%}
+        </section>
+{%endblock%}

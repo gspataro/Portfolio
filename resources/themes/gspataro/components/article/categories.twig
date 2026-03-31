@@ -1,0 +1,12 @@
+<ul {{html_attributes(
+    {
+        'class': 'flex gap-3xs'
+    },
+    attributes ?? {}
+)}}>
+    {%for category in categories%}
+        <li class="inline px-3xs border border-current rounded-full font-normal lowercase">
+            {{category.metadata.name}}
+        </li>
+    {%endfor%}
+</ul>

@@ -1,0 +1,329 @@
+{
+  "src/css/app.css": {
+    "file": "app-DZhRu2PW.css",
+    "src": "src/css/app.css",
+    "isEntry": true
+  },
+  "src/fonts/Geist/GeistVF.ttf": {
+    "file": "GeistVF-Bpq0OARI.ttf",
+    "src": "src/fonts/Geist/GeistVF.ttf"
+  },
+  "src/fonts/Geist/GeistVF.woff": {
+    "file": "GeistVF-DFmrvcb_.woff",
+    "src": "src/fonts/Geist/GeistVF.woff"
+  },
+  "src/fonts/Geist/GeistVF.woff2": {
+    "file": "GeistVF-p2GUc8qZ.woff2",
+    "src": "src/fonts/Geist/GeistVF.woff2"
+  },
+  "src/fonts/Oswald/Oswald-Bold.eot": {
+    "file": "Oswald-Bold-tXDwq_uT.eot",
+    "src": "src/fonts/Oswald/Oswald-Bold.eot"
+  },
+  "src/fonts/Oswald/Oswald-Bold.ttf": {
+    "file": "Oswald-Bold-B9M809vC.ttf",
+    "src": "src/fonts/Oswald/Oswald-Bold.ttf"
+  },
+  "src/fonts/Oswald/Oswald-Bold.woff": {
+    "file": "Oswald-Bold-BnjMjM5j.woff",
+    "src": "src/fonts/Oswald/Oswald-Bold.woff"
+  },
+  "src/fonts/Oswald/Oswald-Bold.woff2": {
+    "file": "Oswald-Bold-BjwGLUlP.woff2",
+    "src": "src/fonts/Oswald/Oswald-Bold.woff2"
+  },
+  "src/fonts/Oswald/Oswald-ExtraLight.eot": {
+    "file": "Oswald-ExtraLight-B9jDrA40.eot",
+    "src": "src/fonts/Oswald/Oswald-ExtraLight.eot"
+  },
+  "src/fonts/Oswald/Oswald-ExtraLight.ttf": {
+    "file": "Oswald-ExtraLight-BwaTx93i.ttf",
+    "src": "src/fonts/Oswald/Oswald-ExtraLight.ttf"
+  },
+  "src/fonts/Oswald/Oswald-ExtraLight.woff": {
+    "file": "Oswald-ExtraLight-D660Yy9B.woff",
+    "src": "src/fonts/Oswald/Oswald-ExtraLight.woff"
+  },
+  "src/fonts/Oswald/Oswald-ExtraLight.woff2": {
+    "file": "Oswald-ExtraLight-DouQM1jn.woff2",
+    "src": "src/fonts/Oswald/Oswald-ExtraLight.woff2"
+  },
+  "src/fonts/Oswald/Oswald-Light.eot": {
+    "file": "Oswald-Light-5UYVcOFm.eot",
+    "src": "src/fonts/Oswald/Oswald-Light.eot"
+  },
+  "src/fonts/Oswald/Oswald-Light.ttf": {
+    "file": "Oswald-Light-DETIpNxi.ttf",
+    "src": "src/fonts/Oswald/Oswald-Light.ttf"
+  },
+  "src/fonts/Oswald/Oswald-Light.woff": {
+    "file": "Oswald-Light-BcY1E1Zi.woff",
+    "src": "src/fonts/Oswald/Oswald-Light.woff"
+  },
+  "src/fonts/Oswald/Oswald-Light.woff2": {
+    "file": "Oswald-Light-eCF05YsG.woff2",
+    "src": "src/fonts/Oswald/Oswald-Light.woff2"
+  },
+  "src/fonts/Oswald/Oswald-Medium.eot": {
+    "file": "Oswald-Medium-tlcXHu48.eot",
+    "src": "src/fonts/Oswald/Oswald-Medium.eot"
+  },
+  "src/fonts/Oswald/Oswald-Medium.ttf": {
+    "file": "Oswald-Medium-7sS4QiTP.ttf",
+    "src": "src/fonts/Oswald/Oswald-Medium.ttf"
+  },
+  "src/fonts/Oswald/Oswald-Medium.woff": {
+    "file": "Oswald-Medium-BPajmD6k.woff",
+    "src": "src/fonts/Oswald/Oswald-Medium.woff"
+  },
+  "src/fonts/Oswald/Oswald-Medium.woff2": {
+    "file": "Oswald-Medium-WDCE6U2r.woff2",
+    "src": "src/fonts/Oswald/Oswald-Medium.woff2"
+  },
+  "src/fonts/Oswald/Oswald-Regular.eot": {
+    "file": "Oswald-Regular-Jgxn5HCG.eot",
+    "src": "src/fonts/Oswald/Oswald-Regular.eot"
+  },
+  "src/fonts/Oswald/Oswald-Regular.ttf": {
+    "file": "Oswald-Regular-Bs0wMIjd.ttf",
+    "src": "src/fonts/Oswald/Oswald-Regular.ttf"
+  },
+  "src/fonts/Oswald/Oswald-Regular.woff": {
+    "file": "Oswald-Regular-L1XDtdRI.woff",
+    "src": "src/fonts/Oswald/Oswald-Regular.woff"
+  },
+  "src/fonts/Oswald/Oswald-Regular.woff2": {
+    "file": "Oswald-Regular-DDCdVoYx.woff2",
+    "src": "src/fonts/Oswald/Oswald-Regular.woff2"
+  },
+  "src/fonts/Oswald/Oswald-SemiBold.eot": {
+    "file": "Oswald-SemiBold-yLGpCOhw.eot",
+    "src": "src/fonts/Oswald/Oswald-SemiBold.eot"
+  },
+  "src/fonts/Oswald/Oswald-SemiBold.ttf": {
+    "file": "Oswald-SemiBold-BCsMA-Ca.ttf",
+    "src": "src/fonts/Oswald/Oswald-SemiBold.ttf"
+  },
+  "src/fonts/Oswald/Oswald-SemiBold.woff": {
+    "file": "Oswald-SemiBold-3Nc3Nj5-.woff",
+    "src": "src/fonts/Oswald/Oswald-SemiBold.woff"
+  },
+  "src/fonts/Oswald/Oswald-SemiBold.woff2": {
+    "file": "Oswald-SemiBold-B7ew35xY.woff2",
+    "src": "src/fonts/Oswald/Oswald-SemiBold.woff2"
+  },
+  "src/fonts/Roboto/Roboto-Black.eot": {
+    "file": "Roboto-Black-DJJvAq8o.eot",
+    "src": "src/fonts/Roboto/Roboto-Black.eot"
+  },
+  "src/fonts/Roboto/Roboto-Black.ttf": {
+    "file": "Roboto-Black-EaWpRK_L.ttf",
+    "src": "src/fonts/Roboto/Roboto-Black.ttf"
+  },
+  "src/fonts/Roboto/Roboto-Black.woff": {
+    "file": "Roboto-Black-BC1ViONU.woff",
+    "src": "src/fonts/Roboto/Roboto-Black.woff"
+  },
+  "src/fonts/Roboto/Roboto-Black.woff2": {
+    "file": "Roboto-Black-EDJO5d8S.woff2",
+    "src": "src/fonts/Roboto/Roboto-Black.woff2"
+  },
+  "src/fonts/Roboto/Roboto-BlackItalic.eot": {
+    "file": "Roboto-BlackItalic-DzX7K8Va.eot",
+    "src": "src/fonts/Roboto/Roboto-BlackItalic.eot"
+  },
+  "src/fonts/Roboto/Roboto-BlackItalic.ttf": {
+    "file": "Roboto-BlackItalic-haM796Nr.ttf",
+    "src": "src/fonts/Roboto/Roboto-BlackItalic.ttf"
+  },
+  "src/fonts/Roboto/Roboto-BlackItalic.woff": {
+    "file": "Roboto-BlackItalic-CKhdciLM.woff",
+    "src": "src/fonts/Roboto/Roboto-BlackItalic.woff"
+  },
+  "src/fonts/Roboto/Roboto-BlackItalic.woff2": {
+    "file": "Roboto-BlackItalic-DBNpXmg2.woff2",
+    "src": "src/fonts/Roboto/Roboto-BlackItalic.woff2"
+  },
+  "src/fonts/Roboto/Roboto-Bold.eot": {
+    "file": "Roboto-Bold-bAb-kQss.eot",
+    "src": "src/fonts/Roboto/Roboto-Bold.eot"
+  },
+  "src/fonts/Roboto/Roboto-Bold.ttf": {
+    "file": "Roboto-Bold-CwZ-F06s.ttf",
+    "src": "src/fonts/Roboto/Roboto-Bold.ttf"
+  },
+  "src/fonts/Roboto/Roboto-Bold.woff": {
+    "file": "Roboto-Bold-D1lTURi8.woff",
+    "src": "src/fonts/Roboto/Roboto-Bold.woff"
+  },
+  "src/fonts/Roboto/Roboto-Bold.woff2": {
+    "file": "Roboto-Bold-CyJiW675.woff2",
+    "src": "src/fonts/Roboto/Roboto-Bold.woff2"
+  },
+  "src/fonts/Roboto/Roboto-BoldItalic.eot": {
+    "file": "Roboto-BoldItalic-C7c2tip4.eot",
+    "src": "src/fonts/Roboto/Roboto-BoldItalic.eot"
+  },
+  "src/fonts/Roboto/Roboto-BoldItalic.ttf": {
+    "file": "Roboto-BoldItalic-BSMQh1UN.ttf",
+    "src": "src/fonts/Roboto/Roboto-BoldItalic.ttf"
+  },
+  "src/fonts/Roboto/Roboto-BoldItalic.woff": {
+    "file": "Roboto-BoldItalic-BWQlvxan.woff",
+    "src": "src/fonts/Roboto/Roboto-BoldItalic.woff"
+  },
+  "src/fonts/Roboto/Roboto-BoldItalic.woff2": {
+    "file": "Roboto-BoldItalic-D-LEo6xI.woff2",
+    "src": "src/fonts/Roboto/Roboto-BoldItalic.woff2"
+  },
+  "src/fonts/Roboto/Roboto-Italic.eot": {
+    "file": "Roboto-Italic-BdeAeDEK.eot",
+    "src": "src/fonts/Roboto/Roboto-Italic.eot"
+  },
+  "src/fonts/Roboto/Roboto-Italic.ttf": {
+    "file": "Roboto-Italic-YDuhUchv.ttf",
+    "src": "src/fonts/Roboto/Roboto-Italic.ttf"
+  },
+  "src/fonts/Roboto/Roboto-Italic.woff": {
+    "file": "Roboto-Italic-CNDuv7AJ.woff",
+    "src": "src/fonts/Roboto/Roboto-Italic.woff"
+  },
+  "src/fonts/Roboto/Roboto-Italic.woff2": {
+    "file": "Roboto-Italic-DV-EdeoE.woff2",
+    "src": "src/fonts/Roboto/Roboto-Italic.woff2"
+  },
+  "src/fonts/Roboto/Roboto-Light.eot": {
+    "file": "Roboto-Light-eDBiES88.eot",
+    "src": "src/fonts/Roboto/Roboto-Light.eot"
+  },
+  "src/fonts/Roboto/Roboto-Light.ttf": {
+    "file": "Roboto-Light-DrTCxKmg.ttf",
+    "src": "src/fonts/Roboto/Roboto-Light.ttf"
+  },
+  "src/fonts/Roboto/Roboto-Light.woff": {
+    "file": "Roboto-Light-BK0Ext27.woff",
+    "src": "src/fonts/Roboto/Roboto-Light.woff"
+  },
+  "src/fonts/Roboto/Roboto-Light.woff2": {
+    "file": "Roboto-Light-Bn_tC8oy.woff2",
+    "src": "src/fonts/Roboto/Roboto-Light.woff2"
+  },
+  "src/fonts/Roboto/Roboto-LightItalic.eot": {
+    "file": "Roboto-LightItalic-7kFrEwsf.eot",
+    "src": "src/fonts/Roboto/Roboto-LightItalic.eot"
+  },
+  "src/fonts/Roboto/Roboto-LightItalic.ttf": {
+    "file": "Roboto-LightItalic-VfKAZgOV.ttf",
+    "src": "src/fonts/Roboto/Roboto-LightItalic.ttf"
+  },
+  "src/fonts/Roboto/Roboto-LightItalic.woff": {
+    "file": "Roboto-LightItalic-quolvlOw.woff",
+    "src": "src/fonts/Roboto/Roboto-LightItalic.woff"
+  },
+  "src/fonts/Roboto/Roboto-LightItalic.woff2": {
+    "file": "Roboto-LightItalic-CnBIMWcU.woff2",
+    "src": "src/fonts/Roboto/Roboto-LightItalic.woff2"
+  },
+  "src/fonts/Roboto/Roboto-Medium.eot": {
+    "file": "Roboto-Medium-DffhZqDn.eot",
+    "src": "src/fonts/Roboto/Roboto-Medium.eot"
+  },
+  "src/fonts/Roboto/Roboto-Medium.ttf": {
+    "file": "Roboto-Medium-CJ9lp_pw.ttf",
+    "src": "src/fonts/Roboto/Roboto-Medium.ttf"
+  },
+  "src/fonts/Roboto/Roboto-Medium.woff": {
+    "file": "Roboto-Medium-DH-iRUaM.woff",
+    "src": "src/fonts/Roboto/Roboto-Medium.woff"
+  },
+  "src/fonts/Roboto/Roboto-Medium.woff2": {
+    "file": "Roboto-Medium-D_UZUm-s.woff2",
+    "src": "src/fonts/Roboto/Roboto-Medium.woff2"
+  },
+  "src/fonts/Roboto/Roboto-MediumItalic.eot": {
+    "file": "Roboto-MediumItalic-CFwl25Fm.eot",
+    "src": "src/fonts/Roboto/Roboto-MediumItalic.eot"
+  },
+  "src/fonts/Roboto/Roboto-MediumItalic.ttf": {
+    "file": "Roboto-MediumItalic-BEmkZxI0.ttf",
+    "src": "src/fonts/Roboto/Roboto-MediumItalic.ttf"
+  },
+  "src/fonts/Roboto/Roboto-MediumItalic.woff": {
+    "file": "Roboto-MediumItalic-BGKelnn3.woff",
+    "src": "src/fonts/Roboto/Roboto-MediumItalic.woff"
+  },
+  "src/fonts/Roboto/Roboto-MediumItalic.woff2": {
+    "file": "Roboto-MediumItalic-D53plBkQ.woff2",
+    "src": "src/fonts/Roboto/Roboto-MediumItalic.woff2"
+  },
+  "src/fonts/Roboto/Roboto-Regular.eot": {
+    "file": "Roboto-Regular-F2tfXQMB.eot",
+    "src": "src/fonts/Roboto/Roboto-Regular.eot"
+  },
+  "src/fonts/Roboto/Roboto-Regular.ttf": {
+    "file": "Roboto-Regular-BrQxYv62.ttf",
+    "src": "src/fonts/Roboto/Roboto-Regular.ttf"
+  },
+  "src/fonts/Roboto/Roboto-Regular.woff": {
+    "file": "Roboto-Regular-CfDDYa6Q.woff",
+    "src": "src/fonts/Roboto/Roboto-Regular.woff"
+  },
+  "src/fonts/Roboto/Roboto-Regular.woff2": {
+    "file": "Roboto-Regular-g-opMIF6.woff2",
+    "src": "src/fonts/Roboto/Roboto-Regular.woff2"
+  },
+  "src/fonts/Roboto/Roboto-Thin.eot": {
+    "file": "Roboto-Thin--alB3xa9.eot",
+    "src": "src/fonts/Roboto/Roboto-Thin.eot"
+  },
+  "src/fonts/Roboto/Roboto-Thin.ttf": {
+    "file": "Roboto-Thin-CmCgJbjl.ttf",
+    "src": "src/fonts/Roboto/Roboto-Thin.ttf"
+  },
+  "src/fonts/Roboto/Roboto-Thin.woff": {
+    "file": "Roboto-Thin-DD2CPRZd.woff",
+    "src": "src/fonts/Roboto/Roboto-Thin.woff"
+  },
+  "src/fonts/Roboto/Roboto-Thin.woff2": {
+    "file": "Roboto-Thin-B3tqT6Nv.woff2",
+    "src": "src/fonts/Roboto/Roboto-Thin.woff2"
+  },
+  "src/fonts/Roboto/Roboto-ThinItalic.eot": {
+    "file": "Roboto-ThinItalic-DNTqpkKd.eot",
+    "src": "src/fonts/Roboto/Roboto-ThinItalic.eot"
+  },
+  "src/fonts/Roboto/Roboto-ThinItalic.ttf": {
+    "file": "Roboto-ThinItalic-B0P3xotB.ttf",
+    "src": "src/fonts/Roboto/Roboto-ThinItalic.ttf"
+  },
+  "src/fonts/Roboto/Roboto-ThinItalic.woff": {
+    "file": "Roboto-ThinItalic-i2QvFpxB.woff",
+    "src": "src/fonts/Roboto/Roboto-ThinItalic.woff"
+  },
+  "src/fonts/Roboto/Roboto-ThinItalic.woff2": {
+    "file": "Roboto-ThinItalic-Bdnh_SDI.woff2",
+    "src": "src/fonts/Roboto/Roboto-ThinItalic.woff2"
+  },
+  "src/js/app.js": {
+    "file": "app-D3wIl5td.js",
+    "name": "app",
+    "src": "src/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/js/synth.js",
+      "src/js/homepage.js"
+    ]
+  },
+  "src/js/homepage.js": {
+    "file": "homepage-B6p-kCW8.js",
+    "name": "homepage",
+    "src": "src/js/homepage.js",
+    "isDynamicEntry": true
+  },
+  "src/js/synth.js": {
+    "file": "synth-DLnCLrli.js",
+    "name": "synth",
+    "src": "src/js/synth.js",
+    "isDynamicEntry": true
+  }
+}

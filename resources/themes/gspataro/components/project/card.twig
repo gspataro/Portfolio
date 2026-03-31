@@ -1,0 +1,31 @@
+<article {{html_attributes(
+    {
+        class: 'group',
+        'data-style': style ?? 'pianoforte'
+    },
+    attributes ?? {}
+)}}>
+    {%if related('projects_cats')%}
+        {%include './components/article/categories.twig' with {
+            categories: related('projects_cats'),
+            attributes: {
+                class: 'mb-2xs'
+            }
+        } only%}
+    {%endif%}
+    <header class="mb-3xs">
+        <{{heading_type ?? 'h5'}}>
+            <a href="{{url(post.id)}}" class="text-thunder-darkest no-underline group-data-[style=fortepiano]:text-ivory-lightest">
+                {{post.metadata.name}}
+            </a>
+        </{{heading_type ?? 'h5'}}>
+    </header>
+    {%if post.metadata.description%}
+        <p class="line-clamp-1 mb-xs group-data-[style=fortepiano]:text-ivory-lightest">
+            {{post.metadata.description}}
+        </p>
+    {%endif%}
+    <a href="{{url(post.id)}}" class="cta group-data-[style=fortepiano]:text-ivory-lightest">
+        Scopri di più
+    </a>
+</article>
