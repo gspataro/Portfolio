@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-rm -R ../cache/twig
+
+if [ -f './cache/twig' ]; then
+    rm -R ./cache/twig
+fi
