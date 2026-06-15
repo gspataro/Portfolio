@@ -99,10 +99,11 @@
                 {
                     "group": "articles",
                     "limit": 5,
-                    "orderBy": "frontmatter.published",
-                    "order": "desc"
-                },
-                "services"
+                    "order": {
+                        "by": "metadata.published",
+                        "direction": "desc"
+                    }
+                }
             ],
             "template": "index",
             "slug": "/index",
